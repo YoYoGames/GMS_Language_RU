@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>вершина_подтвердить</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_submit" />
+  <meta name="rh-index-keywords" content="vertex_submit,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglestrip" />
+  <meta name="search-keywords" content="vertex_submit,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglestrip" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>вершина_подтвердить</h1>
+  <p>Вы можете использовать эту функцию для передачи содержимого вершинного буфера в графический конвейер для использования в <span class="notranslate">шейдере</span>. Вы указываете индекс буфера, который будет использоваться, тип базового примитива (см. константы ниже) и текстуру, которая будет использоваться. 
+    базовый тип примитива используется только для назначения порядка, в котором вершины, сохраненные в буфере, рисуются и соединяются, но фактические данные, используемые для каждой из вершин, будут теми, которые вы определили при создании буфера вершин.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция может быть использована только в <b>событии Draw Event</b>.</p>
+  <p>В качестве наглядного примера различных доступных базовых примитивов см. рисунок ниже:</p>
+  <p><img alt="The different primitive types" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/primitive_types.png" /></p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>pr_pointlist</td>
+        <td>Примитив, состоящий из списка точек.</td>
+      </tr>
+      <tr>
+        <td>pr_linelist</td>
+        <td>Примитив, состоящий из отдельных строк в списке.</td>
+      </tr>
+      <tr>
+        <td>pr_linestrip</td>
+        <td>Примитив, состоящий из последовательной полосы линий.</td>
+      </tr>
+      <tr>
+        <td>pr_trianglelist</td>
+        <td>Примитив, состоящий из отдельных треугольников в списке.</td>
+      </tr>
+      <tr>
+        <td>pr_trianglestrip</td>
+        <td>Примитив, состоящий из последовательной полосы треугольников.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">vertex_submit(buffer, primitive, texture);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>буфер</td>
+        <td>Буфер для использования.</td>
+      </tr>
+      <tr>
+        <td>примитивный</td>
+        <td>Примитивный базовый тип.</td>
+      </tr>
+      <tr>
+        <td>текстура</td>
+        <td>Текстура, которую следует использовать (или -1 для отсутствия текстуры).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code"><span class="notranslate">shader_set</span><span class="notranslate">(shader_prim</span>);<br> vertex_submit(buff, pr_trianglelist, sprite_get_texture(sprite_index));<br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>Приведенный выше код передаст буфер вершин, индексированный в переменной &quot;buff&quot;, для отрисовки шейдером &quot; <span class="notranslate">shader_prim</span> &quot;,<span class="notranslate">используя</span> список треугольников в качестве базового примитива и текстуру спрайта для экземпляра, выполняющего код.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Primitives_And_Vertex_Formats.htm">Примитивы и форматы вершин</a></div>
+        <div style="float:right">Далее: <a href="draw_primitive_begin.htm">draw_primitive_begin</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_submit
+pr_pointlist
+pr_linelist
+pr_linestrip
+pr_trianglelist
+pr_trianglestrip
+-->
+  <!-- TAGS
+vertex_submit
+-->
+
+</body></html>

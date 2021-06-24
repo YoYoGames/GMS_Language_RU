@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Структура данных ключевого кадра</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Keyframe Data Struct" />
+  <meta name="rh-index-keywords" content="Sequence Keyframe Data Struct" />
+  <meta name="search-keywords" content="The Keyframe Data Struct,seqaudiokey_loop,seqaudiokey_oneshot,channel,spriteIndex,soundIndex,playbackMode,curve,value,colour,sequence,objectIndex,events,event" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Структура данных <span class="notranslate">ключевого кадра</span> </h1>
+  <p>Когда вы определяете <a href="The_Keyframe_Struct.htm">структуру<span class="notranslate">ключевых кадров</span></a> для дорожки, необходимо также определить данные, которые будут с ними связаны. Эти данные состоят из различных <i>каналов</i>, и каждому каналу может быть присвоен определенный
+    тип данных в зависимости от того, для какого типа дорожки вы устанавливаете данные <span class="notranslate">ключевого кадра</span>. Этими свойствами являются:</p>
+  <ul class="colour">
+    <li><tt>канал</tt>: Это канал, к которому должны быть применены данные <span class="notranslate">ключевого кадра</span>. Это целое положительное значение, начинающееся с 0. Стоит отметить, что при создании дорожек параметров для ключевых кадров &quot;положение&quot; или &quot;масштаб&quot;,
+      необходимо использовать очень специфические значения каналов. Это: канал 0 - положение X или масштаб X, канал 1 - положение Y или масштаб Y.</li>
+    <li><tt>spriteIndex</tt>: Индекс актива спрайта, используемого для дорожки. Это свойство доступно только для дорожек типа <tt>seqtracktype_graphic</tt>, и вы можете получить или установить его.</li>
+    <li><tt>soundIndex</tt>: Индекс аудиоактива, используемого для дорожки. Это свойство доступно только для дорожек типа <tt>seqtracktype_audio</tt>, и вы можете получить или установить его.</li>
+    <li><tt>playbackMode</tt>: Режим воспроизведения для звука. Это свойство доступно только для дорожек типа <tt>seqtracktype_audio</tt>, и вы можете получить или установить его. Свойство должно быть одной из следующих констант:</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+        <th>Значение</th>
+      </tr>
+      <tr>
+        <td>seqaudiokey_loop</td>
+        <td>При воспроизведении звук будет зацикливаться.</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>seqaudiokey_oneshot</td>
+        <td>Звук будет воспроизводиться только один раз, а затем прекратится.</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li><tt>кривая</tt>: Это свойство требует наличия структуры кривой анимации (см. <a href="../../Animation_Curves/animcurve_channel_new.htm">здесь</a> для получения дополнительной информации) и доступно только для дорожек типа <tt>seqtracktype_real</tt>. Если структура кривой не
+      то значение этого свойства будет равно -1.</li>
+    <li><tt>значение</tt>: Это свойство - просто значение, связанное с каналом данных <span class="notranslate">ключевых кадров</span>, и доступно только для дорожек типа <tt>seqtracktype_real</tt>, когда не задана структура <tt>кривой</tt>.
+      не предоставлена.<tt></tt></li>
+    <li><tt>color</tt>: Это свойство возвращает (или требует, если установлено) <a href="../../../../GML_Overview/Arrays.htm">массив</a> для значения цвета <span class="notranslate">ключевого кадра</span> с форматом [A, R, G, B]. Это свойство доступно только для дорожек типа <tt>seqtracktype_colour</tt>.
+      Обратите внимание, что значения для каждого компонента должны быть выражены между 0 и 1, где 0 соответствует HEX-значению #00, а 1 - HEX-значению #FF (0 - 255, как показано в окне выбора цвета для цветных дорожек в редакторе последовательностей).</li>
+    <li><tt>последовательность</tt>: Это свойство возвращает (или требует, если установлено) <a href="The_Sequence_Object_Struct.htm">объект sequence struct</a> и доступно только для дорожек типа <tt>seqtracktype_sequence</tt>.</li>
+    <li><tt>objectIndex</tt>: Это свойство возвращает (или требует, если установлено) индекс объекта и доступно только для дорожек типа <tt>seqtracktype_instance</tt>.</li>
+    <li><tt>события</tt>: Это свойство позволяет получить доступ к <b>событиям</b> и <b>широковещательным сообщениям</b>, связанным со структурой данных <span class="notranslate">ключевых кадров</span>. Вы можете получить или установить это свойство, причем при получении возвращается массив
+      возвращается массив строк, а при установке необходимо указать массив строк. Более подробную информацию о событиях можно найти в разделе <a href="../Sequence_Events_Moments_Broadcast.htm">События и моменты последовательности</a>. Это
+      свойство доступно только для дорожек типа <tt>seqtracktype_message</tt>.</li>
+    <li><tt>событие</tt>: Это свойство возвращает (или может быть установлено на) <a href="../../../Variable_Functions/method.htm">метод</a>, связанный со структурой данных <span class="notranslate">ключевого кадра</span>. Если метод не был указан или вы хотите удалить
+      Это свойство доступно только для треков типа <tt>seqtracktype_moment</tt>.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Sequences.htm">Последовательности</a></div>
+        <div style="float:right">Следующее: <a href="The_Sequence_Object_Struct.htm">Структура объекта последовательности</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+The <span class="notranslate">Keyframe</span> Data Struct
+-->
+  <!-- TAGS
+sequence_<span class="notranslate">keyframe</span>_data
+-->
+
+</body></html>

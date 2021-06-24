@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<val>
+  <prop att="Export" val="Online" backcolor="#00ff00"></prop>
+  <prop att="Export" val="Print" backcolor="#ff0000"></prop>
+  <prop att="Licence" val="NintendoDevs" backcolor="#FF0000" color="#FFFFFF"></prop>
+  <prop att="Licence" val="PlaystationDevs" backcolor="#0073FF" color="#FFFFFF"></prop>
+  <prop att="Licence" val="XboxDevs" backcolor="#008000" color="#FFFFFF"></prop>
+  <prop att="Misc" val="Coming_Soon" backcolor="#FFFF00" color="#000000"></prop>
+</val>

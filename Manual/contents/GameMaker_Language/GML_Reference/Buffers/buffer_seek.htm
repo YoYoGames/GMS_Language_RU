@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>буферный_поиск</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_seek" />
+  <meta name="rh-index-keywords" content="buffer_seek,buffer_seek_start,buffer_seek_relative,buffer_seek_end" />
+  <meta name="search-keywords" content="buffer_seek,buffer_seek_start,buffer_seek_relative,buffer_seek_end" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>буферный_поиск</h1>
+  <p>Эта функция может использоваться для перемещения по буферу, находя начало, конец или позицию относительно той, которая была использована в последний раз при чтении или записи данных. Значение &quot;offset&quot; - это смещение (в байтах), которое нужно добавить к заданной позиции поиска,
+    например, если "base" относительно и "offset" равно 4, то позиция буфера сдвинется на 4 байта от текущей позиции. Обратите внимание на следующее:</p>
+  <ul class="colour">
+    <li>Вы можете использовать отрицательные значения для смещения для поиска назад по буферу, а также положительные значения.</li>
+    <li>Если буфер имеет тип &quot;обертывания&quot; и вы смещаетесь за конец буфера, позиция поиска также обернется.</li>
+    <li>Если буфер не имеет типа &quot;обертывания&quot;, поиск будет прижиматься к началу или концу буфера, даже если смещение выведет поиск за пределы буфера.</li>
+  </ul>
+  <p>В качестве &quot;базового&quot; аргумента для поиска принимаются следующие константы:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>buffer_seek_start</td>
+        <td>Начало буфера</td>
+      </tr>
+      <tr>
+        <td>буферный_поиск_относительный</td>
+        <td>Позиция относительно текущей позиции чтения/записи</td>
+      </tr>
+      <tr>
+        <td>буферный_поиск_конца</td>
+        <td>Конец буфера</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">buffer_seek(buffer, base, offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>буфер</td>
+        <td>Индекс используемого буфера.</td>
+      </tr>
+      <tr>
+        <td>база</td>
+        <td>Базовая позиция, к которой нужно стремиться.</td>
+      </tr>
+      <tr>
+        <td>смещение</td>
+        <td>Значение смещения данных.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">buffer_seek(buff, buffer_seek_start, 0);<br> buffer_write(buff, buffer_s16, 0);<br> buffer_write(buff, buffer_s16, x);<br> buffer_write(buff, buffer_s16, y);</p>
+  <p>Приведенный выше код находит начало буфера с идентификатором, хранящимся в переменной &quot;buff&quot;, и записывает в него серию знаковых 16-битных целочисленных значений.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Buffers.htm">Буферы</a></div>
+        <div style="float:right">Далее: <a href="buffer_tell.htm">buffer_tell</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_seek
+buffer_seek_start
+buffer_seek_relative
+buffer_seek_end
+-->
+  <!-- TAGS
+buffer_seek
+-->
+</body>
+</html>

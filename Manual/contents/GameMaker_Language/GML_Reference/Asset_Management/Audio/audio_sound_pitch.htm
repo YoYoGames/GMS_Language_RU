@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sound_pitch</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_pitch" />
+  <meta name="rh-index-keywords" content="audio_sound_pitch" />
+  <meta name="search-keywords" content="audio_sound_pitch" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_sound_pitch</h1>
+  <p>Эта функция может быть использована для изменения высоты тона заданного звука. Звук может быть либо ссылкой на индекс отдельного воспроизводимого звука, который был сохранен в переменной при использовании функции <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> или 
+    <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> или фактический звуковой актив из браузера активов. Если это индекс воспроизводимого звука, то будет изменен только этот экземпляр, однако при использовании звукового актива из браузера активов, все
+      последующие воспроизводимые экземпляры этого звука будут изменены.</p>
+  <p>Аргумент pitch является <i>множителем высоты тона</i>, то есть вводимое значение умножает текущую высоту тона на эту величину, поэтому значение по умолчанию 1 не изменяет высоту тона, в то время как значение меньше 1 понижает высоту тона, а больше 1 - повышает.
+    увеличит высоту тона. Для этой функции лучше использовать небольшие приращения, так как значение меньше 0 или больше 5 может быть не слышно. Стоит отметить, что общее допустимое изменение высоты тона ограничено (1/256) - 256 октавами, поэтому любое значение больше или меньше
+    не будет зарегистрировано.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ: </b>Приведенное выше значение зажатого диапазона - это то, к чему <span class="notranslate">GameMaker Studio 2</span> пытается привязать диапазон, но это значение <b>не</b> гарантируется на всех целевых платформах. Например, <span class="notranslate">iOS</span>,
+    зажимается до (1/256) - 8, поэтому вам может понадобиться экспериментировать на каждой целевой платформе и иметь разные версии звукового ресурса, каждая из которых предварительно сдвинута, если вам нужны более высокие или более низкие значения октавы.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_sound_pitch(index, pitch);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс звука, который нужно изменить.</td>
+      </tr>
+      <tr>
+        <td>шаг</td>
+        <td>Множитель шага (по умолчанию 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var s_engine = audio_play_sound(snd_CarEngine, 10, false);<br> switch (gear)<br> {
+    <br> case 1: audio_sound_pitch(s_engine, 0.8); break;<br> case 2: audio_sound_pitch(s_engine, 0.9); break;<br> case 3: audio_sound_pitch(s_engine, 0.95); break;<br> case 4: audio_sound_pitch(s_engine, 1); break;<br> case 5: audio_sound_pitch(s_engine,
+    1.2); break;<br> }
+  </p>
+  <p>Приведенный выше код изменит высоту тона звука, воспроизводимого из звука, индексированного в переменной &quot;s_engine&quot;, в зависимости от значения переменной &quot;gear&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio.htm">Аудио</a></div>
+        <div style="float:right">Далее: <a href="audio_sound_get_pitch.htm">audio_sound_get_pitch</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_pitch
+-->
+  <!-- TAGS
+audio_sound_pitch
+-->
+</body>
+</html>

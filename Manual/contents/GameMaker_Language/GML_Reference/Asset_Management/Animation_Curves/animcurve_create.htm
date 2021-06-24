@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>animcurve_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function animcurve_create" />
+  <meta name="rh-index-keywords" content="animcurve_create" />
+  <meta name="search-keywords" content="animcurve_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>animcurve_create</h1>
+  <p>Эта функция создает пустую <a href="../../../GML_Overview/Structs.htm">структуру</a> анимационной кривой, готовую к заполнению данными каналов. Функция возвращает указатель на структуру, которая затем используется для добавления каналов
+    и других данных к кривой анимации. Вы также можете передать его таким функциям, как <a href="animcurve_get.htm"><tt>animcurve_get()</tt></a> для последующего получения данных из кривой.</p>
+  <p>Когда вы используете эту функцию, созданная структура не будет содержать никаких данных, и чтобы использовать ее, вы должны добавить хотя бы один канал, а в канал должны быть добавлены точки. Чтобы добавить канал, см. функцию <a href="animcurve_channel_new.htm"><tt>animcurve_channel_new()</tt></a>,
+    а чтобы добавить точки в канал, см. функцию <a href="animcurve_point_new.htm"><tt>animcurve_point_new()</tt></a>. Кроме того, вы можете дать структуре анимационной кривой имя, задав переменную &quot;name&quot; (как показано в
+    примере кода, приведенном ниже). Каналы, добавленные в новую кривую анимации, должны быть добавлены в виде <a href="../../../GML_Overview/Arrays.htm">массива</a>, где каждый элемент массива ссылается на структуру канала, а точки в канале также должны быть добавлены
+    в виде массива, где каждый элемент массива ссылается на структуру точки.</p>
+  <p>Обратите внимание, что созданные таким образом кривые анимации <b>должны быть удалены, если они больше не нужны</b>, так как в противном случае они будут занимать место в памяти, что может привести к утечке памяти, замедлению и, в конечном счете, краху вашей игры.
+    Вы можете удалить кривую анимации, если она больше не нужна, с помощью функции <a href="animcurve_destroy.htm"><tt>animcurve_destroy()</tt></a>. Вам не нужно очищать данные канала или точки внутри кривой, так как это будет сделано
+    сборщиком мусора автоматически при уничтожении самой кривой.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Синтаксис: </h4>
+  <p class="code">animcurve_create();</p>
+  <p> </p>
+  <h4>Возвращается: </h4>
+  <p class="code">Ссылка на структуру</p>
+  <p> </p>
+  <h4>Пример: </h4>
+  <p class="code">my_curve = animcurve_create();<br> my_curve.name = &quot;My_Curve&quot;;<br> var _channels = array_create(1);<br> _channels[0] = animcurve_channel_new();<br> _channels[0].name = &quot;alpha&quot;;<br> _channels[0].type = animcurvetype_catmullrom;<br> _channels[0].iterations = 8;<br> var _points = array_create(3);<br> _points[0] = animcurve_point_new();<br> _points[0].posx = 0;<br> _points[0].value = 0;<br> _points[1] = animcurve_point_new();<br> _points[1].posx = 0.5;<br> _points[1].value
+    = 1;<br> _points[2] = animcurve_point_new();<br> _points[2].posx = 1;<br> _points[2].value = 0;<br> _channels[0].points = _points;<br> my_curve.channels = _channels;</p>
+  <p>Приведенный выше код создает новую структуру анимационной кривой и сохраняет ее в переменной &quot;my_curve&quot;. Затем эта структура заполняется именем и массивом каналов. Массив каналов содержит один канал с тремя точками.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Animation_Curves.htm">Анимационные кривые</a></div>
+        <div style="float:right">Далее: <a href="animcurve_channel_new.htm">animcurve_channel_new</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_create
+-->
+  <!-- TAGS
+animcurve_create
+-->
+</body>
+</html>

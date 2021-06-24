@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>столкновение_эллипса</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion collision_ellipse" />
+  <meta name="rh-index-keywords" content="collision_ellipse" />
+  <meta name="search-keywords" content="collision_ellipse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>столкновение_эллипса</h1>
+  <p><span class="inline">Collision_ellipse</span> использует первые четыре аргумента (x1,y1,x2,y2) для определения ширины и высоты эллипса в пределах текущей комнаты, а затем проверяет, не находится ли <b>какой-либо</b> объект, определенный аргументом &quot;obj&quot;
+    находится в столкновении с этой областью. Это столкновение может быть проверено как точное или нет, и вы также можете выбрать, проверять ли сам экземпляр, выполняющий код, или нет. Рассмотрим следующее изображение:</p>
+  <p><img alt="Collision ellipse example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_ellipse_illustration.png">Здесь экземпляр в центре использует эллипс столкновения для проверки наличия
+    шаровых объектов. Теперь синие объекты <i>не</i> имеют точной границы, и, как вы можете видеть, даже если спрайт не касается эллипса, столкновение все равно может произойти (даже если вы установите параметр exact в функции на true), поскольку
+    граничная область этого спрайта выходит за пределы эллиптической области, определенной collision_circle. С другой стороны, зеленые шарики будут считаться столкнувшимися только в том случае, если реальный спрайт выйдет за пределы определенного эллипса. Помните, что для точного столкновения
+    должны учитываться <i>как</i> спрайт объекта, так и функция столкновения. Следует также отметить, что возвращаемым значением функции может быть id <i>любого</i> из экземпляров, считающихся столкнувшимися.</p>
+  <p>Обратите внимание, что вместо индекса объекта вы можете указать экземпляр <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a> для проверки конкретного экземпляра, или <a href="../../../GML_Overview/Instance_Keywords.htm">ключевые слова экземпляра</a> <span class="inline">all</span>, или <span class="inline">other</span> (в зависимости от события и текущей области видимости кода).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p> </p>
+  <p>collision_ellipse(x1, y1, x2, y2, obj, prec, notme);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Координата x левой стороны эллипса для проверки.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Координата y верхней стороны эллипса для проверки.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Координата x правой стороны эллипса для проверки.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Координата y нижней стороны эллипса для проверки.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Объект для проверки столкновений экземпляров.</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>Основана ли проверка на точных столкновениях<tt>(true</tt>, что медленнее) или на его граничной области в целом<tt>(false</tt>, быстрее).</td>
+      </tr>
+      <tr>
+        <td>notme</td>
+        <td>Должен ли вызывающий экземпляр, если он релевантен, быть исключен<tt>(true</tt>) или нет<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p> </p>
+  <p>Идентификатор экземпляра или нет</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p> </p>
+  <p>if collision_ellipse(50, 50, 200, 100, obj_Player, false, true)<br> {
+    <br> instance_create_layer(obj_Player.x, obj_Player.y, &quot;Effects&quot;, obj_Splash);<br> }
+  </p>
+  <p>При этом будет проверена эллиптическая зона в пределах 50x, 50y и 200x, 100y для объекта &quot;obj_Player&quot;. Если произойдет столкновение с этим объектом, то будет создан экземпляр &quot;obj_Splash&quot; в координатах x/y объекта obj_Player.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Collisions.htm">Коллизии</a></div>
+        <div style="float:right">Далее: <a href="collision_ellipse_list.htm">collision_ellipse_list</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+collision_ellipse
+-->
+  <!-- TAGS
+collision_ellipse
+-->
+</body>
+</html>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Переменные экземпляра</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different instance variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Instance Variables" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Переменные экземпляра</h1>
+  <p>Когда вы создаете новый объект, он будет поставляться с определенными переменными, уже инициализированными значениями по умолчанию. Эти переменные мы называем <b>переменными экземпляра</b>, поскольку они будут создаваться для каждого экземпляра объекта, который вы помещаете в игровые комнаты, и
+    после создания экземпляра значения этих переменных уникальны для этого и <i>только</i> этого экземпляра. Некоторые из этих переменных вы будете использовать часто, например <tt>x</tt> и <tt>y</tt>, в то время как другие нужны меньше, в зависимости от того, что вы хотите сделать.
+    но в целом они очень полезны, и по возможности вы должны использовать их, а не создавать свои собственные переменные.</p>
+  <p>Большинство переменных экземпляра можно как устанавливать, так и считывать, что позволяет вам изменять свойства и поведение экземпляра, просто изменяя значение определенной переменной - например, вы можете запретить экземпляру рисовать, просто установив переменную
+   <tt>visible</tt> встроенной переменной <tt>false</tt>. Ниже приведены различные переменные, которые инициализируются для всех экземпляров всех объектов в вашей игре.</p>
+  <p class="note"><strong>ВАЖНО!</strong> Если экземпляр находится в <a href="../../../../../The_Asset_Editors/Sequences.htm">последовательности</a>, то некоторые из этих переменных - например, <span class="inline"><span style="font-size:14px;">image_xscale</span> / <span class="inline"><span style="font-size:14px;">image_yscale</span> /
+    <span class="inline"><span style="font-size:14px;">image_angle</span> / <span class="inline"><span style="font-size:14px;">x</span> / <span class="inline"><span style="font-size:14px;">y</span> - будут перезаписаны, когда последовательность
+    обновляет каждый шаг после начала воспроизведения.</p>
+  <p> </p>
+  <h2><label for="one">Общие переменные</label></h2>
+  <p>Эти переменные относятся к общим свойствам экземпляра:</p>
+  <ul class="colour">
+    <li><a href="id.htm">id</a></li>
+    <li><a href="visible.htm">видимый</a></li>
+    <li><a href="solid.htm">твердый</a></li>
+    <li><a href="persistent.htm">постоянный</a></li>
+    <li><a href="depth.htm">глубина</a></li>
+    <li><a href="layer.htm">слой</a></li>
+    <li><a href="alarm.htm">сигнализация</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="four">Движение и положение</label></h2>
+  <p>Эти переменные связаны с положением и перемещением экземпляра:</p>
+  <ul class="colour">
+    <li><a href="direction.htm">направление</a></li>
+    <li><a href="friction.htm">трение</a></li>
+    <li><a href="gravity.htm">гравитация</a></li>
+    <li><a href="gravity_direction.htm">направление силы тяжести</a></li>
+    <li><a href="hspeed.htm">hspeed</a></li>
+    <li><a href="vspeed.htm">vspeed</a></li>
+    <li><a href="speed.htm">скорость</a></li>
+    <li><a href="xstart.htm">xstart</a></li>
+    <li><a href="ystart.htm">ystart</a></li>
+    <li><a href="x.htm">x</a></li>
+    <li><a href="y.htm">y</a></li>
+    <li><a href="xprevious.htm">xprevious</a></li>
+    <li><a href="yprevious.htm">yprevious</a></li>
+  </ul>
+  <p> </p>
+  <h2>Свойства объекта</h2>
+  <p>Следующая переменная содержит уникальный индексный идентификатор объекта, на основе которого был создан экземпляр:</p>
+  <ul class="colour">
+    <li><a href="../../Objects/object_index.htm">объектный_индекс</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="two">Свойства спрайта</label></h2>
+  <p>Все эти переменные связаны со спрайтом, назначенным экземпляру, и могут быть использованы для изменения того, что и как рисуется:</p>
+  <ul class="colour">
+    <li><a href="../../Sprites/Sprite_Instance_Variables/sprite_index.htm">sprite_index</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/sprite_width.htm">ширина спрайта</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/sprite_height.htm">высота спрайта</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">sprite_xoffset</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">sprite_yoffset</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_alpha.htm">изображение_альфа</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_angle.htm">угол изображения</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_blend.htm">смешивание изображений</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_index.htm">индекс_изображения</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_number.htm">номер_изображения</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_speed.htm">скорость изображения</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_xscale.htm">масштаб_изображения</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/image_yscale.htm">масштаб_изображения</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="three">Маска и ограничивающая рамка</label></h2>
+  <p>Эти переменные относятся к маске столкновений:</p>
+  <ul class="colour">
+    <li><a href="../../Sprites/Sprite_Instance_Variables/mask_index.htm">индекс_маски</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/bbox_bottom.htm">bbox_bottom</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/bbox_left.htm">bbox_left</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/bbox_right.htm">bbox_right</a></li>
+    <li><a href="../../Sprites/Sprite_Instance_Variables/bbox_top.htm">bbox_top</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="five">Пути</label></h2>
+  <p>Эти переменные связаны с путями и тем, как экземпляр взаимодействует с одним из них, если он назначен:</p>
+  <ul class="colour">
+    <li><a href="../../Paths/Path_Variables/path_index.htm">индекс_пути</a></li>
+    <li><a href="../../Paths/Path_Variables/path_position.htm">позиция_пути</a></li>
+    <li><a href="../../Paths/Path_Variables/path_positionprevious.htm">путь_позиция_предыдущий</a></li>
+    <li><a href="../../Paths/Path_Variables/path_speed.htm">скорость движения</a></li>
+    <li><a href="../../Paths/Path_Variables/path_scale.htm">масштаб_пути</a></li>
+    <li><a href="../../Paths/Path_Variables/path_orientation.htm">ориентация_пути</a></li>
+    <li><a href="../../Paths/Path_Variables/path_endaction.htm">путь_действия</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="six">Временные рамки</label></h2>
+  <p>Эти переменные предназначены для настройки экземпляра на использование временной шкалы:</p>
+  <ul class="colour">
+    <li><a href="../../Timelines/timeline_index.htm">временной_индекс</a></li>
+    <li><a href="../../Timelines/timeline_running.htm">хронология_пробега</a></li>
+    <li><a href="../../Timelines/timeline_speed.htm">временная_скорость</a></li>
+    <li><a href="../../Timelines/timeline_position.htm">временная_позиция</a></li>
+    <li><a href="../../Timelines/timeline_loop.htm">временная_петля</a></li>
+  </ul>
+  <p> </p>
+  <h2>Последовательности</h2>
+  <p>Следующие переменные хранят информацию о Последовательности, которая может управлять экземпляром в любой момент времени:</p>
+  <ul class="colour">
+    <li><a href="../../Sequences/in_sequence.htm">в_последовательности</a></li>
+    <li><a href="../../Sequences/sequence_instance.htm">экземпляр_последовательности</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="seven">Физика</label></h2>
+  <p>Существует большое количество встроенных переменных для использования с физическими функциями <span class="notranslate">GameMaker Studio 2</span>, и чтобы было понятнее, их можно найти в разделе руководства, который охватывает все, что связано с моделированием физики:</p>
+  <ul class="colour">
+    <li><a href="../../../Physics/Physics.htm">Физика</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Instances.htm">Инстанции</a></div>
+        <div style="float:right">Следующее: <a href="../Deactivating_Instances/Deactivating_Instances.htm">Деактивация экземпляров</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Instance Variables
+-->
+  <!-- TAGS
+instance_variables
+-->
+</body>
+</html>

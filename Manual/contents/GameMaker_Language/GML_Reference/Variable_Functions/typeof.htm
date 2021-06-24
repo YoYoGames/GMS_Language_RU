@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>typeof</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function typeof" />
+  <meta name="rh-index-keywords" content="typeof" />
+  <meta name="search-keywords" content="typeof" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>typeof</h1>
+  <p>Эта функция возвращает тип данных любой заданной переменной в виде строки. Возможные возвращаемые значения перечислены в таблице ниже:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Строка</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>номер</td>
+        <td>Переменная содержит действительное число (с плавающей точкой) - оно может включать <tt>NaN</tt> и <tt>бесконечность</tt></td>
+      </tr>
+      <tr>
+        <td>строка</td>
+        <td>Переменная содержит строку</td>
+      </tr>
+      <tr>
+        <td>массив</td>
+        <td>Переменная ссылается на массив</td>
+      </tr>
+      <tr>
+        <td>bool</td>
+        <td>Переменная содержит булево значение<tt>(true</tt> / <tt>false</tt>)</td>
+      </tr>
+      <tr>
+        <td>int32</td>
+        <td>Переменная содержит 32-битное целое число</td>
+      </tr>
+      <tr>
+        <td>int64</td>
+        <td>Переменная содержит 64-битное целое число</td>
+      </tr>
+      <tr>
+        <td>ptr</td>
+        <td>Переменная содержит указатель</td>
+      </tr>
+      <tr>
+        <td>неопределенный</td>
+        <td>Переменная не определена</td>
+      </tr>
+      <tr>
+        <td>null</td>
+        <td>Переменная имеет нулевое значение (в норме это не должно наблюдаться)</td>
+      </tr>
+      <tr>
+        <td>век3</td>
+        <td>Переменная содержит вектор из 3 значений</td>
+      </tr>
+      <tr>
+        <td>век4</td>
+        <td>Переменная содержит вектор из 4 значений</td>
+      </tr>
+      <tr>
+        <td>метод</td>
+        <td>Переменная содержит ссылку на функцию</td>
+      </tr>
+      <tr>
+        <td>struct</td>
+        <td>Переменная содержит ссылку на структуру</td>
+      </tr>
+      <tr>
+        <td>неизвестно</td>
+        <td>Значение неизвестно. Это <i>никогда не</i> должно встречаться и означает, что что-то пошло не так на самом базовом уровне, например, перезапись памяти.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Обратите внимание, что бывают случаи, когда эта функция может не вернуть правильное значение для <strong>метода</strong>. Рассмотрим следующие два определения функций:</p>
+  <p class="code">a = function()<br> {<br> // что-то<br> } <br>
+    <br> function b()<br> {<br> // Something<br> }</p>
+  <p>Технически, они оба считаются методами, поскольку связывают функцию с переменной области видимости экземпляра, однако вызов <span class="inline">typeof()</span> на функцию <span class="inline">b</span> вернет &quot;число&quot;, а не &quot; <em>метод&quot;, </em>
+    в то время как вызов <span class="inline">a</span> вернет &quot;метод&quot;. Это связано с тем, что методам, созданным подобно методу <span class="inline">b</span>, присваиваются индексы сценария (которые являются целочисленными значениями), так как именно таким образом компилятор распознает сценарии.
+    компилятор распознает скриптовые функции, даже если функция не была определена в скрипте.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">typeof(variable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>переменная</td>
+        <td>Переменная для получения типа данных.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Строка (см. таблицу выше)</p>
+  <p> </p>
+  <h4><b>Пример:</b></h4>
+  <p class="code">var _str = typeof(global.ExtensionInput);<br> show_debug_message(&quot; <strong>global.ExtensionInput is a &quot; + _str);</strong></p>
+  <p>Приведенный выше код получает тип данных, хранящихся в заданной глобальной переменной, и возвращает строку в локальную переменную, которая затем используется для вывода сообщения на консоль.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Variable_Functions.htm">Переменные функции</a></div>
+        <div style="float:right">Далее: <a href="bool.htm">bool</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+typeof
+-->
+  <!-- TAGS
+typeof
+-->
+</body>
+</html>

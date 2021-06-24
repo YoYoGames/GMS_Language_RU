@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>поверхностное_копирование</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_copy" />
+  <meta name="rh-index-keywords" content="surface_copy" />
+  <meta name="search-keywords" content="surface_copy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>поверхностное_копирование</h1>
+  <p>Эта функция просто берет изображение с одной поверхности и копирует его на другую поверхность в указанной локальной позиции внутри этой поверхности (где позиция (0,0) - левый верхний угол поверхности назначения). Если на поверхности назначения уже
+    уже есть информация, она будет перезаписана копией, и функция никак <i>не</i> изменяет исходную поверхность.</p>
+  <p class="note"><b></b><b>ПРИМЕЧАНИЕ</b>: При работе с поверхностями существует вероятность того, что они могут перестать существовать в любой момент, поскольку хранятся в памяти текстур. Вы должны <b>ВСЕГДА</b> проверять существование поверхности с помощью функции <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    перед непосредственным обращением к ней.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">surface_copy(destination, x, y, source);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>направление</td>
+        <td>Идентификатор поверхности, на которую нужно скопировать другую поверхность.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Позиция x для копирования.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Позиция y для копирования.</td>
+      </tr>
+      <tr>
+        <td>источник</td>
+        <td>Идентификатор поверхности, которую нужно скопировать.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if view_current == 0<br> {
+    <br> surface_copy(surf, 0, 0, 0, temp_surf);<br> }
+    <br> else
+    <br> {
+    <br> draw_surface(surf, 0, 0);<br> }
+  </p>
+  <p>Приведенный выше код проверяет текущий вид, и если это вид[0], то копирует поверхность, указанную в переменной &quot;temp_surf&quot;, на поверхность, указанную в переменной &quot;surf&quot;. Если текущий вид не является видом[0]
+    то на экран выводится поверхность &quot;surf&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Surfaces.htm">Поверхности</a></div>
+        <div style="float:right">Далее: <a href="surface_copy_part.htm">surface_copy_part</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_copy
+-->
+  <!-- TAGS
+surface_copy
+-->
+</body>
+</html>

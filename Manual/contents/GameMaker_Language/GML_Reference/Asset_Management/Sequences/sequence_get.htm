@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>последовательность_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining function sequence_get" />
+  <meta name="rh-index-keywords" content="sequence_get" />
+  <meta name="search-keywords" content="sequence_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>последовательность_get</h1>
+  <p>С помощью этой функции вы можете получить <a href="../../../GML_Overview/Structs.htm">структуру</a> объекта последовательности из индекса актива последовательности. Вы указываете индекс актива для последовательности, как определено в браузере активов, и функция
+    вернет структуру объекта последовательности, к которой можно получить доступ, или -1, если последовательность не существует или указанный индекс актива не является последовательностью.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">sequence_get(sequence_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс_последовательности</td>
+        <td>Индекс последовательности, определенный в обозревателе активов.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">структура или -1</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _seq = sequence_get(seq_Logo);<br> seq.loopmode = seqplay_pingpong;</p>
+  <p>Приведенный выше код извлекает структуру объекта последовательности из объекта последовательности &quot;seq_Loop&quot;, а затем устанавливает режим цикла для последовательности (все последующие созданные экземпляры последовательности теперь будут использовать этот режим цикла).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sequences.htm">Последовательности</a></div>
+        <div style="float:right">Далее: <a href="sequence_track_new.htm">sequence_track_new</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_get
+-->
+  <!-- TAGS
+sequence_get
+-->
+</body>
+</html>

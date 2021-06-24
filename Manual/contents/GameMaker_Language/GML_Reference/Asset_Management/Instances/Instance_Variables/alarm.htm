@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>сигнализация</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable alarm" />
+  <meta name="rh-index-keywords" content="alarm" />
+  <meta name="search-keywords" content="alarm" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>сигнализация</h1>
+  <p>Этот одномерный <a href="../../../../GML_Overview/Arrays.htm">массив</a> используется для получения текущего значения для любых сигналов тревоги, которые могут быть у экземпляра, или может использоваться для установки этих сигналов. В каждый экземпляр объекта встроено двенадцать сигналов тревоги,
+    и каждый из них имеет свое собственное <a href="../../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">событие</a>, которое произойдет, когда эта переменная достигнет 0.</p>
+  <p>Сигналы тревоги отсчитываются в начале каждого шага, <i>после</i> события Begin Step, но <i>до</i> основного события Step, и до того, как для шага что-либо будет отображено. Следует отметить, что сигнал тревоги не завершается, когда он достигает 0 (хотя событие
+    так как на следующем шаге он опустится до -1, поэтому если вам нужно остановить сигнал тревоги по какой-либо причине, вы должны установить значение его массива на -1 <i>, а не</i> на 0. Время тревоги рассчитывается в <i>игровых шагах</i>, при этом значение 30 равно 30 шагам,
+    60 - 60 шагов и т.д.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ:</b> Сигнал тревоги, в котором нет никаких действий или кода, не будет запущен. Однако даже при наличии только комментария и отсутствии кода сигнал тревоги будет отсчитывать время.</p>
+  <p>Вы можете установить массив сигналов тревоги напрямую (и получить текущее значение сигнала тревоги также напрямую, используя массив), но при некоторых обстоятельствах это не самый подходящий метод, поэтому вы также можете использовать функцию <tt><a href="../alarm_set.htm">alarm_set()</a></tt> для
+    установить сигнал тревоги, и функцию <a href="../alarm_get.htm"><tt>alarm_get()</tt></a> для получения значения сигнала тревоги.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">тревога[val];</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Целое число (-1, если сигнализация не работает)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if canshoot<br> {
+    <br> if keyboard_check_pressed(vk_space)<br> {
+    <br> canshoot = false;<br> alarm[0] = room_speed;<br> instance_create_layer(x, y, &quot;Bullets&quot;, obj_Bullet);<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет переменную, затем, если она истинна, проверяет нажатие клавиши, и если она истинна, то в конце устанавливает переменную в false, устанавливает тревогу (где она снова будет установлена в true) и создает экземпляр.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Instance_Variables.htm">Переменные экземпляра</a></div>
+        <div style="float:right">Далее: <a href="direction.htm">направление</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+alarm
+-->
+  <!-- TAGS
+alarm
+-->
+</body>
+</html>

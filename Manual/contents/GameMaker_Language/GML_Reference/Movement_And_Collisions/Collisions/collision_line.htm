@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>линия столкновения</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion collision_line" />
+  <meta name="rh-index-keywords" content="collision_line" />
+  <meta name="search-keywords" content="collision_line" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>линия столкновения</h1>
+  <p><span class="inline">Collision_line</span> проверяет линию от точки x1,y1 до точки x2,y2 на столкновение с <b>любым</b> экземпляром объекта, указанного аргументом &quot;obj&quot;. эта проверка может быть точной или нет, но для того, чтобы включить точные столкновения, необходимо, чтобы у объекта или экземпляра были включены точные столкновения.
+    столкновения должна быть включена, объект или экземпляр, который вы проверяете, также <i>должен</i> иметь включенные точные столкновения для своего спрайта. В противном случае проверка по умолчанию будет основана на граничных коробках. На следующем изображении показано, как это работает:</p>
+  <p><img alt="Collision line example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_line_illustration.png">Помните, что для учета точных столкновений <i>как</i> спрайт объекта.
+    и функция столкновения должны быть отмечены как точные. Следует также отметить, что возвращаемым значением функции может быть id <i>любого</i> из объектов, считающихся столкнувшимися вдоль линии, поэтому если три объекта пересекают
+    определенную линию, любой из их идентификаторов может быть возвращаемым значением функции.</p>
+  <p>Обратите внимание, что вместо индекса объекта вы можете указать экземпляр <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a> для проверки конкретного экземпляра, или <a href="../../../GML_Overview/Instance_Keywords.htm">ключевые слова экземпляра</a> <span class="inline">all</span>, или <span class="inline">other</span> (в зависимости от события и текущей области видимости кода).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">collision_line(x1, y1, x2, y2, obj, prec, notme);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Координата x начала линии.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Координата y начала линии.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Координата x конца линии.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Координата y конца линии.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Объект для проверки столкновений экземпляров.</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>Основана ли проверка на точных столкновениях<tt>(true</tt>, что медленнее) или на его граничной области в целом<tt>(false</tt>, быстрее).</td>
+      </tr>
+      <tr>
+        <td>notme</td>
+        <td>Должен ли вызывающий экземпляр, если он релевантен, быть исключен<tt>(true</tt>) или нет<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Идентификатор экземпляра или нет</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">with (obj_Enemy)<br> {
+    <br> if collision_line(100, 400, 100, 600, id, false, false) instance_destroy();<br> }
+  </p>
+  <p>Этот код заставляет все экземпляры &quot;obj_Enemy&quot; проверить линию от 100x, 400y до 100x, 600y на наличие столкновения с собой, и если таковое имеется, то они уничтожаются.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Collisions.htm">Коллизии</a></div>
+        <div style="float:right">Далее: <a href="collision_line_list.htm">collision_line_list</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+collision_line
+-->
+  <!-- TAGS
+collision_line
+-->
+</body>
+</html>

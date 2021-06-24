@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>show_debug_overlay</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for show_debug_overlay" />
+  <meta name="rh-index-keywords" content="show_debug_overlay" />
+  <meta name="search-keywords" content="show_debug_overlay" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>show_debug_overlay</h1>
+  <p>Эта функция может использоваться для включения и выключения стандартной отладочной накладки при тестировании игры и по умолчанию отключена. Отладочная накладка показывает графическую полосу использования CPU/GPU в самом игровом окне вместе с текущим реальным значением fps,
+    количество смен текстур и количество вершинных партий (обратите внимание, что смены текстур и вершинных партий никогда не будут равны нулю и обычно показывают значения 2 или 3, поскольку даже при пустой комнате и отсутствии объектов <span class="notranslate">GameMaker Studio 2</span> все равно приходится рисовать и выполнять пакетную обработку).
+    вещи).</p>
+  <p><img alt="Debug overlay graphic" class="center" src="../../../assets/Images/QS_Guide/QS_Debug_Bar.png">Этот бар разделен на секции, каждая из которых составляет 1/60 секунды. Как видно из приведенного выше изображения, полоса состоит из различных
+    цвета:</p>
+  <ul class="colour">
+    <li><b>Зеленый</b> - обработка ввода/вывода (т.е.: клавиатура, мышь, геймпад, сеть и т.д...)</li>
+    <li><b>Красный</b> - Скорость обновления события шага</li>
+    <li><b>Желтый</b> - Время, необходимое для проведения розыгрыша</li>
+    <li><b>Оранжевый</b> -Время обновления отладки, которое обычно видно только при использовании модуля отладки</li>
+    <li><b>Белый</b> - оставшееся время GPU, то есть время, потраченное на ожидание, пока GPU закончит рендеринг кадра, прежде чем начнется следующий.</li>
+    <li><b>Cyan</b> - Время отрисовки текста</li>
+    <li><b>Grey</b> - Время, необходимое для очистки экрана на каждом этапе рисования</li>
+    <li><strong>Blue</strong> - Время, необходимое для работы <a href="../Garbage_Collection/Garbage_Collection.htm">сборщика мусора</a> </li>
+    <li><b>Темно-красный</b> цвет - промывка GPU, т.е. сколько времени требуется GPU для очистки изображений из памяти.</li>
+  </ul>
+  <p>Используя эту функцию, вы можете добавить наложение в режиме отладки или нет, и таким образом вы сможете увидеть, насколько эффективно работает ваша игра, и получить визуальную подсказку о том, как она использует доступные ресурсы, без лишних затрат, связанных с запуском отладчика.
+    рядом.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция не будет работать на цели HTML5 из-за того, что она работает иначе, чем все остальные цели.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">show_debug_overlay(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>включить</td>
+        <td>включение<tt>(true</tt>) или выключение<tt>(false<tt>) наложения отладки</tt></tt>.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4><b>Пример:</b></h4>
+  <p class="code">if global.debug<br> {
+    <br> show_debug_overlay(true);
+    <br> }
+    <br> else
+    <br> {
+    <br> show_debug_overlay(false);
+    <br> }
+  </p>
+  <p>Приведенный выше код будет включать или выключать отладку в зависимости от значения глобальной переменной.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Debugging.htm">Отладка</a></div>
+        <div style="float:right">Далее: <a href="code_is_compiled.htm">code_is_compiled</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+show_debug_overlay
+-->
+  <!-- TAGS
+show_debug_overlay
+-->
+</body>
+</html>

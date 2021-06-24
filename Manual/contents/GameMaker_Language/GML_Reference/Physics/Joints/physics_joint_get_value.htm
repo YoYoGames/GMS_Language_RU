@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>физический_шарнир_получить_значение</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_get_value" />
+  <meta name="rh-index-keywords" content="physics_joint_get_value" />
+  <meta name="search-keywords" content="physics_joint_get_value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>физический_шарнир_получить_значение</h1>
+  <p>Используя ряд предопределенных констант, вы можете попросить <span class="notranslate">GameMaker Studio 2</span> сообщить вам ряд сведений о состоянии любого сустава. Это очень полезно, поскольку дает возможность удалять суставы или изменять поведение экземпляра в зависимости от того, что вам нужно в данный момент.
+    в зависимости от того, что вам нужно в данный момент. Существует ряд констант, которые можно использовать в этой функции, и их можно найти здесь: <a href="Physics_Joint_Constants.htm">Physics Joint Constants</a>, но имейте в виду, что при их вызове выполняются сложные вычисления.
+    поэтому их следует использовать с осторожностью и только при необходимости, и учтите, что <i>многие из них уникальны для определенного типа суставов</i>.</p>
+  <p>Если свойство не существует (например, если вы проверяете шарнир шкива на призматический перевод), то возвращаемым значением будет 0.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_joint_get_value(joint, value)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>совместный</td>
+        <td>Индекс сустава, который вы хотите проверить</td>
+      </tr>
+      <tr>
+        <td>значение</td>
+        <td>Константа для совместного имущества, которое вы хотите проверить</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if shipJoint<br> {
+    <br> var reactionForceX = physics_joint_get_value(shipJoint, phy_joint_reaction_force_x);<br> var reactionForceY = physics_joint_get_value(shipJoint, phy_joint_reaction_force_y);<br> var reactionForce = point_distance(0, 0, reactionForceX,
+    reactionForceY);<br> if reactionForce &gt; 2<br> {
+    <br> physics_joint_delete(shipJoint);
+    <br> shipJoint = -1;<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет, содержит ли переменная &quot;shipJoint&quot; индекс сустава, и если да, то рассчитывает силу, приложенную к этому суставу, используя две константы. Наконец, если общая сила больше 2, сустав удаляется.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Joints.htm">Суставы</a></div>
+        <div style="float:right">Далее: <a href="physics_joint_set_value.htm">physics_joint_set_value</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_get_value
+-->
+  <!-- TAGS
+physics_joint_get_value
+-->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>клавиатура_клавиша_нажатия</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for keyboard_key_press" />
+  <meta name="rh-index-keywords" content="keyboard_key_press" />
+  <meta name="search-keywords" content="keyboard_key_press" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>клавиатура_клавиша_нажатия</h1>
+  <p>С помощью этой функции можно имитировать нажатие любой клавиши на клавиатуре. При ее использовании клавиша будет отмечена как нажатая до тех пор, пока не будет вызвана соответствующая функция отпускания (см. <a href="keyboard_key_release.htm"><tt>keyboard_key_release()</tt></a>).
+    Функция принимает значение кода клавиши, возвращаемое функцией <a href="../../Strings/ord.htm"><tt>ord()</tt></a> (только <i>заглавные</i> буквы от A-Z или цифры от 0-9), или любую из констант <tt>vk_*</tt>, перечисленных на главной странице " <a href="Keyboard_Input.htm">Ввод с клавиатуры</a> ".</p>
+  <p>Обратите внимание, что после вызова этой функции, если клавиша <i>физически</i> нажата на клавиатуре, это событие нажатия <i>не</i> будет зарегистрировано снова, пока клавиша не будет физически отпущена (срабатывает событие отпускания и останавливает эту функцию),
+    или была вызвана соответствующая функция освобождения клавиши, и клавиша была нажата снова.</p>
+  <p> </p>
+  <h4><b>Синтаксис:</b></h4>
+  <p class="code">keyboard_key_press(key);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>ключ</td>
+        <td>Клавиша для имитации нажатия.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4><b>Возвращается:</b></h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4><b>Пример:</b></h4>
+  <p class="code">keyboard_key_press(vk_space);</p>
+  <p>Это будет имитировать нажатие пробела.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Keyboard_Input.htm">Ввод с клавиатуры</a></div>
+        <div style="float:right">Далее: <a href="keyboard_key_release.htm">keyboard_key_release</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+keyboard_key_press
+-->
+  <!-- TAGS
+keyboard_key_press
+-->
+
+</body></html>

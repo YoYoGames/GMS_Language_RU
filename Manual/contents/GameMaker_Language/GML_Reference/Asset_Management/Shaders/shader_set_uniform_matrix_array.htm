@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>shader_set_uniform_matrix_array</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function shader_set_uniform_matrix_array" />
+  <meta name="rh-index-keywords" content="shader_set_uniform_matrix_array" />
+  <meta name="search-keywords" content="shader_set_uniform_matrix_array" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">shader_set_uniform_matrix_array</span></h1>
+  <p>С помощью этой функции вы можете установить константу <span class="notranslate">шейдера</span> для хранения массива значений матрицы. Предварительно вы должны получить &quot;хэндл&quot; константы с помощью функции <a href="shader_get_uniform.htm"><tt><span class="notranslate">shader_get_uniform</span>()</tt></a>,
+    и предварительно инициализировать массив как массив значений с плавающей точкой, где каждая последовательная группа из 16 плавающих значений является матрицей 4x4.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Все формы должны быть установлены <b>после</b> вызова функции <span style="font-size:1px;"><a href="shader_set.htm"><tt style="font-size: 14px"><span class="notranslate">shader_set</span>()</tt></a></span>и до вызова 
+    <span style="font-size:1px;"><a href="shader_reset.htm"><tt style="font-size: 14px"><span class="notranslate">shader_reset</span>()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code"><span class="notranslate">shader_set_uniform_matrix_array</span>(handle, array);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>ручка</td>
+        <td>Ручка константы <span class="notranslate">шейдера</span>, которую нужно установить.</td>
+      </tr>
+      <tr>
+        <td>массив</td>
+        <td>Предварительно инициализированный массив значений с плавающей точкой.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code"><span class="notranslate">shader_set</span><span class="notranslate">(shader_Glass</span>);<br> <span class="notranslate">shader_params</span>= <span class="notranslate">shader_get_uniform</span><span class="notranslate">(shader_tint</span>, &quot;cMatrixArray&quot;);<br> shader_set_uniform_matrix_array(shader_params<span class="notranslate">,</span> matrix_array);<br> draw_self();
+    <br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>Приведенный выше код получит хэндл константы <span class="notranslate">шейдера</span> &quot;cMatrixArray&quot;, а затем установит эту константу в заданный массив.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Shaders.htm"><span class="notranslate">Шейдеры</span></a></div>
+        <div style="float:right">Далее: <a href="shader_reset.htm"><span class="notranslate">shader_reset</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">shader</span>_set_uniform_matrix_array
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_set_uniform_matrix_array
+-->
+</body>
+</html>

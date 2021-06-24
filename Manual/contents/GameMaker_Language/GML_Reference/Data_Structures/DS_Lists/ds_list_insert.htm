@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_list_insert</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_insert" />
+  <meta name="rh-index-keywords" content="ds_list_insert" />
+  <meta name="search-keywords" content="ds_list_insert" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_insert</h1>
+  <p>Эта функция добавит заданное значение в список в заданной позиции. если список содержит больше значений после заданной позиции, их позиции будут сдвинуты на единицу вверх, чтобы освободить место, увеличивая список на единицу.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_list_insert(id, pos, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Идентификатор списка для добавления.</td>
+      </tr>
+      <tr>
+        <td>поз</td>
+        <td>Позиция для добавления значения, где 0 соответствует самому началу списка, а конечная позиция равна ds_list_size(id)-1.</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>Значение для добавления в список.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">ds_list_insert(list, 9, score);</p>
+  <p>Приведенный выше код добавит значение, хранящееся в переменной &quot;score&quot;, в 10-ю позицию списка, индексируемого переменной &quot;list&quot; (списки отсчитываются от 0, поэтому список из десяти значений нумеруется от 0 до 9).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="DS_Lists.htm">Списки DS</a></div>
+        <div style="float:right">Далее: <a href="ds_list_replace.htm">ds_list_replace</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_insert
+-->
+  <!-- TAGS
+ds_list_insert
+-->
+
+</body></html>

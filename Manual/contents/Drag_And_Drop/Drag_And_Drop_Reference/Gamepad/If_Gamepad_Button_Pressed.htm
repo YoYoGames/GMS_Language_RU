@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Если нажата кнопка геймпада</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Gamepad Button Pressed action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Gamepad Button Pressed" />
+  <meta name="search-keywords" content="If Gamepad Button Pressed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Gamepad Button Pressed Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/i_GamePad_If_Button_Pressed.png"> При нажатии кнопки геймпада</h1>
+  <p>С помощью этого действия вы можете опросить геймпад, чтобы узнать, нажата ли в данный момент какая-либо кнопка. Действие будет возвращать <tt>true</tt> на каждом шаге, когда кнопка геймпада нажата (и удерживается), и <tt>false</tt> в противном случае, хотя если вы нажмете на модификатор
+    вы можете проверить, <i>не</i> нажата ли кнопка, т.е. действие будет возвращать <tt>true</tt>, если кнопка не нажата, и <tt>false</tt>, если нажата. Если вам нужно проверить нажатие только одной кнопки, то
+    используйте действие <a href="If_Gamepad_Button_Down.htm">if gamepad button down</a>.</p>
+  <p>Если проверяемая кнопка является аналоговой, то нажатие не будет обнаружено, пока значение кнопки не превысит порог, установленный с помощью действия <a href="Set_Gamepad_Button_Threshold.htm">Set Gamepad Button Threshold</a>.</p>
+  <p>Обратите внимание, что для добавления действий в блок &quot;if&quot;, их следует опустить сбоку от действия, как показано на изображении ниже:</p>
+  <p><img alt="If Gamepad Button Pressed drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/a_If_Gamepad_Button_PressedDrop.png" style="cursor: nwse-resize;">Теперь эти действия будут выполняться, если блок
+    &quot;if&quot; оценивается как true, <tt>в то время как</tt> любые действия, отброшенные в другом месте, будут выполняться после блока &quot;if&quot;.</p>
+  <p> </p>
+  <h4>Синтаксис действия:</h4>
+  <p><img alt="If Gamepad Button Pressed Action" class="center" height="161" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/a_GamePad_If_Button_Pressed.png" width="371" /></p>
+  <h4>Аргументы:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>Геймпад</td>
+        <td>Индекс геймпада.</td>
+      </tr>
+      <tr>
+        <td>Кнопка</td>
+        <td>Имя кнопки для проверки.</td>
+      </tr>
+      <tr>
+        <td>Не</td>
+        <td>Отрицание проверки (истина становится ложью и наоборот)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p><img alt="If Gamepad Button Pressed Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/e_GamePad_If_Button_Down.png">Приведенный выше код блока действий опрашивает состояние кнопок геймпада 0 на каждом шаге и
+    если кнопка удерживается нажатой, то проверяется начальное нажатие кнопки вниз. Если проверка <tt>истинна</tt> при первоначальном нажатии, воспроизводится звук, затем, пока кнопка удерживается, скорость экземпляра устанавливается на 10. Если кнопка не удерживается
+    не удерживается, проверка выполняется при отпускании кнопки, чтобы снова сбросить скорость на 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Gamepad_Actions.htm">Действия с геймпадом</a></div>
+        <div style="float:right">Следующий: <a href="If_Gamepad_Button_Down.htm">Если кнопка геймпада опущена</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Gamepad Button Pressed
+-->
+  <!-- TAGS
+action_if_gamepad_button_pressed
+-->
+</body>
+</html>

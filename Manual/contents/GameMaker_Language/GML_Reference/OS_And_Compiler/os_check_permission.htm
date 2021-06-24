@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>os_check_permission</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for os_check_permission" />
+  <meta name="rh-index-keywords" content="os_check_permission,os_permission_granted,os_permission_denied,os_permission_denied_dont_request" />
+  <meta name="search-keywords" content="os_check_permission,os_permission_granted,os_permission_denied,os_permission_denied_dont_request" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_check_permission</h1>
+  <p>С помощью этой функции вы можете проверить, было ли определенное разрешение предоставлено игре пользователем. Вы указываете проверяемое разрешение в виде строки, используя формат &quot;<tt>android.permission.&lt;permission&gt; &quot;, поэтому для</tt> проверки <tt>разрешения</tt> RECORD_AUDIO <tt>(</tt> например) вы должны вызвать функцию</p>
+  <p class="code">os_check_permission(&quot;android.permission.RECORD_AUDIO&quot;);</p>
+  <p>Функция вернет одну из трех констант - показанных ниже - чтобы сообщить игре о состоянии разрешения. Более подробную информацию о разрешениях приложений можно найти в <a href="https://developer.android.com/guide/topics/permissions/overview" target="_blank">документации<span class="notranslate">Android</span></a>.</p>
+  <p class="note"><b>ВАЖНО!</b> Эта функция предназначена только для <b><span class="notranslate">Android</span></b> только для цели.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">os_check_permission(permission)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>разрешение</td>
+        <td>Разрешение для проверки (строка)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Постоянная</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>os_permission_granted</td>
+        <td>Это означает, что разрешение было выдано</td>
+      </tr>
+      <tr>
+        <td>os_permission_denied</td>
+        <td>Это означает, что разрешение не было выдано</td>
+      </tr>
+      <tr>
+        <td>os_permission_denied_dont_request</td>
+        <td>Это означает, что разрешение либо было заблокировано настройками телефона, либо пользователь ранее отклонил запрос и выбрал &quot;Не спрашивать снова&quot;.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if (os_type == os_android)<br> {
+    <br> if (os_check_permission(&quot;android.permission.INTERNET&quot;) == os_permission_denied)<br> {
+    <br> os_request_permission(&quot;android.permission.INTERNET&quot;);
+    <br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет тип ОС и, если это <span class="notranslate">Android</span>, выполняет проверку разрешений и, если разрешение &quot;INTERNET&quot; еще не было предоставлено, запрашивает его.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="OS_And_Compiler.htm">ОС и компилятор</a></div>
+        <div style="float:right">Далее: <a href="os_request_permission.htm">os_request_permission</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+os_check_permission
+os_permission_granted
+os_permission_denied
+os_permission_denied_dont_request
+-->
+  <!-- TAGS
+os_check_permission
+-->
+</body>
+</html>

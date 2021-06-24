@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Обзор DnD™</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Overview of DnD" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Overview" />
+  <meta name="search-keywords" content="DnD Overview,Drag And Drop Overview" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Обзор<span class="notranslate">Drag And Drop™</span> </h1>
+  <p><span class="notranslate">Drag and Drop™</span><span class="notranslate">(DnD™</span>) - это инструмент визуального создания сценариев, который можно использовать для создания игр, не набирая никакого кода. Это не означает, что вы не программируете код, когда используете DnD™, <span class="notranslate">это</span>так, просто ваш код создается и представляется
+    в визуальной форме с использованием &quot;блоков&quot; действий, <strong>а не </strong>текста. Действия - это простые <a class="glossterm" data-glossterm="выражение" href="#">выражения</a>или<span class="glossextra">утверждения</span>, которые можно &quot;связать&quot; вместе, чтобы заставить экземпляр объекта сделать что-то, когда он помещен в комнату. Например, в <strong>событии "Создать</strong> " можно выполнить действие для перемещения
+    объект в произвольном направлении, а другое действие - в <strong>событии столкновения</strong>, чтобы заставить его отскакивать от предметов, с которыми он сталкивается (более подробную информацию о различных доступных событиях и их взаимодействии см. в разделе
+   <a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">События объектов</a>).</p>
+  <p><img alt="DnD™ Overview Screen" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Overview_Main.png">На изображении выше показан типичный объект, открытый на <a href="../../Introduction/Workspaces.htm">рабочей области</a> для
+    для редактирования. К нему прикреплены окно &quot;Событие&quot; и окно &quot;Код&quot;, и в окне кода вы можете увидеть, где мы построили наш DnD™. Давайте рассмотрим это окно немного подробнее и посмотрим, какие опции нам доступны:</p>
+  <p><img alt="DnD™ Properties Screen" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Overview_Properties.png">Ниже приведена дополнительная информация по каждому из представленных разделов:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Вкладки событий</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Когда вы добавляете <strong>событие </strong>к своему объекту, в окне кода открывается новая вкладка для отображения содержимого этого события. Вы можете добавить несколько событий и иметь несколько открытых вкладок одновременно, переключаясь между ними и редактируя их
+      по своему усмотрению. Вкладки можно закрыть в любое время, чтобы уменьшить беспорядок (при повторном выборе события в объекте они снова откроются), а также можно щелкнуть <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> и перетащить вкладку из окна в собственное окно кода, при этом закрытие объекта или окна кода не приведет к закрытию нового окна. Вкладки можно перетаскивать влево или вправо, чтобы изменить их порядок.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Обзор действий</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">По мере добавления блоков действий в событие они будут появляться в &quot;сокращенном&quot; виде в виде простого английского обзора происходящего. Порядок обзора - это порядок, в котором каждый из блоков действий будет выполняться для данного события, и вы можете нажать
+       на любом элементе в списке, чтобы изменить масштаб представления блока действий для редактирования.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Рабочая область блока действий</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">В эту область рабочей области вы перетаскиваете действия из <strong>панели инструментов </strong>для создания кода <span class="notranslate">DnD™</span>. Щелкните <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> на действии и перетащите его в эту
+      чтобы добавить его в список действий и отредактировать. Большинство действий имеют различные <a class="glossterm" data-glossterm="аргумент" href="#">аргументы</a>(параметры), которые вы можете задать, и большинство из них также принимают <strong>ключевые слова</strong>,
+     <strong>переменные экземпляра</strong> или даже <strong>функции<span class="notranslate">GML</span></strong> - например, вы можете вызвать действие <a href="../Drag_And_Drop_Reference/Movement/Set_Point_Direction.htm">Set Direction</a> и использовать функцию <span class="notranslate">GML</span>. <a href="../../GameMaker_Language/GML_Reference/Maths_And_Numbers/Number_Functions/random.htm"><span class="inline">random(val)</span></a> чтобы
+      задать произвольное направление.</p>
+    <p class="dropspot">По мере добавления блоков действий в код, они будут визуально &quot;связываться&quot; вместе, чтобы указать порядок, в котором будут происходить различные действия, хотя то, как создается эта цепочка, зависит от исходного блока, который был использован. Например,
+      блок <a href="../Drag_And_Drop_Reference/Common/If_Variable.htm">If Variable</a> будет иметь две цепочки - одна к блокам, которые будут вызваны, если проверяемое условие <span class="inline">true</span>, а затем следующий за ним блок.
+      этого. Для получения дополнительной информации о построении блоков действий в коде см. разделы, ссылки на которые приведены ниже.</p>
+    <p class="dropspot">Находясь в рабочей области блока действий, вы можете нажать и удерживать среднюю кнопку мыши <img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> для панорамирования, а колесико мыши <img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> - для прокрутки списка действий вверх или вниз. Если удерживать кнопку <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> при перемещении колесика мыши, то вид будет прокручиваться влево/вправо, а если удерживать кнопку
+      <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> и перемещать колесико мыши.
+      то вид будет увеличиваться или уменьшаться, позволяя вам видеть больше рабочей области с действиями. Вы можете щелкнуть <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> на любом действии из списка действий слева.
+      в списке слева, чтобы сфокусироваться на этом действии, сбросив масштаб и положение. Также обратите внимание, что вы можете изменить размер блоков действий, перемещая мышь к краям блока, а затем - когда курсор изменится - перетаскивая в нужном направлении.</p>
+    <p class="dropspot">Вы также можете щелкнуть правой кнопкой мыши <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> в любом месте рабочего пространства <span class="notranslate">DnD™</span>, чтобы вызвать меню RMB, которое подробно описано <a href="Right_Mouse_Button_Menu_Options.htm">здесь</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Ящик для инструментов</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot"> <strong>Инструментарий </strong>- это место, где хранятся все действия <span class="notranslate">DnD™</span>, причем в разных разделах находятся коллекции (библиотеки) действий, которые похожи или связаны между собой. Каждая коллекция действий связана с определенной темой или общей целью, и
+      Вы просто нажимаете <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> и перетаскиваете нужное действие из панели инструментов в рабочую область блока действий, чтобы добавить его к текущему событию. Чтобы сделать вещи
+      проще - поскольку действий очень много - вы можете использовать панель &quot;Поиск&quot; вверху для поиска определенного действия или для фильтрации видимых действий (например, введите &quot;рисовать&quot;, чтобы получить все действия рисования), а также вы можете нажать кнопку
+      <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> и перетащить значки из любой библиотеки в папку <strong>"Избранное"</strong>, чтобы собрать вместе часто используемые действия. Это особенно полезно
+      если есть определенные действия, которые вы будете выполнять снова и снова. Папку &quot;Избранное&quot; можно очистить, нажав на маленький значок &quot;Корзина&quot;.</p>
+    <p class="dropspot">Полный список доступных действий, а также аргументы, которые они принимают и как их можно связать в цепочку, см. в разделе " <a href="../Drag_And_Drop_Reference/DnD_Reference.htm">Справочник</a> по <a href="../Drag_And_Drop_Reference/DnD_Reference.htm"><span class="notranslate">перетаскиванию</span></a> ".</p>
+    <p class="dropspot">Вы можете использовать правую кнопку мыши <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> на любом действии в панели инструментов, чтобы открыть следующее меню:</p>
+    <p class="dropspot"><img alt="Toolbox RMB Menu" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Toolbox_RMB_Menu.png" /></p>
+    <p class="dropspot">Здесь у вас есть следующие опции:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Использовать<em>&lt;действие&gt; :</em></strong> Это добавит действие, которое было под мышью, когда была нажата правая кнопка мыши, в рабочую область текущего события.</li>
+      <li class="dropspot"><b>Сделать </b>/ <strong>Удалить избранное</strong>: Это добавит или удалит действие в библиотеку <strong>"Избранное"</strong> в верхней части панели инструментов. В этой библиотеке вы можете создать пользовательскую группу действий, которые вы используете регулярно, сокращая
+        время, необходимое для их поиска в реальных библиотеках.</li>
+      <li class="dropspot"><strong>Очистить избранное</strong>: При выборе этого пункта все действия будут удалены из библиотеки "Избранное".</li>
+      <li class="dropspot"><strong>Очистить недавно использованные</strong>: При выборе этого пункта все действия будут удалены из библиотеки "Недавно использованные".</li>
+      <li class="dropspot"><strong>Свернуть все</strong>: Эта опция свернет все библиотеки <span class="notranslate">DnD™</span>так, что будут видны только названия библиотек, но не узлы действий. Каждую библиотеку можно снова развернуть, щелкнув по ней.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p>На следующих страницах мы более подробно рассмотрим, как построить код блока действий, а также как установить область действия, чтобы влиять на различные вещи в вашем проекте, и другие важные детали:</p>
+  <ul class="colour">
+    <li><a href="Constructing_Action_Block_Code.htm">Конструирование кода блока действий</a></li>
+    <li><a href="Applying_Actions_To_Other_Instances.htm">Применение действий к другим экземплярам</a></li>
+    <li><a href="Action_Block_Functions.htm">Сценарии блоков действий</a></li>
+    <li><a href="Changing_DnD_To_Code.htm">Изменение <span class="notranslate">DnD™</span>в коде</a></li>
+    <li><a href="Right_Mouse_Button_Menu_Options.htm">Опции меню правой кнопки мыши</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../../Content.htm">Указатель</a></div>
+        <div style="float:right">Следующий: <a href="../Drag_And_Drop_Reference/DnD_Reference.htm">Справочник</a> по <a href="../Drag_And_Drop_Reference/DnD_Reference.htm"><span class="notranslate">перетаскиванию</span></a> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Drag And Drop</span> Overview
+-->
+  <!-- TAGS
+drag_and_drop_overview
+-->
+
+</body></html>

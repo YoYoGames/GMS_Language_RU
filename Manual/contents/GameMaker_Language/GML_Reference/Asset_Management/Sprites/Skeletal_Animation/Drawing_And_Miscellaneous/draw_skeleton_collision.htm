@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_skeleton_collision</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function draw_skeleton_collision" />
+  <meta name="rh-index-keywords" content="draw_skeleton_collision" />
+  <meta name="search-keywords" content="draw_skeleton_collision" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_skeleton_collision</h1>
+  <p>Эта функция рисует маски столкновений, связанные с заданной скелетной анимацией. Вы передаете базовый спрайт, набор анимации, который нужно использовать, и кадр, из которого нужно получить информацию, а также можете задать свойства трансформации.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_skeleton_collision(sprite, animname, frame, x, y, xscale, yscale, rot, color)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>спрайт</td>
+        <td>Индекс спрайта для рисования.</td>
+      </tr>
+      <tr>
+        <td>animname</td>
+        <td>Имя анимации, из которой нужно получить кадр (строка).</td>
+      </tr>
+      <tr>
+        <td>рама</td>
+        <td>Кадр анимации для рисования (от 0 до image_number - 1).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Координата x места рисования спрайта.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Координата y места рисования спрайта.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>Горизонтальное масштабирование спрайта в виде множителя: 1 = нормальное масштабирование, 0.5 - половина и т.д....</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>Вертикальное масштабирование спрайта в виде множителя: 1 = нормальное масштабирование, 0.5 - половина и т.д....</td>
+      </tr>
+      <tr>
+        <td>гниение</td>
+        <td>Поворот спрайта. 0=нормальный, 90=повернутый на 90 градусов против часовой стрелки и т.д.</td>
+      </tr>
+      <tr>
+        <td>цвет</td>
+        <td>Цвет, с которым будет смешиваться спрайт.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_skeleton_collision(sprite_index, &quot;jump&quot;, image_index, x, y, image_xscale, image_yscale, image_angle, c_white);</p>
+  <p>Приведенный выше код нарисует данные маски столкновений для текущего спрайта, используя текущие преобразования, для анимации с набором &quot;jump&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Drawing_And_Miscellaneous.htm">Рисование и разное</a></div>
+        <div style="float:right">Далее: <a href="draw_skeleton_time.htm">draw_skeleton_time</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_skeleton_collision
+-->
+  <!-- TAGS
+draw_skeleton_collision
+-->
+</body>
+</html>

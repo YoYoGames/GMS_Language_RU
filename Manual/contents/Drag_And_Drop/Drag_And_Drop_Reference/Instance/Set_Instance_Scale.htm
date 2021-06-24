@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Установить масштаб экземпляра</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Instance Scale action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Instance Scale" />
+  <meta name="search-keywords" content="Set Instance Scale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Instance Scale Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Scale.png" width="32"> Set Instance Scale</h1>
+  <p>Этот блок действий устанавливает значения <tt>image_xscale</tt> и <tt>image_yscale</tt> для экземпляра. Входные значения здесь являются модификаторами, которые будут применены к спрайту, назначенному данному экземпляру, где масштаб 1 (значение по умолчанию) означает отсутствие масштабирования (1:1), меньшие значения будут уменьшать масштаб (0,5, например, уменьшит ширину спрайта в два раза).
+    масштабирование (1:1), меньшие значения будут уменьшать масштаб (0.5, например, уменьшит ширину спрайта вдвое), а большие значения будут увеличивать масштаб. Вы можете использовать отрицательные значения, чтобы перевернуть спрайт и масштабировать его, если только используемое значение не равно ровно -1 (в этом случае
+    спрайт просто переворачивается или зеркально отражается относительно своего начала координат без масштабирования). Вы можете установить горизонтальный или вертикальный масштаб относительно текущих значений, в этом случае вы будете добавлять или вычитать новое значение из текущих значений масштаба.</p>
+  <p>Обратите внимание, что изменение этих значений также изменит способ обнаружения столкновений экземпляром, если только вы не задали отдельную <tt>mask_index</tt> (маску столкновений) в <a href="../../../The_Asset_Editors/Objects.htm">редакторе объектов</a>. Обратите внимание, что
+    чтобы изменения в этой переменной были видны, экземпляр должен либо <i>не</i> иметь события рисования (и тогда <span class="notranslate">GameMaker Studio 2</span> по умолчанию нарисует спрайт), либо быть нарисованным с помощью действия <a href="../Drawing/Draw_Self.htm">Draw Self</a>.</p>
+  <p><img alt="Examples of scaled sprites" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/sprite_scale.png" /></p>
+  <p> </p>
+  <h4>Синтаксис действия:</h4>
+  <p><img alt="Set Instance Scale Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Scale.png" /></p>
+  <h4>Аргументы:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>Горизонтальный</td>
+        <td>Используемый коэффициент вертикального масштабирования (по умолчанию 1).</td>
+      </tr>
+      <tr>
+        <td>Вертикальный</td>
+        <td>Используемый коэффициент горизонтального масштабирования (по умолчанию 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p><span><img alt="Set Instance Scale Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Set_Sprite.png"></span>Приведенный выше код блока действий устанавливает новый спрайт, а также ряд других
+    свойств для отображения этого спрайта, включая установку его масштабирования на три четверти от базового размера по обеим осям.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Instance_Actions_Library.htm">Действия экземпляра</a></div>
+        <div style="float:right">Следующий: <a href="Set_Instance_Alpha.htm">Установить альфу экземпляра</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Instance Scale
+-->
+  <!-- TAGS
+action_sprite_scale
+-->
+</body>
+</html>

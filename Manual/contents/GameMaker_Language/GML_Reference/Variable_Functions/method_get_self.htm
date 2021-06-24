@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>метод_get_self</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function method_get_self" />
+  <meta name="rh-index-keywords" content="method_get_self" />
+  <meta name="search-keywords" content="method_get_self" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>метод_get_self</h1>
+  <p>С помощью этой функции вы можете получить идентификатор экземпляра или ссылку на структуру, которая является контекстом, используемым при вызове метода. <a href="../../GML_Overview/Instance_Keywords.htm"><tt>self</tt></a> контекст, используемый при вызове метода. Если переменная <i>не</i> является методом, то функция
+    вернет <tt>неопределенное</tt> значение. Обратите внимание, что функция также может вернуть константу <span class="inline">pointer_null</span>, в этом случае используется текущий self на момент вызова.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">method_get_self(method);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>метод</td>
+        <td>Переменная метода для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Целое число, неопределенное, указатель_null</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _self = method_get_self(light_properties);<br> show_debug_message(string(_self));
+  </p>
+  <p>Приведенный выше код получает контекст self для заданной переменной метода и выводит его на консоль.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Variable_Functions.htm">Переменные функции</a></div>
+        <div style="float:right">Далее: <a href="method_get_index.htm">метод_get_index</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+method_get_self
+-->
+  <!-- TAGS
+method_get_self
+-->
+</body>
+</html>

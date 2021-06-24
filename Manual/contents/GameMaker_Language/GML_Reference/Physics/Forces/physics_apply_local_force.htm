@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>физика_применить_локальную_силу</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_apply_local_force" />
+  <meta name="rh-index-keywords" content="physics_apply_local_force" />
+  <meta name="search-keywords" content="physics_apply_local_force" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>физика_применить_локальную_силу</h1>
+  <p>Другой способ использования силы в мире физики - это <i>локальное</i> применение силы к экземпляру. Это означает, что сила и направление силы рассчитываются на основе начала координат (или позиции, если у экземпляра нет спрайта) экземпляра, без
+    принимая во внимание направление или вращение, которое он может иметь в игровой комнате или физическом мире. Следует отметить, что при использовании этой функции силы прикладываются не к центру масс объекта, а к точке относительно экземпляра
+    и они не будут приложены мгновенно, поскольку зависят от любых других сил, действующих на объект (например, гравитации). На этом рисунке показано, как работает локальная сила:</p>
+  <p><img alt="Apply local physics force illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_local_force_image.png">Как вы видите, координаты xlocal и ylocal вычисляются на основании того, что
+    положение оси <i>всегда</i> рассматривается как начало координат экземпляра (0,0), поэтому независимо от того, в каком месте комнаты находится объект, xlocal и ylocal всегда будут одинаковыми. Затем вам нужно решить, где должны находиться компоненты вектора силы
+    (xforce и yforce) должны быть расположены относительно позиции xlocal/ylocal. Точная сила определяется вектором, который мы получаем из компонентов xforce/yforce относительно этих координат - это просто означает, что сила рассчитывается как
+    расстояние от xlocal/ylocal до xforce/yforce в Ньютонах, а направление - это угол, который мы получаем от xlocal/ylocal до xforce/yforce. Это может показаться немного запутанным, но достаточно взглянуть на рисунок, чтобы понять, как это работает.
+    это избавит вас от сложных математических вычислений!</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Физический мир использует метры для всех своих расчетов, а соотношение пикселей на метр определяется в редакторе комнаты или с помощью функции <span style="font-size:1px;"><a href="../The_Physics_World/physics_world_create.htm"><tt style="font-size: 14px">physics_world_create()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_apply_local_force(xlocal, ylocal, xforce, yforce)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>xlocal</td>
+        <td>Координата x <i>относительно начала</i> координат, где будет приложена сила</td>
+      </tr>
+      <tr>
+        <td>ylocal</td>
+        <td>Координата y <i>относительно начала</i> координат, где будет приложена сила</td>
+      </tr>
+      <tr>
+        <td>xforce</td>
+        <td>x-компонент вектора силы</td>
+      </tr>
+      <tr>
+        <td>yforce</td>
+        <td>компонент y вектора силы</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if keyboard_check(vk_right)<br> {
+    <br> physics_apply_local_force(-25, 0, -50, 0);<br> }
+  </p>
+  <p>Приведенный выше код будет прикладывать к экземпляру силу в 50 Ньютонов слева направо <i>относительно</i> начала координат при нажатой клавише со стрелкой вправо.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Forces.htm">Силы</a></div>
+        <div style="float:right">Далее: <a href="physics_apply_local_impulse.htm">физика_применить_локальный_импульс</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_apply_local_force
+-->
+  <!-- TAGS
+physics_apply_local_force
+-->
+</body>
+</html>

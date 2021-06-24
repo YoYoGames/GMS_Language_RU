@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>vertex_create_buffer_from_buffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_create_buffer_from_buffer" />
+  <meta name="rh-index-keywords" content="vertex_create_buffer_from_buffer" />
+  <meta name="search-keywords" content="vertex_create_buffer_from_buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>vertex_create_buffer_from_buffer</h1>
+  <p>Как и в случае с функцией <a href="vertex_create_buffer.htm"><tt>vertex_create_buffer()</tt></a>эта функция создает новый буфер вершин, только теперь данные вершин, хранящиеся в нем, копируются из обычного буфера, указанного в качестве источника. Буфер
+    создается специальный <i>растущий</i> буфер, который предварительно отформатирован в вершинном формате для построения примитивов для использования (например) в <span class="notranslate">шейдерах</span>. Эта функция требует, чтобы вы указали указатель на ранее созданный обычный буфер, а также вершинный формат, который должен быть применен к копируемому буферу.
+    формат, который должен быть применен к скопированным данным.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">vertex_create_buffer_from_buffer(buffer, format);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>буфер</td>
+        <td>Буфер для создания буфера вершин.</td>
+      </tr>
+      <tr>
+        <td>формат</td>
+        <td>Используемый формат примитивных вершин.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Указатель</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">vertex_format_begin();<br> vertex_format_add_position_3d();
+    <br> vertex_format_add_colour();
+    <br> vertex_format_add_textcoord();
+    <br> var my_format = vertex_format_end();<br> v_buff = vertex_create_buffer_from_buffer(global.modelBuff, myFormat);</p>
+  <p>Приведенный выше код создаст новый формат вершин, затем создаст новый буфер вершин из ранее созданного обычного буфера, применив к нему пользовательский формат вершин.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Primitives_And_Vertex_Formats.htm">Примитивы и форматы вершин</a></div>
+        <div style="float:right">Далее: <a href="vertex_create_buffer_from_buffer_ext.htm">vertex_create_buffer_from_buffer_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_create_buffer_from_buffer
+-->
+  <!-- TAGS
+vertex_create_buffer_from_buffer
+-->
+
+</body></html>

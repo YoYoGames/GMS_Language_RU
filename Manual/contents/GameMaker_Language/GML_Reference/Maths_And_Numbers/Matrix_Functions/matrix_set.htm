@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>matrix_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for matrix_set" />
+  <meta name="rh-index-keywords" content="matrix_set,matrix_view,matrix_projection,matrix_world" />
+  <meta name="search-keywords" content="matrix_set,matrix_view,matrix_projection,matrix_world" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>matrix_set</h1>
+  <p>Эта функция принимает <a href="../../../GML_Overview/Arrays.htm">массив</a> из 16 значений, соответствующих заданному типу матрицы 4x4, где элементы [0 - 3] будут строкой 1, элементы [4 -7] - строкой 2 и т.д.... (см. рисунок на <a href="Matrix_Functions.htm">главной странице</a>).
+    Вы можете создать такую матрицу, используя <a href="matrix_build.htm"><tt>matrix_build()</tt></a> или <a href="matrix_get.htm"><tt>matrix_get()</tt></a> или просто создать массив самостоятельно и передать его в функцию. Доступные типы матриц
+    являются типы <i>view</i>, <i>projection</i> и <i>world</i>, для которых можно использовать одну из следующих констант:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>матричный_просмотр</td>
+        <td>Текущая матрица представления</td>
+      </tr>
+      <tr>
+        <td>матричная_проекция</td>
+        <td>Текущая матрица проекции</td>
+      </tr>
+      <tr>
+        <td>матричный_мир</td>
+        <td>Текущая мировая матрица</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">matrix_set(type, matrix);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>тип</td>
+        <td>Тип матрицы для получения значений (см. <i>константы</i>, перечисленные выше)</td>
+      </tr>
+      <tr>
+        <td>матрица</td>
+        <td>Данные матрицы в виде массива</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">NA</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">matrix_set(matrix_world, m_array);</p>
+  <p>Приведенный выше код установит значения текущей мировой матрицы на значения, хранящиеся в матрице массива &quot;m_array&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Matrix_Functions.htm">Матричные функции</a></div>
+        <div style="float:right">Далее: <a href="matrix_build.htm">matrix_build</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+matrix_set
+matrix_view
+matrix_projection
+matrix_world
+-->
+  <!-- TAGS
+matrix_set
+-->
+
+</body></html>

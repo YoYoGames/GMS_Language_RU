@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>path_get_point_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_get_point_x" />
+  <meta name="rh-index-keywords" content="path_get_point_x" />
+  <meta name="search-keywords" content="path_get_point_x" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>path_get_point_x</h1>
+  <p>Эта функция возвращает x-положение (в комнатных координатах) точки, которую вы ввели для указанного пути. Если точка находится вне диапазона пути (т.е. путь имеет 8 точек, а вы запрашиваете x-позицию точки 10), то будет возвращено значение
+    будет возвращено значение 0.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">path_get_point_x(index, n);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс пути для проверки.</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>Идентификация точки для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p></p>
+  <p class="code">if (path_position == 1)<br> {
+    <br> var _num = path_get_number(pth_Patrol);<br> var _pos = floor(random(_num));<br> x = path_get_point_x(pth_Patrol, _pos);<br> y = path_get_point_y(pth_Patrol, _pos);<br> path_position = (1 / _num) * _pos;<br> }
+  </p>
+  <p>Приведенный выше код проверяет, находится ли экземпляр в конце пути. Если да, то он выберет случайную точку на пути и переместит экземпляр в эту точку.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Paths.htm">Пути</a></div>
+        <div style="float:right">Далее: <a href="path_get_point_y.htm">path_get_point_y</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_get_point_x
+-->
+  <!-- TAGS
+path_get_point_x
+-->
+</body>
+</html>

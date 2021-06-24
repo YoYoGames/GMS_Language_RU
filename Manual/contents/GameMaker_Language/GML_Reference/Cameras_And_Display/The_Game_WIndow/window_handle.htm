@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>рукоятка_окна</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for window_handle" />
+  <meta name="rh-index-keywords" content="window_handle" />
+  <meta name="search-keywords" content="window_handle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>рукоятка_окна</h1>
+  <p>С помощью этой функции вы можете получить внутреннее значение идентификатора <span class="notranslate">Windows</span> (HWND, <i>указатель</i>). Эта функция действительно полезна только для разработчиков расширений, которым нужен <tt>хэндл окна</tt> для вызова <span class="notranslate">Windows</span> API в коде DLL (возвращаемый указатель следует
+    следует преобразовать в строку, а затем в C++ просто преобразовать его в HWND). В таблице ниже показаны поддерживаемые платформы и то, что они возвращают:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Платформа</th>
+        <th>Возвращает</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Windows</span></td>
+        <td>Окно HWND</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">macOS</span></td>
+        <td>Класс NSWindow</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>)</td>
+        <td>XWindow handle</td>
+      </tr>
+      <tr>
+        <td>HTML5</td>
+        <td>Идентификатор холста</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">window_handle();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Указатель</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">win_id = windows_handle();</p>
+  <p>Приведенный выше код будет хранить идентификатор окна игры в переменной.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../The_Game_Window/The_Game_Window.htm">Окно игры</a></div>
+        <div style="float:right">Далее: <a href="../The_Game_Window/window_get_caption.htm">window_get_caption</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+window_handle
+-->
+  <!-- TAGS
+window_handle
+-->
+
+</body></html>

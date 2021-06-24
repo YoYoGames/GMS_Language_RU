@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_world_draw_debug</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_world_draw_debug" />
+  <meta name="rh-index-keywords" content="physics_world_draw_debug,phy_debug_render_aabb,phy_debug_render_collision_pairs,phy_debug_render_coms,phy_debug_render_core_shapes,phy_debug_render_joints,phy_debug_render_obb,phy_debug_render_shapes" />
+  <meta name="search-keywords" content="physics_world_draw_debug,phy_debug_render_aabb,phy_debug_render_collision_pairs,phy_debug_render_coms,phy_debug_render_core_shapes,phy_debug_render_joints,phy_debug_render_obb,phy_debug_render_shapes" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_world_draw_debug</h1>
+  <p>Эта функция рисует представление системы физического мира комнаты, чтобы помочь в отладке, когда у вас возникают проблемы с правильной работой физической сцены. Иногда проблема может быть в части рендеринга вашей игры, например
+    например, спрайт может быть нарисован в неправильном положении или с неправильным вращением, что создает видимость неправильной физики, или может быть, что ваши расчеты не верны. В любом случае, эта функция поможет вам найти и решить проблему, нарисовав то, что происходит
+    что происходит в вашей системе физики. Для этого нужно указать, какую часть системы нужно нарисовать, и это делается путем передачи значения, созданного из битов, хранящихся в различных константах &quot;флага&quot;:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>phy_debug_render_aabb</td>
+        <td>Это показывает абсолютную границу каждого светильника по отношению к оси помещения</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_collision_pairs</td>
+        <td>Это покажет все приспособления, которые в настоящее время находятся в столкновении</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_coms</td>
+        <td>Здесь отмечается центр масс каждого светильника в комнате</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_core_shapes</td>
+        <td>Показывает основные формы, из которых состоят светильники в комнате</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_joints</td>
+        <td>Это позволит нарисовать все стыки всех светильников в комнате</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_obb</td>
+        <td>Здесь показана относительная ограничивающая рамка для светильников в комнате</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_shapes</td>
+        <td>Это показывает фактические формы, из которых состоят светильники в помещении</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Итак, чтобы нарисовать любые два из этих вариантов, нам нужно сделать <a href="../../../../Additional_Information/Bitwise_Operators.htm">побитовое &quot;или&quot; (в GameMaker</a> <span class="notranslate">Studio 2 это</span> обозначается | ) над ними двумя и сохранить результирующую
+    переменную для использования функцией. Вот пример того, как можно задать переменную для использования в функции, которая будет рисовать только центры масс и шарниры всех светильников в комнате:</p>
+  <p class="code">flag = phy_debug_render_coms | phy_debug_render_shapes;</p>
+  <p>Что даст вам что-то вроде этого:</p>
+  <p><img alt="Physics debug draw example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_draw_debug_image.png">Как видно из приведенного выше кода, на экране рисуются только формы и центры масс.
+    (а также цвета, представляющие их состояния - для получения дополнительной информации, пожалуйста, ознакомьтесь с документацией Box 2D в режиме онлайн). Таким же образом вы можете отобразить больше или даже все константы, которые вы хотите отладить... Просто &quot;или&quot; их все вместе!
+    Следует отметить еще один момент - эта функция должна вызываться <i>только</i> в событии рисования экземпляра, который имеет глубину меньше, чем те, которые вы хотите отладить, иначе вы не сможете увидеть отладочную информацию.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_world_draw_debug(flag)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>флаг</td>
+        <td>Значение флага для отображения различных функций отладки</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">flag = phy_debug_render_aabb | phy_debug_render_collision_pairs | phy_debug_render_obb;<br> physics_world_draw_debug(flag);
+  </p>
+  <p>Приведенный выше код отрисует все абсолютные ограничивающие рамки, относительные ограничивающие рамки, а также столкнувшиеся приспособления в рамках текущей системы физики.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="The_Physics_World.htm">Мир физики</a></div>
+        <div style="float:right">Далее: <a href="physics_draw_debug.htm">physics_draw_debug</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_world_draw_debug
+phy_debug_render_aabb
+phy_debug_render_collision_pairs
+phy_debug_render_coms
+phy_debug_render_core_shapes
+phy_debug_render_joints
+phy_debug_render_obb
+phy_debug_render_shapes
+-->
+  <!-- TAGS
+physics_world_draw_debug
+-->
+</body>
+</html>

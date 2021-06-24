@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>столкновение_круга</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion collision_circle" />
+  <meta name="rh-index-keywords" content="collision_circle" />
+  <meta name="search-keywords" content="collision_circle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>столкновение_круга</h1>
+  <p><span class="inline">Collision_circle</span> создает вокруг точек x1,y1 круговую зону заданного пользователем радиуса, а затем проверяет эту зону на столкновение с <b>любым</b> экземпляром объекта, указанным в аргументе &quot;obj&quot;.
+    Эта проверка может быть точной или нет, но для включения точных столкновений объект или экземпляр, который вы проверяете, <i>должен</i> также иметь включенные точные столкновения для своего спрайта. В противном случае проверка по умолчанию основывается на граничных коробках.
+    На следующем изображении показано, как это работает:</p>
+  <p><img alt="Collision circle example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_circle_illustration.png">Здесь экземпляр в центре использует круг столкновений для проверки наличия шариков.
+    объектов. Теперь синие объекты <i>не</i> имеют точной границы, и, как вы можете видеть, даже если спрайт не касается круга, столкновение все равно может произойти (даже если вы установите параметр exact в функции в true), так как граница
+    область этого спрайта выходит за пределы круговой области, определяемой collision_circle. С другой стороны, зеленые шарики будут считаться столкнувшимися только в том случае, если реальный спрайт пересекает заданную окружность. Помните, что для точного учета столкновений
+   <i>и</i> спрайт объекта, и функция столкновения должны быть отмечены как точные. Следует также отметить, что возвращаемым значением функции может быть id <i>любого</i> из экземпляров, считающихся столкнувшимися.</p>
+  <p>Обратите внимание, что вместо индекса объекта вы можете указать экземпляр <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a> для проверки конкретного экземпляра, или <a href="../../../GML_Overview/Instance_Keywords.htm">ключевые слова экземпляра</a> <span class="inline">all</span>, или <span class="inline">other</span> (в зависимости от события и текущей области видимости кода).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">collision_circle(x1, y1, rad, obj, prec, notme);</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Координата x центра окружности для проверки.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Координата y центра круга для проверки.</td>
+      </tr>
+      <tr>
+        <td>rad</td>
+        <td>Радиус (расстояние в пикселях от центра до края).</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Объект для проверки столкновений экземпляров.</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>Основана ли проверка на коллизиях с точностью до пикселя (true = медленно) или на его граничной области в целом (false = быстро).</td>
+      </tr>
+      <tr>
+        <td>notme</td>
+        <td>Должен ли вызывающий экземпляр, если он релевантен, быть исключен<tt>(true</tt>) или нет<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Идентификатор экземпляра или нет</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if collision_circle(x, y, 20, obj_Cursor, false, true)<br> {
+    <br> image_index = 1;<br> }
+    <br> else image_index = 0;</p>
+  <p>Приведенный выше код проверит круглую область с радиусом 20 пикселей на столкновение с &quot;obj_Cursor&quot;, и если оно есть, то установит image_index объекта, выполняющего код, равным 1, а если нет, то установит image_index объекта
+    в 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Collisions.htm">Коллизии</a></div>
+        <div style="float:right">Далее: <a href="collision_circle_list.htm">collision_circle_list</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+collision_circle
+-->
+  <!-- TAGS
+collision_circle
+-->
+</body>
+</html>

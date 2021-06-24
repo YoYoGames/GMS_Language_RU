@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_setup</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_setup" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_setup" />
+  <meta name="search-keywords" content="xboxlive_stats_setup" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_setup</h1>
+  <p>Эта функция должна быть вызвана до того, как вы сможете использовать любые другие функции Xbox Live stat, и просто инициализирует необходимые библиотеки в системе. Аргумент &quot;user_id&quot; - это необработанный идентификатор пользователя, возвращаемый функцией <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>,
+    а &quot;service_config&quot; и &quot;title_id&quot; - это уникальный ID вашей игры в Xbox Live Dev Center.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">xboxlive_stats_setup(user_id, service_config_id, title_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор пользователя</td>
+        <td>Указатель ID пользователя для проверки.</td>
+      </tr>
+      <tr>
+        <td>service_config_id</td>
+        <td>Это строка config_id для игры.</td>
+      </tr>
+      <tr>
+        <td>идентификатор названия</td>
+        <td>Уникальный идентификатор вашей игры в Xbox Dev Center.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var user = xboxlive_get_user(0); xboxlive_stats_setup(user, &quot;4d61a1aa-61ac-4541-badd-31f91244fea6&quot;, $1244FEA6);</p>
+  <p>Приведенный выше код инициализирует систему статистики для заданного идентификатора пользователя.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Stats_And_Leaderboards.htm">Статистика и таблицы лидеров</a></div>
+        <div style="float:right">Далее: <a href="xboxlive_stats_add_user.htm">xboxlive_stats_add_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_setup
+-->
+  <!-- TAGS
+xboxlive_stats_setup
+-->
+</body>
+</html>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>рисовать_прямоугольник_цветом</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function draw_rectangle_colour" />
+  <meta name="rh-index-keywords" content="draw_rectangle_colour,draw_rectangle_color" />
+  <meta name="search-keywords" content="draw_rectangle_colour,draw_rectangle_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>рисовать_прямоугольник_цветом</h1>
+  <p>С помощью этой функции вы можете нарисовать либо контур прямоугольника, либо заполненный прямоугольник, определив область, где позиция (x1,y1) - левый верхний угол, а позиция (x2,y2) - правый нижний угол. Если прямоугольник заполнен, вы можете определить отдельные
+    цвета для каждой угловой точки, и если эти цвета не совпадают, вы получите эффект градиента от одного к другому (настройки цвета будут перекрывать базовый цвет, заданный с помощью функции <a href="../Colour_And_Alpha/draw_set_colour.htm"><tt>draw_set_colour()</tt></a>).
+    Обратите внимание, что для рисования прямоугольника нужных размеров могут потребоваться разные значения (+/-1 по x, y, ширине или высоте) из-за различий в разных поддерживаемых платформах.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Если вы хотите нарисовать фигуру с помощью <span class="notranslate">шейдера</span>, вы должны знать, что большинство <span class="notranslate">шейдеров</span> ожидают следующих входных данных: вершина, текстура, цвет. Однако при использовании этой функции передаются только данные вершин и цвета, поэтому шейдер может ничего не нарисовать (или нарисовать, но не отрисовать).
+   <span class="notranslate">шейдер</span> может ничего не нарисовать (или нарисовать, но неправильно). Если вам нужно рисовать фигуры таким образом, то <span class="notranslate">шейдер</span> должен быть настроен с учетом этого.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_rectangle_colour(x1, y1, x2, y2, col1, col2, col3, col4, outline);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Координата x левой части прямоугольника.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Координата y вершины прямоугольника.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Координата x правой части прямоугольника.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Координата y нижней части прямоугольника.</td>
+      </tr>
+      <tr>
+        <td>кол1</td>
+        <td>Цвет левого верхнего угла.</td>
+      </tr>
+      <tr>
+        <td>кол2</td>
+        <td>Цвет правого верхнего угла.</td>
+      </tr>
+      <tr>
+        <td>col3</td>
+        <td>Цвет правого нижнего угла.</td>
+      </tr>
+      <tr>
+        <td>col4</td>
+        <td>Цвет левого нижнего угла.</td>
+      </tr>
+      <tr>
+        <td>конспект</td>
+        <td>Является ли прямоугольник контуром (true) или заполненным (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_rectangle_colour(50, 50, 200, 200, c_black, c_white, c_black, c_white, false);</p>
+  <p>Это нарисует заполненный квадрат с плавным черно-белым градиентом между углами.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Basic_Forms.htm">Основные формы</a></div>
+        <div style="float:right">Далее: <a href="draw_roundrect.htm">draw_roundrect</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_rectangle_colour
+draw_rectangle_color
+-->
+  <!-- TAGS
+draw_rectangle_colour
+-->
+</body>
+</html>

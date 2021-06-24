@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>вершинный_формат_удалить</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_format_delete" />
+  <meta name="rh-index-keywords" content="vertex_format_delete" />
+  <meta name="search-keywords" content="vertex_format_delete" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>вершинный_формат_удалить</h1>
+  <p>Эта функция должна вызываться каждый раз, когда вы закончили использовать созданные векторные форматы. Вы предоставляете значение ID формата (возвращаемое функцией <a href="vertex_format_end.htm"><tt>vector_format_end()</tt></a>), и эта функция освободит
+    память, связанную с ним. Обратите внимание, что если после вызова этой функции вы попытаетесь снова использовать этот формат, вы получите ошибку.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">vertex_format_delete(formatID);</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">vertex_format_delete(myFormat);</p>
+  <p>Приведенный выше код удалит из памяти формат вершин, созданный в переменной &quot;myFormat&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Primitives_And_Vertex_Formats.htm">Примитивы и форматы вершин</a></div>
+        <div style="float:right">Далее: <a href="vertex_create_buffer.htm">vertex_create_buffer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_format_delete
+-->
+  <!-- TAGS
+vertex_format_delete
+-->
+
+</body></html>

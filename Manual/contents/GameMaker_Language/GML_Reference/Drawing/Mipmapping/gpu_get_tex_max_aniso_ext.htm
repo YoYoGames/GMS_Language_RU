@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_get_tex_max_aniso_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_get_tex_max_aniso_ext" />
+  <meta name="rh-index-keywords" content="gpu_get_tex_max_aniso_ext" />
+  <meta name="search-keywords" content="gpu_get_tex_max_aniso_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_get_tex_max_aniso_ext</h1>
+  <p>С помощью этой функции можно получить текущий максимальный уровень анизотропии при использовании режима фильтра <tt>tf_anisotropic</tt> (см. <a href="gpu_get_tex_mip_filter.htm"><tt>gpu_get_tex_mip_filter()</tt></a> более подробную информацию) в <span class="notranslate">шейдерном</span> сэмплере. Вы
+    вводите значение индекса <span class="notranslate">шейдерного</span> сэмплера (возвращаемое функцией <a href="../../Asset_Management/Shaders/shader_get_sampler_index.htm"><tt><span class="notranslate">shader_get_sampler_index</span>()</tt></a>, и функция вернет значение в диапазоне от 1 до
+    16.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gpu_get_tex_max_aniso_ext(sampler_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>sampler_index</td>
+        <td>Индекс <span class="notranslate">шейдерного</span> сэмплера для получения</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Величина (по умолчанию: 16)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _sampleIndex = <span class="notranslate">shader_get_sampler_index</span>(shd_Glass, &quot;s_Background&quot;);<br> var _spriteTex = sprite_get_texture(sprite_index, 0);<br> shader_set <span class="notranslate">(shd_Glass</span>);
+    <br> if gpu_get_tex_max_aniso_ext(_sampleIndex) != 8<br> {
+    <br> gpu_set_tex_max_aniso_ext(_sampleIndex, 8);<br> }
+    <br> texture_set_stage(_sampleIndex , _spriteTex);<br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>Приведенный выше код устанавливает максимальный уровень анизотропии на 8 для данного <span class="notranslate">шейдерного</span> текстурного сэмплера, если он еще не установлен на 8.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Mipmapping.htm">Mipmapping</a></div>
+        <div style="float:right">Далее: <a href="gpu_get_tex_mip_enable.htm">gpu_get_tex_mip_enable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_tex_max_aniso_ext
+-->
+  <!-- TAGS
+gpu_get_tex_max_aniso_ext
+-->
+</body>
+</html>

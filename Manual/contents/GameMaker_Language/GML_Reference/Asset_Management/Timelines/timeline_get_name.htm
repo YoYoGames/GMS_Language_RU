@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>имя_временной_линии</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function timeline_get_name" />
+  <meta name="rh-index-keywords" content="timeline_get_name" />
+  <meta name="search-keywords" content="timeline_get_name" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>имя_временной_линии</h1>
+  <p>Эта функция может быть использована для получения имени временной линии в виде строки. если временная линия была создана динамически с помощью функции <a href="timeline_add.htm"><tt>timeline_add()</tt></a> функции, возвращаемое имя будет иметь
+    формат &quot;__newtimelineN&quot;, где &quot; N&quot; -<i>номер</i> временной линии (начиная с 0). Обратите внимание, что это <i>только</i> строка и не может быть использована для прямой ссылки на временную шкалу - для этого вам понадобится индекс временной шкалы.
+    для этого вам понадобится <i>индекс временной шка</i>лы. Однако вы можете использовать эту строку для получения <i>индекса временной шкалы</i>, используя возвращаемую строку вместе с функцией <a href="../Assets_And_Tags/asset_get_index.htm"><tt>asset_get_index()</tt></a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">timeline_get_name(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс линии времени, название которой необходимо проверить.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Строка</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _str = timeline_get_name(timeline_index);<br> show_debug_message(&quot;Current timeline = &quot; + _str);</p>
+  <p>Приведенный выше код получает имя текущей назначенной временной шкалы и выводит его на консоль.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Timelines.htm">Временные шкалы</a></div>
+        <div style="float:right">Далее: <a href="timeline_add.htm">timeline_add</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+timeline_get_name
+-->
+  <!-- TAGS
+timeline_get_name
+-->
+</body>
+</html>

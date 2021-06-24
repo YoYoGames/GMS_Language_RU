@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>место_пустое</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion place_empty" />
+  <meta name="rh-index-keywords" content="place_empty" />
+  <meta name="search-keywords" content="place_empty" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>место_пустое</h1>
+  <p>Вы можете использовать эту функцию, чтобы проверить, столкнется ли вызывающий экземпляр с <i>любым другим экземпляром</i> объекта или со всеми экземплярами в вашей игре. Для правильного разрешения столкновения экземпляр, выполняющий код, должен иметь действительную маску столкновения
+    маска (либо для самого спрайта, либо через <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/mask_index.htm"><tt>mask_index</tt></a>), и он будет регистрировать столкновения только с теми экземплярами, которые также имеют действительную маску.</p>
+  <p>Функция проверяет, нет ли столкновений, если вызывающий экземпляр будет помещен в определенную позицию, и вы можете предоставить дополнительный аргумент для уточнения проверки, чтобы проверить, свободна ли позиция от столкновений с экземплярами данного
+    типа. Обратите внимание, что если не указан дополнительный идентификатор объекта, то проверка будет выполнена для <i>всех</i> экземпляров в пределах комнаты. Проверка столкновений будет либо точной, либо основанной на граничной области экземпляра, в зависимости от того, какой тип маски столкновений был выбран.
+    но для корректной работы точных столкновений все экземпляры в проверке должны иметь точные маски столкновений.</p>
+  <p>Обратите внимание, что перед выполнением проверки заданные координаты x/y будут приведены к ближайшему целому числу.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">place_empty(x, y, [object_id]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Позиция x для проверки.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Позиция y для проверки.</td>
+      </tr>
+      <tr>
+        <td>[object_id]</td>
+        <td>Необязательно! Объект для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if place_empty(mouse_x, mouse_y, obj_Enemy)<br> {
+    <br> x = mouse_x;<br> y = mouse_y;<br> }
+  </p>
+  <p>Приведенный выше код будет проверять столкновение с любым другим экземпляром объекта &quot;obj_Enemy&quot;, как если бы вызывающий экземпляр был помещен в ту же позицию, что и мышь. Если столкновение не обнаружено, то для экземпляра устанавливаются координаты x/y
+    устанавливаются равными координатам мыши.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Collisions.htm">Коллизии</a></div>
+        <div style="float:right">Далее: <a href="place_free.htm">place_free</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+place_empty
+-->
+  <!-- TAGS
+place_empty
+-->
+</body>
+</html>

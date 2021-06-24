@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>surface_get_target_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_get_target_ext" />
+  <meta name="rh-index-keywords" content="surface_get_target_ext" />
+  <meta name="search-keywords" content="surface_get_target_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>surface_get_target_ext</h1>
+  <p>Эта функция извлекает идентификатор поверхности, назначенный одной из 4 целей рендеринга, доступных для поверхностей. Вы указываете индекс цели рендеринга для проверки, и функция вернет -1, если поверхность не назначена, или целое значение &gt;= 0, представляющее собой
+    ID назначенной поверхности (как возвращено функцией <a href="surface_create.htm"><tt>surface_create()</tt></a>).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">surface_get_target_ext(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс цели рендеринга для проверки (от 0 до 3).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Целое число (-1 для отсутствия цели на поверхности, или значение идентификатора поверхности)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if surface_get_target_ext(0) == -1<br> {
+    <br> surface_set_target_ext(0, global.Surf);<br> }
+  </p>
+  <p>Приведенный выше код сначала проверит, была ли <span class="notranslate">шейдер</span> render target 0 установлен на поверхность, и если нет, то назначит ее.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Surfaces.htm">Поверхности</a></div>
+        <div style="float:right">Далее: <a href="surface_reset_target.htm">surface_reset_target</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_get_target_ext
+-->
+  <!-- TAGS
+surface_get_target_ext
+-->
+</body>
+</html>

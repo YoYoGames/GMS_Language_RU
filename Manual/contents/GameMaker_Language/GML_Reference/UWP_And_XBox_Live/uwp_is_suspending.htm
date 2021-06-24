@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>uwp_is_suspending</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for uwp_is_suspending" />
+  <meta name="rh-index-keywords" content="uwp_is_suspending" />
+  <meta name="search-keywords" content="uwp_is_suspending" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>uwp_is_suspending</h1>
+  <p>Эта функция возвращает <tt>true</tt> для одного кадра (и <tt>false</tt> в противном случае) аналогично функции <a href="../OS_And_Compiler/os_is_paused.htm"><tt>os_is_paused()</tt></a>. После этого у игры есть одна секунда, чтобы сохранить состояние игры, прежде чем она
+    прежде чем она будет потенциально завершена системой. Как только игра закончит сохранение данных, она должна вызвать функцию <a href="uwp_suspend.htm"><tt>uwp_suspend()</tt></a> чтобы приостановить игру. Возможно, игра также должна войти в состояние паузы, чтобы в случае ее возобновления системой
+    система (если она не была полностью завершена), игрок не будет возвращен обратно в игровую ситуацию.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">uwp_is_suspending();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if uwp_is_suspending()<br> {
+    <br> scr_Save_Game_Data();
+    <br> uwp_suspend();
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет, переходит ли приложение в режим приостановки, и если да, то вызывает сценарий для сохранения игровых данных перед приостановкой игры.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="UWP_And_XBox_Live.htm">UWP и XBox Live</a></div>
+        <div style="float:right">Далее: <a href="uwp_is_constrained.htm">uwp_is_constrained</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+uwp_is_suspending
+-->
+  <!-- TAGS
+uwp_is_suspending
+-->
+</body>
+</html>

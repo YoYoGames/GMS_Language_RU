@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_roundrect_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function draw_roundrect_ext" />
+  <meta name="rh-index-keywords" content="draw_roundrect_ext" />
+  <meta name="search-keywords" content="draw_roundrect_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_roundrect_ext</h1>
+  <p>С помощью этой функции можно нарисовать либо контур закругленного прямоугольника, либо заполненный закругленный прямоугольник, где позиция (x1,y1) - левый верхний угол, а позиция (x2,y2) - правый нижний угол. Вы также должны указать значения радиуса для
+    x и y (в пикселях), и углы будут скруглены на эти величины. Вы можете определить, насколько точной будет отрисовка углов, с помощью функции <a href="draw_set_circle_precision.htm"><tt>draw_set_circle_precision()</tt></a>. Обратите внимание, что
+    для того, чтобы нарисованный прямоугольник имел нужные размеры, могут потребоваться разные значения (+/-1 по осям x, y, ширине или высоте) из-за различий в разных поддерживаемых платформах.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Если вы хотите нарисовать фигуру с помощью <span class="notranslate">шейдера</span>, вы должны знать, что большинство <span class="notranslate">шейдеров</span> ожидают следующих входных данных: вершина, текстура, цвет. Однако при использовании этой функции передаются только данные вершин и цвета, поэтому шейдер может ничего не нарисовать (или нарисовать, но не отрисовать).
+   <span class="notranslate">шейдер</span> может ничего не нарисовать (или нарисовать, но неправильно). Если вам нужно рисовать фигуры таким образом, то <span class="notranslate">шейдер</span> должен быть настроен с учетом этого.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_roundrect_ext(x1, y1, x2, y2, xrad, yrad, outline);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Координата x левого верхнего угла закругленного прямоугольника (как у обычного прямоугольника).</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Координата y верхнего левого угла закругленного прямоугольника (как у обычного прямоугольника).</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Координата x нижнего правого угла закругленного прямоугольника (как если бы это был обычный прямоугольник).</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Координата y нижнего правого угла скругленного прямоугольника (как если бы это был обычный прямоугольник).</td>
+      </tr>
+      <tr>
+        <td>xrad</td>
+        <td>Радиус кривой вдоль оси x от углов прямоугольника.</td>
+      </tr>
+      <tr>
+        <td>yrad</td>
+        <td>Радиус кривой вдоль оси y от углов прямоугольника.</td>
+      </tr>
+      <tr>
+        <td>конспект</td>
+        <td>Будет ли закругленный прямоугольник рисоваться заполненным (false) или в виде контура шириной в один пиксель (true).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var dist = point_distance(x, y, mouse_x, mouse_y) / 10;<br> draw_set_colour(c_lime);
+    <br> draw_roundrect_ext(x - 50, y - 50, x + 50, y + 50, dist, dist, 0);</p>
+  <p>Это нарисует заполненный закругленный прямоугольник, углы которого будут закруглены на величину, основанную на положении мыши относительно экземпляра, выполняющего рисование.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Basic_Forms.htm">Основные формы</a></div>
+        <div style="float:right">Далее: <a href="draw_roundrect_colour_ext.htm">draw_roundrect_colour_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_roundrect_ext
+-->
+  <!-- TAGS
+draw_roundrect_ext
+-->
+</body>
+</html>

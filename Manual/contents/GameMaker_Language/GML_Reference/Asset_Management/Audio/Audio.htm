@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Аудио</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Audio" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Audio" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Аудио</h1>
+  <p><span class="notranslate">GameMaker Studio 2</span> имеет полноценный звуковой движок, основанный на звуковых форматах <tt>*.ogg</tt>, <tt>*.mp3</tt> и <tt>*.wav</tt>. Звуки этих типов, добавленные в IDE, могут быть использованы в вашей игре с помощью основных аудиофункций, показанных ниже. Для
+    более сложных вещей, чем базовые звуковые эффекты или воспроизведение одного музыкального фрагмента, вы можете обратиться к расширенным аудиофункциям, которые позволяют изменить способ воспроизведения звука. Есть также ряд более специализированных функций, предназначенных для потоковой передачи
+    аудио, позиционированию аудио - для получения 3D-звука - и группировке аудио.</p>
+  <p class="note"><b>ВАЖНО!</b> При использовании звука в HTML5-цели следует помнить, что не все браузеры поддерживают Web Audio, поэтому при запуске ваш проект может не воспроизводить звук. Вы можете получить общее представление о поддержке Web Audio по следующей ссылке:
+   <a href="https://caniuse.com/#search=WebAudio" target="_blank">Могу ли я использовать Web Audio?</a></p>
+  <p>Следующие функции предназначены для работы со звуком наиболее простым и понятным способом, избегая использования эмиттеров и позволяя пользователю легко генерировать звуки и воспроизводить музыку, поскольку эти звуки всегда генерируются в <i>позиции слушателя</i> (более подробную информацию о <i>слушателе</i> см. в разделе по ссылке ниже) и поэтому, как правило, не зависят от каких-либо изменений в <i>слушателе</i>:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="audio_exists.htm">audio_exists</a></li>
+    <li><a href="audio_get_name.htm">audio_get_name</a></li>
+    <li><a href="audio_get_type.htm">audio_get_type</a></li>
+    <li><a href="audio_play_sound.htm">audio_play_sound</a></li>
+    <li><a href="audio_play_sound_at.htm">audio_play_sound_at</a></li>
+    <li><a href="audio_pause_sound.htm">аудио_пауза_звук</a></li>
+    <li><a href="audio_pause_all.htm">audio_pause_all</a></li>
+    <li><a href="audio_resume_sound.htm">audio_resume_sound</a></li>
+    <li><a href="audio_resume_all.htm">audio_resume_all</a></li>
+    <li><a href="audio_stop_sound.htm">audio_stop_sound</a></li>
+    <li><a href="audio_stop_all.htm">audio_stop_all</a></li>
+    <li><a href="audio_is_playing.htm">audio_is_playing</a></li>
+    <li><a href="audio_is_paused.htm">audio_is_paused</a></li>
+    <li><a href="audio_create_stream.htm">audio_create_stream</a></li>
+    <li><a href="audio_destroy_stream.htm">audio_destroy_stream</a></li>
+  </ul>
+  <p> </p>
+  <p>Следующие функции предназначены для обеспечения большего контроля над работой звукового движка и над тем, как воспроизводимые через него звуки будут &quot;слышны&quot; слушателю. Поэтому рекомендуется, чтобы вы хорошо знали, как работает остальной
+    звукового движка <span class="notranslate">GameMaker Studio 2</span>, прежде чем использовать следующие функции:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="audio_sound_set_track_position.htm">audio_sound_set_track_position</a></li>
+    <li><a href="audio_sound_get_track_position.htm">audio_sound_get_track_position</a></li>
+    <li><a href="audio_sound_set_listener_mask.htm">audio_sound_set_listener_mask</a></li>
+    <li><a href="audio_sound_get_listener_mask.htm">audio_sound_get_listener_mask</a></li>
+    <li><a href="audio_sound_length.htm">аудио_звук_длительность</a></li>
+    <li><a href="audio_sound_pitch.htm">audio_sound_pitch</a></li>
+    <li><a href="audio_sound_get_pitch.htm">audio_sound_get_pitch</a></li>
+    <li><a href="audio_sound_is_playable.htm">audio_sound_is_playable</a></li>
+    <li><a href="audio_falloff_set_model.htm">audio_falloff_set_model</a></li>
+    <li><a href="audio_sound_gain.htm">аудио_звук_усиление</a></li>
+    <li><a href="audio_sound_get_gain.htm">audio_sound_get_gain</a></li>
+    <li><a href="audio_master_gain.htm">audio_master_gain</a></li>
+    <li><a href="audio_set_master_gain.htm">audio_set_master_gain</a></li>
+    <li><a href="audio_get_master_gain.htm">audio_get_master_gain</a></li>
+    <li><a href="audio_channel_num.htm">номер аудио_канала</a></li>
+    <li><a href="audio_debug.htm">аудио_отладка</a></li>
+  </ul>
+  <p> </p>
+  <p>Дополнительные расширенные функции, такие как настройка слушателей, запись звука или синхронизация нескольких аудиодорожек во времени, можно найти в подразделах, перечисленных ниже:</p>
+  <ul class="colour">
+    <li><a href="Audio_Emitters/Audio_Emitters.htm">Аудиоизлучатели</a></li>
+    <li><a href="Audio_Listeners/Audio_Listeners.htm">Слушатели аудио</a></li>
+    <li><a href="Audio_Groups/Audio_Groups.htm">Аудиогруппы</a></li>
+    <li><a href="Audio_Buffers/Audio_Buffers.htm">Аудио буферы</a></li>
+    <li><a href="Audio_Synchronisation/Audio_Synchronisation.htm">Синхронизация звука</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <h2>Веб-аудио</h2>
+  <p>При создании игр для целевой платформы HTML5 звуковой движок требует поддержки <b>Web Audio</b>, а это, в свою очередь, означает, что иногда звук не будет воспроизводиться, когда или как вы ожидаете. Это происходит потому, что контекст Web Audio может быть не запущен
+    или может перестать работать во время воспроизведения игры. Причины этого сильно различаются в разных браузерах и даже в разных версиях одного и того же браузера, поэтому обнаружение изменения состояния контекста веб-аудио очень важно, например: для обнаружения
+    когда контекст меняется и приостановить/запустить зацикленное аудио, например, фоновую музыку.</p>
+  <p>Чтобы помочь решить эту проблему, в <span class="notranslate">GameMaker Studio 2</span> есть два отдельных способа обнаружения изменения состояния контекста Web Audio, либо с помощью следующей функции:</p>
+  <ul class="colour">
+    <li><a href="audio_system_is_available.htm">audio_system_is_available</a></li>
+  </ul>
+  <p> </p>
+  <p>Вы также можете использовать <b>асинхронное системное событие</b>, которое будет срабатывать всякий раз, когда изменяется статус Web Audio. В этом событии вы получите встроенную <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a><span> DS map</span>, заполненную ключом &quot; event_type<tt>&quot;</tt>, который в свою очередь будет содержать строку &quot; audio_system_status<tt>&quot;, если это</tt> аудиособытие. Когда этот ключ существует, также будет существовать дополнительный<tt>ключ</tt>&quot;<tt>status&quot;</tt>, который будет
+    будет либо &quot;<tt>доступен&quot;, либо</tt>&quot;недоступен&quot;. Обратите внимание, что это событие будет срабатывать на <i>всех</i> платформах, но на всех, кроме HTML5, оно будет срабатывать только один раз при запуске игры, когда аудиодвижок будет впервые
+    инициализируется. Для получения дополнительной информации см. раздел:</p>
+  <ul class="colour">
+    <li><a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">Асинхронное системное событие</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Asset_Management.htm">Управление активами</a></div>
+        <div style="float:right">Следующий: Пути</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Audio
+-->
+  <!-- TAGS
+audio_functions
+-->
+</body>
+</html>

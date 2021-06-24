@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_set_alpha_from_sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_set_alpha_from_sprite" />
+  <meta name="rh-index-keywords" content="sprite_set_alpha_from_sprite" />
+  <meta name="search-keywords" content="sprite_set_alpha_from_sprite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_set_alpha_from_sprite</h1>
+  <p>Эта функция использует значение/насыщенность одного спрайта и умножает его на альфа-значение целевого спрайта. В идеале спрайт, используемый для создания новой альфа-карты, должен быть серо-масштабным, с белыми областями, имеющими эквивалентное альфа-значение 1 (непрозрачный), черными областями, эквивалентными альфа-значению 0 (прозрачный), и серыми областями, эквивалентными альфа-значению
+    (непрозрачный), черные области - альфа 0 (прозрачный), а серые области - альфа между 0 и 1. Спрайт, альфа которого устанавливается, <i>не может быть постоянным ресурсом</i>, как и спрайт, используемый для установки альфа,
+    так как это приведет к ошибке. Это означает, что для корректной работы функции необходимо создать два совершенно новых спрайта &quot;на лету&quot;. Этого можно добиться с помощью поверхностей или путем создания спрайта на экране (пример кода
+    пример ниже показывает, как можно добиться этого эффекта с помощью поверхностей).</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция полезна только для <b>растровых</b> спрайтов и не работает со спрайтами SWF или JSON (Spine).</p>
+  <p>Ниже приведено изображение, иллюстрирующее работу этой функции:</p>
+  <p><img alt="Sprite Set Alpha Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_alpha.png" /></p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">sprite_set_alpha_from_sprite(ind, spr);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс спрайта для изменения карты прозрачности.</td>
+      </tr>
+      <tr>
+        <td>spr</td>
+        <td>Индекс спрайта, из которого нужно взять данные карты прозрачности.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращает</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Расширенный пример:</h4>
+  <p>В этом расширенном примере мы покажем, как можно создать спрайт со специальным эффектом из двух ресурсов спрайтов. Для начала нам необходимо иметь переменную контроллера в <b>событии Create</b> экземпляра. Эта переменная должна гарантировать, что спрайт будет создан только
+    создавался только один раз:</p>
+  <p class="code">spr_create = true;</p>
+  <p>После этого нам нужно перейти к <b>событию Draw Event</b> и добавить этот код:</p>
+  <p class="code">if spr_create<br> {
+    <br> spr_create = false;<br> var _sw = sprite_get_width(spr_Explosion_Alpha);<br> var _sh = sprite_get_height(spr_Explosion_Alpha);<br> var _xo = sprite_get_xoffset(spr_Gradient);<br> var _yo = sprite_get_yoffset(spr_Gradient);<br> var _surf = surface_create(_sw, _sh);<br> surface_set_target(_surf);
+    <br> draw_clear_alpha(c_black, 0);<br> draw_sprite(spr_Gradient, 0, 0, 0, 0);<br> sprite_index = sprite_create_from_surface(_surf, 0, 0, _sw, _sh, false, false, _xo, _yo);<br> draw_clear_alpha(c_black, 0);<br> draw_sprite(spr_Explosion_Alpha,
+    0, _xo, _yo);<br> var _spr = sprite_create_from_surface(_surf, 0, 0, 0, _sw, _sh, false, false, _xo, _yo);<br> surface_reset_target();
+    <br> surface_free(_surf);
+    <br> sprite_set_alpha_from_sprite(sprite_index, _spr);<br> sprite_delete(_spr);
+    <br> }
+    <br> draw_sprite(sprite_index, 0, x, y);</p>
+  <p>Приведенный выше код сначала проверяет, является ли переменная control истинной или нет, и если да, то запускает код для установки альфы спрайта, устанавливая переменную в false, чтобы предотвратить выполнение кода более одного раза. В этом случае создается поверхность
+    размером с альфа-маску, которую мы хотим использовать, затем рисует спрайт, альфа которого должна быть изменена, на поверхности и создает из него новый спрайт, присваивая ему <tt>sprite_index</tt> объекта. Затем код очищает поверхность и
+    перерисовывает на нее спрайт с картой альфа-канала и создает еще один новый спрайт, сохраняя его индекс в локальной переменной. Наконец, новый спрайт, назначенный объекту, получает свой набор альфа-карт от этого временного спрайта, поверхность освобождается, а временный спрайт удаляется.
+    удаляется.</p>
+  <p>Осталось сделать последнюю вещь, а именно удалить спрайт, созданный для объекта, из памяти, когда он не используется. Это можно сделать либо в <b>событии Destroy</b>, либо в <b>событии Room End</b>, как показано ниже:</p>
+  <p class="code">sprite_delete(sprite_index);</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Manipulation.htm">Манипуляция спрайтом</a></div>
+        <div style="float:right">Далее: <a href="sprite_set_cache_size.htm">sprite_set_cache_size</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_set_alpha_from_sprite
+-->
+  <!-- TAGS
+sprite_set_alpha_from_sprite
+-->
+</body>
+</html>

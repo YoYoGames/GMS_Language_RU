@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Создание игры с помощью GameMaker Studio</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Introduction to making games and the Quick Start Guide" />
+  <meta name="rh-index-keywords" content="Quick Start" />
+  <meta name="search-keywords" content="" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Краткое руководство пользователя</h1>
+  <p>Добро пожаловать в <strong>руководство по быстрому запуску</strong>! Этот раздел руководства предназначен для ознакомления с наиболее важными аспектами <span class="notranslate">GameMaker Studio 2</span> и расскажет вам об основах, которые помогут вам как можно быстрее создавать игры. Руководство охватывает
+    основные функции IDE, а также краткое введение в программирование, чтобы вы могли максимально быстро использовать возможности продукта, независимо от того, используете ли вы <span class="notranslate">язык GameMaker Language</span><span class="notranslate">(GML</span>) или визуальный язык сценариев <span class="notranslate">Drag and Drop™</span>.</p>
+  <p>Чтобы проиллюстрировать рабочий процесс <span class="notranslate">GameMaker Studio 2</span> и заставить вас сразу приступить к созданию чего-либо, мы подготовили это руководство, которое расскажет вам от самых основ того, что такое GameMaker <span class="notranslate">Studio 2 и</span> что такое программа, через создание общих активов и до
+    до того, как закодировать такие базовые вещи, как движение и счет.</p>
+  <p>Создание игр с помощью <span class="notranslate">GameMaker Studio 2</span> - концептуально довольно простое и понятное дело, если следовать следующим общим шагам:</p>
+  <ul class="colour">
+    <li>Создайте активы <strong>изображений </strong>( <a class="glossterm" data-glossterm="спрайты" href="#">спрайты</a>, <a class="glossterm" data-glossterm="комплекты плитки" href="#">наборы плиток</a>, <a class="glossterm" data-glossterm="шрифт" href="#">шрифты</a>)
+      и добавьте их в Браузер активов.</li>
+    <li>Создайте активы <strong>объектов </strong>для представления вещей, которые вы хотите использовать в своей игре, и назначьте им необходимые активы изображений.</li>
+    <li>Запрограммируйте эти объекты на выполнение определенных действий в ответ на определенные <strong>события</strong>.</li>
+    <li>Добавьте <strong>экземпляры </strong>этих объектов в <strong>комнату </strong>, где они будут выполнять свои программы.</li>
+  </ul>
+  <p>Мы рассмотрим специфику каждого из перечисленных пунктов на следующих страницах, но это общий порядок действий, необходимых для создания игры. Важно отметить, что вашими основными &quot;строительными блоками&quot; для игры
+    всегда будут спрайты, объекты и комнаты, хотя существует ряд вспомогательных активов, которые также могут быть использованы для добавления дополнительной функциональности или поведения этих элементов (например, такие как <strong> <a class="glossterm" data-glossterm="шейдеры" href="#"><span class="notranslate">шейдеры</span></a></strong>,
+    или <strong> <a class="glossterm" data-glossterm="временные шкалы" href="#">временные шкалы</a></strong>).</p>
+  <p>Теперь, прежде чем мы перейдем к более подробному объяснению каждой из этих вещей, мы быстро обрисуем, как GameMaker <span class="notranslate">Studio 2</span> превратит вышеперечисленные строительные блоки в вашу игру. В основном все происходит в так называемом <strong>игровом цикле</strong>,
+    скорость которого измеряется в <strong> кадрах в секунду</strong>, а один &quot;кадр&quot; в <strong>GameMaker </strong>называется шагом. По умолчанию частота кадров в секунду (или <strong>FPS</strong>) равна 60, то есть за каждую секунду <span class="notranslate">GameMaker</span>
+    Studio 2 запустит цикл игры 60 раз, и на каждом шаге (цикле, кадре) будет происходить ряд событий, и игра будет развиваться.</p>
+  <p>Чтобы помочь понять это, давайте представим, что у вас есть персонаж, которого вы хотите перемещать по игровой комнате. Вы создадите <em>спрайт </em>для этого персонажа, затем создадите <em>объект </em>и присвоите ему спрайт, а в объект добавите
+   <em>событие </em>под названием <strong>Step Event</strong>. В этом событии вы прикажете персонажу переместиться вправо на 2 пикселя. Затем вы поместите <strong>экземпляр </strong>этого объекта в игровую комнату, и когда вы запустите игру, этот экземпляр будет
+    начнет перемещаться влево на 2 пикселя каждый шаг (событие Step Event выполняется один раз на каждый шаг игры), так что за 1 секунду объект переместится на 120 пикселей вправо.</p>
+  <p>В приведенном выше примере мы говорим о том, что нужно указать объекту двигаться влево, но как это сделать? Ну, это делается с помощью <strong>программы </strong>, которую мы пишем, используя либо <a href="../Drag_And_Drop/Drag_And_Drop_Index.htm"><strong><span class="notranslate">Drag and Drop™</span></strong></a>    (визуальный язык сценариев) или <strong><a href="../GameMaker_Language/GameMaker_Language_Index.htm"><span class="notranslate">GML</span></a> </strong>(язык <strong>создания</strong>игр). Какой из них вы используете, зависит от вас и от того, как вы хотите
+    но, используя их, вы <em>программируете </em>свою игру. В следующем разделе мы рассмотрим это более подробно, но прежде чем продолжить, вы можете посмотреть следующий видеоурок, который иллюстрирует некоторые вещи, о которых мы говорили выше, и подготовит вас к программированию игры.
+    и подготовит вас к изучению следующих разделов:</p>
+  <p><iframe src="https://www.youtube.com/embed/ubvrKQlI_1A" allowfullscreen="" class="center"></iframe></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Content.htm">Указатель</a></div>
+        <div style="float:right">Следующее: <a href="What_Is_Programming_.htm">Что такое программирование?</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Quick Start Guide
+-->
+  <!-- TAGS
+quick_start
+-->
+
+</body></html>

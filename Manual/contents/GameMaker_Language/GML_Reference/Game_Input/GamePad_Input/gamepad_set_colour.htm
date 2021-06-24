@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_set_colour</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_set_colour" />
+  <meta name="rh-index-keywords" content="gamepad_set_colour" />
+  <meta name="search-keywords" content="gamepad_set_colour,gamepad_set_color" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_set_colour</h1>
+  <p>Эта функция может использоваться для установки цвета светодиодов в контроллере PlayStation. Вы указываете слот устройства для установки, а затем задаете цвет, который может быть любой из <a href="../../Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">цветовых констант</a> или значением цвета, созданным с помощью специальных цветовых функций, или HEX-значением (например, $FFFFFFF).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gamepad_set_colour(device, color);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>устройство</td>
+        <td>Какой &quot;слот&quot; устройства геймпада установить.</td>
+      </tr>
+      <tr>
+        <td>цвет</td>
+        <td>Цвет для использования.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">если здоровье &lt; 10<br> {
+    <br> gamepad_set_colour(0, c_red);<br> }
+  </p>
+  <p>Приведенный выше код установит красный цвет светодиодов контроллера PlayStation, если переменная <tt>здоровья</tt> упадет ниже 10.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Gamepad_Input.htm">Вход геймпада</a></div>
+        <div style="float:right">Далее: <a href="gamepad_set_option.htm"> gamepad_set_option </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_set_colour
+gamepad_set_color
+-->
+  <!-- TAGS
+gamepad_set_colour
+-->
+
+</body></html>

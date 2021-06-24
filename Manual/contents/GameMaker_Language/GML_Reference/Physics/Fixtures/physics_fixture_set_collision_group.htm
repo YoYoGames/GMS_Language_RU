@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_collision_group</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_collision_group" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_collision_group" />
+  <meta name="search-keywords" content="physics_fixture_set_collision_group" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_set_collision_group</h1>
+  <p>После создания приспособления можно определить его как часть группы столкновений. Это означает, что вы можете указать экземплярам с этим приспособлением <i>всегда</i> сталкиваться или <i>никогда не</i> сталкиваться с другими экземплярами, которые имеют привязанные к ним приспособления с
+    той же группой столкновений. Значения, которые можно присвоить, основаны на положительных или отрицательных числах, при этом 0 является значением по умолчанию (это означает, что экземпляр с этой настройкой приспособления игнорируется, если для него не создано событие столкновения). Вот
+    изображение для пояснения:</p>
+  <p><img alt="Collision groups example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_set_collision_group_image.png">Как вы видите, настройка групп столкновений может быть очень полезной для создания сложных
+    физических тел, которые взаимодействуют с окружающим их физическим миром, но не друг с другом. Однако следует отметить, что из-за сложности вычисления столкновений на основе подобных групп, рекомендуется стараться свести к минимуму количество
+    групп, используемых в одной комнате, до абсолютного минимума.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_fixture_set_collision_group(fixture, group)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>приспособление</td>
+        <td>привязываемое приспособление</td>
+      </tr>
+      <tr>
+        <td>группа</td>
+        <td>группа, к которой относится данное приспособление (либо положительное значение, либо 0, либо отрицательное значение)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">physics_fixture_set_collision_group(fix_Wheel, -1);</p>
+  <p>Приведенный выше код установит приспособление, проиндексированное в переменной &quot;fix_Wheel&quot;, в группу &quot;-1&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Fixtures.htm">Приспособления</a></div>
+        <div style="float:right">Далее: <a href="physics_fixture_delete.htm">physics_fixture_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_collision_group
+-->
+  <!-- TAGS
+physics_fixture_set_collision_group
+-->
+</body>
+</html>

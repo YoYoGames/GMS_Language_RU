@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skeleton_attachment_create_colour</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_attachment_create_colour" />
+  <meta name="rh-index-keywords" content="skeleton_attachment_create_colour,skeleton_attachment_create_color" />
+  <meta name="search-keywords" content="skeleton_attachment_create_colour,skeleton_attachment_create_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skeleton_attachment_create_colour</h1>
+  <p>При создании скелетного анимационного спрайта можно назначить <i>слоты для вложений</i> и <i>вложения</i>, которые будут в них находиться. Это просто изображения (спрайты), которые отделены от анимации, но при прикреплении будут двигаться вместе с костью, к которой они прикреплены.
+    к которой они прикреплены. Обычно вы назначаете эти вложения в программе анимации (Spine), но с помощью этой функции вы можете создавать свои собственные вложения во время выполнения, используя актив спрайта из вашей игры. функция требует, чтобы вы дали вложению имя (как
+    строка), а затем установить <a href="../../Sprite_Instance_Variables/sprite_index.htm"><tt>sprite_index</tt></a> и <a href="../../Sprite_Instance_Variables/image_index.htm"><tt>индекс_изображения</tt></a> для использования, а также начало координат x и y (которое может
+    отличаться от тех, которые заданы в свойствах спрайта), а также задать любые трансформации, которые будут применены к изображению при вложении, цвет, который будет смешиваться с изображением, и его альфа (прозрачность).
+    значение. Если вложение было успешно создано, функция вернет <tt>1</tt>, а если нет (вы указали неверный индекс спрайта или базовый спрайт не является спрайтом Spine), то вернется <tt>-1</tt>.</p>
+  <p>Стоит отметить, что экземпляр спрайта может иметь настройки цвета смешивания и альфа (<a href="../../Sprite_Instance_Variables/image_blend.htm"><tt>image_blend</tt></a> и <a href="../../Sprite_Instance_Variables/image_alpha.htm"><tt>изображение_альфа</tt></a>),
+    как и слот вложения (см. функцию <a href="../Slots/skeleton_slot_colour_set.htm"><tt>skeleton_slot_colour_set()</tt></a>), и поэтому окончательный цвет и альфа, которые будет иметь назначенный прикрепляемый спрайт для слота, будет представлять собой композицию
+    всех этих значений.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">skeleton_attachment_create_colour(name, sprite, ind, xorigin, yorigin, xscale, yscale, rot, color, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>имя</td>
+        <td>Имя (в виде строки) создаваемого вложения.</td>
+      </tr>
+      <tr>
+        <td>спрайт</td>
+        <td>Индекс sprite_index для получения изображения вложения.</td>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс_изображения для получения изображения вложения.</td>
+      </tr>
+      <tr>
+        <td>xorigin</td>
+        <td>Начало координат x для используемого изображения.</td>
+      </tr>
+      <tr>
+        <td>yorigin</td>
+        <td>Начало координат y для используемого изображения.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>Горизонтальное масштабирование изображения в виде множителя: 1 = нормальное масштабирование, 0,5 - половина и т.д...</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>Вертикальное масштабирование изображения в виде множителя: 1 = нормальное масштабирование, 0,5 - половина и т.д....</td>
+      </tr>
+      <tr>
+        <td>гниение</td>
+        <td>Поворот изображения: 0 = нормально, 90 = повернуть на 90° против часовой стрелки и т.д.</td>
+      </tr>
+      <tr>
+        <td>Цвет</td>
+        <td>Используемое значение цвета (константа, целое число или шестнадцатеричное значение).</td>
+      </tr>
+      <tr>
+        <td>Альфа</td>
+        <td>Используемое значение альфа (от 0 до 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">1 - если успешно, -1 - если нет</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">skeleton_attachment_create_colour(&quot;меч&quot;, spr_Weapons, 0, 0, 80, 1, 1, 90, c_red, 1);<br> skeleton_attachment_create_colour(&quot;нож&quot;, spr_Weapons, 1, 0, 45, 1, 1, 90, c_yellow, 1);<br> skeleton_attachment_create_colour(&quot;арбалет&quot;,
+    spr_Weapons, 0, 10, 30, 1, 1, 0, c_white, 0.5);<br> skeleton_attachment_set(&quot;slot_leftHand&quot;, choose(&quot;sword&quot;, &quot;knife&quot;, &quot;crossbow&quot;));</p>
+  <p>Приведенный выше код проверит текущее назначенное имя вложения для слота с именем &quot;slot_leftHand&quot;, и если будет возвращена пустая строка, то будет прикреплен новый спрайт.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Attachments.htm">Вложения</a></div>
+        <div style="float:right">Далее: <a href="../Bones/skeleton_bone_data_get.htm">skeleton_bone_data_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_attachment_create_colour
+skeleton_attachment_create_color
+-->
+  <!-- TAGS
+skeleton_attachment_create_colour
+-->
+</body>
+</html>

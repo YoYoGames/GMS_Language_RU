@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_add" />
+  <meta name="rh-index-keywords" content="sprite_add" />
+  <meta name="search-keywords" content="sprite_add" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_add</h1>
+  <p>С помощью этой функции вы можете добавить изображение в спрайт, загрузив его из внешнего источника. Загружаемый файл изображения <b>всегда</b> должен быть в формате <tt>*.png</tt>, <tt>*.gif</tt>, <tt>*.jpg/jpeg</tt> или <tt>*.json</tt><tt>(</tt> файлы<tt>*json</tt> используются для загрузки <a href="../Skeletal_Animation/Skeletal_Animation.htm">спрайтов скелетной анимации</a>, созданных с помощью Spine). Функция возвращает новый индекс спрайта, который затем должен использоваться во всем дальнейшем коде, относящемся к спрайту. Если
+    вы используете эту функцию в HTML5 или получаете изображение из URL, эта функция также генерирует асинхронное событие <b>Image Loaded</b>. Смотрите <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Image_Loaded.htm">эту страницу</a> для
+    дополнительную информацию.</p>
+  <p>Все изображения, которые должны быть превращены в анимированные спрайты - за исключением <tt>*.gif</tt> (см. ниже) - должны иметь формат &quot;strip&quot; (см. рисунок ниже) и будут разбиты на указанное количество суб-изображений по правилу sprite <b>width = strip width / sub images</b>.</p>
+  <p><img alt="Example Sprite Strip" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_strip.png" /></p>
+  <p>Как видно на изображении выше, спрайт был помещен на темно-фиолетовый фон, и это можно убрать, установив аргумент &quot;removeback&quot; в true. Это работает путем проверки <i>левого нижнего</i> пикселя спрайта на предмет
+    и затем использует его в качестве цвета для удаления. Например, на изображении выше, если бы цвет левого нижнего пикселя был зеленым, все зеленые части спрайта были бы удалены, а остальной фиолетовый фон проигнорирован.</p>
+  <p>Если вы выбрали опцию &quot;removeback&quot;, вы также можете захотеть, чтобы GameMaker <span class="notranslate">Studio 2 сгладила</span> края спрайта, установив аргумент &quot;smooth&quot; в true. При этом создается полупрозрачная граница по краям спрайта.
+    спрайта после удаления его фона.</p>
+  <p>Наконец, вы можете указать <i>начало</i> координат x и y для спрайта. Это точка, в которой спрайт &quot;фиксируется&quot; на экземпляре, который его использует, и всегда вычисляется относительно левого верхнего угла 0,0 одного подизображения спрайта. Таким образом,
+    например, спрайт размером 32 x 32 пикселя с этими значениями, установленными на (16,16), будет иметь начало в центре.</p>
+  <p>Если вы добавляете изображение формата <tt>*.gif</tt>, то вам нужно указать только имя файла и номер изображения (который должен быть равен 1 для первого кадра), а все остальные аргументы можно оставить равными 0, отметив, что <b>будет загружено только первое изображение GIF</b>.
+    Для <tt>*.json</tt> спрайтов номер изображения должен быть равен 1, а параметры &quot;removeback&quot; и &quot;smooth&quot; будут проигнорированы.</p>
+  <p>По умолчанию все новые спрайты имеют свои ограничивающие рамки, рассчитываемые автоматически (точная ограничивающая рамка зависит от размера и прозрачности спрайта), однако вы можете захотеть настроить это, в этом случае вам также следует использовать функцию
+    <a href="sprite_collision_mask.htm"><tt>sprite_collision_mask()</tt></a>.</p>
+  <p>Следует отметить, что память, используемая при добавлении спрайта таким способом, будет больше, чем вы ожидаете. Это связано с тем, что <span class="notranslate">GameMaker Studio 2</span> будет хранить спрайт в виде текстурной страницы <i>, а</i> также в памяти GPU, поэтому общий объем памяти
+    будет больше, чем можно было бы ожидать для файла изображения того же спрайта.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Когда вы загружаете спрайт в <span class="notranslate">GameMaker Studio 2</span>, вы должны не забыть удалить его снова (с помощью функции <a href="sprite_delete.htm"><tt>sprite_delete()</tt></a>), когда он больше не нужен, иначе существует риск утечки памяти, что приведет к замедлению и
+    и в конечном итоге приведет к краху вашей игры.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: На <b><span class="notranslate">iOS</span></b>если вы загружаете включенный файл из папки, т.е. с путем типа &quot;<span style="font-size:1px;"><tt>Backgrounds/background1.png</tt></span>&quot;, вам НЕ нужно указывать папку в качестве части
+    путь и достаточно просто указать имя файла. На всех других платформах вы должны указать папку(и) как часть пути к файлу.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: В <b>HTML5</b>, если вы загружаете спрайт с безопасного сервера, вам может потребоваться установить тип cross-origin и использовать относительный путь вместо абсолютного. См. <span style="font-size:1px;"><a href="../../../Asynchronous_Functions/HTTP/http_set_request_crossorigin.htm"><tt style="font-size: 14px">http_set_request_crossorigin()</tt></a></span> для
+    более подробную информацию.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">sprite_add(fname, imgnumb, removeback, smooth, xorig, yorig);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>Имя (строковый путь к файлу) файла для добавления.</td>
+      </tr>
+      <tr>
+        <td>imgnum</td>
+        <td>Используется для указания количества подизображений (1 для одиночного изображения или для <tt>*.gif</tt>).</td>
+      </tr>
+      <tr>
+        <td>удалить назад</td>
+        <td>Указывает, делать ли все пиксели с цветом фона (левый-нижний пиксель) прозрачными.</td>
+      </tr>
+      <tr>
+        <td>гладкий</td>
+        <td>Указывает, следует ли сглаживать края, если они прозрачные.</td>
+      </tr>
+      <tr>
+        <td>xorig</td>
+        <td>Укажите x-позицию начала координат в спрайте.</td>
+      </tr>
+      <tr>
+        <td>yorig</td>
+        <td>Укажите положение начала координат по оси y в спрайте.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (значение идентификатора спрайта)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">spr = sprite_add(&quot;player_5.png&quot;, 16, true, true, 0, 0);</p>
+  <p>Приведенный выше код загружает спрайт в игру и сохраняет его индекс в переменной &quot;spr&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Manipulation.htm">Манипуляция спрайтом</a></div>
+        <div style="float:right">Далее: <a href="sprite_replace.htm">sprite_replace</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_add
+-->
+  <!-- TAGS
+sprite_add
+-->
+</body>
+</html>

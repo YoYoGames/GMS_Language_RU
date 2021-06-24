@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Социальная</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the Social async event." />
+  <meta name="rh-index-keywords" content="Objects - Async Social Event" />
+  <meta name="search-keywords" content="Social,ev_social" />
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Социальная</h1>
+  <p><img alt="Social Event" class="center" src="../../../assets/Images/Asset_Editors/Async_Social.png">Это событие может быть вызвано только <a class="glossterm" data-glossterm="обратный звонок" href="#">обратными вызовами</a>различных
+    определенных <strong>социальных функций</strong> и <strong>UWP Xbox Live Functions</strong> и возвращает <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">карту DS</a>, хранящуюся в переменной <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span class="inline">async_load</span></a>,
+    содержащую различные пары ключ/значение в зависимости от обратного вызова функции, вызвавшей событие.</p>
+  <p>Карта DS будет содержать ряд ключей, наиболее важным из которых является ключ &quot;<span class="inline">id</span>&quot;. Он возвращает константу, которую затем можно проверить в коде, чтобы определить, какой из множества обратных вызовов получило событие.
+    Разобрав этот ключ и сравнив возвращаемое значение с доступными константами, можно продолжить извлечение остальной информации из карты.</p>
+  <p>На страницах функций <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Achievements_And_Leaderboards/Achievements_And_Leaderboards.htm">Достижений и Лидербордов</a> в разделе Справочники подробно описаны функции и обратные вызовы
+    а также константы, используемые для запуска этого события, но есть также определенные обстоятельства, при которых оно будет запущено без вызова функции из запущенной игры:</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">когда ваша игра запускается с панели управления ОС</li>
+    <li class="dropspot">при выполнении задания</li>
+    <li class="dropspot">когда другой игрок завершает задание</li>
+    <li class="dropspot">когда игра запускается с приборной панели ОС путем выбора задачи</li>
+  </ul>
+  <p>Любой из вышеперечисленных обратных вызовов вызовет социальное событие, и будет создана карта <span class="inline">async_load</span> со следующими данными (обратите внимание, что для определения каждой причины события используется разное значение ключа &quot;<span class="inline">id</span>&quot;).
+    различных причин, по которым было вызвано событие, но все остальное содержимое карты одинаково):</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">id</span>&quot; - Значение этого ключа будет зависеть от типа обратного вызова, запускающего событие. это может быть одна из этих констант:</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_challenge_received</span></td>
+        <td>Получен вызов</td>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_challenge_completed</span></td>
+        <td>Задача выполнена.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_challenge_completed_by_remote</span></td>
+        <td>Задача была решена другим игроком.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_challenge_launched</span></td>
+        <td>Игра была запущена с приборной панели ОС с заданной задачей.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="dropspot"> </p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">playerid</span>&quot; - Идентификатор игрока для вызова.</li>
+    <li class="dropspot">&quot;<span class="inline">issuerid</span>&quot; - Идентификатор лица, выдавшего вызов.</li>
+    <li class="dropspot">&quot;<span class="inline">state</span>&quot; - Состояние вызова, которое будет иметь значение от 0 до 3 (в виде строки) для недействительного, ожидающего, завершенного или отклоненного.</li>
+    <li class="dropspot">&quot;<span class="inline">message</span>&quot; - Текстовое сообщение для вызова.</li>
+    <li class="dropspot">&quot;<span class="inline">issueddate</span>&quot; - Дата выдачи вызова</li>
+    <li class="dropspot">&quot;<span class="inline">completeddate</span>&quot; - Дата завершения вызова.</li>
+    <li class="dropspot">&quot;<span class="inline">type</span>&quot; - Тип брошенного вызова. Может быть одной из двух констант:</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_type_score_challenge</span></td>
+        <td>Задача, основанная на значении очков.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_type_achievement_challenge</span></td>
+        <td>Вызов, основанный на достижении.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="dropspot"> </p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">identifier</span>&quot; - Идентифицирующая строка для вызова.</li>
+    <li class="dropspot">&quot;<span class="inline">score</span>&quot; - Счет связан с задачей.</li>
+  </ul>
+  <p>Ниже приведен небольшой фрагмент кода в качестве примера использования:</p>
+  <p class="code">var ident = ds_map_find_value(async_load, &quot;id&quot; );<br> if ident == achievement_challenge_completed;<br> {<br> player_id = ds_map_find_value(async_load, &quot;playerid&quot;);<br> issuer_id = ds_map_find_value(async_load, &quot;issuerid&quot;); <br> state = ds_map_find_value(async_load, &quot;state&quot;);<br> date_completed = ds_map_find_value(async_load, &quot;completeddate&quot;);<br> date_issued = ds_map_find_value(async_load, &quot;issueddate&quot;);<br> ach_type = ds_map_find_value(async_load,
+    &quot;type&quot;);<br> ach_ident = ds_map_find_value(async_load, &quot;identifier&quot;);<br> ach_score = ds_map_find_value(async_load, &quot;score&quot;);<br> }</p>
+  <p>Информацию об этом событии в сочетании с целью UWP и функциями XBox Live можно найти на следующей странице:</p>
+  <ul class="colour">
+    <li><a href="../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Match_Making/Match_Making.htm">UWP и XBox Live - создание матчей</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Async_Events.htm">Асинхронные события</a></div>
+        <div style="float:right">Следующий: <a href="Steam.htm"><span class="notranslate">Пар</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous Social Event
+achievement_challenge_received
+achievement_challenge_completed_by_remote
+achievement_challenge_completed
+achievement_challenge_launched
+achievement_type_score_challenge
+achievement_type_achievement_challenge
+ev_social
+-->
+  <!-- TAGS
+ev_social
+-->
+
+</body></html>

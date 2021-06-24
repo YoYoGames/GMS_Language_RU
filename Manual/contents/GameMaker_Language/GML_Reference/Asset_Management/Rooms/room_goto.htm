@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>комната_то</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_goto" />
+  <meta name="rh-index-keywords" content="room_goto" />
+  <meta name="search-keywords" content="room_goto" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>комната_то</h1>
+  <p>Эта функция позволяет перейти к любой комнате в вашем игровом проекте, созданной с помощью кода или в Asset Browser. Вы передаете индекс комнаты (хранится в переменной для имени комнаты или как переменная, возвращаемая из функции <a href="room_add.htm"><tt>room_add()</tt></a>).
+    Обратите внимание, что комната не изменится до конца события, в котором была вызвана функция, поэтому любой код после ее вызова будет выполняться в том же событии. Оговорка заключается в том, что любой код, создающий экземпляры, вызванный после вызова функции
+    после этого, <i>не</i> создаст экземпляр и поэтому должен быть вызван до изменения комнаты. Эта функция также вызовет событие <b>Room End</b>.</p>
+  <p class="note"><strong>Примечание</strong>: Идентификаторы комнат не основаны на их порядке в браузере активов или менеджере комнат, поэтому не следует напрямую указывать числовое значение. Вместо этого используйте <a class="glossterm" data-glossterm="постоянная" href="#">константу</a> комнаты для
+    актива, на который вы хотите сослаться (это просто его имя) или получить его через функцию.</p>
+  <h4>Синтаксис:</h4>
+  <p class="code">room_goto(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс комнаты, в которую нужно перейти.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">switch (global.level)<br> {
+    <br> case 0: room_goto(rm_level1); break;<br> case 1: room_goto(rm_level2); break;<br> case 2: room_goto(rm_level3); break;<br> }
+  </p>
+  <p>Приведенный выше код проверит глобальную переменную и изменит комнату в зависимости от значения, которое она содержит.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Rooms.htm">Номера</a></div>
+        <div style="float:right">Далее: <a href="room_goto_next.htm">room_goto_next</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_goto
+-->
+  <!-- TAGS
+room_goto
+-->
+
+</body></html>

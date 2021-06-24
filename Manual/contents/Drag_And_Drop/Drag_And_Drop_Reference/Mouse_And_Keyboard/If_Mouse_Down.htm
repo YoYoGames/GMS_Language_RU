@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Если мышь опущена</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Mouse Down action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Mouse Down" />
+  <meta name="search-keywords" content="If Mouse Down Action" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Mouse Down Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_Down.png"> If Mouse Down</h1>
+  <p>С помощью этого действия вы можете проверить, удерживается ли выбранная кнопка в данный момент. Действие будет возвращать <tt>true</tt> на каждом шаге, когда кнопка удерживается нажатой, и <tt>false</tt> в противном случае, хотя если вы нажмете модификатор <tt>not</tt>, то сможете проверить, <i>не</i> удерживается ли кнопка, т.е. действие будет возвращать <tt>true</tt>, когда кнопка не нажата, и <tt>false</tt>, если нажата. Если вам нужно проверить только одно нажатие кнопки, используйте действие
+   <a href="If_Mouse_Pressed.htm">If Mouse Pressed</a>.</p>
+  <p>Обратите внимание, что для добавления действий в блок &quot;if&quot;, их следует опустить сбоку от действия, как показано на изображении ниже:</p>
+  <p><img alt="If Mouse Down drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_If_Mouse_DownDrop.png">Эти действия теперь будут выполняться, если &quot;if&quot; оценивается в true,
+    в то время как любые действия, отброшенные в другом месте, будут выполняться после блока &quot;if&quot;.</p>
+  <p> </p>
+  <h4>Синтаксис действия:</h4>
+  <p><img alt="If Mouse Down Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_KeyboardMouse_Down.png" /></p>
+  <h4>Аргументы:</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>Кнопка мыши</td>
+        <td>Название кнопки мыши для проверки (левая, средняя, правая).</td>
+      </tr>
+      <tr>
+        <td>Не</td>
+        <td>Отрицание проверки (истина становится ложью и наоборот)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p><img alt="If Mouse Down Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/e_KeyboardMouse_Down.png">Приведенный выше код блока действий опрашивает состояние кнопки мыши на каждом шаге и, если кнопка удерживается, проверяет начальное нажатие кнопки мыши.
+    удерживается нажатой, он проверяет начальное нажатие кнопки мыши вниз. Если проверка <tt>истинна</tt> при первоначальном нажатии кнопки вниз, устанавливается скорость экземпляра, затем, пока кнопка нажата, смешивание спрайта изменяется на красное. Если мышь не удерживается нажатой, то
+    проверка выполняется при отпускании мыши, чтобы сбросить цвет смешивания на белый и установить скорость на 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Mouse_And_Keyboard_Actions.htm">Действия с мышью и клавиатурой</a></div>
+        <div style="float:right">Следующий: <a href="If_Mouse_Released.htm">Если мышь освободится</a> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Mouse Down
+-->
+  <!-- TAGS
+action_if_mouse_down
+-->
+</body>
+</html>

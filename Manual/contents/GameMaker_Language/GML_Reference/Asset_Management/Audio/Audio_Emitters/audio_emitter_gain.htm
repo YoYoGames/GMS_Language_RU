@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_emitter_gain</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_emitter_gain" />
+  <meta name="rh-index-keywords" content="audio_emitter_gain" />
+  <meta name="search-keywords" content="audio_emitter_gain" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_emitter_gain</h1>
+  <p>Эта функция устанавливает максимальное усиление (громкость) для звука. Воспринимаемая громкость звука может меняться в зависимости от <a href="audio_emitter_falloff.htm">величины спада</a> и положения относительно <i>слушателя</i>,
+    но при установке усиления с помощью этой функции полная громкость никогда не превысит заданного значения усиления. На изображении ниже показано, как усиление влияет на громкость излучателя, когда значение fall-off больше 0:</p>
+  <p><img alt="Audio Gain Diagram" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Gain.png">Эта функция изменит громкость звука во время его воспроизведения, а также всех последующих звуков, воспроизводимых
+    через данный эмиттер. Обратите внимание, что на некоторых платформах вы можете иметь коэффициент усиления больше 1, хотя значение 1 считается &quot;полной громкостью&quot;, а большее значение может привести к клиппированию или искажению звука.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ: </b>на конечную громкость также будет влиять глобальное усиление звука, которое было установлено функцией <span style="font-size:1px;"><a href="../audio_master_gain.htm"><tt style="font-size: 14px">audio_master_gain()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_emitter_gain(emitter, gain);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>эмиттер</td>
+        <td>Индекс излучателя, который нужно изменить.</td>
+      </tr>
+      <tr>
+        <td>усиление</td>
+        <td>Максимальное усиление (по умолчанию 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if up<br> {
+    <br> gain += 0.05;<br> if gain &gt;= 1 up = false;<br> }
+    <br> else
+    <br> {
+    <br> gain += 0.05;<br> if gain &lt;= 0 up = true;<br> }
+    <br> audio_emitter_gain(s_emit, gain);</p>
+  <p>Приведенный выше код устанавливает переменную &quot;gain&quot; в различные значения, а затем использует эту же переменную для установки усиления эмиттера, индексированного в переменной &quot;s_emit&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio_Emitters.htm">Аудиоизлучатели</a></div>
+        <div style="float:right">Далее: <a href="audio_emitter_pitch.htm">audio_emitter_pitch</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_emitter_gain
+-->
+  <!-- TAGS
+audio_emitter_gain
+-->
+</body>
+</html>

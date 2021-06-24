@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>нарисовать_спрайт_общий</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_general" />
+  <meta name="rh-index-keywords" content="draw_sprite_general" />
+  <meta name="search-keywords" content="draw_sprite_general" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>нарисовать_спрайт_общий</h1>
+  <p>Эта функция объединяет функцию <a href="draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a> с функцией <a href="draw_sprite_part.htm"><tt>draw_sprite_part()</tt></a>но добавляет некоторые дополнительные параметры смешивания, чтобы каждый угол
+    конечной части спрайта может быть смешана с отдельным цветом.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Смешивание цветов рекомендуется только для HTML5-цели, когда включен WebGL, хотя вы можете установить цвет смешивания, если он не включен, и он будет смешивать спрайт как обычно. Однако при таком смешивании создается дубликат
+    спрайта, который затем сохраняется в кэше и используется при необходимости. Это далеко не оптимально, и если вы используете многократное изменение цвета, это замедлит производительность вашей игры, если вы не активируете WebGL. если вы не хотите использовать WebGL, то вы можете установить
+    размер кэша шрифтов, чтобы попытаться ограничить это, если потребуется, используя функцию <span style="font-size:1px;"><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><tt style="font-size: 14px">sprite_set_cache_size()</tt></a></span>.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция может работать не так, как ожидается, при использовании спрайтов со скелетной анимацией, и вы можете обнаружить, что функция рисует только первый кадр позы по умолчанию. Вместо нее следует использовать функции <tt>draw_skeleton_*</tt>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_sprite_general(sprite, subimg, left, top, width, height, x, y, xscale, yscale, rot, c1, c2, c3, c4, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>спрайт</td>
+        <td>Индекс спрайта для рисования.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>Подimg (кадр) спрайта для рисования (image_index или -1 соотносятся с текущим кадром анимации в объекте).</td>
+      </tr>
+      <tr>
+        <td>слева</td>
+        <td>Позиция x на спрайте левого верхнего угла области для рисования.</td>
+      </tr>
+      <tr>
+        <td>топ</td>
+        <td>Позиция y на спрайте левого верхнего угла области для рисования.</td>
+      </tr>
+      <tr>
+        <td>ширина</td>
+        <td>Ширина области для рисования.</td>
+      </tr>
+      <tr>
+        <td>высота</td>
+        <td>Высота области для рисования.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Координата x места рисования спрайта.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Координата y места рисования спрайта.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>Горизонтальное масштабирование спрайта в виде множителя: 1 = нормальное масштабирование, 0.5 - половина и т.д....</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>Вертикальное масштабирование спрайта в виде множителя: 1 = нормальное масштабирование, 0.5 - половина и т.д....</td>
+      </tr>
+      <tr>
+        <td>гниение</td>
+        <td>Поворот спрайта. 0=нормальный, 90=повернутый на 90 градусов против часовой стрелки и т.д.</td>
+      </tr>
+      <tr>
+        <td>c1</td>
+        <td>Цвет, которым будет смешиваться левая верхняя область спрайта.</td>
+      </tr>
+      <tr>
+        <td>c2</td>
+        <td>Цвет, которым будет смешиваться правая верхняя область спрайта.</td>
+      </tr>
+      <tr>
+        <td>c3</td>
+        <td>Цвет, которым будет смешиваться правая нижняя область спрайта.</td>
+      </tr>
+      <tr>
+        <td>c4</td>
+        <td>Цвет, которым будет смешиваться левая нижняя область спрайта.</td>
+      </tr>
+      <tr>
+        <td>альфа</td>
+        <td>Альфа спрайта (от 0 до 1, где 0 - прозрачный, а 1 - непрозрачный).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_sprite_general(sprite_index, image_index, 8, 8, sprite_width-16, sprite_height-16, x, y, 2, 0.5, 180, c_white, c_white, c_black, c_black, 1);</p>
+  <p>При этом будет нарисован назначенный экземпляр спрайта (sprite_index) и его текущий кадр анимации (image_index), но при этом будет сбрито 8px поле со всех четырех сторон спрайта. Он будет растянут на двойную ширину, но половину своей обычной высоты.
+    Он будет непрозрачным и перевернутым. Верхняя область спрайта будет белой и, следовательно, нормальной, но нижняя область будет черной, то есть спрайт будет переходить от нормального силуэта к силуэту вниз в плавном градиенте.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprites_And_Tiles.htm">Спрайты и плитки</a></div>
+        <div style="float:right">Далее: <a href="draw_sprite_part.htm">нарисовать_часть</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_general
+-->
+  <!-- TAGS
+draw_sprite_general
+-->
+</body>
+</html>

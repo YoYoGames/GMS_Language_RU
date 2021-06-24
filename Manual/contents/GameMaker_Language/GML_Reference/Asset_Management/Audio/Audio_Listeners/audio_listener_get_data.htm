@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_listener_get_data</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_listener_get_data" />
+  <meta name="rh-index-keywords" content="audio_listener_get_data" />
+  <meta name="search-keywords" content="audio_listener_get_data" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_listener_get_data</h1>
+  <p>Эта функция создаст <a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">карту DS</a> и заполнит ее значениями позиции, скорости и ориентации для заданного слушателя. По умолчанию индекс слушателя равен 0, но вы можете использовать функцию
+    <a href="audio_get_listener_info.htm"><tt>audio_get_listener_info()</tt></a> для получения различных индексов, доступных для целевой платформы. Если вы укажете неправильный индекс слушателя, функция вернет -1.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ: </b>Вы несете ответственность за уничтожение возвращенной<span> карты DS </span>с помощью соответствующей функции.</p>
+  <p>Карта DS будет содержать следующие ключи:</p>
+  <ul class="colour">
+    <li>&quot; x&quot; - Позиция x слушателя</li>
+    <li>&quot; y&quot; - Положение слушателя по оси y</li>
+    <li>&quot; z&quot; - Положение слушателя по оси z</li>
+    <li>&quot; vx&quot; - скорость слушателя по оси x</li>
+    <li>&quot; vy&quot; - скорость слушателя по оси y</li>
+    <li>&quot; vz&quot; - скорость слушателя по оси z</li>
+    <li>&quot; lookat_x<strong>&quot; -</strong> x-компонент вектора взгляда слушателя</li>
+    <li>&quot; lookat_y<strong>&quot; -</strong> Компонент y вектора взгляда слушателя</li>
+    <li>&quot; lookat_z<strong>&quot; -</strong> Компонент z вектора взгляда слушателя.</li>
+    <li>&quot; up_x&quot;<strong>-</strong> Компонент x вектора вверх слушателя</li>
+    <li>&quot; up_y&quot;<strong>-</strong> Компонент y вектора вверх слушателя</li>
+    <li>&quot; up_z&quot;<strong>-</strong> компонент z вектора вверх слушателя</li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_listener_get_data(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Слушатель, для которого необходимо получить данные (по умолчанию 0).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">ds_map</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var num = audio_get_listener_count();<br> for(var i = 0; i &lt; num; ++i;)<br> {
+    <br> var info = audio_get_listener_info(i);<br> var data = audio_listener_get_data(info[? &quot;index&quot;]);<br> if data[? &quot;x&quot;] != 0<br> {
+    <br> audio_listener_set_position(info[? &quot;index&quot;], 0, 0, 0, 0);<br> }
+    <br> ds_map_destroy(info);
+    <br> ds_map_destroy(data);
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет количество доступных слушателей, затем перебирает их и, если их положение x не равно 0, устанавливает их положение в 0, 0, 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio_Listeners.htm">Слушатели аудио</a></div>
+        <div style="float:right">Далее: <a href="audio_listener_position.htm">audio_listener_set_position</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_listener_get_data
+-->
+  <!-- TAGS
+audio_listener_get_data
+-->
+</body>
+</html>

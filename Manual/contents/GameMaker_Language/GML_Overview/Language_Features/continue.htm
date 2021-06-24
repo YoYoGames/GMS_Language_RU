@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>продолжить</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the continue function" />
+  <meta name="rh-index-keywords" content="continue" />
+  <meta name="search-keywords" content="continue" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>продолжить</h1>
+  <p>Оператор <tt>continue</tt> имеет следующий основной синтаксис:</p>
+  <p class="code">продолжать;</p>
+  <p>Если используется внутри оператора, который формирует цикл (<a href="for.htm"><tt>для</tt></a>, <a href="repeat.htm"><tt>повторить</tt></a>, <a href="while.htm"><tt>while</tt></a> или <a href="do___until.htm"><tt>do / until</tt></a>), он немедленно завершит текущую
+   <a class="glossterm" data-glossterm="итерация" href="#">итерацию</a> и перейдет в начало цикла, начиная новую итерацию и опуская любой код, который идет после <span class="inline">continue</span> в цикле. Он также может
+    быть использован внутри <a href="with.htm"><tt>с</tt></a> в операторе continue, где он заставит код перейти к следующему экземпляру и выполнить его снова. Обратите внимание, что если <tt>continue</tt> используется вне любого из этих контекстов, это приведет к ошибке.</p>
+  <p>Ниже приведен пример использования в цикле <tt>for</tt>:</p>
+  <p class="code">var _val = 0;<br> for (var i = 0; i &lt; 10; i += 1)<br> {
+    <br> if (val_array[i] &lt;= 0)<br> {<br> continue;<br> } <br> _val += val_array[i];<br> }
+    <br> draw_text(32, 32, &quot;Всего положительных значений = &quot; + string(_val));</p>
+  <p>Ниже приведен пример использования в цикле <span class="inline">while</span>:</p>
+  <p class="code">var file = file_text_open_read(&quot;Game_Data.txt&quot;);<br> var _num = 0;<br> while (!file_text_eof(file))<br> {<br> var _s = file_text_readln(file);<br> if (_s == &quot;&quot;)<br> {<br> continue;<br> } <br> str[num++] = _s;<br> } <br> file_text_close(file);
+  </p>
+  <p>Ниже приведен пример использования в цикле <span class="inline">do / until</span>:</p>
+  <p class="code">сделать<br> {
+    <br> var _x = random(room_width);<br> var _y = random(room_height);<br> if (instance_position(_x, y, obj_Enemy)<br> {
+    <br> continue;
+    <br> }
+    <br> instance_create_layer(_x, _y, &quot;Instances&quot;, obj_Enemy);<br> }
+    <br> until (instance_count(obj_Enemy) &gt;= 10);</p>
+  <p>Ниже приведен пример использования в цикле <span class="inline">repeat</span>:</p>
+  <p class="code">repeat(10)<br> { <br> var _x = random(room_width);<br> var _y = random(room_height);<br> if (instance_position(_x, y, obj_Enemy)<br> {
+    <br> continue;
+    <br> }
+    <br> instance_create_layer(_x, _y, &quot;Instances&quot;, obj_Enemy);<br> }</p>
+  <p>Наконец, пример использования в заявлении <span class="inline">with</span>:</p>
+  <p class="code">with (obj_Enemy_Parent)<br> {<br> if (object_index == obj_Enemy_InDestructible)<br> {<br> continue;<br> } <br> hp -= 100;<br> if (hp &lt;= 0)<br> {<br> instance_destroy();<br> } <br> }</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Language_Features.htm">Особенности языка</a></div>
+        <div style="float:right">Далее: <a href="exit.htm">выход</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+continue
+-->
+  <!-- TAGS
+continue
+-->
+
+</body></html>

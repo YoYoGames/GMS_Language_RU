@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>место_заседания</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion place_meeting" />
+  <meta name="rh-index-keywords" content="place_meeting" />
+  <meta name="search-keywords" content="place_meeting" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>место_заседания</h1>
+  <p>С помощью этой функции можно проверить позицию на столкновение с другим экземпляром или со всеми экземплярами объекта, используя маску столкновения того экземпляра, который запускает код проверки. При использовании этой функции вы фактически просите <span class="notranslate">GameMaker Studio 2</span> переместить экземпляр в новую позицию, проверить наличие столкновения, вернуться назад и сообщить вам, было ли обнаружено столкновение или нет. Это будет работать для точных столкновений, но только если и у экземпляра, и у проверяемого объекта выбраны маски точных столкновений.
+    в противном случае применяются только столкновения с ограничивающей рамкой. Эта функция также принимает специальные ключевые слова <b>all</b> и <b>other</b>. Обратите внимание, что если вам нужно получить уникальный <b>идентификатор</b> экземпляра объекта, с которым происходит столкновение, вы должны
+    следует использовать <a href="../../Asset_Management/Instances/instance_place.htm"><tt>instance_place()</tt></a>.</p>
+  <p><img alt="Place meeting example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/place_meeting.png">Обратите внимание, что перед проверкой заданные координаты x/y будут приведены к ближайшему целому числу.
+    выполняется.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">place_meeting(x, y, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Позиция x для проверки.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Позиция y для проверки.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Экземпляр или объект для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if keyboard_check(vk_left)<br> {
+    <br> if !place_meeting(x - 5, y, obj_wall) x -=5;<br> }
+  </p>
+  <p>Приведенный выше код проверяет, <i>нет</i> ли столкновения слева от экземпляра, и перемещает экземпляр, если его нет.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Collisions.htm">Коллизии</a></div>
+        <div style="float:right">Далее: <a href="position_empty.htm">position_empty</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+place_meeting
+-->
+  <!-- TAGS
+place_meeting
+-->
+</body>
+</html>

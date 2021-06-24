@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_create_from_vertex_buffer_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_create_from_vertex_buffer_ext" />
+  <meta name="rh-index-keywords" content="buffer_create_from_vertex_buffer_ext" />
+  <meta name="search-keywords" content="buffer_create_from_vertex_buffer_ext,buffer_fixed,buffer_grow,buffer_wrap,buffer_fast,buffer_vbuffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_create_from_vertex_buffer_ext</h1>
+  <p>С помощью этой функции вы выделяете часть памяти под буфер в вашей игре, заполненный данными из ранее созданного <a href="../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">буфера вершин</a>. Функция возвращает уникальный <i>идентификатор буфера</i>, который должен храниться в переменной и использоваться для всех последующих обращений к буферу. Функция принимает идентификатор буфера вершин для использования (как возвращается функцией <a href="../Drawing/Primitives/vertex_create_buffer.htm"><tt>vertex_create_buffer()</tt></a>,
+    например), а для определения типа буфера используются следующие константы:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>буфер_фиксированный</td>
+        <td>Буфер фиксированного размера.</td>
+      </tr>
+      <tr>
+        <td>buffer_grow</td>
+        <td>Буфер, который будет динамически &quot;расти&quot; по мере добавления данных</td>
+      </tr>
+      <tr>
+        <td>буферная_обёртка</td>
+        <td>Буфер, в который будут &quot;заворачиваться&quot; данные. Когда добавляемые данные достигнут предела размера буфера, перезапись будет помещена обратно в начало буфера, и дальнейшая запись продолжится с этого момента.</td>
+      </tr>
+      <tr>
+        <td>буферный_быстрый</td>
+        <td>Специальный &quot;полосатый&quot; буфер, который чрезвычайно быстро читается/записывается. Может использоваться только с <a href="buffer_write.htm">типами данных</a> <tt>buffer_u8</tt> и <i>должен</i> быть выровнен по 1 байту.</td>
+      </tr>
+      <tr>
+        <td>буфер_vbuffer</td>
+        <td>Этот тип буфера должен использоваться только в качестве буфера вершин.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Помимо типа буфера, вам также необходимо задать <i>выравнивание байтов</i> для буфера. Это значение зависит от данных, которые вы хотите хранить в буфере, и в большинстве случаев значение 1 вполне подходит. Однако имейте в виду, что
+    для некоторых операций <i>необходимо</i> определенное выравнивание, и неправильное выравнивание может привести к ошибкам (подробнее о выравнивании см. в разделе <a href="../../../Additional_Information/Guide_To_Using_Buffers.htm">Выравнивание буфера</a>). Ниже
+    является общим руководством, показывающим, какие значения наиболее подходят для каждого типа данных (если есть сомнения, используйте выравнивание 1):</p>
+  <ul class="colour">
+    <li>Строки должны быть выровнены по 1 байту.</li>
+    <li>Знаковые или беззнаковые 8-битные целые числа могут быть выровнены по любому значению, но обратите внимание, что для быстрого буфера (см. <a href="buffer_write.htm"><tt>buffer_write()</tt></a>) оно <i>должно</i> быть выровнено по 1.</li>
+    <li>Знаковые или беззнаковые 16-битные целые числа должны быть выровнены по 2 байтам.</li>
+    <li>Знаковые или беззнаковые 32-битные целые числа должны быть выровнены по 4 байтам</li>
+    <li>Плавающие символы размером до 16 бит должны быть выровнены по 2 байтам. <i>(В настоящее время не поддерживается!)</i></li>
+    <li>Плавающие символы размером до 32 бит должны быть выровнены по 4 байтам.</li>
+    <li>Плавающие символы размером до 64 бит должны быть выровнены по 8 байтам.</li>
+  </ul>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Буферы вершин выравниваются по 1 байту, но вы можете создать буфер с любым выравниванием в зависимости от того, как вы хотите обрабатывать данные, поскольку данные вершин - это просто копия необработанной памяти в буфер.</p>
+  <p>Последние два аргумента используются для указания диапазона данных вершин, которые вы хотите скопировать во вновь созданный буфер. Начальная вершина может быть в любом месте между 0 и количеством вершин -1, а затем вы указываете количество вершин от этой точки
+    для копирования. Вы можете использовать функцию <tt><a href="../Drawing/Primitives/vertex_get_number.htm">vertex_get_number()</a></tt> для буфера вершин, чтобы получить общее количество хранящихся вершин.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Важно, чтобы вы удаляли любые динамически созданные ресурсы, подобные этим, из памяти, когда они вам больше не нужны, чтобы предотвратить утечку памяти, поэтому, когда вы закончите работу с созданным буфером, вы должны снова освободить его.
+    использование <span style="font-size:1px;"><a href="buffer_delete.htm"><tt style="font-size: 14px">buffer_delete()</tt></a></span>. Также обратите внимание, что буфер вершин, используемый для создания нового буфера, также не удаляется из памяти, и вы должны использовать функцию
+    <span style="font-size:1px;"><a href="../Drawing/Primitives/vertex_delete_buffer.htm"><tt style="font-size: 14px">vertex_delete_buffer()</tt></a></span> когда она больше не нужна.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">buffer_create_from_vertex_buffer_ext(vertex_buffer, type, alignment, start_vertex, num_vertices)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>вершинный_буфер</td>
+        <td>Индекс буфера вершин для использования.</td>
+      </tr>
+      <tr>
+        <td>тип</td>
+        <td>Тип создаваемого буфера (см. список констант ниже).</td>
+      </tr>
+      <tr>
+        <td>выравнивание</td>
+        <td>Выравнивание байтов для буфера</td>
+      </tr>
+      <tr>
+        <td>начальная_вершина</td>
+        <td>Начальная вершина.</td>
+      </tr>
+      <tr>
+        <td>num_vertices</td>
+        <td>Общее количество вершин для копирования.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Int (ID буфера вершин)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var v_num = vertex_get_number(model_buff); player_buffer = buffer_create_from_vertex_buffer(model_buffer, buffer_grow, 1, 0, v_num - 1);</p>
+  <p>Приведенный выше код выделяет память под буфер, затем копирует в него данные всех вершин из заданного буфера вершин, возвращая индекс нового буфера, который хранится в переменной &quot;player_buffer&quot;, для дальнейшего использования.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Buffers.htm">Буферы</a></div>
+        <div style="float:right">Далее: <a href="buffer_delete.htm">buffer_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_create_from_vertex_buffer_ext
+buffer_fixed
+buffer_grow
+buffer_wrap
+buffer_fast
+buffer_vbuffer
+-->
+  <!-- TAGS
+buffer_create_from_vertex_buffer_ext
+-->
+
+</body></html>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>буферное_чтение</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_read" />
+  <meta name="rh-index-keywords" content="buffer_read,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+  <meta name="search-keywords" content="buffer_read,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>буферное_чтение</h1>
+  <p>Эта функция может быть использована для чтения данных из ранее созданного буфера. Возвращаемое значение будет зависеть от типа считываемых данных, который сам по себе определяется следующими константами:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>буфер_u8</td>
+        <td>Беззнаковое 8-разрядное целое число. Это положительное значение от 0 до 255.</td>
+      </tr>
+      <tr>
+        <td>буфер_с8</td>
+        <td>Знаковое 8-разрядное целое число. Это может быть положительное или отрицательное значение от -128 до 127 (0 считается положительным).</td>
+      </tr>
+      <tr>
+        <td>буфер_u16</td>
+        <td>Беззнаковое 16-разрядное целое число. Это положительное значение от 0 до 65 535.</td>
+      </tr>
+      <tr>
+        <td>буфер_с16</td>
+        <td>Подписанное 16-разрядное целое число. Это может быть положительное или отрицательное значение от -32,768 до 32,767 (0 считается положительным).</td>
+      </tr>
+      <tr>
+        <td>буфер_u32</td>
+        <td>Беззнаковое 32-разрядное целое число. Это положительное значение от 0 до 4 294 967 295.</td>
+      </tr>
+      <tr>
+        <td>буфер_с32</td>
+        <td>Подписанное 32-разрядное целое число. Это может быть положительное или отрицательное значение от -2,147,483,648 до 2,147,483,647 (0 считается положительным).</td>
+      </tr>
+      <tr>
+        <td>буфер_u64</td>
+        <td>Беззнаковое 64-разрядное целое число.</td>
+      </tr>
+      <tr>
+        <td>буфер_f16</td>
+        <td>16-разрядное плавающее значение. Это может быть положительное или отрицательное значение в диапазоне +/- 65504. <i>(В настоящее время не поддерживается!)</i></td>
+      </tr>
+      <tr>
+        <td>буфер_f32</td>
+        <td>32-разрядное плавающее значение. Это может быть положительное или отрицательное значение в диапазоне +/-16777216.</td>
+      </tr>
+      <tr>
+        <td>буфер_f64</td>
+        <td>64-разрядное плавающее число.</td>
+      </tr>
+      <tr>
+        <td>buffer_bool</td>
+        <td>Булево значение. Может быть только 1 или 0<tt>(true</tt> или <tt>false</tt>).</td>
+      </tr>
+      <tr>
+        <td>буферная_строка</td>
+        <td>Струна любого размера.</td>
+      </tr>
+      <tr>
+        <td>буферный_текст</td>
+        <td>Строка любого размера без завершающего нулевого символа.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Если функция выполнится успешно, то она вернет значение заданного типа, однако если она не выполнится, то это приведет к ошибке runner.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Использование неправильного типа данных для считываемых данных приведет к возврату ошибочных значений.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">buffer_read(buffer, type)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>буфер</td>
+        <td>Индекс буфера для чтения.</td>
+      </tr>
+      <tr>
+        <td>тип</td>
+        <td>Тип данных, которые должны быть считаны из буфера (см. список констант выше).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Вещественный/Строка</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var cmd = buffer_read(buff, buffer_s16);</p>
+  <p>Приведенный выше код считывает из буфера с id, хранящегося в переменной &quot;buff&quot;, знаковое 16-битное значение в локальную переменную &quot;cmd&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Buffers.htm">Буферы</a></div>
+        <div style="float:right">Далее: <a href="buffer_write.htm">буфер_записи</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_read
+buffer_u8
+buffer_s8
+buffer_u16
+buffer_s16
+buffer_u32
+buffer_s32
+buffer_u64
+buffer_f16
+buffer_f32
+buffer_f64
+buffer_bool
+buffer_string
+buffer_text
+-->
+  <!-- TAGS
+buffer_read
+-->
+</body>
+</html>

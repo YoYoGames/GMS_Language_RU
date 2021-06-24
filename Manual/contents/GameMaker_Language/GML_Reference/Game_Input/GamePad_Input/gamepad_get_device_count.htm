@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_get_device_count</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_get_device_count" />
+  <meta name="rh-index-keywords" content="gamepad_get_device_count" />
+  <meta name="search-keywords" content="gamepad_get_device_count" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_get_device_count</h1>
+  <p>Эта функция сообщит вам одно из двух. Либо количество подключенных геймпадов, <i>либо</i> количество доступных &quot;слотов&quot; для подключения геймпадов. Фактическое возвращаемое значение будет зависеть от платформы и внутренней конфигурации
+    этой платформы, поэтому данную функцию следует использовать вместе с функцией <a href="gamepad_is_connected.htm"><tt>gamepad_is_connected()</tt></a> чтобы быть уверенным в точном количестве подключенных пэдов в любой момент времени.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gamepad_get_device_count();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var gp_num = gamepad_get_device_count();<br> for (var i = 0; i &lt; gp_num; i++;)<br> {<br> if gamepad_is_connected(i)<br> {<br> global.gp[i] = true;<br> } <br> else<br> {<br> global.gp[i]
+    = false;<br> } <br> }</p>
+  <p>Приведенный выше код перебирает доступные геймпады (или слоты для геймпадов) и затем проверяет каждый из них на наличие подключенного геймпада. возвращаемое значение затем используется для установки глобального массива в <tt>true</tt> или <tt>false</tt> для использования в будущих проверках.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Gamepad_Input.htm">Вход геймпада</a></div>
+        <div style="float:right">Далее: <a href="gamepad_get_description.htm"> gamepad_get_description </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_get_device_count
+-->
+  <!-- TAGS
+gamepad_get_device_count
+-->
+</body>
+</html>

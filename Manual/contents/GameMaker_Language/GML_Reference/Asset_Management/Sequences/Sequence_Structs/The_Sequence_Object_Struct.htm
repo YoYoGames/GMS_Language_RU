@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Структура объекта последовательности</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Sequence Object Struct" />
+  <meta name="rh-index-keywords" content="Sequence Object Struct" />
+  <meta name="search-keywords" content="The Sequence Object Struct,seqplay_oneshot,seqplay_loop,seqplay_pingpong,spritespeed_framespersecond,spritespeed_framespergameframe,name,loopmode,playbackSpeed,playbackSpeedType,length,volume,xorigin,yorigin,messageEventKeyframes,momentKeyframes,tracks" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Структура объекта последовательности</h1>
+  <p>Объект последовательности - это имя, данное структуре, полученной из актива последовательности, определенного в обозревателе активов вашей игры. Эта <a href="../../../../GML_Overview/Structs.htm">структура</a> будет иметь следующие свойства, которые могут быть изменены:</p>
+  <ul class="colour">
+    <li><tt>name</tt>: Это имя последовательности в виде строки, и вы можете получить или установить это значение по мере необходимости. Обратите внимание, что последовательности, созданные с помощью функции <a href="../sequence_create.htm"><tt>sequence_create()</tt></a> не будут иметь имени, и это
+      будет просто пустая строка &quot;&quot;.<tt></tt></li>
+    <li><tt>loopmode</tt>: Это режим воспроизведения объекта последовательности, который может быть получен или установлен. Он возвращает (или может быть установлен в) следующие константы:</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+        <th>Значение</th>
+      </tr>
+      <tr>
+        <td><tt>seqplay_oneshot</tt></td>
+        <td>Последовательность будет воспроизводиться один раз, а затем остановится после завершения.</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td><tt>seqplay_loop</tt></td>
+        <td>Последовательность зациклится, при этом головка воспроизведения вернется к началу, когда достигнет конца области воспроизведения.</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td><tt>seqplay_pingpong</tt></td>
+        <td>Последовательность зациклится, при этом головка воспроизведения изменит направление, когда достигнет конца области воспроизведения.</td>
+        <td>2</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li><tt>playbackSpeed</tt>: задает скорость воспроизведения последовательности, которая интерпретируется как кадры в секунду или кадры в игровой кадр в зависимости от <tt>playbackSpeedType</tt> (см. ниже). Вы можете получить или установить это значение.</li>
+    <li><tt>playbackSpeedType</tt>: Определяет, как интерпретировать <tt>playbackSpeed</tt>, и вы можете получить или установить это значение. Вы можете использовать одну из следующих констант для установки значения (или одна из этих констант будет возвращена при проверке
+      свойство):</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+        <th>Значение</th>
+      </tr>
+      <tr>
+        <td><tt>spritespeed_framespersecond</tt></td>
+        <td>Указывает, что <tt>playbackSpeed</tt> должен интерпретироваться как кадры в секунду</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td><tt>spritespeed_framespergameframe</tt></td>
+        <td>Указывает, что <tt>playbackSpeed</tt> должен интерпретироваться как кадры на игровой кадр.</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li><tt>длина</tt>: Длина последовательности в кадрах. Вы можете получить или установить это значение, но учтите, что уменьшение длины последовательности может вызвать проблемы, если у экземпляра последовательности, ссылающегося на эту последовательность, головка воспроизведения установлена на новую длину.</li>
+    <li><tt>громкость</tt>: Это скалярное значение от 0 до 1, которое используется для масштабирования громкости всех звуковых дорожек в последовательности. Вы можете получить или установить это значение, и оно изменит глобальный аудиовыход для всех дорожек - например, если у вас есть аудиодорожка
+      с громкостью 0,8, а затем установите свойство <tt>громкости</tt> последовательности на 0,5, аудиодорожка будет иметь конечную громкость 0,4.</li>
+    <li><tt>xorigin</tt>: Это начало последовательности вдоль оси X. Вы можете получить или установить это значение.</li>
+    <li><tt>yorigin</tt>: Это начало последовательности по оси Y. Вы можете получить или установить это значение.</li>
+    <li><tt>messageEventKeyframes</tt>: Это свойство позволяет получить доступ к <span class="notranslate">ключевым кадрам</span> событий сообщений для последовательности. Вы можете получить или установить эти события сообщения, при получении этого свойства возвращается массив структур <span class="notranslate">ключевых кадров</span>, а для установки свойства вы должны предоставить массив структур ключевых кадров.
+      необходимо предоставить массив структур <span class="notranslate">ключевых кадров</span>. Более подробную информацию можно найти на странице <a href="../Sequence_Events_Moments_Broadcast.htm">События и моменты последовательности</a>.</li>
+    <li><tt>momentKeyframes</tt>: Это свойство позволяет получить доступ к <span class="notranslate">ключевым кадрам</span> событий момента для последовательности. Вы можете получить или установить эти моментные события, при получении этого свойства возвращается массив структур <span class="notranslate">ключевых кадров</span>, а для установки свойства вы должны предоставить
+      массив структур <span class="notranslate">ключевых кадров</span>. Более подробную информацию можно найти на странице <a href="../Sequence_Events_Moments_Broadcast.htm">События и моменты последовательности</a>.</li>
+    <li><tt>треки</tt>: Позволяет получить доступ к списку <b>дорожек активов</b> на верхнем уровне последовательности. Вы можете получить или установить это свойство, причем при получении этого свойства возвращается массив структур дорожек, а для установки свойства вы должны
+      предоставить массив структур дорожек. Для получения дополнительной информации см. раздел <a href="The_Track_Struct.htm"><b>Структуры треков</b></a>.</li>
+  </ul>
+  <p>Обратите внимание, что если вы хотите получить доступ к свойствам последовательности, которая была создана в браузере активов, вы должны сначала вызвать функцию <a href="../sequence_get.htm"><tt>sequence_get()</tt></a> на индексе актива для получения структуры объекта последовательности.
+    Также обратите внимание, что любые изменения, внесенные в эту структуру последовательности, будут означать, что все последующие экземпляры этого актива последовательности также будут иметь эти изменения, и они будут сохраняться до тех пор, пока игра запущена, даже если вы вызовете функцию <span class="inline">game_restart()</span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Sequences.htm">Последовательности</a></div>
+        <div style="float:right">Следующее: <a href="The_Sequence_Instance_Struct.htm">Структура экземпляра последовательности</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Sequence Object Struct
+seqplay_oneshot
+seqplay_loop
+seqplay_pingpong
+spritespeed_framespersecond
+spritespeed_framespergameframe
+name
+loopmode
+playbackSpeed
+playbackSpeedType
+length
+volume
+xorigin
+yorigin
+messageEvent<span class="notranslate">Keyframes</span>
+moment<span class="notranslate">Keyframes</span>
+tracks
+-->
+  <!-- TAGS
+sequence_object
+-->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Настройка плагина Git</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section that covers Source Control and setting GIT up." />
+  <meta name="rh-index-keywords" content="Source Control - Setting Up GIT Plugin" />
+  <meta name="search-keywords" content="GIT setup,Source Control Setup" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Настройка плагина <span class="notranslate">GIT</span> </h1>
+  <p>Когда мы начинаем использовать плагин <span class="notranslate">GIT</span>, нам нужно установить идентификатор, под которым <span class="notranslate">GIT</span> будет делать коммит, а это значит, что нам нужно перейти в раздел <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Plugin_Preferences.htm">Плагины - Контроль исходных текстов (<span class="notranslate">Git</span></a> )
+    в <a href="../../Setting_Up_And_Version_Information/IDE_Preferences.htm">Настройках</a> и добавить данные для аутентификации.</p>
+  <p><img alt="SCM Identity Preferences" class="center" src="../../assets/Images/IDE Tools/SCM_IdentityPrefs.png">Этот идентификатор будет использоваться для всех будущих проектов, и <span class="notranslate">GameMaker Studio 2</span> предоставляет вам два различных способа его установки.
+    установить:</p>
+  <ul class="colour">
+    <li><strong>Имя пользователя и пароль</strong>: Нажав на кнопку &quot;Добавить<em>нового пользователя/пасс аутентификации&quot;</em>, вы увидите следующее окно, в котором можно ввести <strong>URL</strong> репозитория <strong>, имя пользователя</strong> <strong>и</strong> пароль.
+     <strong>пароль</strong>:<br>
+      <img alt="SCM Username and Password" class="center" src="../../assets/Images/IDE Tools/SCM_UsernamePassword.png">Если вы хотите, чтобы это повлияло только на определенное хранилище, то введите URL хранилища в верхнее поле. Однако, если вы хотите
+      вы хотите аутентификацию по всему домену (например, &quot;<span class="inline">bitbucket.org</span>&quot; или &quot;<span class="inline">github.com</span>&quot;), то просто укажите домен и ничего больше. Когда что-то должно проверить аутентификацию,
+      он будет искать сначала соответствие определенному хранилищу, а затем соответствие домену. Это позволит вам установить аутентификацию по умолчанию для домена, а затем переопределить ее с помощью специфических деталей для определенных хранилищ.</li>
+  </ul>
+  <p class="note" style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 5em">ПРИМЕЧАНИЕ: Если вы используете внешний репозиторий, то вы должны использовать имя пользователя и пароль, связанные с учетной записью, настроенной для этого репозитория, но если вы хотите использовать локальный репозиторий, то вы можете использовать любое имя пользователя и пароль.</p>
+  <ul class="colour">
+    <li><strong>Пары ключей SSH</strong>: Нажав на кнопку &quot;Добавить<em>новую аутентификацию пары ключей SSH&quot;</em>, вы увидите следующее окно, в котором можно ввести <strong>URL</strong> репозитория <strong>и</strong> пароль, <strong>а затем</strong> указать пути к файлам открытого и закрытого ключей.
+      <br>
+      <img alt="SCM SSH Settings" class="center" src="../../assets/Images/IDE Tools/SCM_SSH.png"> Как и при аутентификации по имени пользователя/паролю, при использовании пар ключей SSH можно использовать аутентификацию по домену и репозиторию. Если у вас уже есть
+      SSH Keypair, вы можете задать здесь пути, а также пароль, необходимый для доступа к ним. Обратите внимание, что если вам нужен быстрый доступ к открытому ключу, кнопка копирования <img alt="Icon SCM Copy" class="icon" height="22" src="../../assets/Images/IDE Tools/SCM_Copy.png" width="22"> автоматически скопирует его содержимое в буфер обмена. Если у вас еще нет пары ключей SSH, нажатие на кнопку <strong>Create KeyPair</strong> вызовет диалоговое окно файла, в котором будет указано, где разместить закрытый ключ, и
+      рядом с ним будет создан открытый ключ - при этом пути к открытому и закрытому ключам будут заполнены автоматически.</li>
+  </ul>
+  <p>Эти настройки теперь будут использоваться для связи с репозиторием (IE: <span class="notranslate">Git</span> Hub, Bit Bucket и т.д.) при обработке запросов на клонирование, push и pull. Однако вам все еще необходимо настроить параметры для каждого проекта, что можно сделать, открыв <a href="../../Settings/Game_Options.htm">Основные параметры</a> и нажав на опцию <strong>Включить контроль исходных текстов</strong>. Это активирует SCM для текущего проекта.</p>
+  <p><img alt="Enable Source Control" class="center" src="../../assets/Images/IDE Tools/SCM_EnableSourceControl.png">После включения контроля исходников (и его применения) в верхней части IDE появится новое контекстное меню со следующими опциями (каждая из которых подробно описана в остальных разделах руководства).
+    каждая из которых более подробно описана в остальных разделах этого руководства):</p>
+  <p><img class="center" src="../../assets/Images/IDE Tools/SCM_ContextMenu.png" /></p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Если вам нужно снова отредактировать данные аутентификации, просто дважды щелкните на записи, и откроется окно с деталями для редактирования, но вы не сможете переименовать URL. Если вам нужно изменить URL, вам нужно будет
+    удалить данные аутентификации и добавить их заново. Чтобы удалить данные аутентификации, нажмите на кнопку закрытия слева от строки в главном окне Предпочтений.</p>
+  <p class="note"><img alt="Delete SSH Keypairs" class="center" src="../../assets/Images/IDE Tools/SCM_DeleteSSH.png" /></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Source_Control.htm">Контроль источников</a></div>
+        <div style="float:right">Следующий: <a href="Repository_Options.htm">Параметры репозитория</a> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Setting Up <span class="notranslate">GIT</span>
+<span class="notranslate">GIT</span>
+-->
+  <!-- TAGS
+source_control_setup_git
+-->
+</body>
+</html>

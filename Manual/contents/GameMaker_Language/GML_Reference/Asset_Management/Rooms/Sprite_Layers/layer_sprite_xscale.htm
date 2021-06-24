@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sprite_xscale</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_xscale" />
+  <meta name="rh-index-keywords" content="layer_sprite_xscale" />
+  <meta name="search-keywords" content="layer_sprite_xscale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sprite_xscale</h1>
+  <p>С помощью этой функции вы можете изменить, должен ли данный элемент спрайта на слое масштабироваться по оси x или нет. Вы передаете ID элемента спрайта (который вы получаете при создании элемента спрайта с помощью команды <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>    или при использовании функции <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>), а затем задаете значение масштаба. Масштаб 1 означает отсутствие масштабирования (1:1), меньшие значения будут масштабироваться вниз (0,5, например, уменьшит ширину используемого спрайта вдвое), большие значения будут масштабироваться вниз (0,5, например, уменьшит ширину используемого спрайта вдвое).
+    спрайта), большие значения будут масштабироваться вверх, а отрицательные значения будут переворачивать спрайт и масштабировать его, если только используемое значение не равно -1 (в этом случае используемый спрайт просто переворачивается вправо-влево относительно исходной позиции без масштабирования).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_sprite_xscale(sprite_element_id, xscale);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>sprite_element_id</td>
+        <td>Уникальное значение ID элемента спрайта для изменения</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>Значение xscale (по умолчанию равно 1)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var asset_sprite = layer_sprite_get_id(layer, &quot;gfc_Trees&quot;);<br> if layer_sprite_get_xscale(asset_sprite) != 1 || layer_sprite_get_yscale(asset_sprite) != 1<br> {
+    <br> layer_sprite_xscale(asset_sprite, 1);<br> layer_sprite_yscale(asset_sprite, 1);<br> }
+  </p>
+  <p>Приведенный выше код проверит элемент спрайта, назначенный слою, на котором находится экземпляр, выполняющий код, и если он масштабируется в любом направлении, то установит масштаб по оси x и масштаб по оси y равным 1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Layers.htm">Слои спрайта</a></div>
+        <div style="float:right">Далее: <a href="layer_sprite_yscale.htm">layer_sprite_yscale</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_xscale
+-->
+  <!-- TAGS
+layer_sprite_xscale
+-->
+</body>
+</html>

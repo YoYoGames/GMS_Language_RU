@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sound_get_track_position</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_get_track_position" />
+  <meta name="rh-index-keywords" content="audio_sound_get_track_position" />
+  <meta name="search-keywords" content="audio_sound_get_track_position" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_sound_get_track_position</h1>
+  <p>Эта функция получает позицию (в секундах) в звуковом файле, с которой будет воспроизводиться звук. Звук может быть только одним экземпляром звука (индекс для отдельных воспроизводимых звуков может быть сохранен в переменной при использовании функции <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> или     <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> функции).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_sound_get_track_position(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс звука для получения позиции воспроизведения.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if audio_sound_get_track_position(global.Music) != 0<br> {
+    <br> audio_sound_set_track_position(global.Music, 0);<br> }
+  </p>
+  <p>Приведенный выше код проверяет трек, чтобы получить его начальную позицию, и если она не 0 секунд, то устанавливает ее на 0 секунд.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio.htm">Аудио</a></div>
+        <div style="float:right">Далее: <a href="audio_sound_set_listener_mask.htm">audio_sound_set_listener_mask</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_get_track_position
+-->
+  <!-- TAGS
+audio_sound_get_track_position
+-->
+</body>
+</html>

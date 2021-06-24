@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_file_write</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_file_write" />
+  <meta name="rh-index-keywords" content="steam_file_write" />
+  <meta name="search-keywords" content="steam_file_write" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_file_write</span></h1>
+  <p>Вы можете использовать эту функцию для записи данных в файл, который затем будет синхронизирован со <span class="notranslate">Steam</span> Cloud, когда пользователь выйдет из игры. если файл не существует, эта функция создаст его для вас, а если он уже существует, она перезапишет
+    все данные, которые уже хранятся в файле, новой строкой данных. Функция вернет значение 0 в случае неудачи по какой-либо причине и значение больше 0 в случае успеха.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code"><span class="notranslate">steam_file_write</span>(filename, data, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>имя файла</td>
+        <td>Имя файла для записи.</td>
+      </tr>
+      <tr>
+        <td>данные</td>
+        <td>Данные для записи (строка).</td>
+      </tr>
+      <tr>
+        <td>размер</td>
+        <td>размер записываемых данных.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var fname=&quot;SaveData.txt&quot;;<br> var data = string(global.Level) + &quot;|&quot; + string(global.Points) + &quot;|&quot; + string(global.HP);<br> var len = string_length(data);<br> steam_file_write_file(fname, <span class="notranslate">data,</span> len);</p>
+  <p>Приведенный выше код подготовит ряд локальных переменных, а затем использует их для записи в файл (или создания файла), который затем будет синхронизирован с <span class="notranslate">Steam</span> Cloud.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Steam_Cloud.htm"><span class="notranslate">Паровое</span></a>облако</div>
+        <div style="float:right">Далее: <a href="steam_file_write_file.htm"><span class="notranslate">steam_file_write_file</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_file_write
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_file_write
+-->
+</body>
+</html>

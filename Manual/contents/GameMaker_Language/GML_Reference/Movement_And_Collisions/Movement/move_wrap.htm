@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>move_wrap</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function move_wrap" />
+  <meta name="rh-index-keywords" content="move_wrap" />
+  <meta name="search-keywords" content="move_wrap" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>move_wrap</h1>
+  <p>Эта функция автоматически &quot;обернет&quot; экземпляр, покинувший комнату, по горизонтальной или вертикальной (или по обеим) осям. Для этого можно задать отступ от краев комнаты, и когда экземпляр выйдет за пределы
+   <span class="notranslate">GameMaker Studio 2</span> автоматически завернет его обратно в комнату с другой стороны. Обратите внимание, что для того, чтобы завернуть экземпляр, у него должна быть скорость, поскольку направление заворачивания зависит от направления движения.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">move_wrap(hor, vert, margin);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>hor</td>
+        <td>Заворачивать ли горизонтально (true) или нет (false).</td>
+      </tr>
+      <tr>
+        <td>vert</td>
+        <td>Заворачивать ли вертикально (true) или нет (false).</td>
+      </tr>
+      <tr>
+        <td>маржа</td>
+        <td>Как далеко за пределами комнаты в пикселях должен находиться объект, чтобы инициировать обертывание.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">move_wrap(true, false, sprite_width);</p>
+  <p>Это заставит экземпляр обернуться по горизонтали, но не по вертикали, когда он превышает ширину своего спрайта за пределами комнаты.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Movement.htm">Движение</a></div>
+        <div style="float:right">Далее: <a href="place_snapped.htm">место_захвачено</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+move_wrap
+-->
+  <!-- TAGS
+move_wrap
+-->
+</body>
+</html>

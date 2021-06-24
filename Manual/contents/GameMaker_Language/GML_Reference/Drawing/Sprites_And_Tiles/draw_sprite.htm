@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>рисовать_спрайт</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite" />
+  <meta name="rh-index-keywords" content="draw_sprite" />
+  <meta name="search-keywords" content="draw_sprite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>рисовать_спрайт</h1>
+  <p>Эта функция рисует заданный спрайт и суб-изображение в определенном месте игровой комнаты. Для спрайта вы можете использовать переменную экземпляра <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_index.htm"><tt>индекс спрайта</tt></a> для
+    получить текущий спрайт, который назначен экземпляру, выполняющему код, или вы можете использовать любой другой актив спрайта. То же самое относится и к суб-изображению, поскольку оно также может быть задано переменной экземпляра <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm"><tt>индекс_изображения</tt></a>    которая установит суб-изображение, выбранное для текущего спрайта экземпляра (обратите внимание, что вы можете нарисовать другой спрайт и все равно использовать значение суб-изображения для текущего экземпляра), или вы можете использовать любое другое значение для этого, чтобы нарисовать определенное суб-изображение
+    выбранного спрайта. Если значение больше, чем количество субизображений, то <span class="notranslate">GameMaker Studio 2</span> будет автоматически перебирать номера, чтобы выбрать соответствующее изображение (например, если рисуемый спрайт имеет 5 субизображений, пронумерованных от 0 до
+    4 и мы установили значение индекса равным 7, то функция нарисует суб-изображение 3, пронумерованное 0). Наконец, x и y position - это положение в комнате, в котором будет нарисован спрайт, и оно центрируется по <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">смещению x</a> и <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y</a> спрайта.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция может работать не так, как ожидается, при использовании спрайтов со скелетной анимацией, и вы можете обнаружить, что функция рисует только первый кадр позы по умолчанию. Вместо нее следует использовать функции <tt>draw_skeleton_*</tt>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_sprite(sprite, subimg, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>спрайт</td>
+        <td>Индекс спрайта для рисования.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>Под-изображение (кадр) спрайта для рисования (image_index или -1 соотносятся с текущим кадром анимации в объекте).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Координата x места рисования спрайта.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Координата y места рисования спрайта.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_sprite(sprite_index, image_index, x, y);<br> draw_sprite(spr_Halo, 0, x, y-32);</p>
+  <p>Это нарисует назначенный экземпляру спрайт (sprite_index) с текущим суб-изображением в позиции x и y экземпляра в комнате. Затем будет нарисован первый кадр спрайта с индексом &quot;spr_Halo&quot; в том же положении x и y.
+    но на 32 пикселя "выше".</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprites_And_Tiles.htm">Спрайты и плитки</a></div>
+        <div style="float:right">Далее: <a href="draw_sprite_ext.htm">draw_sprite_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite
+-->
+  <!-- TAGS
+draw_sprite
+-->
+</body>
+</html>

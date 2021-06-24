@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>path_get_precision</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_get_precision" />
+  <meta name="rh-index-keywords" content="path_get_precision" />
+  <meta name="search-keywords" content="path_get_precision" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>path_get_precision</h1>
+  <p>Эта функция возвращает, с какой точностью данный путь был &quot;сглажен&quot;, и это будет целочисленное значение от 1 до 8. Хотя вы можете получить (и установить) это значение для прямолинейного пути, оно не будет иметь никакого влияния на то, как экземпляр использует
+    путь, так как оно имеет значение только в том случае, если тип пути установлен на &quot;гладкий&quot;.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">path_get_precision(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс пути для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if (path_get_kind(pth_Patrol))<br> {
+    <br> if (path_get_precision(pth_Patrol)) != 8<br> {<br> path_set_precision(pth_Patrol, 8);<br> } <br> }</p>
+  <p>Приведенный выше код проверяет путь, индексированный в &quot;pth_Patrol&quot;, на предмет его вида, и если он гладкий, то проверяет, насколько точным является сглаживание. Если она меньше 8, то устанавливается значение 8.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Paths.htm">Пути</a></div>
+        <div style="float:right">Далее: <a href="path_get_speed.htm">path_get_speed</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_get_precision
+-->
+  <!-- TAGS
+path_get_precision
+-->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>размер_поверхности</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_resize" />
+  <meta name="rh-index-keywords" content="surface_resize" />
+  <meta name="search-keywords" content="surface_resize" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>размер_поверхности</h1>
+  <p>Эта функция изменяет размер поверхности до заданных размеров (в пикселях). В качестве &quot;surface_id&quot; используется ранее созданная поверхность, или &quot;surface_id&quot;. <a href="application_surface.htm"><tt>приложение_поверхность</tt></a>и функция изменит размер
+    этой поверхности. Обратите внимание, что при этом содержимое поверхности не обрезается и не растягивается, а уничтожается текущая поверхность и создается заново с тем же хэндлом (surface_id) с новыми размерами, что означает, что ее нужно будет очистить
+    и рисовать заново (если только это не <tt>поверхность приложения (application_surface</tt> ), в этом случае <span class="notranslate">GameMaker Studio 2</span> сделает это автоматически).</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Если вы изменяете размер поверхности приложения, эти изменения не будут зарегистрированы до начала следующего кадра рисования, что означает, что вызов функции <span style="font-size:1px;"><a href="surface_get_width.htm"><tt style="font-size: 14px">surface_get_width()</tt></a></span>    или <span style="font-size:1px;"><a href="surface_get_height.htm"><tt style="font-size: 14px">surface_get_height()</tt></a></span> в том же событии или шаге вернет предыдущие значения.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">surface_resize(surface_id, w, h);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор поверхности</td>
+        <td>Идентификатор поверхности, которую нужно изменить.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Ширина новой поверхности.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Высота новой поверхности.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if view_wport[0] != surface_get_width(application_surface) || view_hport[0] != surface_get_height(application_surface)<br> {
+    <br> surface_resize(application_surface, view_wport[0],view_hport[0]);<br> }
+  </p>
+  <p>Приведенный выше код проверяет размер порта представления на соответствие размеру поверхности &quot;aplication_surface&quot;, и если они отличаются, то размер поверхности изменяется.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Surfaces.htm">Поверхности</a></div>
+        <div style="float:right">Далее: <a href="surface_set_target.htm">surface_set_target</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_resize
+-->
+  <!-- TAGS
+surface_resize
+-->
+</body>
+</html>

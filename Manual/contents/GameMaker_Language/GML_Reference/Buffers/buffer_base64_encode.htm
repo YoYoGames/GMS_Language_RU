@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_base64_encode</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_base64_encode" />
+  <meta name="rh-index-keywords" content="buffer_base64_encode" />
+  <meta name="search-keywords" content="buffer_base64_encode" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_base64_encode</h1>
+  <p>Эта функция преобразует данные из заданного буфера в строку, закодированную в формате base64. Это широко используемая схема кодирования, которая часто применяется для любых носителей, которые должны храниться или передаваться через Интернет в виде текста, и делает вывод нечитаемым для человеческого глаза.
+    нечитаемым для человеческого глаза. Для использования этой схемы вам необходимо указать уже созданный буфер, значение смещения (это точка в буфере, с которой вы хотите начать кодирование), а также размер в байтах памяти буфера для кодирования.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">buffer_base64_encode(buffer, offset, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>буфер</td>
+        <td>Индекс используемого буфера.</td>
+      </tr>
+      <tr>
+        <td>смещение</td>
+        <td>Значение смещения данных.</td>
+      </tr>
+      <tr>
+        <td>размер</td>
+        <td>Размер буфера.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Строка</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var b_str = buffer_base64_encode(buff, 0, buffer_get_size(buff))</p>
+  <p>Приведенный выше код создаст кодировку полных данных, хранящихся в буфере, индексируемом переменной &quot;buff&quot;, и сохранит возвращенную строку в локальной переменной &quot;b_str&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Buffers.htm">Буферы</a></div>
+        <div style="float:right">Далее: <a href="buffer_base64_decode.htm">buffer_base64_decode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_base64_encode
+-->
+  <!-- TAGS
+buffer_base64_encode
+-->
+</body>
+</html>

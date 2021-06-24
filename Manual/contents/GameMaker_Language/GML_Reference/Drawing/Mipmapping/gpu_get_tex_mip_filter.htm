@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_get_tex_mip_filter</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_get_tex_mip_filter" />
+  <meta name="rh-index-keywords" content="gpu_get_tex_mip_filter,tf_point,tf_linear,tf_anisotropic" />
+  <meta name="search-keywords" content="gpu_get_tex_mip_filter,tf_point,tf_linear,tf_anisotropic" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_get_tex_mip_filter</h1>
+  <p>С помощью этой функции можно получить текущий режим работы фильтра mip. Значение режима, возвращаемое функцией, будет одной из перечисленных ниже констант.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gpu_get_tex_mip_filter();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Постоянные (перечислены ниже):</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>tf_point</td>
+        <td>Это означает, что смешивание между уровнями mipmap отключено, что может привести к заметным переходам текстуры, но дает наилучшую производительность.</td>
+      </tr>
+      <tr>
+        <td>tf_linear</td>
+        <td>Это означает, что включено смешивание между уровнями mipmap (это также известно как <i>трилинейная фильтрация</i>), что сглаживает переходы текстур, но это незначительно снижает производительность.</td>
+      </tr>
+      <tr>
+        <td>tf_anisotropic</td>
+        <td>Это означает, что включена анизотропная фильтрация, которая значительно улучшает качество перехода текстур и может уменьшить размытие, видимое при других режимах фильтрации, но она оказывает наибольшее влияние на производительность.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if keyboard_check(ck_enter)<br> {
+    <br> switch(gpu_get_tex_mip_filter())
+    <br> {
+    <br> case tf_point: gpu_set_tex_mip_filter(tf_linear); break;<br> case tf_linear: gpu_set_tex_mip_filter(tf_anisotropic); break;<br> case tf_anisotropic: gpu_set_tex_mip_filter(tf_point); break;<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет клавиатуру, и если указанная клавиша нажата, то он получит текущий mip-фильтр и переключит значение на следующий, циклически перебирая различные режимы.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Mipmapping.htm">Mipmapping</a></div>
+        <div style="float:right">Далее: <a href="gpu_get_tex_mip_filter_ext.htm">gpu_get_tex_mip_filter_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_tex_mip_filter
+tf_point
+tf_linear
+tf_anisotropic
+-->
+  <!-- TAGS
+gpu_get_tex_mip_filter
+-->
+</body>
+</html>

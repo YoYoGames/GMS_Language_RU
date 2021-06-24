@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_element_move</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_element_move" />
+  <meta name="rh-index-keywords" content="layer_element_move" />
+  <meta name="search-keywords" content="layer_element_move" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_element_move</h1>
+  <p>Вы можете использовать эту функцию для перемещения элемента с одного слоя на другой. Вы передаете <b>идентификатор элемента</b>, возвращаемый функцией, используемой для создания элемента, или редактором помещений, или функцией <a href="layer_get_all_elements.htm"><tt>layer_get_all_elements()</tt></a>,
+    а затем указываете идентификатор слоя (который вы получаете при создании слоя с помощью функции <a href="layer_create.htm"><tt>layer_create()</tt></a>) или имя слоя (в виде строки - это влияет на производительность).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_element_move(element_id, layer_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор элемента</td>
+        <td>Уникальное значение ID элемента для перемещения</td>
+      </tr>
+      <tr>
+        <td>идентификатор слоя</td>
+        <td>Уникальное значение ID слоя, в который нужно переместить элемент (или имя слоя в виде строки).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var a = layer_get_all_elements(layer);<br> asset_layer = layer_create(-100);<br> for (var i = 0; i Alt; array_length(a); i++;) <br> {
+    <br> if layer_get_element_type(a[i]) == layerelementtype_sprite<br> {
+    <br> layer_element_move(a[i], asset_layer)<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код получает элементы на слое, к которому приписан экземпляр, выполняющий код, затем проверяет, являются ли они спрайтовыми активами, и если да, то они перемещаются на слой с ID, хранящимся в переменной &quot;asset_layer&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="General_Layer_Functions.htm">Общие функции слоя</a></div>
+        <div style="float:right">Далее: <a href="layer_set_visible.htm">layer_set_visible</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_element_move
+-->
+  <!-- TAGS
+layer_element_move
+-->
+</body>
+</html>

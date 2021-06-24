@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_get_type</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_get_type" />
+  <meta name="rh-index-keywords" content="audio_get_type" />
+  <meta name="search-keywords" content="audio_get_type" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_get_type</h1>
+  <p>При добавлении звука в <span class="notranslate">GameMaker Studio 2</span> он может быть либо <i>потоковым</i>, либо <i>в памяти</i>. Если вам нужно узнать, является ли данный индекс звука потоковым или нет, вы можете
+    использовать эту функцию, которая вернет 1 для потокового звука, 0 для звука в памяти и -1, если произошла ошибка или индекс не указывает на правильный звуковой ресурс.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_get_type(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс звука для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">type = audio_get_type(snd_Music_1);</p>
+  <p>Приведенный выше код проверяет тип аудио, проиндексированный в переменной &quot;snd_Music_1&quot;, и сохраняет возвращаемое значение в переменной &quot;type&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio.htm">Аудио</a></div>
+        <div style="float:right">Далее: <a href="audio_play_sound.htm">audio_play_sound</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_get_type
+-->
+  <!-- TAGS
+audio_get_type
+-->
+</body>
+</html>

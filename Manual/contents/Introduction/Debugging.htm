@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Отладка</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Debugging Projects In GMS2" />
+  <meta name="rh-index-keywords" content="Debugging" />
+  <meta name="search-keywords" content="debugging,error reporting,debug mode,performance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Отладка</h1>
+  <p>При программировании игры, будь то с помощью <span class="notranslate">языка GameMaker Language</span><span class="notranslate">(GML</span>) или <span class="notranslate">Drag and Drop™</span><span class="notranslate">(DnD™</span>), очень легко допустить ошибки - использование неправильных переменных, передача неправильных аргументов или использование неправильных функций - вот лишь некоторые из наиболее распространенных ошибок, которые мы все делаем.
+    И эти ошибки не всегда обнаруживаются <a class="glossterm" data-glossterm="синтаксис" href="#">синтаксической</a> проверкой, которая включена в редактор сценариев/действий. Это означает, что эти ошибки станут очевидными только тогда.
+    при запуске или компиляции вашей игры, и даже тогда иногда бывает трудно понять, что именно идет не так. Поэтому бывает крайне важно знать, как ваша игра работает на выбранном устройстве, а также видеть, какие экземпляры
+    в комнате, какие глобальные переменные были созданы и множество других деталей. Проверка этих вещей называется &quot;отладкой<strong>кода&quot;,</strong> а любые ошибки или проблемы, которые вы можете найти, называются &quot;багами&quot;.</p>
+  <p>Вы можете проверить многие из этих вещей самостоятельно, добавив в свои игры так называемый &quot;отладочный код&quot;, который будет выводить на экран необходимую информацию, или вы можете сделать так, чтобы он показывал сообщения при возникновении ошибки, но это часто требует много работы, и если вы в первую очередь уверены в том, что проблема существует, то вы можете потратить много времени на то, чтобы отследить ошибку.
+    Если вы не уверены, где именно возникла проблема, то поиск ошибки может занять много времени и превратиться в метод проб и ошибок. Для этого в <span class="notranslate">GameMaker Studio 2</span> есть специальный режим тестирования под названием <strong>Debug Mode</strong>, который запускает <strong>модуль отладки</strong>, а также комплексная <strong>система отчетов об ошибках</strong>, которая отображает сообщения при <a class="glossterm" data-glossterm="Компиляция" href="#">компиляции</a>, чтобы помочь вам отследить
+    любые проблемы в вашей игре.</p>
+  <p>В следующих разделах рассматриваются различные способы отладки игры:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down6" href="#">Отчеты об ошибках</a></p>
+  <div class="droptext" data-targetname="drop_down6">
+    <p class="dropspot">Когда во время компиляции и выполнения проекта возникает ошибка, об этом сообщается сообщением в <a href="The_Output_Window.htm">окне Compile Errors Output Window</a>, подобным показанному ниже:</p>
+    <p class="dropspot"><img alt="Compile Errors" class="center" src="../assets/Images/Introduction/QS_Debug_CompileError.png">Большинство сообщений об ошибках компилятора строятся по одной схеме: в сообщении указывается объект, в котором произошла ошибка, затем Событие вместе с номером строки и, наконец, краткое описание самой ошибки.
+      номер строки, и, наконец, краткое описание самой ошибки. Этот тип информации, предоставляемый сообщением об ошибке, очень важен, поскольку он обнаруживает и сообщает об ошибках синтаксиса и языка, которые могут привести к сбою вашей
+      но не сообщает о более тонких ошибках и не дает обратной связи по производительности. Для таких случаев следует использовать режим отладки (описан ниже).</p>
+    <p class="dropspot">Помимо этих ошибок компиляции, вы также можете получить ошибки синтаксиса. Они будут обнаружены при добавлении действий или кода <span class="notranslate">DnD™</span>и показаны в <a href="The_Output_Window.htm">окне Syntax Errors Output Window</a>, как показано на рисунке ниже:</p>
+    <p class="dropspot"><img alt="Syntax Errors" class="center" src="../assets/Images/Introduction/QS_Debug_SyntaxError.png">Как и в случае ошибок компилятора, окно ошибок синтаксиса направит вас к объекту, событию и конкретным строкам, которые вызывают проблему,
+      и часто будет показано краткое объяснение того, в чем заключается ошибка.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down7" href="#">Режим отладки</a></p>
+  <div class="droptext" data-targetname="drop_down7">
+    <p class="dropspot">Если вам нужно проверить все более тщательно, вы можете запустить игру в <strong>режиме отладки</strong>, нажав кнопку запуска отладки <img alt="Debug Icon" class="icon" src="../assets/Images/Icons/Icon_Debug.png">. При этом вместе с игрой откроется <strong>модуль отладки</strong>. Этот модуль позволяет вам следить за тем, как все работает в вашей игре, начиная с глобальной производительности и заканчивая значениями отдельных переменных в отдельных экземплярах. Вы можете получить дополнительную информацию
+      о модуле отладки, его возможностях и о том, как его использовать, на следующей странице:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../IDE_Tools/The_Debugger.htm">Отладчик</a></li>
+    </ul>
+    <p class="dropspot">Обратите внимание, что при использовании модуля отладки вы также можете добавить <strong>точки останова </strong>в ваш код или <span class="notranslate">DnD™</span>. Точка останова - это точка в игровом цикле, в которой модуль отладки должен приостановиться и позволить вам пройтись по коду игры по строчке за строчкой.
+      за раз. Вы можете добавить точки останова с помощью клавиши &quot;F9&quot;, и они будут показаны в <a href="The_Output_Window.htm">окне</a> вывода, <a href="The_Output_Window.htm">где вы</a> можете включать/выключать их по мере необходимости.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down8" href="#">Дополнительные инструменты</a></p>
+  <div class="droptext" data-targetname="drop_down8">
+    <p class="dropspot">В качестве дополнительного инструмента для отладки скомпилированных игр существуют определенные <strong>параметры командной строки</strong>, которые можно использовать при запуске конечного пакета игры в <span class="notranslate">Windows</span>. Информацию о том, как это работает, смотрите <a href="../Settings/Command_Line_Parameters.htm">здесь</a>.</p>
+    <p class="dropspot">Вы также можете генерировать <strong>отладочный оверлей</strong> во время тестового запуска игры, который будет показывать дополнительную отладочную информацию о производительности вашей игры во время ее запуска, а также выводить <strong>отладочные сообщения</strong> в консоль компиляции, где вы можете ввести собственный текст для отладки поведения вашей игры.
+      в консоль компиляции, где вы можете ввести свой собственный текст, чтобы помочь отладить поведение вашей игры. Для получения дополнительной информации см. следующие страницы: <span class="inline"></span></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_overlay.htm"><span class="inline">show_debug_overlay</span></a></li>
+      <li class="dropspot"><a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_message.htm"><span class="inline">show_debug_message</span></a></li>
+      <li class="dropspot"><span class="inline"><a href="../GameMaker_Language/GML_Reference/Debugging/debug_event.htm">debug_event</a></span></li>
+    </ul>
+    <p> </p>
+  </div>
+  <p> </p>
+  <p>Существует также набор предпочтений, связанных с отладкой и использованием инструментов отладки. Более подробную информацию вы можете найти на следующей странице:</p>
+  <ul class="colour">
+    <li><a href="Debugging.htm">Предпочтения отладки</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Introduction_To_GameMaker_Studio_2.htm">Введение в <span class="notranslate">GameMaker Studio 2</span></a></div>
+        <div style="float:right">Следующее: <a href="The_Output_Window.htm">Окно вывода</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Debugging
+Debug Mode
+Command Line Parameters
+-->
+  <!-- TAGS
+debugging
+-->
+
+</body></html>

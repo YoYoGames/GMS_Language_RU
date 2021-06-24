@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>назначение_комнаты</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_assign" />
+  <meta name="rh-index-keywords" content="room_assign" />
+  <meta name="search-keywords" content="room_assign" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>назначение_комнаты</h1>
+  <p>Эта функция копирует одну комнату в другую, удаляя все экземпляры, плитки и т.д. из комнаты, в которую копируется, и полностью заменяя их содержимым новой комнаты. Вы указываете индекс комнаты, в которую нужно скопировать (либо как определено
+    в браузере активов или возвращается функцией <a href="room_add.htm"><tt>room_add()</tt></a>), а также индекс исходной комнаты. Обратите внимание, что вызов этой функции на активе комнаты, созданном в браузере активов, <strong>навсегда изменит содержимое комнаты</strong>,
+    и даже вызов <span class="inline">game_restart()</span> не вернет комнату в исходное состояние (только завершение игры и ее повторное открытие приведет к тому, что комната снова окажется в исходном состоянии).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">room_assign(ind, source);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс комнаты, <i>в которую нужно скопировать</i>.</td>
+      </tr>
+      <tr>
+        <td>источник</td>
+        <td>Индекс комнаты, <i>из</i> которой будет производиться <i>копирование</i>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">global.rm = room_add();<br> room_assign(global.rm, rm_Base);</p>
+  <p>Приведенный выше код добавит в игру новую комнату, а затем скопирует в нее содержимое комнаты, проиндексированной как &quot;rm_Base&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Rooms.htm">Номера</a></div>
+        <div style="float:right">Далее: <a href="room_instance_add.htm">room_instance_add</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_assign
+-->
+  <!-- TAGS
+room_assign
+-->
+</body>
+</html>

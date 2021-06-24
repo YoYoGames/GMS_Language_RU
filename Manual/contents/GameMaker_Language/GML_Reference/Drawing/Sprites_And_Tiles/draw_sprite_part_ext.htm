@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_sprite_part_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_part_ext" />
+  <meta name="rh-index-keywords" content="draw_sprite_part_ext" />
+  <meta name="search-keywords" content="draw_sprite_part_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_sprite_part_ext</h1>
+  <p>Эта функция нарисует часть выбранного спрайта в заданной позиции, следуя тем же правилам, что и функция <a href="draw_sprite_part.htm"><tt>draw_sprite_part()</tt></a>только теперь вы можете масштабировать часть, смешивать с ней цвет или изменять ее альфа-коэффициент при
+    (так же, как при рисовании спрайта с помощью функции <a href="draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>). Следует отметить, что если страница текстуры допускает автоматическое кадрирование, то эта функция может работать не так, как ожидается, поскольку
+    дополнительное &quot;пустое&quot; пространство вокруг спрайта будет удалено при создании страницы текстуры. Чтобы решить эту проблему, необходимо в настройках страницы текстуры (в <a href="../../../../Settings/Texture_Groups.htm">редакторе группы текстур</a>)
+    отключить <b>автоматическое кадрирование</b>.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ: </b>При рисовании с помощью этой функции, <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">смещение</a> спрайта по <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">x</a> и <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y</a> игнорируется, и часть спрайта будет нарисована с левым верхним углом в заданной позиции x / y в комнате.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция полезна только для <b>растровых</b> спрайтов и не работает со спрайтами SWF или JSON (Spine).</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Смешивание цветов рекомендуется только для HTML5-цели, когда включен WebGL, хотя вы можете установить цвет смешивания, если он не включен, и он будет смешивать спрайт как обычно. Однако при таком смешивании создается дубликат
+    спрайта, который затем сохраняется в кэше и используется при необходимости. Это далеко не оптимально, и если вы используете многократное изменение цвета, это замедлит производительность вашей игры, если вы не активируете WebGL. если вы не хотите использовать WebGL, то вы можете установить
+    размер кэша шрифтов, чтобы попытаться ограничить это, если потребуется, используя функцию <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><tt>sprite_set_cache_size()</tt></a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_sprite_part_ext(sprite, subimg, left, top, width, height, x, y, xscale, yscale, color, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>спрайт</td>
+        <td>Индекс спрайта для рисования.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>Подimg (кадр) спрайта для рисования (image_index или -1 соотносятся с текущим кадром анимации в объекте).</td>
+      </tr>
+      <tr>
+        <td>слева</td>
+        <td>Позиция x на спрайте левого верхнего угла области для рисования.</td>
+      </tr>
+      <tr>
+        <td>топ</td>
+        <td>Позиция y на спрайте левого верхнего угла области для рисования.</td>
+      </tr>
+      <tr>
+        <td>ширина</td>
+        <td>Ширина области для рисования.</td>
+      </tr>
+      <tr>
+        <td>высота</td>
+        <td>Высота области для рисования.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Координата x места рисования спрайта.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Координата y места рисования спрайта.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>Горизонтальное масштабирование спрайта в виде множителя: 1 = нормальное масштабирование, 0.5 - половина и т.д....</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>Вертикальное масштабирование спрайта в виде множителя: 1 = нормальное масштабирование, 0.5 - половина и т.д....</td>
+      </tr>
+      <tr>
+        <td>цвет</td>
+        <td>Цвет, с которым будет смешиваться спрайт. c_white - отображать его в обычном режиме.</td>
+      </tr>
+      <tr>
+        <td>альфа</td>
+        <td>Альфа спрайта (от 0 до 1, где 0 - прозрачный, а 1 - непрозрачный).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_sprite_part_ext(sprite_index, image_index, 8, 8, sprite_width-16, sprite_height-16, x, y, 2, 0.5, c_black, 1);</p>
+  <p>Это нарисует назначенный экземпляр спрайта (sprite_index) и его текущий кадр анимации (image_index), но при этом сбреет 8px поля со всех четырех сторон спрайта. Затем он будет растянут в два раза по ширине, но в два раза по высоте.
+    и, хотя альфа все еще равна 1, он будет закрашен черным цветом (превращаясь в силуэт).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprites_And_Tiles.htm">Спрайты и плитки</a></div>
+        <div style="float:right">Далее: <a href="draw_sprite_stretched.htm">draw_sprite_streteched</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_part_ext
+-->
+  <!-- TAGS
+draw_sprite_part_ext
+-->
+</body>
+</html>

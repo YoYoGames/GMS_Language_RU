@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Слои последовательности</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Sequence Layers" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Sequence Layers" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Слои последовательности</h1>
+  <p>В этом разделе представлены функции, которые используются для добавления, удаления и редактирования поведения <a href="../../../../../The_Asset_Editors/Sequences.htm">последовательностей</a> в игровой комнате в зависимости от <i>слоя</i>, на котором они находятся. Следует отметить, что
+    последовательности похожи на объекты, в том смысле, что когда одна из них создается на слое в комнате, она считается <i>экземпляром</i> основного <i>объекта</i> последовательности из <a href="../../../../../Introduction/The_Asset_Browser.htm">браузера активов</a>. Таким образом,
+    когда вы добавляете последовательность на слой в помещении, вы создаете <i>экземпляр</i> основного объекта последовательности, и этот экземпляр последовательности добавляется как <i>элемент</i> в слой помещения. Экземпляр последовательности управляет такими вещами, как воспроизведение
+    скорость и направление, и сам содержит другой объект sequence data <i>struct</i>, который содержит фактические данные дорожки последовательности. Это важно, так как функции, перечисленные ниже, будут ссылаться на <strong>ID элемента</strong> последовательности (ID
+    последовательности <i>на слое</i>), а также на <strong>ID экземпляра</strong> последовательности (фактический ID последовательности, на которую ссылается элемент) и на <a href="../../../../GML_Overview/Structs.htm">struct</a> данных последовательности (который содержит все данные последовательности).
+    содержит все данные последовательности).</p>
+  <p>Ниже приведен список всех функций, которые можно использовать для редактирования последовательностей, добавленных в <b>слой актива</b>:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="layer_sequence_exists.htm">layer_sequence_exists</a></li>
+    <li><a href="layer_sequence_create.htm">layer_sequence_create</a></li>
+    <li><a href="layer_sequence_destroy.htm">уничтожение_последовательности_слоев</a></li>
+    <li><a href="layer_sequence_x.htm">layer_sequence_x</a></li>
+    <li><a href="layer_sequence_y.htm">слой_последовательности_y</a></li>
+    <li><a href="layer_sequence_angle.htm">угол_последовательности_слоя</a></li>
+    <li><a href="layer_sequence_xscale.htm">layer_sequence_xscale</a></li>
+    <li><a href="layer_sequence_yscale.htm">layer_sequence_yscale</a></li>
+    <li><a href="layer_sequence_headpos.htm">layer_sequence_headpos</a></li>
+    <li><a href="layer_sequence_headdir.htm">layer_sequence_headdir</a></li>
+    <li><a href="layer_sequence_pause.htm">layer_sequence_pause</a></li>
+    <li><a href="layer_sequence_play.htm">layer_sequence_play</a></li>
+    <li><a href="layer_sequence_speedscale.htm">layer_sequence_speedscale</a></li>
+    <li><a href="layer_sequence_get_x.htm">layer_sequence_get_x</a></li>
+    <li><a href="layer_sequence_get_y.htm">layer_sequence_get_y</a></li>
+    <li><a href="layer_sequence_get_angle.htm">layer_sequence_get_angle</a></li>
+    <li><a href="layer_sequence_get_xscale.htm">layer_sequence_get_xscale</a></li>
+    <li><a href="layer_sequence_get_yscale.htm">layer_sequence_get_yscale</a></li>
+    <li><a href="layer_sequence_get_headpos.htm">layer_sequence_get_headpos</a></li>
+    <li><a href="layer_sequence_get_headdir.htm">layer_sequence_get_headdir</a></li>
+    <li><a href="layer_sequence_get_speedscale.htm">layer_sequence_get_speedscale</a></li>
+    <li><a href="layer_sequence_get_length.htm">layer_sequence_get_length</a></li>
+    <li><a href="layer_sequence_get_instance.htm">layer_sequence_get_instance</a></li>
+    <li><a href="layer_sequence_get_sequence.htm">layer_sequence_get_sequence</a></li>
+    <li><a href="layer_sequence_is_paused.htm">layer_sequence_is_paused</a></li>
+    <li><a href="layer_sequence_is_finished.htm">layer_sequence_is_finished</a></li>
+  </ul>
+  <p> </p>
+  <p>Также имеются дополнительные функции для работы с содержимым последовательностей и для определения своих собственных. Полный список этих функций приведен в следующем разделе:</p>
+  <ul class="colour">
+    <li><a href="../../Sequences/Sequences.htm">Последовательности</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Rooms.htm">Номера</a></div>
+        <div style="float:right">Следующее: <a href="../General_Layer_Functions/General_Layer_Functions.htm">Функции общего слоя</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sequence Layers
+-->
+  <!-- TAGS
+sequence_layer_functions
+-->
+</body>
+</html>

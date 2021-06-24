@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>matrix_build_projection_ortho</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for matrix_build_projection_ortho" />
+  <meta name="rh-index-keywords" content="matrix_build_projection_ortho" />
+  <meta name="search-keywords" content="matrix_build_projection_ortho" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>matrix_build_projection_ortho</h1>
+  <p>Эта функция строит матрицу ортографической проекции на основе указанных ниже параметров (это метод проекции по умолчанию, используемый при создании комнаты в <span class="notranslate">GameMaker Studio 2</span> без каких-либо изменений). Иногда необходимо переключиться
+    с перспективной проекции на ортографическую, для чего и предназначена эта функция. Обычно она используется для рисования наложения, например, для отображения счета или других аспектов, поскольку это дает &quot;плоский&quot; вид нарисованных элементов (т.е. без перспективы) в 3D-игре:
+    без перспективы) в 3D-игре. Смотрите рисунок ниже, чтобы понять разницу между ортографическим и перспективным видами.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Вам также может понадобиться временно отключить удаление скрытых поверхностей, если вы хотите, чтобы информация рисовалась независимо от текущего значения глубины.</p>
+  <p><img alt="Ortho prjection matrix  example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/ortho_persp_image.png" /></p>
+  <h4>Синтаксис:</h4>
+  <p class="code">matrix_build_projection_ortho(width, height, znear, zfar);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Ширина проекции.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Высота проекции.</td>
+      </tr>
+      <tr>
+        <td>znear</td>
+        <td>Ближняя плоскость обрезания.</td>
+      </tr>
+      <tr>
+        <td>zfar</td>
+        <td>Дальняя плоскость обрезания.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Матричный индекс</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">viewmat = matrix_build_lookat(640, 240, -10, 640, 240, 0, 0, 1, 0);<br> projmat = matrix_build_projection_ortho(640, 480, 1.0, 32000.0);<br> camera_set_view_mat(view_camera[0], viewmat);<br> camera_set_proj_mat(view_camera[0], projmat);</p>
+  <p>Приведенный выше код создает новую матрицу взгляда и ортографическую матрицу, сохраняет их идентификаторы в локальных переменных, а затем использует их для установки матриц вида и проекции для камеры, назначенной на порт вида[0].</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Matrix_Functions.htm">Матричные функции</a></div>
+        <div style="float:right">Далее: <a href="matrix_build_projection_perspective.htm">matrix_build_projection_perspective</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+matrix_build_projection_ortho
+-->
+  <!-- TAGS
+matrix_build_projection_ortho
+-->
+
+</body></html>

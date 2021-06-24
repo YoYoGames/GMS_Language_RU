@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>нарисовать_спрайт_растянутый</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_stretched" />
+  <meta name="rh-index-keywords" content="draw_sprite_stretched" />
+  <meta name="search-keywords" content="draw_sprite_stretched" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>нарисовать_спрайт_растянутый</h1>
+  <p>Эта функция просто берет ресурс спрайта и растягивает его по заданной ширине и высоте так, чтобы он занимал эту область. Как и в случае с <a href="draw_sprite.htm"><tt>draw_sprite()</tt></a> вы можете указать спрайт и суб-изображение для рисования, затем позицию
+    x / y позицию в комнате, в которой будет рисоваться спрайт, и, наконец, ширину и высоту (которые должны быть пиксельными). На рисунке ниже показан результат работы этой функции с разными наборами аргументов:</p>
+  <p><img alt="draw_sprite_stretched example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/spr_stretch.png" /></p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: При рисовании с помощью этой функции, <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">смещение</a> спрайта по <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">x</a> и <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y</a> игнорируется, и спрайт будет нарисован с левым верхним углом в заданной позиции x / y в комнате.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_sprite_stretched(sprite, subimg, x, y, w, h);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>спрайт</td>
+        <td>Индекс спрайта для рисования.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>Подimg (кадр) спрайта для рисования (image_index или -1 соотносятся с текущим кадром анимации в объекте).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Координата x места рисования спрайта.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Координата y места рисования спрайта.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Ширина области, которую будет занимать растянутый спрайт.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Высота области, которую будет занимать растянутый спрайт.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_sprite_stretched(sprite_index, image_index, x, y, sprite_width, sprite_height / 2);</p>
+  <p>Это нарисует назначенный спрайт экземпляра и его подизображение с левым углом в позиции x/y экземпляра. Его ширина устанавливается равной ширине спрайта, а высота - высоте спрайта, деленной на два.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprites_And_Tiles.htm">Спрайты и плитки</a></div>
+        <div style="float:right">Далее: <a href="draw_sprite_stretched_ext.htm">draw_sprite_stretched_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_stretched
+-->
+  <!-- TAGS
+draw_sprite_stretched
+-->
+</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_sensor</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_sensor" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_sensor" />
+  <meta name="search-keywords" content="physics_fixture_set_sensor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_set_sensor</h1>
+  <p>Иногда вам нужно, чтобы игра обнаруживала и распознавала столкновение двух экземпляров с фикстурами, но не имела никакой физической реакции на столкновение. Это можно сделать, преобразовав приспособление в датчик, что в основном означает, что оно будет
+    генерировать событие столкновения, но без физической реакции, так что вы можете использовать эти экземпляры в качестве &quot;триггеров&quot; для других событий, происходящих в игровой комнате. Любое приспособление может быть помечено как датчик, и не имеет значения, является ли экземпляр, к которому оно привязано, статичным или движущимся.
+    привязан к нему, статичен он или находится в движении.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Сенсорное приспособление выдает событие столкновения <b>только при первом</b> столкновении, то есть вы не получите поток событий столкновения, когда два тела продолжают накладываться друг на друга (что обычно и происходит). Если они
+    перестанут накладываться друг на друга и наложатся в следующий раз, произойдет еще одно событие столкновения.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_fixture_set_sensor(fixture, state)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>приспособление</td>
+        <td>индекс приспособления</td>
+      </tr>
+      <tr>
+        <td>государство</td>
+        <td>является ли светильник датчиком (true) или нет (false)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">physics_fixture_set_sensor(fix_Cloud, 1);</p>
+  <p>Приведенный выше код переведет состояние датчика приспособления, индексируемого в &quot;fix_Cloud&quot;, в true.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Fixtures.htm">Приспособления</a></div>
+        <div style="float:right">Далее: <a href="physics_fixture_set_kinematic.htm">physics_fixture_set_kinematic</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_sensor
+-->
+  <!-- TAGS
+physics_fixture_set_sensor
+-->
+</body>
+</html>

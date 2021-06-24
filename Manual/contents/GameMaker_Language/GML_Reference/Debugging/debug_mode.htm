@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>режим отладки</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for debug_mode" />
+  <meta name="rh-index-keywords" content="debug_mode" />
+  <meta name="search-keywords" content="debug_mode" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>режим отладки</h1>
+  <p>Эта переменная, доступная <b>только для чтения</b>, возвращает <tt>true</tt>, если игра ведется в режиме отладки, и <tt>false</tt>, если игра ведется в обычном режиме.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">режим отладки</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if debug_mode<br> {
+    <br> ini_open(&quot;Cheats.ini&quot;);
+    <br> }
+    <br> else
+    <br> {
+    <br> ini_open(&quot;Game.ini&quot;);
+    <br> }
+  </p>
+  <p>Приведенный выше код открывает другой ini-файл в зависимости от значения переменной <tt>debug_mode</tt>, доступной только для чтения.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Debugging.htm">Отладка</a></div>
+        <div style="float:right">Далее: <a href="debug_event.htm">debug_event</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+debug_mode
+-->
+  <!-- TAGS
+debug_mode
+-->
+</body>
+</html>

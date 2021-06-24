@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_stretch</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_stretch" />
+  <meta name="rh-index-keywords" content="layer_background_stretch" />
+  <meta name="search-keywords" content="layer_background_stretch" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_background_stretch</h1>
+  <p>С помощью этой функции вы можете переключить спрайт фонового элемента на растягивание в соответствии с размерами комнаты или на сохранение разрешения 1:1. Вы передаете идентификатор фонового элемента (который вы получаете при создании фонового элемента с помощью команды <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a>    или при использовании функции <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>), а затем устанавливаете аргумент stretch в <tt>true</tt> или <tt>false</tt>. При значении <tt>true</tt> спрайт элемента будет растянут, чтобы соответствовать
+    комнаты (либо увеличивается, либо уменьшается в зависимости от размеров спрайта и комнаты), а при значении <tt>false</tt> спрайт элемента будет отображаться в своем собственном разрешении.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_background_stretch(background_element_id, stretch)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>background_element_id</td>
+        <td>Уникальное значение ID элемента фона для изменения</td>
+      </tr>
+      <tr>
+        <td>стрейч</td>
+        <td>Переключатель растяжения, который может быть <tt>истинным</tt> или <tt>ложным</tt></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> var back = layer_background_get_id(layer);<br> if layer_background_get_stretch(back)<br> {
+    <br> layer_background_stretch(back, false);<br> }
+    <br> else
+    <br> {
+    <br> layer_background_stretch(back, true);<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет нажатие кнопки мыши и, если оно обнаружено, переключает растяжение спрайта фонового элемента, назначенного слою, на котором находится экземпляр, выполняющий код.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Background_Layers.htm">Фоновые слои</a></div>
+        <div style="float:right">Далее: <a href="layer_background_blend.htm">layer_background_blend</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_stretch
+-->
+  <!-- TAGS
+layer_background_stretch
+-->
+</body>
+</html>

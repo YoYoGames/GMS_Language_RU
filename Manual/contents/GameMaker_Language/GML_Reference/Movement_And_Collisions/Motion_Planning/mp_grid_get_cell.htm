@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_get_cell</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_get_cell" />
+  <meta name="rh-index-keywords" content="mp_grid_get_cell" />
+  <meta name="search-keywords" content="mp_grid_get_cell" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_get_cell</h1>
+  <p>С помощью этой функции вы можете проверить любую заданную ячейку mp_grid на предмет того, была ли она отмечена как занятая или нет, указав индекс (ранее созданной) mp_grid и координаты x и y проверяемой ячейки. Если она была занята или проверяемая позиция
+    находится вне границ сетки, то функция вернет -1, в противном случае она вернет 0.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">mp_grid_get_cell(id, x , y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Индекс mp_grid, который будет использоваться</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Координата x сетки для проверки.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Координата y сетки для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if mp_grid_get_cell(grid, mouse_x div 16, mouse_y div 16) == -1<br> {
+    <br> image_blend = c_red;<br> }
+    <br> else
+    <br> {
+    <br> image_blend = c_lime;<br> }
+  </p>
+  <p>Приведенный выше код проверит ячейку mp_grid, соответствующую положению мыши, и если она занята, то установит переменную <tt>image_blend</tt> в красный цвет, а если не занята, то в зеленый.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Motion_Planning.htm">Планирование движения</a></div>
+        <div style="float:right">Далее: <a href="mp_grid_clear_all.htm">mp_grid_clear_all</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_get_cell
+-->
+  <!-- TAGS
+mp_grid_get_cell
+-->
+</body>
+</html>

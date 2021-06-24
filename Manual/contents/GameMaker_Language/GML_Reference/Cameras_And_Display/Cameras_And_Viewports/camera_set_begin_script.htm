@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_set_begin_script</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_set_begin_script" />
+  <meta name="rh-index-keywords" content="camera_set_begin_script" />
+  <meta name="search-keywords" content="camera_set_begin_script" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_set_begin_script</h1>
+  <p>Эта функция может быть использована для задания <a href="../../../GML_Overview/Script_Functions.htm">функции сценария</a>, которая будет вызываться в начале каждого игрового кадра, когда камера назначена на видимый и активный порт просмотра. Вы задаете уникальное значение камеры
+    ID значение (как возвращается различными <tt><a href="camera_create.htm">camera_create()</a></tt> функции) и ID функции, которая будет вызываться. Порядок выполнения скриптов, прикрепленных к камерам, и фактического рендеринга вида камеры следующий:</p>
+  <ul class="colour">
+    <li>Камеры для всех видимых и активных портов просмотра имеют свою <b>функцию обновления</b>, вызываемую как</li>
+    <li>Затем для каждого вида:
+      <ul>
+        <li>Вызывается <b>функция begin </b>для камеры для этого представления</li>
+        <li>Для этого вида выполняются события рисования</li>
+        <li>Вызывается <b>функция end </b>для камеры</li>
+      </ul>
+    </li>
+    <li>Перейдите к следующему активному видимому виду и повторите...</li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">camera_set_begin_script(camera_id, script)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор камеры</td>
+        <td>Уникальное значение ID камеры, полученное при создании камеры.</td>
+      </tr>
+      <tr>
+        <td>скрипт</td>
+        <td>Функция сценария для запуска каждого игрового кадра</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">camera_set_begin_script(view_camera[0], beginCamera);</p>
+  <p>Приведенный выше код устанавливает функцию сценария begin для камеры, назначенной на порт просмотра [0].</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Cameras_And_View_Ports.htm">Камеры и порты для просмотра</a></div>
+        <div style="float:right">Далее: <a href="camera_set_end_script.htm">camera_set_end_script</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_set_begin_script
+-->
+  <!-- TAGS
+camera_set_begin_script
+-->
+</body>
+</html>

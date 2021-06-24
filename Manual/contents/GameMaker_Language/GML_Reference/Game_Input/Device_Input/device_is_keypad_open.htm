@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>device_is_keypad_open</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for device_is_keypad_open" />
+  <meta name="rh-index-keywords" content="device_is_keypad_open" />
+  <meta name="search-keywords" content="device_is_keypad_open" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>device_is_keypad_open</h1>
+  <p>Эта функция проверяет устройство на наличие клавиатуры и, если таковая имеется, возвращает <tt>true</tt>, в противном случае - <tt>false</tt>. Обратите внимание, что эта функция предназначена в основном для устройств <span class="notranslate">Android</span>.</p>
+  <p>Для пользователей <i>Sony Xperia Play</i> в <span class="notranslate">GameMaker Studio 2</span> есть настройка карты кнопок/клавиш, поэтому вы можете использовать <a href="../Keyboard_Input/Keyboard_Input.htm">клавиатурные константы</a> <b>vk_up</b>, <b>vk_down</b>, <b>vk_left</b>,
+   <b>vk_right</b> для клавиш джойпада, <i>треугольник</i> - <tt>ord(&quot;T&quot;), квадрат</tt>- <i>ord(&quot;S</i> &quot;), <tt>круг - vk_alt +</tt> vk_backspace, а кнопка <b>назад</b> - <i>просто vk_backspace</i>,
+   <i>Cross</i> - <b>vk_space</b>, <i>Select</i> - <b>vk_return</b>, <i>Start</i> - <b>vk_rshift</b>, <i>L Trigger</i> - <tt>ord(&quot;L&quot;), R Trigger</tt> <i>- ord(&quot;R</i> &quot;).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">device_is_keypad_open</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if device_is_keypad_open()<br> {
+    <br> global.Setting = 2;<br> }
+    <br> else
+    <br> {
+    <br> global.Setting = 1;<br> }
+  </p>
+  <p>Приведенный выше код проверяет наличие клавиатуры, затем изменяет глобальную переменную в зависимости от возвращаемого значения.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Device_Input.htm">Ввод устройства</a></div>
+        <div style="float:right">Далее: <a href="device_get_tilt_x.htm">device_get_tilt_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+device_is_keypad_open
+-->
+  <!-- TAGS
+device_is_keypad_open
+-->
+
+</body></html>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Управление графическим процессором</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the GPU Control functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="GPU Control,GPU" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Управление графическим процессором</h1>
+  <p>При рисовании предметов в помещении часто требуется более детальный контроль над тем, как именно будет происходить рисование. Вы можете пожелать, чтобы не было альфа-смешения, или вам может потребоваться обтравка, или вам может понадобиться включить или
+    выключить. Все это возможно - и многое другое! - с помощью функций контроллера GPU, перечисленных ниже. Обратите внимание, что большинство этих функций являются глобальными, и их установка или изменение повлияет на то, как все будет отрисовываться в дальнейшем.</p>
+  <p>Для получения значений различных свойств GPU можно использовать следующие функции:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="gpu_get_blendenable.htm">gpu_get_blendenable</a></li>
+    <li><a href="gpu_get_ztestenable.htm">gpu_get_ztestenable</a></li>
+    <li><a href="gpu_get_zfunc.htm">gpu_get_zfunc</a></li>
+    <li><a href="gpu_get_zwriteenable.htm">gpu_get_zwriteenable</a></li>
+    <li><a href="gpu_get_fog.htm">gpu_get_fog</a></li>
+    <li><a href="gpu_get_cullmode.htm">gpu_get_cullmode</a></li>
+    <li><a href="gpu_get_blendmode.htm">gpu_get_blendmode</a></li>
+    <li><a href="gpu_get_blendmode_ext.htm">gpu_get_blendmode_ext</a></li>
+    <li><a href="gpu_get_blendmode_ext_sepalpha.htm">gpu_get_blendmode_ext_sepalpha</a></li>
+    <li><a href="gpu_get_blendmode_src.htm">gpu_get_blendmode_src</a></li>
+    <li><a href="gpu_get_blendmode_dest.htm">gpu_get_blendmode_dest</a></li>
+    <li><a href="gpu_get_blendmode_srcalpha.htm">gpu_get_blendmode_srcalpha</a></li>
+    <li><a href="gpu_get_blendmode_destalpha.htm">gpu_get_blendmode_destalpha</a></li>
+    <li><a href="gpu_get_colourwriteenable.htm">gpu_get_colourwriteenable</a></li>
+    <li><a href="gpu_get_alphatestenable.htm">gpu_get_alphatestenable</a></li>
+    <li><a href="gpu_get_alphatestref.htm">gpu_get_alphatestref</a></li>
+    <li><a href="gpu_get_texfilter.htm">gpu_get_texfilter</a></li>
+    <li><a href="gpu_get_texfilter_ext.htm">gpu_get_texfilter_ext</a></li>
+    <li><a href="gpu_get_texrepeat.htm">gpu_get_texrepeat</a></li>
+    <li><a href="gpu_get_texrepeat_ext.htm">gpu_get_texrepeat_ext</a></li>
+  </ul>
+  <p> </p>
+  <p>Следующие функции можно использовать для установки значений различных свойств GPU:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="gpu_set_blendenable.htm">gpu_set_blendenable</a></li>
+    <li><a href="gpu_set_ztestenable.htm">gpu_set_ztestenable</a></li>
+    <li><a href="gpu_set_zfunc.htm">gpu_set_zfunc</a></li>
+    <li><a href="gpu_set_zwriteenable.htm">gpu_set_zwriteenable</a></li>
+    <li><a href="gpu_set_fog.htm">gpu_set_fog</a></li>
+    <li><a href="gpu_set_cullmode.htm">gpu_set_cullmode</a></li>
+    <li><a href="gpu_set_blendmode.htm">gpu_set_blendmode</a></li>
+    <li><a href="gpu_set_blendmode_ext.htm">gpu_set_blendmode_ext</a></li>
+    <li><a href="gpu_set_blendmode_ext_sepalpha.htm">gpu_set_blendmode_ext_sepalpha</a></li>
+    <li><a href="gpu_set_colourwriteenable.htm">gpu_set_colourwriteenable</a></li>
+    <li><a href="gpu_set_alphatestenable.htm">gpu_set_alphatestenable</a></li>
+    <li><a href="gpu_set_alphatestref.htm">gpu_set_alphatestref</a></li>
+    <li><a href="gpu_set_texfilter.htm">gpu_set_texfilter</a></li>
+    <li><a href="gpu_set_texfilter_ext.htm">gpu_set_texfilter_ext</a></li>
+    <li><a href="gpu_set_texrepeat.htm">gpu_set_texrepeat</a></li>
+    <li><a href="gpu_set_texrepeat_ext.htm">gpu_set_texrepeat_ext</a></li>
+  </ul>
+  <p>Обратите внимание, что перед использованием функций <strong>режима наложения</strong> важно понять, как они работают, чтобы получить правильные результаты при их применении. Для этого мы создали следующее руководство:</p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Using_Blendmodes.htm">Руководство по использованию блендмодов</a></li>
+  </ul>
+  <p>Наконец, существуют следующие функции, которые можно использовать для работы со стеком GPU:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="gpu_push_state.htm">gpu_push_state</a></li>
+    <li><a href="gpu_pop_state.htm">gpu_pop_state</a></li>
+    <li><a href="gpu_get_state.htm">gpu_get_state</a></li>
+    <li><a href="gpu_set_state.htm">gpu_set_state</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Drawing.htm">Рисунок</a></div>
+        <div style="float:right">Следующий: <a href="../Mipmapping/Mipmapping.htm">Mipmapping</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+GPU Control
+GPU Functions
+GPU
+-->
+  <!-- TAGS
+gpu_functions
+-->
+</body>
+</html>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Общее управление игрой</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for General Game Control functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="General Game Control,Game Functions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Общее управление игрой</h1>
+  <p>Все эти функции и переменные связаны с функциональностью, специфичной для игры, например, загрузка/сохранение или перезапуск и т.д..</p>
+  <p>Следующие <strong>встроенные</strong> переменные <a href="../../GML_Overview/Variables/Global_Variables.htm">глобального диапазона</a> полезны для отладки вашей игры - они могут быть использованы, например, как вывод в файл журнала в случае возникновения проблем - а также
+    а также для отображения текущего ID сборки и т.д... для пользователя:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="game_id.htm">игровой идентификатор</a></li>
+    <li><a href="game_save_id.htm">game_save_id</a></li>
+    <li><a href="game_display_name.htm">имя_игрового_дисплея</a></li>
+    <li><a href="game_project_name.htm">имя_игрового_проекта</a></li>
+  </ul>
+  <p> </p>
+  <p>Следующие функции используются для общего управления игрой:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="game_end.htm">конец игры</a></li>
+    <li><a href="game_restart.htm">перезапуск игры</a></li>
+    <li><a href="game_load.htm">игровая_загрузка</a></li>
+    <li><a href="game_load_buffer.htm">игровой_загрузочный_буфер</a></li>
+    <li><a href="game_save.htm">игра_сохранение</a></li>
+    <li><a href="game_save_buffer.htm">игровой_сохранённый_буфер</a></li>
+    <li><a href="game_get_speed.htm">game_get_speed</a></li>
+    <li><a href="game_set_speed.htm">game_set_speed</a></li>
+  </ul>
+  <p> </p>
+  <p>Чтобы помочь вам создавать и поддерживать высокие баллы для ваших игр, <span class="notranslate">GameMaker Studio 2</span> создает глобальный <a href="../../GML_Overview/Arrays.htm">массив</a> высоких баллов из 10 мест, к которым вы можете обращаться, добавлять и изменять, чтобы создавать свои собственные списки высоких баллов без лишних хлопот.
+    списки высоких результатов без лишних хлопот. Эта функциональность является локальной для игры и работает на всех платформах, поэтому вы можете легко хранить и поддерживать базовую таблицу высоких результатов, используя эти функции вместе с <a href="../File_Handling/File_Handling.htm">функциями обработки файлов</a>.</p>
+  <p>Существуют следующие функции, работающие с внутренним списком высоких результатов.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="highscore_add.htm">highscore_add</a></li>
+    <li><a href="highscore_name.htm">имя_высокой_оценки</a></li>
+    <li><a href="highscore_value.htm">значение_высокой_оценки</a></li>
+    <li><a href="highscore_clear.htm">highscore_clear</a></li>
+  </ul>
+  <p> </p>
+  <p><span class="notranslate">GameMaker Studio 2</span> также включает функцию для вывода результатов на экран в виде списка, однако она очень проста, и рекомендуется использовать ее для отладки, а не для чего-либо еще, поскольку создать собственную таблицу результатов очень просто.
+    легко и дает вам гораздо больше контроля над тем, как она отображается:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../Drawing/Text/draw_highscore.htm">draw_highscore</a></li>
+  </ul>
+  <p> </p>
+  <p>Наконец, у нас есть функция, позволяющая назначить спрайт курсору мыши:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="cursor_sprite.htm">курсор_спрайт</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../GML_Reference.htm">Ссылка на<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Следующий: <a href="../Movement_And_Collisions/Movement_And_Collisions.htm">Движение и столкновения</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+General Game Control
+Game Control Functions
+Game Functions
+-->
+  <!-- TAGS
+game_functions
+-->
+</body>
+</html>

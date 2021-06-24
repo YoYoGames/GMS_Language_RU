@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_zwriteenable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_zwriteenable" />
+  <meta name="rh-index-keywords" content="gpu_set_zwriteenable" />
+  <meta name="search-keywords" content="gpu_set_zwriteenable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_zwriteenable</h1>
+  <p>Эту функцию можно использовать для включения<tt>(true</tt>) и выключения<tt>(false</tt>) упорядочивания глубины с помощью z-буфера. При рендеринге экземпляра в <span class="notranslate">GameMaker Studio 2</span> глубина сгенерированного пикселя (его координата z) сохраняется в z-буфере,
+    Затем, если другой экземпляр сцены должен быть отрисован в том же пикселе, эти две глубины сравниваются (z-тестирование - см. <a href="gpu_set_ztestenable.htm"><tt>gpu_set_ztestenable()</tt></a>) и та, что ближе к наблюдателю, сохраняется
+    в z-буфер, заменяя старую. Однако это не всегда то, что вы хотите, и бывают моменты, когда вы хотите, чтобы что-то было нарисовано поверх всего остального, независимо от того, каково его значение z. В этих случаях вы можете использовать эту функцию
+    чтобы отключить запись в z-буфер и таким образом заставить то, что рисуется, рисоваться поверх всего остального. Обратите внимание, что описание, приведенное здесь, относится к режиму сравнения z-тестирования по <i>умолчанию</i>, но его можно изменить</p>
+  <p>По умолчанию z-буферизация включена<tt>(true</tt>).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gpu_set_zwriteenable(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>включить</td>
+        <td>Используемый режим сравнения (см. список выше)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">gpu_set_zwriteenable(false);<br> with (obj_Menu_Containers)<br> {
+    <br> draw_self();
+    <br> }
+    <br> gpu_set_zwriteenable(true);
+  </p>
+  <p>Приведенный выше код отключает запись в z-буфер, рисует несколько объектов, а затем снова включает его для продолжения рисования.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="GPU_Control.htm">Управление графическим процессором</a></div>
+        <div style="float:right">Далее: <a href="gpu_set_fog.htm">gpu_set_fog</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_zwriteenable
+-->
+  <!-- TAGS
+gpu_set_zwriteenable
+-->
+</body>
+</html>

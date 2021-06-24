@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Номера</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Rooms" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Rooms" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Номера</h1>
+  <p>Комнаты создаются в <a href="../../../../The_Asset_Editors/Rooms.htm">редакторе комнат</a> в <span class="notranslate">GameMaker Studio 2</span><span>, и </span>именно в них происходит все, что происходит в вашей игре. Для запуска игры в ней должна быть хотя бы одна комната, но может потребоваться и больше.
+    в зависимости от типа игры и структуры вашего проекта. В этом разделе представлены все общие функции и переменные <span class="notranslate">GML</span>, связанные с комнатами, для получения информации о них, а также для установки определенных свойств в них.
+    в них.</p>
+  <p>Следующие <a href="../../../GML_Overview/Variables/Global_Variables.htm">глобальные переменные</a> и функции могут быть использованы для получения базовой информации о любом помещении:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="room_first.htm">первая комната</a></li>
+    <li><a href="room_last.htm">номер_последний</a></li>
+    <li><a href="room_next.htm">следующая комната</a></li>
+    <li><a href="room_previous.htm">номер_предыдущий</a></li>
+    <li><a href="room.htm">номер</a></li>
+    <li><a href="room_speed.htm">комнатная скорость</a></li>
+    <li><a href="room_height.htm">высота помещения</a></li>
+    <li><a href="room_width.htm">ширина_комнаты</a></li>
+    <li><a href="room_persistent.htm">комната_постоянная</a></li>
+  </ul>
+  <p> </p>
+  <p>Вы также можете использовать следующие функции для получения названия текущей комнаты (как определено в <a href="../../../../Introduction/The_Asset_Browser.htm">браузере активов</a>), а также для перемещения между комнатами:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="room_get_name.htm">имя_комнаты</a></li>
+    <li><a href="room_goto.htm">комната_то</a></li>
+    <li><a href="room_goto_next.htm">номер_следующий</a></li>
+    <li><a href="room_goto_previous.htm">комната_перед_предыдущей</a></li>
+    <li><a href="room_restart.htm">перезапуск_комнаты</a></li>
+  </ul>
+  <p> </p>
+  <p>Далее у нас есть ряд функций, которые можно использовать для изменения комнат и их содержимого или даже для создания новых комнат и добавления к ним. Следует отметить, что эти функции <i>никогда не</i> должны <i>запускаться из комнаты, которую вы хотите изменить</i>, а скорее
+    сначала их следует запустить из экземпляра в другой комнате. Также обратите внимание, что если вы измените какой-либо актив комнаты таким образом, это изменение будет <strong>постоянным</strong> и сохранится в течение всего времени игры, даже если вы вызовете функцию room_restart()
+    (при закрытии и перезапуске игры свойства комнаты будут сброшены).</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="room_exists.htm">комната_существует</a></li>
+    <li><a href="room_add.htm">room_add</a></li>
+    <li><a href="room_duplicate.htm">номер_дубликат</a></li>
+    <li><a href="room_assign.htm">назначение_комнаты</a></li>
+    <li><a href="room_instance_add.htm">room_instance_add</a></li>
+    <li><a href="room_instance_clear.htm">комната_инстанция_очистить</a></li>
+    <li><a href="room_set_height.htm">высота_комнаты</a></li>
+    <li><a href="room_set_width.htm">ширина_комнаты</a></li>
+    <li><a href="room_set_persistent.htm">room_set_persistent</a></li>
+    <li><a href="room_set_view_enabled.htm">room_set_view_enabled</a></li>
+    <li><a href="room_set_viewport.htm">room_set_viewport</a></li>
+    <li><a href="room_get_viewport.htm">room_get_viewport</a></li>
+    <li><a href="room_set_camera.htm">комната_установить_камеру</a></li>
+    <li><a href="room_get_camera.htm">room_get_camera</a></li>
+  </ul>
+  <p> </p>
+  <p>Существует также ряд различных функций, связанных с созданием и манипулированием различными типами элементов, которые могут быть размещены на слоях в помещении. Эти функции перечислены в соответствующих разделах для каждого типа элементов, перечисленных ниже:</p>
+  <ul class="colour">
+    <li><a href="General_Layer_Functions/General_Layer_Functions.htm">Функции общего уровня</a></li>
+    <li><a href="Tile_Map_Layers/Tile_Map_Layers.htm">Плитка Слои карты</a></li>
+    <li><a href="Background_Layers/Background_Layers.htm">Фоновые слои</a></li>
+    <li><a href="Sprite_Layers/Sprite_Layers.htm">Слои спрайта</a></li>
+    <li><a href="Sequence_Layers/Sequence_Layers.htm">Слои последовательности</a></li>
+  </ul>
+  <p> </p>
+  <p>При создании слоев комнаты важно отметить, что <i>на одном слое можно разместить несколько различных типов элементов</i>. Так, например, у вас может быть слой для врагов, и на этом слое будут находиться экземпляры врагов, а также определенные спрайты.
+    которые относятся только к этому врагу. Или у вас может быть элемент фона с элементом карты тайлов для создания вида комнаты. В редакторе комнат это недопустимо, но при динамическом создании вещей это можно сделать, поэтому функции
+    такие как <a href="General_Layer_Functions/layer_get_all_elements.htm"><tt>layer_get_all_elements()</tt></a> существуют.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Asset_Management.htm">Управление активами</a></div>
+        <div style="float:right">Следующий: <a href="../Assets_And_Tags/Assets_And_Tags.htm">Активы и метки</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Rooms
+Room Layers
+Layer Functions
+-->
+  <!-- TAGS
+room_functions
+-->
+</body>
+</html>

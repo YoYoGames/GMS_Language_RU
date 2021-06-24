@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Полотно последовательности</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the sequence canvas" />
+  <meta name="rh-index-keywords" content="Sequences - The Canvas" />
+  <meta name="search-keywords" content="sequence canvas" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Полотно последовательности</h1>
+  <p>При создании последовательностей для ваших проектов большая часть работы будет выполняться на <strong>холсте</strong> <a href="../Sequences.htm">редактора последовательностей</a>. Холст - это просто область, которая будет использоваться для размещения элементов последовательности, и
+    она также определяет, что будет показано, когда последовательность будет добавлена в комнату для отображения. Когда вы впервые создаете последовательность, размер холста будет установлен по умолчанию 1366px на 768px, но его можно изменить из <strong>панели инструментов </strong>, нажав на кнопку
+    щелкнув на <img alt="Icon Grid Menu" class="icon" src="../../assets/Images/Icons/Icon_CanvasOptions.png"> рядом с кнопкой <strong>Canvas Frame Toggle</strong> <img alt="Toggle Canvas Frame Icon" class="icon" src="../../assets/Images/Icons/Icon_ToggleCanvas.png">:</p>
+  <p><img alt="Sequence Editor Canvas Options" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_CanvasControls.png">Размер холста определяет визуальную область, в пределах которой можно разместить активы, составляющие последовательность, но рамка является
+    просто ориентир для размера и не влияет на рендеринг, т.е. если вы разместите актив спрайта за пределами рамки и добавите последовательность в комнату, актив все равно будет отрисован.</p>
+  <p>Рамка также используется для размещения любых <strong>опорных изображений</strong>, которые вы хотите использовать для позиционирования активов в последовательности. Эталонное изображение можно добавить из того же меню " <strong>Параметры холста</strong> ", где задается размер
+    и будет использоваться в качестве фонового изображения для холста последовательности. Это позволяет размещать объекты в соответствии, например, с макетом пользовательского интерфейса от художника проекта:</p>
+  <p><img alt="The Canvas With A Reference Image" class="center" src="../../assets/Images/Asset_Editors/Canvas_Reference.png">Обратите внимание, что эталонные изображения не сохраняются в проекте и не будут отображаться при добавлении последовательности в комнату.</p>
+  <p>После того как холст настроен нужным образом, можно приступать к добавлению на него активов. Это делается простым перетаскиванием их из <a href="../../Introduction/The_Asset_Browser.htm">браузера активов</a> на холст, что приведет к созданию <a class="glossterm" data-glossterm="отслеживание активов" href="#">дорожки активов</a> на <a href="The_Track_Panel.htm">панели дорожек</a>:</p>
+  <p><img alt="Adding An Asset To The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Add_Asset.gif">Ниже перечислены активы, которые можно добавить в последовательность:</p>
+  <ul class="colour">
+    <li>Спрайты</li>
+    <li>Объекты</li>
+    <li>Звуки</li>
+    <li>Последовательности</li>
+  </ul>
+  <p>После добавления необходимых активов их можно поместить в исходные позиции для анимации, а также трансформировать с помощью различных элементов <strong>управления трансформацией</strong>. Доступ к ним осуществляется двумя различными
+    способами:</p>
+  <ul class="colour">
+    <li>Подведите мышь к краям актива на холсте, нажмите <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> и перетащите (обратите внимание, что курсор будет меняться, чтобы показать различные трансформации.
+      которые будут изменены):<br>
+      <img alt="Transforming The Asset In The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Edit_Transforms.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+    <li>С помощью гизмо трансформации в начале координат актива, которое можно изменить на панели инструментов холста:<br>
+      <img alt="Using The Transform Gizmo And The Toolbox" class="center" src="../../assets/Images/Asset_Editors/Canvas_Edit_Widgets.gif" style="margin-top: 10px; margin-bottom: 20px;"></li>
+  </ul>
+  <p>После установки начальных преобразований для актива (если требуется) вы можете использовать холст для добавления<span class="glossextra">ключей</span> <a class="glossterm" data-glossterm="ключ параметра" href="#">параметров</a>к дорожке актива на <strong>панели дорожек</strong>.
+    Простым примером того, как это работает, может быть базовое преобразование положения, когда вы помещаете актив в начальную позицию, затем перемещаете головку воспроизведения <a class="glossterm" data-glossterm="playhead" href="#">на</a> кадре <a href="Using_The_Dope_Sheet.htm"><span class="notranslate">Dope Sheet</span></a>    до кадра, на котором вы хотите закончить движение, а затем снова переместить актив:</p>
+  <p><img alt="Adding A Parameter Key To An Asset In The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Add_Keys.gif">Как вы можете видеть на изображении выше, новые позиции автоматически записываются на дорожке, поскольку мы включили опцию
+    &quot;Автоматически<strong>записывать изменения&quot;</strong> <img class="icon" src="../../assets/Images/Icons/Icon_Seq_Record.png"> на панели дорожек. Вы также можете видеть, что пунктирная линия была добавлена к представлению холста, чтобы указать движение во времени
+    времени актива. Если автоматическая запись не включена, вы все равно можете добавить точки, перемещая актив, затем установив головку воспроизведения и, наконец, нажав кнопку &quot;<strong>Записать новый ключ&quot;</strong> <img class="icon" src="../../assets/Images/Icons/Icon_Seq_Add.png">.</p>
+  <p>Последний момент, о котором стоит упомянуть, заключается в том, что холст позволяет использовать и добавлять <strong>интеллектуальные направляющие</strong>, которые представляют собой ориентиры, добавляемые к холсту, чтобы активы можно было выравнивать по ним. По умолчанию на холсте отображаются горизонтальные
+    и вертикальные направляющие вокруг центральной точки, а также прямоугольную направляющую вокруг &quot;края&quot; холста последовательности, в зависимости от размера холста. Эти направляющие не будут отображаться в окончательной последовательности при добавлении в комнату и просто
+    чтобы помочь вам получить представление о пространстве и расположении вещей. Вы также можете добавить собственные направляющие, щелкнув <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> на линейке и перетащив ее на холст.
+    холст:</p>
+  <p><img alt="Adding Guides To The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Adding_Guides.gif">Чтобы удалить направляющую, просто щелкните по ней, а затем снова перетащите ее к линейкам. Когда направляющие добавлены в последовательность,
+    при перемещении актива к направляющей, если ограничительная рамка или начало координат находятся достаточно близко, будут отображаться дополнительные интеллектуальные направляющие для обозначения расстояний между активами, а также для обозначения активов, которые находятся на одной направляющей или на
+    (они окрашены в разные цвета):</p>
+  <p><img alt="Canvas Smart Guides" class="center" src="../../assets/Images/Asset_Editors/Canvas_Smart_Guides.gif" /></p>
+  <p> </p>
+  <p> </p>
+  <h1>Меню и навигация RMB</h1>
+  <p>Для навигации по холсту можно использовать те же основные элементы управления, что и для обычной рабочей области, т.е.: используйте среднюю кнопку мыши <img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> и перетащите мышь для панорамирования холста (или альтернативно
+    используйте <img alt="Space Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Space.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">), а также можно прокручивать горизонтально с помощью колеса мыши
+    <img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> или увеличить или уменьшить масштаб с помощью клавиш <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> и колесика мыши <img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png">.</p>
+  <p>Чтобы выбрать актив, просто нажмите левую кнопку мыши <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> на нем, или вы можете выбрать несколько активов, используя <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> и <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> для нажатия на каждый актив. Вы также можете выбрать
+    несколько активов с помощью <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55">, а затем щелкнуть <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> и перетащить. Это
+    создаст &quot;коробку&quot; на холсте, и любой актив, который коснется области коробки, будет выбран.</p>
+  <p>Когда выбран актив или активы, их можно вырезать, копировать и вставлять с помощью комбинаций клавиш <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> +&quot;<span class="inline">X</span>&quot;, <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">C</span>&quot; и <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">V</span>&quot;.</p>
+  <p>Обратите внимание, что при выборе нескольких активов на холсте, для каждого актива будет показана <a class="glossterm" data-glossterm="ограничительная рамка" href="#">ограничительная рам</a> ка, а для всех вместе - большая ограничительная рамка. Вы можете изменить
+    как ведет себя эта ограничительная рамка с помощью значков в левом верхнем углу:</p>
+  <p><img alt="Combined Selection BBox Controls" class="center" src="../../assets/Images/Asset_Editors/Canvas_BBox_Controls.png">Нажатие на значок круга изменит виджет управления трансформацией на начало координат полной ограничивающей рамки для всех выбранных активов,
+    в то время как щелчок на значке коробки покажет индивидуальный виджет управления для каждого актива в выборе. Сгруппированные активы можно перемещать, копировать/вставлять и т.д. так же, как и отдельные активы.</p>
+  <p>Если у вас есть несколько активов, которые накладываются друг на друга, и вы хотите выбрать определенный из них, не мешая остальным, вы можете навести курсор мыши на них, чтобы вызвать <strong>панель инструментов элементов</strong>, которая покажет список значков для каждого элемента под курсором.
+    мышью. Затем вы можете щелкнуть на одном из этих элементов, чтобы выбрать его и отредактировать:</p>
+  <p><img alt="The Item Toolbox" class="center" src="../../assets/Images/Asset_Editors/Canvas_Item_Toolbox.gif">У вас также есть ряд дополнительных опций, доступных с помощью правой кнопки мыши <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png">, когда вы нажимаете ее на любом активе в последовательности:</p>
+  <p><img alt="Canvas Asset RIght Mouse Button Menu" class="center" src="../../assets/Images/Asset_Editors/Canvas_RMB_Menu.png">Здесь доступны следующие варианты:</p>
+  <ul class="colour">
+    <li><strong>Запись</strong>: эта опция позволяет записать ключи параметров для актива(ов), а при наведении курсора на нее вы увидите опции для записи <em>масштаба,</em> <em>вращения или </em> <em>положения</em>.</li>
+    <li><strong>Группа</strong>: При выборе этого пункта будет создана новая папка группы на панели дорожек, и выбранный актив(ы) будет перемещен в нее.</li>
+    <li><strong>Переименовать</strong>: Когда вы нажмете на эту кнопку, трек будет выделен на панели треков, а его название станет редактируемым, готовым к изменению.</li>
+    <li><strong>Найти в листе</strong>: Когда вы нажмете эту кнопку, ключ выбранного актива будет выделен в <span class="notranslate">Dope Sheet</span>.</li>
+    <li><strong>Найти другие</strong>: При нажатии на эту кнопку отображается список всех других активов того же типа, из которых можно выбрать один.</li>
+    <li><strong>Выбрать</strong>: При нажатии на эту кнопку отображается список всех активов, которые перекрываются в выбранной позиции, и вы можете выбрать любой из них для редактирования.</li>
+    <li><strong>Удалить ключ</strong>: При выборе этого параметра ключ дорожки актива будет удален с <span class="notranslate">листа допинга</span> в текущей позиции головки воспроизведения. Сама дорожка будет существовать, как и все дорожки параметров, которые она содержит, и вы можете повторно добавить другой актив
+      на дорожку, перетащив его из браузера активов на <span class="notranslate">dope-лист</span>.</li>
+    <li><strong>Удалить дорожку</strong>: Это удалит дорожку актива (и дорожки параметров, если таковые назначены) с панели дорожек, а также все связанные с ней клавиши в <span class="notranslate">Dope Sheet</span>.</li>
+    <li><strong>Открыть редактор</strong>: Это откроет актив для редактирования в редакторе по умолчанию для данного типа актива.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Sequences.htm">Последовательности</a></div>
+        <div style="float:right">Следующий: <a href="The_Track_Panel.htm">Путевая панель</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sequences Canvas
+-->
+  <!-- TAGS
+sequences_canvas
+-->
+
+</body></html>

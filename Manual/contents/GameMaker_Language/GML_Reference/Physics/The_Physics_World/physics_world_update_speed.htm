@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>физика_мира_обновление_скорости</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_world_update_speed" />
+  <meta name="rh-index-keywords" content="physics_world_update_speed" />
+  <meta name="search-keywords" content="physics_world_update_speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>физика_мира_обновление_скорости</h1>
+  <p><span class="notranslate">GameMaker Studio 2</span> обновляет данные в зависимости от скорости комнаты, так что если вы установите значение, скажем, 30, <span class="notranslate">GameMaker Studio 2</span> будет выполнять 30 шагов в течение секунды. Однако для функций физики этого может быть недостаточно, и вы можете захотеть, чтобы вещи
+    обновляться с немного большей скоростью для повышения стабильности или точности. Для этого мы используем функцию <tt>physics_world_update_speed()</tt>, которая устанавливает скорость обновления для системы физики <i>независимо</i> от скорости комнаты. Это означает.
+    что вы можете иметь скорость комнаты 30, но установить физику на 60, что фактически удваивает скорость, с которой система физики обновляет и выполняет свои вычисления, по сравнению со скоростью, с которой обновляется шаг.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: в настоящее время вы не можете установить значение меньше, чем комнатная скорость, но будущие обновления могут изменить это.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_world_update_speed(speed)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>скорость</td>
+        <td>количество раз в секунду, которое обновляет физическая система</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">physics_world_update_speed(room_speed * 2);</p>
+  <p>Приведенный выше код устанавливает скорость обновления системы физики в два раза выше скорости обновления комнаты.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="The_Physics_World.htm">Мир физики</a></div>
+        <div style="float:right">Далее: <a href="physics_world_draw_debug.htm">physics_world_draw_debug</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_world_update_speed
+-->
+  <!-- TAGS
+physics_world_update_speed
+-->
+</body>
+</html>

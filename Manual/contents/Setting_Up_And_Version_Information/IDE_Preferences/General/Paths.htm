@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Пути</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="The Paths Preferences from the General Preferences section" />
+  <meta name="rh-index-keywords" content="Prefs - General - Paths" />
+  <meta name="search-keywords" content="Path Preferences" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Предпочтения пути</h1>
+  <p><img alt="Path Prefs" class="center" src="../../../assets/Images/Setup_And_Version/Preferences/General_Paths_Prefs.png" style="cursor: nwse-resize;" /></p>
+  <p>Параметры <strong>Path </strong>управляют различными путями к файлам, которые требуются элементам в IDE <span class="notranslate">GameMaker Studio 2</span>, а также для любых внешних редакторов, которые вам необходимы. Для IDE существуют следующие опции:</p>
+  <ul class="colour">
+    <li><strong>Временный каталог</strong>: Место для сохранения всех временных папок. По умолчанию в <span class="notranslate">Windows</span> это
+     <p class="code">\Users\&lt;Имя пользователя&gt;\AppData\Local\Temp\GameMakerStudio2</p>
+      А на <span class="notranslate">macOS</span> это:
+     <p class="code">/var/folders/&lt;Path_Hash&gt;/GameMakerStudio2</p>
+     <p> </p>
+    </li>
+    <li><strong>Каталог кэша IDE</strong>: Место для сохранения кэша IDE. По умолчанию в <span class="notranslate">Windows</span> это
+     <p class="code">\Users\&lt;Имя пользователя&gt;\AppData\Roaming\GameMakerStudio2\Cache</p>
+      А на <span class="notranslate">macOS</span> это:
+     <p class="code">/Users/&lt;Имя пользователя&gt;/.config/GameMakerStudio2/Cache</p>
+     <p> </p>
+    </li>
+    <li><strong>Каталог кэша активов</strong>: Место для сохранения кэша активов для каждого проекта. По умолчанию в <span class="notranslate">Windows</span> это
+     <p class="code">\Users\&lt;Имя пользователя&gt;\AppData\Roaming\GameMakerStudio2\Cache</p>
+      А на <span class="notranslate">macOS</span> это:
+     <p class="code">/Users/&lt;Username&gt;/.config/GameMakerStudio2/Cache</p>
+     <p> </p>
+    </li>
+    <li><strong>Расположение &quot;Мои проекты&quot;:</strong> Место, где <span class="notranslate">GameMaker Studio 2</span> будет первоначально создавать новые проекты. По умолчанию в <span class="notranslate">Windows</span> это
+     <p class="code">\Users\&lt;Имя пользователя&gt;\Documents\GameMakerStudio2</p>
+      А в <span class="notranslate">macOS</span> это
+     <p class="code">/Users/&lt;Имя пользователя&gt;/GameMakerStudio2</p>
+     <p> </p>
+    </li>
+    <li><strong>Automatically delete temp directory on close</strong>: Установка этого флажка заставит <span class="notranslate">GameMaker Studio 2</span> автоматически удалять папку Temp, которую она создает в проекте для компиляции и т.д.. Этот параметр включен по умолчанию, а снятие флажка
+      выключит ее (это означает, что вам придется вручную удалять все временные файлы).</li>
+    <li><strong>Автоматически удалять кэш активов при закрытии</strong>: Если этот флажок установлен, то папка кэша компилятора активов будет удаляться при выходе из <span class="notranslate">GameMaker Studio 2</span>. По умолчанию эта функция выключена, и ее включение будет означать, что каждый раз при загрузке и запуске
+      любого проекта кэш нужно будет создавать заново (что может занять время в зависимости от размера игры).</li>
+    <li><strong>Автоматически удалять кэш IDE при закрытии</strong>: Если этот флажок установлен, то папка кэша компилятора IDE будет удаляться при выходе из <span class="notranslate">GameMaker Studio 2</span>. По умолчанию этот параметр выключен, и его включение будет означать, что при каждом запуске <span class="notranslate">GameMaker</span>
+      Studio 2 кэш нужно будет создавать заново.</li>
+    <li><strong>Удалить временную папку</strong>: Нажатие этой кнопки приведет к удалению временной папки проекта.</li>
+    <li><strong>Удалить кэш активов</strong>: Нажатие этой кнопки приведет к удалению кэша активов компилятора для проекта.</li>
+    <li><strong>Удалить кэш IDE</strong>: Нажатие этой кнопки приведет к удалению кэша IDE</li>
+  </ul>
+  <p>Для задания путей к внешним редакторам существуют следующие варианты:</p>
+  <ul class="colour">
+    <li><strong>Путь к внешнему редактору/просмотрщику для файлов SWF</strong>: Если вы работаете со спрайтами в формате SWF, вы можете установить этот параметр на путь к предпочитаемому редактору/просмотрщику, и когда вы нажмете кнопку <em>Редактировать изображение</em> в редакторе спрайтов, он
+      будет открываться указанная программа. По умолчанию путь не задан.</li>
+    <li><strong>Путь к внешнему редактору/просмотрщику для файлов Spine</strong>: Если вы работаете со спрайтами в формате Spine, вы можете установить этот параметр на путь к предпочитаемой программе просмотра/редактору, и когда вы нажмете кнопку <em>Редактировать изображение</em> в редакторе спрайтов, тогда
+      будет открываться указанная программа. По умолчанию путь не задан.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../General_Preferences.htm">Общие предпочтения</a></div>
+        <div style="float:right">Следующий: <a href="Power_Saving.htm">Предпочтения в энергосбережении</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asset Explorer
+Preferences - General
+Preferences - General, Asset Explorer
+Preferences - General, Background
+Preferences - General, Compiling
+Preferences - General, Confirm Dialogues
+Preferences - General, Go To
+Preferences - General, Help
+Preferences - General, Input
+Preferences - General, Output <span class="notranslate">Windows</span>
+Preferences - General, Paths
+Preferences - General, Power Saver
+Preferences - General, Recent <span class="notranslate">Windows</span>
+Preferences - General, Resources
+Preferences - General, Workspace
+-->
+  <!-- TAGS
+asset_explorer
+prefs_general
+prefs_assetexplorer
+prefs_background
+prefs_compiling
+prefs_goto
+prefs_help
+prefs_input
+prefs_paths
+prefs_workspace
+prefs_power
+prefs_confirm
+prefs_recent_windows
+prefs_output_windows
+-->
+</body>
+</html>

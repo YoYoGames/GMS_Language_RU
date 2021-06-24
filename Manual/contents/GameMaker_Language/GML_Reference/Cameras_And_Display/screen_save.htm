@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>экран_сохранения</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for screen_save" />
+  <meta name="rh-index-keywords" content="screen_save" />
+  <meta name="search-keywords" content="screen_save" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>экран_сохранения</h1>
+  <p>С помощью этой функции вы можете сохранить скриншот игры в том виде, в котором он сейчас отображается в окне игры. Файл будет сохранен в рабочую директорию игры, которая в windows находится по адресу <tt>&lt;drive&gt;:/Users/YOURUSERNAME/AppData/Local/[Game Name]/</tt>, а на Mac это ~/Library/Application <tt> Support/[Game Name]/.</tt> Захваченное изображение будет окончательным рендером поверхности приложения игры, или (если поверхность приложения была отключена) это будет изображение всего дисплея или окна.
+    Важно отметить, что эта функция предназначена для вызова в <b>событии Draw GUI End Event</b>, что должно дать согласованные результаты на всех платформах. Использование ее в любом другом событии может не сработать, как ожидалось, и дать разные результаты на
+    на разных платформах и даже устройствах. Если вам нужно больше контроля над тем, что сохраняется, используйте функцию <a href="screen_save_part.htm"><tt>screen_save_part()</tt></a>.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ: </b>Эта функция не работает на цели HTML5.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">screen_save(fname);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>Имя файла для сохранения снимка экрана</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if keyboard_check_pressed(ord(&quot;S&quot;))<br> {
+    <br> screen_save(working_directory + &quot;Screens\Screen_&quot; + string(num++) + &quot;.png&quot;)<br> }
+  </p>
+  <p>Приведенный выше код делает снимок экрана игры, когда пользователь нажимает клавишу &quot;S&quot;. Этот снимок экрана сохраняется в определенном каталоге и нумеруется с помощью переменной, которая затем увеличивается.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">Камеры и дисплеи</a>
+        <div style="float:left">Назад: </div>
+        <div style="float:right">Далее: <a href="screen_save_part.htm">экран_сохранить_часть</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+screen_save
+-->
+  <!-- TAGS
+screen_save
+-->
+</body>
+</html>

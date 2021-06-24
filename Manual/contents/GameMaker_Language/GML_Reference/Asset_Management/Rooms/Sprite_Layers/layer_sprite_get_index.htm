@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sprite_get_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_get_index" />
+  <meta name="rh-index-keywords" content="layer_sprite_get_index" />
+  <meta name="search-keywords" content="layer_sprite_get_index" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sprite_get_index</h1>
+  <p>Эта функция может использоваться для получения текущего значения индекса изображения элемента спрайта. Вы передаете ID элемента спрайта (который вы получаете при создании элемента спрайта с помощью функции <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a> или когда вы
+    использовать функцию <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>), и функция вернет реальное значение, которое представляет собой индекс изображения, отображаемого для спрайта. Функция вернет -1, если либо элемент спрайта не существует, либо у элемента нет индекса изображения.
+    либо элемент не существует, либо ему не назначен правильный спрайт.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_sprite_get_index(sprite_element_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>sprite_element_id</td>
+        <td>Уникальное значение ID элемента спрайта, из которого нужно получить информацию</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (индекс текущего изображения спрайта или -1)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;sprite_sky&quot;);<br> var spr_id = layer_sprite_get_id(lay_id, &quot;Clouds&quot;);<br> if layer_sprite_get_index(spr_id) &lt; 4<br> {
+    <br> layer_sprite_index(spr_id, 4);<br> }
+  </p>
+  <p>Приведенный выше код получит идентификатор слоя для слоя с именем &quot;sprite_sky&quot; и затем использует его для получения идентификатора элемента спрайта на этом слое. Этот идентификатор затем используется для проверки того, что индекс изображения для элемента меньше 4, и если это так, то он устанавливается
+    на 4.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Layers.htm">Слои спрайта</a></div>
+        <div style="float:right">Далее: <a href="layer_sprite_get_speed.htm">layer_sprite_get_speed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_get_index
+-->
+  <!-- TAGS
+layer_sprite_get_index
+-->
+</body>
+</html>

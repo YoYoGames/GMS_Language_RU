@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_load_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_load_async" />
+  <meta name="rh-index-keywords" content="buffer_load_async" />
+  <meta name="search-keywords" content="buffer_load_async" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_load_async</h1>
+  <p>С помощью этой функции вы можете загрузить файл, созданный ранее с помощью функции <a href="buffer_save.htm"><tt>buffer_save()</tt></a> (или любой другой функции для сохранения буферов) в буфер. Смещение&quot; определяет начальную
+    позицию в буфере для загрузки (в байтах), а &quot;size&quot; - размер области буфера, загружаемой с этого смещения и далее (также в байтах). Вы можете указать значение -1 для аргумента size, и тогда будет загружен весь буфер.
+    Обратите внимание, что функция будет загружаться из папки &quot;по умолчанию&quot;, которую не <i>нужно</i> включать в указанный вами путь к файлу. Эта папка будет создана, если она не существует или когда вы сохраняете файл с помощью функции <a href="buffer_save_async.htm"><tt>buffer_save_async()</tt></a>.</p>
+  <p>Функция возвращает уникальное значение ID, которое затем может быть использовано в <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Save_Load.htm">асинхронном событии сохранения/загрузки</a> для проверки значения  <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>    ID, как показано в расширенном примере ниже. Карта <tt>async_load</tt> в событии будет содержать следующие две пары ключ/значение:</p>
+  <ul class="colour">
+    <li><b>&quot;id&quot;: идентификатор </b>асинхронной функции, возвращаемый функцией сохранения.</li>
+    <li><b>&quot;status&quot;: </b>возвращает true, если <tt>данные</tt> были сохранены/загружены правильно, и false в <tt>противном случае</tt>.</li>
+  </ul>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: На <b>HTML5</b> это предпочтительный метод загрузки файла, если вы загружаете его с сервера, а не из локального хранилища, так как синхронная загрузка уже устарела в большинстве браузеров и со временем будет отменена.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">buffer_load_async(buffer, filename, offset, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>буфер</td>
+        <td>Индекс буфера для загрузки.</td>
+      </tr>
+      <tr>
+        <td>имя файла</td>
+        <td>Имя файла для загрузки.</td>
+      </tr>
+      <tr>
+        <td>смещение</td>
+        <td>Смещение в буфере для загрузки (в байтах).</td>
+      </tr>
+      <tr>
+        <td>размер</td>
+        <td>Размер загружаемой области буфера (в байтах).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Расширенный пример:</h4>
+  <p>Функция <tt>buffer_load_async()</tt> может быть вызвана из любого события, и поскольку она является асинхронной, обратный вызов может быть почти мгновенным или занять несколько секунд. Вызов функции прост и выглядит следующим образом:</p>
+  <p class="code">loadid = buffer_load_async(buff, &quot;Player_Save.sav&quot;, 0, 16384);</p>
+  <p>Приведенный выше код загружает содержимое файла &quot;<i>Player_Save.sav&quot; в</i> заданный буфер, сохраняя идентификатор вызова функции в переменной &quot; loadid&quot;. Когда загрузка будет завершена, асинхронное событие Save/Load будет
+    и вы сможете проанализировать карту <tt>async_load</tt> на предмет правильного ID функции, как показано ниже:</p>
+  <p class="code">если ds_map_find_value(async_load, &quot;id&quot;) == loadid<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) == false<br> {
+    <br> show_debug_message(&quot;Load failed!&quot;);<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код сначала проверит ID созданной карты DS, затем проверит статус обратного вызова, опубликовав отладочное сообщение, если возникли какие-либо проблемы.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Buffers.htm">Буферы</a></div>
+        <div style="float:right">Далее: <a href="buffer_load_partial.htm">буферная_загрузка_частичная</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_load_async
+-->
+  <!-- TAGS
+buffer_load_async
+-->
+</body>
+</html>

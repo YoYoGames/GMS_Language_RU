@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>os_get_info</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for os_get_info" />
+  <meta name="rh-index-keywords" content="os_get_info" />
+  <meta name="search-keywords" content="os_get_info" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_get_info</h1>
+  <p>Эта функция возвращает <a href="../Data_Structures/DS_Maps/DS_Maps.htm"><tt>Карта DS</tt></a> с подробной информацией об ОС, на которой запущена игра. Точная возвращаемая информация будет зависеть от ОС и устройства, поэтому рекомендуется
+    протестировать эту функцию на всех платформах, на которые вы хотите ориентироваться, и вывести возвращаемые значения с помощью функции типа <span class="inline"><a href="../Debugging/show_debug_message.htm">show_debug_message()</a></span>. Обратите внимание, что карта DS не
+    автоматически очищается из памяти, и вы должны использовать эту функцию, когда данные больше не нужны. <a href="../Data_Structures/DS_Maps/ds_map_destroy.htm"><tt>ds_map_destroy()</tt></a> когда вам больше не нужны содержащиеся в ней данные.</p>
+  <p>Ниже приведены некоторые подробности о дополнительных данных, которые будут доступны к карте DS для следующих платформ. Следует отметить, что на <em>всех</em> платформах, <em>кроме</em> HTML5, карта будет иметь ключ &quot;<span><span class="inline">is64bit</span>&quot;.
+    который будет либо <span class="inline">true</span>, либо <span class="inline">false</span> в зависимости от того, является ли ОС платформы 64-битной или нет.</span>
+  </p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span class="notranslate">Windows</span> / UWP</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">На <span class="notranslate">Windows</span> Desktop и <span class="notranslate">Windows UWP</span> вы получите некоторые дополнительные данные от DX11 со следующими клавишами, доступными в карте DS (полезно для расширений):</p>
+    <ul class="dropspotlist">
+      <li><strong>video_d3d11_device </strong>- указатель на устройство DX11</li>
+      <li><strong>video_d3d11_context </strong>- указатель на контекст DX11</li>
+      <li><strong>video_adapter_vendorid </strong>- строка с идентификатором производителя адаптеров</li>
+      <li><strong>video_adapter_deviceid </strong>- строка с идентификатором устройства адаптера</li>
+      <li><strong>video_adapter_subsysid </strong>- строка с идентификатором подсистемы адаптера</li>
+      <li><strong>video_adapter_revision </strong>- строка с номером ревизии адаптера</li>
+      <li><strong>video_adapter_dedicatedvideomemory </strong>- строка с размером видеопамяти</li>
+      <li><strong>video_adapter_dedicatedsystemmemory </strong>- строка с размером системной памяти (используется адаптером DX11)</li>
+    </ul>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span class="notranslate">Android</span></a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">На <b><span class="notranslate">Android</span></b> платформе вы получите некоторые дополнительные данные из различных API со следующими ключами, доступными в карте DS:</p>
+    <ul class="dropspotlist">
+      <li><tt>android_tv</tt> - возвращает <tt>true</tt>, если устройство распознано как устройство <span class="notranslate">Android</span> TV, и <tt>false</tt> в противном случае.</li>
+      <li><tt>GL_VERSION</tt> - версия OpenGL, о которой сообщает драйвер</li>
+      <li><tt>GL_VENDOR</tt> - поставщик OpenGL, о котором сообщает драйвер</li>
+      <li><tt>GL_RENDERER</tt> - рендерер OpenGL, о котором сообщает драйвер</li>
+      <li><tt>GL_EXTENSIONS</tt> - расширения OpenGL, которые доступны по данным драйвера</li>
+      <li><tt>GL_SHADING_LANGUAGE_VERSION</tt> - версия GLSL, поддерживаемая данным драйвером OpenGL</li>
+      <li><tt>GL_MAX_TEXTURE_SIZE</tt> - максимальный размер текстуры, поддерживаемый данным драйвером OpenGL</li>
+      <li><tt>SDK_INT</tt> - значение параметра android.os.Build.VERSION.SDK_INT см. <a href="https://developer.android.com/reference/android/os/Build.VERSION" target="_blank">здесь</a> для получения дополнительной информации.</li>
+      <li><tt>RELEASE</tt> - значение параметра android.os.Build.VERSION.RELEASE смотрите <a href="https://developer.android.com/reference/android/os/Build.VERSION" target="_blank">здесь</a> для получения дополнительной информации.</li>
+      <li><tt>MODEL</tt> - значение параметра android.os.Build.MODEL см. <a href="https://developer.android.com/reference/android/os/Build" target="_blank">здесь</a> для получения дополнительной информации.</li>
+      <li><tt>DEVICE</tt> - значение android.os.Build.DEVICE см. <a href="https://developer.android.com/reference/android/os/Build" target="_blank">здесь</a> для получения дополнительной информации.</li>
+      <li><tt>MANUFACTURER</tt> - значение android.os.Build.MANUFACTURER смотрите <a href="https://developer.android.com/reference/android/os/Build" target="_blank">здесь</a> для получения дополнительной информации.</li>
+      <li><tt>CPU_ABI</tt> - значение параметра android.os.Build.CPU_ABI, более подробную информацию смотрите <a href="https://developer.android.com/reference/android/os/Build" target="_blank">здесь</a>.</li>
+      <li><tt>CPU_ABI2</tt> - значение параметра android.os.Build.CPU_ABI2 смотрите <a href="https://developer.android.com/reference/android/os/Build" target="_blank">здесь</a> для получения дополнительной информации.</li>
+      <li><tt>BOOTLOADER</tt> - значение параметра android.os.Build.BOOTLOADER см. <a href="https://developer.android.com/reference/android/os/Build" target="_blank">здесь</a> для получения дополнительной информации.</li>
+      <li><tt>BOARD</tt> - значение параметра android.os.Build.BOARD см. <a href="https://developer.android.com/reference/android/os/Build" target="_blank">здесь</a> для получения дополнительной информации.</li>
+      <li><tt>VERSION</tt> - значение os.version из метода <span class="notranslate">Android</span> <tt>System.getProperty</tt> </li>
+      <li><tt>REGION</tt> - значения user.region из метода <span class="notranslate">Android</span> <tt>System.getProperty</tt> </li>
+      <li><tt>VERSION_NAME</tt> - значение версии данного пакетаName - см. <a href="https://developer.android.com/reference/android/content/pm/PackageInfo.html#versionName" target="_blank">здесь</a> для получения дополнительной информации.</li>
+      <li><tt>PHYSICAL_KEYBOARD</tt> - если мы считаем, что физическая клавиатура доступна, то строка &quot;TRUE&quot;, иначе &quot;FALSE&quot;.</li>
+    </ul>
+    <p> </p>
+  </div>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">os_get_info()</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (индекс ds_map)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if (os_type == os_android)<br> {<br> var _info = os_get_info();<br>     <br> if (_info[? &quot;android_tv&quot;])<br> {<br> global.android_tv = true;<br> } <br> }</p>
+  <p>Приведенный выше код проверяет, является ли текущая ОС <span class="notranslate">Android</span>, получает информацию об ОС и считывает возвращенную карту, чтобы проверить, запущена ли игра на <span class="notranslate">Android</span> TV. В этом случае он устанавливает глобальную переменную в true.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="OS_And_Compiler.htm">ОС и компилятор</a></div>
+        <div style="float:right">Далее: <a href="os_powersave_enable.htm">os_powersave_enable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+os_get_info
+-->
+  <!-- TAGS
+os_get_info
+-->
+</body>
+</html>

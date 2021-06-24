@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>внешний_вызов</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for external_call" />
+  <meta name="rh-index-keywords" content="external_call" />
+  <meta name="search-keywords" content="external_call" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>внешний_вызов</h1>
+  <p>Если вы создали вызов внешней функции для <tt>dll</tt> или <tt>dylib</tt>, используя <a href="external_define.htm"><tt>external_define()</tt></a>вы можете использовать эту функцию для последующего вызова этой функции. Вы передаете имя ранее определенной функции, а также
+    а также все аргументы, которые она требует (каждый аргумент должен иметь правильный тип, либо вещественный, либо строковый), и функция возвращает результат внешнего вызова.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">external_call(id, args[0...15]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Имя функции, которую вы хотите вызвать</td>
+      </tr>
+      <tr>
+        <td>args[0...10]</td>
+        <td>Различные аргументы, которые вы хотите передать внешней функции</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Значение (тип возвращаемого значения будет зависеть от определенной функции)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">my_function = external_define(&quot;MyDLL.dll&quot;, &quot;MyMin&quot;, dll_cdecl, ty_real, 2, ty_real, ty_real);<br> var _a = external_call(my_function, x, y);</p>
+  <p>Приведенный выше пример кода вызывает ранее определенную внешнюю функцию и сохраняет возвращаемое значение в локальной переменной.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="OS_And_Compiler.htm">ОС и компилятор</a></div>
+        <div style="float:right">Далее: <a href="external_free.htm">external_free</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+external_call
+-->
+  <!-- TAGS
+external_call
+-->
+</body>
+</html>

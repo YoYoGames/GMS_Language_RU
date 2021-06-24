@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_add_grid_region</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_add_grid_region" />
+  <meta name="rh-index-keywords" content="ds_grid_add_grid_region" />
+  <meta name="search-keywords" content="ds_grid_add_grid_region" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_add_grid_region</h1>
+  <p>Эта функция может быть использована для добавления значений всех ячеек, находящихся в исходной области сетки, к значениям в целевой сетке, как показано ниже:</p>
+  <p><img alt="DS grid add grid region" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_add_grid_region.png" /></p>
+  <p class="note"><b>ПРИМЕЧАНИЕ: </b>Вы также можете использовать эту функцию в той же сетке для добавления значений из одной области сетки к значениям, хранящимся в другой (см. пример кода ниже).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_grid_add_grid_region(index, source, x1, y1, x2, y2, xpos, ypos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс сетки назначения.</td>
+      </tr>
+      <tr>
+        <td>источник</td>
+        <td>Индекс исходной сетки.</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Левая позиция области ячеек для копирования из исходной сетки.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Верхняя позиция области ячеек для копирования из исходной сетки.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Правая позиция области ячеек для копирования из исходной сетки.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Нижняя позиция области ячеек для копирования из исходной сетки.</td>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>Позиция x на сетке назначения для добавления исходного региона.</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>Позиция y на сетке назначения для добавления исходного региона.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">ds_grid_add_grid_region(grid, grid, 0, 0, 1, 5, 2, 0)</p>
+  <p>Приведенный выше код копирует область ячеек с (0,0) по (1,5) сетки DS, индексированных в переменной &quot;grid&quot;, и добавляет их к ячейкам с позиции (2,0) той же сетки DS.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="DS_Grids.htm">DS Grids</a></div>
+        <div style="float:right">Далее: <a href="ds_grid_multiply.htm">ds_grid_multiply</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_add_grid_region
+-->
+  <!-- TAGS
+ds_grid_add_grid_region
+-->
+
+</body></html>

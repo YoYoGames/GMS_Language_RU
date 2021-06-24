@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>os_request_permission</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for os_request_permission" />
+  <meta name="rh-index-keywords" content="os_request_permission,os_permission_granted,os_permission_denied" />
+  <meta name="search-keywords" content="os_request_permission,os_permission_granted,os_permission_denied" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_check_permission</h1>
+  <p>С помощью этой функции вы можете запросить определенное разрешение. Вы указываете запрашиваемое разрешение в виде строки, используя формат &quot;<tt>android.permission.&lt;permission&gt; &quot;, поэтому для</tt> запроса <tt>разрешения</tt> RECORD_AUDIO <tt>(</tt> например)
+    вы вызовете</p>
+  <p class="code">os_request_permission(&quot;android.permission.RECORD_AUDIO&quot;);</p>
+  <p>В ответ функция запустит <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">системное асинхронное событие</a>, в котором встроенная <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>    DS map будет содержать следующие пары ключ/значение:</p>
+  <ul class="colour">
+    <li>&quot; type<b>&quot;:</b> Это тип события, которое было вызвано, а значением будет строка &quot;<tt>permission_request_result&quot;.</tt></li>
+    <li>&quot; &lt;permission&gt;<b>&quot;:</b> Это будет разрешение, запрашиваемое функцией в виде строки, которая будет содержать одну из следующих констант:
+      <table>
+        <tbody>
+          <tr>
+            <th>Постоянная</th>
+            <th>Описание</th>
+          </tr>
+          <tr>
+            <td>os_permission_granted</td>
+            <td>Указывает, что разрешение было предоставлено</td>
+          </tr>
+          <tr>
+            <td>os_permission_denied</td>
+            <td>Указывает, что разрешение не было предоставлено</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+  <p> </p>
+  <p>Стоит отметить, что следующие разрешения поддерживаются <span class="notranslate">GameMaker Studio 2</span>, но считаются &quot;опасными&quot; Google и поэтому должны быть запрошены в <i>явном виде</i> (обратите внимание, что некоторые разрешения могут быть запрошены с помощью функции &quot;Параметры игры Android&quot; без необходимости использования этой функции).
+   <a href="../../../Settings/Game_Options/Android.htm">Опции игры<span class="notranslate">Android</span></a> без необходимости использования этой функции):</p>
+  <ul class="colour">
+    <li><tt>android.permission.WRITE_EXTERNAL_STORAGE</tt></li>
+    <li><tt>android.permission.READ_PHONE_STATE</tt></li>
+    <li><tt>android.permission.RECORD_AUDIO</tt></li>
+  </ul>
+  <p>Дополнительную информацию о разрешениях приложений можно найти в <a href="https://developer.android.com/guide/topics/permissions/overview" target="_blank">документации по<span class="notranslate">Android</span></a>.</p>
+  <p class="note"><b>ВАЖНО!</b> Эта функция предназначена только для <b><span class="notranslate">Android</span></b> только для цели.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">os_request_permission(permission)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>разрешение</td>
+        <td>Разрешение на запрос (строка)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if (os_type == os_android)<br> {
+    <br> if (os_check_permission(&quot;android.permission.INTERNET&quot;) == os_permission_denied)<br> {
+    <br> os_request_permission(&quot;android.permission.INTERNET&quot;);
+    <br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет тип ОС и, если это <span class="notranslate">Android</span>, выполняет проверку разрешений и, если разрешение &quot;INTERNET&quot; еще не было предоставлено, запрашивает его.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="OS_And_Compiler.htm">ОС и компилятор</a></div>
+        <div style="float:right">Следующий: <a href="GM_build_date.htm">GM_build_date</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+os_request_permission
+os_permission_granted
+os_permission_denied
+-->
+  <!-- TAGS
+os_request_permission
+-->
+</body>
+</html>

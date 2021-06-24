@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_set_bbox_mode</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_set_bbox_mode" />
+  <meta name="rh-index-keywords" content="sprite_set_bbox_mode" />
+  <meta name="search-keywords" content="sprite_set_bbox_mode,bboxmode_automatic,bboxmode_fullimage,bboxmode_manual" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_set_bbox_mode</h1>
+  <p>Эта функция используется для установки режима ограничивающей рамки для спрайта. Вы передаете индекс спрайта и используемый режим, который должен быть одной из следующих констант:<br>
+  </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td><tt>bboxmode_automatic</tt></td>
+        <td>Автоматически - Ограничительная рамка будет рассчитана автоматически, на основе настройки допуска для спрайта.</td>
+      </tr>
+      <tr>
+        <td><tt>bboxmode_fullimage</tt></td>
+        <td>Полное изображение - ограничивающая рамка будет установлена так, чтобы использовать полную ширину и высоту спрайта, независимо от допусков и &quot;пустых&quot; пикселей.</td>
+      </tr>
+      <tr>
+        <td><tt>bboxmode_manual</tt></td>
+        <td>Вручную - Ограничительная рамка устанавливается вручную по заданным пользователем значениям, что требует использования функции <a href="sprite_set_bbox.htm"><tt>sprite_set_bbox()</tt></a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция влияет на <b>актив </b>спрайта так, что все последующие экземпляры с этим спрайтом будут иметь тот же режим ограничивающей рамки.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">sprite_set_bbox_mode(ind, mode);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс спрайта для изменения режима.</td>
+      </tr>
+      <tr>
+        <td>режим</td>
+        <td>Режим для установки (константа).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращает</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if sprite_get_bbox_mode(sprite_index) != 0<br> {
+    <br> sprite_set_bbox_mode(sprite_index, bboxmode_automatic);<br> }
+  </p>
+  <p>Выше проверяется режим bbox для текущего спрайта, и если он не <tt>автоматический,</tt> то устанавливается это значение.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Manipulation.htm">Манипуляция спрайтом</a></div>
+        <div style="float:right">Далее: <a href="sprite_set_bbox.htm">sprite_set_bbox</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_set_bbox_mode
+bboxmode_manual
+bboxmode_fullimage
+bboxmode_automatic
+-->
+  <!-- TAGS
+sprite_set_bbox_mode
+-->
+</body>
+</html>

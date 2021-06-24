@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>file_bin_close</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_bin_close" />
+  <meta name="rh-index-keywords" content="file_bin_close" />
+  <meta name="search-keywords" content="file_bin_close" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>file_bin_close</h1>
+  <p>Закрывает ранее открытый двоичный файл. Вы передаете значение идентификатора файла, возвращаемое функцией <a href="file_bin_open.htm"><tt>file_bin_open()</tt></a>.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эти функции <b>не</b> работают, если целевым модулем является HTML5.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">file_bin_close(binfile);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>binfile</td>
+        <td>Идентификатор файла, который нужно закрыть.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">file = file_bin_open(&quot;myfile.bin&quot;, 2);<br> file_bin_rewrite(file);
+    <br> file_bin_close(file);
+  </p>
+  <p>Это позволит открыть файл из того же каталога, что и игра, и присвоить его индекс переменной &quot;file&quot;. Затем файл перезаписывается (очищается от данных) и снова закрывается.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Binary_Files.htm">Бинарные файлы</a></div>
+        <div style="float:right">Далее: <a href="file_bin_size.htm">file_bin_size</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_bin_close
+-->
+  <!-- TAGS
+file_bin_close
+-->
+</body>
+</html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_get_id</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_get_id" />
+  <meta name="rh-index-keywords" content="layer_background_get_id" />
+  <meta name="search-keywords" content="layer_background_get_id" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_background_get_id</h1>
+  <p>Эта функция может использоваться для получения уникального значения ID элемента фона на слое. Вы передаете идентификатор слоя (который вы получаете, когда используете имя слоя вместе с параметром <a href="../General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a>)
+    и функция вернет значение ID, связанное с фоновым элементом на слое. Обратите внимание, что эта функция предназначена для работы с фоновыми элементами, добавленными в IDE, так как если вы добавите фон к слою через
+    код с помощью функции <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a>то она вернет уникальный ID для добавленного элемента фона.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_background_get_id(layer_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор слоя</td>
+        <td>Уникальное значение идентификатора слоя, на который нужно нацелиться</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Идентификационное значение фонового элемента (Real)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Background_trees&quot;);<br> var back_id = layer_background_get_id(lay_id);<br> layer_background_sprite(back_id, bck_Trees_Winter);</p>
+  <p>Приведенный выше код получит идентификатор слоя для слоя с именем &quot;Background_trees&quot;, а затем использует его для получения идентификатора элемента фона на этом слое. Этот идентификатор затем используется для изменения спрайта элемента.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Background_Layers.htm">Фоновые слои</a></div>
+        <div style="float:right">Далее: <a href="layer_background_exists.htm">layer_background_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_get_id
+-->
+  <!-- TAGS
+layer_background_get_id
+-->
+</body>
+</html>

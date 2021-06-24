@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sha1_file</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for sha1_file" />
+  <meta name="rh-index-keywords" content="sha1_file" />
+  <meta name="search-keywords" content="sha1_file" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sha1_file</h1>
+  <p>В криптографии SHA-1 - это криптографическая хэш-функция, разработанная <i>Агентством национальной безопасности</i> США и применяемая в нескольких широко используемых приложениях, популярных <b><span class="notranslate">Git</span></b> где она используется для проверки изменений файлов, а также в протоколах
+    TLS и SSL, PGP, SSH, S/MIME и IPsec. Эта функция принимает входной файл и возвращает 160-битный дайджест сообщения в формате ASCII, уникальный для этого файла, который можно использовать для проверки целостности в любое время.</p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: SHA-1 не является полностью безопасным и может быть взломан. См. <a href="https://en.wikipedia.org/wiki/SHA-1">эту страницу</a> для получения дополнительной информации.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">sha1_file(filename)</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>имя файла</td>
+        <td>Файл, для которого нужно сгенерировать хэш sha1.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Строка</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">hash = sha1_file(working_directory + &quot;game_data.ini&quot;)</p>
+  <p>Приведенный выше код сгенерирует хэш sha1 для указанного файла и сохранит возвращаемое значение в переменной &quot;hash&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Encoding_And_Hashing.htm">Кодирование файлов</a></div>
+        <div style="float:right">Далее: <a href="zip_unzip.htm">zip_unzip</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+sha1_file
+-->
+  <!-- TAGS
+sha1_file
+-->
+</body>
+</html>

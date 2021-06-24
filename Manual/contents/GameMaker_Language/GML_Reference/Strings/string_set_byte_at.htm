@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>string_set_byte_at</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_set_byte_at" />
+  <meta name="rh-index-keywords" content="string_set_byte_at" />
+  <meta name="search-keywords" content="string_set_byte_at" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>string_set_byte_at</h1>
+  <p>Эта функция устанавливает байт непосредственно в строке (на основе формата UTF8) и возвращает копию строки с изменениями.</p>
+  <p class="note">ПРИМЕЧАНИЕ: Эта функция работает невероятно медленно, поэтому тщательно подумайте, нужна ли она и где вы ее используете.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">string_set_byte_at(str, pos, byte);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>str</td>
+        <td>Строка для изменения байта.</td>
+      </tr>
+      <tr>
+        <td>поз</td>
+        <td>Позиция в строке (начиная с 1) для изменения байта.</td>
+      </tr>
+      <tr>
+        <td>байт</td>
+        <td>Новое значение байта.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Строка</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">str = string_set_byte_at(&quot;hello&quot;, 2, 97);</p>
+  <p>Приведенный выше код изменит значение байта второй буквы в строке и таким образом установит переменную <tt>str</tt> в значение &quot;hallo&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Strings.htm">Струны</a></div>
+        <div style="float:right">Далее: <a href="string_char_at.htm">string_char_at</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_set_byte_at
+-->
+  <!-- TAGS
+string_set_byte_at
+-->
+
+</body></html>

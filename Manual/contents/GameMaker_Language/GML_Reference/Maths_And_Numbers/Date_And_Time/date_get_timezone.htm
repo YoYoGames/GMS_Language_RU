@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>дата_get_timezone</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for date_get_timezone" />
+  <meta name="rh-index-keywords" content="date_get_timezone,timezone_local,timezone_utc" />
+  <meta name="search-keywords" content="date_get_timezone,timezone_local,timezone_utc" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>дата_get_timezone</h1>
+  <p>Получает базовый часовой пояс, используемый для всех остальных функций даты и времени. Этот часовой пояс может быть либо <i>локальным</i> (установленным системой), либо <i>UTC</i>, и функция возвращает одну из следующих констант:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>часовой пояс_местный</td>
+        <td>использовать местный часовой пояс, установленный системой</td>
+      </tr>
+      <tr>
+        <td>часовой пояс_utc</td>
+        <td>использовать всемирное координированное время</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">date_get_timezone();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Постоянная</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if (date_get_timezone() != timezone_utc)<br> {
+    <br> date_set_timezone(timezone_utc);
+    <br> }
+  </p>
+  <p>Этот код проверяет базовую настройку часового пояса для игры и, если она не UTC, то изменяет ее.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Date_And_Time.htm">Дата и время</a></div>
+        <div style="float:right">Далее: <a href="current_time.htm">текущее_время</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+date_get_timezone
+timezone_local
+timezone_utc
+-->
+  <!-- TAGS
+date_get_timezone
+-->
+
+</body></html>

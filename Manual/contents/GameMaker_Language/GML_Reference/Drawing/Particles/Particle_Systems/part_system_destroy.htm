@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>часть_системы_уничтожить</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_system_destroy" />
+  <meta name="rh-index-keywords" content="part_system_destroy" />
+  <meta name="search-keywords" content="part_system_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>часть_системы_уничтожить</h1>
+  <p>С помощью этой функции вы можете уничтожить данную систему частиц и удалить ее из памяти. Эта функция всегда должна вызываться, когда система больше не нужна, например, в конце комнаты или в событии уничтожения экземпляра, иначе вы можете оказаться с
+    частицы появляются в последующих комнатах, а удалить их нет возможности, а также произойдет утечка памяти, что в конечном итоге приведет к краху игры.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция также уничтожит и удалит все эмиттеры, которые могли быть созданы и связаны с уничтожаемой системой.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">part_system_destroy(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс системы частиц для уничтожения.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if (global.player_hp &lt;= 0)<br> {<br> part_system_destroy(p_sys);<br> room_goto_next();<br> }</p>
+  <p>Приведенный выше код проверяет, меньше или равно нулю значение глобальной переменной, и если оно равно нулю, то уничтожает систему частиц, на которую ссылается данная переменная, а затем переходит в следующую комнату.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Particle_Systems.htm">Системы частиц</a></div>
+        <div style="float:right">Далее: <a href="part_particles_clear.htm">part_particles_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_destroy
+-->
+  <!-- TAGS
+part_system_destroy
+-->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>script_execute</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function script_execute" />
+  <meta name="rh-index-keywords" content="script_execute" />
+  <meta name="search-keywords" content="script_execute" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>script_execute</h1>
+  <p>Эта функция изначально была разработана для динамического вызова <i>активов</i> сценария, но с введением пользовательских функций ее теперь можно использовать двумя способами:</p>
+  <ul class="colour">
+    <li>Первый способ - это поддержка <b>унаследованных</b> сценариев, где каждый сценарий был одной функцией, а название сценария было также названием функции. Используемый таким образом, он будет работать, как и раньше, и будет запускать созданный пользователем актив скрипта и передавать
+      заданные аргументы в него. Обратите внимание, что в данном случае вызывается не <i>скрипт</i>, а одноименная <i>функция</i> внутри <i>скрипта</i>. <span style="text-align: justify;"></span></li>
+    <li><span style="text-align: justify;">Второй способ - это вызов функции из актива сценария, который содержит несколько функций или определений переменных. В этом случае нужно указать имя функции и аргументы, которые она требует, а не имя актива сценария. Обратите внимание, что это работает только для <a href="../../../GML_Overview/Script_Functions.htm">функций сценария</a>, но не для <a href="../../../GML_Overview/Method_Variables.htm">методов</a>, поскольку только функции сценария имеют присвоенный им идентификатор сценария.</span></li>
+  </ul>
+  <p><span style="text-align: justify;"></span>Несмотря на то, что эта функция предназначена в основном для поддержки наследия, она не является устаревшей, так как все еще имеет свое место в сетевых ситуациях и ситуациях удаленного вызова процедур. Также стоит отметить, что эта функция
+    медленная, и ее частое использование может негативно сказаться на производительности.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция не может использоваться со встроенными функциями.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">script_execute(scr, arg0, arg1, arg2..., etc...);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>scr</td>
+        <td>Имя функции/скрипта, который вы хотите вызвать</td>
+      </tr>
+      <tr>
+        <td>arg0, arg1, arg2..., etc...</td>
+        <td>Различные аргументы, которые вы хотите передать функции/скрипту</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Будет зависеть от возвращаемого значения из вызываемого скрипта/функции</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">script_execute(choose(move_up, move_down, move_left, move_right), irandom(5));</p>
+  <p>Приведенный выше пример кода будет использовать <tt>script_execute</tt> для выбора одной из четырех определенных пользователем функций (в данном случае связанной с движением) и передаст ей в качестве первого аргумента случайное целое число.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Scripts.htm">Скрипты</a></div>
+        <div style="float:right">Далее: <a href="script_execute_ext.htm">script_execute_ext</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+script_execute
+-->
+  <!-- TAGS
+script_execute
+-->
+</body>
+</html>

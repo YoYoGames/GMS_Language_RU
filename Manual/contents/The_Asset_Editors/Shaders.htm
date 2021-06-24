@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Шейдеры</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the shader editor works" />
+  <meta name="rh-index-keywords" content="Shader Editor" />
+  <meta name="search-keywords" content="shaders,shader,open GL,open GL ES" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Редактор <span class="notranslate">шейдеров</span> </h1>
+  <p><img alt="Shader Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Shaders.png"><span class="notranslate">Шейдеры</span> - это очень мощный инструмент, который можно использовать для манипулирования графикой, выводимой на экран вашей игры, позволяя невероятно быстро создавать эффекты, которые могут быть самыми разными.
+    от, например, добавления тонкого цветового оттенка к спрайту до эффектов искажения всего экрана. Но что такое <span class="notranslate">шейдер</span>?</p>
+  <p> <span class="notranslate">Шейдер</span> - это программа, состоящая из двух частей, которая выполняется непосредственно на самой видеокарте, что делает ее очень быстрой, поскольку всю работу выполняет GPU, и освобождает циклы CPU для вашего игрового кода. Полный <span class="notranslate">шейдер</span> состоит из программы вершинного <span class="notranslate">шейдера</span> и
+    фрагментного <span class="notranslate">шейдера</span> (также известного как пиксельный <span class="notranslate">шейдер</span>). Обе эти маленькие программы работают вместе, чтобы манипулировать тем, что графическая карта отображает на экране. Это позволяет в реальном времени управлять положением, цветом и альфа-каналом.
+    которые на самом деле <a class="glossterm" data-glossterm="rendered" href="#">отображаются</a> в <a class="glossterm" data-glossterm="буфер дисплея" href="#">буфере дисплея</a>.</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Вершинный <span class="notranslate">шейдер</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Вершинный <span class="notranslate">шейдер</span> - это программируемый <span class="notranslate">шейдерный</span> этап в конвейере рендеринга, который обрабатывает отдельные вершины (точки треугольников, используемых для рендеринга любого изображения). При рендеринге геометрии - например, спрайта или поверхности - GameMaker Studio 2 создает поток вершин, называемый буфером вершин (Vertex Buffer), который определяет геометрию этих треугольников.
+      - <span class="notranslate">GameMaker Studio 2</span> создает поток вершин - так называемый <strong>буфер вершин </strong>- который определяет геометрию этих треугольников. Например, геометрия спрайта состоит из двух треугольников (обычно называемых <em>полигонами</em>), которые отображаются вместе, образуя "квадрат".
+      вместе, чтобы сформировать &quot;квадрат&quot;. Этот поток вершин из буфера вершин подается на вход вершинного <span class="notranslate">шейдера</span>, который может обрабатывать данные вершин программируемым образом. Выходной сигнал <span class="notranslate">шейдера</span> вершин используется графическим процессором для сборки треугольников,
+      которые затем правильно обрезаются и обрезаются для порта обзора и камеры обзора, а затем отправляются в блок растеризации GPU, который генерирует новый выходной поток, состоящий из того, что называется <strong>фрагментами</strong>. Это крошечные структуры данных
+      структуры данных, каждая из которых относится к одному пикселю, появляющемуся на экране.</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Фрагментный <span class="notranslate">шейдер</span></a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Фрагментный <span class="notranslate">шейдер</span> - это программируемый <span class="notranslate">шейдерный</span> этап конвейера рендеринга, который работает с &quot;фрагментами&quot; - интерполированными пикселями, используемыми для текстурирования любого данного полигона - и отвечает за вывод окончательного цвета пикселя каждого
+      пикселей каждого треугольника. В основном это работает следующим образом: <span class="notranslate">шейдер</span> фрагментов получает на вход все фрагменты (отдельные пиксели треугольника), которые были переданы по конвейеру вершинным <span class="notranslate">шейдером</span>. Затем он может
+      обрабатывать эти фрагменты, чтобы изменить цвет и альфа-коэффициент конечного пикселя, который будет выведен на экран.</p>
+  </div>
+  <p> </p>
+  <p>Полный обзор того, как на самом деле работают <span class="notranslate">шейдеры</span> и какое место они занимают в графическом конвейере, выходит за рамки данной статьи, но здесь вы можете найти подробное руководство:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../Additional_Information/Guide_To_Using_Shaders.htm">Руководство по использованию <span class="notranslate">шейдеров</span></a></li>
+  </ul>
+  <p> </p>
+  <p>Кроме того, в блоге <span class="notranslate">YoYo Games</span> Tech есть ряд статей, в которых рассказывается гораздо больше подробностей, которые вы можете найти по следующим ссылкам:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="https://www.yoyogames.com/blog/14/shaders-overview-part-1"><span class="notranslate">Шейдеры</span> Часть 1</a></li>
+    <li><a href="https://www.yoyogames.com/blog/16/shaders-overview-part-2"><span class="notranslate">Шейдеры</span> Часть 2</a></li>
+    <li><a href="https://www.yoyogames.com/blog/17/shaders-overview-part-3"><span class="notranslate">Шейдеры</span> Часть 3</a></li>
+    <li><a href="https://www.yoyogames.com/blog/18/shaders-overview-part-4"><span class="notranslate">Шейдеры</span> Часть 4</a></li>
+  </ul>
+  <p> </p>
+  <p><span class="notranslate">GameMaker Studio 2</span> поддерживает следующие языки <span class="notranslate">шейдеров</span>:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Язык<span class="notranslate">шейдеров</span> </th>
+        <th>Целевая платформа</th>
+      </tr>
+      <tr>
+        <td><strong>GLSL ES</strong></td>
+        <td>Все целевые платформы</td>
+      </tr>
+      <tr>
+        <td><strong>GLSL</strong></td>
+        <td>Mac и <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>)</td>
+      </tr>
+      <tr>
+        <td><strong>HLSL 11</strong></td>
+        <td><span class="notranslate">Windows</span>, UWP, XboxOne</td>
+      </tr>
+      <tr>
+        <td><strong>PSSL</strong></td>
+        <td><span class="notranslate">Playstation 4</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Чтобы создать <span class="notranslate">шейдерный</span> ресурс, просто щелкните правой кнопкой мыши <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> в <a href="../Introduction/The_Asset_Browser.htm">Asset Browser</a> и выберите <em>Create <span class="notranslate">Shader</span></em>. После создания
+    базовый <span class="notranslate">шейдер</span>, вы можете использовать меню правой кнопки мыши <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> на новом ресурсе, чтобы выбрать тип <span class="notranslate">шейдера</span>, прежде чем продолжить редактирование кода:</p>
+  <p><img alt="Shader Editor RMB Menu" class="center" src="../assets/Images/Asset_Editors/Editor_Shader_RMBMenu.png">При создании нового шейдера редактор кода разделяется на две &quot;программы&quot; - Vertex и Fragment, каждая из <span class="notranslate">которых</span> доступна на вкладках в верхней части редактора.
+    доступна на вкладках в верхней части редактора. Обе программы создаются сразу, потому что вы <em>не можете создать <span class="notranslate">шейдер</span></em> без обеих частей. Даже если вы хотите использовать только <span class="notranslate">шейдер</span> фрагмента, вам придется сначала создать вершинный шейдер &quot;проходного типа&quot;.
+   <span class="notranslate">шейдер</span>, поэтому по умолчанию любой новый создаваемый <span class="notranslate">шейдер</span> будет содержать вершинный и фрагментный <span class="notranslate">шейдер</span>, уже закодированный для вас (на снимке экрана в верхней части страницы видно, что мы использовали панель редактора кода, чтобы показать
+    полезно при совместной работе над обоими <span class="notranslate">шейдерами</span> ).</p>
+  <p>Стоит отметить, что вы можете использовать <span class="notranslate">шейдеры</span> GLSL ES на <em>всех </em>целевых платформах, но чтобы они работали на целевой платформе <strong>HTML5 </strong>, вы должны включить WebGL в <a href="../Settings/Game_Options/HTML5.htm">опциях HTML5 Game Options</a>, иначе
+    иначе они не будут работать.</p>
+  <p>Более подробную информацию о функциях <span class="notranslate">шейдеров</span> и их использовании в <span class="notranslate">GameMaker Studio 2</span> можно найти на следующих страницах:</p>
+  <ul class="colour">
+    <li><a href="../GameMaker_Language/GML_Reference/Asset_Management/Shaders/Shaders.htm">Функции<span class="notranslate">шейдеров</span></a> - справочный раздел <span class="notranslate">GML</span> для <span class="notranslate">шейдеров</span>.</li>
+    <li><a href="../GameMaker_Language/GML_Reference/Asset_Management/Shaders/Shader_Constants.htm">Константы<span class="notranslate">шейдеров</span></a> - встроенные в <span class="notranslate">GameMaker Studio 2</span> константы, которые можно использовать при написании <span class="notranslate">шейдеров</span>.</li>
+    <li><a href="http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf">Спецификации GLSL ES</a> - PDF-файл спецификаций языка <span class="notranslate">шейдеров</span> Open GL ES, который использует <span class="notranslate">GameMaker Studio 2</span>.</li>
+    <li><a href="https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-reference">HLSL Language Reference</a> - Справочные страницы Microsoft по использованию HLSL.</li>
+    <li><a href="http://twvideo01.ubm-us.net/o1/vault/gdceurope2013/Presentations/825424RichardStenson.pdf">Презентация языка PSSL</a> - Обзор языка PSSL в формате презентации.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="The_Asset_Editors.htm">Редакторы активов</a></div>
+        <div style="float:right">Следующий: <a href="Sounds.htm">Звуки</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+The <span class="notranslate">Shader</span> Editor
+<span class="notranslate">Shaders</span>
+OpenGL ES
+HLSL
+PSSL
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_editor
+-->
+
+</body></html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Работа в сети</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Networking  functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Networking" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Работа в сети</h1>
+  <p>Сетевые функции <span class="notranslate">GameMaker Studio 2</span> основаны на <i>сокетах</i>, которые являются промышленным стандартом на всех платформах. С помощью сокетов вы можете создавать как клиенты, так и серверы, используя простой <span class="notranslate">GML</span>, что позволяет вам создать даже однопользовательскую игру, используя модель клиент/сервер (что позволит позже легко добавить многопользовательскую игру).
+    игру с одним игроком, используя модель клиент/сервер (что позволит впоследствии легко добавить многопользовательскую игру).</p>
+  <p>По сути, сокет - это объект, который может отправлять, получать, соединяться и прослушивать <i>порты</i> в сети. Эти функции работают только с соединениями TCP/IP, на которых основан интернет (точнее, IPv4). По сути, это позволяет вам
+    соединить один сокет с IP-адресом (допустим, 192.168.1.10) с другим сокетом на другом IP-адресе (допустим, 192.168.1.11). После соединения эти два сокета могут отправлять данные туда и обратно с помощью функций <tt>network_send_*</tt> (например, таких как <a href="network_send_packet.htm"><tt>network_send_packet()</tt></a>)
+    и специального асинхронного события, которое вызывается ими. Это асинхронное событие генерирует <a href="../Data_Structures/DS_Maps/DS_Maps.htm">карту DS</a>, содержащую полученные данные, а также другие подробности.
+    в разделе о <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Networking.htm">сетевом асинхронном событии</a>.</p>
+  <p>Вместо того чтобы программам приходилось читать и разбираться с каждым битом сетевого трафика, поступающего на машину, IP-адреса также имеют дело с портами, которые нумеруются от 0 до 65535. Это позволяет каждой программе получать только те пакеты данных, которые ее интересуют.
+    а не все, что было отправлено каждой программой. Это также значительно экономит процессорное время, так как серьезно сокращает обработку данных, поэтому в <span class="notranslate">GameMaker Studio 2</span> вы также можете "слушать" порты. Таким образом, сервер создаст сокет, а затем
+    привяжет его к определенному порту для прослушивания. Затем он будет получать уведомления о соединениях, разъединениях и передаче данных с этого сокета.</p>
+  <p>Сами &quot;пакеты&quot; данных состоят из двоичных данных, взятых из буфера. Этот буфер можно создать и управлять им с помощью <a href="../Buffers/Buffers.htm">функций</a> <span class="notranslate">GameMaker Studio 2</span> <a href="../Buffers/Buffers.htm">Buffer</a>.</p>
+  <p>Стоит отметить, что если вы создаете проект для HTML5, то вы не сможете использовать функции создания сервера из-за ограничений браузера и должны будете написать свой собственный сервер для этой платформы, используя что-то вроде <strong>Electron </strong>или
+   <strong>NodeJS</strong>. Также обратите внимание, что если ваша игра кроссплатформенная и вы планируете подключаться к экземпляру игры на HTML5 с сервера, работающего на мобильном или настольном устройстве, то ваш сервер может взаимодействовать с экземпляром HTML5 только
+    используя протокол Web Socket (для этого используется константа <tt>network_socket_ws</tt> - см. <a href="network_create_server.htm"><tt>network_create_server()</tt></a> более подробную информацию). Это означает, что вашему серверу, возможно, придется создать два сокета
+    на разных портах, один для подключения к объектам, не связанным с HTML5<span class="notranslate">(Android</span>, <span class="notranslate">Windows</span> и т.д...), и один для подключения к объекту HTML5.</p>
+  <p>Существуют следующие функции, которые вы можете использовать для работы в сети:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="network_create_server.htm">сетевой_создать_сервер</a></li>
+    <li><a href="network_create_server_raw.htm">network_create_server_raw</a></li>
+    <li><a href="network_create_socket.htm">network_create_socket</a></li>
+    <li><a href="network_create_socket_ext.htm">network_create_socket_ext</a></li>
+    <li><a href="network_connect.htm">сетевой_коннект</a></li>
+    <li><a href="network_connect_async.htm">network_connect_async</a></li>
+    <li><a href="network_connect_raw.htm">network_connect_raw</a></li>
+    <li><a href="network_connect_raw_async.htm">network_connect_async_raw</a></li>
+    <li><a href="network_resolve.htm">сетевое_решение</a></li>
+    <li><a href="network_set_config.htm">network_set_config</a></li>
+    <li><a href="network_set_timeout.htm">network_set_timeout</a></li>
+    <li><a href="network_send_broadcast.htm">network_send_broadcast</a></li>
+    <li><a href="network_send_packet.htm">network_send_packet</a></li>
+    <li><a href="network_send_raw.htm">network_send_raw</a></li>
+    <li><a href="network_send_udp.htm">network_send_udp</a></li>
+    <li><a href="network_send_udp_raw.htm">network_send_udp_raw</a></li>
+    <li><a href="network_destroy.htm">уничтожение сети</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../GML_Reference.htm">Ссылка на<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Следующий: <a href="../Web_And_HTML5/Web_And_HTML5.htm">Web</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Networking
+-->
+  <!-- TAGS
+networking_functions
+-->
+</body>
+</html>

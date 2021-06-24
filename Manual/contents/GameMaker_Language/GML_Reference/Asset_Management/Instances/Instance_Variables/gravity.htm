@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>гравитация</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable gravity" />
+  <meta name="rh-index-keywords" content="gravity" />
+  <meta name="search-keywords" content="gravity" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>гравитация</h1>
+  <p><tt>гравитация</tt> - это одна из &quot;встроенных&quot; переменных, которую имеют все экземпляры и которая, когда она установлена, прикладывает постоянную силу к <a href="gravity_direction.htm"><tt>направление_гравитации</tt></a> экземпляра, оказывая влияние как на экземпляр <tt><a href="speed.htm">скорость</a> </tt>и
+    <span class="inline"><a href="direction.htm">direction</a></span> . Обратите внимание, что гравитация является кумулятивной силой и будет ускорять объект, если вы решите не ограничивать конечную скорость, и обычно вы устанавливаете эту переменную на небольшие десятичные значения, например 0.01.
+    например, 0,01. Если вы установите <span class="inline">gravity</span> в 0, то гравитация не будет применяться к экземпляру (это значение по умолчанию).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">гравитация;</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (значение с плавающей точкой одинарной точности)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if !place_meeting(x, y + 1, obj_Ground)<br> {
+    <br> gravity = 0.01;<br> }
+    <br> else
+    <br> {
+    <br> gravity = 0;<br> }
+  </p>
+  <p>Приведенный выше код будет применять гравитацию, только если экземпляр не найдет под собой ни одного экземпляра &quot;obj_Ground&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Instance_Variables.htm">Переменные экземпляра</a></div>
+        <div style="float:right">Далее: <a href="gravity_direction.htm">гравитационное_направление</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gravity
+-->
+  <!-- TAGS
+gravity
+-->
+</body>
+</html>

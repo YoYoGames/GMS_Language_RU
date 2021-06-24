@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>экземпляр_изменения</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_change" />
+  <meta name="rh-index-keywords" content="instance_change" />
+  <meta name="search-keywords" content="instance_change" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>экземпляр_изменения</h1>
+  <p>Вы можете использовать эту функцию для изменения одного экземпляра объекта на другой экземпляр другого объекта и при этом решить, следует ли выполнять события уничтожения и очистки исходных экземпляров и событие создания новых экземпляров. Таким образом,
+    вы можете заставить (например) бомбу превратиться во взрыв - в этом случае аргумент &quot;perf&quot;, вероятно, будет верен, поскольку вы захотите, чтобы бомба выполнила свои события уничтожения и очистки, а взрыв - событие создания.
+    или персонаж игрока может измениться на другого персонажа - в этом случае аргумент &quot;perf&quot; будет ложным, поскольку вы не хотите, чтобы экземпляры выполняли свои события Create и Destroy/Clean Up.</p>
+  <p>Стоит отметить, что изменение экземпляра означает, что вы не должны выполнять никаких дальнейших действий с этим экземпляром до следующего шага, в частности, пытаться получить доступ к переменным и т.д., так как это приведет к ошибке. По сути, вы изменяете экземпляр, но
+    он фактически недоступен до конца текущего шага, поэтому прямой доступ к содержащимся в нем переменным (например, вызов <tt>obj_Changed.x</tt>) не сработает.</p>
+  <p class="note"><b>ВНИМАНИЕ!</b> При изменении экземпляра с включенной физикой физические свойства <b>не будут перенес</b> ены на новый экземпляр. Поэтому вы должны иметь код для &quot;переноса&quot; физического состояния текущего экземпляра в новый экземпляр, или определить физические свойства нового экземпляра.
+    или определить физические свойства нового экземпляра в событии Create Event или в редакторе объектов. По этой причине рекомендуется не использовать эту функцию с экземплярами с включенной физикой, а использовать
+    комбинацию <span style="font-size:1px;"><tt style="font-size: 14px">instance_destroy()</tt></span> и <span><span style="font-size:1px;"><tt style="font-size: 14px">instance_create_layer()</tt></span></span>.
+  </p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">instance_change(obj, perf);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Новый объект, в который превратится вызывающий объект.</td>
+      </tr>
+      <tr>
+        <td>перф</td>
+        <td>Выполнять ли события создания и уничтожения этого нового объекта (true) или нет (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if keyboard_check(vk_enter)<br> {
+    <br> instance_change(obj_Player_Swimming, false);<br> exit;
+    <br> }
+  </p>
+  <p>Приведенный выше код изменит вызывающий экземпляр на экземпляр &quot;obj_Player_Swimming&quot; без выполнения события уничтожения исходного экземпляра и события создания нового экземпляра, когда пользователь нажмет клавишу &quot;Enter&quot;, выйдя из блока кода по завершении работы.
+    после завершения работы.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Instances.htm">Инстанции</a></div>
+        <div style="float:right">Далее: <a href="instance_copy.htm">instance_copy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_change
+-->
+  <!-- TAGS
+instance_change
+-->
+</body>
+</html>

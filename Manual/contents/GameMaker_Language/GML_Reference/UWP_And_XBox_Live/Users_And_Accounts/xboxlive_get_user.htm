@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_get_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_get_user" />
+  <meta name="rh-index-keywords" content="xboxlive_get_user" />
+  <meta name="search-keywords" content="xboxlive_get_user" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_get_user</h1>
+  <p>С помощью этой функции вы можете получить указатель идентификатора пользователя для индексированного пользователя. Если пользователь не существует, функция вернет константу <tt>pointer_null</tt>. Количество пользователей, вошедших в систему в данный момент, можно узнать с помощью функции
+    <a href="xboxlive_get_user_count.htm"><tt>xboxlive_get_user_count()</tt></a>.</p>
+  <p class="note"><b>ВАЖНО</b>: Эта функция должна использоваться только с <tt>xboxlive_get_user_count()</tt> - не используйте ее с геймпадами. Используйте <span class="inline"><a href="xboxlive_user_for_pad.htm"><span style="font-size:14px;">xboxlive_user_for_pad()</span>
+    
+    вместо нее.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">xboxlive_get_user(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс (целое число) для получения идентификатора пользователя.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Указатель</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">for(var i = 0; i &lt; xboxlive_get_user_count(); ++i;) <br> {
+    <br> user_id[i] = xboxlive_get_user(i);<br> }
+  </p>
+  <p>Приведенный выше цикл перебирает всех зарегистрированных пользователей и сохраняет их уникальный идентификационный указатель в массиве.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Users_And_Accounts.htm">Пользователи и учетные записи</a></div>
+        <div style="float:right">Далее: <a href="xboxlive_get_activating_user.htm">xboxlive_get_activating_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_get_user
+-->
+  <!-- TAGS
+xboxlive_get_user
+-->
+</body>
+</html>

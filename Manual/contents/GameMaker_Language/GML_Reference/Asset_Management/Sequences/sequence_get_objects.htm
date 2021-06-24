@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sequence_get_objects</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining function sequence_get_objects" />
+  <meta name="rh-index-keywords" content="sequence_get_objects" />
+  <meta name="search-keywords" content="sequence_get_objects" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sequence_get_objects</h1>
+  <p>С помощью этой функции вы можете получить <a href="../../../GML_Overview/Arrays.htm">массив</a> всех индексов объектов, экземпляры которых создаются в данной последовательности. Вы передаете либо структуру объекта последовательности (как возвращается функцией
+    <a href="sequence_create.htm"><tt>sequence_create()</tt></a> или <a href="sequence_get.htm"><tt>sequence_get()</tt></a>) или идентификатор последовательности (возвращаемый функцией <a href="../Rooms/Sequence_Layers/layer_sequence_get_sequence.htm"><tt>layer_sequence_get_sequence()</tt></a> или
+    из свойства <tt>sequence</tt> struct экземпляра последовательности), и функция вернет массив, где каждый элемент массива является идентификатором <a href="../Objects/object_index.htm"><tt>объектный_индекс</tt></a> для различных объектов, используемых последовательностью
+    для создания экземпляров.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">sequence_get_objects(sequence_struct_or_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>sequence_struct_or_id</td>
+        <td>Структура или идентификатор объекта последовательности для получения объектов.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code"><span>Массив</span></p>
+  <p> </p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _seq = sequence_get(seq_Logo);<br> obj_array = sequence_get_objects(_seq);</p>
+  <p>Приведенный выше код получает структуру для объекта последовательности, затем извлекает объекты, которые она использует, и сохраняет массив в переменной.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sequences.htm">Последовательности</a></div>
+        <div style="float:right">Далее: <a href="sequence_instance_override_object.htm">sequence_instance_override_object</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_get_objects
+-->
+  <!-- TAGS
+sequence_get_objects
+-->
+</body>
+</html>

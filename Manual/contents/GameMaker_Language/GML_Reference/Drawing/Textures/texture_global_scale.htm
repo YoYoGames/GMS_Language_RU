@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>текстурный_глобальный_масштаб</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ​texture_global_scale" />
+  <meta name="rh-index-keywords" content="texture_global_scale" />
+  <meta name="search-keywords" content="texture_global_scale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>текстурный_глобальный_масштаб</h1>
+  <p>Эта функция позволяет вам управлять масштабированием текстурных страниц при загрузке из WAD-файла, который является частью конечного исполняемого файла вашей игры. Вводимое значение должно быть степенью двойки и будет работать так:</p>
+  <ul class="colour">
+    <li>Чтобы установить текстурные страницы в соотношении 1:1, используйте <tt>texture_global_scale(1)</tt>.</li>
+    <li>Чтобы постоянно уменьшать текстуры в два раза, используйте <tt>texture_global_scale(2)</tt>.</li>
+    <li>Для их четвертования используйте <tt>texture_global_scale(4)</tt> и т.д..</li>
+  </ul>
+  <p>Таким образом, вы можете лучше контролировать использование памяти текстурных страниц на платформах с низким уровнем памяти. Обратите внимание, что страницы текстур создаются по запросу из WAD, поэтому вы можете либо вызывать эту функцию в начале игры, чтобы загрузить все текстуры в масштабе, либо
+    можно вызывать ее в определенное время для загрузки определенных текстур, и в этом случае вы, вероятно, захотите вызвать функцию <a href="draw_texture_flush.htm"><tt>draw_texture_flush()</tt></a> перед вызовом этой функции, а затем использовать функции предварительной выборки, чтобы получить нужные
+    страницы текстур в память.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">texture_global_scale(pow2integer);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>pow2integer</td>
+        <td>Используемый масштабный коэффициент (1, без масштаба, 2, полумасштаб, 4, четверть масштаба и т.д...)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_texture_flush();<br> texture_global_scale(2);
+    <br> sprite_prefetch(spr_Trees);
+  </p>
+  <p>Приведенный выше код очистит все текстуры из памяти, затем установит масштабирование текстур на 2 (таким образом, страницы текстур будут вдвое меньше) и, наконец, предварительно получит страницу текстуры, в которой находится спрайт &quot;spr_Trees&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Textures.htm">Текстуры</a></div>
+        <div style="float:right">Далее: <a href="draw_texture_flush.htm">draw_texture_flush</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+texture_global_scale
+-->
+  <!-- TAGS
+texture_global_scale
+-->
+</body>
+</html>

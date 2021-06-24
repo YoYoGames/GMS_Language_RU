@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>достижение_получить_задачи</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for achievement_get_challenges" />
+  <meta name="rh-index-keywords" content="achievement_get_challenges,achievement_challenge_list_received,achievement_filter_friends_only,achievement_filter_all_players" />
+  <meta name="search-keywords" content="achievement_get_challenges,achievement_challenge_list_received,achievement_filter_friends_only,achievement_filter_all_players" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>достижение_получить_задачи</h1>
+  <p>Эта функция отправит запрос на сервер для получения информации обо всех текущих вызовах и вызовет обратный вызов <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">Social Asynchronous Event</a>, содержащий в себе значение
+    <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> карту, заполненную соответствующими парами ключ/значение. Ключ <i>id</i> этой <tt>DS Map</tt> используется для идентификации правильного обратного вызова (может быть
+    может быть более одной триггерной функции для любого данного асинхронного события), и будет сопряжен с <b>константой</b> <tt>achievement_challenge_list_received</tt>, а также рядом других пар ключ/значение для каждой задачи. Точное содержимое
+    карты показано ниже:</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция предназначена <b><span class="notranslate">iOS</span></b> только.</p>
+  <ul class="colour">
+    <li>&quot; id&quot; - Для данной функции это должно быть <tt>achievement_challenge_list_received</tt></li>
+    <li>&quot; numchallenges<b>&quot; -</b> Количество вызовов (локальных и удаленных), доступных в настоящее время.</li>
+    <li>&quot; ChallengeNplayerid<b>&quot; -</b> идентификатор игрока для задачи, где &quot;N&quot; - целое число, EG: &quot;Challenge5playerid&quot; - идентификатор игрока для пятой задачи в списке.</li>
+    <li>&quot; ChallengeNissuerid<b>&quot; -</b> идентификатор лица, выдавшего вызов, где &quot;N&quot; - целое число, EG: &quot;Challenge2issuerid&quot; - идентификатор эмитента для второго вызова в списке.</li>
+    <li>&quot; ChallengeNstate<b>&quot; -</b> Состояние вызова &quot;N&quot;, которое будет иметь значение 0 - 3 (в виде строки) для недействительного, ожидающего, <i>завершенного</i> <i>или отклоненного</i> <i>.</i> </li>
+    <li>&quot; ChallengeNmessage<b>&quot; -</b> Текстовое сообщение для вызова &quot;N&quot;.</li>
+    <li>&quot; ChallengeNissueddate<b>&quot; -</b> Дата выдачи вызова &quot;N&quot;.</li>
+    <li>&quot; ChallengeNcompleteddate<b>&quot; -</b> Дата завершения задачи &quot;N&quot;.</li>
+    <li>&quot; ChallengeNtype<b>&quot; -</b> Тип брошенного вызова. Может быть одной из двух констант:</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>фильтр_достижений_только_для_друзей </td>
+        <td>Получайте только оценки игроков-друзей.</td>
+      </tr>
+      <tr>
+        <td>фильтр_достижений_всех_игроков </td>
+        <td>Получите все результаты для всех игроков.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li>&quot; ChallengeNidentifier<b>&quot; -</b> Идентифицирующая строка для вызова.</li>
+    <li>&quot; ChallengeNscore<b>&quot; -</b> Оценка, связанная с задачей.</li>
+  </ul>
+  <p> </p>
+  <h4><b>Синтаксис:</b></h4>
+  <p class="code">achievement_get_challenges()</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Расширенный пример:</h4>
+  <p>Следующий код, вероятно, будет вызван после того, как игрок войдет в свой игровой аккаунт, используя <a href="achievement_login.htm"><tt>achievement_login()</tt></a>:</p>
+  <p class="code">achievement_get_challenges();</p>
+  <p>Это отправит запрос на получение информации о текущем вызове и сгенерирует асинхронный обратный вызов со специальным <tt>async_load</tt> ds_map, содержащим следующие данные:</p>
+  <p class="code">var ident = ds_map_find_value(async_load, &quot;id&quot;);<br> if ident == achievement_challenge_list_received<br> {
+    <br> var numentries = ds_map_find_value(async_load, &quot;numchallenges&quot;);<br> for(var i = 0; i &lt; numentries; i++;)<br> {
+    <br> player_id[i] = ds_map_find_value(async_load, &quot;Challenge&quot; + string(i)+&quot;playerid&quot;);<br> issuer_id[i] = ds_map_find_value(async_load, &quot;Challenge&quot; + string(i)+&quot;issuerid&quot;);<br> state[i]
+    = ds_map_find_value(async_load, &quot;Challenge&quot; + string(i)+&quot;state&quot;);<br> message[i] = ds_map_find_value(async_load, &quot;Challenge&quot; + string(i)+&quot;message&quot;);<br> date_completed[i] = ds_map_find_value(async_load,
+    &quot;Challenge&quot; + string(i)+&quot;completeddate&quot;);<br> date_issued[i] = ds_map_find_value(async_load, &quot;Challenge&quot; + string(i)+&quot;issueddate&quot;);<br> ach_type[i] = ds_map_find_value(async_load, &quot;Challenge&quot;
+    + string(i)+&quot;type&quot;);<br> ach_ident[i] = ds_map_find_value(async_load, &quot;Challenge&quot; + string(i)+&quot;identifier&quot;);<br> ach_score[i] = ds_map_find_value(async_load, &quot;Challenge&quot; + string(i)+&quot;score&quot;);<br> }
+  </p>
+  <p>Приведенный выше код проверяет возвращаемую <tt>DS Map</tt> в <b>Social Asynchronous Event</b> и, если ее &quot;id&quot; совпадает с проверяемой константой, он затем проходит по карте, сохраняя все различные значения в нескольких массивах. Эта информация
+    может быть использована, например, для создания собственных, персонализированных страниц вызовов в игре.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Achievements_And_Leaderboards.htm">Достижения и таблицы лидеров</a></div>
+        <div style="float:right">Далее: <a href="achievement_get_pic.htm">achievement_get_pic</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+achievement_get_challenges
+achievement_challenge_list_received
+achievement_filter_friends_only
+achievement_filter_all_players
+-->
+  <!-- TAGS
+achievement_get_challenges
+-->
+</body>
+</html>

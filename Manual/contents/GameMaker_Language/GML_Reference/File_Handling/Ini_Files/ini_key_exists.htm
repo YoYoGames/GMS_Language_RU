@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ini_key_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ini_key_exists" />
+  <meta name="rh-index-keywords" content="ini_key_exists" />
+  <meta name="search-keywords" content="ini_key_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ini_key_exists</h1>
+  <p>Эта функция проверяет, существует ли ключ в текущем открытом ini, и возвращает <tt>true</tt>, если существует, или <tt>false</tt> в противном случае. Эта проверка не является необходимой для предотвращения ошибок, так как, если ключ не существует, чтение из несуществующего ключа
+    просто вернет значение по умолчанию. Однако она может быть полезна для проверки того, сохранил ли ini файл определенные данные, и для некоторых других целей.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ini_key_exists(section, key);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>раздел</td>
+        <td>Раздел в открытом .ini файле для проверки ключа.</td>
+      </tr>
+      <tr>
+        <td>ключ</td>
+        <td>Ключ для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">ini_open(&quot;savedata.ini&quot;);<br> if !ini_key_exists(&quot;save1&quot;, &quot;name&quot;)<br> {
+    <br> global.name = &quot;Player1&quot;;<br> }
+    <br> ini_close();
+  </p>
+  <p>Это установит переменную global.name в значение &quot;Player1&quot;, если не существует такого ключа &quot;name&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Ini_Files.htm">Ini Files</a></div>
+        <div style="float:right">Далее: <a href="ini_section_exists.htm">ini_section_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ini_key_exists
+-->
+  <!-- TAGS
+ini_key_exists
+-->
+</body>
+</html>

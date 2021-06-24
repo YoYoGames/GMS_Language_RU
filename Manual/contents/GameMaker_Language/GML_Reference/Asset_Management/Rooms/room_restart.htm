@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>перезапуск_комнаты</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_restart" />
+  <meta name="rh-index-keywords" content="room_restart" />
+  <meta name="search-keywords" content="room_restart" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>перезапуск_комнаты</h1>
+  <p>Эта функция перезапустит текущую комнату, как если бы в нее только что вошли. Обратите внимание, что комната не перезапустится до конца события, в котором была вызвана функция, поэтому любой код после ее вызова будет выполняться в том же событии. На сайте
+    Оговорка заключается в том, что любой код, создающий экземпляры, вызванный после этой функции, <i>не</i> создаст экземпляр и поэтому должен быть вызван до смены комнаты. Эта функция также вызовет событие <b>Room End</b>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">room_restart();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">если lives &lt; 1 room_restart();</p>
+  <p>Приведенный выше код проверяет, меньше ли переменная &quot;lives&quot; 1, и если да, то перезапускает комнату.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Rooms.htm">Номера</a></div>
+        <div style="float:right">Далее: <a href="room_exists.htm">room_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_restart
+-->
+  <!-- TAGS
+room_restart
+-->
+</body>
+</html>

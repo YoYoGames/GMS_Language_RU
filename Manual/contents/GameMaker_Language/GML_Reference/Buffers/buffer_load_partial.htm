@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>буферная_загрузка_частичная</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_load_partial" />
+  <meta name="rh-index-keywords" content="buffer_load_partial" />
+  <meta name="search-keywords" content="buffer_load_partial" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>буферная_загрузка_частичная</h1>
+  <p><span>Эта функция загрузит некоторые данные из буфера, которые были ранее сохранены с помощью функции </span><a href="buffer_save.htm"><tt>buffer_save()</tt></a><span> в уже созданный буфер. Вы указываете id ранее созданного буфера для загрузки, затем сохраненный файл буфера для загрузки, а затем смещение от начала буфера (в байтах), из которого вы хотите загрузить данные. Следующие аргументы предназначены для задания длины данных буфера (в байтах) от начальной точки смещения, с которой вы хотите загрузить данные, и точки смещения для загрузки данных в буфер (опять же, в байтах).</span></p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">buffer_load_partial(buffer, filename, offset, src_len, dest_offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>буфер</td>
+        <td>Индекс буфера для загрузки.</td>
+      </tr>
+      <tr>
+        <td>имя файла</td>
+        <td>Имя файла для загрузки.</td>
+      </tr>
+      <tr>
+        <td>смещение</td>
+        <td>Смещение в буфере для загрузки (в байтах).</td>
+      </tr>
+      <tr>
+        <td>src_len</td>
+        <td>Длина загружаемой части буфера (в байтах).</td>
+      </tr>
+      <tr>
+        <td>dest_offset</td>
+        <td>Смещение, с которого следует начать размещение частичных данных в новом буфере (в байтах).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">buff = buffer_create(256, buffer_grow, 1);<br> var _file = &quot;save.dat&quot;;<br> var _so = 6;<br> var _sl = 5;<br> var _do = 0;<br> buffer_load_partial(buff, _file, _so, _sl, _do);</p>
+  <p>Приведенный выше код создаст новый буфер &quot;grow&quot;, а затем загрузит в него часть данных, сохраненных в файле &quot;save.dat&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Buffers.htm">Буферы</a></div>
+        <div style="float:right">Далее: <a href="buffer_compress.htm">buffer_compress</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_load_partial
+-->
+  <!-- TAGS
+buffer_load_partial
+-->
+</body>
+</html>

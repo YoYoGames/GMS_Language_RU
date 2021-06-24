@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_tilemap_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_tilemap_exists" />
+  <meta name="rh-index-keywords" content="layer_tilemap_exists" />
+  <meta name="search-keywords" content="layer_tilemap_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_tilemap_exists</h1>
+  <p>С помощью этой функции можно проверить, существует ли элемент карты плиток на данном слое. Вы передаете идентификатор слоя (который вы получаете при создании слоя с помощью функции <a href="../General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>) или
+    имя слоя (в виде строки - это влияет на производительность) и ID элемента карты плиток (который вы получаете при создании элемента карты плиток с помощью функции <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a> или при использовании функции
+    <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>) и функция вернет либо <tt>true</tt>, если элемент существует, либо <tt>false</tt>, если его нет.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция работает в пределах текущей целевой комнаты - по умолчанию это комната, в которой вызывается функция, - которую можно установить с помощью функции <span style="font-size:1px;"><a href="../General_Layer_Functions/layer_set_target_room.htm"><tt style="font-size: 14px">layer_set_target_room()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_tilemap_exists(layer_id, tilemap_element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор слоя</td>
+        <td>Уникальное значение ID слоя, на который нужно нацелиться (или имя слоя в виде строки).</td>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>Уникальное значение ID элемента карты плитки для проверки</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;tilemap_trees&quot;);<br> if layer_tilemap_exists(lay_id, global.Treestilemap)<br> {
+    <br> layer_tilemap_destroy(lay_id, global.Treestilemap);<br> }
+  </p>
+  <p>Приведенный выше код проверяет слой &quot;tilemap_trees&quot; на предмет существования данного элемента карты плиток, и если он существует, то уничтожает его (но не слой).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Tile_Map_Layers.htm">Плитка Слои карты</a></div>
+        <div style="float:right">Далее: <a href="layer_tilemap_create.htm">layer_tilemap_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_tilemap_exists
+-->
+  <!-- TAGS
+layer_tilemap_exists
+-->
+</body>
+</html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>привязка_фиксатора</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_bind" />
+  <meta name="rh-index-keywords" content="physics_fixture_bind" />
+  <meta name="search-keywords" content="physics_fixture_bind" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>привязка_фиксатора</h1>
+  <p>После того как мы определили приспособление, его необходимо привязать к экземпляру. Это означает, что его <i>свойства</i> передаются выбранному экземпляру, <b>а не самому приспособлению</b>, так что одно приспособление может быть привязано к нескольким экземплярам, если все они должны
+    иметь одинаковые свойства. Вы можете указать индекс объекта для цели, и все экземпляры, присутствующие в комнате в данный момент, получат свойства этого приспособления (но не любые новые экземпляры объекта, созданные позже), или вы можете использовать специальные слова
+    ключевые слова <i>other</i> и <i>all</i>. Можно даже указать родительский объект, и все дочерние экземпляры с этим родителем также получат привязку. После того как приспособление будет привязано ко всем нужным вам экземплярам, его можно удалить, если в нем больше нет необходимости.
+    Если оно больше не нужно, его можно удалить, при этом экземпляры со свойствами этого приспособления не пострадают и сохранят эти свойства.</p>
+  <p>Приспособление будет привязано к экземпляру с центром масс, расположенным в начале координат экземпляра, а приспособления для полигонов привязываются на основе положения точек <i>относительно</i> начала координат. Если вы хотите, чтобы ваше приспособление было привязано
+    к точке, отличной от начала координат, то вам следует использовать <a href="physics_fixture_bind_ext.htm"><tt>physics_fixture_bind_ext()</tt></a>.</p>
+  <p><img alt="Physics fixture binding example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_bind_image.png">Функция также возвращает уникальное значение &quot;id&quot; для привязанного приспособления
+   <b>(не самого приспособления</b>), которое затем может быть использовано для удаления (&quot;отвязки&quot;) физических свойств от экземпляра с помощью функции <a href="physics_remove_fixture.htm"><tt>physics_remove_fixture()</tt></a>. Это позволяет вам добавлять
+    и удалять физические свойства из экземпляра без разрушения и повторного создания объектов.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Фиксы следует удалять, если они больше не нужны, так как в противном случае может произойти утечка памяти, что приведет к замедлению и в конечном итоге к краху вашей игры.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_fixture_bind(fixture, target)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>приспособление</td>
+        <td>привязываемое приспособление</td>
+      </tr>
+      <tr>
+        <td>цель</td>
+        <td>целевой экземпляр, который должен получить приспособление (может быть идентификатором экземпляра, идентификатором объекта, <i>другим</i> или <i>всеми</i>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var fix, inst;<br> fix = physics_fixture_create();<br> physics_fixture_set_circle_shape(fix, 16);<br> physics_fixture_set_density(fix, 1.0);<br> inst = instance_create_layer(x, y, &quot;Instances&quot;, genericBodyObject);<br> my_fix = physics_fixture_bind(fix,
+    inst);<br> physics_fixture_delete(fix);
+  </p>
+  <p>Приведенный выше код создаст приспособление и присвоит его индекс переменной &quot;fix&quot;. Затем он определяет форму и плотность приспособления, прежде чем привязать его к экземпляру, который был создан с индексом для <b>привязанного</b> приспособления, хранящимся в переменной
+    переменной &quot;my_fix&quot;. Наконец, приспособление удаляется, чтобы предотвратить утечку памяти, поскольку оно больше не нужно.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Fixtures.htm">Приспособления</a></div>
+        <div style="float:right">Далее: <a href="physics_fixture_bind_ext.htm">physics_fixture_bind_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_bind
+-->
+  <!-- TAGS
+physics_fixture_bind
+-->
+</body>
+</html>

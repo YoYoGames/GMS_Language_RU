@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>магазин_оставить_рейтинг</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for shop_leave_rating" />
+  <meta name="rh-index-keywords" content="shop_leave_rating" />
+  <meta name="search-keywords" content="shop_leave_rating" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>магазин_оставить_рейтинг</h1>
+  <p>Эта функция открывает диалог, зависящий от ОС, в котором вы можете попросить пользователя разместить оценку или комментарий к определенной странице. Вы можете задать текст, который будет отображаться в диалоге, а также текст, который будет отображаться на двух кнопках и URL-адресе.
+    где должен быть размещен комментарий.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция предназначена только для целей <span class="notranslate">Android</span> и <span class="notranslate">iOS</span>.</p>
+  <p class="note"><b>ВАЖНО!</b> На сайте <b><span class="notranslate">iOS</span></b>, при использовании TestFlight, в процессе разработки подсказка будет отображаться, но вы не сможете ничего сделать. Как только ваше приложение появится в App Store, эта кнопка станет активной, и пользователю будет предоставлена возможность
+    написать отзыв или оставить оценку. Обратите внимание, что если вы распространяете игру через TestFlight, это окно может даже не отображаться.</p>
+  <p> </p>
+  <h4><b>Синтаксис:</b></h4>
+  <p class="code">shop_leave_rating(text, yes_string, no_string, url)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>текст</td>
+        <td>Текст, который отображается в диалоговом окне.</td>
+      </tr>
+      <tr>
+        <td>да_строка</td>
+        <td>Текст, который появляется на кнопке &quot;Да&quot;.</td>
+      </tr>
+      <tr>
+        <td>no_string</td>
+        <td>Текст, который появляется на кнопке &quot;нет&quot;.</td>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td>Полный URL-адрес, по которому должен быть отправлен комментарий.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if timer &lt;= 0<br> {
+    <br> shop_leave_rating(&quot;Спасибо за игру! Почему бы не оставить комментарий?&quot;, &quot;Хорошо!&quot;, &quot;Не сегодня!&quot;, &quot;http://MacSweeney/comments&quot;);<br> timer = 10000000;<br> }
+    <br> else
+    <br> {
+    <br> таймер -= 1;<br> }
+  </p>
+  <p>Приведенный выше код попросит пользователя оставить комментарий, если переменная &quot;timer&quot; досчитала до 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Dialog.htm">Диалог</a></div>
+        <div style="float:right">Далее: <a href="get_login_async.htm">get_login_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+shop_leave_rating
+-->
+  <!-- TAGS
+shop_leave_rating
+-->
+</body>
+</html>

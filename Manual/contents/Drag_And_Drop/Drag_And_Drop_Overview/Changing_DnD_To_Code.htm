@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Изменение DnD™ в коде</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Article explaining how to change DnD™ to GML code" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Changing DnD™ To Code" />
+  <meta name="search-keywords" content="DnD,Code DnD,Change DnD to code" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Изменение <span class="notranslate">DnD™</span>в коде</h1>
+  <p>Еще одной особенностью <span class="notranslate">DnD™</span>является то, что вы можете преобразовать ее в код <span class="notranslate">GML</span><span class="notranslate">(GameMaker Language</span>) и таким образом увидеть, что именно происходит за сценой, когда вы используете действия. Однако перед тем, как преобразовать действия в <span class="notranslate">GML</span>, вы можете сначала <strong>просмотреть </strong>их
+    с помощью правой кнопки мыши <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21">, выбрав пункт меню <strong>Live Preview</strong>:</p>
+  <p><img alt="Live Preview" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Preview_RMBMenu.png">, что откроет новое окно:</p>
+  <p><img alt="DnD Live Preview Window" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Preview.png">По мере добавления, изменения или удаления действий <span class="notranslate">DnD™</span>, <span class="notranslate">GML</span> Live Preview будет обновляться, чтобы показать вам фактический код, который
+    который создается &quot;за кулисами&quot;. Код в режиме реального просмотра нельзя редактировать напрямую, но вы можете выбрать разделы и скопировать их для вставки в <span class="notranslate">GML-скрипты</span> или Code Actions (например).</p>
+  <p>Если после предварительного просмотра вы решите, что хотите преобразовать <span class="notranslate">DnD™</span>в код, то это можно сделать снова, нажав правую кнопку мыши <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> в
+    в любой рабочей области событий с действиями и выбрав <strong>Convert To <span class="notranslate">GML</span></strong>.</p>
+  <p><img alt="Convert to GML" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Code_RMBMenu.png">При первом выполнении этого действия вы получите предупреждение о том, что это одностороннее преобразование, так как вы можете
+    преобразовать действия в код, но впоследствии вы не сможете преобразовать их обратно в <em>отдельные </em>действия. Если нажать &quot;ОК&quot;, то преобразование будет выполнено за вас.</p>
+  <p><img alt="DnD™ as code" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Code.png">Полученный код будет использовать <span class="inline">{}</span> для разделения отдельных действий, и вы сможете ясно видеть, какие действия
+    относятся к каким функциям или объявлениям переменных в коде. Если <span class="notranslate">DnD™</span>сложнее, то и код будет сложнее, но действуют те же общие правила, и код будет последовательно структурирован точно так же, как вы написали <span class="notranslate">DnD™</span>. Обратите внимание:
+    что иногда в код добавляются дополнительные <strong>локальные </strong>(временные) переменные для хранения определенных значений, которые будут использоваться, например, так:</p>
+  <p><img alt="DnD™ If Instance Exists" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_InstanceExists.png" /></p>
+  <p>Станет этим кодом:</p>
+  <p><img alt="DnD™ Converted Instance Exists" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Code_InstanceExists.png" /></p>
+  <p>Здесь код сначала создает локальную (временную) переменную и устанавливает ее в <span class="inline">false</span>, затем проверяет, существует ли экземпляр, и устанавливает локальную переменную в значение возврата вызова функции. Затем локальная переменная проверяется
+    чтобы узнать, является ли она <span class="inline">true</span> или <span class="inline">false</span>, и если это <span class="inline">true</span>, то выполняется остальная часть кода.</p>
+  <p>При обучении программированию с помощью <span class="notranslate">Drag and Drop</span> это может стать важным инструментом для перехода к использованию <span class="notranslate">GML</span> на более позднем этапе, но это ни в коем случае не обязательно, и вы все равно сможете создавать отличные игры с помощью DnD™ <span class="notranslate">!</span>Также стоит отметить, что хотя процесс преобразования
+    процесс является односторонним, после преобразования действий в код, вы можете вернуться к использованию <span class="notranslate">DnD™</span>снова, используя меню правой кнопки мыши <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> в редакторе кода и
+    выбрав пункт &quot;Преобразовать<strong>в DnD™ <span class="notranslate">&quot;.</span></strong> В результате ранее созданный код будет помещен в действие <a href="../Drag_And_Drop_Reference/Common/Execute_Code.htm">Execute Code</a>, и вы сможете продолжать использовать <span class="notranslate">DnD™</span>, как и раньше:</p>
+  <p><img alt="DnD™ Execute Code" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_ExecuteCode.png" /></p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../../Content.htm">Указатель</a></div>
+        <div style="float:right">Следующий: <a href="Right_Mouse_Button_Menu_Options.htm">Параметры меню правой кнопки мыши</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Drag And Drop</span> Change To <span class="notranslate">GML</span>
+<span class="notranslate">DnD</span> to <span class="notranslate">GML</span>
+-->
+  <!-- TAGS
+drag_and_drop_change
+-->
+</body>
+</html>

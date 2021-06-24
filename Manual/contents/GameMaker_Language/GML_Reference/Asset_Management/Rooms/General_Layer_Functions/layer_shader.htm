@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_shader</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_shader" />
+  <meta name="rh-index-keywords" content="layer_shader" />
+  <meta name="search-keywords" content="layer_shader" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_shader</h1>
+  <p>С помощью этой функции вы можете назначить ресурс <span class="notranslate">шейдера</span> любому заданному слою, после чего слой будет отрисован с использованием этого <span class="notranslate">шейдера</span>. Вы передаете либо уникальное значение ID слоя, либо имя слоя (в виде строки - это влияет на производительность)
+    , а также ID <span class="notranslate">шейдера</span>, который необходимо использовать. <span class="notranslate">Шейдер</span> должен быть создан ранее в Asset Browser, а индекс <span class="notranslate">шейдера</span> (имя ресурса <span class="notranslate">шейдера</span> ) передается в эту функцию. Если к назначенному слою добавлены экземпляры, то
+   <span class="notranslate">шейдер</span> будет применен ко <i>всем</i> событиям рисования, которые использует данный экземпляр - например, если у экземпляра есть событие Draw GUI Begin, то <span class="notranslate">шейдер</span> будет применен к нему автоматически. <span class="notranslate">Шейдер</span> также будет влиять на любые другие графические элементы, нарисованные
+    на этом слое, например, спрайтовые активы или карты плиток.</p>
+  <p>Обратите внимание, что функция <i>не</i> предназначена для вызова в каких-либо событиях рисования или событиях шага, а должна вызываться только в начале комнаты в <b>коде создания комнаты</b> или в <b>событии Create Event </b>/ <b>Room Start Event</b> экземпляра.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_shader(layer_id, <span class="notranslate">shader</span>)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор слоя</td>
+        <td>Уникальное значение ID слоя, на который нужно нацелиться (или имя слоя в виде строки).</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">шейдер</span></td>
+        <td>Индекс <span class="notranslate">шейдера</span>, который нужно присвоить слою</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Instances&quot;);<br> layer_shader(lay_id<span class="notranslate">,</span> shd_Sepia);</p>
+  <p>Приведенный выше код назначит <span class="notranslate">шейдерный</span> ресурс &quot;shd_Sepia&quot; данному слою для всей отрисовки.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="General_Layer_Functions.htm">Общие функции слоя</a></div>
+        <div style="float:right">Далее: <a href="layer_get_script_begin.htm">layer_get_script_begin</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_<span class="notranslate">shader</span>
+-->
+  <!-- TAGS
+layer_<span class="notranslate">shader</span>
+-->
+</body>
+</html>

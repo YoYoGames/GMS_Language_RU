@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gml_pragma</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gml_pragma" />
+  <meta name="rh-index-keywords" content="gml_pragma" />
+  <meta name="search-keywords" content="gml_pragma" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gml_pragma</h1>
+  <p>Функция <tt>gml_pragma</tt> влияет на то, как данная цель компилирует ваш код, и должна вызываться с различными командами для дальнейшей оптимизации конечной компиляции вашего проекта. Эти команды эффективно <i>обрабатываются</i> до того, как
+    и поэтому функция может быть размещена в любом месте вашего проекта, и она все равно будет обработана до того, как игра будет полностью скомпилирована. Ниже перечислены доступные команды:</p>
+  <ul class="colour">
+    <li>&quot; forceinline<b>&quot; -</b> Когда функция вызывается с прагмой &quot;forceinline&quot; в функции скрипта, <b>YYC будет компилировать</b> проект с функцией inline, а не со ссылкой. Это дает дополнительное ускорение обработки
+      но при его использовании следует соблюдать осторожность, так как это также увеличит размер конечного исполняемого файла, особенно если встроенный код большой и/или используется в нескольких разных местах, а также значительно увеличит время компиляции. Обратите внимание, что эта прагма
+     <b>действительна только при сборке с использованием YYC</b>.</li>
+    <li>&quot;<b>global&quot;, &quot;</b>[gml code]&quot; - Прагма<b>&quot;global</b>&quot; позволяет вам вызвать некоторый GML-код, отформатированный как строка <span class="notranslate">,</span> в глобальной области видимости, во время компиляции, перед выполнением первой комнаты игры. Например:<br>
+     <p class="code">gml_pragma(&quot;global&quot;, &quot;Init()&quot;);</p>
+      Это вызовет функцию сценария &quot;Init&quot; перед запуском первой комнаты игры. Обратите внимание, что <span class="notranslate">GML</span>, указанный в качестве второго аргумента, <b>должен быть константой времени компиляции</b>, а также обратите внимание, что вы не можете использовать эту прагму для создания экземпляров
+      или выполнения каких-либо операций, требующих функционирования комнаты (или чего-либо в комнате).</li>
+    <li>&quot; PNGCrush<b>&quot; -</b> Прагма &quot;PNGCrush&quot; будет использовать программу PNGCrush для <a href="https://pmt.sourceforge.io/pngcrush/" target="_blank">каждой</a> созданной текстуры. Обратите внимание, что это может значительно увеличить время, необходимое для
+      компиляции игры, поэтому не стоит включать ее постоянно, хотя это может значительно уменьшить конечный размер файла.</li>
+    <li>&quot; Texgroup<b>.Scale&quot;, &quot;</b>[TextureGroupName<b>]&quot;, &quot; [Scale Divisor</b>]&quot; - &quot;<b>Texgroup.Scale&quot;</b> будет масштабировать заданную группу текстур при компиляции. Здесь необходимо указать два дополнительных аргумента: &quot;[TexGroupName]&quot;,
+      это имя (строка) группы текстур для масштабирования, и &quot;[Scale Divisor]&quot; (также строка), это делитель, который вы хотите использовать для масштабирования, т.е:<br>
+     <p class="code">gml_pragma(&quot;Texgroup.Scale&quot;, &quot;level1&quot;, &quot;2&quot;);</p>
+      Это уполовинит все текстуры в группе текстур &quot;level1&quot;.</li>
+    <li>&quot; UnityBuild<b>&quot;, &quot;</b>[enable/disable<b>]&quot; - Если вы вызовете</b> функцию с этой прагмой и установите аргумент enable/disable в true, то при компиляции <tt>она</tt> свернет все .cpp файлы в проекте в один файл.
+      который затем используется для сборки всего проекта, например:<br>
+     <p class="code">gml_pragma(&quot;UnityBuild&quot;, &quot;true&quot;);</p>
+      Преимущество unity build в том, что сборка происходит быстрее, но недостатком является то, что каждый раз выполняется <i>полная</i> сборка, так что даже если вы измените одну часть кода, он соберет все заново, не используя никаких кэшированных файлов. Это
+      была добавлена специально для экспорта Xbox One с помощью YYC, хотя ее можно вызвать и для других сборок<b>(только YYC</b>). Для получения дополнительной информации о сборках unity смотрите <a href="http://buffered.io/posts/the-magic-of-unity-builds/" target="_blank">здесь</a>.</li>
+  </ul>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Первый аргумент функции <tt>gml_pragma</tt> <b>должен быть строковой константой времени компиляции</b>, а не переменной.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gml_pragma(command, [optional...]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>команда</td>
+        <td>Строка с одной из перечисленных ниже команд.</td>
+      </tr>
+      <tr>
+        <td>[необязательно]</td>
+        <td>Некоторые из доступных команд требуют дополнительного аргумента или аргументов. Они описаны ниже для каждой команды.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">gml_pragma(&quot;forceinline&quot;);</p>
+  <p>Приведенный выше пример кода заставит функцию скрипта, в которой она используется, быть встроенной при компиляции.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="OS_And_Compiler.htm">ОС и компилятор</a></div>
+        <div style="float:right">Далее: <a href="parameter_count.htm">параметр_счет</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gml_pragma
+-->
+  <!-- TAGS
+gml_pragma
+-->
+</body>
+</html>

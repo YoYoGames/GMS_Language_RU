@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_zfunc</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_zfunc" />
+  <meta name="rh-index-keywords" content="gpu_set_zfunc,cmpfunc_never,cmpfunc_less,cmpfunc_equal,cmpfunc_lessequal,cmpfunc_greater,cmpfunc_notequal,cmpfunc_greaterequal,cmpfunc_always" />
+  <meta name="search-keywords" content="gpu_set_zfunc,cmpfunc_never,cmpfunc_less,cmpfunc_equal,cmpfunc_lessequal,cmpfunc_greater,cmpfunc_notequal,cmpfunc_greaterequal,cmpfunc_always" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_zfunc</h1>
+  <p>Эта функция может быть использована для установки режима сравнения тестирования z-буфера (см. <a href="gpu_set_ztestenable.htm"><tt>gpu_set_ztestenable()</tt></a> для дополнительной информации). Доступными для использования значениями являются любые из следующих констант (значение по умолчанию
+   <tt>cmpfunc_lessequal</tt>):</p>
+  <ul>
+    <li><tt>cmpfunc_never</tt></li>
+    <li><tt>cmpfunc_less</tt></li>
+    <li><tt>cmpfunc_equal</tt></li>
+    <li><tt>cmpfunc_lessequal</tt></li>
+    <li><tt>cmpfunc_greater</tt></li>
+    <li><tt>cmpfunc_notequal</tt></li>
+    <li><tt>cmpfunc_greaterequal</tt></li>
+    <li><tt>cmpfunc_always</tt></li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gpu_set_zfunc(cmp_func);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>cmp_func</td>
+        <td>Используемый режим сравнения (см. список выше)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">gpu_set_ztestenable(true);<br> gpu_set_zfunc(cmpfunc_always);
+    <br> draw_sprite(spr_Background, 0, 0, 0, 0);<br> gpu_set_ztestenable(false);
+  </p>
+  <p>Приведенный выше код включает тестирование z-буфера и устанавливает режим сравнения перед отрисовкой фонового спрайта, а затем снова выключает его для продолжения отрисовки.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="GPU_Control.htm">Управление графическим процессором</a></div>
+        <div style="float:right">Далее: <a href="gpu_set_zwriteenable.htm">gpu_set_zwriteenable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_zfunc
+cmpfunc_never
+cmpfunc_less
+cmpfunc_equal
+cmpfunc_lessequal
+cmpfunc_greater
+cmpfunc_notequal
+cmpfunc_greaterequal
+cmpfunc_always
+-->
+  <!-- TAGS
+gpu_set_zfunc
+-->
+</body>
+</html>

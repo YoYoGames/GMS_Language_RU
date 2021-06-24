@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_sprite" />
+  <meta name="rh-index-keywords" content="layer_background_sprite" />
+  <meta name="search-keywords" content="layer_background_sprite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_background_sprite</h1>
+  <p>С помощью этой функции вы можете установить индекс спрайта фонового элемента. Вы передаете ID фонового элемента (который вы получаете при создании фонового элемента с помощью функции <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a> или
+    при использовании функции <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>), а затем задаете индекс спрайта, который будет использоваться. Изображение фонового элемента будет заменено новым спрайтом. Если вы укажете значение -1, то элемент
+    не будет назначен спрайт (но он будет существовать и может быть назначен позже).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_background_sprite(background_element_id, sprite_index)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>background_element_id</td>
+        <td>Уникальное значение ID элемента фона для изменения</td>
+      </tr>
+      <tr>
+        <td>sprite_index</td>
+        <td>Индекс спрайта, который будет использоваться для фонового элемента</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Background_sky&quot;);<br> var back_id = layer_background_get_id(lay_id);<br> if layer_background_get_sprite(back_id) != spr_Clouds<br> {
+    <br> layer_background_sprite(back_id, spr_Clouds);<br> }
+  </p>
+  <p>Приведенный выше код получит идентификатор слоя с именем &quot;Background_sky&quot; и затем использует его для получения идентификатора элемента фона на этом слое. Этот ID затем используется для проверки спрайта, назначенного этому элементу, и установки его на спрайт &quot;spr_Clouds&quot;.
+    если он еще не установлен.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Background_Layers.htm">Фоновые слои</a></div>
+        <div style="float:right">Далее: <a href="layer_background_htiled.htm">layer_background_htiled</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_sprite
+-->
+  <!-- TAGS
+layer_background_sprite
+-->
+</body>
+</html>

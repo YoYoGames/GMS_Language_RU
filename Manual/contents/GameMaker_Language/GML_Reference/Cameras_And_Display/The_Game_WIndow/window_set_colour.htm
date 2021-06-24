@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>цвет_окна</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for window_set_colour" />
+  <meta name="rh-index-keywords" content="window_set_colour,window_set_color" />
+  <meta name="search-keywords" content="window_set_colour,window_set_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>цвет_окна</h1>
+  <p>Эта функция позволяет установить цвет фона игрового окна. Этот цвет представляет собой цвет, который будет использоваться для тех областей игрового окна, которые не заняты никакими видами. Следующее изображение иллюстрирует это:</p>
+  <p><img alt="Window colour example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/window_set_colour.png">Приведенное выше изображение имеет два вида с двумя портами просмотра, каждый из которых нарисован в разных позициях. Это
+    растягивает окно игры, чтобы вместить оба порта, и использует цвет окна для закрашивания фона там, где вид не отображается.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">window_set_colour(color);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>цвет</td>
+        <td>Цвет для установки области.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if window_get_colour() != c_black<br> {
+    <br> window_set_colour(c_black);
+    <br> }
+  </p>
+  <p>Приведенный выше код проверит цвет окна, чтобы увидеть, установлен ли он как черный или нет, и если нет, то установит его черным.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../The_Game_Window/The_Game_Window.htm">Окно игры</a></div>
+        <div style="float:right">Далее: <a href="../The_Game_Window/window_set_fullscreen.htm">window_set_fullscreen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+window_set_colour
+window_set_color
+-->
+  <!-- TAGS
+window_set_colour
+-->
+
+</body></html>

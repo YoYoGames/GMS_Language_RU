@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>атрибуты файла</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_attributes" />
+  <meta name="rh-index-keywords" content="file_attributes,fa_readonly,fa_hidden,fa_sysfile,fa_volumeid,fa_directory,fa_archive" />
+  <meta name="search-keywords" content="file_attributes,fa_readonly,fa_hidden,fa_sysfile,fa_volumeid,fa_directory,fa_archive" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>атрибуты файла</h1>
+  <p>Вы можете использовать эту функцию для проверки атрибутов заданного файла. Вы можете сложить следующие константы, чтобы узнать тип нужных вам файлов:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td><tt>fa_readonly</tt></td>
+        <td>Файлы только для чтения</td>
+      </tr>
+      <tr>
+        <td><tt>fa_hidden</tt></td>
+        <td>Скрытые файлы</td>
+      </tr>
+      <tr>
+        <td><tt>fa_sysfile</tt></td>
+        <td>Системные файлы</td>
+      </tr>
+      <tr>
+        <td><tt>fa_volumeid</tt></td>
+        <td>Файлы с идентификатором тома</td>
+      </tr>
+      <tr>
+        <td><tt>fa_directory</tt></td>
+        <td>Справочники</td>
+      </tr>
+      <tr>
+        <td><tt>fa_archive</tt></td>
+        <td>Архивные файлы</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><b></b></p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Это функция только для <span class="notranslate">Windows</span>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">file_attributes(fname, attr);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>Имя файла для проверки.</td>
+      </tr>
+      <tr>
+        <td>attr</td>
+        <td>Атрибуты, которые необходимо проверить.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if !file_attributes(file, fa_hidden)<br> {
+    <br> file_delete(file);
+    <br> }
+  </p>
+  <p>Это позволит проверить файл на предмет того, скрыт он или нет, и если нет, то он будет удален.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="File_System.htm">Файловая система</a></div>
+        <div style="float:right">Далее: <a href="filename_name.htm">имя_файла</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_attributes
+fa_readonly
+fa_hidden
+fa_sysfile
+fa_volumeid
+fa_directory
+fa_archive
+-->
+  <!-- TAGS
+file_attributes
+-->
+</body>
+</html>

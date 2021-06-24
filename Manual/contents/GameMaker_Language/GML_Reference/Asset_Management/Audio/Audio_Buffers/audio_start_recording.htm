@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_start_recording</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_start_recording" />
+  <meta name="rh-index-keywords" content="audio_start_recording" />
+  <meta name="search-keywords" content="audio_start_recording" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_start_recording</h1>
+  <p>Эта функция начнет запись звука с проиндексированного источника рекордера. Количество источников рекордера можно узнать с помощью функции <a href="audio_get_recorder_count.htm"><tt>audio_get_recorder_count()</tt></a>, и как только вы начнете запись
+    звук будет сохранен во временном буфере и начнет вызывать <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">асинхронное событие Audio Recording Asynchronous Event</a>. Это событие запускается на каждом шаге, когда запись
+    происходит и создаст специальную <a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">карту DS</a> в переменной <a href="../../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> со следующими
+    парами ключ/значение:</p>
+  <ul class="colour">
+    <li>&quot; buffer_id<strong>&quot; -</strong> идентификатор временного буфера, который можно использовать для получения аудиоданных</li>
+    <li>&quot;<strong>channel_index&quot; -</strong> индекс канала записи (как возвращено функцией), с которого поступили данные</li>
+    <li>&quot; data_len<strong>&quot; -</strong> длина полученных данных (в байтах)</li>
+  </ul>
+  <p>Обратите внимание, что после срабатывания асинхронного события звук во временном буфере будет стерт, поэтому вам следует скопировать его данные в пользовательский буфер, который вы создали ранее.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ: </b>Большинство платформ <b>, кроме HTML5</b>, поддерживают запись звука в той или иной форме, но это не означает, что все устройства позволят это сделать, даже если платформа это делает, поэтому всегда следует проверять, что функция <span style="font-size:1px;"><a href="audio_get_recorder_count.htm"><tt style="font-size: 14px">audio_get_recorder_count()</tt></a></span>    возвращает значение больше 0, чтобы убедиться, что записывающие устройства доступны, прежде чем использовать остальные функции записи.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_start_recording(recorder_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс_регистратора</td>
+        <td>Индекс используемого источника рекордера.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (идентификатор буфера)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">audio_record = audio_start_recording(0);</p>
+  <p>Приведенный выше код начинает запись с источника 0 рекордера, сохраняя индекс канала записи в переменной &quot;audio_record&quot; для использования в асинхронном <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">событии</a> Audio Recording.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Audio.htm">Аудио буферы</a></div>
+        <div style="float:right">Следующий: <a href="audio_stop_recording.htm">Аудио_остановка_записи</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_start_recording
+-->
+  <!-- TAGS
+audio_start_recording
+-->
+</body>
+</html>

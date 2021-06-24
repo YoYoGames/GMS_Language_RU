@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>скорость изображения</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the variable image_speed" />
+  <meta name="rh-index-keywords" content="image_speed" />
+  <meta name="search-keywords" content="image_speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>скорость изображения</h1>
+  <p>Эта переменная определяет скорость, с которой <span class="notranslate">GameMaker Studio 2</span> будет перебирать суб-изображения для текущего экземпляра спрайта. Значение скорости является <i>множителем</i>, по умолчанию используется значение 1, а при установке значения 0,5 скорость анимации уменьшится вдвое.
+    скорость анимации - как установлено в <a href="../../../../../The_Asset_Editors/Sprites.htm">редакторе спрайтов</a> или <a href="../../../../../The_Asset_Editors/Image_Editor.htm">редакторе изображений, -</a> в то время как при установке значения 2 она удваивается. Если используемый спрайт не имеет
+    нет вложенных изображений, эта переменная не будет иметь никакого эффекта.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">скорость изображения;</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (значение с плавающей точкой одинарной точности)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">with (instance_create_layer(x, y, &quot;Effects&quot;, obj_Explosion))<br> {
+    <br> image_speed = 0.5;<br> }
+  </p>
+  <p>Приведенный выше код создает экземпляр объекта &quot;obj_Explosion&quot; и устанавливает его image_speed равным 0,5 (фактически уменьшая скорость бега вдвое).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Instance_Variables.htm">Переменные экземпляра спрайта</a></div>
+        <div style="float:right">Далее: <a href="image_xscale.htm">image_xscale</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+image_speed
+-->
+  <!-- TAGS
+image_speed
+-->
+</body>
+</html>

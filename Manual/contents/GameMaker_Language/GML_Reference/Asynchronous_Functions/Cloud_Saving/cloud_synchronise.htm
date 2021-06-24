@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>облако_синхронизировать</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for cloud_synchronise" />
+  <meta name="rh-index-keywords" content="cloud_synchronise" />
+  <meta name="search-keywords" content="cloud_synchronise" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>облако_синхронизировать</h1>
+  <p>Эта функция обычно вызывается в начале новой игры и используется для получения текущего состояния облачного сервиса при запуске игры. Функция возвращает уникальное значение <b>id</b>, которое затем используется в <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Cloud.htm">событии Asynchronous Cloud Event</a> для получения соответствующей информации из создаваемой карты DS.</p>
+  <p>Эта функция отправит в облако данные, которые затем вызовут соответствующее асинхронное событие. В этом событии вы можете проверить возвращенную <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> карта DS
+    на наличие следующих значений:</p>
+  <ul class="colour">
+    <li><b>&quot;status&quot;: </b>Здесь хранится код статуса, где отрицательное значение означает ошибку, описание которой будет содержаться в &quot;errorString&quot;. Значение 0 (или положительное значение) означает успех (точные значения см. ниже),
+      и &quot;resultString&quot; будет содержать возвращаемые данные или сообщение об успехе.</li>
+    <li><b>&quot;id&quot;: </b>id, который был возвращен из вызванной функции. Если вы отправляете серию запросов <tt>cloud_</tt>, вам нужно знать, на какой из них вы получаете ответ, поэтому вы будете использовать это значение для сравнения со значением, которое вы сохранили при отправке запроса, чтобы найти нужный запрос.
+      сохраненным при первоначальной отправке запроса, чтобы найти нужный запрос.</li>
+    <li><b>&quot;description&quot;: </b>Описание последнего загруженного файла.</li>
+    <li><b>&quot;resultString&quot;: </b>Здесь хранится строка, которая является блобом данных, возвращенным из облака.</li>
+    <li>&quot;<b>errorString&quot;: возвращает </b>строку ошибки для любой ошибки.</li>
+  </ul>
+  <p>Точное значение возвращаемой записи карты &quot;статус&quot; объясняется в следующей таблице:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Статус Значение</th>
+        <th>errorString / resultString</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>-1</td>
+        <td>errorString = &quot;Не вошел в &lt;SERVICE&gt;&quot;</td>
+        <td>Вы не смогли успешно войти в данный облачный сервис</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>resultString = восстановленные данные</td>
+        <td>Новые игровые данные, загруженные из облака (после вызова cloud_synchronise)</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>resultString = &quot;AlreadySynchronized&quot;</td>
+        <td>Нет новых данных с момента последнего вызова cloud_synchronise</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>resultString = &quot;ConflictDeferral&quot;</td>
+        <td>Возник конфликт, но геймер решил его проигнорировать</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>resultString = &quot;GameUploadSuccess&quot;</td>
+        <td>данные из <a href="cloud_string_save.htm"><tt>cloud_string_save()</tt></a> или <a href="cloud_file_save.htm"><tt>cloud_file_save()</tt></a> были успешно загружены в облако</td>
+      </tr>
+      <tr>
+        <td>-n</td>
+        <td>errorString = Описание ошибки</td>
+        <td>Любое другое отрицательное число означает сбой синхронизации</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">cloud_synchronise();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Расширенный пример:</h4>
+  <p>Эта функция будет вызываться в событии, таком как <strong>событие начала игры</strong>, или в объекте, размещенном в первой комнате вашей игры. Идея заключается в том, что вы проверяете текущий блок данных с облачного сервера, чтобы увидеть, обновлен ли он.
+    или нет.</p>
+  <p class="code">cloud_check = cloud_synchronise();</p>
+  <p>Затем вы захотите проверить возвращаемую <tt>DS Map</tt> в асинхронном <b>Cloud Event</b>, чтобы получить статус и возвращаемую строку, если она есть, с помощью примерно следующего кода:</p>
+  <p class="code">если ds_map_find_value(async_load, &quot;id&quot;) == cloud_check<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) &lt; 0<br> {
+    <br> show_message_async(&quot;Cloud Services not available. Please check connectivity.&quot;);<br> }
+    <br> else
+    <br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) == 0<br> {
+    <br> var file = file_text_open_write(&quot;Save.txt&quot;);<br> file_text_write_string(file, ds_map_find_value(async_load, &quot;resultString&quot;));<br> file_text_close(file);
+    <br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет правильность вызова асинхронной функции, затем получает статус возвращаемой карты облачной DS. Если статус отрицательный, значит, что-то пошло не так, и пользователю сообщается об этом, в противном случае
+    код продолжит работу, получит синхронизированные данные и запишет их в текстовый файл для последующего использования.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Cloud_Saving.htm">Облачная экономия</a></div>
+        <div style="float:right">Далее: <a href="cloud_string_save.htm">cloud_string_save</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+cloud_synchronise
+-->
+  <!-- TAGS
+cloud_synchronise
+-->
+</body>
+</html>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>animcurve_channel_new</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function animcurve_channel_new" />
+  <meta name="rh-index-keywords" content="animcurve_channel_new,animcurvetype_linear,animcurvetype_catmullrom" />
+  <meta name="search-keywords" content="animcurve_channel_new,animcurvetype_linear,animcurvetype_catmullrom" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>animcurve_channel_new</h1>
+  <p>Эта функция может быть использована для создания новой <a href="../../../GML_Overview/Structs.htm">структуры</a> канала анимационной кривой. Структура канала имеет следующие переменные:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Имя переменной</th>
+        <th>Тип данных</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>имя</td>
+        <td>строка</td>
+        <td>Это название канала.</td>
+      </tr>
+      <tr>
+        <td>тип</td>
+        <td>постоянная</td>
+        <td>Это будет одна из констант <tt><b>animcurvetype_linear</b></tt> - для линейной интерполяции между точками - или <tt><b>animcurvetype_catmullrom</b></tt> - для &quot;гладкой&quot; интерполяции между точками с помощью интерполяции catmull-rom.</td>
+      </tr>
+      <tr>
+        <td>итераций</td>
+        <td>целое число</td>
+        <td>Если канал использует интерполяцию катмул-ром (&quot;гладкую&quot;), это значение показывает, сколько точек было сгенерировано для каждого сегмента кривой (обратите внимание, что эти дополнительные точки являются внутренними для функции и используются только для вычислений во время выполнения).
+          Если канал использует линейную интерполяцию, это значение все равно будет существовать, но его можно игнорировать, так как оно не влияет на то, как интерполируется кривая.</td>
+      </tr>
+      <tr>
+        <td>пункты</td>
+        <td>указатель массива</td>
+        <td>Это массив, где каждый элемент массива является структурой точки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> По умолчанию при создании новой структуры канала переменная &quot;name&quot; будет пустой строкой, &quot;type&quot; - animcurvetype_linear <tt>, а &quot;iterations</tt> &quot; - 16. Все эти переменные могут быть установлены в
+    значения, которые вам нужны (обратите внимание, что значение &quot;итерации&quot; не влияет на линейные типы кривых). После создания кривой необходимо добавить точки к ней, что делается путем добавления различных структур точек в массив &quot;points&quot;.
+    Эти структуры точек могут быть созданы с помощью функции <a href="animcurve_point_new.htm"><tt>animcurve_point_new()</tt></a>, и содержат следующие переменные:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Имя переменной</th>
+        <th>Тип данных</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>posx</td>
+        <td>настоящий</td>
+        <td>Положение во времени (нормированное от 0 до 1) точки.</td>
+      </tr>
+      <tr>
+        <td>значение</td>
+        <td>настоящий</td>
+        <td>Значение точки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">animcurve_channel_new();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Ссылка на структуру</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">my_curve = animcurve_create();<br> my_curve.name = &quot;My_Curve&quot;;<br> var _channels = array_create(1);<br> _channels[0] = animcurve_channel_new();<br> _channels[0].name = &quot;alpha&quot;;<br> _channels[0].type = animcurvetype_catmullrom;<br> _channels[0].iterations = 8;<br> var _points = array_create(3);<br> _points[0] = animcurve_point_new();<br> _points[0].posx = 0;<br> _points[0].value = 0;<br> _points[1] = animcurve_point_new();<br> _points[1].posx = 0.5;<br> _points[1].value
+    = 1;<br> _points[2] = animcurve_point_new();<br> _points[2].posx = 1;<br> _points[2].value = 0;<br> _channels[0].points = _points;<br> my_curve.channels = _channels;</p>
+  <p>Приведенный выше код создает новую структуру анимационной кривой и сохраняет ее в переменной &quot;my_curve&quot;. Затем эта структура заполняется именем и массивом каналов. Массив каналов содержит один канал с тремя точками.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Animation_Curves.htm">Анимационные кривые</a></div>
+        <div style="float:right">Далее: <a href="animcurve_point_new.htm">animcurve_point_new</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_channel_new
+animcurvetype_linear
+animcurvetype_catmullrom
+-->
+  <!-- TAGS
+animcurve_channel_new
+-->
+</body>
+</html>

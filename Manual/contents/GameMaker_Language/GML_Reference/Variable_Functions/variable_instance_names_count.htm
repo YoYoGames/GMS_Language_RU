@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>переменная_имена_обстоятельств_счёт</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function variable_instance_names_count" />
+  <meta name="rh-index-keywords" content="variable_instance_names_count" />
+  <meta name="search-keywords" content="variable_instance_names_count" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>переменная_имена_обстоятельств_счёт</h1>
+  <p>С помощью этой функции вы можете найти общее количество переменных, определенных для экземпляра. Вы указываете ID экземпляра для проверки, и функция возвращает целочисленное значение количества переменных или (если экземпляра с заданным ID не существует) -1.
+    ID не существует) -1.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">variable_instance_names_count(instance_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор экземпляра</td>
+        <td>Уникальное значение ID экземпляра для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Целое число</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _num = variable_instance_names_count(myinst);<br> show_debug_message(&quot;Instance Variables = &quot; + string(_num));</p>
+  <p>Приведенный выше код получит количество переменных в данном экземпляре и покажет отладочное сообщение в консольном выводе с этим значением.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Variable_Functions.htm">Переменные функции</a></div>
+        <div style="float:right">Далее: <a href="variable_instance_get.htm">variable_instance_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_instance_names_count
+-->
+  <!-- TAGS
+variable_instance_names_count
+-->
+</body>
+</html>

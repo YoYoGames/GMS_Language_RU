@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_matchmaking_session_get_users</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_session_get_users" />
+  <meta name="rh-index-keywords" content="xboxlive_matchmaking_session_get_users" />
+  <meta name="search-keywords" content="xboxlive_matchmaking_session_get_users" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_session_get_users</h1>
+  <p>Эта функция создаст и заполнит карту DS деталями пользователей в указанной сессии, или -1, если произошла ошибка. Вы можете получить указатель идентификатора сессии из <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>    DS map, который возвращается в <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">асинхронном социальном событии</a>, когда вы создали или нашли сессию (см. <a href="xboxlive_matchmaking_create.htm"><tt>xboxlive_matchmaking_create()</tt></a>    для более подробной информации). Возвращаемая карта DS будет содержать следующие пары ключ/значение:</p>
+  <ul class="colour">
+    <li>&quot; num_results<b>&quot; -</b> содержит количество пользователей в сессии</li>
+    <li>&quot; userId&lt;<b>index&gt; &quot;<i>-</i></b> содержит ID пользователя (&lt; index&gt; - это значение<i>от 0</i> до &quot;num_results&quot; - 1)</li>
+    <li>&quot; userIsOwner&lt;<b>index&gt; &quot;<i>-</i></b> содержит 1, если пользователь является хозяином, иначе 0 (&lt; index&gt; - значение<i>от 0</i> до &quot;num_results&quot; - 1)</li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">xboxlive_matchmaking_session_get_users(session_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор сессии</td>
+        <td>Указатель идентификатора сессии для использования</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Идентификатор запроса (целое число)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var session_map = xboxlive_matchmaking_session_get_users(global.SessionID);<br> if (session_map != -1)<br> {
+    <br> for (var i = 0; i &lt; session_map[? &quot;num_results&quot;]; i++)<br> {
+    <br> if (session_map[? &quot;userIsOwner&quot; + string(i)] == 1)<br> {
+    <br> global.OwnerID = session_map[? &quot;userId&quot; + string(i)];<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Вышеприведенные действия позволят получить пользовательские данные для всех пользователей, участвующих в сеансе подбора, и установить глобальную переменную на ID владельца сеанса.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Match_Making.htm">Сопоставление</a></div>
+        <div style="float:right">Далее: <a href="xboxlive_matchmaking_join_session.htm">xboxlive_matchmaking_join_session</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_matchmaking_session_get_users
+-->
+  <!-- TAGS
+xboxlive_matchmaking_session_get_users
+-->
+</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>слой_изменения</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_change" />
+  <meta name="rh-index-keywords" content="layer_sprite_change" />
+  <meta name="search-keywords" content="layer_sprite_change" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>слой_изменения</h1>
+  <p>С помощью этой функции вы можете изменить ресурс спрайта, назначенный данному элементу спрайта на слое. Вы передаете идентификатор элемента спрайта (который вы получаете при создании элемента спрайта с помощью функции <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>    или при использовании функции <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>), а затем указать индекс элемента спрайта, ресурс которого будет изменен. Обратите внимание, что если спрайт имеет вложенные изображения, то они тоже будут анимироваться (это можно контролировать
+    с помощью <a href="layer_sprite_index.htm"><tt>layer_sprite_index()</tt></a> и <a href="layer_sprite_speed.htm"><tt>layer_sprite_speed()</tt></a> ). Обратите внимание, что вы можете присвоить значение -1 в качестве нового индекса спрайта, и тогда спрайт не будет показан,
+    хотя элемент все еще будет существовать и может быть изменен позже.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_sprite_change(sprite_element_id, sprite_index)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>sprite_element_id</td>
+        <td>Уникальное значение ID элемента спрайта для изменения</td>
+      </tr>
+      <tr>
+        <td>sprite_index</td>
+        <td>Новый индекс спрайта для использования</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var s = layer_sprite_get_id(layer, global.Asset_sprite);<br> if layer_sprite_get_sprite(s) != spr_Nighttime<br> {
+    <br> layer_sprite_change(s, spr_nighttime);<br> }
+  </p>
+  <p>Приведенный выше код проверяет индекс спрайта элемента с ID, хранящимся в глобальной переменной <tt>global.Asset_sprite</tt>, и если он не &quot;spr_Nighttime&quot;, то этот спрайт назначается элементу.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Layers.htm">Слои спрайта</a></div>
+        <div style="float:right">Далее: <a href="layer_sprite_index.htm">layer_sprite_index</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_change
+-->
+  <!-- TAGS
+layer_sprite_change
+-->
+</body>
+</html>

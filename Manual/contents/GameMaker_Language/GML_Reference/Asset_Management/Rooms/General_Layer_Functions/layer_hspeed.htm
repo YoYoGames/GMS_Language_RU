@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_hspeed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_hspeed" />
+  <meta name="rh-index-keywords" content="layer_hspeed" />
+  <meta name="search-keywords" content="layer_hspeed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_hspeed</h1>
+  <p>Вы можете использовать эту функцию для установки горизонтальной скорости (в пикселях на игровой кадр) слоя в пределах текущей комнаты. Вы передаете идентификатор слоя (который вы получаете при создании слоя с помощью функции <a href="layer_create.htm"><tt>layer_create()</tt></a>)
+    или имя слоя (в виде строки - это влияет на производительность) и значение скорости, которое нужно установить, где положительное значение - вправо, а отрицательное - влево.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_hspeed(layer_id, hspd)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор слоя</td>
+        <td>Уникальное значение ID слоя для установки горизонтальной скорости</td>
+      </tr>
+      <tr>
+        <td>hspd</td>
+        <td>Горизонтальная скорость (в пикселях на игровой кадр) для установки</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Sprites&quot;);<br> if layer_get_hspeed(lay_id) != 0 || layer_get_vspeed(lay_id) != 0<br> {
+    <br> layer_hspeed(lay_id, 0);<br> layer_vspeed(lay_id, 0);<br> }
+  </p>
+  <p>Приведенный выше код проверяет заданные горизонтальную и вертикальную скорости слоя, и если они обе не равны 0, то устанавливает их в 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="General_Layer_Functions.htm">Общие функции слоя</a></div>
+        <div style="float:right">Далее: <a href="layer_vspeed.htm">layer_vspeed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_hspeed
+-->
+  <!-- TAGS
+layer_hspeed
+-->
+</body>
+</html>

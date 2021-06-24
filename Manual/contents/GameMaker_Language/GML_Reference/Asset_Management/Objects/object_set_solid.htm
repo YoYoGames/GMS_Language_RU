@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_set_solid</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function object_set_solid" />
+  <meta name="rh-index-keywords" content="object_set_solid" />
+  <meta name="search-keywords" content="object_set_solid" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>object_set_solid</h1>
+  <p>С помощью этой функции можно отметить конкретный объект как цельный или нет (более подробную информацию о флаге &quot;цельный&quot; см. в разделе &quot; <a href="../../../../The_Asset_Editors/Objects.htm">Редактор</a> объектов <a href="../../../../The_Asset_Editors/Objects.htm">&quot;)</a>. Это означает, что все экземпляры
+    этого объекта, которые будут созданы <i>после изменения параметра solid</i>, будут созданы с этим новым состоянием, в то время как экземпляры, которые уже находятся в комнате, могут быть не затронуты.</p>
+  <p>Обратите внимание, что это не функция экземпляра! Вы можете установить флаг solid для отдельных экземпляров с помощью переменной <tt><a href="../Instances/Instance_Variables/solid.htm">твердый</a></tt> и таким образом десять экземпляров будут помечены как solid, даже если в IDE для данного объекта установлен флаг false.
+    Даже если вы измените флаг solid объекта на true с помощью этой функции, все экземпляры, находящиеся в комнате, останутся такими, какими они были, и только экземпляры, созданные после вызова функции
+    будут начинаться с флагом solid, установленным как true.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">object_set_solid( index, solid );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс объекта, который нужно изменить.</td>
+      </tr>
+      <tr>
+        <td>твердый</td>
+        <td>Новая твердость объекта (true=твердый, false=не твердый).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if !object_get_solid(obj_Block)<br> {<br> object_set_solid(obj_Block, true);<br> }</p>
+  <p>Приведенный выше код проверяет флаг solid объекта &quot;obj_Block&quot;, и если он равен false, то он изменяется на true.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Objects.htm">Объекты</a></div>
+        <div style="float:right">Далее: <a href="object_set_sprite.htm">object_set_sprite</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_set_solid
+-->
+  <!-- TAGS
+object_set_solid
+-->
+</body>
+</html>

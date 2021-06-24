@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Последовательности</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the sequences editor works" />
+  <meta name="rh-index-keywords" content="Sequences Editor" />
+  <meta name="search-keywords" content="sequences,dope sheet,sequences editor,parameter tracks,asset tracks,playhead" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Редактор последовательностей</h1>
+  <p><img alt="The Sequence Editor" src="../assets/Images/Asset_Editors/Editor_Sequences.png" /></p>
+  <p> <strong>Последовательность </strong>- это, по сути, набор активов, которые выполняют динамическую анимацию во времени. Они могут содержать спрайты, объекты, звуки и другие вещи, и каждый из них может быть настроен на движение, изменение цвета или начало/остановку анимации
+    с течением времени в самой последовательности. Активы, которые вы добавляете, назначаются определенным <strong>дорожкам </strong>в последовательности, и к этим дорожкам могут быть применены различные атрибуты, называемые <strong><span class="notranslate">ключевые кадры</span></strong> - которые могут быть статичными
+    или изменяться во времени. Все редактирование последовательности происходит в <strong>редакторе после</strong> довательностей, который состоит из трех областей:</p>
+  <ul class="colour">
+    <li> <strong>холст </strong>- где вы размещаете активы, составляющие последовательность</li>
+    <li> <strong>панель дорожек </strong>- где вы добавляете/удаляете <strong>дорожки активов</strong> и <strong>дорожки параметров</strong> в вашей последовательности</li>
+    <li><strong><span class="notranslate">Лист допинга</span></strong> - где вы добавляете/удаляете/редактируете <strong><span class="notranslate">ключевые кадры</span></strong> дорожки и контролируете их поведение с течением времени.</li>
+  </ul>
+  <p>Обратите внимание, что последовательности можно располагать внутри последовательностей для создания сложных анимаций и эффектов, а доступ к последовательностям и их изменение можно осуществлять с помощью кода, чтобы обеспечить максимальный контроль над тем, как они будут отображаться и использоваться в вашей игре.
+    Более подробную информацию о кодовом аспекте последовательностей можно найти в разделе " <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequences.htm">Функции последовательностей</a>".</p>
+  <p>Прежде чем продолжить объяснение деталей редактора, мы уделим немного времени объяснению того, как создается последовательность, а также некоторых ключевых слов, которые используются в описаниях, чтобы вы имели более глубокое понимание того, как работает редактор последовательностей
+    работает. Общий процесс создания последовательности выглядит следующим образом:</p>
+  <ul class="colour">
+    <li>Сначала вы создадите последовательность в <a href="../Introduction/The_Asset_Browser.htm">браузере</a> активов, в результате чего откроется редактор последовательностей.</li>
+    <li>Затем перетащите актив (спрайт, объект, звук или последовательность) на холст редактора.</li>
+    <li>Это создаст <a class="glossterm" data-glossterm="отслеживание активов" href="#">дорожку актива</a> на <strong>панели дорожек</strong> и добавит <a class="glossterm" data-glossterm="ключ актива" href="#">ключ актива</a> в файл <a class="glossterm" data-glossterm="Наркотический лист" href="#"><span class="notranslate">Dope Sheet</span></a>. Дорожка актива - это просто название дорожки, содержащей актив, а ключ актива - это полоса, которая рисуется для обозначения количества кадров, на которых актив будет анимирован в последовательности.</li>
+    <li>На этом этапе обычно требуется расположить актив на холсте в исходном положении для начала последовательности и добавить любые начальные преобразования, такие как масштабирование или вращение.</li>
+    <li>Когда вы будете довольны начальными настройками, вы захотите записать <strong>ключи параметров</strong> (или <a class="glossterm" data-glossterm="ключевой кадр" href="#"><span class="notranslate">ключевой кадр</span></a><span class="glossextra">s</span>) - это просто название, данное
+      значения масштаба, поворота и положения, которые имеет конкретный ключ актива в любой точке временной шкалы <span class="notranslate">dope sheet</span>.</li>
+    <li>Затем вы измените положение головки воспроизведения <a class="glossterm" data-glossterm="playhead" href="#">(</a> текущая позиция воспроизведения на <span class="notranslate">временной шкале</span> dope <span class="notranslate">sheet</span> ), а затем переместите или измените преобразования актива и запишите еще один ключ параметра.</li>
+    <li>Все ключи параметров хранятся в дополнительных <a class="glossterm" data-glossterm="дорожки параметров" href="#">дорожках параметров</a>, которые являются подмножеством дорожек под основной дорожкой актива на панели дорожек, и вы можете редактировать данные ключей параметров для
+      каждого параметра в редакторе дорожек.</li>
+    <li>Теперь вы повторяете вышеописанный процесс в течение всей последовательности, перемещая, вращая и масштабируя актив по мере необходимости, а затем добавляя другие активы по мере необходимости.</li>
+  </ul>
+  <p>Ниже представлен обзор каждой из функций редактора последовательностей, а в нижней части этой страницы находятся ссылки на страницы, где более подробно описаны три основные функции, упомянутые выше:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Линейки / направляющие</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Линейки вдоль края холста показывают положение объектов, размещенных на нем, и отмечены от (0, 0), которая является центром холста и началом последовательности по умолчанию. Вы можете нажать и перетащить линейки, чтобы вытянуть
+      горизонтальную или вертикальную <strong>направляющую </strong>в последовательность, и эта направляющая может быть использована для точного позиционирования различных используемых активов, так как перемещение актива вблизи одной из них &quot;привяжет&quot; его к направляющей. Во время позиционирования
+      в последовательности, <strong>умные направляющие</strong> также будут временно отображаться, указывая расстояние между активами, а также расстояние от границы последовательности или центральной точки.</p>
+    <p class="dropspot"><img alt="Guides and Smart Guides in the Sequences Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_Guides.png">Обратите внимание, что граница последовательности и маркерные линии центральной точки последовательности также считаются
+      направляющими и ведут себя так же, как направляющие, добавленные с помощью линеек, за исключением того, что их нельзя редактировать.</p>
+    <p class="dropspot">Расстояние, на котором активы &quot;привязываются&quot; к направляющим, а также другие свойства можно задать в <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Sequences_Preferences.htm">настройках</a> последовательностей.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Вид на холст</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Вид холста - это место предварительного просмотра холста последовательности, где вы можете редактировать и размещать различные активы, составляющие вашу последовательность. Вы можете добавить актив в последовательность, просто перетащив его из браузера активов, а затем
+      Это создаст новую дорожку на панели дорожек, а также добавит ключ актива в текущее положение головки воспроизведения на шкале времени. Следующие активы могут быть перенесены на холст таким образом:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">Спрайты</li>
+      <li class="dropspot">Объекты</li>
+      <li class="dropspot">Звуки</li>
+      <li class="dropspot">Последовательности</li>
+    </ul>
+    <p class="dropspot">Каждый актив, добавленный на холст, можно манипулировать различными способами - поворачивать, трансформировать или переводить - в зависимости от того, как вы с ним взаимодействуете, поскольку каждый актив будет иметь <strong>ограничивающую рамку</strong> и <strong> <a class="glossterm" data-glossterm="штуковины" href="#">механизмы</a></strong> трансформации, а также <strong>элементы управления ограничивающей рам</strong>кой. Все это более подробно описано на странице, посвященной <a href="Sequence_Properties/The_Sequence_Canvas.htm">холсту редактора последовательностей</a>.</p>
+    <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Звуковые активы при добавлении в последовательность являются, по сути, звуковыми <strong>излучателями </strong>, которые воспроизводят только заданный звуковой ресурс.</p>
+    <p class="dropspot">Для перемещения по холсту можно использовать те же основные элементы управления, что и для общих рабочих пространств, то есть: используйте среднюю кнопку мыши <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> и перетащите ее для панорамирования холста (или альтернативно
+      используйте комбинацию <img alt="Space Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Space.png" width="55"> + <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> ), а для горизонтальной прокрутки можно использовать
+      колесиком мыши <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> или увеличивать и уменьшать масштаб с помощью клавиш <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> и колесика мыши <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png">. Вы также можете вырезать, копировать и вставлять объекты, используя комбинации клавиш <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">X</span>&quot;, <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">C</span>&quot; и <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">V</span>&quot;.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Управление<span class="notranslate">ключевыми кадрами</span> </a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Кнопки управления <span class="notranslate">ключевыми кадрами</span> - это один из способов добавления, удаления или редактирования определенных ключей в <span class="notranslate">допинг-листе</span>. Кнопки выглядят следующим образом:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><img alt="Split Keys Icon" src="../assets/Images/Icons/Icon_Seq_Split.png"> - Это кнопка &quot;Разделить выбранные клавиши&quot;. Когда вы выбрали одну или несколько клавиш параметров на <span class="notranslate">доп. листе</span>, вы можете нажать эту кнопку, и они будут
+        будут разделены на две отдельные клавиши в позиции головки воспроизведения временной шкалы (обратите внимание, что сначала клавиши должны быть растянуты, чтобы занять несколько кадров):<br>
+        <img alt="Split Asset and Parameter Keys" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_Split.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Delete Keys Icon" src="../assets/Images/Icons/Icon_Seq_Delete.png"> - Это кнопка &quot;Удалить выбранные ключи&quot;. Когда вы выбрали один или несколько ключей параметров в <span class="notranslate">доп. листе</span>, вы можете нажать эту кнопку, и они будут
+        будут удалены:<br>
+        <img alt="Delete Parameter Keys" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_Delete.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Add Keys Icon" src="../assets/Images/Icons/Icon_Seq_Add.png"> - Это кнопка &quot;Записать новый ключ&quot;. Когда вы выбрали ключ актива в <span class="notranslate">доп. листе</span> и нажали эту кнопку, новые ключи параметров будут добавлены к треку актива как дорожки параметров, а ключи параметров будут добавлены как точки на временной шкале доп. листа.
+        трек как дорожки параметров, а ключи параметров будут добавлены как точки на временной шкале <span class="notranslate">dope sheet</span> в позиции playhead:<br>
+        <img alt="Add Parameter Keys At Playhead Position" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_Record.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Record Keys Icon" src="../assets/Images/Icons/Icon_Seq_Record.png"> - Это кнопка &quot;Автоматическая запись изменений&quot;. Когда эта кнопка включена, любые изменения, внесенные в актив в пределах холста, будут автоматически записаны и
+        соответствующие дорожки параметров и ключи параметров будут добавлены в позиции головки воспроизведения в <span class="notranslate">доп-листе</span>. Например, если переместить головку воспроизведения с кадра 0 на кадр 10, а затем на холсте переместить актив на 100 пикселей вправо, дорожка параметров
+        будет добавлена для позиции, а ключи параметров будут добавлены в кадре 0 (начальная позиция) и в кадре 10 (позиция головки воспроизведения), и когда вы нажмете кнопку &quot;Play&quot; в последовательности, актив переместится на 100px вправо в течение десяти кадров.<br>
+        <img alt="Automatically Record Parameter Keys" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_Auto.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Последовательность событий</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Подобно обычным объектам, последовательности могут иметь события, которые могут запускать определенный код, назначенный им. Код назначается в виде <a href="../GameMaker_Language/GML_Overview/Script_Functions.htm">скриптовой функции</a>, которая не принимает никаких
+      аргументов и будет вызвана при наступлении события.</p>
+    <p class="dropspot">События добавляются нажатием кнопки <strong>Добавить событие</strong> <img alt="Add Event Icon" src="../assets/Images/Icons/Icon_AddEvent.png">, в результате чего откроется следующее окно:</p>
+    <p class="dropspot"><img alt="Sequence Editor Add Event Window" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_Events.png" /></p>
+    <p class="dropspot">Здесь перечислены следующие события:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Create </strong>- Это событие происходит при первом создании экземпляра последовательности, и это самое первое, что происходит в последовательности, помещенной в комнату через редактор комнат при входе в комнату.</li>
+      <li class="dropspot"><strong>Уничтожение </strong>- Это событие выполняется, когда экземпляр последовательности уничтожается, и будет запущено до события Очистка (см. ниже).</li>
+      <li class="dropspot"><strong>Clean Up</strong> - Это событие будет вызываться после любого события, которое удаляет экземпляр последовательности из комнаты. Таким образом, оно будет вызвано, если последовательность будет уничтожена, если комната закончится, или если игра закончится, и предназначено для выполнения
+        любую задачу, которую вам нужно выполнить один раз, когда экземпляр последовательности удаляется из игры по любой причине. Если вы уничтожили экземпляр последовательности, используя, например, layer_sequence_destroy(), то это событие будет вызвано после события Destroy
+        (см. выше).</li>
+      <li class="dropspot"><strong>Begin Step</strong> / <strong>Step </strong>/ <strong>End Step</strong> - Событие Step Event - это событие, которое проверяется на каждом шаге (кадре) игры, пока существует экземпляр последовательности, и состоит из трех частей: begin, step и
+        конец. Для большинства вещей стандартное событие шага вполне подходит, но иногда вы хотите немного больше контроля над тем, какой код выполняется и в какое время, поэтому для этого вам предоставляются события шага Begin и End, и эти события всегда будут
+        срабатывать в одном и том же порядке на каждом шаге (кадре) игры. <strong>Важно!</strong> Если последовательность поставлена на паузу, то эти события <em>не </em>сработают, а когда игра возобновится, они сработают на <em>следующем кадре после того, как последовательность снова начнет воспроиз</em>водиться.
+        Также обратите внимание, что порядок событий не зависит от направления головки воспроизведения, и даже если последовательность воспроизводится в обратном направлении, события все равно будут запускаться как Начало, Шаг и Конец.</li>
+      <li class="dropspot"><strong>Асинхронное событие</strong>: Это эквивалент объекта <a href="Object_Properties/Async_Events.htm">Asynchronous System Event</a>. <strong>Важно!</strong> Если последовательность приостановлена, то это событие <em>не </em>будет вызвано.</li>
+    </ul>
+    <p class="dropspot">Каждому событию можно назначить одну функцию, которая будет вызываться при срабатывании события. Вы можете назначить функцию, используя поле ввода для события, а нажатие кнопки со стрелкой откроет редактор сценария для редактирования функции.
+      Вы также можете нажать кнопку Create New внизу, чтобы создать новый ресурс сценария с уже определенными и готовыми к заполнению &quot;шаблонными&quot; функциями. Обратите внимание, что вы можете изменить имена функций на любые, какие вам нужны, и необязательно
+      использовать предопределенные имена, и вы также можете удалить все определения функций, которые вам не нужны. Важно отметить, что функции, используемые для событий последовательности, не могут принимать никаких аргументов.</p>
+    <p class="dropspot">Последовательность событий также можно добавлять и редактировать с помощью кода. Более подробную информацию можно найти <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Events_Moments_Broadcast.htm">здесь</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Панель для отслеживания</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot"> <strong>Панель дорожек</strong> - это место, где каждый актив в вашей последовательности перечислен как дорожка, причем каждая дорожка имеет поддорожки для любых параметров, которые изменяются для актива. Вы можете нажать <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> и перетащить любую дорожку актива, чтобы изменить ее положение над или под другими дорожками (любые назначенные дорожки параметров будут перемещаться вместе с ней), а также вы можете использовать <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> для выбора нескольких дорожек.</p>
+    <p class="dropspot">Вы можете создать дорожку, перетащив актив из браузера активов (спрайт, объект, звук или последовательность) на холст последовательности, или щелкнуть значок <img alt="Add Track Icon" class="icon" src="../assets/Images/Icons/Icon_AddAsset.png"> внизу, чтобы добавить новую дорожку, и выбрать актив для использования в открывшемся окне Asset Explorer. Новая дорожка будет создана, а актив добавлен в текущую позицию головки воспроизведения на временной шкале <span class="notranslate">dope sheet</span>:</p>
+    <p class="dropspot"><img alt="Add A New Asset Track" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_AddTrack.gif">Редактор дорожек имеет множество других возможностей, которые подробно рассматриваются на следующей странице:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="Sequence_Properties/The_Track_Panel.htm">Путевая панель</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Набор инструментов для работы с холстом</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">Панель инструментов редактора последовательностей содержит различные опции визуализации и настройки для редактируемой последовательности.</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Toggle Canvas Grid</strong> <img alt="Toggle Canvas Grid Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasGrid.png">: Это позволяет включить/выключить сетку холста редактора последовательностей. Это сетка, которую <span class="notranslate">GameMaker Studio 2</span> рисует на холсте предварительного просмотра, чтобы разделить его на разделы.
+        и по умолчанию имеет размер 32x32px. Однако если вы щелкните на значке меню сетки <img alt="Icon Grid Menu" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10">, вы
+        откроются опции сетки:<br>
+        <img alt="Sequence Editor Grid Options" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_GridControls.png">Эти опции позволяют задать цвет и альфа-канал сетки, а также значения ячеек сетки по осям X и
+        Y. Также здесь можно включить или отключить привязку сетки (по умолчанию отключена). Для переключения видимости сетки и ее привязки можно использовать комбинации клавиш &quot;G&quot; и <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + &quot;G&quot; соответственно.</li>
+      <li class="dropspot"><strong>Управление масштабированием холста</strong> <img alt="Canvas Zoom Controls Icons" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasZoom.png" width="120">: Эти кнопки управляют текущим уровнем масштабирования холста. Вы можете увеличивать или уменьшать масштаб, а
+        щелчок на кнопке <img alt="Zoom Reset Icon" class="icon" src="../assets/Images/Icons/Icon_ZoomReset.png"> вернет холст в положение 1:1 с редактируемой последовательностью. Вы также можете нажать кнопку Window Fit <img alt="Canvas Fit Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasFit.png">, чтобы весь холст последовательности поместился в текущее рабочее пространство редактора (при этом масштаб будет увеличиваться/уменьшаться по мере необходимости, чтобы он поместился). Обратите внимание, что вы также можете увеличивать и уменьшать масштаб с помощью кнопок
+        <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> и колесика мыши <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png">, а нажатие <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Enter Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55"> установит масштаб холста 1:1 с дисплеем.</li>
+      <li class="dropspot"><strong>Toggle Gizmos</strong> <img alt="Toggle Gizmos Icon" class="icon" src="../assets/Images/Icons/Icon_ToggleGizmos.png">: Нажав на эту кнопку, вы сможете включить или выключить различные <a class="glossterm" data-glossterm="штуковины" href="#">штуковины</a>, видимые на холсте. При включении вы увидите все штуковины, связанные с различными активами и самим холстом, а при выключении они не будут отображаться, давая более четкое представление о том, как выглядит последовательность. Обратите внимание, что эта функция включена по
+        по умолчанию, и есть меню, доступное через кнопку опций <img alt="Icon Grid Menu" class="icon" height="24" data-cke-saved-src="../assets/Images/Icons/Icon_CanvasOptions.png" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10">, где можно отфильтровать то, что видно, без необходимости отключать все различные виджеты вместе. Полный список этих опций фильтрации и объяснение того, что они делают, можно найти <a href="Sequence_Properties/The_Sequence_Canvas.htm">здесь</a>.</li>
+      <li class="dropspot"><strong>Переключить режим гизмо трансформации</strong> <img alt="Transform Gizmo Icon" class="icon" src="../assets/Images/Icons/Icon_TransformWidget.png">: Каждый актив, добавленный в последовательность, имеет гизмо трансформации в его начале:<br>
+        <img alt="The transform widget for an asset" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_TransformWidget.gif">Это гизмо может управлять масштабированием или поворотом актива, а также контролировать его положение и положение начала актива.
+        начала актива, однако одновременно отображается только один из этих параметров. Нажав на эту кнопку, вы сможете переключаться между различными типами виджетов, или вы можете нажать на меню опций <img alt="Icon Grid Menu" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10">, чтобы непосредственно выбрать тип управляющего действия, которое вы хотите, чтобы выполняла гизмо трансформации.</li>
+      <li class="dropspot"><strong>Toggle Canvas Frame</strong> <img alt="Toggle Canvas Frame Icon" class="icon" src="../assets/Images/Icons/Icon_ToggleCanvas.png">: С помощью этой кнопки можно включить или выключить рамку холста (по умолчанию она включена). Рамка холста - это
+        просто направляющая, которая используется для определения места размещения элементов в последовательности canvas, и любые элементы за пределами рамки не будут отображаться. Эта кнопка также имеет следующие опции меню <img alt="Icon Grid Menu" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10">:<br>
+        <img alt="Sequence Editor Canvas Options" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_CanvasControls.png">Здесь вы можете установить переключатель рамки холста, а также размер холста. У вас также есть возможность задать
+       <strong>опорное изображение</strong>- это изображение, которое вы выбираете с вашего компьютера (оно не импортируется в проект), чтобы использовать его в качестве фона для последовательности. Это изображение видно только в редакторе последовательностей и
+        не будет отображаться при использовании последовательности в проекте. При добавлении опорного изображения можно также установить непрозрачность, с которой оно будет нарисовано, и сместить его положение в рамке холста.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Инструменты последовательности</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">На этой панели расположены различные элементы управления воспроизведением последовательности:</p>
+    <p class="dropspot"><img alt="Sequence Editor Playback Controls" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_PlaybackControls.png" /></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Скорость воспроизведения</strong>: это скорость воспроизведения последовательности в кадрах (шагах) в секунду.</li>
+      <li class="dropspot"><strong>Положение головки воспроизведения</strong>: это текущее положение головки воспроизведения, которое может быть показано во времени (ч:м:с) или кадрах (f).</li>
+      <li class="dropspot"><strong>Опции отображения времени</strong>: здесь вы можете установить, как отображать время последовательности - в часах, минутах и секундах (h:m:s) или в кадрах (f).</li>
+      <li class="dropspot"><strong>Широковещательное сообщение</strong>: Нажав на эту кнопку, вы можете добавить <strong>широковещательное сообщение</strong> в текущей позиции головки воспроизведения (более подробно об этом рассказано <a href="Sequence_Properties/Broadcast_Messages.htm">здесь</a>).</li>
+      <li class="dropspot"><strong>Добавить момент</strong>: Нажатие на эту кнопку позволяет добавить <strong>момент</strong> последовательности в текущую позицию головки воспроизведения (более подробно об этом рассказано ниже).</li>
+      <li class="dropspot"><strong>Открыть редактор кривых</strong>: Эта кнопка переключает выбранную дорожку между <strong>видом кривой</strong> и <strong>видом<span class="notranslate">ключевого кадра</span></strong>. Эта опция действительно применима только к дорожкам <em>параметров</em>, и когда она включена
+        у вас появятся дополнительные возможности в зависимости от того, использует ли дорожка параметров <span class="notranslate">ключевые кадры</span> или <a href="Animation_Curves.htm">анимационную кривую</a>. Для получения дополнительной информации см. раздел " <a href="Sequence_Properties/Using_Animation_Curves.htm">Использование кривых анимации</a>".</li>
+      <li class="dropspot"><strong>Управление воспроизведением</strong>: с помощью этих кнопок можно запускать и останавливать предварительный просмотр последовательности, а также перемещать головку воспроизведения к началу или концу. Также есть кнопка для установки того, должна ли последовательность зацикливаться или нет, и должна ли последовательность
+        должна ли последовательность &quot;пинг-понг&quot; или повторяться при зацикливании. Обратите внимание, что эти настройки повлияют на воспроизведение последовательности при компиляции и запуске проекта.</li>
+      <li class="dropspot"><strong>Длина последовательности</strong>: здесь отображается общая возможная длина последовательности в кадрах (f) или во времени (м:ч:с). Обратите внимание, что последовательность может не достигать этой длины, если вы установили меньший размер области клипа.</li>
+    </ul>
+    <p class="dropspot">Как упоминалось выше, вы можете добавить <strong>моменты</strong> в последовательность. <strong>Момент </strong>последовательности - это позиция на временной шкале, где последовательность может вызвать <strong>функцию</strong>. Это <a href="../GameMaker_Language/GML_Overview/Script_Functions.htm">скриптовая функция</a>, которая
+      не должна иметь параметров, и когда момент (кадр) на временной шкале будет достигнут, эта функция будет вызвана. Чтобы задать момент, достаточно переместить головку воспроизведения в нужную позицию, а затем нажать кнопку <strong>Добавить момент</strong>, и в открывшемся
+      открывшемся диалоговом окне вы задаете имя вызываемой функции.</p>
+    <p class="dropspot"><img alt="Add A Moment To The Sequence" class="center" src="../assets/Images/Asset_Editors/Editor_Sequences_AddMoment.gif">При добавлении функции момента можно нажать кнопку <img alt="Go To Function Icon" class="icon" src="../assets/Images/Icons/Icon_GoTo_Function.png">, чтобы перейти к сценарию с указанной функцией, или нажать кнопку <img alt="New Moment Function Icon" class="icon" src="../assets/Images/Icons/Icon_NewMomentFunction.png">, чтобы создать новый ресурс сценария с пустой функцией.
+      готовым к редактированию. Вы также можете удалить moment и содержащийся в нем вызов функции, нажав кнопку <img alt="Remove Moment Icon" class="icon" src="../assets/Images/Icons/Icon_RemoveMoment.png">.</p>
+    <p class="dropspot">Моменты последовательности также можно добавлять и редактировать с помощью кода. Более подробную информацию можно найти <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Events_Moments_Broadcast.htm">здесь</a>.</p>
+    <ul class="dropspotlist">
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Допэмиссия</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot"><strong><span class="notranslate">Dope Sheet</span></strong> отображаются все<span class="glossextra">клавиши</span> <a class="glossterm" data-glossterm="ключ актива" href="#">активов</a> и <a class="glossterm" data-glossterm="ключ параметра" href="#">параметров</a>для каждого трека
+      показаны. Вы можете щелкнуть <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> и перетащить ключи влево или вправо, чтобы расположить их на временной шкале <span class="notranslate">dope sheet</span>, а также щелкнуть <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> по правому краю ключа актива, чтобы изменить его длину. Обратите внимание, что для спрайтов и объектов, если установить длину больше, чем длится анимация, это приведет к тому, что анимация
+      зациклится на дополнительных кадрах. На <span class="notranslate">листе dope</span> также есть элементы управления для установки начала и конца области клипа для последовательности, и вы можете щелкнуть <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> в любом месте, чтобы установить головку воспроизведения в эту позицию. Более подробную информацию о том, как использовать <span class="notranslate">dope sheet</span>, можно найти на следующей странице:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="Sequence_Properties/Using_The_Dope_Sheet.htm">Использование " <span class="notranslate">Листа допинга</span></a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Ориентация на изменения</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot">Кнопку изменения ориентации <img data-cke-saved-src="../assets/Images/Icons/Icon_ChangeOrientation.png" src="../assets/Images/Icons/Icon_ChangeOrientation.png" class="icon" alt="Change Orientation Icon"> можно использовать для изменения способа отображения последовательностей в редакторе последовательности.
+      Editor отображает различные разделы. По умолчанию вид Cnavas находится вверху, а редактор дорожек и доп. лист - внизу, но это можно изменить, нажав на кнопку для переключения между различными макетами, или нажав на кнопку
+      Опции <img alt="Icon Grid Menu" class="icon" height="24" data-cke-saved-src="../assets/Images/Icons/Icon_CanvasOptions.png" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10">, чтобы открыть меню и выбрать нужный макет.
+      нужный. Доступны следующие макеты:</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../assets/Images/Icons/Icon_Seq_SplitWindow.png" src="../assets/Images/Icons/Icon_Seq_SplitWindow.png" alt="Split Window Sequence Editor Button" /></td>
+          <td class="icons"><strong>Раздельное окно</strong></td>
+          <td class="text">
+            <p>При этой опции редактор последовательностей будет разделен на два отдельных окна, где в главном окне IDE будет отображаться вид Canvas на полном рабочем столе, а в новом окне - <span class="notranslate">Dope Sheet</span> и редактор дорожек. Повторное нажатие кнопки
+              снова изменит расположение и уберет дополнительное окно.<br></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../assets/Images/Icons/Icon_Seq_Top.png" src="../assets/Images/Icons/Icon_Seq_Top.png" alt="Snap Top Sequence Editor Button" /></td>
+          <td class="icons"><b>Защелкивающийся верх</b></td>
+          <td class="text">
+            <p>Эта опция привязывает редактор дорожек и доп. лист к верхней части IDE.<br></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../assets/Images/Icons/Icon_Seq_Right.png" src="../assets/Images/Icons/Icon_Seq_Right.png" alt="Snap Right Sequence Editor Button" /></td>
+          <td class="icons"><strong>Snap Right</strong></td>
+          <td class="text">
+            <p>Эта опция привязывает редактор дорожек и доп. лист к правой части IDE.<br></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../assets/Images/Icons/Icon_Seq_Bottom.png" src="../assets/Images/Icons/Icon_Seq_Bottom.png" alt="Snap Bottom Sequence Editor Button" /></td>
+          <td class="icons"><strong>Защелка нижняя</strong></td>
+          <td class="text">
+            <p>Этот параметр привязывает редактор дорожек и доп. лист к нижней части IDE (это вид по умолчанию.<br></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../assets/Images/Icons/Icon_Seq_Left.png" src="../assets/Images/Icons/Icon_Seq_Left.png" alt="Snap Left Sequence Editor Button" /></td>
+          <td class="icons"><strong>Защелка левая</strong></td>
+          <td class="text">
+            <p>Эта опция привязывает редактор дорожек и доп. лист к левой части IDE.<br></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">Вы также можете в любой момент сбросить настройки редактора последовательностей, нажав на опцию Сброс <img data-cke-saved-src="../assets/Images/Icons/Icon_Seq_Reset.png" src="../assets/Images/Icons/Icon_Seq_Reset.png" class="icon" alt="Reset Editor Layout Button">. Это вернет редактор в состояние по умолчанию и вновь откроет все закрытые разделы.</p>
+  </div>
+  <p> </p>
+  <p>Ввиду изначальной сложности редактора последовательностей, мы дали лишь краткий обзор доступных здесь функций, но у нас есть дополнительные страницы, перечисленные ниже, которые более подробно описывают его возможности и то, как их можно использовать:</p>
+  <ul class="colour">
+    <li><a href="Sequence_Properties/The_Sequence_Canvas.htm">Полотно последовательности</a></li>
+    <li><a href="Sequence_Properties/The_Track_Panel.htm">Путевая панель</a></li>
+    <li><a href="Sequence_Properties/Clipping_Masks.htm">Обтравочные маски</a></li>
+    <li><a href="Sequence_Properties/Using_The_Dope_Sheet.htm">Использование " <span class="notranslate">Листа допинга</span></a></li>
+    <li><a href="Sequence_Properties/Using_Animation_Curves.htm">Использование анимационных кривых</a></li>
+    <li><a href="Sequence_Properties/Broadcast_Messages.htm">Широковещательные сообщения</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="The_Asset_Editors.htm">Редакторы активов</a></div>
+        <div style="float:right">Следующий: <a href="Shaders.htm"><span class="notranslate">Шейдеры</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Sequences Editor
+Sequences
+Sequence Canvas
+Track Panel
+<span class="notranslate">Dope Sheet</span>
+-->
+  <!-- TAGS
+sequences_editor
+-->
+
+</body></html>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Выражения и операторы</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different GML expressions" />
+  <meta name="rh-index-keywords" content="Expressions And Operators,=,&amp;&amp;,||,^^,&lt;,&gt;,&lt;=,&gt;=,==,!=,|,&amp;,^,&lt;&lt;,&gt;&gt;,+,-,*,/,++,--,div,%,mod,!,~" />
+  <meta name="search-keywords" content="expressions,order of operation,operators,div,mod,&amp;&amp;,||,xor,^^,|,^,&amp;,++,--,&lt;&lt;,&gt;&gt;,&lt;=,&gt;=,==,=,:=,$" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Выражения и операторы</h1>
+  <p>Выражение - это математическая фраза, которая может содержать обычные числа, переменные, строки или функции, а также один или несколько <strong>операторов </strong>(таких как сложение, вычитание, умножение и т.д...). Значения, используемые в выражении, могут быть вещественными числами
+    (например, <span class="inline">3.4 * 6</span>), шестнадцатеричные числа, начинающиеся со знака <span class="inline">$</span> (например, <span class="inline">$00FFAA | $88FFAA</span>), строки между двойными кавычками (например, <span class="inline">&quot;hello&quot;</span> + <span class="inline">&quot;world&quot;</span>) или более сложные выражения, использующие несколько операторов и значений.</p>
+  <p>Для выражений существуют следующие операторы (в порядке приоритета):</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Присвоение (=)</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot"><b>=</b> - Используется для присвоения значения переменной. Обратите внимание, что это <i>также</i> может использоваться для сравнения переменных в <span class="notranslate">GameMaker Studio 2</span>, и вы можете увидеть это в примерах и чужих кодах. Однако это наследие старых <i><span class="notranslate">GameMaker</span></i> версии
+      и вам следует использовать операторы <b>==</b> для сравнения и <b>=</b> для присвоения, как показано в этих примерах:</p>
+    <p class="code">a = 12;<br> скорость = 5;<br> val = (old_val + 5);</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Комбинирование (&amp;&amp;, ||, ^^)</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot"><b>&amp;&amp;, ||, ^^ (and, or и xor) - объединяют</b> булевы значения, чтобы получить либо true, либо false. Если любой из следующих примеров будет равен <tt>true</tt>, то код будет запущен:</p>
+    <p class="code">if (a == b &amp;&amp; c == d) {do something...}  // и<br> if (a == b || c == d) {do something...}   // или<br> if (a == b ^^ c == d) {do something...}  // xor</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Сравнение (&lt;, &lt;=, ==, !=, &gt;, &gt;=)</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot"><b>&lt;, &lt;=, ==, !=, &gt;, &gt;= - Это</b> сравнения, которые могут дать только истинный или <tt>ложный</tt> результат <tt>(</tt> где истинный может быть интерпретирован как 1, а ложный как 0). Примеры использования:</p>
+    <p class="code">if (a &lt; b) {делайте что-нибудь...}<br> if (a != b) {делайте что-нибудь...}</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Побитовые (|, &amp;, ^, &lt;&lt;, &gt;&gt;)</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot"><b>|, &amp;, ^, &lt;&lt;, &gt;&gt; :</b> С их помощью<b> можно</b> выполнять побитовые операции, где | = побитовое или, &amp; = побитовое и, ^ = побитовое xor, &lt;&lt; = сдвиг влево, &gt;&gt; = сдвиг вправо. Примеры использования:</p>
+    <p class="code">x = (x &amp; $ffffffe0) + 32;<br> if (y ^ $1f) &gt; 0 {делаем что-нибудь...};</p>
+    <p class="dropspot">Дополнительную информацию о том, как использовать побитовые операторы и что они делают, можно найти в разделе: <a href="../../Additional_Information/Bitwise_Operators.htm">Побитовые операторы</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Арифметические (+, -, *, /)</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot"><b>+, -, *, /</b> - Сложение, вычитание, умножение и деление. Примеры использования:</p>
+    <p class="code">c = a * b;<br> str = a + &quot;world&quot;;</p>
+    <p class="note"><b>ПРИМЕЧАНИЕ</b>: Числа с плавающей запятой не останавливаются на делении на ноль, так как в качестве ответа они получат бесконечность. Если A и B - целые числа (либо int32, либо int64), то деление будет выполнено как целое число (и деление на 0 будет проверено и выдаст ошибку.
+      В противном случае оно будет выполнено как деление с плавающей запятой (без проверки деления на 0).</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Увеличение/уменьшение (++, --)</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot"><strong>++</strong>, <strong>--</strong>: Добавить или вычесть единицу из значения. Стоит отметить, что размещение этого параметра до или после значения, к которому нужно прибавить или из которого нужно вычесть, даст немного разные результаты. Например:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><span class="inline">++a</span> увеличит переменную и вернет увеличенное значение.</li>
+      <li class="dropspot"><span class="inline">a++</span> увеличит переменную, но вернет значение, которое было до ее увеличения.</li>
+    </ul>
+    <p class="dropspot">Поэтому, если у вас есть что-то подобное:</p>
+    <p class="code">var a = 1;<br> show_debug_message(string(a++));
+      <br> show_debug_message(string(++a));
+    </p>
+    <p class="dropspot">Отладочный вывод будет иметь значения 1 и 3. Вот несколько примеров использования:</p>
+    <p class="code">for (var i = 0; i &lt; 10; i++;)<br> {<br> сделайте что-нибудь...<br> };</p>
+    <p class="code">if (hit == true)<br> {<br> --score;<br> }</p>
+    <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: На целевых платформах <span class="notranslate">YoYo</span> Compiler (отмеченных (YYC)) эти выражения оцениваются слева направо, в то время как на всех других целевых платформах они оцениваются справа налево, что означает, что это:</p>
+    <p class="code">val = max(num, ++num, num++);</p>
+    <p class="note">даст разные результаты в зависимости от платформы.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Деление и модуль (div, %, mod)</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot"><strong>div, mod (%)</strong> - Деление и модуляция, где div дает сумму, на которую можно разделить значение, получив только целочисленный коэффициент, а mod дает только остаток от деления. Обратите внимание, что делить и модулировать можно только целые значения.
+      Примеры использования:</p>
+    <p class="code">secs = time mod 60;<br> time_str = string(time div 60);</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Унарные (!, -, ~)</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot">Также существуют следующие <strong>унарные</strong> операторы:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>!</strong>: булево &quot;не&quot;, поэтому <span class="inline">!true == false</span></li>
+      <li class="dropspot">- : отрицает следующее вещественное или целочисленное значение (не действует для строк или булевых чисел)</li>
+      <li class="dropspot"><strong>~</strong>: побитово отрицает следующее значение</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p><i></i>В качестве значений во всех выражениях можно использовать числа, переменные или функции, возвращающие значение, а подвыражения можно заключать в скобки. Все операторы работают со значениями вещественных чисел, но <em>сравнение </em>также работает со строками, а оператор
+    оператор &quot; +&quot; можно использовать для объединения строк.</p>
+  <p>При выполнении нескольких операций в одном выражении <b>очень важно</b> использовать скобки <span class="inline">()</span> для разделения порядка операций, так как разные платформы могут выполнять их по-разному, если это не указано явно.
+    таким образом. Например, рассмотрим следующий код:</p>
+  <p class="code">a = b == c || d;</p>
+  <p>Различные целевые компиляторы будут выполнять операции в разном порядке, поскольку они не показаны явно, что приведет к &quot;странным&quot; результатам, которые вы можете не ожидать, играя в свою игру. чтобы избежать этого, используйте <span class="inline">()</span> для разделения частей, например, так:</p>
+  <p class="code">a = (b == c || d); //лучший<br> a = ((b == c) || d); //лучший</p>
+  <p>Также обратите внимание, что при использовании различных операций и выражений в одном блоке кода их тоже следует разделять. Например, следующий код <em>выглядит</em> как правильный:</p>
+  <p>если my_var == your_var ++their_var;</p>
+  <p>Однако компилятор может интерпретировать это одним из двух способов:</p>
+  <p class="code">if my_var == your_var++ then their_var;<br>
+    <br> // или<br>
+    <br> if my_var == your_var then ++their_var;</p>
+  <p>Теперь, глядя на код, можно сказать, что один из них немного глуповат, но это потому, что мы знаем, чего хотим добиться и что должно произойти, а компилятор - нет. Все, что он видит, это две переменные с оператором ++ между ними.
+    и ему приходится выбирать, к какой из них его применить. Поэтому <strong>всегда</strong> следует <strong>явно заключать в скобки выражения, операции и утверждения</strong>. Правильная версия приведенного выше кода должна быть следующей:</p>
+  <p class="code">if (my_var == your_var)<br> {
+    <br> ++свой_вар;
+    <br> }
+  </p>
+  <p>Это может показаться более многословным, но в этом случае нет никакой двусмысленности в отношении выполняемых операций, и он будет компилироваться и вести себя последовательно на всех платформах. Также обратите внимание, что хотя вы можете объединять выражения и утверждения в цепочки без использования скобок
+    в настоящее время это унаследованная функция, и в будущем она может быть устаревшей и удалена из <span class="notranslate">GML</span>, поэтому использование скобок сейчас позволит &quot;защитить&quot; ваш код от будущего (и в любом случае является хорошей практикой).</p>
+  <p>Вот несколько последних примеров различных выражений:</p>
+  <p class="code">{<br> x = 23 div 2;<br> color = $FFAA00 + $00BB12;<br> str = &quot;hello&quot; + &quot;world&quot;;<br> y += 5;<br> x *= y;<br> x = y &lt;&lt; 2;<br> x = 23 * ((2 + 4) / sin(y));<br> b = (x &lt; 5) &amp;&amp; !((x == 2) || (x == 4));<br> }
+  </p>
+  <p>И последнее, что следует отметить, - это то, что <b>для использования</b> с определенными <a href="../GML_Reference/Data_Structures/Data_Structures.htm">структурами</a> данных <a href="../GML_Reference/Data_Structures/Data_Structures.htm">и массивами</a> существуют &quot;короткие пути&quot; выражения, называемые аксессорами.
+    Они позволяют быстро и легко добавлять или заменять данные в этих форматах без использования каких-либо вызовов функций. Более подробную информацию можно найти на следующей странице</p>
+  <ul class="colour">
+    <li><a href="Accessors.htm">Аксессоры</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="GML_Overview.htm">Обзор<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Следующий: <a href="Accessors.htm">Аксессоры</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+div
+mod
+bitwise operators
+bitshift
+and
+or
+xor 
+&amp;&amp;
+||
+^^
+%
+|
+&amp;
+^
+&lt;&lt;
+&gt;&gt;
+bitwise or
+bitwise and
+bitwise xor
+bitshift left
+bitshift right
+&lt;
+&lt;=
+==
+!=
+&gt;
+&gt;=
+++
+$
+hexadecimal
+-->
+  <!-- TAGS
+expressions_operators
+-->
+</body>
+</html>

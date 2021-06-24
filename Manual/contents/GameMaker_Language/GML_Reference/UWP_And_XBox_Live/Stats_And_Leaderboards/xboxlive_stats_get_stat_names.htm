@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_get_stat_names</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_get_stat_names" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_get_stat_names" />
+  <meta name="search-keywords" content="xboxlive_stats_get_stat_names" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_get_stat_names</h1>
+  <p>Эта функция может быть использована для получения всех определенных статистических данных из менеджера статистики для данного пользователя. Вы вводите идентификатор пользователя, возвращаемый (например) функцией <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>,
+    и функция вернет массив строк, содержащих статистику для данного пользователя. Если произошла ошибка или у пользователя нет статистики, массив будет возвращен, но количество элементов будет равно 0.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">xboxlive_stats_get_stat_names(user_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор пользователя</td>
+        <td>Указатель идентификатора пользователя для получения имен статистов</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Массив</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _stat_str = xboxlive_stats_get_stat_names(user_id);<br> for (var i = 0; i &lt; array_length(_stat_str); ++i;) <br> {
+    <br> xboxlive_stats_delete_stat(user_id, _stat_str[i]);<br> }
+  </p>
+  <p>Приведенный выше код извлекает все определенные статистики для указателя ID пользователя, хранящегося в данной переменной, а затем проходит по массиву и удаляет указанную статистику из менеджера статистик.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Stats_And_Leaderboards.htm">Статистика и таблицы лидеров</a></div>
+        <div style="float:right">Далее: <a href="xboxlive_stats_get_stat.htm">xboxlive_stats_get_stat</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_get_stat_names
+-->
+  <!-- TAGS
+xboxlive_stats_get_stat_names
+-->
+</body>
+</html>

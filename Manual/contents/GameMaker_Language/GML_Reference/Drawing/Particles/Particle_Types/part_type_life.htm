@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>тип_части_жизни</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_type_life" />
+  <meta name="rh-index-keywords" content="part_type_life" />
+  <meta name="search-keywords" content="part_type_life" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>тип_части_жизни</h1>
+  <p>Это функция, которая определяет, как долго каждая отдельная частица указанного типа остается на экране. Как и в других функциях частиц, вы задаете минимальное и максимальное значение (в шагах), и продолжительность жизни каждой частицы будет случайным числом
+    шагов из указанного диапазона. Чтобы все частицы имели одинаковое время жизни, установите эти два значения одинаковыми.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">part_type_life(ind, life_min, life_max);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс типа частицы, который необходимо изменить.</td>
+      </tr>
+      <tr>
+        <td>жизненный_мин</td>
+        <td>Минимальный срок службы частиц.</td>
+      </tr>
+      <tr>
+        <td>life_max</td>
+        <td>Максимальный срок службы частиц.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">part_type_life(part_Flare, room_speed, room_speed * 2);</p>
+  <p>Приведенный выше код установит для всех созданных частиц типа частиц, указанного в переменной &quot;part_Flare&quot;, время жизни от 1 до 2 секунд, исходя из текущей скорости комнаты.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Particle_Types.htm">Типы частиц</a></div>
+        <div style="float:right">Далее: <a href="part_type_step.htm">часть_типа_шага</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_life
+-->
+  <!-- TAGS
+part_type_life
+-->
+</body>
+</html>

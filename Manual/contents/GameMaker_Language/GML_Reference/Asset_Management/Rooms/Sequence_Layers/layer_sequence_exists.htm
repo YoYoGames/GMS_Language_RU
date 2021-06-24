@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sequence_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_exists" />
+  <meta name="rh-index-keywords" content="layer_sequence_exists" />
+  <meta name="search-keywords" content="layer_sequence_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sequence_exists</h1>
+  <p>С помощью этой функции вы можете проверить, существует ли элемент последовательности на заданном слое. Вы передаете идентификатор слоя, который может быть строкой имени слоя - как определено в редакторе помещений - или уникальным идентификатором слоя - как возвращается функцией <a href="../General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a>,
+    а также ID элемента последовательности - как возвращается функцией <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a> или одной из <a href="../General_Layer_Functions/General_Layer_Functions.htm">функций элементов слоя</a> - и возвращает
+   <tt>true</tt>, если данный элемент существует, или <tt>false</tt> в противном случае.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_sequence_exists(layer_id, sequence_element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор_слоя</td>
+        <td>Уникальный идентификатор или имя слоя для проверки</td>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>Уникальное значение ID элемента последовательности, на который нужно нацелиться</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if !layer_sequence_exists(&quot;Background&quot;, my_seq)<br> {
+    <br> my_seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br> layer_sequence_pause(my_seq);
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет, существует ли заданный элемент последовательности, и если нет, то создает новую последовательность на заданном слое, а затем приостанавливает ее.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sequence_Layers.htm">Последовательность слоев</a></div>
+        <div style="float:right">Далее: <a href="layer_sequence_create.htm">layer_sequence_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_exists
+-->
+  <!-- TAGS
+layer_sequence_exists
+-->
+</body>
+</html>

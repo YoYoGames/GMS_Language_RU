@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Нарисовать спрайт</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Draw Sprite action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Draw Sprite" />
+  <meta name="search-keywords" content="Draw Sprite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Draw Sprite Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Draw_Sprite.png" width="32"> Draw Sprite</h1>
+  <p>Это действие нарисует спрайт где-нибудь в комнате. Вы указываете спрайт, позицию (либо абсолютную позицию в комнате, либо относительную позицию по отношению к экземпляру, выполняющему рисование) и кадр анимации спрайта, если у него несколько
+    кадров (обратите внимание, что кадры изображения нумеруются от 0 и выше). Если у вас анимированный спрайт, и вы хотите, чтобы он рисовал кадры, как если бы он был назначен объекту, то используйте -1 для индекса кадра или встроенную переменную экземпляра <tt>image_index</tt>,
+    Но учтите, что если объекту не назначен спрайт, то он не будет анимирован, а если назначенный спрайт имеет количество кадров, отличное от рисуемого, то спрайт будет рисоваться с лишними или пропущенными кадрами.</p>
+  <p class="note"><b>ВАЖНО: </b>Это действие не нарисует преобразованный спрайт, даже если вы изменили смешивание или масштаб изображения. Для этого см. действие <a href="Draw_Sprite_Transformed.htm">Draw Sprite Transformed</a>.</p>
+  <p class="note"><b></b><b>ПРИМЕЧАНИЕ</b>: Это действие предназначено только для использования в различных <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">событиях рисования</a> и не будет рисовать ничего, если использовать его в других местах.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Синтаксис действия:</h4>
+  <p><img alt="Draw Sprite Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Draw_Sprite.png" style="cursor: nwse-resize;" /></p>
+  <h4>Аргументы:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>Спрайт</td>
+        <td>Спрайт для рисования</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Позиция x для рисования</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Позиция y для рисования</td>
+      </tr>
+      <tr>
+        <td>Индекс рамы</td>
+        <td>Индекс кадра для рисования</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p><img alt="Draw Sprite Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Self.png">Приведенный выше код блока действий рисует &quot;теневой&quot; спрайт в той же относительной позиции, что и экземпляр.
+    а затем поверх него рисует спрайт экземпляра.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Drawing_Actions.htm">Действия при рисовании</a></div>
+        <div style="float:right">Следующий: <a href="Draw_Sprite_Transformed.htm">Нарисовать спрайт трансформированным</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Draw Sprite
+-->
+  <!-- TAGS
+action_draw_sprite
+-->
+</body>
+</html>

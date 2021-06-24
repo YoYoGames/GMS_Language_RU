@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ключевые слова экземпляра</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different instance &quot;keywords&quot;" />
+  <meta name="rh-index-keywords" content="Instance Keywords,noone,self,other,all" />
+  <meta name="search-keywords" content="self,all,noone,other,instance keywords" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Ключевые слова экземпляра</h1>
+  <p>Чтобы упростить некоторые вещи в <span class="notranslate">GameMaker Studio 2</span>, вы можете использовать одно из нескольких <b>ключевых слов экземпляра</b> в своем коде (будь то <span class="notranslate">GML</span> или <span class="notranslate">Drag and Drop™</span>). Эти ключевые слова используются в основном для идентификации экземпляров - а в некоторых случаях и структур - в различных ситуациях.
+    ситуациях, и каждое из них объясняется в тексте ниже. Обратите внимание, что все ключевые слова внутри представлены <strong>отрицательным целым числом</strong>, поэтому следует соблюдать осторожность при присвоении или проверке значений переменных с этими ключевыми словами,
+    так как впоследствии вы можете получить неожиданные результаты, поскольку <span class="notranslate">GameMaker Studio 2</span> интерпретирует использованное вами значение как нечто иное. Следует также отметить, что использование значений вместо ключевых слов в коде <b>не рекомендуется</b> и может привести к проблемам
+    в дальнейшем.</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span class="inline">self</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <table>
+      <tbody>
+        <tr>
+          <th>Ключевое слово</th>
+          <th>Описание</th>
+          <th>значение</th>
+        </tr>
+        <tr>
+          <td><span class="inline">self</span></td>
+          <td>Экземпляр/структура, выполняющая текущий блок кода.</td>
+          <td>   -1</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot"> </p>
+    <p class="dropspot"><span class="inline">self</span> можно использовать для идентификации текущей структуры или экземпляра, который находится в области видимости в текущем блоке кода. Например:</p>
+    <p class="code">var val = 100;<br> with (instance_create_layer(x, y, &quot;Instances&quot;, obj_Fire))<br> {
+      <br> self.val = val;<br> }
+    </p>
+    <p class="dropspot">В этом примере видно, что у нас есть <i>локальная</i> переменная <span class="inline">val</span>, и мы хотим, чтобы она установила переменную <i>экземпляра</i> с тем же именем во вновь созданном экземпляре объекта. Чтобы правильно определить переменную экземпляра
+      и указать <span class="notranslate">GameMaker Studio 2</span> установить ее в экземпляре, вызывающем блок кода, мы используем ключевое слово <span class="inline">self</span>. В большинстве случаев можно также использовать встроенную переменную экземпляра <span class="inline">id</span> вместо <span class="inline">self</span>,
+      но <span class="inline">self</span> дает определенные преимущества. Во-первых, компилятор быстрее определяет экземпляр (или структуру), используя <span class="inline">self</span>, а не <span class="inline">id</span>, так как значение <tt>id</tt> проходит через таблицу поиска экземпляра, а <span class="inline">self</span> - нет. Во-вторых, для тех, кто создает расширения, очень полезно обеспечить правильную привязку переменных, так как возможно, что проект, использующий
+      расширение, может иметь переменную глобальной области видимости или что-то с тем же именем, что и переменная в расширении.</p>
+    <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Ключевое слово <span class="inline">self</span> <strong>не </strong>является сокращением для фактического значения ID экземпляра или структуры и должно использоваться только в контексте, описанном выше. Если вам требуется <strong>значение </strong>ID для
+      экземпляра, то необходимо использовать <span class="inline">self.id</span>, например:</p>
+    <p class="code">var myID = id;<br> with (all)<br> {
+      <br> if self.id == myID<br> {<br> // делаем что-нибудь<br> } <br> }
+    </p>
+    <p class="dropspot">Стоит также отметить, что <span class="inline">self</span> может также использоваться внутри <a href="Structs.htm">структур</a> - при очень специфических обстоятельствах - для ссылки на переменные-члены структуры.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span class="inline">other</span></a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <table>
+      <tbody>
+        <tr>
+          <th>Ключевое слово</th>
+          <th>Описание</th>
+          <th>значение</th>
+        </tr>
+        <tr>
+          <td><span class="inline">other</span></td>
+          <td>Другой экземпляр, вовлеченный в событие столкновения, или другой экземпляр или структура из функции <tt>with</tt>.</td>
+          <td>   -2</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p class="dropspot">Специальное <i>ключевое слово</i> <span class="inline">other</span> может использоваться для ссылки на конкретный экземпляр (а в некоторых случаях и на структуру) двумя различными способами: при использовании в функции <span class="inline">with</span> (объясняется <a href="Language_Features/with.htm">здесь</a>)
+      или при использовании в <a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">событии столкновения</a>, о чем и пойдет речь в этом разделе.</p>
+    <p class="dropspot">Событие столкновения может произойти только между двумя экземплярами. Вы <i>можете</i> иметь несколько столкновений между несколькими экземплярами, но все они разрешаются <span class="notranslate">GameMaker Studio 2</span> по принципу "один на один", с экземпляром, в котором произошло событие столкновения, и с
+      &quot;другой&quot; экземпляр, который участвует в столкновении. Представьте, что у вас есть объект игрока, несколько вражеских объектов и несколько объектов пуль, которыми враги могут стрелять в вас. Вы можете назначить каждому врагу один экземпляр пули, но с другой переменной урона.
+      случайным образом назначенной ему при создании, например:</p>
+    <p class="code">var nnn;<br> nnn = instance_create_layer(x, y, &quot;Bullets&quot;, obj_Bullet);<br> nnn.damage = 5 + irandom(5);<br> nnn.speed = 8;<br> nnn.direction = point_direction(x, y, obj_Player.x, obj_Player.y);</p>
+    <p class="dropspot">Вы можете видеть, как мы устанавливаем его переменные, используя &quot;метод точки&quot;, описанный в разделе Обращение к <a href="Addressing_Variables_In_Other_Instances.htm">переменным в других экземплярах.</a> Это даст объектам пули разные значения урона
+      значение. Но как быть с объектом игрока? Как он будет определять урон, который он должен получить? С помощью <span class="inline">other</span> в событии столкновения:</p>
+    <p class="code">hp -= other.damage;<br> if hp &lt;= 0 instance_destroy();</p>
+    <p class="dropspot">Приведенный выше код вычтет из переменной &quot;hp&quot; игрока сумму, хранящуюся в <i>другом</i> экземпляре в переменной &quot;damage&quot; столкновения, затем проверит, меньше ли &quot;hp&quot; или равно 0. Если это так
+      то он уничтожит объект игрока. Обратите внимание, что <b>other</b>, используемое таким образом, <i>работает только в событии столкновения</i>, и что другой экземпляр должен иметь проверяемую переменную, иначе будет выдана ошибка. Однако вы можете присваивать
+      значения переменным или даже создать новые, используя <span class="inline">other</span> в событии столкновения, например, так:</p>
+    <p class="code">//добавьте десять к переменной &quot;mana&quot; другого экземпляра<br> other.mana += 10;<br> //установите переменную &quot;hit&quot; другого экземпляра в true, создав ее, если переменная еще не существует<br> other.hit = true;</p>
+    <p class="dropspot">Стоит также отметить, что <span class="inline">other</span> может также использоваться внутри <a href="Structs.htm">структур</a> - при очень специфических обстоятельствах - для ссылки на переменные-члены структуры. </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span class="inline">all</span></a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <table>
+      <tbody>
+        <tr>
+          <th>Ключевое слово</th>
+          <th>Описание</th>
+          <th>значение</th>
+        </tr>
+        <tr>
+          <td><span class="inline">all</span></td>
+          <td>Все экземпляры, активные в данный момент в комнате.</td>
+          <td>   -3</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p class="dropspot">Это ключевое слово используется, чтобы сообщить <span class="notranslate">GameMaker Studio 2</span> о необходимости применения функции или проверки всех активных экземпляров в комнате (отключенные экземпляры не будут проверяться и к ним не будет доступа). <b>Нельзя</b> использовать <span class="inline">all</span> для доступа
+      или установить переменные в других экземплярах с помощью метода point (см. <a href="Addressing_Variables_In_Other_Instances.htm">здесь</a>), но вы <strong>можете </strong>использовать его при вызове функции <a href="Language_Features/with.htm"><tt>with()</tt></a>например:</p>
+    <p class="code">с (все)<br> {
+      <br> скорость = 0;<br> }
+    </p>
+    <p class="dropspot">Приведенный выше код установит скорость всех экземпляров в комнате на 0. Вы также можете использовать <span class="inline">all</span> внутри функций, чтобы, например, нацелить или проверить все экземпляры в комнате:</p>
+    <p class="code">//Проверьте точку для любого активного экземпляра в комнате<br> inst = instance_position(mouse_x, mouse_y, all); <br>
+      <br> //Проверьте все экземпляры на столкновение вдоль линии<br> if collision_line(x, y, mouse_x, mouse_y, all, false, true) {}<br>
+      <br> //Добавьте все экземпляры в комнате в сетку планирования движения<br> mp_grid_add_instances(grid, all, false);</p>
+    <p class="dropspot"><span class="inline">all</span> - это очень полезное ключевое слово, которое можно использовать во многих ситуациях в коде и действиях, часто сокращая объем кода, который необходимо написать для достижения желаемого эффекта.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span class="inline">noone</span></a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <table>
+      <tbody>
+        <tr>
+          <th>Ключевое слово</th>
+          <th>Описание</th>
+          <th>значение</th>
+        </tr>
+        <tr>
+          <td><span class="inline">noone</span></td>
+          <td>Ни одного экземпляра.</td>
+          <td>   -4</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p class="dropspot">Это может показаться странным, но много раз при программировании игр вы столкнетесь с необходимостью проверить, нет ли экземпляров, найденных в определенном месте, или в столкновении и т.д.. В этих случаях вы можете использовать это ключевое слово, чтобы проверить, что ничего нет, примерно так:</p>
+    <p class="code">if instance_nearest(x, y, obj_enemy) != noone<br> {
+      <br> //делайте что-нибудь, так как рядом есть враг<br> }
+    </p>
+    <p class="dropspot">В этом примере функция <span class="inline">instance_nearest()</span> вернет либо <span class="inline">noone</span>, либо уникальный идентификатор ближайшего найденного экземпляра. В принципе, в любой момент, когда вам нужно проверить наличие экземпляра, вы можете ожидать
+      получить в ответ либо <span class="inline">noone</span>, либо уникальный идентификатор экземпляра.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="GML_Overview.htm">Обзор<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Следующее: <a href="Addressing_Variables_In_Other_Instances.htm">Обращение к переменным в других случаях</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Instance Keywords
+self
+all
+noone
+other
+-->
+  <!-- TAGS
+instance_keywords
+-->
+</body>
+</html>

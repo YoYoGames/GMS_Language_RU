@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>тип_части_ориентация</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_type_orientation" />
+  <meta name="rh-index-keywords" content="part_type_orientation" />
+  <meta name="search-keywords" content="part_type_orientation" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>тип_части_ориентация</h1>
+  <p>Эта функция используется для определения ориентации спрайта частицы при его создании, а также может использоваться для увеличения или уменьшения ориентации частицы в течение ее жизни. Минимальное и максимальное значения ориентации по умолчанию равны 0, но эти
+    но эти значения можно изменить, чтобы изменить ориентацию в случайном порядке, следуя стандартным направлениям <span class="notranslate">GameMaker Studio 2</span>: 0 градусов - вправо, 90 градусов - вверх, 180 градусов - влево и 270 градусов - вниз. Если вы установите одинаковые значения, то
+    все частицы будут созданы с одинаковой ориентацией.</p>
+  <p>Вы также можете задать значение приращения, которое будет добавлять (если это положительное число) или вычитать (если это отрицательное число) количество градусов к ориентации в течение ее срока службы. Это значение может составлять минимум (+/-) 0,01.</p>
+  <p>Вы также можете задать коэффициент &quot;вихляния&quot;, как и в других функциях частиц. Это значение, которое будет добавляться или вычитаться случайным образом к ориентации на каждом шаге жизни частицы. Очевидно, что большие значения более выражены, чем меньшие.
+    и это значение может быть даже отрицательным с максимальным диапазоном от -20 до 20.</p>
+  <p>Наконец, вы можете выбрать относительную или нет ориентацию, что означает, что пока частица имеет направление (и скорость), спрайт частицы будет ориентирован вокруг этого вектора. Имейте в виду, что если скорость частицы установлена на уменьшение
+    и она достигает 0, недостаток скорости устанавливает направление на значение по умолчанию 0°, поэтому относительная ориентация заставит спрайт частицы &quot;прыгать&quot; под другим углом.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">part_type_orientation( ind, ang_min, ang_max, ang_incr, ang_wiggle, ang_relative );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс типа частицы, который необходимо изменить.</td>
+      </tr>
+      <tr>
+        <td>ang_min</td>
+        <td>Минимальный угол начала движения частиц.</td>
+      </tr>
+      <tr>
+        <td>ang_max</td>
+        <td>Максимальный угол начала движения частиц.</td>
+      </tr>
+      <tr>
+        <td>ang_incr</td>
+        <td>Увеличение (или уменьшение, если задано отрицательное значение) угла в градусах за шаг.</td>
+      </tr>
+      <tr>
+        <td>ang_wiggle</td>
+        <td>Величина изменения угла по часовой стрелке/против часовой стрелки за шаг.</td>
+      </tr>
+      <tr>
+        <td>угол_отношения</td>
+        <td>Устанавливать ли его угол относительно направления движения частицы (true) или нет (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">part_type_shape(particle2, pt_shape_spark);<br> part_type_size(particle2, 0.10, 0.50, 0.01, 0);<br> part_type_scale(particle2, 0.30, 0.30);<br> part_type_colour1(particle2, 8454143);<br> part_type_alpha1(particle2, 0.50);<br> part_type_speed(particle2,
+    4, 4, -0.07, 1);<br> part_type_direction(particle2, 0, 359, 0, 20);<br> part_type_orientation(particle2, 0, 359, 0, 20, 1);<br> part_type_blend(particle2, 1);<br> part_type_life(particle2, 1, 5);</p>
+  <p>Приведенный выше код установит различные значения частиц, включая ориентацию, которая будет случайным значением в диапазоне от 0º до 359º. Кроме того, на каждом шаге к ней будет добавляться случайная величина от 0 до 20, а ориентация будет относиться к
+    направлению движения.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Particle_Types.htm">Типы частиц</a></div>
+        <div style="float:right">Далее: <a href="part_type_colour_mix.htm">part_type_colour_mix</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_orientation
+-->
+  <!-- TAGS
+part_type_orientation
+-->
+</body>
+</html>

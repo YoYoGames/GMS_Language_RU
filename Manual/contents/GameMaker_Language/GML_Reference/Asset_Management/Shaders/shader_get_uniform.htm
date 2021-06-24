@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>shader_get_uniform</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function shader_get_uniform" />
+  <meta name="rh-index-keywords" content="shader_get_uniform" />
+  <meta name="search-keywords" content="shader_get_uniform" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">shader_get_uniform</span></h1>
+  <p>Поскольку значение <span class="notranslate">шейдерной</span> константы нельзя изменить в самом <span class="notranslate">шейдере</span>, необходимо задать его перед вызовом <span class="notranslate">шейдера</span> с помощью одной из доступных функций <strong>uniform set</strong>. Однако для этого необходимо сначала вызвать эту функцию
+    чтобы получить &quot;хэндл&quot; <span class="notranslate">константы</span> шейдера, которую вы хотите изменить.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Хотя <span class="notranslate">шейдер</span> состоит из двух отдельных программ (вершинной и фрагментной), эта функция не делает различий между ними и возвращает хэндл константы <span class="notranslate">шейдера</span> любой из них.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code"><span class="notranslate">shader_get_uniform</span><span class="notranslate">(shader</span>, uniform);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">шейдер</span></td>
+        <td>Индекс <span class="notranslate">шейдера</span>, который нужно использовать.</td>
+      </tr>
+      <tr>
+        <td>униформа</td>
+        <td>Константа <span class="notranslate">шейдера</span>, к которой нужно получить управление (строка).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (Единая ручка)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code"><span class="notranslate">shader_params</span>= <span class="notranslate">shader_get_uniform</span>(shd_glass, &quot;u_vRefractColour&quot;);</p>
+  <p>Приведенный выше код получит хэндл константы <span class="notranslate">шейдера</span> &quot;u_vRefractColour&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Shaders.htm"><span class="notranslate">Шейдеры</span></a></div>
+        <div style="float:right">Далее: <a href="shader_get_sampler_index.htm"><span class="notranslate">shader_get_sampler_index</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">shader</span>_get_uniform
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_get_uniform
+-->
+</body>
+</html>

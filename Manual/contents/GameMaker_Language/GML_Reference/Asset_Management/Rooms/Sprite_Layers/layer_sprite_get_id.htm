@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sprite_get_id</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_get_id" />
+  <meta name="rh-index-keywords" content="layer_sprite_get_id" />
+  <meta name="search-keywords" content="layer_sprite_get_id" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sprite_get_id</h1>
+  <p>Эта функция может использоваться для получения уникального значения ID элемента спрайта на слое. Вы передаете ID слоя (который вы получаете при создании слоя с помощью функции <a href="../General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a> или когда
+    вы используете имя слоя вместе с <a href="../General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a>) и имя элемента спрайта, заданное в редакторе комнат. Функция вернет значение ID, связанное с этим спрайт-элементом на слое.
+    элемента на слое.</p>
+  <p>Обратите внимание, что эта функция специально предназначена для использования со спрайтами, которые были добавлены в IDE на слой актива, и если вы добавили спрайт на слой через код с помощью функции <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>,
+    то для всех дальнейших ссылок следует использовать ID, возвращаемый этой функцией (поскольку у этого элемента спрайта не будет имени, которое можно передать в эту функцию).</p>
+  <p>Если указанный слой не существует, или заданный элемент спрайта не может быть найден, функция вернет -1.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_sprite_get_id(layer_id, sprite_element_name)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор слоя</td>
+        <td>Уникальное значение идентификатора слоя, на который нужно нацелиться</td>
+      </tr>
+      <tr>
+        <td>имя_элемента_ спрайта</td>
+        <td>Уникальное имя элемента спрайта на слое, определенное в редакторе помещений</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Значение идентификатора элемента спрайта (Real)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Assets_trees&quot;);<br> var back_id = layer_sprite_get_id(lay_id, &quot;graphic_254367CB&quot;);<br> layer_sprite_change(back_id, spr_Trees_Winter);</p>
+  <p>Приведенный выше код получит идентификатор слоя &quot;Assets_trees&quot; и затем использует его для получения идентификатора элемента спрайта &quot;graphic_254367CB&quot; на этом слое. Полученный идентификатор элемента спрайта затем используется для изменения его
+    спрайта.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Layers.htm">Слои спрайта</a></div>
+        <div style="float:right">Далее: <a href="layer_sprite_exists.htm">слой_спрайта_существует</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_get_id
+-->
+  <!-- TAGS
+layer_sprite_get_id
+-->
+</body>
+</html>

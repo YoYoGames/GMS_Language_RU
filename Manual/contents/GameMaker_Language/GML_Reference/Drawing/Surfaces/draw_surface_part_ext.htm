@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>нарисовать_поверхность_части_экст</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_surface_part_ext" />
+  <meta name="rh-index-keywords" content="draw_surface_part_ext" />
+  <meta name="search-keywords" content="draw_surface_part_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>нарисовать_поверхность_части_экст</h1>
+  <p>Эта функция нарисует часть выбранной поверхности в заданной позиции, следуя тем же правилам, что и функция <a href="draw_surface_part.htm"><tt>draw_surface_part()</tt></a>только теперь вы можете масштабировать часть, смешивать с ней цвет или изменять ее альфа-канал
+    при выводе на экран (так же, как при рисовании поверхности с помощью функции <a href="draw_surface_ext.htm"><tt>draw_surface_ext()</tt></a>).</p>
+  <p class="note"><b></b><b>ПРИМЕЧАНИЕ</b>: При работе с поверхностями существует вероятность того, что они могут перестать существовать в любой момент, поскольку хранятся в памяти текстур. Вы должны <b>ВСЕГДА</b> проверять существование поверхности с помощью функции <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    прежде чем обращаться к ней напрямую.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_surface_part_ext(id, left, top, w, h, x, y, xscale, yscale, color, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Уникальное значение ID поверхности для рисования.</td>
+      </tr>
+      <tr>
+        <td>слева</td>
+        <td>Левая позиция на поверхности рисуемой детали.</td>
+      </tr>
+      <tr>
+        <td>топ</td>
+        <td>Положение вершины на поверхности рисуемой детали.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Ширина рисуемой части, слева направо.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Высота рисуемой детали сверху.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Позиция x в месте рисования поверхности.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Положение по оси y места рисования поверхности.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>Горизонтальный масштаб, с которым должна быть нарисована деталь.</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>Вертикальный масштаб, с которым должна быть нарисована деталь.</td>
+      </tr>
+      <tr>
+        <td>цвет</td>
+        <td>Цвет смешивания, которым должна быть нарисована деталь.</td>
+      </tr>
+      <tr>
+        <td>альфа</td>
+        <td>Альфа-прозрачность, с которой должна быть нарисована деталь.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_surface_part_ext(surf, 8, 8, 32, 32, x, y, 2, 0.5, c_black, 1);</p>
+  <p>Это нарисует область размером 32x32 пикселя из 8x8 пикселей на поверхности, индексированной в переменной &quot;surf&quot;. Она будет растянута на удвоенную обычную ширину, но половину обычной высоты. Она будет непрозрачной и будет смешана с черным цветом (превращая ее в
+    силуэт).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Surfaces.htm">Поверхности</a></div>
+        <div style="float:right">Далее: <a href="draw_surface_stretched.htm">draw_surface_stretched</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_surface_part_ext
+-->
+  <!-- TAGS
+draw_surface_part_ext
+-->
+</body>
+</html>

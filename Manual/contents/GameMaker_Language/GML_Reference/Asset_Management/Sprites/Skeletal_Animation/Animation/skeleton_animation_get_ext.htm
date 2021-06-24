@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skeleton_animation_get_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_get_ext" />
+  <meta name="rh-index-keywords" content="skeleton_animation_get_ext" />
+  <meta name="search-keywords" content="skeleton_animation_get_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skeleton_animation_get_ext</h1>
+  <p>Один скелетный анимационный спрайт может иметь различные наборы анимации, и этим наборам могут быть назначены различные дорожки, так что вы можете &quot;смешивать и сопоставлять&quot; наборы анимации. Эта функция возвращает имя набора анимации, используемого в данный момент на
+    заданном номере дорожки (заданном функцией <a href="skeleton_animation_set_ext.htm"><tt>skeleton_animation_set_ext</tt></a>).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">skeleton_animation_get_ext(track);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>трек</td>
+        <td>Номер дорожки для получения имени набора анимации.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Строка</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if skeleton_animation_get_ext(1) != &quot;bodyfight&quot;<br> {
+    <br> skeleton_animation_set_ext(&quot;bodyfight&quot;, 1);<br> }
+  </p>
+  <p>Приведенный выше код изменит набор анимации, используемый дорожкой 1, на &quot;bodyfight&quot;, если он еще не является таковым.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Animation.htm">Анимация</a></div>
+        <div style="float:right">Далее: <a href="skeleton_animation_set_ext.htm">skeleton_animation_set_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_get_ext
+-->
+  <!-- TAGS
+skeleton_animation_get_ext
+-->
+</body>
+</html>

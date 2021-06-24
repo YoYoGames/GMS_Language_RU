@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skeleton_get_num_bounds</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_get_num_bounds" />
+  <meta name="rh-index-keywords" content="skeleton_get_num_bounds" />
+  <meta name="search-keywords" content="skeleton_get_num_bounds" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skeleton_get_num_bounds</h1>
+  <p>Эта функция возвращает количество ограничивающих боксов, связанных со скелетным анимационным спрайтом, назначенным экземпляру, выполняющему код. Затем ее можно использовать вместе с функцией <a href="skeleton_get_bounds.htm"><tt>skeleton_get_bounds()</tt></a> для
+    для получения данных о каждом из ограничивающих боксов.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">skeleton_get_num_bounds();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Целое число</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var num = skeleton_get_num_bounds();<br> var yy = 60;<br> for(var i = 0; i &lt; num; i++;)<br> {
+    <br> var b_info = skeleton_get_bounds(i);<br> if b_info[0] &gt; 0<br> {
+    <br> var data = b_info[1] + &quot;:&quot;;<br> for(var j = 0; j &lt; b_info[0]; j++;)<br> {
+    <br> data += &quot; (&quot; + string(b_info[(j * 2) + 2]) + &quot;, &quot; + string(b_info[(j * 2) + 2 + 1]) + &quot;)&quot;;<br> }
+    <br> draw_text(20, yy, data);<br> yy += 20;<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код будет циклически просматривать все граничные поля, связанные с текущим назначенным спрайтом, а затем выводить эти данные в виде строки на экран.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Drawing_And_Miscellaneous.htm">Рисование и разное</a></div>
+        <div style="float:right">Далее: <a href="skeleton_get_bounds.htm">skeleton_get_bounds</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_get_num_bounds
+-->
+  <!-- TAGS
+skeleton_get_num_bounds
+-->
+</body>
+</html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_is_overlay_activated</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_is_overlay_activated" />
+  <meta name="rh-index-keywords" content="steam_is_overlay_activated" />
+  <meta name="search-keywords" content="steam_is_overlay_activated" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_is_overlay_activated</span></h1>
+  <p>Эта функция используется для определения того, активна ли у пользователя накладка <span class="notranslate">Steam</span> Overlay или нет. Если наложение активно и видно пользователю, то функция вернет <tt>true</tt>, а если нет, то <tt>false</tt>. Примером того, для чего
+    эта функция может быть использована для опроса <span class="notranslate">Steam</span> API на предмет наличия оверлея, чтобы можно было приостановить игру во время показа оверлея.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code"><span class="notranslate">steam_is_overlay_activated</span>();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if <span class="notranslate">steam_is_overlay_activated</span>()<br> {
+    <br> global.Pause = true;<br> }
+  </p>
+  <p>Приведенный выше код проверит, активен ли оверлей <span class="notranslate">Steam</span>, и если да, то установит глобальную переменную &quot;Pause&quot; в true.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Steam_Overlay.htm">Накладка на<span class="notranslate">пар</span></a></div>
+        <div style="float:right">Далее: <a href="steam_activate_overlay.htm"><span class="notranslate">steam_activate_overlay</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_is_overlay_enabled
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_is_overlay_enabled
+-->
+</body>
+</html>

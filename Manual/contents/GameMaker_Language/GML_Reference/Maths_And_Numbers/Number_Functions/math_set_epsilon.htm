@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>math_set_epsilon</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for math_set_epsilon" />
+  <meta name="rh-index-keywords" content="math_set_epsilon" />
+  <meta name="search-keywords" content="math_set_epsilon" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>math_set_epsilon</h1>
+  <p>Эпсилон - это значение, используемое для определения того, достаточно ли близки два числа, подверженные ошибке округления, чтобы считаться &quot;равными&quot;. Она полезна при работе с математикой с плавающей запятой, так как позволяет уменьшить &quot;ошибки округления&quot;, из-за которых некоторые операции возвращают неверные значения.
+    операции возвращают значения, которые кажутся неправильными или противоречат нашим ожиданиям. Например, мы можем добавить значение к индексу изображения спрайта и ожидать, что результатом будет одно целое число, но из-за природы математики с плавающей запятой фактическое
+    конечное значение оказывается чем-то вроде 5.0000002, поэтому, когда мы проверяем следующее:</p>
+  <p class="code">if image_index == 5<br> {
+    <br> //делайте что-нибудь<br> }
+  </p>
+  <p>Код ведет себя не так, как ожидалось, и возвращает <tt>false</tt>. Однако если мы установим значение эпсилон равным 0,000001, значение <span class="inline">image_index</span> будет округлено до ближайшего действительного числа, составляющего +/- 0,000001 от исходного значения,
+    в результате чего приведенное выше сравнение вернется к истине.</p>
+  <p>Значение эпсилон будет использоваться для всех следующих целочисленных <a href="../../../GML_Overview/Expressions_And_Operators.htm">операторов</a>:</p>
+  <ul class="colour">
+    <li><span class="inline">&lt; </span>: Менее</li>
+    <li><span class="inline">&gt; </span>: Больше, чем</li>
+    <li><span class="inline">== </span>: Равно</li>
+    <li><span class="inline">&lt;= </span>: Меньше или равно</li>
+    <li><span class="inline">&gt;= </span>: Больше или равно</li>
+    <li><span class="inline">!= </span>: Не равно</li>
+  </ul>
+  <p>Обратите внимание, что установка значения epsilon, равного 0, отключает все округления, а использование значения 1 приводит к ошибке.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">math_set_epsilon(epsilon);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>эпсилон</td>
+        <td>Новое значение эпсилона (от 0 до 0,999999999).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">math_set_epsilon(0.0001);</p>
+  <p>Это установит значение эпсилон для всех дальнейших операций с плавающей запятой.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Number_Functions.htm">Функции чисел</a></div>
+        <div style="float:right">Далее: <a href="math_get_epsilon.htm">math_get_epsilon</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+math_set_epsilon
+-->
+  <!-- TAGS
+math_set_epsilon
+-->
+
+</body></html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_density</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_density" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_density" />
+  <meta name="search-keywords" content="physics_fixture_set_density" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_set_density</h1>
+  <p>Плотность чего-либо определяется как его масса на единицу объема, что в основном означает, <i>сколько массы вместилось в пространство, которое он занимает в мире</i>. Так, воздушный шар имеет низкую плотность, так как он имеет небольшую массу, занимая большое пространство,
+    в то время как свинцовый брусок имеет высокую плотность, так как обладает большой массой, но занимает мало места.</p>
+  <p><img alt="Physics density illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_set_density_image.png">В 2D-физическом мире <span class="notranslate">GameMaker Studio 2</span> масса рассчитывается автоматически.
+    на основе значений, введенных вами для <b>плотности</b> и <b>площади поверхности</b> формы, которую вы определили для приспособления. Это напрямую влияет на силу инерции приспособления, а также на то, как оно реагирует на столкновения и силы, поэтому
+    если вы создадите маленькую форму с высокой плотностью, она будет иметь очень большую массу (как брусок свинца), но если вы определите большую форму с низкой плотностью, она будет иметь гораздо меньшую массу (как воздушный шар).</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Если вы хотите, чтобы экземпляр, который будет принимать приспособление, был <strong>статичным </strong>(т.е. неподвижным в игровом мире), то плотность должна быть установлена на 0, по сути, давая ему бесконечную плотность.</p>
+  <p class="note">ПРИМЕЧАНИЕ: Статичное приспособление можно сделать <strong>кинематическим</strong> (т.е. оно может двигаться, но без воздействия силы или гравитации), сделав его плотность равной 0, а затем установив параметры <span class="inline"><a href="../Physics_Variables/phy_speed_x.htm"><span style="font-size:14px;">phy_speed_x</span>
+    , <span class="inline"><a href="../Physics_Variables/phy_speed_y.htm"><span style="font-size:14px;">phy_speed_y</span>
+    , или <span class="inline"><a href="../Physics_Variables/phy_angular_velocity.htm"><span style="font-size:14px;">phy_angular_velocity</span>
+     переменные.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_fixture_set_density(fixture, density)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>приспособление</td>
+        <td>индекс приспособления</td>
+      </tr>
+      <tr>
+        <td>плотность</td>
+        <td>плотность крепежа, рассчитанная как кг/м²</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">physics_fixture_set_density(fix_Balloon, 0.1);</p>
+  <p>Приведенный выше код установит плотность приспособления, проиндексированного в &quot;fix_Ballon&quot;, равной 0,1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Fixtures.htm">Приспособления</a></div>
+        <div style="float:right">Далее: <a href="physics_fixture_set_friction.htm">physics_fixture_set_friction</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_density
+-->
+  <!-- TAGS
+physics_fixture_set_density
+-->
+</body>
+</html>

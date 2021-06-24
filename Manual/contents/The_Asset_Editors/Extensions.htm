@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Расширения</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the extension editor works" />
+  <meta name="rh-index-keywords" content="Extension Editor" />
+  <meta name="search-keywords" content="extensions,extension editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Редактор расширений</h1>
+  <p> <strong>Пакет расширения</strong> может быть использован для добавления ряда дополнительных функций и <a class="glossterm" data-glossterm="постоянная" href="#">констант</a>в <span class="notranslate">язык GameMaker Language</span><span class="notranslate">(GML</span>) или как способ передачи
+    игровых активов или даже целых проектов между людьми. Если расширение предназначено для добавления дополнительной функциональности, то используемые функции могут связать вашу игру с внешними <a class="glossterm" data-glossterm="SDK" href="#">SDK</a>или <a class="glossterm" data-glossterm="исходный код" href="#">исходным кодом</a>, написанным на других языках (например, Java для <span class="notranslate">Android</span>), а также с родным <span class="notranslate">языком GML</span>.</p>
+  <p><img alt="Extensions Properties" class="center" src="../assets/Images/Asset_Editors/Editor_Extensions.png">Как правило, сторонние расширения будут от <a href="https://marketplace.yoyogames.com/"><span class="notranslate">GameMaker</span> <span class="notranslate">Marketplace</span></a> и те, на которые вы подписались
+    будут перечислены в окне <a href="../Introduction/The_Marketplace.htm"><span class="notranslate">Marketplace</span></a> Library и могут быть установлены оттуда. Если вы не получили пакет расширений из <span class="notranslate">Marketplace</span>, вы все равно можете добавить его в проект, снова
+    щелкнув правой кнопкой мыши <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> в любом месте <a href="../Introduction/The_Asset_Browser.htm">браузера активов</a> и выбрав пункт <em>Добавить существующее</em>, а затем перейдя к местоположению
+    расширения, чтобы выбрать его.</p>
+  <p>Если у вас есть <span class="inline">*.GMEZ</span>, созданный в предыдущей версии <span class="notranslate">GameMaker Studio</span>, вы можете добавить их, выбрав правой кнопкой мыши <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> пункт меню <em>Import Extension</em>.</p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Устаревший формат расширений <span class="inline">*.GEX</span> больше не поддерживается и не может быть импортирован в проекты <span class="notranslate">GameMaker Studio 2</span>.</p>
+  <p>После добавления расширения в Asset Browser необходимо дать ему имя и номер версии, а также указать, на какие платформы вы хотите его экспортировать. Сняв галочки с выбранных платформ, вы можете указать <span class="notranslate">GameMaker Studio 2</span> не экспортировать расширение
+    как часть исполняемого файла для этих платформ. Также необходимо убедиться, что свойства расширения соответствуют целевой платформе (платформам), и отредактировать цели экспорта для файлов расширения в соответствии со следующим:</p>
+  <ul class="colour">
+    <li class="dropspot"><strong>Все цели</strong>: Расширения <span class="notranslate">GML</span>. Это расширения, созданные с использованием <span class="notranslate">языка GameMaker Language</span><span class="notranslate">(GML</span>) и совместимые со всеми целевыми платформами.</li>
+    <li class="dropspot"><strong><span class="notranslate">Windows</span></strong>(Standard, UWP, XBoxOne): Вы можете использовать файлы windows <span class="inline">DLL</span> (Dynamic Link Libraries). Обратите внимание, что если вы установили флажок &quot;Use x64 <span class="notranslate">Windows Runtime</span> <span class="notranslate">&quot; в</span> <a href="../Settings/Game_Options/Windows.htm"><span class="notranslate">опциях игры</span></a> Windows <a href="../Settings/Game_Options/Windows.htm">,</a>
+      то все DLL для проекта <strong>должны быть совместимы с 64-битной</strong> системой. 32-разрядные DLL не будут работать с 64-разрядным исполняемым файлом.</li>
+    <li class="dropspot"><strong><span class="notranslate">macOS</span></strong>: Цель <span class="notranslate">macOS</span> может использовать стандартные файлы <span class="inline">DyLib</span> для расширений.</li>
+    <li class="dropspot"><strong><span class="notranslate">Ubuntu</span> (<span class="notranslate">Linux</span></strong>): Для цели <span class="notranslate">Ubuntu</span> вам необходимо убедиться, что ваше расширение использует файлы <span class="inline">SO</span>.</li>
+    <li class="dropspot"><strong>HTML5</strong>: Эти платформы могут использовать расширения <span class="inline">JavaScript</span>.</li>
+    <li class="dropspot"><strong><span class="notranslate">Android</span></strong>: Для этой платформы требуется, чтобы расширение было написано на <span class="inline">Java</span> или <span class="inline"><span class="notranslate">Android</span> Framework SDK.</li>
+    <li class="dropspot"><strong><span class="notranslate">iOS</span></strong> / <strong> <span class="notranslate">tvOS</span></strong>: Расширения для этой платформы написаны на Objective C и требуют наличия файла <span class="inline">*.mm</span> и <span class="inline">*.h</span>, или, если используется какой-либо Frameworks, предварительно скомпилированного файла <span class="inline">*.a</span> native.</li>
+    <li class="dropspot"><strong>PlayStation</strong>: Для PlayStation 3 или 4 ваши расширения должны быть файлами <span class="inline">PRX</span>, причем для каждой цели требуется свой <span class="inline">PRX</span>, чтобы соответствовать спецификации цели (PS3 или PS4).
+      Если вы работаете над PSVita, расширение должно быть <span class="inline">SUPRX</span>.</li>
+  </ul>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Некоторые расширения должны следовать определенным соглашениям об именовании, чтобы <span class="notranslate">GameMaker</span> мог правильно определить платформу и архитектуру процессора, для которых они предназначены. Более подробную информацию смотрите в разделе <a href="Extension_Creation/Creating_An_Extension.htm">Создание расширений</a>.</p>
+  <p>Поскольку одно расширение может иметь различные связанные файлы, можно создать одно расширение для нескольких платформ, в этом случае необходимо указать все совместимые платформы в главном редакторе расширений (т.е. установить флажок
+    и затем в свойствах отдельных файлов для каждой части расширения указать платформу, на которую эти файлы должны быть экспортированы.</p>
+  <p>Чтобы изменить целевую платформу для определенного файла расширения или заполнителя, необходимо сначала открыть свойства расширения (дважды щелкните <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> на расширении в браузере активов или
+    используйте <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> и выберите <em>Открыть свойства</em>), а затем в свойствах расширения выберите справа файл ресурса, который вы хотите изменить:</p>
+  <p class="dropspot"><img alt="Extension Target Platforms" class="center" src="../assets/Images/Asset_Editors/Editor_Extensions_Targets.png" /></p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Если вы экспортируете в целевую систему <span class="notranslate">macOS</span> или <span class="notranslate">Ubuntu</span>, то вы можете установить опцию &quot;Uncompress as zip file&quot;, чтобы сохранить разрешения файлов для расширения.</p>
+  <p>После установки расширения вы можете использовать функции и константы для него так же, как и встроенные функции и константы, используемые в <span class="notranslate">языке GameMaker</span>. Если ваша игра является кроссплатформенной (например, она предназначена для запуска как на платформе
+   <span class="notranslate">Windows</span> и <span class="notranslate">Android</span> ), то вам следует использовать <a href="../GameMaker_Language/GML_Reference/OS_And_Compiler/OS_And_Compiler.htm">константы и функции ОС</a> для проверки платформы перед вызовом функций, специфичных для расширения, чтобы избежать проблем,
+    например:</p>
+  <p class="code">switch(os_type)<br> {
+    <br> case os_android:<br> call_android_extension_function(x, y, z);<br> break;
+    <br> case os_windows:<br> call_windows_extension_function(x, y, z);<br> break;
+    <br> }
+  </p>
+  <p>Обратите внимание, что для разных платформ ваши расширения могут использовать общие имена функций, поэтому если у вас есть расширение с разными файлами для (например) всплывающего сообщения для <span class="notranslate">Windows</span> и для <span class="notranslate">Android</span>, оба файла расширения могут использовать одно и то же имя функции до тех пор.
+    если они оба настроены на экспорт только на соответствующие платформы.</p>
+  <p>Если вы хотите создать свои выигранные расширения, то основную необходимую информацию вы можете найти на следующих страницах:</p>
+  <ul class="colour">
+    <li><a href="Extension_Creation/Creating_An_Extension.htm">Создание расширения</a></li>
+    <li><a href="Extension_Creation/Android_Extensions.htm">Расширения для<span class="notranslate">Android</span> </a></li>
+    <li><a href="Extension_Creation/iOS_Extensions.htm">Расширения для<span class="notranslate">iOS</span> / <span class="notranslate">tvOS</span> </a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <h1><span class="notranslate">YoYo Games</span> Расширения сторонних разработчиков</h1>
+  <p>В старых версиях <span class="notranslate">GameMaker</span> было встроено множество функций сторонних разработчиков, но это было неэффективно и трудно поддерживать, поскольку если какая-то конкретная функциональность была изменена сторонним разработчиком, то вся <a class="glossterm" data-glossterm="IDE" href="#">IDE</a> <span class="notranslate">GameMaker</span> и <a class="glossterm" data-glossterm="Время выполнения" href="#"><span class="notranslate">Время выполнения</span></a> пришлось бы обновлять. Поэтому в текущих версиях для добавления сторонней поддержки в ваши игры используются пакеты расширений. Это означает, что вы можете добавить
+    только те дополнительные функции, которые вам необходимы, и даже можете адаптировать и редактировать их в соответствии со своими специфическими потребностями.</p>
+  <p>Большинство из этих расширений будут загружены и установлены для вас при выборе определенных <a href="../Settings/Game_Options.htm">опций игры</a> (например, Facebook или Google Mobile Ads), но вы можете найти дополнительную информацию о них в
+    соответствующем разделе для каждой платформы в Базе знаний <span class="notranslate">YoYo Games</span>:</p>
+  <ul class="colour">
+    <li><a href="https://help.yoyogames.com/hc/en-us/categories/204246668-GameMaker-Studio-2">Платформы и установка<span class="notranslate">GameMaker Studio 2</span> </a></li>
+  </ul>
+  <p>Сами расширения можно найти на следующей странице <span class="notranslate">Marketplace</span>:</p>
+  <ul class="colour">
+    <li><a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games"><span class="notranslate">YoYo Games</span> <span class="notranslate">Marketplace</span> Assets</a></li>
+  </ul>
+  <p>Обратите внимание, что эти расширения поставляются с демонстрацией и файлом справки (в формате <span class="inline">*.pdf</span> ), который объясняет, как их использовать, и поэтому их функции не рассматриваются в руководстве.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="The_Asset_Editors.htm">Редакторы активов</a></div>
+        <div style="float:right">Следующий: <a href="Fonts.htm">Шрифты</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Extensions
+Extension Editor
+<span class="notranslate">Android</span> Extensions
+<span class="notranslate">iOS</span> Extensions
+-->
+  <!-- TAGS
+extension_editor
+-->
+
+</body></html>

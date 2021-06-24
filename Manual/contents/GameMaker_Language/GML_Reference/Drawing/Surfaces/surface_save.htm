@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>поверхность_сохранения</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_save" />
+  <meta name="rh-index-keywords" content="surface_save" />
+  <meta name="search-keywords" content="surface_save" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>поверхность_сохранения</h1>
+  <p>Эта функция сохранит поверхность на диск, используя заданное имя файла. Поверхность <i>должна</i> быть сохранена как файл формата <tt>*.png</tt>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">surface_save(surface_id, fname);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор поверхности</td>
+        <td>Идентификатор поверхности, которую нужно установить в качестве цели рисования.</td>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>Имя сохраненного файла изображения.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if keyboard_check_pressed(ord(&quot;S&quot;)<br> {
+    <br> surface_save(surf, &quot;test.png&quot;);<br> }
+  </p>
+  <p>Приведенный выше код проверит, нажимает ли пользователь клавишу &quot;S&quot; на клавиатуре, и если нажимает, то сохранит поверхность, проиндексированную в переменной &quot;surf&quot;, на диск.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Surfaces.htm">Поверхности</a></div>
+        <div style="float:right">Далее: <a href="surface_save_part.htm">поверхность_сохранения_части</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_save
+-->
+  <!-- TAGS
+surface_save
+-->
+</body>
+</html>

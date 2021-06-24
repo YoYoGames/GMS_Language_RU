@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>файл_найти_первым</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_find_first" />
+  <meta name="rh-index-keywords" content="file_find_first,fa_readonly,fa_hidden,fa_sysfile,fa_volumeid,fa_directory,fa_archive" />
+  <meta name="search-keywords" content="file_find_first,fa_readonly,fa_hidden,fa_sysfile,fa_volumeid,fa_directory,fa_archive" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>файл_найти_первым</h1>
+  <p>Эта функция возвращает имя первого файла, который удовлетворяет маске и атрибутам. Если такого файла не существует, то возвращается пустая строка. Маска может содержать путь и содержать символы подстановки, например, 'C:\temp\*.doc'. 
+    задают дополнительные файлы, которые вы хотите увидеть, поэтому обычные файлы всегда возвращаются, если они удовлетворяют маске. Вы можете сложить следующие константы, чтобы увидеть нужный вам тип файлов (если вы не хотите добавлять никаких атрибутов, используйте 0):</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td><tt>fa_readonly</tt></td>
+        <td>Файлы только для чтения</td>
+      </tr>
+      <tr>
+        <td><tt>fa_hidden</tt></td>
+        <td>Скрытые файлы</td>
+      </tr>
+      <tr>
+        <td><tt>fa_sysfile</tt></td>
+        <td>Системные файлы</td>
+      </tr>
+      <tr>
+        <td><tt>fa_volumeid</tt></td>
+        <td>Файлы с идентификатором тома</td>
+      </tr>
+      <tr>
+        <td><tt>fa_directory</tt></td>
+        <td>Справочники</td>
+      </tr>
+      <tr>
+        <td><tt>fa_archive</tt></td>
+        <td>Архивные файлы</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p class="note"><b></b><b>ВНИМАНИЕ!</b> Эта функция может работать не так, как вы ожидаете, из-за того, что <span class="notranslate">GameMaker Studio 2</span> находится в "песочнице"! Пожалуйста, обратитесь к разделу о <a href="../../../../Additional_Information/The_File_System.htm">файловой системе</a> для получения дополнительной информации.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция вообще не будет работать на HTML5-цели, а флаги фильтра будут работать только на <span class="notranslate">Windows</span> (используйте 0 для всех остальных платформ).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">file_find_first(mask, attr);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>маска</td>
+        <td>Маска, которую следует использовать для поиска.</td>
+      </tr>
+      <tr>
+        <td>attr</td>
+        <td>Конкретный атрибут файла, который нужно искать.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Строка</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if directory_exists(&quot;\User Content&quot;)<br> {
+    <br> file = file_find_first(&quot;/User Content/*.doc&quot;, fa_readonly);<br> }
+  </p>
+  <p>Он проверит, существует ли указанный каталог, затем, если существует, перейдет в него и вернет первый найденный файл doc &quot;только для чтения&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="File_System.htm">Файловая система</a></div>
+        <div style="float:right">Далее: <a href="file_find_next.htm">file_find_next</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_find_first
+fa_readonly
+fa_hidden
+fa_sysfile
+fa_volumeid
+fa_directory
+fa_archive
+-->
+  <!-- TAGS
+file_find_first
+-->
+</body>
+</html>

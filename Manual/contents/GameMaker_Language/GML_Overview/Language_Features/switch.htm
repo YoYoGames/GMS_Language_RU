@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>переключатель</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the switch function" />
+  <meta name="rh-index-keywords" content="switch,case" />
+  <meta name="search-keywords" content="switch,default" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>переключатель</h1>
+  <p>В ряде ситуаций вы хотите, чтобы ваши экземпляры выполняли различные действия в зависимости от определенного значения. Вы можете сделать это, используя ряд последовательных <a href="If_Else_and_Conditional_Operators.htm"><tt>if / else</tt></a> операторов, но
+    когда количество возможных вариантов становится больше двух или трех, обычно проще использовать оператор <tt>switch</tt>. Оператор <tt>switch</tt> имеет следующую форму:</p>
+  <p class="code">switch (&lt;выражение&gt;)<br> {
+    <br> case &lt;constant1&gt;: &lt;statement1&gt;; ... ; break;<br> case &lt;constant2&gt;: &lt;statement2&gt;; ... ; break;<br>...
+    <br> default: &lt;statement&gt;;<br> }
+  </p>
+  <p>Это работает следующим образом:</p>
+  <ul class="colour">
+    <li>Сначала выполняется <a class="glossterm" data-glossterm="выражение" href="#">выражение</a>.</li>
+    <li>Затем он сравнивается с результатами различных <a href="../Variables/Constants.htm">констант</a> после каждого из<span class="glossextra">утверждений</span> <span class="inline">case</span>.
+      Когда мы говорим &quot;константа&quot;, мы имеем в виду, что значение в данном случае не может быть переменной выражения и должно быть фиксированным значением любого типа данных, <a href="../Data_Types.htm">например, &quot;</a>бой&quot; или 3, или ключевое слово <span class="inline"><a href="../Instance_Keywords.htm">noone</a></span>. </li>
+    <li>Выполнение продолжается после первого оператора <span class="inline">case</span> с правильным значением, <i>пока не встретится оператор <a href="break.htm">break</a></i>.</li>
+    <li>Если ни один из операторов case не имеет нужного значения, то будет выполнен оператор <span class="inline">default</span> (наличие оператора <span class="inline">default</span> не обязательно, и если он отсутствует, то никаких действий не будет предпринято).</li>
+  </ul>
+  <p>Простой пример использования оператора switch будет выглядеть следующим образом:</p>
+  <p class="code">switch (global.state)<br> {<br> case &quot;alert&quot;:<br> if (instance_exists(obj_Player))<br> {<br> if (point_distance(x, y, obj_Player.x, obj_Player.y) &lt; 100)<br> {<br> 
+    global.state = &quot;chase&quot;;<br> } <br> } <br> break;<br> case &quot;chase&quot;:<br> var _lost = false;<br> if (instance_exists(obj_Player))<br> {<br> move_towards_point(obj_Player.x,
+    obj_Player.y, 2);<br> if (point_distance(x, y, obj_Player.x, obj_Player.y) &gt; 100)<br> {<br> _lost = true;<br> } <br> } <br> else _lost = true;<br> if (_lost)<br> {<br> speed = 0;<br> global.state = &quot;alert&quot;;<br> } <br> break;<br> }</p>
+  <p>Здесь у нас есть глобальная переменная, содержащая строковое значение, которое используется для установки поведения (состояния) экземпляра. В этом примере экземпляр просто переключается между двумя состояниями, но это очень легко расширить, чтобы включить больше состояний, добавив
+    дополнительные операторы <span class="inline">case</span> для дополнительных строк состояний, таких как &quot;сражаться&quot;, &quot;умереть&quot; и т.д..</p>
+  <p>Обратите внимание, что для выполнения одного и того же оператора можно использовать несколько операторов <tt>case</tt>, поскольку <tt>прерывание</tt> не всегда требуется для каждого <span class="inline">case</span>. Если не существует оператора <span class="inline">break</span> для
+    конкретного <span class="inline">case</span>, выполнение просто продолжается с кода для следующего случая, например:</p>
+  <p class="code">switch (keyboard_key)<br> {
+    <br> case vk_left:<br> case ord(&quot;A&quot;):<br> x -= 4;<br> break;
+    <br> case vk_right:<br> case ord(&quot;D&quot;):<br> x += 4;<br> break;
+    <br> case vk_up:<br> case ord(&quot;W&quot;):<br> y -= 4;<br> break;
+    <br> case vk_down:<br> case ord(&quot;S&quot;):<br> y += 4;<br> break;
+    <br> }
+  </p>
+  <p>Приведенный выше код использует <tt>switch</tt> для проверки события клавиатуры, а затем сравнивает его с каждым из перечисленных <span class="inline">case</span>. Если оно соответствует любому из требуемых значений, то выполняется соответствующий код. Обратите внимание, как в коде мы использовали
+    то, как <tt>переключатель</tt> может проверять несколько <span class="inline">cases</span> и продолжать, если не встречается <span class="inline">break</span>, что позволяет использовать различные клавиши для получения одного и того же результата. Обратите внимание, что каждый <span class="inline">case</span> может иметь свой собственный код, и таким образом можно создать своего рода систему &quot;наследования&quot;, в которой более одного <span class="inline">case</span> и его код будут выполняться последовательно со следующим, пока не будет достигнут прерывающий момент, зависящий от значения
+    начального выражения <span class="inline">switch</span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Language_Features.htm">Особенности языка</a></div>
+        <div style="float:right">Далее: <a href="break.htm">перерыв</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+switch
+-->
+  <!-- TAGS
+switch
+-->
+
+</body></html>

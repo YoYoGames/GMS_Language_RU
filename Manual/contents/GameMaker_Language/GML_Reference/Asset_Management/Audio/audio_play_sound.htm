@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_play_sound</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_play_sound" />
+  <meta name="rh-index-keywords" content="audio_play_sound" />
+  <meta name="search-keywords" content="audio_play_sound" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_play_sound</h1>
+  <p>С помощью этой функции вы можете воспроизводить любой звуковой ресурс в вашей игре. Вы предоставляете индекс звука и присваиваете ему приоритет, который затем используется для определения того, как звуки будут обрабатываться, когда количество воспроизводимых звуков превысит предел, установленный функцией 
+    <a href="audio_channel_num.htm"><tt>audio_channel_num()</tt></a>. Звуки с более низким приоритетом будут остановлены в пользу звуков с более высоким приоритетом, а значение приоритета может быть любым реальным числом (фактическое значение произвольно и может быть от 0 до 1 или от 0 до 100, поскольку <span class="notranslate">GameMaker Studio 2</span> будет расставлять приоритеты одинаково).
+      расставлять приоритеты одинаково). Обратите внимание, что при работе с приоритетами чем <i>больше</i> число, тем <i>выше</i> приоритет, поэтому звук с приоритетом 100 будет предпочтительнее звука с приоритетом
+      приоритетом 1. Последний аргумент предназначен для зацикливания звука, и если установить его в <tt>true</tt>, то звук будет воспроизводиться до тех пор, пока его не остановят, а если установить его в <tt>false</tt>, то звук будет воспроизводиться только один раз.
+      только.</p>
+  <p>Эта функция также возвращает уникальный индексный номер воспроизводимого звука, который затем можно сохранить в переменной, чтобы затем приостановить или остановить его с помощью соответствующих функций. Это означает, что если у вас есть несколько экземпляров одного и того же
+    в любой момент времени вы можете выбрать только один экземпляр этого звука для работы с аудиофункциями.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_play_sound(index, priority, loop);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс воспроизводимого звука.</td>
+      </tr>
+      <tr>
+        <td>приоритет</td>
+        <td>Установите приоритет канала для звука.</td>
+      </tr>
+      <tr>
+        <td>петля</td>
+        <td>Устанавливает зацикливание или отсутствие зацикливания звука.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Индекс (идентификатор звука)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">если здоровье &lt;= 0<br> {
+    <br> lives -= 1;<br> audio_play_sound(snd_PlayerDead, 10, false);<br> }
+  </p>
+  <p>Приведенный выше код проверяет глобальную переменную &quot;health&quot;, и если она меньше или равна 0, то удаляет 1 из глобальной переменной &quot;lives&quot; и воспроизводит звук.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio.htm">Аудио</a></div>
+        <div style="float:right">Далее: <a href="audio_play_sound_at.htm">audio_play_sound_at</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_play_sound
+-->
+  <!-- TAGS
+audio_play_sound
+-->
+</body>
+</html>

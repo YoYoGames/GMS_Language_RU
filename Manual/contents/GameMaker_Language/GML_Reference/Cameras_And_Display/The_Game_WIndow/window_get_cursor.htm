@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>window_get_cursor</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for window_get_cursor" />
+  <meta name="rh-index-keywords" content="window_get_cursor,cr_none,cr_default,cr_arrow,cr_cross,cr_beam,cr_size_nesw,cr_size_ns,cr_size_nwse,cr_size_we,cr_uparrow,cr_hourglass,cr_drag,cr_appstart,cr_handpoint,cr_size_all" />
+  <meta name="search-keywords" content="window_get_cursor,cr_none,cr_default,cr_arrow,cr_cross,cr_beam,cr_size_nesw,cr_size_ns,cr_size_nwse,cr_size_we,cr_uparrow,cr_hourglass,cr_drag,cr_appstart,cr_handpoint,cr_size_all" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>window_get_cursor</h1>
+  <p>С помощью этой функции вы можете получить текущий курсор, используемый в окне игры, при этом возвращаемым значением будет любая из перечисленных ниже констант (для установки текущего курсора можно использовать функцию <a href="../The_Game_Window/window_set_cursor.htm"><tt>window_set_cursor()</tt></a>    которая также принимает эти константы):</p>
+  <p> </p>
+  <table style="max-width: 400px">
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Курсор</th>
+      </tr>
+      <tr>
+        <td>cr_none</td>
+        <td style="text-align: center"> </td>
+      </tr>
+      <tr>
+        <td>cr_default</td>
+        <td style="text-align: center"><img alt="cr_default" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/cr_Default.png" /></td>
+      </tr>
+      <tr>
+        <td>cr_arrow</td>
+        <td style="text-align: center"><img alt="cr_arrow" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/cr_Arrow.png" /></td>
+      </tr>
+      <tr>
+        <td>cr_cross</td>
+        <td style="text-align: center"><img alt="cr_cross" class="icon" height="24" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/cr_Cross.png" width="24" /></td>
+      </tr>
+      <tr>
+        <td>cr_beam</td>
+        <td style="text-align: center"><img alt="cr_beam" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/cr_Beam.png" /></td>
+      </tr>
+      <tr>
+        <td>cr_size_nesw</td>
+        <td style="text-align: center"><img alt="cr_size_nesw" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/cr_SizeNeSw.png" /></td>
+      </tr>
+      <tr>
+        <td>cr_size_ns</td>
+        <td style="text-align: center"><img alt="cr_size_ns" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/cr_SizeNS.png" /></td>
+      </tr>
+      <tr>
+        <td>cr_size_nwse</td>
+        <td style="text-align: center"><img alt="cr_size_nwse" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/cr_SizeNwSe.png" /></td>
+      </tr>
+      <tr>
+        <td>cr_size_we</td>
+        <td style="text-align: center"><img alt="cr_size_we" class="icon" height="24" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/cr_SizeWE.png" width="24" /></td>
+      </tr>
+      <tr>
+        <td>cr_uparrow</td>
+        <td style="text-align: center"><img alt="cr_uparrow" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/cr_Up.png" /></td>
+      </tr>
+      <tr>
+        <td>песочные часы</td>
+        <td style="text-align: center"><img alt="cr_hourglass" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/cr_Hourglass.png" /></td>
+      </tr>
+      <tr>
+        <td>cr_drag</td>
+        <td style="text-align: center"><img alt="cr_drag" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/cr_Drag.png" /></td>
+      </tr>
+      <tr>
+        <td>cr_appstart</td>
+        <td style="text-align: center"><img alt="cr_appstart" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/cr_AppStart.png" /></td>
+      </tr>
+      <tr>
+        <td>cr_handpoint</td>
+        <td style="text-align: center"><img alt="cr_handpoint" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/cr_Hand.png" /></td>
+      </tr>
+      <tr>
+        <td>cr_size_all</td>
+        <td style="text-align: center"><img alt="cr_size_all" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/cr_SizeAll.png" /></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">window_get_cursor();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Постоянная</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">если mouse_check_button_pressed(mb_left)<br> {
+    <br> if window_get_cursor() != cr_drag window_set_cursor(cr_drag);<br> }
+  </p>
+  <p>Приведенный выше код изменит курсор окна на стандартный курсор перетаскивания окна, если была нажата левая кнопка мыши и он не был изменен ранее.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../The_Game_Window/The_Game_Window.htm">Окно игры</a></div>
+        <div style="float:right">Далее: <a href="../The_Game_Window/window_get_visible_rects.htm">window_get_visible_rects</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+window_get_cursor
+cr_none
+cr_default
+cr_arrow
+cr_cross
+cr_beam
+cr_size_nesw
+cr_size_ns
+cr_size_nwse
+cr_size_we
+cr_uparrow
+cr_hourglass
+cr_drag
+cr_appstart
+cr_handpoint
+cr_size_all
+-->
+  <!-- TAGS
+window_get_cursor
+-->
+</body>
+</html>

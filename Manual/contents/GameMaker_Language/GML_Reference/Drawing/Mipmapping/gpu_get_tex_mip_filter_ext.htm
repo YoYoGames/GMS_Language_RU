@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_get_tex_mip_filter_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_get_tex_mip_filter_ext" />
+  <meta name="rh-index-keywords" content="gpu_get_tex_mip_filter_ext,tf_point,tf_linear,tf_anisotropic" />
+  <meta name="search-keywords" content="gpu_get_tex_mip_filter_ext,tf_point,tf_linear,tf_anisotropic" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_get_tex_mip_filter_ext</h1>
+  <p>С помощью этой функции вы можете получить текущий режим mip-фильтра для заданного <span class="notranslate">шейдерного</span> сэмплера. Вы передаете значение индекса для <span class="notranslate">шейдерного</span> сэмплера (как возвращается функцией <a href="../../Asset_Management/Shaders/shader_get_sampler_index.htm"><tt><span class="notranslate">shader_get_sampler_index</span>()</tt></a>,
+    и функция вернет одну из констант значения режима, перечисленных ниже.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gpu_get_tex_mip_filter_ext(sampler_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>sampler_index</td>
+        <td>Индекс <span class="notranslate">шейдерного</span> сэмплера для получения</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Постоянные (перечислены ниже):</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>tf_point</td>
+        <td>Это означает, что смешивание между уровнями mipmap отключено, что может привести к заметным переходам текстуры, но дает наилучшую производительность.</td>
+      </tr>
+      <tr>
+        <td>tf_linear</td>
+        <td>Это означает, что включено смешивание между уровнями mipmap (это также известно как <i>трилинейная фильтрация</i>), что сглаживает переходы текстур, но это незначительно снижает производительность.</td>
+      </tr>
+      <tr>
+        <td>tf_anisotropic</td>
+        <td>Это означает, что включена анизотропная фильтрация, которая значительно улучшает качество перехода текстур и может уменьшить размытие, видимое при других режимах фильтрации, но она оказывает наибольшее влияние на производительность.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _sampleIndex = <span class="notranslate">shader_get_sampler_index</span>(shd_Glass, &quot;s_Background&quot;);<br> var _spriteTex = sprite_get_texture(sprite_index, 0);<br> shader_set <span class="notranslate">(shd_Glass</span>);
+    <br> if gpu_get_tex_mip_filter_ext(_sampleIndex) != tf_point<br> {
+    <br> gpu_set_tex_mip_filter_ext(_sampleIndex, tf_point);<br> }
+    <br> texture_set_stage(_sampleIndex , _spriteTex);<br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>Приведенный выше код устанавливает режим mip-фильтра в <tt>tf_point</tt> (отключение mipmapping) для данного <span class="notranslate">шейдерного</span> текстурного сэмплера, если он еще не установлен.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Mipmapping.htm">Mipmapping</a></div>
+        <div style="float:right">Далее: <a href="gpu_get_tex_mip_bias.htm">gpu_get_tex_mip_bias</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_tex_mip_filter_ext
+tf_point
+tf_linear
+tf_anisotropic
+-->
+  <!-- TAGS
+gpu_get_tex_mip_filter_ext
+-->
+</body>
+</html>

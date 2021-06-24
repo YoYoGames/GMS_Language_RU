@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>данные события</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for event_data" />
+  <meta name="rh-index-keywords" content="event_data" />
+  <meta name="search-keywords" content="event_data" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>данные события</h1>
+  <p>Эта переменная является <b>глобальной</b> и используется для хранения <a href="../../Data_Structures/DS_Maps/DS_Maps.htm">карты DS</a> при использовании в <a href="../../../../The_Asset_Editors/Object_Properties/Gesture_Events.htm">событиях жестов</a>, и -1 во
+    все остальное время. Фактическое содержимое карты DS будет зависеть от типа события жеста, которое его вызвало, поэтому обратитесь к отдельным разделам для этих событий.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">данные события;</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (целочисленное значение)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">isFlick = event_data[? &quot;isflick&quot;];<br> if (isFlick)<br> {
+    <br> flickVelX = event_data[? &quot;diffX&quot;];<br> flickVelY = event_data[? &quot;diffY&quot;];<br> }
+    <br> else
+    <br> {
+    <br> flickVelX = 0;<br> flickVelY = 0;<br> }
+  </p>
+  <p>Приведенный выше код берется из события жеста <b>Drag End</b> и проверяет, является ли это событие &quot;flick&quot;, и если да, то извлекает необходимые данные из <tt>карты</tt> event_data <tt>DS</tt> и использует их для установки некоторых переменных. Если &quot;flick&quot;
+    событие не обнаружено, то те же переменные устанавливаются в 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Gesture_Input.htm">Ввод с помощью жестов</a></div>
+        <div style="float:right">Далее: <a href="gesture_get_drag_time.htm">gesture_get_drag_time</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+event_data
+-->
+  <!-- TAGS
+event_data
+-->
+</body>
+</html>

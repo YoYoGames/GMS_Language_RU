@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_stack_copy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_stack_copy" />
+  <meta name="rh-index-keywords" content="ds_stack_copy" />
+  <meta name="search-keywords" content="ds_stack_copy" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_stack_copy</h1>
+  <p>Эта функция может использоваться для копирования содержимого одного стека в другой. Обратите внимание, что при этом <i>НЕ</i> удаляется содержимое из исходного стека и не уничтожается исходный стек. При использовании этой функции стек, в который производится копирование, должен быть
+    был создан ранее, и если он содержал какие-либо элементы до копирования, то они будут очищены первыми (это означает, что информация будет потеряна).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_stack_copy(id, source);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Идентификатор нового стека.</td>
+      </tr>
+      <tr>
+        <td>источник</td>
+        <td>ОРИГИНАЛЬНЫЙ стек для копирования в id.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">with (instance_create_layer(x, y, &quot;Enemies&quot;, obj_Enemy))<br> {
+    <br> stack = ds_stack_create();<br> ds_stack_copy(stack, other.stack);<br> }
+  </p>
+  <p>Приведенная выше функция создает новый экземпляр, а затем в этом экземпляре создает новый стек DS и копирует содержимое стека в экземпляре, выполняющем блок кода, во вновь созданный стек экземпляра.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="ds_stack_create.htm">ds_stack_create</a></div>
+        <div style="float:right">Далее: <a href="ds_stack_top.htm">ds_stack_top</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_stack_copy
+-->
+  <!-- TAGS
+ds_stack_copy
+-->
+
+</body></html>

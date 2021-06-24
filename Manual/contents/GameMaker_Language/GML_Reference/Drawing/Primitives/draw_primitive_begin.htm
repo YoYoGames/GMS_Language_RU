@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_primitive_begin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_primitive_begin" />
+  <meta name="rh-index-keywords" content="draw_primitive_begin,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglefan,pr_trianglestrip" />
+  <meta name="search-keywords" content="draw_primitive_begin,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglestrip,pr_trianglefan" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_primitive_begin</h1>
+  <p>Эта функция должна быть вызвана до того, как вы сможете определить какие-либо примитивы. Существует 6 типов примитивов, которые можно определить с помощью следующих констант:</p>
+  <ul class="colour">
+    <li><b>pr_pointlist</b></li>
+    <li><b>pr_linelist</b></li>
+    <li><b>pr_linestrip</b></li>
+    <li><b>pr_trianglelist</b></li>
+    <li><b>pr_trianglestrip</b></li>
+    <li><b>pr_trianglefan</b></li>
+  </ul>
+  <p> </p>
+  <p>На следующем изображении показано, как они должны выглядеть, а также порядок, в котором следует определять вершины:</p>
+  <p><img alt="The different primitive types" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/primitive_types.png">Обратите внимание, что на некоторых платформах<span class="notranslate">(Windows</span>, UWP, XBox) тип <tt>pr_trianglefan</tt> не поддерживается изначально.
+    и поэтому <span class="notranslate">GameMaker Studio 2</span> выполняет преобразование при компиляции игры, чтобы заставить их работать. Это означает, что на этих платформах тип <tt>pr_trianglefan</tt> будет использоваться гораздо медленнее, чем другие. Также обратите внимание, что для использования этой
+    функцию на HTML5, <i>необходимо</i> включить WebGL в опциях игры.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_primitive_begin(kind)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>добрый</td>
+        <td>Вид примитива, который вы собираетесь нарисовать.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _steps = 20;<br> var _xx = 50;<br> var _yy = 50;<br> var _radius = 30;<br> draw_primitive_begin(pr_trianglefan);
+    <br> draw_vertex(_xx, _yy);<br> for(var i = 0; i &lt;= _steps; ++i;)<br> {
+    <br> draw_vertex(_xx + lengthdir_x(_radius, 270 * i / _steps), _yy + lengthdir_y(_radius, 270 * i / _steps));<br> }
+    <br> draw_primitive_end();
+  </p>
+  <p>Приведенный выше код нарисует три четверти окружности, созданной из примитивов.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Primitives_And_Vertex_Formats.htm">Примитивы и форматы вершин</a></div>
+        <div style="float:right">Далее: <a href="draw_primitive_begin_texture.htm">draw_primitive_begin_texture</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_primitive_begin
+pr_pointlist
+pr_linelist
+pr_linestrip
+pr_trianglelist
+pr_trianglestrip
+pr_trianglefan
+-->
+  <!-- TAGS
+draw_primitive_begin
+-->
+
+</body></html>

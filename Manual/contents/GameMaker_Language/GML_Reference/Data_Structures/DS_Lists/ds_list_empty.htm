@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_list_empty</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_empty" />
+  <meta name="rh-index-keywords" content="ds_list_empty" />
+  <meta name="search-keywords" content="ds_list_empty" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_empty</h1>
+  <p>С помощью этой функции вы можете проверить заданный список DS на предмет того, пуст он (возвращается <tt>true</tt>) или нет (возвращается <tt>false</tt>).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_list_empty(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Идентификатор структуры данных для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if (count == 15( &amp;&amp; (!ds_list_empty(command_list))<br> {
+    <br> ds_list_clear(command_list);
+    <br> alarm[0] = room_speed;<br> count = 0;<br> }
+  </p>
+  <p>Приведенный выше код проверяет переменную, достигла ли она определенного значения, и если достигла, то очищает список DS, индексированный в переменной &quot;command_list&quot;, устанавливает сигнал тревоги и сбрасывает переменную в 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="DS_Lists.htm">Списки DS</a></div>
+        <div style="float:right">Далее: <a href="ds_list_size.htm">ds_list_size</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_empty
+-->
+  <!-- TAGS
+ds_list_empty
+-->
+
+</body></html>

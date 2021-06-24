@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>внешнее определение</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for external_define" />
+  <meta name="rh-index-keywords" content="external_define,dll_cdecl,dll_stdcall,ty_real,ty_string" />
+  <meta name="search-keywords" content="external_define,dll_cdecl,dll_stdcall,ty_real,ty_string" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>внешнее определение</h1>
+  <p>Эта функция может использоваться для определения вызова внешней функции к определенной dll (для <span class="notranslate">Windows</span>) или dylib (для Mac). Этот файл может быть как включенным файлом, так и частью расширения. Вы указываете имя (и путь) файла, затем имя функции.
+    которую вы хотите определить. Далее необходимо определить используемое соглашение о вызове (см. список констант ниже), а также тип ожидаемого результата (также константа, как указано ниже). Наконец, вы должны указать число аргументов, которые
+    функция может принимать (от 0 до 15), и для каждого аргумента необходимо указать его тип. Обратите внимание, что для функций с 4 и более аргументами все они <i>должны</i> быть типа <tt>ty_real</tt>.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция предназначена только для dll или dylib, которые были добавлены как &quot;Included Files&quot; в <span class="notranslate">IDE</span> GameMaker <span class="notranslate">Studio 2.</span> Это не будет работать с файлами, добавленными в качестве расширений, поскольку для них требуется определение функций в самом пакете расширения.
+    в самом пакете расширения.</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>dll_cdecl</td>
+        <td>Это вызов по умолчанию в C, C++</td>
+      </tr>
+      <tr>
+        <td>dll_stdcall</td>
+        <td>Это стандартный вызов WinAPI<span class="notranslate">(</span> только для<span class="notranslate">Windows</span> <tt>dll</tt> )</td>
+      </tr>
+      <tr>
+        <td>ty_real</td>
+        <td>Аргумент вещественного числа</td>
+      </tr>
+      <tr>
+        <td>ty_string</td>
+        <td>строковый аргумент с нулевым окончанием</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">external_define(dll, name, calltype, restype, argnumb, argtype[0], argtype[1], ...argtype[10]) ;</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>dll</td>
+        <td>Имя файла dll (строка)</td>
+      </tr>
+      <tr>
+        <td>имя</td>
+        <td>Имя функции (строка)</td>
+      </tr>
+      <tr>
+        <td>тип звонка</td>
+        <td>Используемая конвенция вызова</td>
+      </tr>
+      <tr>
+        <td>restype</td>
+        <td>Тип ожидаемого результата</td>
+      </tr>
+      <tr>
+        <td>argnumb</td>
+        <td>Количество аргументов (0 - 10)</td>
+      </tr>
+      <tr>
+        <td>argtype[0 ... 10]</td>
+        <td>Различные типы используемых аргументов</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (Уникальное значение идентификатора функции)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">my_funcion = external_define(&quot;MyDLL.dll&quot;, &quot;MyMin&quot;, dll_cdecl, ty_real, 2, ty_real, ty_real);</p>
+  <p>В приведенном выше примере кода будет определена внешняя функция под названием &quot;MyMin&quot; с двумя аргументами.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="OS_And_Compiler.htm">ОС и компилятор</a></div>
+        <div style="float:right">Далее: <a href="external_call.htm">внешний_вызов</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+external_define
+dll_cdecl
+dll_stdcall
+ty_real
+ty_string
+-->
+  <!-- TAGS
+external_define
+-->
+</body>
+</html>

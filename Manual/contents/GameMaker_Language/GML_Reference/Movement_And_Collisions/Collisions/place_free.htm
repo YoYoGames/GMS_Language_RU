@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>место_свободно</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion place_free" />
+  <meta name="rh-index-keywords" content="place_free" />
+  <meta name="search-keywords" content="place_free" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>место_свободно</h1>
+  <p>С помощью этой функции можно проверить, столкнется ли вызывающий экземпляр с любым экземпляром, <i>отмеченным как <b>твердый</b></i> в вашей игре. Следует отметить, что для того, чтобы это сработало, экземпляр, выполняющий код, должен иметь действительную маску столкновения
+    маска (либо для самого спрайта, либо через <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/mask_index.htm"><tt>mask_index</tt></a>), и он будет регистрировать столкновения только с теми экземплярами, помеченными как твердые, у которых также есть
+    действительная маска.</p>
+  <p>Сама функция работает следующим образом: берет экземпляр и проверяет его на столкновения только с твердыми отмеченными экземплярами при размещении в позиции, заданной аргументами x/y. Проверка столкновений может быть как точной, так и основанной на ограничивающей
+    рамки экземпляра, в зависимости от того, какая маска столкновений была выбрана.</p>
+  <p>Обратите внимание, что перед выполнением проверки заданные координаты x/y будут приведены к ближайшему целому числу.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">place_free(x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Позиция x для проверки.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Позиция y для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if place_free(mouse_x, mouse_y)<br> {
+    <br> x = mouse_x;<br> y = mouse_y;<br> }
+  </p>
+  <p>Приведенный выше код проверит столкновение с любым экземпляром с твердым флагом, если вызывающий экземпляр будет помещен в то же положение, что и мышь. Если столкновение не обнаружено, то координаты x/y экземпляра устанавливаются равными координатам мыши.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Collisions.htm">Коллизии</a></div>
+        <div style="float:right">Далее: <a href="place_meeting.htm">место_совещания</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+place_free
+-->
+  <!-- TAGS
+place_free
+-->
+</body>
+</html>

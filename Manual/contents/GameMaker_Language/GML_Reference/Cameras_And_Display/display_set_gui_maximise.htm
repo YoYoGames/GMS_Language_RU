@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>display_set_gui_maximise</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for display_set_gui_maximise" />
+  <meta name="rh-index-keywords" content="display_set_gui_maximise,display_set_gui_maximize" />
+  <meta name="search-keywords" content="display_set_gui_maximise,display_set_gui_maximize" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>
+    display_set_gui_maximise
+  </h1>
+  <p>Эта функция может быть использована для максимизации слоя GUI и установки его масштабирования и смещения относительно размеров экрана, а не положения и размеров поверхности приложения по умолчанию. По умолчанию слой GUI имеет соотношение 1:1 с поверхностью приложения
+    и рисуется в позиции (0,0) поверхности. Однако это не всегда то, что вам нужно, поэтому вы можете использовать эту функцию, чтобы установить его рисование относительно абсолютной (0,0) позиции дисплея или игрового окна. Какие аргументы вы
+    будут зависеть от того, какой эффект вы хотите получить от этой функции для слоя GUI. Если вызвать функцию без аргументов, слой GUI будет отрисован в позиции (0,0) экрана или игрового окна, а ширина и высота
+    масштабируются, чтобы вместить всю область:</p>
+  <p class="code">display_set_gui_maximise();</p>
+  <p>Однако вы можете задать <i>коэффициент масштабирования</i> для слоя GUI, и ширина и высота будут масштабироваться на эту величину. Помните, что слой GUI всегда создается в соответствии с размером окна дисплея или игры, или поверхности приложения, поэтому установка значения
+    это значение в любое значение, отличное от 1, в основном масштабирует количество пикселей по ширине и высоте. Если ваш дисплей 1024x768 и вы установили масштабный коэффициент на 0,5, то ваш слой GUI будет в два раза меньше размера дисплея, фактически удваивая размер пикселей.
+    размер пикселей:</p>
+  <p class="code">display_set_gui_maximise(0.5, 0.5);</p>
+  <p>Установка значений таким образом также установит позицию рисования в (0,0) окна дисплея или игры, поэтому вы можете предоставить значения смещения для &quot;перемещения&quot; позиции (0,0):</p>
+  <p class="code">var pos = application_get_position();<br> display_set_gui_maximise(0.5, 0.5, pos[0], pos[1]);</p>
+  <p>Наконец, вы можете сбросить слой GUI с помощью этой функции, установив коэффициенты масштабирования на -1. В результате слой GUI снова будет иметь масштаб 1:1 и установит позицию рисования в положение (0,0) поверхности приложения, а не дисплея или окна.
+    окно.</p>
+  <p class="code">display_set_gui_maximise(-1, -1);</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">display_set_gui_maximise<i>(xscale, yscale, xoffset, yoffset</i>);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td><i>&lt;Опционально&gt;</i> Коэффициент горизонтального масштабирования (используйте -1, чтобы сбросить значение по умолчанию).</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td><i>&lt;Опционально&gt;</i> Коэффициент вертикального масштабирования (используйте -1, чтобы сбросить значение по умолчанию).</td>
+      </tr>
+      <tr>
+        <td>xoffset</td>
+        <td><i>&lt;Опционально&gt; По</i> зиция смещения<i> x</i> для рисования.</td>
+      </tr>
+      <tr>
+        <td>yoffset</td>
+        <td><i>&lt;Опционально&gt; По</i> зиция смещения по оси<i> y</i> для рисования.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">display_set_gui_size(display_get_width() / 2, display_get_height() / 2);<br> display_set_gui_maximise(2, 2, 0, 0);</p>
+  <p>Приведенный выше код зафиксирует событие draw GUI на заданной ширине и высоте, масштабируя все компоненты для размещения на дисплее, используя эту пропорцию.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">Камеры и дисплеи</a>
+        <div style="float:left">Назад: </div>
+        <div style="float:right">Далее: <a href="display_set_ui_visibility.htm">display_set_ui_visibility</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+display_set_gui_maximise
+display_set_gui_maximize
+-->
+  <!-- TAGS
+display_set_gui_maximise
+-->
+</body>
+</html>

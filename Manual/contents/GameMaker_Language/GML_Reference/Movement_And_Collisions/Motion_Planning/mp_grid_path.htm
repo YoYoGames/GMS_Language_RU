@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_path</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_path" />
+  <meta name="rh-index-keywords" content="mp_grid_path" />
+  <meta name="search-keywords" content="mp_grid_path" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_path</h1>
+  <p>С помощью этой функции вы можете создать путь, который будет проходить от начальной точки до конечной точки, используя <tt>mp_grid</tt>, которую вы ранее определили, избегая любых препятствий, которые уже были добавлены в сетку. Аргументы xstart и ystart
+    указывают начало пути в координатах комнаты, а аргументы xgoal, ygoal - конечную точку. Вы также можете выбрать только горизонтальное/вертикальное движение или разрешить полное диагональное движение, указав true в аргументе allowdiag.
+    Функция возвращает либо true (удалось найти путь), либо false (не удалось), а также устанавливает выбранный путь. На следующем рисунке показано, как все это работает вместе:</p>
+  <p><img alt="MP Grid path example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/mp_grid_path_image.png">Как вы видите, объекты &quot;трубы&quot; были добавлены в сетку, что означает, что любой
+    созданный путь должен обойти их. На изображении создано два пути, один (зеленый) был сделан с учетом диагоналей, а другой (красный) - без них. Разница между ними довольно очевидна: зеленый путь выглядит гораздо более &quot;элегантным&quot;
+    и прямым, но все зависит от того, для каких целей вы собираетесь их использовать. Обратите внимание, что путь не зависит от текущего экземпляра - это путь по сетке, а не путь для конкретного экземпляра, даже если конкретный экземпляр
+    может иметь переменную, хранящую индекс пути. Вам также может понадобиться отладить эти пути, чтобы увидеть, как они создаются и взаимодействуют в игровой среде, и в этом случае вам следует использовать функцию <tt><a href="../../Drawing/Basic_Forms/draw_path.htm">draw_path()</a></tt> функцию.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Путь должен быть создан ранее (либо в коде с помощью <span style="font-size:1px;"><a href="../../Asset_Management/Paths/Path_Manipulation/path_add.htm"><tt style="font-size: 14px">путь_добавить()</tt></a></span> или как ресурс)
+    и будет заменен путем, сгенерированным этой функцией.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">mp_grid_path(id, path, xstart, ystart, xgoal, ygoal, allowdiag);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Индекс mp_grid, который будет использоваться</td>
+      </tr>
+      <tr>
+        <td>путь</td>
+        <td>индекс пути, который будет использоваться функцией</td>
+      </tr>
+      <tr>
+        <td>запуск</td>
+        <td>Начальная координата x нового пути</td>
+      </tr>
+      <tr>
+        <td>начало</td>
+        <td>Начальная координата y нового пути</td>
+      </tr>
+      <tr>
+        <td>xgoal</td>
+        <td>Конечная координата x нового пути</td>
+      </tr>
+      <tr>
+        <td>ygoal</td>
+        <td>Конечная координата y нового пути</td>
+      </tr>
+      <tr>
+        <td>allowdiag</td>
+        <td>Указывает, разрешены ли диагональные перемещения, а не только горизонтальные или вертикальные</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">global.grid = mp_grid_create(0, 0, room_width div 32, room_height div 32, 32, 32);<br> mp_grid_add_instances(global.grid, obj_wall, false);<br> with (obj_Enemy)<br> {
+    <br> path = path_add();<br> if mp_grid_path(global.grid, path, x, y, obj_Player.x, obj_Player.y, 1)<br> {
+    <br> path_start(path, 0, 3, 0);<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код создает глобальную переменную &quot;global.grid&quot;, затем генерирует mp_grid и присваивает ее индекс (id) этой переменной для использования во всех дальнейших вызовах функции mp_grid. Затем он добавляет все экземпляры &quot;obj_Wall&quot; в сетку, прежде чем
+    получает все экземпляры &quot;obj_Enemy&quot; для создания пути и затем использует mp_grid_path <tt>для</tt> расчета маршрута от их позиции до позиции &quot;obj_Player&quot;. Если маршрут существует, то объект запускает себя по этому пути.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Motion_Planning.htm">Планирование движения</a></div>
+        <div style="float:right">Далее: <a href="mp_grid_add_cell.htm">mp_grid_add_cell</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_path
+-->
+  <!-- TAGS
+mp_grid_path
+-->
+</body>
+</html>

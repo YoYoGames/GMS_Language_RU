@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>show_question_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for show_question_async" />
+  <meta name="rh-index-keywords" content="show_question_async" />
+  <meta name="search-keywords" content="show_question_async" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>show_question_async</h1>
+  <p>Эта функция открывает окно и показывает пользователю вопрос, заданный в функции. Это асинхронная функция, и поэтому <span class="notranslate">GameMaker Studio 2</span> <i>не</i> блокирует устройство, на котором она выполняется, в ожидании ответа, а просто
+    продолжает выполнять события в обычном режиме. Функция имеет две кнопки, которые показывают &quot;Да&quot; и &quot;Нет&quot;, и как только пользователь нажимает одну из них, <b>запускается</b> асинхронное событие Dialog, которое в течение всего времени действия этого события будет
+    имеет карту DS, хранящуюся в переменной <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>.</p>
+  <p>Эта карта будет содержать два ключа, &quot; id&quot; и &quot; status&quot;. &quot;id&quot;<strong>- это</strong> значение, которое было возвращено функцией при вызове, а &quot;status&quot; будет либо true, либо false для &quot;Yes&quot; и &quot;No&quot; соответственно <tt>.</tt> </p>
+  <p class="note"><strong><em>ПРИМЕЧАНИЕ:</em></strong><em> Эта функция <span data-keyref="Dialog for debug only">предназначена <strong>только</strong> для <strong>отладки и тестирования</strong></span>и не должна использоваться в выпущенных играх. Для этих целей вы должны создать пользовательский интерфейс для получения ввода от игроков, чтобы иметь полный контроль над тем, как выглядят и ведут себя диалоги.</em></p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">show_question_async(string);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>Строка</td>
+        <td>Вопрос, который нужно задать пользователю.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Расширенный пример:</h4>
+  <p> <b>Событие нажатия левой кнопки мыши</b> (например) объекта, который показывает сообщение, будет иметь следующий код:</p>
+  <p class="code">msg = show_question_async(&quot;Вы хотите купить броню за &quot; + string(armour[0, 5]) + &quot;монет?&quot;);</p>
+  <p>Вышеприведенная функция покажет вопрос с заданной строкой, требуя, чтобы пользователь нажал либо &quot;Да&quot;, либо &quot;Нет&quot;. Идентификатор функции хранится в переменной &quot;msg&quot; и будет использоваться в <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">событии</a> Asynchronous <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">Dialog, как</a> показано ниже:</p>
+  <p class="code">var i_d, stat;<br> i_d = ds_map_find_value(async_load, &quot;id&quot;);<br> if i_d == msg<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;)<br> {
+    <br> coins -= armour[0,5];<br> global.protection += armour[0,0];<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код сверяет ключ &quot;id&quot; возвращаемой DS Map <tt>со</tt> значением, хранящимся в переменной &quot;msg&quot;. Если они совпадают, то проверяется, была ли нажата одна из двух кнопок, и если возвращается <tt>true</tt>, то вычитается значение из переменной и добавляется значение в глобальную переменную.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Dialog.htm">Диалог</a></div>
+        <div style="float:right">Далее: <a href="shop_leave_rating.htm">shop_leave_rating</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+show_question_async
+-->
+  <!-- TAGS
+show_question_async
+-->
+</body>
+</html>

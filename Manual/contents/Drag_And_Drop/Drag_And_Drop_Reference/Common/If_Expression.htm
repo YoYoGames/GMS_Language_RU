@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Если выражение</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing If Expression" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Expression" />
+  <meta name="search-keywords" content="If Expression" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Expression Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_If_Expression.png"> Выражение If</h1>
+  <p>Это действие используется для проверки выражения на <tt>истинность</tt> или <tt>ложность</tt>, и вы можете проверить здесь любое логическое выражение, если оно оценивается в одно или другое значение. Например, можно использовать любое из следующих выражений:</p>
+  <p class="code">x &lt; (ширина комнаты / 2)<br> a == b<br> ++val &gt;= 100</p>
+  <p>Если вы отметите аргумент &quot;Not&quot;, то вышеперечисленные выражения будут отрицаемыми, например, &quot;<span class="inline">==</span>&quot; станет &quot;<span class="inline"><i>not</i>=</span>&quot;. Также обратите внимание, что <a class="glossterm" data-glossterm="выражение" href="#">выражение</a> не ограничивается числовыми значениями, и вы можете проверять строки, указатели, идентификаторы ресурсов или все остальное, что может возвращать или использовать функция (подробнее см. раздел о <a href="../../../GameMaker_Language/GML_Overview/Data_Types.htm">типах данных</a> ), но вы не можете сравнивать два разных типа данных без получения ошибки - например, если вы попытаетесь использовать в выражении строку и целое число, вы получите ошибку. Более подробную информацию о выражениях см. <a href="../../../GameMaker_Language/GML_Overview/Expressions_And_Operators.htm">здесь</a>.</p>
+  <p class="note"><b>ВАЖНОЕ ПРИМЕЧАНИЕ</b>: Из-за <a href="http://floating-point-gui.de/formats/fp/" target="·_blank&quot;">проблем с точностью плавающей точки</a>, проверка на точное равенство двух значений может вернуть <tt>ложное</tt> значение, так как одно из них может быть равно 1, а другое - 1.00000000000001.
+    другое может быть 1.00000000000001. Этого можно избежать, используя действие <a href="../Data_Types/Decimal_To_Integer.htm">Decimal to Integer</a> перед проверкой или используя выражения &quot;больше (&gt;)&quot; или &quot;меньше (&lt;)&quot;.</p>
+  <p>Обратите внимание, что для добавления действий в блок &quot;<span class="inline">if</span>&quot;, их следует опустить сбоку от действия, как показано на изображении ниже:</p>
+  <p><img alt="If Expression drop actions exmaple" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/drop_if_expression.png">Эти действия теперь будут выполняться, если &quot;if&quot; оценивается в true, <tt>в то время как</tt>
+    любые действия, брошенные в другом месте, будут выполняться после блока &quot;if&quot;. Обратите внимание, что вы можете &quot;складывать&quot; выражения в одно и то же действие, нажав на значок плюса <span><img src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> </span>рядом с
+    и указать еще одно выражение для проверки. Это позволит проверить, <i>все</i> ли указанные выражения возвращают <tt>true</tt> в одной проверке, и выполнить добавленный код действия только в том случае, если они возвращают true (см. пример, приведенный ниже).</p>
+  <p> </p>
+  <h4>Синтаксис действия:</h4>
+  <p><img alt="If Expression Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_common_if_expression.png" /></p>
+  <h4>Аргументы:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>Выражение</td>
+        <td>Выражение для проверки.</td>
+      </tr>
+      <tr>
+        <td>Не</td>
+        <td>Устанавливается для проверки, если выражение <i>не</i> имеет значения true.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p><img alt="If Expression Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_common_if_expression.png">Приведенный выше код блока действий проверяет, больше ли переменная экземпляра &quot;<tt>player_score&quot;</tt>
+    больше 1000 <i>, а</i> переменная экземпляра &quot;<tt>player_level&quot;</tt> меньше 10. Если обе проверки возвращают true, <tt>то</tt> код действия переходит к присвоению новых значений этим переменным.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Common_Actions_Library.htm">Общие действия</a></div>
+        <div style="float:right">Следующий: <a href="If_Undefined.htm">Если не определено</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Expression
+-->
+  <!-- TAGS
+action_if_expression
+-->
+
+</body></html>

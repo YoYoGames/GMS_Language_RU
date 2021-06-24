@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>буферное_заполнение</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_fill" />
+  <meta name="rh-index-keywords" content="buffer_fill,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+  <meta name="search-keywords" content="buffer_fill" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>буферное_заполнение</h1>
+  <p>Эта функция может быть использована для заполнения ранее созданного буфера данными заданного типа и значения. Данные, которыми вы заполняете буфер, должны соответствовать аргументу &quot;тип&quot; этой функции, то есть вы не можете пытаться заполнить буфер, например, строкой, а использовать тип unsigned 16bit integer.
+    строкой и использовать тип unsigned 16bit integer, например. Константы типов такие же, как и те, которые используются функциями <a href="buffer_read.htm"><tt>buffer_read()</tt></a> и <a href="buffer_write.htm"><tt>buffer_write()</tt></a> функции. &quot;Размер&quot;
+    это размер буфера (в байтах), который вы хотите заполнить, а смещение - это значение смещения (также в байтах) от начала буфера для начала заполнения.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">buffer_fill(buffer, offset, type, value, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>буфер</td>
+        <td>Индекс буфера для заполнения.</td>
+      </tr>
+      <tr>
+        <td>смещение</td>
+        <td>Значение смещения данных (в байтах).</td>
+      </tr>
+      <tr>
+        <td>тип</td>
+        <td>Тип данных, которые должны быть записаны в буфер (см. список констант <a href="buffer_write.htm">здесь</a>).</td>
+      </tr>
+      <tr>
+        <td>значение</td>
+        <td>Данные для записи.</td>
+      </tr>
+      <tr>
+        <td>размер</td>
+        <td>Размер буфера (в байтах), который вы хотите заполнить.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">map_buffer = buffer_create(16384, buffer_fixed, 0);<br> buffer_fill(map_buffer, 0, buffer_u16, 0, 16384);</p>
+  <p>Приведенный выше код находит начало буфера с идентификатором, хранящимся в переменной &quot;buff&quot;, и записывает в него серию знаковых 16-битных целочисленных значений.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Buffers.htm">Буферы</a></div>
+        <div style="float:right">Далее: <a href="buffer_seek.htm">buffer_seek</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_fill
+-->
+  <!-- TAGS
+buffer_fill
+-->
+</body>
+</html>

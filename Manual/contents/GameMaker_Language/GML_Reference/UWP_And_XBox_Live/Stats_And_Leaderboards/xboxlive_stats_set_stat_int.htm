@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_set_stat_int</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_set_stat_int" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_set_stat_int" />
+  <meta name="search-keywords" content="xboxlive_stats_set_stat_int" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_set_stat_int</h1>
+  <p>Эта функция может быть использована для установки значения статистики для заданного ID пользователя. Вы вводите ID пользователя, возвращенный (например) функцией <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>, затем строку статистики
+    для установки<b>(если строка stat еще не существует, то будет создана новая stat и установлено заданное значение</b>) и значение (целое число) для установки stat. Обратите внимание, что имя stat должно быть только буквенно-цифровым, без символов и пробелов.</p>
+  <p>При установке значения стата любое предыдущее значение будет отменено, поэтому вы сами должны определить, следует ли обновить значение стата или нет (т.е. проверить, что высокий результат действительно самый высокий), сравнив текущее значение стата с новым, прежде чем устанавливать его.
+    новым, прежде чем установить его.</p>
+  <p>Функция вернет -1, если произошла ошибка или идентификатор пользователя недействителен, или любое другое значение, если функция была вызвана успешно.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">xboxlive_stats_set_stat_int(user_id, stat, value);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор пользователя</td>
+        <td>Указатель идентификатора пользователя для установки статистики</td>
+      </tr>
+      <tr>
+        <td>статистика</td>
+        <td>Статистика, которую нужно установить (строка)</td>
+      </tr>
+      <tr>
+        <td>значение</td>
+        <td>Значение, на которое нужно установить статистику (целое число)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _val = xboxlive_stats_get_stat(p_user_id, &quot;GamesPlayed&quot;);<br> xboxlive_stats_set_stat_int(p_user_id, &quot;GamesPlayed&quot;, ++_val);</p>
+  <p>Приведенный выше код извлекает значение для статистики &quot;GamesPlayed&quot;, затем устанавливает эту же статистику в это значение плюс 1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Stats_And_Leaderboards.htm">Статистика и таблицы лидеров</a></div>
+        <div style="float:right">Далее: <a href="xboxlive_stats_set_stat_string.htm">xboxlive_stats_set_stat_string</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_set_stat_int
+-->
+  <!-- TAGS
+xboxlive_stats_set_stat_int
+-->
+</body>
+</html>

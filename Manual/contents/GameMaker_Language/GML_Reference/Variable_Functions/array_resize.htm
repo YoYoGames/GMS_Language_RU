@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_resize</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_resize" />
+  <meta name="rh-index-keywords" content="array_resize" />
+  <meta name="search-keywords" content="array_resize" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_resize</h1>
+  <p>С помощью этой функции вы можете изменить размер существующего массива на новый. Вы предоставляете массив, размер которого нужно изменить, а также новое количество индексов для массива, и функция изменит размер этого массива. Обратите внимание, что эта функция предназначена для изменения размера
+    массива <i>до</i> меньшей длины, так как вы можете изменить размер, просто установив новый индекс в массиве. При этом, если вы используете ее для изменения размера массива, то все новые индексы будут установлены в значение по умолчанию 0.</p>
+  <p>Эта функция также может быть использована для многомерных массивов, если при указании индекса массива вы укажете, какое измерение вы хотите изменить, следуя этой схеме:</p>
+  <p class="code">// Изменение размера первой размерности массива<br> array_resize(my_array, 10);<br>
+    <br> // Изменение размера второй размерности массива<br> array_resize(my_array[0], 10);<br>
+    <br> // Изменение размера третьей размерности массива<br> array_resize(my_array[0][0], 10);<br>
+    <br> // и т.д....</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">array_resize(array_index, new_size);</p>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>Аргумент</th>
+          <th>Описание</th>
+        </tr>
+        <tr>
+          <td>индекс_массива</td>
+          <td>Индекс массива для изменения размера.</td>
+        </tr>
+        <tr>
+          <td>новый_размер</td>
+          <td>Новый размер массива (целое число, начиная с 0).</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if array_length(a) &gt; 10<br> {
+    <br> array_resize(a, 10);<br> }
+  </p>
+  <p>Приведенный выше код проверяет длину массива, и если он имеет более 10 индексов, то его размер изменяется.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Variable_Functions.htm">Переменные функции</a></div>
+        <div style="float:right">Далее: <a href="array_length_1d.htm">array_length_1d</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_resize
+-->
+  <!-- TAGS
+array_resize
+-->
+</body>
+</html>

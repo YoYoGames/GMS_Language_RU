@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Физика Совместные константы</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Physics Joint Constants" />
+  <meta name="rh-index-keywords" content="phy_joint_anchor_1_x,phy_joint_anchor_1_y,phy_joint_anchor_2_x,phy_joint_anchor_2_y,phy_joint_reaction_force_x,phy_joint_reaction_force_y,phy_joint_reaction_torque,phy_joint_max_motor_force,phy_joint_max_motor_torque,phy_joint_motor_force,phy_joint_motor_speed,phy_joint_motor_torque,phy_joint_angle,phy_joint_angle_limits,phy_joint_upper_angle_limit,phy_joint_lower_angle_limit,phy_joint_translation,phy_joint_speed,phy_joint_damping_ratio,phy_joint_frequency,phy_joint_length_1,phy_joint_length_2,phy_joint_max_torque,phy_joint_max_force,phy_joint_max_length" />
+  <meta name="search-keywords" content="Joint Constants,phy_joint_anchor_1_x,phy_joint_anchor_1_y,phy_joint_anchor_2_x,phy_joint_anchor_2_y,phy_joint_reaction_force_x,phy_joint_reaction_force_y,phy_joint_reaction_torque,phy_joint_max_motor_force,phy_joint_max_motor_torque,phy_joint_motor_force,phy_joint_motor_speed,phy_joint_motor_torque,phy_joint_angle,phy_joint_angle_limits,phy_joint_upper_angle_limit,phy_joint_lower_angle_limit,phy_joint_translation,phy_joint_speed,phy_joint_damping_ratio,phy_joint_frequency,phy_joint_length_1,phy_joint_length_2,phy_joint_max_torque,phy_joint_max_force,phy_joint_max_length" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Физика Совместные константы</h1>
+  <p>В <span class="notranslate">GameMaker Studio 2</span> <span class="notranslate">GML</span> включено большое количество констант, специфичных для <i>соединений</i> между креплениями в физическом мире. Их можно использовать в сочетании с
+    многими функциями суставов, чтобы задавать или получать информацию от них в реальном времени во время работы физического моделирования. Однако следует помнить, что при их вызове выполняются сложные вычисления, поэтому их следует использовать с осторожностью
+    и только при необходимости, и обратите внимание, что <i>многие из них уникальны для определенного типа суставов</i>. Также обратите внимание, что хотя вы можете получить все эти значения с помощью соответствующей функции, вы можете установить только те, которые помечены как не доступные только для чтения.</p>
+  <p>В общем случае эти константы используются вместе со следующими функциями:</p>
+  <ul class="colour">
+    <li><a href="physics_joint_get_value.htm">физический_шарнир_получить_значение</a></li>
+    <li><a href="physics_joint_set_value.htm">физическое_соединение_установить_значение</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="one">Общий</label></h2>
+  
+    <p>Следующие константы могут быть применены к любому из имеющихся типов соединений:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th>Постоянная</th>
+          <th>Описание</th>
+          <th>Только чтение</th>
+        </tr>
+        <tr>
+          <td>phy_joint_anchor_1_x</td>
+          <td>Координата x первой опорной точки сустава <i>в помещении</i></td>
+          <td>Да</td>
+        </tr>
+        <tr>
+          <td>phy_joint_anchor_1_y</td>
+          <td>Координата y первой опорной точки сустава <i>в помещении</i></td>
+          <td>Да</td>
+        </tr>
+        <tr>
+          <td>phy_joint_anchor_2_x</td>
+          <td>Координата x второй опорной точки сустава <i>в помещении</i></td>
+          <td>Да</td>
+        </tr>
+        <tr>
+          <td>phy_joint_anchor_2_y</td>
+          <td>Координата y второй опорной точки сустава <i>в помещении</i></td>
+          <td>Да</td>
+        </tr>
+        <tr>
+          <td>phy_joint_reaction_force_x</td>
+          <td>Это сила реакции, приложенная ко второму экземпляру в суставе в положении привязки x</td>
+          <td>Да</td>
+        </tr>
+        <tr>
+          <td>phy_joint_reaction_force_y</td>
+          <td>Это сила реакции, приложенная ко второму экземпляру в суставе в положении привязки y</td>
+          <td>Да</td>
+        </tr>
+        <tr>
+          <td>phy_joint_reaction_torque</td>
+          <td>Это крутящий момент, прикладываемый ко второму экземпляру в суставе в положении якоря</td>
+          <td>Да</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <h2><br>
+    <label for="two">Двигатели</label></h2>
+  
+    <p>Эти константы предназначены для тех шарниров, к которым присоединен <i>двигатель</i> (револьверный, призматический, колесный):</p>
+    <table>
+      <tbody>
+        <tr>
+          <th>Постоянная</th>
+          <th>Описание</th>
+          <th>Только чтение</th>
+        </tr>
+        <tr>
+          <td>phy_joint_max_motor_force</td>
+          <td>Значение, указанное при создании сустава для максимального усилия двигателя</td>
+          <td>Нет</td>
+        </tr>
+        <tr>
+          <td>phy_joint_max_motor_torque</td>
+          <td>Значение, указанное при создании соединения для максимального крутящего момента двигателя</td>
+          <td>Нет</td>
+        </tr>
+        <tr>
+          <td>phy_joint_motor_force</td>
+          <td>Текущая сила двигателя</td>
+          <td>Да</td>
+        </tr>
+        <tr>
+          <td>phy_joint_motor_speed</td>
+          <td>Текущая скорость вращения двигателя</td>
+          <td>Нет</td>
+        </tr>
+        <tr>
+          <td>phy_joint_motor_torque</td>
+          <td>Текущий крутящий момент двигателя</td>
+          <td>Да</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <h2><br>
+    <label for="three">Револьверные шарниры</label></h2>
+  
+    <p>Для револьверного шарнира вы можете использовать следующую константу (а также константы <i>двигателя</i>, если он был добавлен):</p>
+    <table>
+      <tbody>
+        <tr>
+          <th>Постоянная</th>
+          <th>Описание</th>
+          <th>Только чтение</th>
+        </tr>
+        <tr>
+          <td>фи_суставной_угол</td>
+          <td>Угол, который образует линия между двумя опорными точками сустава. Этот угол рассчитывается с использованием координат <i>физического мира</i><br> ( <b>не</b> координат комнаты в <span class="notranslate">GameMaker Studio 2</span> ) в радианах.
+            координаты) в радианах.</td>
+          <td>Да</td>
+        </tr>
+        <tr>
+          <td>phy_joint_angle_limits</td>
+          <td>Включите или отключите ограничение угла для сустава. Установите значение <tt>true</tt> для включения или <tt>false</tt> для отключения.</td>
+          <td>Нет</td>
+        </tr>
+        <tr>
+          <td>phy_joint_upper_angle_limit</td>
+          <td>Верхний предел угла для сустава в градусах.</td>
+          <td>Нет</td>
+        </tr>
+        <tr>
+          <td>phy_joint_lower_angle_limit</td>
+          <td>Нижний предел угла для сустава в градусах.</td>
+          <td>Нет</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <h2><br>
+    <label for="four">Призматические соединения</label></h2>
+  
+    <p>Для призматического соединения можно использовать следующую константу:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th>Постоянная</th>
+          <th>Описание</th>
+          <th>Только чтение</th>
+        </tr>
+        <tr>
+          <td>phy_joint_translation</td>
+          <td>Получает расстояние между координатами x/y якоря и локальными координатами x/y.</td>
+          <td>Да</td>
+        </tr>
+        <tr>
+          <td>phy_joint_speed</td>
+          <td>Текущая скорость движения сустава.</td>
+          <td>Да</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <h2><br>
+    <label for="six">Дистанционные соединения, сварные соединения и колесные шарниры</label></h2>
+  
+    <p>Для расстояния, сварного шва и колесных соединений можно использовать следующие константы (как и для шкивных соединений):</p>
+    <table>
+      <tbody>
+        <tr>
+          <th>Постоянная</th>
+          <th>Описание</th>
+          <th>Только чтение</th>
+        </tr>
+        <tr>
+          <td>phy_joint_damping_ratio</td>
+          <td>Коэффициент демпфирования является безразмерным и определяет &quot;пружинистость&quot; соединения. Значение этой константы обычно находится в диапазоне от 0 до 1, но может быть и больше, а при значении 1 демпфирование является критическим, то есть все колебания должны исчезнуть.</td>
+          <td>Нет</td>
+        </tr>
+        <tr>
+          <td>phy_joint_frequency</td>
+          <td>Это вернет (или установит) частоту колебаний для сустава, в герцах, и обычно частота должна быть меньше половины частоты временного шага, установленного функцией <a href="../The_Physics_World/physics_world_update_speed.htm"><tt>physics_world_update_speed()</tt></a>.</td>
+          <td>Нет</td>
+        </tr>
+        <tr>
+          <td>phy_joint_length_1</td>
+          <td>Это вернет длину сустава от первой локальной координаты x/y до первой якорной координаты x/y (только для дистанционных суставов, может быть считано только из)</td>
+          <td>Да</td>
+        </tr>
+        <tr>
+          <td>phy_joint_length_2</td>
+          <td>Это вернет длину сустава от второй локальной координаты x/y до второй якорной координаты x/y (только для суставов с расстоянием, может быть записано только в)</td>
+          <td>Нет</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <h2><br>
+    <label for="seven">Фрикционные соединения</label></h2>
+  
+    <p>Для фрикционного соединения можно использовать следующие константы:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th>Постоянная</th>
+          <th>Описание</th>
+          <th>Только чтение</th>
+        </tr>
+        <tr>
+          <td>phy_joint_max_torque</td>
+          <td>Максимальное значение крутящего момента для соединения.</td>
+          <td>Нет</td>
+        </tr>
+        <tr>
+          <td>phy_joint_max_force</td>
+          <td>Максимальное значение силы для сустава.</td>
+          <td>Нет</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <h2><br>
+    <label for="eight">Канатные соединения</label></h2>
+  
+    <p>Для веревочного соединения можно использовать следующую константу:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th>Постоянная</th>
+          <th>Описание</th>
+          <th>Только чтение</th>
+        </tr>
+        <tr>
+          <td>phy_joint_max_length</td>
+          <td>Максимальное удлинение для соединения между двумя точками крепления.</td>
+          <td>Нет</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Joints.htm">Суставы</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Joints
+phy_joint_anchor_1_x
+phy_joint_anchor_1_y
+phy_joint_anchor_2_x
+phy_joint_anchor_2_y
+phy_joint_reaction_force_x
+phy_joint_reaction_force_y
+phy_joint_reaction_torque
+phy_joint_max_motor_force
+phy_joint_max_motor_torque
+phy_joint_motor_force
+phy_joint_motor_speed
+phy_joint_motor_torque
+phy_joint_angle
+phy_joint_angle_limits
+phy_joint_upper_angle_limit
+phy_joint_lower_angle_limit
+phy_joint_translation
+phy_joint_speed
+phy_joint_damping_ratio
+phy_joint_frequency
+phy_joint_length_1
+phy_joint_length_2
+phy_joint_max_torque
+phy_joint_max_force
+phy_joint_max_length
+-->
+  <!-- TAGS
+physics_joint_functions
+-->
+</body>
+</html>

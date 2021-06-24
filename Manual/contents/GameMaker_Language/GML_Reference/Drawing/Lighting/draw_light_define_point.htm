@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_light_define_point</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_light_define_point" />
+  <meta name="rh-index-keywords" content="draw_light_define_point" />
+  <meta name="search-keywords" content="draw_light_define_point" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_light_define_point</h1>
+  <p>Эта функция предназначена для определения позиционного света, где вы можете определить положение света по x, y и z, диапазон освещенности и его цвет (что также влияет на воспринимаемую интенсивность света, так как некоторые цвета кажутся &quot;темнее&quot;, чем другие).
+    другие). Вы также должны присвоить свету индексный номер, который будет использоваться в других функциях для ссылки на него.<b></b></p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Имеется только 8 аппаратных светильников, поэтому одновременно могут быть включены только 8 определенных светильников (хотя можно определить и больше).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_light_define_point(ind, x, y, z, range, col);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индексный номер света (произвольный)</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Положение x света</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Положение света по оси y</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>Положение света по оси z</td>
+      </tr>
+      <tr>
+        <td>ассортимент</td>
+        <td>Диапазон освещенности (в пикселях)</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Цвет, который будет использоваться для освещения (либо константа, либо вещественное или шестнадцатеричное значение).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_set_lighting(true);<br> draw_light_define_point(1, 200, 123, 50, 2000, c_white);<br> draw_light_enable(1, true);</p>
+  <p>Приведенный выше код включит освещение для всей сцены, затем определит белый свет в определенной точке пространства комнаты и, наконец, включит этот свет.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Lighting.htm">Освещение</a></div>
+        <div style="float:right">Далее: <a href="draw_light_define_direction.htm">draw_light_define_direction</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_light_define_point
+-->
+  <!-- TAGS
+draw_light_define_point
+-->
+</body>
+</html>

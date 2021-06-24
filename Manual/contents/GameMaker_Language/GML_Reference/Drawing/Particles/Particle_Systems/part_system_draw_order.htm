@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>порядок_системы_черчения</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_system_draw_order" />
+  <meta name="rh-index-keywords" content="part_system_draw_order" />
+  <meta name="search-keywords" content="part_system_draw_order" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>порядок_системы_черчения</h1>
+  <p>С помощью этой функции можно задать способ отрисовки частиц при создании на экране. Система по умолчанию использует старый &gt; новый вид (функция установлена в <tt>true),</tt> где старые частицы рисуются на большей глубине, чем новые, и поэтому появляются "под" новыми частицами.
+    Таким образом, новые частицы оказываются &quot;под&quot; ними, но, установив эту функцию в false, вы <tt>можете</tt> изменить этот порядок, и новые частицы будут рисоваться выше и, таким образом, окажутся &quot;под&quot; старыми. Изображения ниже иллюстрируют это,
+    на изображении слева по умолчанию установлено значение <tt>true</tt>, а на изображении справа - <tt>false</tt>:</p>
+  <center><img alt="Old to new particle example" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/frontback.gif" /> <img alt="New to old particle example" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/backfront.gif" /></center>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Когда частицы рисуются с аддитивным режимом наложения, эффект от этой функции не всегда очевиден.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">part_system_draw_order(ind, oldtonew);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс системы частиц для изменения.</td>
+      </tr>
+      <tr>
+        <td>oldtonew</td>
+        <td>Должны ли старые частицы рисоваться за более новыми (true) или наоборот (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">mysystem = part_system_create();<br> part_system_draw_order(mysystem, true);</p>
+  <p>Это создаст новую систему частиц с индексом &quot; mysystem<tt>&quot;,</tt> а затем установит частицы для рисования новых частиц поверх старых.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Particle_Systems.htm">Системы частиц</a></div>
+        <div style="float:right">Далее: <a href="part_particles_create.htm">part_particles_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_draw_order
+-->
+  <!-- TAGS
+part_system_draw_order
+-->
+</body>
+</html>

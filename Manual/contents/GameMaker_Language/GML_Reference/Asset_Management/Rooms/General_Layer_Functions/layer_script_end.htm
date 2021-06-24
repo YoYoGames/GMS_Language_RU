@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_script_end</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_script_end" />
+  <meta name="rh-index-keywords" content="layer_script_end" />
+  <meta name="search-keywords" content="layer_script_end" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_script_end</h1>
+  <p>С помощью этой функции вы можете назначить слою <a href="../../../../GML_Overview/Script_Functions.htm">скрипт-функцию</a>, которая будет вызываться после отрисовки слоя. При добавлении функции к слою таким образом, она будет выполняться в конце
+   <i>каждого из различных событий рисования</i>, поэтому вы можете захотеть проверить в назначенной функции, какое событие в данный момент завершает отрисовку, и адаптировать код в соответствии с этим. Это можно сделать, проверив <a href="../../Objects/Object_Events/event_type.htm"><tt>тип события</tt></a>    и/или <a href="../../Objects/Object_Events/event_number.htm"><tt>номер_события</tt></a> (см. расширенный пример ниже). Обратите внимание, что функция <i>не</i> предназначена для вызова в любых событиях рисования или событиях шага, а должна вызываться только
+    в начале комнаты в <strong>коде создания комнаты</strong> или в <strong>событии Create Event </strong>/ <strong>Room Start Event</strong> экземпляра.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_script_end(layer_id, script)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор слоя</td>
+        <td>Уникальное значение ID слоя, на который нужно нацелиться (или имя слоя в виде строки).</td>
+      </tr>
+      <tr>
+        <td>скрипт</td>
+        <td>Индекс функции сценария для назначения слою</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Расширенный пример:</h4>
+  <p>В этом расширенном примере мы сначала покажем, как устроена простая скрипт-функция для установки некоторых унифицированных данных <span class="notranslate">шейдера</span>, чтобы при отрисовке данного слоя эта функция была запущена и <span class="notranslate">шейдер</span> работал правильно. В примере стоит
+    отметить, как мы проверяем, какое событие вызывается, чтобы остальная часть функции выполнялась только при определенном событии, которое мы требуем, чтобы она работала - в данном случае только при главном событии рисования:</p>
+  <p class="code">/// @function layer_shader_start();<br> function layer_shader_start()
+    <br> {
+    <br> if event_type == ev_draw<br> {
+    <br> if event_number == 0<br> {
+    <br> color_to_find = <span class="notranslate">shader_get_uniform</span>(sShaderDemo5, &quot;f_Colour1&quot;);<br> color_to_set = shader_get_uniform(sShaderDemo5<span class="notranslate">, &quot;f_Colour2</span>&quot;);<br> shader_set(s_ColourChanger);
+    <br> <span class="notranslate">shader_set_uniform_f</span>(color_to_find, 1,1,1 );<br> <span class="notranslate">shader_set_uniform_f</span>(color_to_set, 1,0,0 );<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Затем у нас будет сопутствующая функция для сброса <span class="notranslate">шейдера</span> после завершения рисования:</p>
+  <p class="code">/// @function layer_shader_end();<br> function layer_shader_end()
+    <br> {
+    <br> if event_type == ev_draw<br> {
+    <br> if event_number == 0<br> {
+    <br> <span class="notranslate">shader_reset</span>();
+    <br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Теперь, когда мы определили наши скриптовые функции для установки <span class="notranslate">шейдера</span>, мы должны назначить их определенному слою, чтобы слой знал, что их нужно вызывать. Это можно сделать в коде создания комнаты, или в событии создания, или в событии запуска комнаты какого-либо объекта контроллера (их нужно установить один раз).
+    объекта контроллера (их не нужно устанавливать на каждом шаге, а лучше один раз при запуске комнаты или при первоначальном создании слоя):</p>
+  <p class="code">var lay_id = layer_get_id(&quot;Instances&quot;);<br> layer_script_begin(lay_id, layer_shader_start<span class="notranslate">);</span><br> layer_script_end(lay_id, layer_shader_end<span class="notranslate">);</span></p>
+  <p>Этот последний блок кода назначает скрипты слою.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="General_Layer_Functions.htm">Общие функции слоя</a></div>
+        <div style="float:right">Далее: <a href="layer_shader.htm">layer_shader</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_script_end
+-->
+  <!-- TAGS
+layer_script_end
+-->
+</body>
+</html>

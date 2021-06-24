@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_find_first</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_find_first" />
+  <meta name="rh-index-keywords" content="ds_map_find_first" />
+  <meta name="search-keywords" content="ds_map_find_first" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_find_first</h1>
+  <p>Эта функция возвращает первый ключ, хранящийся в карте DS. <b>Это не первый ключ в том порядке, в котором вы их добавили!</b> Карты DS не хранятся в линейной форме, для этого используется <a href="../DS_Lists/DS_Lists.htm">список DS</a>, поэтому все, что делает эта функция, это находит
+    первый ключ в том виде, в котором он хранится в компьютере. Это может быть полезно, если вам нужно итеративно просматривать карту DS в поисках чего-либо, но по возможности этого следует избегать, так как это может быть медленным.</p>
+  <p>Обратите внимание, что эта функция вернет <tt>неопределенное</tt> значение, если заданная карта DS пуста.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_map_find_first(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Идентификатор карты, которую нужно использовать.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Вещественный, строковый или неопределенный</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var size = ds_map_size(inventory) ;<br> var key = ds_map_find_first(inventory);<br> for (var i = 0; i &lt; size; i++;)<br> {
+    <br> if key != &quot;gold&quot;<br> {
+    <br> key = ds_map_find_next(inventory, key);<br> }
+    <br> else break;<br> }
+  </p>
+  <p>Приведенный выше код создает некоторые временные переменные, затем получает размер карты DS и находит первый ключ, сохраненный компьютером в карте. Затем с помощью цикла <tt>for</tt> выполняется итерация по карте DS в поисках значения ключа &quot;gold&quot;. Если
+    он находит его, то прерывает цикл.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="DS_Maps.htm">Карты DS</a></div>
+        <div style="float:right">Далее: <a href="ds_map_find_last.htm">ds_map_find_last</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_find_first
+-->
+  <!-- TAGS
+ds_map_find_first
+-->
+</body>
+</html>

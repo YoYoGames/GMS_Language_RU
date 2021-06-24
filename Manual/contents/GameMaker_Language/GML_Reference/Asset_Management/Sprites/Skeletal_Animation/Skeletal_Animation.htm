@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Скелетная анимация</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different Skeletal Animation functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Skeletal Animation,gm_SpineTintBlackColour,tint black,Spine" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Скелетная анимация спрайтов</h1>
+  <p>Функции, приведенные в этом разделе, предназначены <i>только</i> для использования со спрайтами, которые были импортированы из файла скелетной анимации (в частности, файлы JSON, которые <a href="http://es.esotericsoftware.com/"><b>Спрайт</b></a> экспортирует)
+    и могут быть использованы для получения информации об анимационном активе в вашей игре, а также для установки определенных свойств анимации. Эти функции могут использоваться вместе с обычными функциями и переменными спрайта, позволяя вам (например)
+    смешивать две скелетные анимации с помощью этих специальных функций, задавая при этом масштаб изображения с помощью обычных переменных экземпляра спрайта (подробнее о переменных экземпляра спрайта см. <a href="../Sprite_Instance_Variables/Sprite_Instance_Variables.htm">здесь</a>).</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Для получения дополнительной информации об импорте спрайтов скелетной анимации, сделанных с помощью Spine, см. раздел <a href="../../../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm">Импорт спрайтов без растрового изображения</a>.</p>
+  <p>Подробнее о функциях для этих видов спрайтов вы можете узнать из разделов ниже:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="Animation/Animation.htm"><label for="a">Анимация</label></a></li>
+    <li><a href="Skins/Skins.htm"><label for="b">Скины</label></a></li>
+    <li><a href="Attachments/Attachments.htm"><label for="c">Вложения</label></a></li>
+    <li><a href="Bones/Bones.htm"><label for="d">Кости</label></a></li>
+    <li><a href="Slots/Slots.htm"><label for="f">Слоты</label></a></li>
+    <li><a href="Drawing_And_Miscellaneous/Drawing_And_Miscellaneous.htm"><label for="e">Рисование и разное</label></a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <h2>Поддержка черного цвета</h2>
+  <p>Эта функция позволяет окрашивать темные области слотов спрайтов Spine в цвета, отличные от светлых областей (это функция Spine IDE, подробнее см. раздел " <b>Оттенок черного</b> "). В настоящее время, чтобы воспользоваться этой функцией в <span class="notranslate">GameMaker Studio 2</span>, необходимо использовать пользовательский шейдер <a href="../../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">шейдер</span></a> при
+    рисовании спрайта Spine, который его использует. Этот <span class="notranslate">шейдер</span> содержит глобальную однородную переменную под названием &quot; gm_SpineTintBlackColour<tt>&quot;</tt>, которую бегунок заполняет текущим тинтово-черным цветом, получаемым из данных Spine автоматически. <span class="notranslate">Шейдер</span>
+    показан ниже:</p>
+  <p>Вершинный <span class="notranslate">шейдер</span> (это то же самое, что и вершинный <span class="notranslate">шейдер</span> по умолчанию)</p>
+  <p class="code">атрибут vec3 in_Position; // (x,y,z)<br> атрибут vec4 in_Colour; // (r,g,b,a)<br> атрибут vec2 in_TextureCoord; // (u,v)<br>
+    <br> изменяющийся vec2 v_vTexcoord;<br> изменяющийся vec4 v_vColour;<br>
+    <br> void main()<br> {
+    <br> vec4 object_space_pos = vec4( in_Position.x, in_Position.y, in_Position.z, 1.0);<br> gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * object_space_pos;<br> v_vColour = in_Colour;<br> v_vTexcoord = in_TextureCoord;<br> }
+  </p>
+  <p>Фрагментный <span class="notranslate">шейдер</span>:</p>
+  <p class="code">изменяющийся vec2 v_vTexcoord;<br> изменяющийся vec4 v_vColour;<br>
+    <br> униформа vec4 gm_SpineTintBlackColour; // Это униформа, содержащая тинто-черный цвет<br>
+    <br> void main()<br> {
+    <br> vec4 tb = gm_SpineTintBlackColour;<br> vec4 texcol = texture2D( gm_BaseTexture, v_vTexcoord );<br> vec4 outcol;<br> outcol.rgb = v_vColour.rgb * texcol.rgb;<br> outcol.rgb += tb.rgb * ((tb.a * (texcol.a - 1.0)) + (1.0 - texcol.rgb)); //
+    Эта строка выполняет логику смешивания тинт-черный<br> outcol.a = v_vColour.a * texcol.a;<br> gl_FragColor = outcol;<br> }
+  </p>
+  <p>Для этого нужно сначала вызвать <span class="notranslate">шейдер</span>, затем нарисовать спрайт, затем сбросить <span class="notranslate">шейдер</span>, примерно так:</p>
+  <p class="code"><span class="notranslate">shader_set</span>(shd_spine_tint_black);<br> draw_self();
+    <br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Sprites.htm">Спрайты</a></div>
+        <div style="float:right">Следующий: <a href="../Sprite_Information/Sprite_Information.htm"><label for="three">Информация о спрайте</label></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Spine Sprites
+Spine
+Skeleton Animation Sprites
+gm_SpineTintBlackColour
+tint black
+-->
+  <!-- TAGS
+sprite_spìne_functions
+-->
+</body>
+</html>

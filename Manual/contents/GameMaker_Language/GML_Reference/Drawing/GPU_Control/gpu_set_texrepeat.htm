@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_texrepeat</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_texrepeat" />
+  <meta name="rh-index-keywords" content="gpu_set_texrepeat" />
+  <meta name="search-keywords" content="gpu_set_texrepeat" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_texrepeat</h1>
+  <p>Эта функция может быть использована для указания <span class="notranslate">GameMaker Studio 2</span>, должны ли текстуры повторяться<tt>(true</tt>) или нет<tt>(false</tt>) при использовании для моделей и примитивов. Обычно ширина и высота текстуры лежат в диапазоне 0 - 1, но если вы укажете
+    значение больше 1 по умолчанию остальная часть не отрисовывается (вся текстура будет отрисована с &quot;пустым&quot; участком, соответствующим проценту больше 1, который используется. Таким образом, значение 2 для ширины или высоты текстуры будет рисовать текстуру в
+    половину пространства и оставит другую половину пустой). Однако при использовании этой функции для установки параметра repeat в true текстура автоматически повторяется для всех моделей и примитивов. Скорее всего, эти функции используются для повторения текстуры в 3D, но
+    для того, чтобы она работала и не вытягивала изображения с остальной страницы текстуры, используемый спрайт должен быть помечен как &quot;отдельная страница текстуры&quot; в редакторе спрайтов.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Спрайты и фоны всегда рисуются без повторения, поэтому после рисования спрайта или фона это значение сбрасывается в <tt>false</tt>. Это поведение по умолчанию не влияет на настройки текстурной сцены (т.е. вызов функции повлияет, но
+    внутренняя установка значения false не повлияет).</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта настройка будет перекрывать все повторы текстурных стадий, установленные для <span class="notranslate">шейдеров</span> при использовании функции <a href="gpu_set_texrepeat_ext.htm"><tt>gpu_set_texrepeat_ext()</tt></a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gpu_set_texrepeat(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>включить</td>
+        <td>Включить или отключить фильтрацию текстур<tt>(true</tt> / <tt>false</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if gpu_get_texrepeat()<br> {
+    <br> gpu_set_texrepeat(false);
+    <br> }
+    <br> else
+    <br> {
+    <br> gpu_set_texrepeat(true);
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет, включено или выключено повторение текстуры, и переключает его соответствующим образом.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="GPU_Control.htm">Управление графическим процессором</a></div>
+        <div style="float:right">Далее: <a href="gpu_set_texrepeat_ext.htm">gpu_set_texrepeat_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_texrepeat
+-->
+  <!-- TAGS
+gpu_set_texrepeat
+-->
+</body>
+</html>

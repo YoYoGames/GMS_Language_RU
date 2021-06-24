@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>путь_закрыт</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_set_closed" />
+  <meta name="rh-index-keywords" content="path_set_closed" />
+  <meta name="search-keywords" content="path_set_closed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>путь_закрыт</h1>
+  <p>Эта функция может быть использована для обозначения заданного пути как открытого (false) или закрытого (true). У замкнутого пути начальная точка соединена с конечной точкой, образуя петлю, а у открытого пути начало и конец не связаны между собой. <strong>Эта функция изменяет фактический актив пути</strong>,
+    Если это не то, что вам нужно, используйте функцию <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> для создания копии пути, а затем вызовите эту функцию на дублированном активе (не забудьте вызвать <span class="inline"><a href="path_delete.htm">path_delete()</a></span> на активе, когда он больше не нужен).</p>
+  <p> </p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">path_set_closed(index, closed);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс пути, который нужно изменить.</td>
+      </tr>
+      <tr>
+        <td>закрытый</td>
+        <td>Закрыт ли путь (true) или нет (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">path_set_closed(pth_Patrol, true);</p>
+  <p>Это установит заданный путь как замкнутый.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Path_Manipulation.htm">Манипуляция путями</a></div>
+        <div style="float:right">Далее: <a href="path_set_kind.htm">path_set_kind</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_set_closed
+-->
+  <!-- TAGS
+path_set_closed
+-->
+</body>
+</html>

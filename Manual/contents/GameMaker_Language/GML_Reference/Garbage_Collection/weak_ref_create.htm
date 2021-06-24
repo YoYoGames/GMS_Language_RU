@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>weak_ref_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for weak_ref_create" />
+  <meta name="rh-index-keywords" content="weak_ref_create" />
+  <meta name="search-keywords" content="weak_ref_create,weak references" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>weak_ref_create</h1>
+  <p>С помощью этой функции вы можете создать <a class="glossterm" data-glossterm="слабая ссылка" href="#">слабую ссылку</a> на структуру, которая затем может быть использована для проверки того, жива ли эта структура (ссылка на нее) или нет в игре. Вы предоставляете
+    ссылку на структуру, которую вы хотите отследить, а функция вернет другую структуру, которая является слабой ссылкой на эту структуру. Обратите внимание, что вы можете проверить, является ли ссылка &quot;сильной&quot; или &quot;слабой&quot;, используя функцию <span class="inline"><a href="../Variable_Functions/instanceof.htm">instanceof()</a></span>,
+    так как сильная ссылка вернет либо &quot;<span class="inline">struct</span>&quot; или имя функции-конструктора, создавшей структуру, либо &quot;<span class="inline">weakref</span>&quot;, если это слабая ссылка. Также обратите внимание, что
+    структура со слабой ссылкой будет иметь переменную &quot;<span class="inline">ref</span>&quot;, к которой можно обратиться, чтобы получить строковую ссылку на данную структуру, если только она не была собрана, в этом случае она вернет <span class="inline">undefined</span>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">weak_ref_create(struct_to_track);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>struct_to_track</td>
+        <td>Структура, для которой вы хотите создать слабую ссылку</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Структура</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">inventory_ref = weak_ref_create(inventory);</p>
+  <p>Приведенный выше код создает слабую ссылку на struct и сохраняет ее в переменной экземпляра для последующего использования.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Garbage_Collection.htm">Сбор мусора</a></div>
+        <div style="float:right">Далее: <a href="weak_ref_alive.htm">weak_ref_alive</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+weak_ref_create
+-->
+  <!-- TAGS
+weak_ref_create
+-->
+
+</body></html>

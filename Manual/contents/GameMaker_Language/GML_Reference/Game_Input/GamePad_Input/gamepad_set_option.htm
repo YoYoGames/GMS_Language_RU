@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_set_option</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_set_option" />
+  <meta name="rh-index-keywords" content="gamepad_set_option" />
+  <meta name="search-keywords" content="gamepad_set_option" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_set_option</h1>
+  <p>Эта функция может быть использована для установки любой из доступных опций геймпада. Вы указываете &quot;слот&quot; геймпада для установки опции, а также строку опции, которую нужно установить, и значение, которое нужно использовать. Доступная строка опций зависит от платформы, на которой выполняется проект.
+    на которой выполняется проект, как указано ниже:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Вариант</th>
+        <th>Платформа</th>
+        <th>Описание</th>
+        <th>Значение</th>
+      </tr>
+      <tr>
+        <td>&quot;allow_rotation&quot;</td>
+        <td><span class="notranslate">tvOS</span></td>
+        <td>Установите, будет ли пульт Siri Remote заблокирован на вращение (т.е. может использоваться только вертикально) или нет. При разблокировке (значение <tt>true</tt>) вращение пульта изменит ввод, например, поворот на 90º влево заставит &quot;правую&quot;
+          сторона сенсорной панели вернется &quot;вверх&quot;, и т.д... таким образом, весь ввод будет относиться к ориентации устройства. При блокировке (значение <tt>false</tt>) ввод не будет изменяться относительно положения контроллера
+          и всегда будет обрабатываться так, как если бы контроллер находился в вертикальном положении.</td>
+        <td>Булево</td>
+      </tr>
+      <tr>
+        <td>&quot;dpad_absolute&quot;</td>
+        <td><span class="notranslate">tvOS</span></td>
+        <td>Устанавливает, принимает ли сенсорная панель Siri Remote абсолютный или относительный ввод. В абсолютном режиме (значение <tt>true</tt>) центром сенсорной панели считается позиция (0,0) - т. е. место, где аналоговый стик находится в состоянии покоя или где находится центр
+          и движение вокруг этого положения будет генерировать ввод. Если установлено относительное значение (значение <tt>false</tt> ), то позиция (0,0) будет рассматриваться как место, где было сделано первоначальное касание пэда, и все вводимые данные будут генерироваться из этой позиции, а не из позиции
+          будут генерироваться из этой позиции, а не из центра пэда.</td>
+        <td>Булево</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gamepad_set_option(device, option_name, value);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>устройство</td>
+        <td>Какой &quot;слот&quot; устройства геймпада установить.</td>
+      </tr>
+      <tr>
+        <td>имя_опции</td>
+        <td>Имя опции, которую нужно установить (строка, см. таблицу выше)</td>
+      </tr>
+      <tr>
+        <td>значение</td>
+        <td>Значение для установки опции (может быть булевым, вещественным, целочисленным или строковым - см. таблицу выше).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">for(var i = 0; i &lt; 12; ++i;)<br> {
+    <br> if gamepad_is_connected(i) &amp;&amp; gamepad_get_description(i) == &quot; tvOS Siri<span class="notranslate">Remote&quot;</span><br> {
+    <br> если gamepad_get_option(i, &quot;allow_rotation&quot;) == false<br> {
+    <br> gamepad_set_option(i, &quot;allow_rotation&quot;, true);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код перебирает все слоты геймпада и проверяет наличие &quot;Siri Remote&quot; на <span class="notranslate">платформе</span> tvOS <span class="notranslate">.</span> Если таковой обнаружен, он устанавливает пульт ДУ для разрешения вращения ввода.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Gamepad_Input.htm">Вход геймпада</a></div>
+        <div style="float:right">Далее: <a href="gamepad_axis_count.htm"> gamepad_axis_count </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_set_option
+-->
+  <!-- TAGS
+gamepad_set_option
+-->
+
+</body></html>

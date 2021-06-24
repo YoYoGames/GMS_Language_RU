@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>физика_применить_крутящий_момент</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_apply_torque" />
+  <meta name="rh-index-keywords" content="physics_apply_torque" />
+  <meta name="search-keywords" content="physics_apply_torque" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>физика_применить_крутящий_момент</h1>
+  <p>Когда мы говорим о крутящем моменте, мы обычно имеем в виду тенденцию силы или импульса вращать объект вокруг его центра масс, но в <span class="notranslate">GameMaker Studio 2</span> вы также можете самостоятельно прикладывать крутящий момент к объекту, заставляя его вращаться в заданном направлении.
+    в заданном направлении. Сколько крутящего момента вы приложите, чтобы получить желаемое вращение, зависит от размера и плотности крепления, которое вы назначаете своему экземпляру, поскольку оба эти свойства определяют его массу, которая определяет инерцию, влияющую на крутящий момент!
+    крутящий момент! Общее правило гласит: если экземпляр обладает большой инерцией, то вам потребуется большой крутящий момент, чтобы заставить его начать вращаться. Следует также отметить, что другие факторы, такие как гравитация и столкновения, также могут влиять на крутящий момент экземпляра.
+    Вот изображение для пояснения:</p>
+  <p><img alt="Appply physics torque illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_torque_image.png">Как видите, величина крутящего момента, необходимого для вращения объекта, зависит от
+    массы и инерции, которыми он обладает. Все это <span class="notranslate">GameMaker Studio 2</span> рассчитывает за вас, основываясь на размере и плотности крепления, которое назначается экземпляру при его создании. Также обратите внимание, что для вращения против часовой стрелки значение
+    должно быть отрицательным.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_apply_torque(torque)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>крутящий момент</td>
+        <td>Крутящий момент (в Ньютон-метрах), который необходимо приложить</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if keyboard_check(vk_left)<br> {<br> physics_apply_torque(-100);<br> }</p>
+  <p>Приведенный выше код будет вращать экземпляр против часовой стрелки (влево) с моментом 100 Нм при нажатии клавиши со стрелкой влево.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Forces.htm">Силы</a></div>
+        <div style="float:right">Далее: physics_apply_angular_impulse</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_apply_torque
+-->
+  <!-- TAGS
+physics_apply_torque
+-->
+</body>
+</html>

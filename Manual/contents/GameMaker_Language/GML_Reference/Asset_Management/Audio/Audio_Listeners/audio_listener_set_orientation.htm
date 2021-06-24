@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_listener_set_orientation</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_listener_set_orientation" />
+  <meta name="rh-index-keywords" content="audio_listener_set_orientation" />
+  <meta name="search-keywords" content="audio_listener_set_orientation" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_listener_set_orientation</h1>
+  <p>С помощью этой функции вы можете изменить ориентацию данного <i>слушателя</i> в трехмерном аудиопространстве. По умолчанию индекс слушателя равен 0, но вы можете использовать функцию <a href="audio_get_listener_info.htm"><tt>audio_get_listener_info()</tt></a> для
+    получить различные индексы, доступные для целевой платформы.</p>
+  <p>Вектор <b>взгляда</b> и вектор <b>вверх</b> основываются на значениях, которые определяются из заданных относительных положений x, y и z, и по умолчанию имеют значения (0, 0, -1) для вектора взгляда и (0, 1, 0)
+    для вектора вверх, как показано на рисунке ниже:</p>
+  <p><img alt="Listener Orientation Diagram" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Orientation_Base.png" /></p>
+  <p>Изменение заданной ориентации слушателя с помощью этой функции изменит то, как звуки, создаваемые звуковыми излучателями, расположенными вокруг игровой комнаты, будут восприниматься игроком вашей игры. В приведенном ниже примере звуки, создаваемые излучателем, когда слушатель находится в положении
+    по умолчанию, будут казаться исходящими снизу и справа от слушателя, но при новом положении и ориентации слушателя они будут восприниматься как исходящие <i>сверху</i> и справа.</p>
+  <p><img alt="Listener Orientation Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Orientation_Example.png" /></p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_listener_set_orientation(index, lookat_x, lookat_y, lookat_z, up_x, up_y, up_z);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Слушатель для установки ориентации.</td>
+      </tr>
+      <tr>
+        <td>lookat_x</td>
+        <td>Вектор вида x (по умолчанию 0).</td>
+      </tr>
+      <tr>
+        <td>lookat_y</td>
+        <td>Вектор вида y (по умолчанию 0).</td>
+      </tr>
+      <tr>
+        <td>lookat_z</td>
+        <td>Вектор вида z (по умолчанию -1).</td>
+      </tr>
+      <tr>
+        <td>up_x</td>
+        <td>Вектор x вверх (по умолчанию 0).</td>
+      </tr>
+      <tr>
+        <td>up_y</td>
+        <td>Вектор y вверх (по умолчанию 1).</td>
+      </tr>
+      <tr>
+        <td>up_z</td>
+        <td>Вектор z вверх (по умолчанию 0).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _m = camera_get_view_mat(view_camera[0]);<br> audio_listener_set_position(global.Player_Listener, _m[0], _m[1], _m[2]);<br> audio_listener_set_orientation(info[? &quot;index&quot;], _m[3], _m[4], _m[5], _m[6], _m[7], _m[8]);</p>
+  <p>Приведенный выше код извлекает матрицу вида для вида камеры [0], а затем использует ее для установки положения и ориентации аудиослушателя с идентификатором, хранящимся в глобальной переменной &quot;Player_Listener&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio_Listeners.htm">Слушатели аудио</a></div>
+        <div style="float:right">Далее: <a href="audio_get_listener_count.htm">audio_get_listener_count</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_listener_set_orientation
+-->
+  <!-- TAGS
+audio_listener_set_orientation
+-->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Расширения для iOS</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how iOS extensions work" />
+  <meta name="rh-index-keywords" content="Extensions - Creating iOS / tvOS Extensions" />
+  <meta name="search-keywords" content="iOS Extensions,iOS, tvOS Extensions, tvOS" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Расширения для<span class="notranslate">iOS</span> / <span class="notranslate">tvOS</span> </h1>
+  <p>Чтобы создать расширение для <span class="notranslate">iOS</span> или <span class="notranslate">tvOS</span>, необходимо сделать это в два этапа. Первая часть - это добавление самого расширения вместе с необходимыми файлами и т.д., а вторая - создание функций и макросов/констант, которые требуются расширению.
+    Функции и константы добавляются с помощью <strong>файлов-заместителей </strong>, чтобы сгруппировать их вместе, поэтому вы добавляете файл-заместитель, а затем определяете функции и макросы, как описано в данном разделе <a href="Creating_An_Extension.htm">.</a>
+    Чтобы добавить остальные файлы, вам нужно сначала поставить галочку в поле <em><span class="notranslate">iOS</span> </em>и/или <em><span class="notranslate">tvOS</span> </em>в разделе " <strong>Дополнительные возможности"</strong> редактора, чтобы открыть соответствующее окно <strong>свойств расширения</strong> (на рисунке ниже показано окно свойств iOS, на рисунке ниже показано окно свойств iOS.
+    на рисунке ниже показано окно свойств для <span class="notranslate">iOS</span>, но окно для <span class="notranslate">tvOS</span> точно такое же):</p>
+  <p class="dropspot"><img alt="iOS Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_iOS.png" /></p>
+  <p>Здесь вы указываете следующие данные:</p>
+  <ul class="colour">
+    <li class="dropspot"><strong>Флаги компоновщика / флаги компилятора</strong>: Некоторые фреймворки и сторонние SDK требуют для работы добавления дополнительных флагов компоновщика и флагов компилятора, которые можно указать здесь (см. документацию, сопровождающую SDK или фреймворк, о котором идет речь).
+      для получения подробной информации).</li>
+    <li class="dropspot"><strong>Имя класса</strong>: Ваше расширение может иметь несколько классов, причем каждый класс будет иметь свои собственные функции и константы, поэтому вы должны дать ему имя, отражающее его назначение</li>
+    <li class="dropspot"><strong>App Delegate Class Name</strong>: Имя пользовательского класса делегата приложения. Установка этого параметра позволяет расширению переопределять/расширять основные функции приложения. Чтобы использовать эту функцию, вам нужно сделать следующее:
+      <ol>
+        <li>Убедитесь, что исходные файлы делегата имеют то же имя, что и класс делегата (например, <span class="inline">@interface MyCustomAppDelegate</span> должен быть определен в &quot; <span class="inline">MyCustomAppDelegate.h</span>&quot;).</li>
+        <li>Добавьте переменную окружения <span class="inline">${YYExtAppDelegateIncludes}</span> в верхнюю часть заголовочного файла делегата вашего приложения. Она будет заменена во время компиляции соответствующими включаемыми файлами для родительского класса делегата.</li>
+        <li>Используйте переменную окружения <span class="inline">${YYExtAppDelegateBaseClass}</span> в качестве базового класса для вашего пользовательского делегата приложения. Она будет заменена во время компиляции на правильный базовый класс делегата.<br>
+          <br> Чтобы ваше расширение работало с другими расширениями, использующими пользовательские делегаты приложений, вы должны вызывать методы базового класса из переопределенных методов вашего дочернего класса. Перед вызовом метода суперкласса необходимо убедиться, что он
+          реализован в иерархии классов, чтобы избежать ошибок, например:</li>
+      </ol>
+     <p class="code">- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions<br> {
+        <br> // Проверяем, реализуют ли суперклассы этот метод и вызываем его<br> if([[self superclass] instancesRespondToSelector:@selector(application:willFinishLaunchingWithOptions:)])<br> return [super application:application willFinishLaunchingWithOptions:launchOptions];<br> else<br> return TRUE;<br> }
+     </p>
+    </li>
+    <li class="dropspot"><strong>Системные фреймворки</strong>: Здесь вы можете добавить любые системные <a class="glossterm" data-glossterm="структура" href="#">фреймворки</a> <span class="notranslate">iOS</span> в ваше расширение. Они добавляются нажатием на кнопку <img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18">, которая добавит фреймворк, который затем можно редактировать, медленно нажимая на кнопку <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">. Вы можете узнать больше о доступных системных фреймворках <a href="https://developer.apple.com/documentation/">здесь</a>. Чтобы удалить системный фреймворк, просто выберите его и нажмите кнопку <img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png">.</li>
+    <li class="dropspot"><strong>Inject to Info.plist</strong>: Здесь вы можете добавить любой код для инъекции в файл <span class="inline">info.plist</span>.</li>
+    <li class="dropspot"><strong>Сторонние фреймворки и комплекты</strong>: Этот раздел предназначен для добавления сторонних фреймворков и SDK. Как и в случае с системными фреймворками, для их добавления нажмите кнопку <img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18">, для редактирования нажмите <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">, а для удаления - выберите их и нажмите <img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png"> (см. документацию, прилагаемую к выбранному вами SDK, для получения информации о названии фреймворка). Если пакет фреймворка/SDK находится на вашем компьютере Mac, то вам нужно добавить путь в &quot;Enter <em>framework path on Mac&quot;</em>
+      и нажмите кнопку <img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18">, а если SDK или исходный код находятся на вашем ПК, используйте кнопку <em>Add Source</em>.</li>
+    <li class="dropspot"><strong><span class="notranslate">CocoaPods</span></strong>: Здесь вы можете указать имя любого <span class="notranslate">CocoaPods</span>, который расширение будет использовать вместо (или как) любых SDK и фреймворков, которые были добавлены. Обратите внимание, что <a href="../../Settings/Game_Options/iOS.htm">для <span class="notranslate">iOS</span></a> и <a href="../../Settings/Game_Options/tvOS.htm"> <span class="notranslate">tvOS</span></a> существует опция Game Option для добавления Podfile в <span class="notranslate">GameMaker Studio2</span>, которая необходима, если вы добавляете <span class="notranslate">CocoaPods</span> в этом разделе.</li>
+    <li class="dropspot"><strong>Зависимости<span class="notranslate">CocoaPods</span></strong>: В этом разделе вы можете перечислить различные зависимости, необходимые для <span class="notranslate">CocoaPods</span>, добавленных в предыдущем разделе. Обратите внимание, что <a href="../../Settings/Game_Options/iOS.htm">для <span class="notranslate">iOS</span></a> и <a href="../../Settings/Game_Options/tvOS.htm"> <span class="notranslate">tvOS</span></a> существует опция Game Option для добавления Podfile.lock в <span class="notranslate">GameMaker Studio2</span>, которая необходима, если вы добавляете зависимости CocoaPod в этом разделе.</li>
+  </ul>
+  <p>Если в ваше расширение были добавлены системные или сторонние фреймворки, они теперь будут перечислены в окне <strong>свойств расширения </strong>, и для каждого из них будет установлен флажок. Если вы отметите флажок, вы включите слабую связь
+    что полезно, если вам нужно &quot;заменить&quot; какой-либо символ из включенной библиотеки своим собственным значением, но следует отметить, что это замедлит процесс линковки.</p>
+  <p>Дополнительную информацию о создании расширений для <span class="notranslate">iOS</span> и <span class="notranslate">tvOS</span> можно найти в <a href="https://help.yoyogames.com/hc/en-us/articles/360012504971-iOS-and-Android-Creating-A-Simple-Extension">Базе знаний<span class="notranslate">YoYo Games</span></a>, а информацию об использовании <span class="notranslate">CocoaPods</span>
+    в расширениях, пожалуйста, смотрите следующее руководство:</p>
+  <ul class="colour">
+    <li><a href="https://help.yoyogames.com/hc/en-us/articles/360008958858"><span class="notranslate">iOS</span> и <span class="notranslate">tvOS</span>: использование какао-подборок</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Extensions.htm">Редактор расширений</a></div>
+        <div style="float:right">Следующее: <a href="Creating_An_Extension.htm">Создание расширения</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">iOS</span> Extensions
+<span class="notranslate">tvOS</span> Extensions
+-->
+  <!-- TAGS
+extensions_ios
+-->
+
+</body></html>

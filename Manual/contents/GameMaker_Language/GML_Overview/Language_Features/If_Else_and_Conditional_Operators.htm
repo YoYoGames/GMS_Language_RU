@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>if / else и условные операторы</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the If / Else and Conditional Operators" />
+  <meta name="rh-index-keywords" content="?,if,else,ternary operator,then" />
+  <meta name="search-keywords" content="if,else,then,?,ternary,conditional" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>if / else и условные операторы</h1>
+  <p>Фундаментальной особенностью большинства языков программирования является возможность задать простой вопрос, который дает булевский ответ <tt>true</tt> или <tt>false</tt>, и в <span class="notranslate">GML</span> это достигается с помощью ключевого слова <tt>if</tt>. Простое условие <tt>if</tt> принимает
+   <a class="glossterm" data-glossterm="выражение" href="#">выражение</a> и выполняет один или несколько<span class="glossextra">операторов</span>, если выражение разрешается как <span class="inline">true</span>,
+    со следующей базовой формой:</p>
+  <p class="code">if (&lt;выражение&gt;)<br> {<br> &lt;выражение&gt;;<br> &lt;выражение&gt;;<br>...<br> }</p>
+  <p><br> Здесь вы говорите, что если выражение разрешается как <tt>true</tt>, то сделайте что-то. Обратите внимание, что часть условия &quot;then&quot; является неявной, <em>но</em> есть ключевое слово <span class="inline">then</span>, которое может быть использовано (хотя
+    его почти всегда опускают), поэтому вы можете создавать подобные условия:</p>
+  <p class="code">if (&lt;выражение&gt;) then<br> {<br> &lt;выражение&gt;;<br> &lt;выражение&gt;;<br>...<br> }</p>
+  <p>Помимо <span class="inline">if</span> и <span class="inline">then</span>, вы также можете использовать ключевое слово <tt>else</tt>, чтобы сделать что-то еще, если проверяемое выражение оценивается как <tt>false</tt>. Такая форма &quot; if...<tt>then... else... &quot;</tt>
+    выглядит следующим образом:</p>
+  <p class="code">if (&lt;выражение&gt;)<br> {<br> &lt;выражение&gt;;<br> } <br> else
+    <br> {<br> &lt;выражение&gt;;<br> }</p>
+  <p>В этом случае выражение будет оценено, и если оно оценивается как <span class="inline">false</span>, то выполняется оператор после <span class="inline">else</span>, иначе выполняется начальный оператор (он истинен <tt>)</tt>.</p>
+  <p class="note">ПРИМЕЧАНИЕ: В языке <span class="notranslate">GameMaker</span> любое значение, которое меньше или равно 0, будет оцениваться как <span class="inline">false</span>, а любое значение, которое больше 0, будет оцениваться как <span class="inline">true</span>.</p>
+  <p>Хорошей привычкой является всегда ставить скобки вокруг выражений и фигурные скобки {} вокруг утверждений в <tt>if</tt> (иначе будет выполнено только первое утверждение), и занимать новую строку в блоке для каждого утверждения, например:</p>
+  <p class="code">// Это будет работать<br> if &lt;выражение&gt; &lt;запрос&gt;;<br>
+    <br> // Пример:<br> if test == true переменная = false else переменная = true;</p>
+  <p class="code">// Это лучше<br> if (&lt;выражение&gt;)<br> {
+    <br> &lt;выражение&gt;
+    <br> } <br> else
+    <br> {
+    <br> &lt;выражение&gt;
+    <br> }
+    <br>
+    <br> // Пример<br> if (test == true)<br> {<br> variable = false;<br> } <br> else
+    <br> {<br> переменная = true;<br> }</p>
+  <p>Обратите внимание, что хотя этот вариант немного более многословен, он означает, что в коде нет двусмысленности и что он всегда будет правильно компилироваться на всех платформах. Однако в исходном примере это может быть не так, как объясняется в разделе на странице " <a href="../Expressions_And_Operators.htm">Выражения и операторы</a> ".</p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: При сравнении двух значений для проверки их равенства следует использовать оператор &quot;<span class="inline">==</span>&quot;, а для присвоения - только оператор &quot;<span class="inline">=</span>&quot;. В настоящее время <span class="notranslate">GameMaker</span> 
+    рассматривать их как взаимозаменяемые, но это может измениться в будущем, и ваш код станет чище и нагляднее при использовании правильных операторов для сравнения и присваивания.</p>
+  <p>Чтобы привести пример использования <span class="inline">if</span>, рассмотрим следующий код, который будет перемещать экземпляр в направлении позиции <tt>x=200</tt> в комнате, когда он помещен в событие Step:</p>
+  <p class="code">если (x &lt; 200)<br> {
+    <br> x += 4;<br> }
+    <br> else
+    <br> {
+    <br> x = 200;<br> }
+  </p>
+  <p>Обратите внимание, что вы также можете выполнять <i>составные</i> проверки в <span class="inline">if</span>, т.е. проверять различные значения или выражения в одном операторе. В этих проверках могут использоваться различные <a href="../Expressions_And_Operators.htm">комбинированные операторы</a> (<tt>&amp;&amp; and, ||</tt> or <tt> и</tt> ^^ xor). Когда вы это сделаете, <span class="notranslate">GameMaker Studio 2</span> будет оценивать каждое из них по очереди, и в зависимости от того, как они оценены, остальные могут быть пропущены. Например:</p>
+  <p class="code">if (keyboard_check_pressed(vk_enter)) &amp;&amp; (instance_exists(obj_Player))<br> {
+    <br> go = false;<br> alarm[0] = room_speed;<br> }
+  </p>
+  <p>Здесь мы проверяем с помощью оператора <tt>&amp;&amp; &quot;и&quot;</tt>, поэтому он проверяет, истинны ли оба условия <em>в </em>if, <tt>и</tt> если первое из <tt>них</tt> ложно, то второе даже не будет
+    даже не проверяется. Это называется &quot;замыканием&quot; кода, поэтому при комбинировании выражений для проверки следует убедиться, что самым дешевым по производительности всегда является первое, чтобы избежать оценки более дорогих выражений, если первое из них
+    оценивается в <span class="inline">false</span>. Аналогично, если условие может быть оценено как <span class="inline">true</span> или <span class="inline">false</span> во время компиляции, то все условие будет удалено из кода,
+    Например, у вас есть <a href="../Variables/Constants.htm">макрос</a> <span class="inline">DEBUG_ON </span>для отладки, и он может быть либо <span class="inline">true</span>, либо <span class="inline">false</span> - если он установлен в <span class="inline">false</span>, то следующий блок кода будет удален из игры при компиляции:</p>
+  <p class="code">if DEBUG_ON == true<br> {<br> show_debug_message(&quot;Instances = &quot; + string(instance_count));<br> }</p>
+  <p>Вы также можете выполнять <b>условные операции</b> (также известные как <b>тернарные</b> операции), которые по сути являются &quot;коротким&quot; способом выполнения базового if. Они имеют следующий синтаксис:</p>
+  <p class="code">переменная = &lt;условие&gt; ? &lt;условие1 (если истинно)&gt; : <i>&lt;условие2</i>(если ложно)&gt;</p>
+  <p>Условный оператор &quot;<span class="inline">?</span>&quot; вернет одно из двух заданных значений в зависимости от того, оценивается ли выражение условия в true или <tt>false,</tt> например:</p>
+  <p class="code">var temp_x = (x &lt; (room_width / 2)) ? 32: (room_width - 32);</p>
+  <p>Приведенный выше код проверит значение &quot;x&quot; на значение половины ширины комнаты, и если оно меньше, то установит значение &quot;<span class="inline">temp_x</span>&quot; равным 32, иначе &quot;<span class="inline">temp_x</span>&quot; будет равна ширине комнаты
+    ширина - 32. Вот еще несколько примеров использования:</p>
+  <p class="code">draw_text(x, y, &quot;Плата составляет &quot; + (global.Member ? &quot;$2.00&quot; : &quot;$10.00&quot;));<br> path_start(((global.level &gt; 10) ? path_hard : path_easy;), 2, path_action_reverse, true);<br> (--hp &lt;= 0) ? instance_destroy() : score +=
+    10;</p>
+  <p>Стоит также отметить, что вы можете вложить условные операции, но в этом случае каждая операция должна быть заключена в скобки, например:</p>
+  <p class="code">var c = a ? &quot;foo&quot; : (b ? &quot;bar&quot; : &quot;whee&quot;); // Правильный<br> var c = a ? &quot;foo&quot; : b ? &quot;bar&quot; : &quot;whee&quot;; // Вызовет ошибку</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Language_Features.htm">Особенности языка</a></div>
+        <div style="float:right">Далее: <a href="repeat.htm">повторить</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+if
+else
+then
+ternary operators
+conditional operators
+-->
+  <!-- TAGS
+if
+else
+then
+-->
+
+</body></html>

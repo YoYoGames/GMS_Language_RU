@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_get_nineslice</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet Matharoo" />
+  <meta name="topic-comment" content="Page explaining the function sprite_get_nineslice" />
+  <meta name="rh-index-keywords" content="sprite_get_nineslice" />
+  <meta name="search-keywords" content="sprite_get_nineslice" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_get_nineslice</h1>
+  <p>Эта функция возвращает <a href="../../../../GML_Overview/Structs.htm" title="Structs">структуру</a> Nine Slice для спрайта, содержащую все его свойства Nine Slice, установленные в <a href="../../../../../The_Asset_Editors/Sprites.htm" title="The Sprite Editor">редакторе спрайтов</a> или с помощью функции <a href="../Sprite_Manipulation/sprite_set_nineslice.htm" title="sprite_set_ninceslice">sprite_set_nineslice()</a>. Содержимое этой структуры подробно описано на <a href="../Nine_Slice_Struct.htm" title="The Nine Slice Struct">этой странице</a>.</p>
+  <p>Если предоставленный спрайт не имеет назначенной ему структуры Nine Slice, для него будет создана и возвращена новая структура со свойствами Nine Slice по умолчанию.</p>
+  <p>Изменение любых значений в этой структуре изменит свойства Nine Slice исходного спрайта, <strong>что </strong>повлияет на все последующие вызовы рисования, сделанные с этим спрайтом.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">sprite_get_nineslice(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс спрайта, из которого будет извлечена структура Nine Slice.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Struct (или -1, если спрайт не существует)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _box_nineslice = <strong>sprite_get_nineslice</strong>(spr_box_0);<br>
+    <br> _box_nineslice.enabled = true;<br> _box_nineslice.left = 10;<br> _box_nineslice.right = 10;<br> _box_nineslice.top = 10;<br> _box_nineslice.bottom = 10;</p>
+  <p>Приведенный выше код извлекает структуру Nine Slice struct из спрайта, включает для него Nine Slicing и устанавливает смещения направляющих.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Sprite_Manipulation/Sprite_Manipulation.htm">Манипуляция спрайтом</a></div>
+        <div style="float:right">Далее: <a href="sprite_get_tpe.htm">sprite_get_tpe</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_nineslice
+-->
+  <!-- TAGS
+sprite_get_nineslice
+-->
+</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>слой_спрайта_смесь</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_blend" />
+  <meta name="rh-index-keywords" content="layer_sprite_blend" />
+  <meta name="search-keywords" content="layer_sprite_blend" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>слой_спрайта_смесь</h1>
+  <p>Эта функция управляет смешиванием (или &quot;тонированием&quot;) спрайта, и значение по умолчанию равно -1 (что представляет константу c_white, <tt>которую</tt> также можно использовать). Любое другое значение (включая внутренние цветовые константы, такие как <tt>c_red</tt>,
+    или <tt>c_aqua</tt>) будет смешивать указанный цвет с исходным спрайтом. Вы указываете ID элемента спрайта (который вы получаете при создании элемента спрайта с помощью команды <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a> или при использовании
+    функция <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>), а затем задаете цвет смешивания. Ниже показан пример спрайта, на который были наложены разные цвета:</p>
+  <p><img alt="Colour blended sprites example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/blend_image.png">Обратите внимание, что на платформе <b>HTML5</b> следует ограничить смешивание (если не используется WebGL),
+    поскольку каждый смешиваемый спрайт должен кэшироваться отдельно, и поэтому большое количество смешиваемых спрайтов может отрицательно сказаться на производительности (вы также можете установить размер кэша с помощью функции <a href="../../Sprites/Sprite_Manipulation/sprite_set_cache_size.htm"><tt>sprite_set_cache_size()</tt></a>).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_sprite_blend(sprite_element_id, blend);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>sprite_element_id</td>
+        <td>Уникальное значение ID элемента спрайта для изменения</td>
+      </tr>
+      <tr>
+        <td>смесь</td>
+        <td>Цвет для смешивания со спрайтом (по умолчанию <tt>c_white</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Asset_sky&quot;);<br> var spr_id = layer_sprite_get_id(lay_id, &quot;Clouds&quot;);<br> layer_sprite_blend(spr_id, c_gray);</p>
+  <p>Приведенный выше код получает значение ID спрайта под названием &quot;Clouds&quot;, назначенного слою &quot;Asset_sky&quot;, и затем окрашивает его в определенный цвет.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Layers.htm">Слои спрайта</a></div>
+        <div style="float:right">Далее: <a href="layer_sprite_alpha.htm">layer_sprite_alpha</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_blend
+-->
+  <!-- TAGS
+layer_sprite_blend
+-->
+</body>
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>текущий_недельный день</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for current_weekday" />
+  <meta name="rh-index-keywords" content="current_weekday" />
+  <meta name="search-keywords" content="current_weekday" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>текущий_недельный день</h1>
+  <p>Эта переменная, доступная <b>только для чтения</b>, возвращает день недели в виде значения, где воскресенье - 0, а суббота - 6.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">текущий_недельный день;</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var day;<br> switch(current_weekday)
+    <br> {
+    <br> case 0: day = &quot;Sunday&quot;; break;<br> case 1: day = &quot;Monday&quot;; break;<br> case 2: day = &quot;Tuesday&quot;; break;<br> case 3: day = &quot;Wednesday&quot;; break;<br> case 4: day = &quot;Thursday&quot;;
+    break;<br> case 5: day = &quot;Friday&quot;; break;<br> case 6: day = &quot;Saturday&quot;; break;<br> }
+    <br> draw_text(32, 32, &quot;Сегодня &quot; + день +&quot;.&quot;);</p>
+  <p>Приведенный выше код использует значение <tt>current_weekday</tt> для установки переменной с правильным днем в тексте, а затем рисует его для отображения пользователю.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Date_And_Time.htm">Дата и время</a></div>
+        <div style="float:right">Далее: <a href="current_month.htm">текущий_месяц</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+current_weekday
+-->
+  <!-- TAGS
+current_weekday
+-->
+
+</body></html>

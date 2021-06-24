@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>твердый</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable solid" />
+  <meta name="rh-index-keywords" content="solid" />
+  <meta name="search-keywords" content="solid" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>твердый</h1>
+  <p>Экземпляр может быть помечен как <i>твердый</i> через свойства объекта в <a href="../../../../../The_Asset_Editors/Objects.htm">редакторе объектов</a> или путем изменения значения этой встроенной переменной. Если <tt>solid</tt> имеет значение <tt>true</tt>, то,
+    при обнаружении столкновения столкнувшийся экземпляр автоматически возвращается в положение, в котором он находился на шаге, предшествующем столкновению (а затем выполняется любой код или действия в событии столкновения). Если установлено значение <tt>false</tt>, то все позиционирование
+    должно выполняться через событие столкновения.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">твердый;</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if other.solid = true<br> {
+    <br> x = xprevious;<br> y = yprevious;<br> }
+  </p>
+  <p>Приведенный выше код проверит флаг solid экземпляра &quot;другого&quot; экземпляра при столкновении и, если он установлен в true, переместит <tt>этот</tt> экземпляр в его предыдущую позицию.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Instance_Variables.htm">Переменные экземпляра</a></div>
+        <div style="float:right">Далее: <a href="persistent.htm">стойкий</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+solid
+-->
+  <!-- TAGS
+solid
+-->
+</body>
+</html>

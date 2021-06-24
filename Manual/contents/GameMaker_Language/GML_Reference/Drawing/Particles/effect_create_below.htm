@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>эффект_создания_нижнего</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for effect_create_below" />
+  <meta name="rh-index-keywords" content="effect_create_below,ef_cloud,ef_ellipse,ef_explosion,ef_firework,ef_flare,ef_rain,ef_ring,ef_smoke,ef_smokeup,ef_snow,ef_spark,ef_star" />
+  <meta name="search-keywords" content="effect_create_below,ef_cloud,ef_ellipse,ef_explosion,ef_firework,ef_flare,ef_rain,ef_ring,ef_smoke,ef_smokeup,ef_snow,ef_spark,ef_star" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>эффект_создания_нижнего</h1>
+  <p>С помощью этой функции вы можете создать простой эффект под всеми экземплярами вашей комнаты (на самом деле он создается на глубине 100000). Если эффект не является <tt>ef_rain</tt> или <tt>ef_snow</tt>, вы можете определить положение x/y для создания эффекта.
+    а размер может быть равен 0, 1 или 2, где 0 - маленький, 1 - средний и 2 - большой.</p>
+  <p>Стоит отметить, что эти эффекты можно включать и выключать, а также приостанавливать их отрисовку с помощью функций <a href="Particle_Systems/part_system_automatic_draw.htm"><tt>part_system_automatic_draw()</tt></a> и
+    <a href="Particle_Systems/part_system_automatic_update.htm"><tt>part_system_automatic_update()</tt></a> с соответствующим значением индекса системы частиц (где 0 - для эффектов ниже, а 1 - для эффектов выше).</p>
+  <p>Доступными константами для различных видов частиц являются:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Пример</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>эф_облако</td>
+        <td style="text-align: center"><img alt="cloud effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_cloud.png" /></td>
+        <td>Эффект, создающий случайные облачные частицы разного размера</td>
+      </tr>
+      <tr>
+        <td>эф_эллипс</td>
+        <td style="text-align: center"><img alt="ellipse effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_ellipse.png" /></td>
+        <td>Эффект, создающий расширяющиеся эллипсы</td>
+      </tr>
+      <tr>
+        <td>ef_explosion</td>
+        <td style="text-align: center"><img alt="explosion effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_explosion.png" /></td>
+        <td>Эффект, создающий расширяющиеся затухающие взрывы</td>
+      </tr>
+      <tr>
+        <td>эф_фейерверк</td>
+        <td style="text-align: center"><img alt="firework effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_firework.png" /></td>
+        <td>Эффект, создающий множество мелких частиц для создания взрыва фейерверка</td>
+      </tr>
+      <tr>
+        <td>эф_блик</td>
+        <td style="text-align: center"><img alt="flare effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_flare.png" /></td>
+        <td>Эффект, создающий блестящую точку, которая вспыхивает и затухает</td>
+      </tr>
+      <tr>
+        <td>дождь</td>
+        <td style="text-align: center"><img alt="rain effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_rain.png" /></td>
+        <td>Эффект, создающий частицы дождя, спускающиеся с верхней части экрана</td>
+      </tr>
+      <tr>
+        <td>эф_ринг</td>
+        <td style="text-align: center"><img alt="circle effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_ring.png" /></td>
+        <td>Эффект, создающий расширяющиеся и исчезающие круги</td>
+      </tr>
+      <tr>
+        <td>эф_дым</td>
+        <td style="text-align: center"><img alt="smoke effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_smoke.png" /></td>
+        <td>Эффект, создающий маленькие струйки дыма</td>
+      </tr>
+      <tr>
+        <td>ef_smokeup</td>
+        <td style="text-align: center"><img alt="rising smoke effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_smokeup.png" /></td>
+        <td>Эффект, создающий дымовой шлейф, поднимающийся вверх по экрану</td>
+      </tr>
+      <tr>
+        <td>эф_снег</td>
+        <td style="text-align: center"><img alt="snow effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_snow.png" /></td>
+        <td>Эффект, создающий множество снежных частиц, падающих вниз по экрану</td>
+      </tr>
+      <tr>
+        <td>эф_искра</td>
+        <td style="text-align: center"><img alt="spark effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_spark.png" /></td>
+        <td>Эффект, создающий небольшую искру</td>
+      </tr>
+      <tr>
+        <td>эф_стар</td>
+        <td style="text-align: center"><img alt="star effect example" class="icon" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/ef_star.png" /></td>
+        <td>Эффект, создающий звездные частицы</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">effect_create_below(kind, x, y, size, color);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>добрый</td>
+        <td>Вид эффекта (используйте одну из констант, перечисленных выше).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Позиционирование x эффекта, если это имеет значение.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Позиционирование эффекта по оси y, если это важно.</td>
+      </tr>
+      <tr>
+        <td>размер</td>
+        <td>Размер эффекта.</td>
+      </tr>
+      <tr>
+        <td>цвет</td>
+        <td>Цвет эффекта.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if speed &gt; 0<br> {
+    <br> effect_create_below(ef_smoke, x, y, 0, c_gray);<br> }
+  </p>
+  <p>Приведенный выше код будет создавать небольшую струйку серого дыма на каждом шаге, когда скорость экземпляра больше 0 в координатах x,y экземпляра.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Particles.htm">Частицы</a></div>
+        <div style="float:right">Далее: <a href="effect_create_above.htm">эффект_создания_выше</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+effect_create_below
+ef_cloud
+ef_ellipse
+ef_explosion
+ef_firework
+ef_flare
+ef_rain
+ef_ring
+ef_smoke
+ef_smokeup
+ef_snow
+ef_spark
+ef_star
+-->
+  <!-- TAGS
+effect_create_below
+-->
+</body>
+</html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>virtual_key_hide</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for virtual_key_hide" />
+  <meta name="rh-index-keywords" content="virtual_key_hide" />
+  <meta name="search-keywords" content="virtual_key_hide" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>virtual_key_hide</h1>
+  <p>После того, как вы создали виртуальный ключ для ваших устройств, вам может понадобиться отладка и проверка того, что он правильно расположен и работает должным образом, и для этого вы должны вызвать функцию <a href="virtual_key_show.htm"><tt>virtual_key_show()</tt></a>. Однако,
+    вам может понадобиться включать и выключать это представление, поэтому вы также можете скрыть виртуальный ключ с помощью этой функции, используя индекс виртуального ключа, который вы хотите скрыть (ранее созданный и сохраненный с помощью функции <a href="virtual_key_add.htm"><tt>virtual_key_add()</tt></a>).
+    Когда вы будете довольны, рекомендуется создать и разместить в его области свою собственную графику.</p>
+  <p> </p>
+  <h4>Синтаксис</h4>
+  <p class="code">virtual_key_hide(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс виртуального ключа, который необходимо скрыть.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if global.Debug<br> {
+    <br> virtual_key_show(global.Left);
+    <br> }
+    <br> else
+    <br> {
+    <br> virtual_key_hide(global.Left);
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет глобальную переменную &quot;global.Debug&quot; и если она истинна, то виртуальная клавиша, индексированная в переменной &quot;global.Left&quot;, будет нарисована на экране, а если ложна, то клавиша будет скрыта.</p>
+  <p><b></b></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Virtual_Keys_And_Keyboards.htm">Виртуальные клавиши и клавиатуры</a></div>
+        <div style="float:right">Далее: <a href="virtual_key_delete.htm">virtual_key_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+virtual_key_hide
+-->
+  <!-- TAGS
+virtual_key_hide
+-->
+
+</body></html>

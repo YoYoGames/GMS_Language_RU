@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>список_мест_экземпляров</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_place_list" />
+  <meta name="rh-index-keywords" content="instance_place_list" />
+  <meta name="search-keywords" content="instance_place_list" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>список_мест_экземпляров</h1>
+  <p>С помощью этой функции вы можете проверить позицию на столкновение со всеми экземплярами объекта, используя маску столкновения того экземпляра, который запускает код проверки. При использовании этой функции вы фактически просите <span class="notranslate">GameMaker Studio 2</span> переместить экземпляр
+    в новую позицию, проверить наличие столкновения, затем вернуться назад и сообщить вам, было ли обнаружено столкновение или нет. Это будет работать для точных столкновений, но только если и у экземпляра, и у экземпляров проверяемого объекта выбраны точные маски столкновений.
+    в противном случае применяются только столкновения с ограничивающей рамкой. Функция заполнит (предварительно созданный) <a href="../../Data_Structures/DS_Lists/DS_Lists.htm">список DS</a> уникальными <a href="Instance_Variables/id.htm"><tt>id</tt></a>    значениями всех экземпляров объекта, которые считаются находящимися в столкновении с вызывающим экземпляром, и у вас есть возможность упорядочить список на основе расстояния от начала координат экземпляра, выполняющего проверку, до начала координат экземпляров, найденных в столкновении
+    найденных столкнувшимися. Обратите внимание, что функция также принимает специальное ключевое слово <a href="../../../GML_Overview/Instance_Keywords.htm"><b><tt>все</tt></b></a>в этом случае будут перечислены все экземпляры, найденные в столкновении. Функция возвращает
+    количество найденных экземпляров, или 0, если не найдено ни одного.</p>
+  <p>Обратите внимание, что заданные координаты x/y будут округлены до ближайшего целого числа перед выполнением проверки, поэтому, если это <i>не</i> то, что вам нужно (или вы используете устаревший продукт <span class="notranslate">GameMaker</span> ), вам следует <tt>заполнить</tt> координаты в параметре
+    проверить:</p>
+  <p class="code">instance_place_list(floor(x), floor(y), obj_Enemy, list, true).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">instance_place_list(x, y, obj, list, ordered);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Позиция x для проверки экземпляров.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Позиция y для проверки экземпляров.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Объект для проверки экземпляров.</td>
+      </tr>
+      <tr>
+        <td>список</td>
+        <td>Список DS, используемый для хранения идентификаторов сталкивающихся экземпляров.</td>
+      </tr>
+      <tr>
+        <td>заказал</td>
+        <td>Должен ли список быть упорядочен по расстоянию<tt>(true</tt>) или нет<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Int (Количество экземпляров, с которыми произошло столкновение)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _list = ds_list_create();<br> var _num = instance_place_list(x, y, obj_Enemy, _list, false);<br> if _num &gt; 0<br> {
+    <br> for (var i = 0; i &lt; _num; ++i;)<br> {
+    <br> instance_destroy(_list[| i]);<br> }
+    <br> }
+    <br> ds_list_destroy(_list);
+  </p>
+  <p>Приведенный выше код проверит на столкновение все экземпляры, найденные в позиции вызывающего экземпляра. Они будут добавлены в список DS, который затем будет пройден по циклу для уничтожения каждого из столкнувшихся экземпляров.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Instances.htm">Инстанции</a></div>
+        <div style="float:right">Далее: <a href="instance_position.htm">instance_position</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_place_list
+-->
+  <!-- TAGS
+instance_place_list
+-->
+</body>
+</html>

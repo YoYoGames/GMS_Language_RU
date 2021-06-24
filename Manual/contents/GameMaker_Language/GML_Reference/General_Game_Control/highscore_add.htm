@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>highscore_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function highscore_add" />
+  <meta name="rh-index-keywords" content="highscore_add" />
+  <meta name="search-keywords" content="highscore_add" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>highscore_add</h1>
+  <p>С помощью этой функции вы можете добавить имя и результат во внутренний глобальный список высоких результатов. Нет необходимости проверять значение, чтобы убедиться, что оно достаточно высоко для внесения в список, поскольку <span class="notranslate">GameMaker Studio 2</span> будет сохранять только
+    те значения, которые больше, чем десятая сохраненная позиция.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">highscore_add(str, numb);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>str</td>
+        <td>Строка (имя), к которой нужно приписать оценку</td>
+      </tr>
+      <tr>
+        <td>numb</td>
+        <td>Число (счет) для добавления.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if lives = 0<br> {
+    <br> highscore_add(global.Name, score);<br> score = 0;<br> room_goto(rm_MainMenu);
+    <br> }
+  </p>
+  <p>Приведенный выше код проверит жизни и, если они равны 0, добавит текущий счет и строку, хранящуюся в глобальной переменной &quot;Name&quot;, в список высоких результатов, а затем установит счет на 0 и отправит игрока в комнату
+    проиндексированную в &quot;rm_MainMenu&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="General_Game_Control.htm">Общее управление игрой</a></div>
+        <div style="float:right">Далее: <a href="highscore_name.htm">highscore_name</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+highscore_add
+-->
+  <!-- TAGS
+highscore_add
+-->
+</body>
+</html>

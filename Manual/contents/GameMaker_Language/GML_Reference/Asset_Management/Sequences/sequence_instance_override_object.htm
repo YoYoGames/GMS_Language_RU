@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sequence_instance_override_object</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining function sequence_instance_override_object" />
+  <meta name="rh-index-keywords" content="sequence_instance_override_object" />
+  <meta name="search-keywords" content="sequence_instance_override_object" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sequence_instance_override_object</h1>
+  <p>С помощью этой функции вы можете переопределить (заменить) все экземпляры объекта, используемые в последовательности, на другой. Вы предоставляете идентификатор структуры экземпляра последовательности (полученный при создании экземпляра последовательности в помещении или с помощью одной из функций слоя помещения), а также индекс объекта (определенный в браузере активов) для объекта.
+    - см. <a href="../Rooms/Sequence_Layers/Sequence_Layers.htm">здесь</a>), а также индекс объекта (определенный в браузере активов) для объекта, который вы хотите переопределить. Наконец, вы указываете индекс объекта или идентификатор экземпляра для использования в качестве
+    объекта, который будет переопределять последовательность (при указании ID экземпляра в качестве переопределяемого объекта будет использоваться объект, на основе которого был создан экземпляр). Обратите внимание, что это может быть сделано только для экземпляров последовательности (не для объектов последовательности) и должно быть сделано
+    до начала воспроизведения последовательности, иначе она не будет работать.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">sequence_instance_override_object(sequence_instance_struct, object_id, instance_or_object_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>структура_объекта_последовательности</td>
+        <td>Структура экземпляра последовательности для изменения.</td>
+      </tr>
+      <tr>
+        <td>идентификатор объекта</td>
+        <td>Индекс объекта в последовательности для переопределения.</td>
+      </tr>
+      <tr>
+        <td>идентификатор экземпляра_или_объекта</td>
+        <td>Индекс объекта или идентификатор экземпляра, используемый для переопределения объектов последовательности.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, 0, seq_AnimatedBackground);<br> var _seq_inst = layer_sequence_get_instance(_seq); sequence_instance_override_object(_seq_inst, obj_Trees_Winter, obj_Trees_Summer);</p>
+  <p>Приведенный выше код создает новый экземпляр последовательности на данном слое, а затем изменяет его таким образом, что все экземпляры объекта &quot;obj_Trees_Winter&quot; заменяются экземплярами объекта &quot;obj_Trees_Summer&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sequences.htm">Последовательности</a></div>
+        <div style="float:right">Далее: <a href="in_sequence.htm">in_sequence</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_instance_override_object
+-->
+  <!-- TAGS
+sequence_instance_override_object
+-->
+</body>
+</html>

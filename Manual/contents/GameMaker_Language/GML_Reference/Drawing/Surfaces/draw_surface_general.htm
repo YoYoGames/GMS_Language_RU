@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>рисовать_поверхность_общая</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_surface_general" />
+  <meta name="rh-index-keywords" content="draw_surface_general" />
+  <meta name="search-keywords" content="draw_surface_general" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>рисовать_поверхность_общая</h1>
+  <p>Эта функция объединяет функцию <a href="draw_surface_ext.htm"><tt>draw_surface_ext()</tt></a> с функцией <a href="draw_surface_part.htm"><tt>draw_surface_part()</tt></a>и добавляет некоторые дополнительные параметры смешивания, чтобы каждый угол
+    чтобы каждый угол конечной части поверхности можно было смешивать с отдельным цветом.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ: </b>Градиентное смешивание недоступно для цели HTML5, если не включен WebGL.</p>
+  <p class="note"><b></b><b>ПРИМЕЧАНИЕ</b>: При работе с поверхностями существует вероятность того, что они могут перестать существовать в любой момент, поскольку хранятся в памяти текстур. Вы должны <b>ВСЕГДА</b> проверять существование поверхности с помощью функции <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    перед непосредственным обращением к ней.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_surface_general(id, left, top, w, h, x, y, xscale, yscale, rot, c1, c2, c3, c4, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Уникальное значение ID поверхности для рисования.</td>
+      </tr>
+      <tr>
+        <td>слева</td>
+        <td>Левая позиция на поверхности рисуемой детали.</td>
+      </tr>
+      <tr>
+        <td>топ</td>
+        <td>Положение вершины на поверхности рисуемой детали.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Ширина рисуемой части, слева направо.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Высота рисуемой детали сверху.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Позиция x в месте рисования поверхности.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Положение по оси y места рисования поверхности.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>Горизонтальное масштабирование для рисования поверхности.</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>Вертикальный масштаб для рисования поверхности.</td>
+      </tr>
+      <tr>
+        <td>гниение</td>
+        <td>Поворот или угол, под которым будет рисоваться поверхность.</td>
+      </tr>
+      <tr>
+        <td>c1</td>
+        <td>Цвет левого верхнего угла поверхности.</td>
+      </tr>
+      <tr>
+        <td>c2</td>
+        <td>Цвет правого верхнего угла поверхности.</td>
+      </tr>
+      <tr>
+        <td>c3</td>
+        <td>Цвет правого нижнего угла поверхности.</td>
+      </tr>
+      <tr>
+        <td>c4</td>
+        <td>Цвет левого нижнего угла поверхности.</td>
+      </tr>
+      <tr>
+        <td>альфа</td>
+        <td>Альфа-прозрачность для рисования поверхности.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_surface_general(surf, 8, 8, 32, 32, x, y, 2, 0.5, 180, c_white, c_white, c_black, c_black, 1);</p>
+  <p>Это нарисует на поверхности область размером 32x32 пикселя из 8x8 пикселей. Она будет растянута в два раза по ширине, но в два раза по высоте. Она будет непрозрачной и перевернутой. Верхняя область поверхности будет смешанной белой и, следовательно, нормальной, но
+    нижняя область будет черной, то есть поверхность будет переходить от нормали к силуэту вниз в виде плавного градиента.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Surfaces.htm">Поверхности</a></div>
+        <div style="float:right">Далее: <a href="application_surface.htm">приложение_поверхность</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_surface_general
+-->
+  <!-- TAGS
+draw_surface_general
+-->
+</body>
+</html>

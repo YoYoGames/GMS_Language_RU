@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_multiply_grid_region</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_multiply_grid_region" />
+  <meta name="rh-index-keywords" content="ds_grid_multiply_grid_region" />
+  <meta name="search-keywords" content="ds_grid_multiply_grid_region" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_multiply_grid_region</h1>
+  <p>С помощью этой функции вы можете определить область в заданной сетке DS, затем взять эти значения и перемножить их со значениями, найденными в отдельной области либо той же сетки DS, либо другой (которая была создана ранее). Исходная область
+    останется неизменным, в то время как область, с которой они были перемножены, будет хранить новые значения для каждой ячейки.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_grid_multiply_grid_region(index, source, x1, y1, x2, y2, xpos, ypos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс сетки назначения.</td>
+      </tr>
+      <tr>
+        <td>источник</td>
+        <td>Индекс исходной сетки.</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Левая позиция области ячеек для копирования из исходной сетки.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Верхняя позиция области ячеек для копирования из исходной сетки.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Правая позиция области ячеек для копирования из исходной сетки.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Нижняя позиция области ячеек для копирования из исходной сетки.</td>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>Позиция x на сетке назначения для умножения исходного региона.</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>Позиция y на сетке назначения для умножения исходного региона.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">ds_grid_multiply_grid_region(mygrid, mygrid, 0, 0, 5, 5, 0, 0)</p>
+  <p>Для этого нужно взять область ячеек от (0,0) до (5,5) сетки DS &quot;mygrid&quot; и перемножить их с ячейками из позиции (0,0) той же сетки DS.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="DS_Grids.htm">DS Grids</a></div>
+        <div style="float:right">Далее: <a href="ds_grid_value_exists.htm">ds_grid_value_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_multiply_grid_region
+-->
+  <!-- TAGS
+ds_grid_multiply_grid_region
+-->
+
+</body></html>

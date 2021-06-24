@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_multiply_region</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_multiply_region" />
+  <meta name="rh-index-keywords" content="ds_grid_multiply_region" />
+  <meta name="search-keywords" content="ds_grid_multiply_region" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_multiply_region</h1>
+  <p>С помощью этой функции можно указать область сетки, в которой нужно умножить значение каждой ячейки на заданную величину.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ:</b> Эта функция работает только с вещественными числами, а не со строками.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_grid_multiply_region(index, x1, y1, x2, y2, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс сетки.</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Положение x левой части области в сетке.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Положение y верхней части области в сетке.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Положение x правой части области в сетке.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Положение y нижней части области в сетке.</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>Значение для умножения на ячейки региона.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">ds_grid_multiply_region( mygrid, 5, 5, 10, 10, 2 )</p>
+  <p>Приведенный выше код возьмет все значения, найденные в заданной прямоугольной области сетки, и умножит каждое из них на 2.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="DS_Grids.htm">DS Grids</a></div>
+        <div style="float:right">Далее: <a href="ds_grid_multiply_grid_region.htm">ds_grid_multiply_grid_region</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_multiply_region
+-->
+  <!-- TAGS
+ds_grid_multiply_region
+-->
+
+</body></html>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_get_speed_type</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function 
+sprite_get_speed_type" />
+  <meta name="rh-index-keywords" content="sprite_get_speed_type,spritespeed_framespersecond,spritespeed_framespergameframe" />
+  <meta name="search-keywords" content="sprite_get_speed_type,spritespeed_framespersecond,spritespeed_framespergameframe" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_get_speed_type</h1>
+  <p>Эта функция может быть использована для получения типа анимации спрайта, определенного для ресурса спрайта в <a href="../../../../../The_Asset_Editors/Sprites.htm">редакторе спрайтов</a>. Возвращаемое значение будет одной из следующих констант:<br>
+  </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td><span class="inline">spritespeed_framespersecond</span></td>
+        <td>Спрайт был определен с анимацией в <i>кадрах в секунду</i>.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">spritespeed_framespergameframe</span></td>
+        <td>Спрайт был определен с анимацией в <i>кадрах на один игровой кадр</i>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Следующие два примера иллюстрируют разницу, которую это может внести при расчете скорости анимации спрайта:</p>
+  <ul class="colour">
+    <li>Если у вас есть спрайт, который рисует 1 кадр в <i>секунду</i>, а скорость изображения установлена на 0,5, он будет рисоваться со скоростью 0,5 кадра в секунду. Если частота кадров в игре составляет 60 кадров в секунду, спрайт будет рисовать 1 кадр на каждые 120 игровых кадров.</li>
+    <li>Если у вас есть спрайт, который рисует 1 кадр на <i>игровой кадр</i>, и вы установили скорость изображения на 0,5, он будет рисовать 0,5 кадра на игровой кадр. Если частота кадров в игре составляет 60 кадров в секунду, спрайт будет рисовать 30 кадров на каждые 60 игровых кадров.</li>
+  </ul>
+  <p>Узнать, какое значение скорости использовалось для анимации спрайта, можно с помощью функции <a href="sprite_get_speed.htm"><tt>sprite_get_speed()</tt></a>, а установить скорость <i>и</i> тип анимации можно с помощью функции <a href="../Sprite_Manipulation/sprite_set_speed.htm"><tt>sprite_set_speed()</tt></a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">sprite_get_speed_type(index)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс спрайта для получения типа анимации</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Постоянная (см. выше)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">s_speed = sprite_get_speed(sprite_index);<br> s_type = sprite_get_speed_type(sprite_index);</p>
+  <p>Приведенный выше код получает скорость спрайта и тип анимации спрайта и сохраняет их в переменных экземпляра для дальнейшего использования.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Information.htm">Информация о спрайте</a></div>
+        <div style="float:right">Далее: <a href="sprite_get_width.htm">sprite_get_width</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_speed_type
+spritespeed_framespergameframe
+spritespeed_framespersecond
+-->
+  <!-- TAGS
+sprite_get_speed_type
+-->
+</body>
+</html>

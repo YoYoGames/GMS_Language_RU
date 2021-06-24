@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>отладочное_событие</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for debug_event" />
+  <meta name="rh-index-keywords" content="debug_event" />
+  <meta name="search-keywords" content="debug_event" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>отладочное_событие</h1>
+  <p>Эта функция генерирует пользовательское событие отладки, которое будет отображаться в окне Graph View отладчика, когда игра выполняется в <a href="../../../Introduction/Debugging.htm">режиме отладки</a>. Если вам требуется, чтобы сообщения отображались, когда игра <i>не</i> находится в режиме отладки
+    режиме, то вам следует использовать <a href="show_debug_message.htm"><tt>show_debug_message()</tt></a>. Стоит отметить, что функция также принимает две зарезервированные строки, чтобы помочь выполнить отладку с помощью внешних приложений, таких как <span class="notranslate">Visual Studio</span>. Эти
+    строки:</p>
+  <ul class="colour">
+    <li>&quot;<tt>OutputDebugOn&quot; -</tt> Это включает вызов OutputDebugString <tt>для</tt> <b><span class="notranslate">Windows</span></b> что означает, что весь отладочный вывод - все, что вы видите в окне Output - может быть просмотрен <span class="notranslate">Visual Studio</span> или сторонними приложениями.</li>
+    <li>&quot; BreakOnError<tt>&quot; -</tt> Эта опция предназначена только для <b><span class="notranslate">сборок</span></b> Windows YYC и означает, что проекты не будут <i>отображать</i> обычный экран ошибки кода, если среда выполнения <span class="notranslate">обнаружит</span> ошибку, а просто продолжат работу и аварийно завершатся. Это позволяет вам
+      увидеть трассировку стека в <span class="notranslate">Visual Studio</span> при отладке.</li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">debug_event(string)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>строка</td>
+        <td>Пользовательская строка события отладки для использования.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4><b>Пример:</b></h4>
+  <p class="code">if !surface_exists(global.EffectsSurface)<br> {
+    <br> debug_event(&quot;Recreating Effects Surface&quot;);<br> global.EffectsSurface = surface_create(room_width, room_height);<br> }</p>
+  <p>Приведенный выше код проверяет, существует ли поверхность, и если нет, то в графическом представлении отладчика запускается событие отладки (игра должна быть запущена в режиме отладки, чтобы это было видно) и поверхность создается заново.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Debugging.htm">Отладка</a></div>
+        <div style="float:right">Далее: <a href="debug_get_callstack.htm">debug_get_callstack</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+debug_event
+-->
+  <!-- TAGS
+debug_event
+-->
+</body>
+</html>

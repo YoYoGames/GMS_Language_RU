@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_set_target_room</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_set_target_room" />
+  <meta name="rh-index-keywords" content="layer_set_target_room" />
+  <meta name="search-keywords" content="layer_set_target_room" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_set_target_room</h1>
+  <p>Вызывая эту функцию, вы сообщаете <span class="notranslate">GameMaker Studio 2</span>, что <i>все дальнейшие функции слоев должны применяться к данной комнате</i>. Таким образом можно процедурно изменять или генерировать слои и содержимое слоев в комнате, которая не является текущей.
+    текущей комнатой. Когда вы закончите добавлять слои или элементы слоев в комнату, вызовите функцию <a href="layer_reset_target_room.htm"><tt>layer_reset_target_room()</tt></a> для сброса цели помещения (или вызовите эту функцию снова с аргументом помещения
+    равным -1). Обратите внимание, что эта функция может использоваться только для <i>комнат, отличных от текущей комнаты</i>, и предназначена для того, чтобы вы могли добавлять/удалять слои и элементы слоя в комнаты, отличные от текущей комнаты.</p>
+  <p class="note"><b>ВНИМАНИЕ!</b> При нацеливании на другую комнату вы можете использовать все обычные функции слоя, <b>за исключением</b> того, что вы не можете создавать экземпляры, используя <span style="font-size:1px;"><a href="../../Instances/instance_create_layer.htm"><tt style="font-size: 14px">instance_create_layer()</tt></a></span>    или <span style="font-size:1px;"><a href="../../Instances/instance_create_depth.htm"><tt style="font-size: 14px">instance_create_depth()</tt></a></span>, также не будет доступна функция слоя <a href="layer_add_instance.htm"><span style="font-size:1px;"><tt style="font-size: 14px">layer_add_instance()</tt></span></a>    не будет доступна.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_set_target_room(room)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>номер</td>
+        <td>Помещение, предназначенное для всех дальнейших функций слоя</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">layer_set_target_room(rm_Game);<br> var l = layer_get_id(&quot;SpriteAssets&quot;);<br> repeat(50)
+    <br> {<br> var _x = random(room_get_width(rm_Game));<br> var _y = random(room_get_height(rm_Game));<br> layer_sprite_create(l, _x, _y, spr_Trees);<br> } <br> layer_reset_target_room();
+  </p>
+  <p>Приведенный выше код устанавливает целевую комнату на комнату &quot;rm_Game&quot;, а затем получает идентификатор слоя под названием &quot;SpriteAssets&quot; в этой комнате. Этот идентификатор слоя затем используется для добавления 50 случайных спрайтовых активов в слой, прежде чем цель слоя
+    сбрасывается на текущую комнату.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="General_Layer_Functions.htm">Общие функции слоя</a></div>
+        <div style="float:right">Далее: <a href="layer_get_target_room.htm">layer_get_target_room</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_set_target_room
+-->
+  <!-- TAGS
+layer_set_target_room
+-->
+</body>
+</html>

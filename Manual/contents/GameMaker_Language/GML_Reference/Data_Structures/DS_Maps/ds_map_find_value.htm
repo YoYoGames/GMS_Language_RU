@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_find_value</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_find_value" />
+  <meta name="rh-index-keywords" content="ds_map_find_value" />
+  <meta name="search-keywords" content="ds_map_find_value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_find_value</h1>
+  <p>С помощью этой функции можно получить значение по заданному ключу. Входными значениями функции являются (ранее созданная) карта DS для использования и ключ для проверки.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Если такого ключа не существует, то функция вернет <tt>неопределенное</tt> значение. Вы всегда должны проверять это с помощью <span style="font-size:1px;"><a href="../../Variable_Functions/is_undefined.htm"><tt style="font-size: 14px">is_undefined()</tt></a></span>    функция</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_map_find_value(id, key)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Идентификатор карты, которую нужно использовать.</td>
+      </tr>
+      <tr>
+        <td>ключ</td>
+        <td>Ключ к разгадке.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Вещественный, строковый или неопределенный</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">количество = ds_map_find_value(inventory, &quot;food&quot;);</p>
+  <p>Или, используя <a href="../../../GML_Overview/Accessors.htm">аксессор</a> карты &quot;?&quot;:</p>
+  <p class="code">количество = инвентарь[? &quot;еда&quot;];</p>
+  <p>Приведенный выше код получит значение ключа &quot;food&quot; и сохранит его в переменной &quot;amount&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="DS_Maps.htm">Карты DS</a></div>
+        <div style="float:right">Далее: <a href="ds_map_keys_to_array.htm">ds_map_keys_to_array</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_find_value
+-->
+  <!-- TAGS
+ds_map_find_value
+-->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>device_mouse_check_button_released</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for device_mouse_check_button_released" />
+  <meta name="rh-index-keywords" content="device_mouse_check_button_released" />
+  <meta name="search-keywords" content="device_mouse_check_button_released" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>device_mouse_check_button_released</h1>
+  <p>Эта функция возвращает <tt>true</tt> или <tt>false</tt> в зависимости от того, было ли освобождено указанное вами касание устройства или нет. Аргумент device указывает на номер касания устройства, который может быть от 0 до n, и обратите внимание, что максимальное число
+    прикосновений зависит от используемого устройства и ОС (большинство устройств поддерживают не менее 4 одновременных прикосновений). Эта функция срабатывает только один раз при действии отпускания, и константы, перечисленные
+   <a href="../Mouse_Input/Mouse_Input.htm">на этой странице</a>, могут быть использованы для проверки кнопок мыши. Обратите внимание, что <tt>mb_right</tt> будет обнаружена только в том случае, если обнаружено двойное касание и удерживается на втором касании перед отпусканием (это поведение
+    можно отключить с помощью функции <span class="inline"><a href="device_mouse_dbclick_enable.htm">device_mouse_dbclick_enable()</a></span>).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">device_mouse_check_button_released(device, button);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>устройство</td>
+        <td>Устройство (от 0 до <i>n</i>), которое проверяется.</td>
+      </tr>
+      <tr>
+        <td>кнопка</td>
+        <td>Кнопка устройства, которое проверяется.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if device_mouse_check_button_released(0, mb_left)<br> {
+    <br> press=false;<br> }
+  </p>
+  <p>Приведенный выше код проверяет, было ли нажато устройство, и устанавливает переменную в false, если было.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Device_Input.htm">Ввод устройства</a></div>
+        <div style="float:right">Далее: <a href="device_mouse_dbclick_enable.htm">device_mouse_dbclick_enable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+device_mouse_check_button_released
+-->
+  <!-- TAGS
+device_mouse_check_button_released
+-->
+</body>
+</html>

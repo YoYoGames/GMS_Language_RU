@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>texture_get_uvs</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ​texture_get_uvs" />
+  <meta name="rh-index-keywords" content="texture_get_uvs" />
+  <meta name="search-keywords" content="texture_get_uvs" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>texture_get_uvs</h1>
+  <p>Эта функция возвращает одномерный <a href="../../../GML_Overview/Arrays.htm">массив</a> с 4 элементами, представляющими УФ-координаты для изображения на странице текстуры, заполняя массив следующими значениями:</p>
+  <ul class="colour">
+    <li>[0] = левый</li>
+    <li>[1] = верх</li>
+    <li>[2] = право</li>
+    <li>[3] = низ</li>
+    <li>[4] = количество пикселей, которые компилятор активов обрезал с левой стороны спрайта (только для активов спрайта)</li>
+    <li>[5] = количество пикселей, которые компилятор активов обрезал с верхней стороны спрайта (только для активов спрайта)</li>
+    <li>[6] = нормализованный процент пиксельных данных от ширины исходного спрайта, который был сохранен на странице текстуры (только для спрайтов).</li>
+    <li>[7] = нормализованный процент пиксельных данных от высоты исходного спрайта, который был сохранен на странице текстуры (только для спрайтов).</li>
+  </ul>
+  <p>Затем это значение можно использовать в других функциях рисования, в частности, в общих функциях 3D и некоторых функциях 2D примитивов, а также в функциях <span class="notranslate">шейдера</span>. Если вам нужен UVS для спрайта, вы можете использовать функции <tt><a href="../../Asset_Management/Sprites/Sprite_Information/sprite_get_uvs.htm">sprite_get_uvs()</a></tt> и
+    для шрифта, <a href="../../Asset_Management/Fonts/font_get_uvs.htm"><tt>font_get_uvs()</tt></a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">texture_get_uvs(texid)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>texid</td>
+        <td>Актив изображения для получения текстуры</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Массив 1D (4 - 8 элементов)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var tex = texture_get_uvs(surf_back);<br> tex_left = tex[0];<br> tex_top = tex[1];<br> tex_right = tex[2];<br> tex_left = tex[3];</p>
+  <p>Приведенный выше код будет хранить UV-координаты для заданной текстуры поверхности в локальном массиве, а затем присваивать значения переменным экземпляра.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Textures.htm">Текстуры</a></div>
+        <div style="float:right">Далее: <a href="texture_set_stage.htm">texture_set_stage</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+texture_get_uvs
+-->
+  <!-- TAGS
+texture_get_uvs
+-->
+</body>
+</html>

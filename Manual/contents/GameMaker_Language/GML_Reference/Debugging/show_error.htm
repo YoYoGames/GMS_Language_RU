@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>show_error</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for show_error" />
+  <meta name="rh-index-keywords" content="show_error" />
+  <meta name="search-keywords" content="show_error" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>show_error</h1>
+  <p>Эта функция покажет пользовательскую строку в качестве сообщения об ошибке и даст возможность прервать игру после этого, если это необходимо.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ:</b> Эта функция предназначена <strong>только</strong> для отладки.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">show_error(str, abort);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>str</td>
+        <td>Строка для отображения во всплывающем сообщении.</td>
+      </tr>
+      <tr>
+        <td>прервать</td>
+        <td>Прервать (true) или нет (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if (room != rm_Dungeon)<br> {<br> show_error(&quot;Error: Went to wrong area. Aborting game.&quot;, true);<br> }</p>
+  <p>Приведенный выше код проверит, является ли комната, в которой находится игрок, &quot;rm_Dungeon&quot;, и если нет, то покажет сообщение об ошибке и заставит пользователя прервать игру.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Debugging.htm">Отладка</a></div>
+        <div style="float:right">Далее: <a href="show_message.htm">show_message</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+show_error
+-->
+  <!-- TAGS
+show_error
+-->
+</body>
+</html>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>нарисовать_треугольник_цветом</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function draw_triangle_colour" />
+  <meta name="rh-index-keywords" content="draw_triangle_colour,draw_triangle_color" />
+  <meta name="search-keywords" content="draw_triangle_colour,draw_triangle_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>нарисовать_треугольник_цветом</h1>
+  <p>С помощью этой функции можно нарисовать либо контур треугольника, либо заполненный треугольник. В случае заливки можно задать индивидуальные цвета для каждой угловой точки, и если эти цвета не совпадают, то получится эффект градиента от одного к другому
+    (настройки цвета будут перекрывать базовый цвет, заданный с помощью функции <a href="../Colour_And_Alpha/draw_set_colour.htm"><tt>draw_set_colour()</tt></a>).</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Если вы хотите нарисовать фигуру с помощью <span class="notranslate">шейдера</span>, вы должны знать, что большинство <span class="notranslate">шейдеров</span> ожидают следующих входных данных: вершина, текстура, цвет. Однако при использовании этой функции передаются только данные вершин и цвета, поэтому шейдер может ничего не нарисовать (или нарисовать, но не отрисовать).
+   <span class="notranslate">шейдер</span> может ничего не нарисовать (или нарисовать, но неправильно). Если вам нужно рисовать фигуры таким образом, то <span class="notranslate">шейдер</span> должен быть настроен с учетом этого.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_triangle_colour(x1, y1, x2, y2, x3, y3, col1, col2, col3, outline);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Координата x первого угла треугольника.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Координата y первого угла треугольника.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Координата x второго угла треугольника.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Координата y второго угла треугольника.</td>
+      </tr>
+      <tr>
+        <td>x3</td>
+        <td>Координата x третьего угла треугольника.</td>
+      </tr>
+      <tr>
+        <td>y3</td>
+        <td>Координата y третьего угла треугольника.</td>
+      </tr>
+      <tr>
+        <td>кол1</td>
+        <td>Цвет первого угла.</td>
+      </tr>
+      <tr>
+        <td>кол2</td>
+        <td>Цвет второго угла.</td>
+      </tr>
+      <tr>
+        <td>col3</td>
+        <td>Цвет третьего угла.</td>
+      </tr>
+      <tr>
+        <td>конспект</td>
+        <td>Является ли треугольник контуром (true) или заполненным (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_triangle_colour(200, 200, 300, 200, 200, 300, c_red, c_blue, c_blue, false);</p>
+  <p>Это позволит нарисовать заполненный равнобедренный прямоугольный треугольник с красным цветом на прямом углу и синим цветом на двух других углах.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Basic_Forms.htm">Основные формы</a></div>
+        <div style="float:right">Далее: <a href="draw_set_circle_precision.htm">draw_set_circle_precision</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_triangle_colour
+draw_triangle_color
+-->
+  <!-- TAGS
+draw_triangle_colour
+-->
+</body>
+</html>

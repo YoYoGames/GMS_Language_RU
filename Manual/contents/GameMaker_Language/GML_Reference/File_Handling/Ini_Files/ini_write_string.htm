@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ini_write_string</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ini_write_string" />
+  <meta name="rh-index-keywords" content="ini_write_string" />
+  <meta name="search-keywords" content="ini_write_string" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ini_write_string</h1>
+  <p>Вы можете использовать эту функцию для записи строки (текста) в файл данных ini. Ini файлы разбиваются на <b>секции</b>, а затем каждая секция разбивается на пары <b>ключ</b> - <b>значение</b>. Таким образом, типичный ini файл будет выглядеть примерно так:</p>
+  <p><img alt="Ini file contents example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Files/IniExample.png">Стоит отметить, что использование кавычек и экранирующих символов при записи строк ini может привести к проблемам при последующем
+    при последующем чтении данных, так как они могут быть преждевременно усечены. Например, если написать следующее:</p>
+  <p class="code">ini_write_string(&quot;test2&quot;, &quot;section&quot;, &quot;hello \&quot;Fritz\&quot;);</p>
+  <p> </p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ini_write_string(section, key, value);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>раздел</td>
+        <td>Раздел .ini для записи.</td>
+      </tr>
+      <tr>
+        <td>ключ</td>
+        <td>Ключ в соответствующем разделе .ini для записи.</td>
+      </tr>
+      <tr>
+        <td>значение</td>
+        <td>Строка для записи в соответствующее место назначения.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">ini_open(&quot;savedata.ini&quot;);<br> ini_write_string(&quot;Save&quot;, &quot;Player&quot;, global.Name);<br> ini_close();
+  </p>
+  <p>Приведенный выше код открывает ini-файл для чтения и записи, затем записывает строку, хранящуюся в глобальной переменной &quot;Name&quot;, в раздел &quot;Save&quot; с ключом &quot;Player&quot;, после чего снова закрывает файл.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Ini_Files.htm">Ini Files</a></div>
+        <div style="float:right">Далее: <a href="ini_read_real.htm">ini_read_real</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ini_write_string
+-->
+  <!-- TAGS
+ini_write_string
+-->
+</body>
+</html>

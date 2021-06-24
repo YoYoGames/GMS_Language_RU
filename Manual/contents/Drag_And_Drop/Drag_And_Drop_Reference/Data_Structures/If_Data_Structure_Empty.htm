@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Если структура данных пуста</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Data Structure Empty action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Data Structure Empty" />
+  <meta name="search-keywords" content="If Data Structure Empty" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Data Structure Empty Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_If_Data_Structure_Empty.png"> Если структура данных пуста</h1>
+  <p>С помощью этого действия вы можете проверить, пуста ли заданная структура данных или нет. Сначала вам нужно выбрать тип структуры данных для проверки (либо список, либо карта, либо стек - никаких сеток, так как они не могут быть пустыми), а затем предоставить переменную
+    переменную, содержащую индекс структуры данных (который возвращается действиями <a href="Create_List.htm">Create List</a>, <a href="Create_Map.htm">Create Map</a> и <a href="Create_Stack.htm">Create Stack</a>). Действие вернет <tt>true</tt>, если
+    структура данных пуста, и <tt>false</tt>, если нет. Обратите внимание, что в действии можно поставить флаг &quot;not&quot;, чтобы проверить, содержит ли структура данных <i>данные</i>, проверив, не пуста ли она.</p>
+  <p>Обратите внимание, что для добавления действий в блок &quot;if&quot;, их следует опустить сбоку от действия, как показано на изображении ниже:</p>
+  <p><img alt="If DS Empty drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/If_Empty_Drop.png">Эти действия теперь будут выполняться, если &quot;if&quot; оценивается в true, в <tt>то время как</tt> любые
+    действия, отброшенные в другом месте, будут выполняться после блока &quot;if&quot;.</p>
+  <p> </p>
+  <h4>Синтаксис действия:</h4>
+  <p><img alt="If Data Structure Empty Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_If_Data_Structure_Empty.png" /></p>
+  <h4>Аргументы:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>Структура</td>
+        <td>Тип структуры данных для проверки (список, карта или стек)</td>
+      </tr>
+      <tr>
+        <td>Переменная</td>
+        <td>Переменная, содержащая индекс структуры данных</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p><img alt="If Data Structure Empty Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Clear_Data_Structure.png">Приведенный выше код блока действий проверяет, не пуста ли структура данных, на которую ссылается
+    в глобальной переменной <i>не</i> пуста, и если это так, то структура данных очищается.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Data_Structure_Actions.htm">Действия со структурой данных</a></div>
+        <div style="float:right">Следующий: <a href="Create_List.htm">Создать список</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Data Structure Empty
+-->
+  <!-- TAGS
+action_if_ds_empty
+-->
+</body>
+</html>

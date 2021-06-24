@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>файл_удалить</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_delete" />
+  <meta name="rh-index-keywords" content="file_delete" />
+  <meta name="search-keywords" content="file_delete" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>файл_удалить</h1>
+  <p>Эта функция удалит указанный файл из системы. Следует отметить, что эта функция удалит только те файлы, которые <span class="notranslate">GameMaker Studio 2</span> может создавать и разбирать: ini файлы, текстовые и бинарные файлы, или файлы, созданные для хранения ресурсов игры, таких как спрайты и поверхности.
+    для хранения ресурсов, созданных в игре, таких как спрайты или поверхности. Однако она <i>не</i> будет удалять никакие другие файлы. Функция также вернет <tt>true</tt>, если файл был успешно удален, или <tt>false</tt> при любых других обстоятельствах.</p>
+  <p class="note"><b>ВНИМАНИЕ!</b> Эта функция может работать не так, как вы ожидаете, из-за того, что <span class="notranslate">GameMaker Studio 2</span> находится в "песочнице"! Для получения дополнительной информации обратитесь к разделу " <a href="../../../../Additional_Information/The_File_System.htm">Ограничения файловой системы</a> ".</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">file_delete(fname);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>Имя файла для удаления.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if file_exists(&quot;level.txt&quot;)<br> {
+    <br> file_delete(&quot;level.txt&quot;);
+    <br> }
+  </p>
+  <p>Это позволит проверить наличие файла и, если он существует, удалить его.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="File_System.htm">Файловая система</a></div>
+        <div style="float:right">Далее: <a href="file_rename.htm">file_rename</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_delete
+-->
+  <!-- TAGS
+file_delete
+-->
+</body>
+</html>

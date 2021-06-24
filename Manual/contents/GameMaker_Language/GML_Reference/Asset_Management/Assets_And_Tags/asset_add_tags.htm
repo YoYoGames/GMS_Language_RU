@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>asset_add_tags</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function asset_add_tags" />
+  <meta name="rh-index-keywords" content="asset_add_tags,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence" />
+  <meta name="search-keywords" content="asset_add_tags,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>asset_add_tags</h1>
+  <p>С помощью этой функции вы можете добавить одну или несколько строк тегов к любому активу из браузера активов. Вы передаете либо имя актива (в виде строки), либо его индекс, а также либо одну строку тегов, либо массив, каждый элемент которого является одной строкой тегов.
+    Если вы указываете значение индекса актива, то вам необходимо указать дополнительный аргумент типа актива (константа), так как активы разных типов могут иметь одинаковый индекс, хотя они не могут иметь одинаковое имя. Доступные типы активов перечислены
+    в таблице ниже:</p>
+  <p> </p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>актив_объекта</td>
+        <td>Данное имя относится к <a href="../../../../The_Asset_Editors/Objects.htm">объекту</a>.</td>
+      </tr>
+      <tr>
+        <td>актив_спрайт</td>
+        <td>Данное имя относится к <a href="../../../../The_Asset_Editors/Sprites.htm">спрайту</a>.</td>
+      </tr>
+      <tr>
+        <td>актив_звук</td>
+        <td>Данное имя обозначает <a href="../../../../The_Asset_Editors/Sounds.htm">звук</a>.</td>
+      </tr>
+      <tr>
+        <td>комната_активов</td>
+        <td>Данное имя относится к <a href="../../../../The_Asset_Editors/Rooms.htm">помещению</a>.</td>
+      </tr>
+      <tr>
+        <td>актив_плитки</td>
+        <td>Данное название относится к <a href="../../../../The_Asset_Editors/Tile_Sets.htm">набору плиток</a>.</td>
+      </tr>
+      <tr>
+        <td>путь_актива</td>
+        <td>Данное имя относится к <a href="../../../../The_Asset_Editors/Paths.htm">пути</a>.</td>
+      </tr>
+      <tr>
+        <td>актив_скрипт</td>
+        <td>Данное имя относится к <a href="../../../../The_Asset_Editors/Scripts.htm">сценарию</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_font</td>
+        <td>Данное название относится к <a href="../../../../The_Asset_Editors/Fonts.htm">шрифту</a>.</td>
+      </tr>
+      <tr>
+        <td>временная шкала активов</td>
+        <td>Данное имя относится к <a href="../../../../The_Asset_Editors/Timelines.htm">временной линии</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_shader</td>
+        <td>Данное имя относится к <a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">шейдер</span></a>.</td>
+      </tr>
+      <tr>
+        <td>asset_animationcurve</td>
+        <td>Данное название относится к <a href="../../../../The_Asset_Editors/Animation_Curves.htm">кривой анимации</a>.</td>
+      </tr>
+      <tr>
+        <td>последовательность активов</td>
+        <td>Данное имя относится к <a href="../../../../The_Asset_Editors/Sequences.htm">последовательности</a>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Если функция успешно добавит тег(ы), она вернет <tt>true</tt>, в противном случае она вернет <tt>false</tt>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">asset_add_tags(name_or_index, tags, [asset_type]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>имя_или_индекс</td>
+        <td>Название актива (строка) или значение его индекса (целое число).</td>
+      </tr>
+      <tr>
+        <td>теги</td>
+        <td>Одна строка тега актива или массив с различными тегами актива.</td>
+      </tr>
+      <tr>
+        <td>[asset_type]</td>
+        <td>ВАРИАНТ! Тип актива для установки тегов, используется только при указании индекса для первого аргумента.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _a = array_create(3);<br> _a[0] = &quot;enemy&quot;;<br> _a[1] = &quot;all_levels&quot;;<br> _a[2] = &quot;boss&quot;;<br> asset_add_tags(obj_Enemy_Boss_Parent, _a, asset_object);</p>
+  <p>Приведенный выше код создаст массив тегов, а затем добавит их к заданному объекту.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Assets_And_Tags.htm">Активы и метки</a></div>
+        <div style="float:right">Далее: <a href="asset_remove_tags.htm">asset_remove_tags</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+asset_add_tags
+asset_object
+asset_sprite
+asset_sound
+asset_room
+asset_tiles
+asset_path
+asset_script
+asset_font
+asset_timeline
+asset_<span class="notranslate">shader</span>
+asset_animationcurve
+asset_sequence
+-->
+  <!-- TAGS
+asset_add_tags
+-->
+</body>
+</html>

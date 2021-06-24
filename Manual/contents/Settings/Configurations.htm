@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Конфигурации</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how to use Configurations" />
+  <meta name="rh-index-keywords" content="Configurations" />
+  <meta name="search-keywords" content="configs,configurations,config editor,configuratuon editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Конфигурации</h1>
+  <p>В связи с требованиями кроссплатформенной разработки и необходимостью того, чтобы один продукт был доступен и настраивался для различных клиентов, устройств или платформ, <span class="notranslate">GameMaker Studio 2</span> включает <strong>конфигурации</strong> для упрощения работы. Используя эту
+    систему, вы можете быстро переключаться между различными заставками, иконками и включенными файлами и в любой момент протестировать или экспортировать только те из них, которые подходят для целевой платформы или клиента, и все это на основе одного и того же базового кода.</p>
+  <p>Чтобы иметь возможность справляться с различными требованиями клиентов и платформ, вы можете использовать <strong>редактор конфигурации</strong>, который доступен из меню <strong>Extras </strong>в <a href="../Introduction/The_Asset_Browser.htm">браузере активов</a>:</p>
+  <p><img alt="Open The Configuration Editor" class="center" src="../assets/Images/Settings/Configs_Open_Editor.png">Все игры, созданные в <span class="notranslate">GameMaker Studio 2</span>, начинаются с конфигурации &quot;по умолчанию&quot;, которая указана в редакторе при первом открытии.
+    его:</p>
+  <p><img alt="The Configuration Editor" class="center" src="../assets/Images/Settings/Configs.png">Для настройки конфигураций рекомендуется сначала подготовить эту конфигурацию &quot;по умолчанию&quot;, включив в нее все настраиваемые активы проекта.
+    проекта. Для этого просто пройдитесь по следующему списку опций и установите в них то, что требуется по умолчанию:</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Extensions.htm">Параметры расширения</a>: Установите различные поля &quot;Copy to...&quot; на необходимые платформы для конфигурации. Любые &quot;Прокси&quot; файлы, созданные здесь, будут иметь свою &quot;Целевую&quot; платформу
+      также будет связана с конфигурацией.</li>
+    <li><a href="../The_Asset_Editors/Sprites.htm">Редактор спрайтов</a>: Установите группу текстур, в которую будут добавлены спрайты.</li>
+    <li><a href="../The_Asset_Editors/Tile_Sets.htm">Редактор наборов плиток</a>: Установите группу текстур, в которую будут добавлены наборы плиток.</li>
+    <li><a href="../The_Asset_Editors/Fonts.htm">Редактор шрифтов</a>: Установите группу текстур, в которую нужно добавить шрифты.</li>
+    <li><a href="Texture_Groups.htm">Менеджер групп текстур</a>: Здесь можно задать любые свойства для каждой конфигурации, включая родительскую группу, к которой принадлежит группа текстур.</li>
+    <li><a href="Audio_Groups.htm">Менеджер аудиогрупп</a>: Здесь можно настраивать звуки, которые назначаются различным аудиогруппам...</li>
+    <li><a href="Included_Files.htm">Включенные файлы</a>: Установите в поле &quot;Копировать в...&quot; необходимые платформы для конфигурации.</li>
+  </ul>
+  <p>После того как вы установили конфигурацию по умолчанию, вы можете добавить новую конфигурацию в редактор конфигурации, щелкнув правой кнопкой мыши <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> на папке конфигураций
+    и выбрав <strong>Add Config</strong>, или нажав кнопку &quot;<em>Create&quot;</em> в нижней части окна. Новая конфигурация будет показана как &quot;дочерняя&quot; от конфигурации по умолчанию - все пользовательские конфигурации являются дочерними
+    и вы можете дать ей соответствующее имя.</p>
+  <p>Чтобы отредактировать конфигурацию, необходимо либо дважды щелкнуть на ней <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">, либо воспользоваться правой кнопкой мыши <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21">, выбрав пункт меню &quot;Set<em>Config&quot;</em>, который выделит конфигурацию в редакторе, после чего можно приступать к ее настройке. Это делается простым перебором перечисленных выше опций и изменением
+    их на желаемые параметры для вновь созданной конфигурации. <span class="notranslate">GameMaker Studio 2</span> автоматически сохранит эти значения для конфигурации, и вы сможете переключаться между конфигурациями в любое время, просто используя опцию меню RMB <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> или дважды щелкнув на <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">.</p>
+  <p>Дальнейшие конфигурации могут быть добавлены либо как дочерние элементы конфигурации по умолчанию, либо как дочерние элементы созданных вами пользовательских конфигураций, в зависимости от того, какая конфигурация была выделена в редакторе при ее создании. На
+    примере, приведенном ниже, видно, что у нас определено три пользовательских конфигурации, две из которых являются дочерними для конфигурации по умолчанию, а еще одна - дочерняя для конфигурации, определенной пользователем:</p>
+  <p><img alt="Child Configurations In The Configuration Editor" class="center" src="../assets/Images/Settings/Configs_Children.png">Стоит отметить, что вы можете использовать любую заданную конфигурацию с любой заданной целевой платформой при компиляции или тестировании ваших
+    проектов. Для этого необходимо выбрать нужную конфигурацию в разделе <strong>Config</strong> в <strong>Target Manager</strong>:</p>
+  <p><img alt="Configurations In The Target Manager" class="center" src="../assets/Images/Settings/Configs_TargetManager.png">Вы также можете открыть редактор конфигурации в любое время из диспетчера целей, нажав на кнопку меню в правом верхнем углу (как показано на рисунке выше).
+    выделено на рисунке выше).</p>
+  <p>После того, как вы зададите конфигурацию для использования таким образом, при любой компиляции с целью тестирования или создания конечного пакета активов будет использоваться выбранная конфигурация. Для получения дополнительной информации об окне Цели см. раздел
+    о <a href="../Introduction/Compiling.htm">компиляции</a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Game_Settings.htm">Настройки игры</a></div>
+        <div style="float:right">Следующий: <a href="Command_Line_Parameters.htm">Параметры командной строки</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Conifgurations
+Configs
+Config Editor
+Configuration Editor
+-->
+  <!-- TAGS
+config_editor
+-->
+</body>
+</html>

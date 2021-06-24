@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_sprite_tiled_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_tiled_ext" />
+  <meta name="rh-index-keywords" content="draw_sprite_tiled_ext" />
+  <meta name="search-keywords" content="draw_sprite_tiled_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_sprite_tiled_ext</h1>
+  <p>Эта функция берет спрайт и затем многократно накладывает его на весь вид (или комнату, если вид не определен), начиная с координат, которые вы задаете в функции, с масштабированием каждой плитки, смешиванием цветов и альфой, которую вы определяете.
+    (эти свойства такие же, как и те, что используются в функции <a href="draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>). Эта функция предназначена только для 2D (ортографических) проекций и не будет работать правильно, если используется проекция 3D-камеры.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Смешивание цветов рекомендуется только для HTML5-цели, когда включен WebGL, хотя вы можете установить цвет смешивания, если он не включен, и он будет смешивать спрайт как обычно. Однако при таком смешивании создается дубликат
+    спрайта, который затем сохраняется в кэше и используется при необходимости. Это далеко не оптимально, и если вы используете многократное изменение цвета, это замедлит производительность вашей игры, если вы не активируете WebGL. если вы не хотите использовать WebGL, то вы можете установить
+    размер кэша шрифтов, чтобы попытаться ограничить это, если потребуется, используя функцию <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><tt>sprite_set_cache_size()</tt></a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_sprite_tiled_ext(sprite, subimg, x, y, xscale, yscale, color, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>спрайт</td>
+        <td>Индекс спрайта для рисования.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>Подimg (кадр) спрайта для рисования (image_index или -1 соотносятся с текущим кадром анимации в объекте).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Координата x места рисования спрайта.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Координата y места рисования спрайта.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>Горизонтальное масштабирование спрайта. Множитель ' 1 = нормальное масштабирование, 0,5 - половинное и т.д.</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>Вертикальное масштабирование спрайта. Множитель ' 1 = нормальное масштабирование, 0,5 - половинное и т.д.</td>
+      </tr>
+      <tr>
+        <td>цвет</td>
+        <td>Цвет, с которым будет смешиваться спрайт. c_white - отображать его в обычном режиме.</td>
+      </tr>
+      <tr>
+        <td>альфа</td>
+        <td>Альфа спрайта (от 0 до 1, где 0 - прозрачный, а 1 - непрозрачный).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_sprite_tiled_ext(sprite_index, image_index, x, y, 2, 2, c_red, 0.5);</p>
+  <p>Это нарисует назначенный экземпляру спрайт (sprite_index) и его текущий кадр анимации (image_index) в собственной позиции x и y экземпляра, но в масштабе, вдвое превышающем обычный размер, с красной смесью и с половиной обычного альфа. Спрайт будет расположен
+    горизонтально и вертикально по всему виду.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprites_And_Tiles.htm">Спрайты и плитки</a></div>
+        <div style="float:right">Далее: <a href="draw_enable_swf_aa.htm">draw_enable_swf_aa</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_tiled_ext
+-->
+  <!-- TAGS
+draw_sprite_tiled_ext
+-->
+</body>
+</html>

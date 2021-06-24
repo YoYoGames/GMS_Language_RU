@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>игра_сохранение</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function game_save" />
+  <meta name="rh-index-keywords" content="game_save" />
+  <meta name="search-keywords" content="game_save" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>игра_сохранение</h1>
+  <p>Это устаревшая функция, которая может быть использована для сохранения текущего состояния игры, и больше не рекомендуется к использованию. Вместо этого используйте <a href="../File_Handling/File_Handling.htm">функции File</a> для создания пользовательской системы сохранения, в которой вы сохраняете и загружаете только
+    и загружать только определенные игровые данные.</p>
+  <p>Эта функция сохранит состояние игры как есть, однако не сохранит динамические ресурсы, используемые в это время, такие как структуры данных, поверхности, активы, добавленные во время выполнения <span class="notranslate">и</span> т.д. Если такой файл сохранения будет загружен, любые обновления игры, которые были
+    сделанные после сохранения, не будут видны, так как будет восстановлена версия игры, которая использовалась для создания сохранения.</p>
+  <p>Обратите внимание, что файлы сохранения, созданные с помощью этой функции, могут не поддерживаться обновленными <a class="glossterm" data-glossterm="Время выполнения" href="#"><span class="notranslate">Время выполнения</span></a> поэтому замена этой функции на новую систему сохранения необходима для обеспечения совместимости с
+    будущими обновлениями <span class="notranslate">GameMaker</span> и, по причинам, перечисленным выше, обновлениями вашей собственной игры.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">game_save(filename);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>имя файла</td>
+        <td>Имя файла, в который будет сохранена игра.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if keyboard_check_pressed(ord(&quot;S&quot;))<br> {
+    <br> global.Saved = true;<br> game_save(&quot;Save.dat&quot;);
+    <br> }
+  </p>
+  <p>Приведенный выше код установит глобальную переменную в <tt>true</tt>, а затем сохранит игру в файл &quot;Save.dat&quot; при нажатии клавиши &quot;S&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="General_Game_Control.htm">Общее управление игрой</a></div>
+        <div style="float:right">Далее: <a href="game_save_buffer.htm">game_save_buffer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+game_save
+-->
+  <!-- TAGS
+game_save
+-->
+
+</body></html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_destroy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_destroy" />
+  <meta name="rh-index-keywords" content="layer_background_destroy" />
+  <meta name="search-keywords" content="layer_background_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_background_destroy</h1>
+  <p>Эта функция уничтожит заданный элемент фона. Вы передаете идентификатор фона (который вы получаете при создании фона с помощью команды <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a> или когда вы используете идентификатор слоя вместе с
+    с <a href="layer_background_get_id.htm"><tt>layer_get_background_id()</tt></a>), и эта функция удалит его. Обратите внимание, что при этом <i>не</i> удаляется слой, а только фон, и если фон был добавлен в редакторе комнаты
+    то в следующий раз, когда вы покинете комнату, а затем вернетесь, фон будет создан заново. Однако если комната постоянна, фон будет удален, пока постоянство комнаты не будет снова отключено.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_background_destroy(background_element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>background_element_id</td>
+        <td>Уникальное значение ID фона, который должен быть уничтожен</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Background_trees&quot;);<br> var bck_id = layer_background_get_id(&quot;Forrest&quot;);<br> if layer_background_exists(lay_id, bck_id)<br> {
+    <br> layer_background_destroy(bck_id);
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет слой &quot;Background_trees&quot; на предмет существования данного фонового элемента, и если он существует, то он уничтожается (но не слой).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Background_Layers.htm">Фоновые слои</a></div>
+        <div style="float:right">Далее: <a href="layer_background_visible.htm">layer_background_visible</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_destroy
+-->
+  <!-- TAGS
+layer_background_destroy
+-->
+</body>
+</html>

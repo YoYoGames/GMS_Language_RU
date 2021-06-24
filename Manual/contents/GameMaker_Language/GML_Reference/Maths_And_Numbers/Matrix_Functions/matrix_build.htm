@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>matrix_build</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for matrix_build" />
+  <meta name="rh-index-keywords" content="matrix_build" />
+  <meta name="search-keywords" content="matrix_build" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>matrix_build</h1>
+  <p>Эта функция может быть использована для создания вашей собственной матрицы и возвращает значение индекса для этой новой матрицы, которое должно быть сохранено в переменной для дальнейшего использования. Сама матрица создается как <a href="../../../GML_Overview/Arrays.htm">массив</a> из 16 значений, где первые 4 элемента являются строкой 1, вторые 4 элемента являются строкой 2 и т.д... матрицы 4x4.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Когда вы строите новую матрицу таким образом, порядок работы - YXZ.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">matrix_build(x, y, z, xrotation, yrotation, zrotation, xscale, yscale, zscale);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Компонент x вектора перевода.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Компонент y вектора перевода.</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>Компонент z вектора перевода.</td>
+      </tr>
+      <tr>
+        <td>xrotation</td>
+        <td>Угол поворота вокруг оси x (в градусах °).</td>
+      </tr>
+      <tr>
+        <td>yrotation</td>
+        <td>Угол поворота вокруг оси y (в градусах °).</td>
+      </tr>
+      <tr>
+        <td>хзотация</td>
+        <td>Угол поворота вокруг оси z (в градусах °).</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>Величина масштаба x.</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>Величина масштаба y.</td>
+      </tr>
+      <tr>
+        <td>zscale</td>
+        <td>Величина масштаба z.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Индекс матрицы (матрица 4x4)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">t_matrix = matrix_build(x, y, 0, 0, 90, 0, 1, 2, 1);</p>
+  <p>Приведенный выше код построит новое преобразование матрицы и сохранит индекс результирующей матрицы в переменной &quot;t_matrix&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Matrix_Functions.htm">Матричные функции</a></div>
+        <div style="float:right">Далее: <a href="matrix_multiply.htm">matrix_multiply</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+matrix_build
+-->
+  <!-- TAGS
+matrix_build
+-->
+
+</body></html>

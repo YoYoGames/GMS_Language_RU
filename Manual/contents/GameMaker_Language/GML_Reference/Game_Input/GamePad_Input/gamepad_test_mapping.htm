@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_test_mapping</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_test_mapping" />
+  <meta name="rh-index-keywords" content="gamepad_test_mapping" />
+  <meta name="search-keywords" content="gamepad_test_mapping" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_test_mapping</h1>
+  <p>Эта функция может быть использована для установки отображения геймпада на тех целях, которые это позволяют. Вы передаете индекс &quot;slot&quot; для геймпада, который нужно установить, а затем строку map, которая должна быть создана с использованием формата SDL со следующими полями:</p>
+  <p class="code">&lt;guid&gt;, &lt;description&gt;, platform:&lt;platform-name&gt;, &lt;bindings&gt;</p>
+  <p>В каждом из этих полей должны быть указаны следующие данные:</p>
+  <ul class="colour">
+    <li><tt>guid</tt> - строка цифр и букв, которая однозначно идентифицирует тип устройства (его можно получить с помощью функции <a href="gamepad_get_guid.htm"><tt>gamepad_get_guid()</tt></a> функция)</li>
+    <li><tt>description</tt> - описание устройства в формате Ascii (его можно получить с помощью функции <a href="gamepad_get_description.htm"><tt>gamepad_get_description()</tt></a> функция)</li>
+    <li><tt>platform-name</tt> - будет либо &quot;platform:android&quot;, &quot;platform:windows&quot;, &quot;linux&quot;, либо &quot;mac&quot; (обратите внимание, что это будет автоматически добавлено к <b>строке при вызове этой функции, и поэтому вам</b> не нужно вводить его при построении собственных строк отображения).
+      не нужно указывать его при создании собственных строк отображения)</li>
+    <li><tt>привязки</tt> - набор записей, разделенных знаком ',' для привязки фактического ввода к определенным <span class="notranslate">константам</span> GML</li>
+  </ul>
+  <p>Список записей, разделенных запятыми, соответствует определенному формату для каждой записи:</p>
+  <p class="code">&lt;abstract-gp-name&gt;:&lt;value-binding&gt;</p>
+  <p>Здесь <tt>&lt;значение-связка&gt; (т.е.</tt> прямой ввод геймпада) может быть любым из следующих:</p>
+  <ul class="colour">
+    <li><tt>a&lt;N&gt; -</tt> Представляет ось геймпада, где &lt;N&gt; - одна из осей от 0 до <a href="gamepad_axis_count.htm"><tt>gamepad_axis_count()</tt></a> -1</li>
+    <li><tt>b&lt;N&gt; -</tt> Представляет кнопку геймпада, где &lt;N&gt; - одна из кнопок от 0 до <a href="gamepad_button_count.htm"><tt>gamepad_button_count()</tt></a> -1</li>
+    <li><tt>h&lt;N&gt;.&lt;маска&gt; -</tt> Представляет шапку геймпада, где &lt;N&gt; представляет шапку от 0 до <a href="gamepad_hat_count.htm"><tt>gamepad_hat_count()</tt></a> -1, а <tt>&lt;маска&gt;</tt> будет либо 1, либо 2, либо 4, либо 8.</li>
+  </ul>
+  <p>Каждое входное значение должно быть связано с именем SDL, которое выражается как <tt>&lt;&gt;abstract-gp-name&gt; , которое</tt>, в свою очередь, связано с <span class="notranslate">константой</span> GML. В таблице ниже показана эквивалентность между именем SDL и константой <span class="notranslate">GameMaker Studio 2</span>:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Название SDL</th>
+        <th>Имя<span class="notranslate">GML</span> </th>
+      </tr>
+      <tr>
+        <td><tt>a</tt></td>
+        <td>gp_face1</td>
+      </tr>
+      <tr>
+        <td><tt>b</tt></td>
+        <td>gp_face2</td>
+      </tr>
+      <tr>
+        <td><tt>x</tt></td>
+        <td>gp_face3</td>
+      </tr>
+      <tr>
+        <td><tt>y</tt></td>
+        <td>gp_face4</td>
+      </tr>
+      <tr>
+        <td><tt>левое плечо</tt></td>
+        <td>gp_shoulderl</td>
+      </tr>
+      <tr>
+        <td><tt>левый триггер</tt></td>
+        <td>gp_shoulderlb</td>
+      </tr>
+      <tr>
+        <td><tt>правое плечо</tt></td>
+        <td>gp_shoulderr</td>
+      </tr>
+      <tr>
+        <td><tt>righttrigger</tt></td>
+        <td>gp_shoulderrb</td>
+      </tr>
+      <tr>
+        <td><tt>руководство</tt></td>
+        <td>gp_select</td>
+      </tr>
+      <tr>
+        <td><tt>запустить</tt></td>
+        <td>gp_start</td>
+      </tr>
+      <tr>
+        <td><tt>левый стик</tt></td>
+        <td>gp_stickl</td>
+      </tr>
+      <tr>
+        <td><tt>правый стик</tt></td>
+        <td>gp_stickr</td>
+      </tr>
+      <tr>
+        <td><tt>dpup</tt></td>
+        <td>gp_padu</td>
+      </tr>
+      <tr>
+        <td><tt>dpdown</tt></td>
+        <td>gp_padl</td>
+      </tr>
+      <tr>
+        <td><tt>dpleft</tt></td>
+        <td>gp_padr</td>
+      </tr>
+      <tr>
+        <td><tt>dpright</tt></td>
+        <td>gp_padd</td>
+      </tr>
+      <tr>
+        <td><tt>leftx</tt></td>
+        <td>gp_axislh</td>
+      </tr>
+      <tr>
+        <td><tt>левша</tt></td>
+        <td>gp_axislv</td>
+      </tr>
+      <tr>
+        <td><tt>rightx</tt></td>
+        <td>gp_axisrh</td>
+      </tr>
+      <tr>
+        <td><tt>правый</tt></td>
+        <td>gp_axisrv</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Когда вы построили строку сопоставления, она должна выглядеть примерно так:</p>
+  <p class="code">&quot;050000005e040000fd020000ffff3f00,Xbox Wireless Controller,a:b0,b:b1,start:b4,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b6,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,x:b2,y:b3,platform:android&quot;</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gamepad_test_mapping(index, mapping_string);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Какой индекс геймпада &quot;слот&quot; установить.</td>
+      </tr>
+      <tr>
+        <td>цвет</td>
+        <td>Используемая строка карты (см. описание для получения дополнительной информации).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var mapping = gamepad_get_guid(global.padIndex) + &quot;,&quot; + gamepad_get_description(global.padIndex);<br> var len = array_length(global.PadInstances);<br> for( i = 0; i &lt; len; i += 2)<br> {
+    <br> var left = global.PadInstances[i];<br> var right = global.PadInstances[i+1];<br> mapping += &quot;,&quot; + left.sdlLabel + &quot;:&quot; + right.binding;<br> }
+    <br> gamepad_test_mapping(global.padIndex, mapping);</p>
+  <p>Приведенный выше код будет проходить через ряд экземпляров и использовать значения различных переменных, которые они содержат, для создания строки отображения, которая затем устанавливается для использования на геймпаде в заданном индексе слота.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Gamepad_Input.htm">Вход геймпада</a></div>
+        <div style="float:right">Далее: <a href="gamepad_remove_mapping.htm">gamepad_remove_mapping</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_test_mapping
+-->
+  <!-- TAGS
+gamepad_test_mapping
+-->
+
+</body></html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_set_disk</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_set_disk" />
+  <meta name="rh-index-keywords" content="ds_grid_set_disk" />
+  <meta name="search-keywords" content="ds_grid_set_disk" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_set_disk</h1>
+  <p>С помощью этой функции вы можете установить круговую область сетки на определенное значение. Вам необходимо указать начальную ячейку сетки (как координаты по оси x и y), а также радиус диска для установки и значение, на которое вы хотите установить диск, как показано на рисунке ниже.
+    как показано на рисунке ниже:</p>
+  <p><img alt="DS grid set disk" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_set_disk.png" /></p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_grid_set_disk(index, xm, ym, r, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс сетки.</td>
+      </tr>
+      <tr>
+        <td>xm</td>
+        <td>Позиция x диска на сетке.</td>
+      </tr>
+      <tr>
+        <td>ym</td>
+        <td>Позиция y диска на сетке.</td>
+      </tr>
+      <tr>
+        <td>r</td>
+        <td>Радиус диска на сетке.</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>Значение, которое нужно установить для ячеек на диске.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">ds_grid_set_disk(grid, ds_grid_width(grid) div 2, ds_grid_height(grid) div 2, 5, -4)</p>
+  <p>Приведенный выше код установит круглую область радиусом 5 ячеек в сетке DS, проиндексированной в переменной &quot;grid&quot;, на значение -4.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="DS_Grids.htm">DS Grids</a></div>
+        <div style="float:right">Далее: <a href="ds_grid_set_grid_region.htm">ds_grid_set_grid_region</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_set_disk
+-->
+  <!-- TAGS
+ds_grid_set_disk
+-->
+
+</body></html>

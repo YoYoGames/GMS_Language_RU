@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_get_master_gain</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_get_master_gain" />
+  <meta name="rh-index-keywords" content="audio_get_master_gain" />
+  <meta name="search-keywords" content="audio_get_master_gain" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_get_master_gain</h1>
+  <p>С помощью этой функции вы можете получить абсолютное значение глобальной громкости всех звуков и музыки для определенного слушателя. По умолчанию индекс слушателя равен 0, но вы можете использовать функцию <a href="Audio_Listeners/audio_get_listener_info.htm"><tt>audio_get_listener_info()</tt></a> чтобы
+    получить различные индексы, доступные для целевой платформы. Возвращаемое значение усиления основано на линейной шкале от 0 (тишина) до 1 (полная громкость). Обратите внимание, что на некоторых платформах коэффициент усиления может быть больше 1, хотя значение 1 считается
+    &quot;полная громкость&quot;, а большее значение может привести к обрыву звука.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_get_master_gain(listenerIndex);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>listenerIndex</td>
+        <td>Индекс слушателя для получения коэффициента усиления.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var num = audio_get_listener_count();<br> for( var i = 0; i &lt; num; ++i;)<br> {
+    <br> var info = audio_get_listener_info(i);<br> var ind = info[? &quot;index&quot;];<br> if audio_get_master_gain(ind) != 1<br> {
+    <br> audio_set_master_gain(info[? &quot;index&quot;], 1);<br> }
+    <br> ds_map_destroy(info);
+    <br> }
+  </p>
+  <p>Приведенный выше код перебирает доступные слушатели, проверяя, равно ли их усиление 1 или нет, и если нет, то устанавливает его в 1 для каждого из них.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio.htm">Аудио</a></div>
+        <div style="float:right">Далее: <a href="audio_channel_num.htm">audio_channel_num</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_get_master_gain
+-->
+  <!-- TAGS
+audio_get_master_gain
+-->
+</body>
+</html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sequence_headpos</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_headpos" />
+  <meta name="rh-index-keywords" content="layer_sequence_headpos" />
+  <meta name="search-keywords" content="layer_sequence_headpos" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sequence_headpos</h1>
+  <p>С помощью этой функции вы можете установить положение <a class="glossterm" data-glossterm="playhead" href="#">головки воспроизведения</a> элемента последовательности на определенный кадр. Вы передаете идентификатор элемента последовательности, возвращенный <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>    или одной из <a href="../General_Layer_Functions/General_Layer_Functions.htm">функций элемента слоя</a> вместе с новой позицией, которую нужно установить. Обратите внимание, что позиция указывается в <i>кадрах</i>, и если вы зададите значение больше, чем общее количество кадров
+    (или меньше 0), то фактическая конечная позиция головки воспроизведения будет зависеть от типа воспроизведения последовательности, который был выбран, в соответствии с этими правилами:</p>
+  <ul class="colour">
+    <li><strong>Нет зацикливания</strong>: Головка воспроизведения будет прижиматься к концу цикла (или к началу, если заданное значение отрицательно).</li>
+    <li><strong>Зацикливание</strong>: Головка воспроизведения будет возвращаться к началу последовательности плюс дополнительные кадры, например: если вы установите головку воспроизведения в последовательности из 30 кадров на позицию кадра 45, фактическая позиция головки воспроизведения будет равна 15. Если вы зададите
+      отрицательное значение, то головка воспроизведения последовательности будет разворачиваться в обратном направлении.</li>
+    <li><strong>Пинг-понговое зацикливание</strong>: Головка воспроизведения продвигается до конца, а затем возвращается назад на дополнительное количество кадров, превышающее общую длину кадра, меняя направление воспроизведения, например: Если последовательность состоит из 30 кадров, а вы установили головку воспроизведения
+      на 40, конечная позиция головки воспроизведения будет 20, а направление будет обратным (вниз к 0). Обратите внимание, что <i>никогда не</i> следует задавать отрицательное значение для пинг-понг воспроизведения последовательности, так как это может привести к неопределенным результатам.</li>
+  </ul>
+  <p>Установка положения головки таким образом не остановит воспроизведение, и последовательность просто продолжится с нового положения головки воспроизведения, если она не приостановлена.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_sequence_headpos(sequence_element_id, position)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>Уникальное значение ID элемента последовательности, на который нужно нацелиться</td>
+      </tr>
+      <tr>
+        <td>позиция</td>
+        <td>Позиция в последовательности (в кадрах), на которую нужно установить положение головки воспроизведения (может быть десятичным значением).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var a = layer_get_all_elements(layer);<br> for (var i = 0; i &lt; array_length(a); i++;) <br> {
+    <br> if layer_get_element_type(a[i]) == layerelementtype_sequence<br> {
+    <br> layer_sequence_headpos(a[i], 0)<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код получает идентификаторы всех элементов, назначенных слою экземпляра, на котором выполняется код. Затем код проверяет, являются ли какие-либо из возвращенных элементов активами последовательности, и если да, то их положение головки воспроизведения устанавливается на 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sequence_Layers.htm">Последовательность слоев</a></div>
+        <div style="float:right">Далее: <a href="layer_sequence_headdir.htm">layer_sequence_headdir</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_headpos
+-->
+  <!-- TAGS
+layer_sequence_headpos
+-->
+
+</body></html>

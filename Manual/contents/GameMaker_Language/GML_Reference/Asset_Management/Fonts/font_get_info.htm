@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_get_info</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the function font_get_info" />
+  <meta name="rh-index-keywords" content="font_get_info" />
+  <meta name="search-keywords" content="font_get_info" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_get_info</h1>
+  <p>Эта функция используется для получения информации о заданном шрифте. Вы задаете индекс шрифта (это может быть актив, добавленный через <a href="../../../../Introduction/The_Asset_Browser.htm">Asset Browser</a>, или шрифт, <a href="font_add.htm">добавленный</a> во <span class="notranslate">время выполнения</span>), и функция возвращает <a href="../../../GML_Overview/Structs.htm">структуру</a> со следующими переменными:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Имя переменной</th>
+        <th style="">Тип данных</th>
+        <th style="">Описание</th>
+      </tr>
+      <tr>
+        <td><strong>ascenderOffset</strong></td>
+        <td style="">настоящий</td>
+        <td style="">Максимальное смещение от базовой линии к вершине шрифта (в пикселях).</td>
+      </tr>
+      <tr>
+        <td><strong>размер</strong></td>
+        <td style="">настоящий</td>
+        <td style="">Приблизительный размер шрифта (в пикселях)</td>
+      </tr>
+      <tr>
+        <td><strong>spriteIndex</strong></td>
+        <td style="">актив (реальный)</td>
+        <td style="">Индекс спрайта для шрифта, если он был <a href="font_add_sprite.htm">создан из спрайта</a>, иначе -1</td>
+      </tr>
+      <tr>
+        <td><strong>текстура</strong></td>
+        <td style="">актив (реальный)</td>
+        <td style="">-1, если шрифт был создан из спрайта, иначе - идентификатор текстуры шрифта</td>
+      </tr>
+      <tr>
+        <td><strong>имя</strong></td>
+        <td style="">строка</td>
+        <td style="">Название шрифта</td>
+      </tr>
+      <tr>
+        <td><strong>полужирный</strong></td>
+        <td style="">булево</td>
+        <td style=""><tt>true</tt>, если шрифт полужирный, иначе <tt>false</tt> <em>(см. <strong>ПРИМЕЧАНИЕ </strong></em>ниже)</td>
+      </tr>
+      <tr>
+        <td><strong>курсив</strong></td>
+        <td style="">булево</td>
+        <td style=""><tt>true</tt>, если шрифт курсивный, иначе <tt>false</tt><em> (см. <strong>ПРИМЕЧАНИЕ </strong></em>ниже)</td>
+      </tr>
+      <tr>
+        <td><strong>глифы</strong></td>
+        <td style="">struct</td>
+        <td style="">Структура, содержащая информацию о каждом глифе в шрифте (более подробная информация приведена <a href="#glyphs">ниже</a>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Переменные <tt><strong>полужирный шрифт</strong></tt> и<tt>курсив</tt> отражают только настройки пользователя для шрифта, поэтому они могут быть неточными для шрифтов, которые по умолчанию являются жирными или курсивными.</p>
+  <p>Если указанный шрифт не существует, функция вернет неопределенное значение <tt>.</tt></p>
+  <p>Также обратите внимание, что изменение значений любой из этих переменных или любых переменных, содержащихся в структуре <tt>glyphs</tt>, не изменит отображение шрифта, поэтому эту информацию следует рассматривать как информацию <strong>только для чтения</strong>.</p>
+  <h2 id="glyphs">Структура глифов</h2>
+  <p>Переменная <tt>glyphs</tt> в возвращаемой структуре будет самостоятельной структурой, содержащей информацию о каждом глифе, включенном в шрифт. Каждая переменная в этой структуре будет именем символа глифа, который будет содержать структуру, содержащую информацию
+    для этого глифа. Вы можете представить эти вложенные структуры в следующем формате (начиная с главной структуры):</p>
+  <p class="code">{<br> глифы:<br> {<br> A: {},<br> B: {},<br> C: {},<br> // ...другие глифы<br> },<br> // ...другая информация о шрифте<br> }
+  </p>
+  <p>Вы можете использовать имя символа глифа для получения информации о нем из структуры, как, например, в следующем коде:</p>
+  <p class="code">var _font_info = font_get_info(Font1);<br>
+    <br> var _info_A = _font_info.glyphs[$ &quot;A&quot;]; // $ - это аксессор структуры<br>
+    <br> show_debug_message(_info_A);
+  </p>
+  <p>Приведенный выше код получает глиф-структуру для символа &quot;A&quot; и печатает ее в выходной журнал. Вы также можете заменить строку (<tt>&quot;A&quot;)</tt> переменной, содержащей строку, что позволит вам получить информацию для любого глифа через
+    эту переменную во время <span class="notranslate">выполнения</span>.</p>
+  <p>Структура, возвращаемая для глифа, будет содержать следующие переменные:</p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: В HTML5 структура glyphs будет пустой для любых загруженных файловых шрифтов (таких как <tt>*.ttf</tt> или <tt>*.otf</tt>), поскольку <span class="notranslate">среда выполнения</span> не будет иметь информации об этих глифах.</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Имя переменной</th>
+        <th style="">Тип данных</th>
+        <th style="">Описание</th>
+      </tr>
+      <tr>
+        <td><strong>char</strong></td>
+        <td style="">настоящий</td>
+        <td style="">Если шрифт был создан из спрайта, это будет индекс изображения глифа из этого спрайта, в противном случае это будет номер символа Unicode.<br>
+          <br>
+         <em><strong>Примечание</strong></em>: Все переменные ниже этой не будут присутствовать в структуре, если шрифт был создан из спрайта.</td>
+      </tr>
+      <tr>
+        <td><strong>x</strong></td>
+        <td style="">настоящий</td>
+        <td style="">X позиция глифа на странице текстуры (в текселях).</td>
+      </tr>
+      <tr>
+        <td><strong>y</strong></td>
+        <td style="">настоящий</td>
+        <td style="">Положение глифа по оси Y на странице текстуры (в текселях)</td>
+      </tr>
+      <tr>
+        <td><strong>w</strong></td>
+        <td style="">настоящий</td>
+        <td style="">Ширина глифа на странице текстуры (в текселях).</td>
+      </tr>
+      <tr>
+        <td><strong>h</strong></td>
+        <td style="">настоящий</td>
+        <td style="">Высота глифа на странице текстуры (в текселях)</td>
+      </tr>
+      <tr>
+        <td><strong>смена</strong></td>
+        <td style="">настоящий</td>
+        <td style="">Количество пикселей для сдвига вправо при переходе к следующему символу (может быть отрицательным для сдвига влево).</td>
+      </tr>
+      <tr>
+        <td><strong>смещение</strong></td>
+        <td style="">настоящий</td>
+        <td style="">Количество пикселей для горизонтального смещения рендеринга этого глифа (может быть положительным или отрицательным).</td>
+      </tr>
+      <tr>
+        <td><strong>кернинг</strong></td>
+        <td style="">массив</td>
+        <td style="">Массив целых чисел, содержащий информацию о кернинге в парах (или группах по 2). Первое целое число в паре - это значение Unicode для символа, а второе целое число - сумма, которую нужно добавить к значению сдвига этого символа (может быть положительным или
+          отрицательное), если он предшествует символу данного глифа.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Для файловых шрифтов, загружаемых во <span class="notranslate">время выполнения</span>, значения <tt>x</tt> и <tt>y</tt> для глифа могут быть равны -1, если он еще не был отрисован, поскольку у него не будет позиции на странице текстуры, используемой для кэширования.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">font_get_info(font);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>шрифт</td>
+        <td>Шрифт, для которого необходимо получить информацию.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Структура (или неопределенная)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _info = font_get_info(my_font);<br>
+    <br> if (_info != undefined &amp;&amp; _info.bold)<br> {
+    <br> image_xscale *= 2;<br> image_yscale *= 2;<br> }
+  </p>
+  <p>Этот код извлекает информацию о шрифте, хранящемся в переменной <tt>my_font</tt>. Если возвращаемое значение <strong>не </strong>является<tt>неопределенным</tt> и данный шрифт является полужирным, масштаб экземпляра удваивается.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Fonts.htm">Шрифты</a></div>
+        <div style="float:right">Далее: <a href="font_exists.htm">font_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_get_info
+-->
+  <!-- TAGS
+font_get_info
+-->
+</body>
+</html>

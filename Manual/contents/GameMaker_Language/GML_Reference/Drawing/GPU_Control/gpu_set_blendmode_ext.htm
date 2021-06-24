@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_blendmode_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_blendmode_ext" />
+  <meta name="rh-index-keywords" content="gpu_set_blendmode_ext,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour" />
+  <meta name="search-keywords" content="gpu_set_blendmode_ext,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_blendmode_ext</h1>
+  <p>Когда <span class="notranslate">GameMaker Studio 2</span> рисует пиксель, есть исходный цвет (цвет пикселя, который мы собираемся нарисовать) и конечный цвет (цвет, который уже есть в пикселе, к которому мы рисуем).
+    пикселя, исходный и конечный цвета рассчитываются в соответствии с выбранным режимом наложения. Каждый компонент цветов хранится как значение с плавающей точкой между 0 и 1, а новый цвет вычисляется путем умножения каждого компонента
+    исходного цвета на некоторый коэффициент и умножением каждого компонента цвета назначения на некоторый другой коэффициент, а затем суммированием результатов по компонентам.</p>
+  <p>Эта функция позволяет установить различные компоненты, которые должны быть сложены вместе для создания пользовательского режима наложения. Источник и место назначения имеют красный, зеленый, синий и альфа компоненты, и на следующей диаграмме RGBA источника
+    считаются (Rs, Gs, Bs, As), а у места назначения - (Rd, Gd, Bd, Ad). Одиннадцать констант, доступных для использования, могут быть как источником, так и получателем (или обоими) при использовании в этой функции.</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Коэффициент смешивания (красный, зеленый, синий, альфа)</th>
+      </tr>
+      <tr>
+        <td>bm_zero</td>
+        <td>(0, 0, 0, 0)</td>
+      </tr>
+      <tr>
+        <td>bm_one</td>
+        <td>(1, 1, 1, 1)</td>
+      </tr>
+      <tr>
+        <td>bm_src_colour</td>
+        <td>(Rs, Gs, Bs, As)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_src_colour</td>
+        <td>(1-Rs, 1-Gs, 1-Bs, 1-As)</td>
+      </tr>
+      <tr>
+        <td>bm_src_alpha</td>
+        <td>(As, As, As, As, As)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_src_alpha</td>
+        <td>(1-Ас, 1-Ас, 1-Ас, 1-Ас, 1-Ас)</td>
+      </tr>
+      <tr>
+        <td>bm_dest_alpha</td>
+        <td>(Ad, Ad, Ad, Ad, Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_dest_alpha</td>
+        <td>(1-Ad, 1-Ad, 1-Ad, 1-Ad, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_dest_colour</td>
+        <td>(Rd, Gd, Bd, Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_dest_colour</td>
+        <td>(1-Rd, 1-Gd, 1-Bd, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_src_alpha_sat</td>
+        <td>(f, f, f, 1), где f = min(As, 1-Ad)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><b>ВАЖНО!</b> HTML5 без включенного WebGL <b>не</b> сможет корректно отображать следующие режимы:</p>
+  <ul class="colour" style="padding-left: 120px">
+    <li><tt>bm_src_colour</tt></li>
+    <li><tt>bm_inv_src_colour</tt></li>
+    <li><tt>bm_dest_colour</tt></li>
+    <li><tt>bm_inv_dest_colour</tt></li>
+    <li><tt>bm_src_alpha_sat</tt></li>
+  </ul>
+  <p> </p>
+  <p>Обратите внимание, что вы можете передать этой функции либо два отдельных аргумента, либо массив аргументов (как возвращает функция <a href="gpu_get_blendmode_ext.htm"><tt>gpu_get_blendmode_ext()</tt></a> например). Если вы передаете массив
+    он должен содержать следующие два элемента:</p>
+  <ul class="colour">
+    <li>[0] = Режим наложения источника (по умолчанию <tt>bm_src_alpha</tt>)</li>
+    <li>[1] = Режим наложения назначения (по умолчанию <tt>bm_inv_src_alpha</tt>)</li>
+  </ul>
+  <p>Чтобы максимально использовать режимы наложения и понять, как они работают и как влияют на конечное изображение, выводимое на экран, мы рекомендуем вам ознакомиться со следующим руководством:</p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Using_Blendmodes.htm">Руководство по использованию блендмодов</a></li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gpu_set_blendmode(src, dest);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>src</td>
+        <td>Коэффициент режима наложения источника (см. константы выше).</td>
+      </tr>
+      <tr>
+        <td>dest</td>
+        <td>Коэффициент режима наложения назначения (см. константы выше)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">gpu_set_blendmode_ext(bm_src_alpha, bm_one);<br> draw_circle_colour(100, 100, 50, c_white, c_black, 0);<br> gpu_set_blendmode(bm_normal);
+  </p>
+  <p>Это превратит черный цвет в прозрачный, создавая эффект "свечения": белый цвет будет сильным снаружи и постепенно ослабевать от центра круга. Режим наложения сбрасывается после рисования круга, чтобы аддитивное смешивание
+    не применяется ко всему остальному после него.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="GPU_Control.htm">Управление графическим процессором</a></div>
+        <div style="float:right">Далее: <a href="gpu_set_blendmode_ext_sepalpha.htm">gpu_set_blendmode_ext_sepalpha</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_blendmode_ext
+bm_zero
+bm_one
+bm_src_colour
+bm_inv_src_colour
+bm_src_alpha
+bm_inv_src_alpha
+bm_dest_alpha
+bm_inv_dest_alpha
+bm_dest_colour
+bm_inv_dest_colour
+bm_src_alpha_sat
+-->
+  <!-- TAGS
+gpu_set_blendmode_ext
+-->
+</body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>физическое_соединение_установить_значение</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_set_value" />
+  <meta name="rh-index-keywords" content="physics_joint_set_value" />
+  <meta name="search-keywords" content="physics_joint_set_value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>физическое_соединение_установить_значение</h1>
+  <p>Некоторые свойства сустава могут быть изменены и заданы даже после его создания. Существует ряд констант, которые могут быть использованы в этой функции, и их можно найти здесь: <a href="Physics_Joint_Constants.htm">Physics Joint Constants</a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_joint_set_value(joint, field, value)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>совместный</td>
+        <td>Индекс сустава, который вы хотите изменить</td>
+      </tr>
+      <tr>
+        <td>поле</td>
+        <td>Константа для совместной собственности, которую вы хотите изменить</td>
+      </tr>
+      <tr>
+        <td>значение</td>
+        <td>Новая стоимость совместного имущества</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">если physics_joint_get_value(revJoint, phy_joint_max_motor_torque) &lt; 2<br> {
+    <br> physics_joint_set_value(revJoint, phy_joint_max_motor_torque, 2);<br> }
+  </p>
+  <p>Приведенный выше код проверяет, установлен ли максимальный крутящий момент двигателя суставов меньше 2, и если да, то устанавливает его равным 2.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Joints.htm">Суставы</a></div>
+        <div style="float:right">Далее: <a href="physics_joint_distance_create.htm">physics_joint_distance_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_set_value
+-->
+  <!-- TAGS
+physics_joint_set_value
+-->
+</body>
+</html>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>буфер_копирование_из_вершинного_буфера</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_copy_from_vertex_buffer" />
+  <meta name="rh-index-keywords" content="buffer_copy_from_vertex_buffer" />
+  <meta name="search-keywords" content="buffer_copy_from_vertex_buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>буфер_копирование_из_вершинного_буфера</h1>
+  <p>Эта функция может использоваться для копирования некоторых (или всех) вершинных данных, хранящихся в одном вершинном буфере, в ранее созданный обычный буфер. При копировании из вершинного буфера в обычный буфер с помощью этой функции, оба буфера должны быть предварительно
+    созданы (с помощью <a href="../Drawing/Primitives/vertex_create_buffer.htm"><tt>vertex_create_buffer()</tt></a> и <a href="buffer_create.htm"><tt>buffer_create()</tt></a> например). Вы можете указать диапазон вершинных данных, которые вы
+    где начальная вершина может быть в любом месте между 0 и числом вершин -1, и вы можете указать число вершин с этой точки для копирования. Вы можете использовать функцию <a href="../Drawing/Primitives/vertex_get_number.htm"><tt>vertex_get_number()</tt></a>    для буфера вершин, чтобы получить общее количество хранящихся вершин. Наконец, вы указываете индекс буфера, в который нужно скопировать данные вершины, а также смещение данных для определения позиции, в которую нужно скопировать данные вершины в буфере назначения.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">buffer_copy_from_vertex_buffer(vertex_buffer, start_vertex, num_vertices, dest_buffer, dest_offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>вершинный_буфер</td>
+        <td>Индекс буфера вершин <i>для</i> копирования.</td>
+      </tr>
+      <tr>
+        <td>начальная_вершина</td>
+        <td>Начальная вершина.</td>
+      </tr>
+      <tr>
+        <td>num_vertices</td>
+        <td>Общее количество вершин для использования.</td>
+      </tr>
+      <tr>
+        <td>dest_buffer</td>
+        <td>Индекс буфера для копирования <i>.</i></td>
+      </tr>
+      <tr>
+        <td>dest_offset</td>
+        <td>Позиция смещения для копирования данных (в байтах).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var v_num = vertex_get_number(model_buff); buffer_copy_from_vertex_buffer(model_buffer, 0, v_num - 1, player_buffer, 0);</p>
+  <p>Приведенный выше код скопирует данные вершин, хранящиеся в буфере вершин, индексированном в переменной &quot;model_buffer&quot;, а затем вставит их в буфер, индексированный в переменной &quot;player_buffer&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Buffers.htm">Буферы</a></div>
+        <div style="float:right">Далее: <a href="buffer_get_type.htm">buffer_get_type</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_copy_from_vertex_buffer
+-->
+  <!-- TAGS
+buffer_copy_from_vertex_buffer
+-->
+</body>
+</html>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_sprite_pos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_pos" />
+  <meta name="rh-index-keywords" content="draw_sprite_pos" />
+  <meta name="search-keywords" content="draw_sprite_pos" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_sprite_pos</h1>
+  <p>С помощью этой функции можно нарисовать спрайт, искаженный в области, определенной четырьмя угловыми координатами. Первыми двумя аргументами являются рисуемый спрайт и подизображение спрайта (такое же, как в функции <a href="draw_sprite.htm"><tt>draw_sprite()</tt></a>)
+    но следующие - это те, которые определяют положение каждого из четырех углов <b>ограничивающей области</b> данного спрайта. Их следует задавать по <i>часовой стрелке</i>, поэтому первой координатой будет верхняя левая, затем верхняя правая, затем нижняя правая и, наконец, нижняя левая.
+    правая и, наконец, нижняя левая. Вы также можете задать значение альфа для спрайта, чтобы нарисовать его прозрачным. На рисунке ниже показано, как работает эта функция:</p>
+  <p><img alt="draw_sprite_pos example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/draw_sprite_pos.png" /></p>
+  <p class="note"><b>ВНИМАНИЕ!</b> Изображение выше приведено только для примера, и если вы используете эту функцию на спрайте, вы получите другие результаты и можете столкнуться с &quot;обрезанием&quot; текстуры из-за того, что спрайт строится из квадранта примитивов.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция полезна только для <b>растровых</b> спрайтов и не работает со спрайтами SWF или JSON (Spine).</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: При использовании этой функции параметр <a href="../../../../Settings/Texture_Groups.htm">Автоматически обрезать</a> для текстурных страниц должен быть отключен.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_sprite_pos(sprite, subimg, x1, y1, x2, y2, x3, y3, x4, y4, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>спрайт</td>
+        <td>Индекс спрайта для рисования.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>Подimg (кадр) спрайта для рисования (image_index или -1 соотносятся с текущим кадром анимации в объекте).</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Первая координата x.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Первая координата y.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Вторая координата x.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Вторая координата y.</td>
+      </tr>
+      <tr>
+        <td>x3</td>
+        <td>Третья координата x.</td>
+      </tr>
+      <tr>
+        <td>y3</td>
+        <td>Третья координата y.</td>
+      </tr>
+      <tr>
+        <td>x4</td>
+        <td>Четвертая координата x.</td>
+      </tr>
+      <tr>
+        <td>y4</td>
+        <td>Четвертая координата y.</td>
+      </tr>
+      <tr>
+        <td>альфа</td>
+        <td>Альфа спрайта (от 0 до 1, где 0 - прозрачный, а 1 - непрозрачный).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_sprite_pos(sprite_index, image_index, x - 100, y - 50, x - 50, y +150, x + 100, y + 200, x + 100, y, 1);</p>
+  <p>Приведенный выше код нарисует спрайт, связанный с экземпляром, выполняющим код, с искажением вокруг x / y позиции экземпляра и с полностью непрозрачной альфой.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprites_And_Tiles.htm">Спрайты и плитки</a></div>
+        <div style="float:right">Далее: <a href="draw_sprite_tiled.htm">draw_sprite_tiled</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_pos
+-->
+  <!-- TAGS
+draw_sprite_pos
+-->
+</body>
+</html>

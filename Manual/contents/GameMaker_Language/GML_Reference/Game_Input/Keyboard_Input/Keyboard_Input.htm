@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ввод с клавиатуры</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Keyboard Input" />
+  <meta name="rh-index-keywords" content="vk_nokey,vk_anykey,vk_left,vk_right,vk_up,vk_down,vk_enter,vk_escape,vk_space,vk_shift,vk_control,vk_alt,vk_backspace,vk_tab,vk_home,vk_end,vk_delete,vk_insert,vk_pageup,vk_pagedown,vk_pause,vk_printscreen,vk_f1,vk_f2,vk_f3,vk_f4,vk_f5,vk_f6,vk_f7,vk_f8,vk_f9,vk_f10,vk_f11,vk_f12,vk_numpad0,vk_numpad1,vk_numpad2,vk_numpad3,vk_numpad4,vk_numpad5,vk_numpad6,vk_numpad7,vk_numpad8,vk_numpad9,vk_multiply,vk_divide,vk_add,vk_subtract,vk_decimal,vk_lshift,vk_lcontrol,vk_lalt,vk_rshift,vk_rcontrol,vk_ralt" />
+  <meta name="search-keywords" content="Keyboard Input,vk_nokey,vk_anykey,vk_left,vk_right,vk_up,vk_down,vk_enter,vk_escape,vk_space,vk_shift,vk_control,vk_alt,vk_backspace,vk_tab,vk_home,vk_end,vk_delete,vk_insert,vk_pageup,vk_pagedown,vk_pause,vk_printscreen,vk_f1,vk_f2,vk_f3,vk_f4,vk_f5,vk_f6,vk_f7,vk_f8,vk_f9,vk_f10,vk_f11,vk_f12,vk_numpad0,vk_numpad1,vk_numpad2,vk_numpad3,vk_numpad4,vk_numpad5,vk_numpad6,vk_numpad7,vk_numpad8,vk_numpad9,vk_multiply,vk_divide,vk_add,vk_subtract,vk_decimal,vk_lshift,vk_lcontrol,vk_lalt,vk_rshift,vk_rcontrol,vk_ralt" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Ввод с клавиатуры</h1>
+  <p>При работе с клавиатурой в <span class="notranslate">GameMaker Studio 2</span> у вас есть множество функций, которые можно использовать для распознавания различных состояний клавиатуры, например, нажатой или отпущенной. Есть также функции, которые сохраняют все нажатия клавиш в виде строки или могут
+    а также те, которые позволяют полностью очистить состояние клавиатуры.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ:</b> Эти функции предназначены только для настольных платформ <span class="notranslate">Windows/Mac/Ubuntu</span>. Вы можете обнаружить, что некоторые встроенные переменные и константы не действуют на других платформах, а многие функции не будут работать на мобильных устройствах.</p>
+  <p>Каждый символ ввода с клавиши (или нескольких клавиш) определяется его кодом <a href="https://en.wikipedia.org/wiki/UTF-8" target="_blank">UTF8</a>, который представляет собой числовое значение. Это значение может быть получено для любого символа с помощью функции <a href="../../Strings/ord.htm"><tt>ord()</tt></a>    но в <span class="notranslate">GameMaker Studio 2</span> также есть ряд <tt>констант</tt> для наиболее используемых специальных клавиш клавиатуры и специальные функции. Обычно вы используете комбинацию ord( <tt>)</tt> с функциями <tt>keyboard_check*()</tt>,
+    примерно так:</p>
+  <p class="code">if keyboard_check(ord(&quot;A&quot;))<br> {
+    <br> hspeed = -5;<br> }
+  </p>
+  <p>Таким образом, вышеприведенный пример проверит клавишу &quot;A&quot; и, если она нажата, то установит горизонтальную скорость объекта на -5. Обратите внимание, что использование <tt>ord()</tt> таким образом будет работать правильно только в том случае, если входная строка состоит из одного символа
+    Функция <tt>ord()</tt> вернет полное значение UTF8, но функции <tt>keyboard_check*()</tt> <i>определят только A - Z и 0 - 9</i>. Но что, если
+    вы хотите использовать клавиши со стрелками? Или если вы хотите изменить действие с помощью клавиши &quot;shift&quot;? Для этого в <span class="notranslate">GameMaker Studio 2</span> есть ряд констант <tt>vk_</tt><tt>(vk_</tt> означает <i>виртуальную клавишу</i>), которые можно использовать вместо функций
+   <tt>ord()</tt>:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td><tt>vk_nokey</tt></td>
+        <td>код клавиши, означающий, что ни одна клавиша не нажата</td>
+      </tr>
+      <tr>
+        <td><tt>vk_anykey</tt></td>
+        <td>код клавиши, представляющий нажатие любой клавиши</td>
+      </tr>
+      <tr>
+        <td><tt>vk_left</tt></td>
+        <td>код клавиши для клавиши со стрелкой влево</td>
+      </tr>
+      <tr>
+        <td><tt>vk_right</tt></td>
+        <td>код клавиши для клавиши со стрелкой вправо</td>
+      </tr>
+      <tr>
+        <td><tt>vk_up</tt></td>
+        <td>код клавиши для клавиши со стрелкой вверх</td>
+      </tr>
+      <tr>
+        <td><tt>vk_down</tt></td>
+        <td>код клавиши для клавиши со стрелкой вниз</td>
+      </tr>
+      <tr>
+        <td><tt>vk_enter</tt></td>
+        <td>клавиша ввода</td>
+      </tr>
+      <tr>
+        <td><tt>vk_escape</tt></td>
+        <td>клавиша эвакуации</td>
+      </tr>
+      <tr>
+        <td><tt>vk_space</tt></td>
+        <td>клавиша пробела</td>
+      </tr>
+      <tr>
+        <td><tt>vk_shift</tt></td>
+        <td>любая из клавиш shift</td>
+      </tr>
+      <tr>
+        <td><tt>vk_control</tt></td>
+        <td>одна из клавиш управления</td>
+      </tr>
+      <tr>
+        <td><tt>vk_alt</tt></td>
+        <td>клавиша alt</td>
+      </tr>
+      <tr>
+        <td><tt>vk_backspace</tt></td>
+        <td>клавиша обратного хода</td>
+      </tr>
+      <tr>
+        <td><tt>vk_tab</tt></td>
+        <td>клавиша табуляции</td>
+      </tr>
+      <tr>
+        <td><tt>vk_home</tt></td>
+        <td>главный ключ</td>
+      </tr>
+      <tr>
+        <td><tt>vk_end</tt></td>
+        <td>конечный ключ</td>
+      </tr>
+      <tr>
+        <td><tt>vk_delete</tt></td>
+        <td>клавиша удаления</td>
+      </tr>
+      <tr>
+        <td><tt>vk_insert</tt></td>
+        <td>клавиша вставки</td>
+      </tr>
+      <tr>
+        <td><tt>vk_pageup</tt></td>
+        <td>клавиша перехода на страницу</td>
+      </tr>
+      <tr>
+        <td><tt>vk_pagedown</tt></td>
+        <td>клавиша вызова</td>
+      </tr>
+      <tr>
+        <td><tt>vk_pause</tt></td>
+        <td>клавиша паузы/прерывания</td>
+      </tr>
+      <tr>
+        <td><tt>vk_printscreen</tt></td>
+        <td>клавиша printscreen/sysrq</td>
+      </tr>
+      <tr>
+        <td><tt>vk_f1 ... vk_f12</tt></td>
+        <td>код клавиш для функциональных клавиш F1 - F12</td>
+      </tr>
+      <tr>
+        <td><tt>vk_numpad0 ... vk_numpad9</tt></td>
+        <td>цифровые клавиши на цифровой клавиатуре</td>
+      </tr>
+      <tr>
+        <td><tt>vk_multiply</tt></td>
+        <td>клавиша умножения на цифровой клавиатуре</td>
+      </tr>
+      <tr>
+        <td><tt>vk_divide</tt></td>
+        <td>клавиша деления на цифровой клавиатуре</td>
+      </tr>
+      <tr>
+        <td><tt>vk_add</tt></td>
+        <td>клавиша добавления на цифровой клавиатуре</td>
+      </tr>
+      <tr>
+        <td><tt>vk_subtract</tt></td>
+        <td>клавиша вычитания на цифровой клавиатуре</td>
+      </tr>
+      <tr>
+        <td><tt>vk_decimal</tt></td>
+        <td>клавиши с десятичными точками на цифровой клавиатуре</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Следующие константы могут быть использованы только с <tt>keyboard_check_direct()</tt>:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td><tt>vk_lshift</tt></td>
+        <td>клавиша левого сдвига</td>
+      </tr>
+      <tr>
+        <td><tt>vk_lcontrol</tt></td>
+        <td>левая клавиша управления</td>
+      </tr>
+      <tr>
+        <td><tt>vk_lalt</tt></td>
+        <td>левая клавиша alt</td>
+      </tr>
+      <tr>
+        <td><tt>vk_rshift</tt></td>
+        <td>правая клавиша переключения</td>
+      </tr>
+      <tr>
+        <td><tt>vk_rcontrol</tt></td>
+        <td>правая клавиша управления</td>
+      </tr>
+      <tr>
+        <td><tt>vk_ralt</tt></td>
+        <td>правая клавиша alt</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p><span style="text-align: justify;">Ниже приведен небольшой пример использования функции</span><span style="text-align: justify;"> </span><tt>vk_</tt><span style="text-align: justify;"> </span><span style="text-align: justify;">константы:</span></p>
+  <p class="code">if keyboard_check_pressed(vk_tab)<br> {
+    <br> instance_create_layer(x, y, &quot;Controllers&quot;, obj_Menu);<br> }
+  </p>
+  <p>Приведенный выше код определит, нажата ли клавиша &quot;Tab <i>&quot;, и</i> создаст экземпляр объекта &quot;obj_Menu&quot;, если да.</p>
+  <p>Если вам нужно проверить наличие символа клавиши, который не является 0 - 9, A - Z или одной из констант VK, то вы должны проверить одну из переменных <tt>keyboard_*</tt>, например, <tt>keyboard_lastchar</tt>:</p>
+  <p class="code">var _key = keyboard_lastchar;<br> if ord(_key) == ord(&quot;ç&quot;)<br> {
+    <br> show_debug_message(&quot;ç key pressed&quot;);<br> }
+  </p>
+  <p>При работе с клавиатурой доступны следующие функции:</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эти функции <i>не</i> будут работать при использовании экранной <a href="../Virtual_Keys_And_Keyboards/Virtual_Keys_And_Keyboards.htm">виртуальной клавиатуры</a>.</p>
+  <ul class="colour">
+    <li><a href="io_clear.htm">io_clear</a></li>
+    <li><a href="keyboard_check.htm">keyboard_check</a></li>
+    <li><a href="keyboard_check_pressed.htm">keyboard_check_pressed</a></li>
+    <li><a href="keyboard_check_released.htm">keyboard_check_released</a></li>
+    <li><a href="keyboard_check_direct.htm">keyboard_check_direct</a></li>
+    <li><a href="keyboard_clear.htm">очистка_клавиатуры</a></li>
+    <li><a href="keyboard_set_map.htm">keyboard_set_map</a></li>
+    <li><a href="keyboard_get_map.htm">keyboard_get_map</a></li>
+    <li><a href="keyboard_unset_map.htm">keyboard_unset_map</a></li>
+    <li><a href="keyboard_set_numlock.htm">keyboard_set_numlock</a></li>
+    <li><a href="keyboard_get_numlock.htm">keyboard_get_numlock</a></li>
+  </ul>
+  <p> </p>
+  <p>Есть также некоторые функции, которые можно использовать для имитации нажатия клавиш:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="keyboard_key_press.htm">клавиатура_клавиша_нажатия</a></li>
+    <li><a href="keyboard_key_release.htm">клавиатура_клавиша_отпустить</a></li>
+  </ul>
+  <p> </p>
+  <p>Наконец, следующие переменные встроены в <span class="notranslate">GameMaker Studio 2</span> и могут быть доступны для получения информации о состоянии и вводе клавиатуры:</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: При использовании <a href="../Virtual_Keys_And_Keyboards/Virtual_Keys_And_Keyboards.htm">виртуальной клавиатуры</a> <i>только</i> переменная <span style="font-size:1px;"><tt style="font-size: 14px">строка_клавиатуры</tt></span> переменная будет обновляться
+    ввода данных с клавиатуры.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="keyboard_key.htm">клавиша_клавиатуры</a></li>
+    <li><a href="keyboard_lastkey.htm">клавиатура_последней клавиши</a></li>
+    <li><a href="keyboard_lastchar.htm">keyboard_lastchar</a></li>
+    <li><a href="keyboard_string.htm">строка_клавиатуры</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Game_Input.htm">Игровой вход</a></div>
+        <div style="float:right">Следующий: <a href="../Mouse_Input/Mouse_Input.htm">Ввод данных с помощью мыши</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Keyboard Input Functions
+vk_nokey
+vk_anykey
+vk_left
+vk_right
+vk_up
+vk_down
+vk_enter
+vk_escape
+vk_space
+vk_shift
+vk_control
+vk_alt
+vk_backspace
+vk_tab
+vk_home
+vk_end
+vk_delete
+vk_insert
+vk_pageup
+vk_pagedown
+vk_pause
+vk_printscreen
+vk_f1
+vk_f2
+vk_f3
+vk_f4
+vk_f5
+vk_f6
+vk_f7
+vk_f8
+vk_f9
+vk_f10
+vk_f11
+vk_f12
+vk_numpad0
+vk_numpad1
+vk_numpad2
+vk_numpad3
+vk_numpad4
+vk_numpad5
+vk_numpad6
+vk_numpad7
+vk_numpad8
+vk_numpad9
+vk_multiply
+vk_divide
+vk_add
+vk_subtract
+vk_decimal
+vk_lshift
+vk_lcontrol
+vk_lalt
+vk_rshift
+vk_rcontrol
+vk_ralt
+-->
+  <!-- TAGS
+keyboard_functions
+-->
+</body>
+</html>

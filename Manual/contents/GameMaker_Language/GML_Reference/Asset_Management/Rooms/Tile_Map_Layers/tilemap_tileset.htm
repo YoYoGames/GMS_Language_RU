@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>набор плиток</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function tilemap_tileset" />
+  <meta name="rh-index-keywords" content="tilemap_tileset" />
+  <meta name="search-keywords" content="tilemap_tileset" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>набор плиток</h1>
+  <p>С помощью этой функции можно изменить ресурс набора плиток, назначенный данному элементу карты плиток на слое. Вы передаете идентификатор элемента карты плиток (который вы получаете при создании элемента карты плиток с помощью функции <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>    или при использовании функции <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>), а затем указываете индекс набора плиток, и карте плиток будет присвоен новый спрайт.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">tilemap_tileset(tilemap_element_id, tileset_index)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>Уникальное значение ID элемента карты плитки, которое необходимо изменить</td>
+      </tr>
+      <tr>
+        <td>индекс_набора_плиток</td>
+        <td>Новый индекс набора плиток для использования</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_trees&quot;);<br> var tile_id = layer_tilemap_get_id(lay_id);<br> if tilemap_get_tileset(tile_id) != ts_Nighttime<br> {
+    <br> tilemap_tileset(tile_id, ts_Nighttime);<br> }
+  </p>
+  <p>Приведенный выше код проверяет текущий набор плиток, назначенный карте плиток на слое &quot;Tiles_trees&quot;, и если он не &quot;ts_Nighttime&quot;, то этот набор плиток назначается карте плиток.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Tile_Map_Layers.htm">Плитка Слои карты</a></div>
+        <div style="float:right">Далее: <a href="tilemap_clear.htm">tilemap_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_tileset
+-->
+  <!-- TAGS
+tilemap_tileset
+-->
+</body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>видимый</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable visible" />
+  <meta name="rh-index-keywords" content="visible" />
+  <meta name="search-keywords" content="visible" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>видимый</h1>
+  <p>Экземпляр можно пометить как <tt>видимый</tt> или невидимый, установив эту переменную в <tt>true</tt> (видимый) или <tt>false</tt> (невидимый). Это позволяет <span class="notranslate">GameMaker Studio 2</span> пропустить событие рисования для данного экземпляра, поэтому при использовании этой переменной следует соблюдать осторожность.
+    так как это означает, что никакой код, помещенный в событие рисования, не будет выполняться, пока экземпляр не виден. Также обратите внимание, что если <a href="layer.htm">слой</a>, которому назначен данный экземпляр, помечен как невидимый, установка этой переменной в значение
+   <tt>true</tt> не будет иметь никакого эффекта, пока сам слой не будет помечен как видимый.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">видимым;</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if other.visible = true<br> {
+    <br> x = xprevious;<br> y = yprevious;<br> }
+  </p>
+  <p>Приведенный выше код проверит флаг видимости экземпляра &quot;другой&quot; в <i>событии</i> столкновения <i>и, если он</i> установлен в true, переместит <tt>этот</tt> экземпляр в его предыдущую позицию.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Instance_Variables.htm">Переменные экземпляра</a></div>
+        <div style="float:right">Далее: <a href="solid.htm">твердый</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+visible
+-->
+  <!-- TAGS
+visible
+-->
+</body>
+</html>

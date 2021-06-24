@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>следующая комната</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_next" />
+  <meta name="rh-index-keywords" content="room_next" />
+  <meta name="search-keywords" content="room_next" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>следующая комната</h1>
+  <p>С помощью этой функции вы можете получить индекс комнаты <i>после</i> ввода комнаты в функцию. Например, вы можете использовать переменную <a href="room.htm"><tt>комната</tt></a> для получения индекса текущей комнаты, а затем использовать эту функцию для поиска
+    комнату, которая следует за ней, как указано в <a href="../../../../Settings/The_Room_Manager.htm">диспетчере комнат</a>. Если после введенной вами комнаты нет комнаты, то возвращается -1. Обратите внимание, что эта функция не распознает и не принимает во внимание
+    комнаты, которые были добавлены динамически с помощью <span class="inline"><a href="room_add.htm">room_add()</a></span> или <span class="inline"><a href="room_duplicate.htm">room_duplicate()</a></span>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">room_next(numb);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>numb</td>
+        <td>Индекс комнаты, после которой нужно получить следующую.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Индекс</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if room_next(room) != -1<br> {
+    <br> room_goto_next());
+    <br> }
+  </p>
+  <p>Приведенный выше код проверит, существует ли следующая комната, и если да, то перейдет в нее.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Rooms.htm">Номера</a></div>
+        <div style="float:right">Далее: <a href="room_previous.htm">room_previous</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_next
+-->
+  <!-- TAGS
+room_next
+-->
+</body>
+</html>

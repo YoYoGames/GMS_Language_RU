@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_get_element_type</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_get_element_type" />
+  <meta name="rh-index-keywords" content="layer_get_element_type,layerelementtype_background	,layerelementtype_instance,layerelementtype_tilemap,layerelementtype_sprite,layerelementtype_particlesystem,layerelementtype_tile,layerelementtype_sequence" />
+  <meta name="search-keywords" content="layer_get_element_type,layerelementtype_background	,layerelementtype_instance,layerelementtype_tilemap,layerelementtype_sprite,layerelementtype_particlesystem,layerelementtype_tile,layerelementtype_sequence" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_get_element_type</h1>
+  <p>Вы можете использовать эту функцию для получения <i>типа элемента</i> для данного элемента. Вы передаете уникальное значение ID элемента (например, возвращенное функцией, создавшей элемент, или из редактора комнат), и функция возвращает одну из следующих констант
+    констант (или -1, если элемент не существует или значение ID ошибочно):</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>layerelementtype_background</td>
+        <td>Элемент является фоном.</td>
+      </tr>
+      <tr>
+        <td>layerelementtype_instance</td>
+        <td>Элемент является экземпляром.</td>
+      </tr>
+      <tr>
+        <td>layerelementtype_sprite</td>
+        <td>Элемент является активом спрайта.</td>
+      </tr>
+      <tr>
+        <td>layerelementtype_tilemap</td>
+        <td>Элемент представляет собой карту плитки.</td>
+      </tr>
+      <tr>
+        <td>layerelementtype_particlesystem</td>
+        <td>Элемент представляет собой систему частиц.</td>
+      </tr>
+      <tr>
+        <td>layerelementtype_tile</td>
+        <td>Элемент является унаследованной фоновой плиткой (это справедливо только для проектов, которые были импортированы из предыдущих версий программы <i><span class="notranslate">GameMaker</span></i>).</td>
+      </tr>
+      <tr>
+        <td>layerelementtype_sequence</td>
+        <td>Элемент является активом последовательности.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Обратите внимание, что эта функция наиболее полезна, когда у вас есть несколько различных типов элементов, назначенных одному слою, и что вы можете получить список всех элементов на любом данном слое с помощью функции <a href="layer_get_all_elements.htm"><tt>layer_get_all_elements()</tt></a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_get_element_type(element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>слой</td>
+        <td>Уникальное значение ID элемента для получения типа</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Константа (см. таблицу, выше) или -1, если элемент не существует или недопустим</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var a = layer_get_all_elements(layer);<br> for (var i = 0; i &lt; array_length(a); i++;) <br> {
+    <br> if layer_get_element_type(a[i]) == layerelementtype_sprite<br> {
+    <br> layer_sprite_destroy(a[i])
+    <br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код получает идентификаторы всех элементов экземпляра, назначенных слою экземпляра, на котором выполняется код. Затем код проверяет, являются ли какие-либо из возвращенных элементов спрайтовыми активами, и если да, то они уничтожаются.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="General_Layer_Functions.htm">Общие функции слоя</a></div>
+        <div style="float:right">Далее: <a href="layer_get_x.htm">layer_get_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_get_element_type
+layerelementtype_background
+layerelementtype_instance
+layerelementtype_sprite
+layerelementtype_tilemap
+layerelementtype_particlesystem
+layerelementtype_tile
+layerelementtype_sequence
+-->
+  <!-- TAGS
+layer_get_element_type
+-->
+</body>
+</html>

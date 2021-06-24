@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>cloud_string_save</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for cloud_string_save" />
+  <meta name="rh-index-keywords" content="cloud_string_save" />
+  <meta name="search-keywords" content="cloud_string_save" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>cloud_string_save</h1>
+  <p>Эта функция зафиксирует строку в выбранном облачном сервисе для хранения. Функция возвращает уникальное значение <b>id</b>, которое затем должно быть использовано в соответствующем асинхронном событии для идентификации карты DS, возвращаемой в качестве &quot;обратного вызова&quot;.
+    от облачного сервиса. Строка должна содержать <i>всю</i> информацию, которую вам нужно сохранить для вашей игры, поскольку вы можете сохранить только один единственный &quot;блок данных&quot; в облаке, и повторный запуск этой функции перезапишет любые ранее сохраненные
+    значения (как и при использовании <a href="cloud_file_save.htm"><tt>cloud_file_save()</tt></a> функция). Описание должно быть короткой строкой информации, описывающей сохранение, например: &quot;Level2, Stage2&quot;.</p>
+  <p>Для получения дополнительной информации о возвращаемых асинхронных данных, пожалуйста, обратитесь к функции <a href="cloud_synchronise.htm"><tt>cloud_synchronise()</tt></a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">cloud_string_save(string, description);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>строка</td>
+        <td>Строка данных для загрузки.</td>
+      </tr>
+      <tr>
+        <td>описание</td>
+        <td>Краткое описание хранимых данных.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var t_str = &quot;&quot;;<br> for (var i = 0; i &lt; 10; i++;)<br> {
+    <br> t_str += string(global.Highscore[i]) + &quot;|&quot;<br> }
+    <br> save_check = cloud_string_save(t_str, &quot;Current Highscores&quot;);<br> var file = file_text_open_write(&quot;Highscores.txt&quot;);<br> file_text_write_string(file, t_str);<br> file_text_close(file);
+  </p>
+  <p>Приведенный выше код создает строку из значений, хранящихся в глобальном массиве &quot;Highscores&quot;, а затем записывает эту строку в облачный сервис для хранения, а также записывает ее в файл для локального хранения.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Cloud_Saving.htm">Облачная экономия</a></div>
+        <div style="float:right">Далее: <a href="cloud_file_save.htm">cloud_file_save</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+cloud_string_save
+-->
+  <!-- TAGS
+cloud_string_save
+-->
+</body>
+</html>

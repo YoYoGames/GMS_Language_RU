@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>строка_параметра</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for parameter_string" />
+  <meta name="rh-index-keywords" content="parameter_string" />
+  <meta name="search-keywords" content="parameter_string" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>строка_параметра</h1>
+  <p>Параметры командной строки - это дополнительные команды, которые можно добавить в exe, чтобы изменить способ выполнения программы. С помощью этой функции вы можете получить выбранный параметр командной строки в виде строки. Вы можете узнать количество параметров для текущей игры
+    с помощью функции <a href="parameter_count.htm"><tt>parameter_count()</tt></a>, где первый параметр имеет индекс 1, а последний - индекс, возвращаемый функцией (значение 0 является особенным, так как это имя файла исполняемого файла игры,
+    включая путь). Следует отметить, что эта функция будет работать на платформе HTML5, получая параметры url.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">параметр_строки(n);</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Строка</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var p_num;<br> p_num = parameter_count();<br> if p_num &gt; 0<br> {
+    <br> var i;<br> for (i = 0; i &lt; p_num; i += 1)<br> {
+    <br> p_string[i] = parameter_string(i + 1);<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код получит количество параметров командной строки, и если их 1 или более, то пройдется по ним и сохранит их в виде строк в массиве.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="OS_And_Compiler.htm">ОС и компилятор</a></div>
+        <div style="float:right">Далее: <a href="environment_get_variable.htm">environment_get_variable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+parameter_string
+-->
+  <!-- TAGS
+parameter_string
+-->
+</body>
+</html>

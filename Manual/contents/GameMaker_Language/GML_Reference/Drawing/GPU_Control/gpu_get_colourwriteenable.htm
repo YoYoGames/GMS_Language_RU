@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_get_colourwriteenable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_get_colourwriteenable" />
+  <meta name="rh-index-keywords" content="gpu_get_colorwriteenable,gpu_get_colourwriteenable" />
+  <meta name="search-keywords" content="gpu_get_colorwriteenable,gpu_get_colourwriteenable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_get_colourwriteenable</h1>
+  <p>Эта функция может быть использована для получения текущих значений разрешения записи цветов. Функция возвращает 4-элементный массив 1D со следующими элементами, которые будут либо <tt>true</tt> (включено), либо <tt>false</tt> (отключено). По умолчанию все цвета
+    запись установлена на <tt>true</tt>:</p>
+  <ul class="colour">
+    <li>[0] = Красный канал включен/выключен</li>
+    <li>[1] = Зеленый канал включен/выключен</li>
+    <li>[2] = Синий канал включен/выключен</li>
+    <li>[3] = Альфа-канал включен/выключен</li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gpu_get_colorwriteenable();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">4-элементный одномерный массив (подробности см. выше)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var cw = gpu_get_colorwriteenable();<br> cw[3] = false;<br> gpu_set_colorwriteenable(cw);
+  </p>
+  <p>Приведенный выше код получает текущие значения записи цвета, а затем устанавливает компонент alpha в <tt>false</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="GPU_Control.htm">Управление графическим процессором</a></div>
+        <div style="float:right">Далее: <a href="gpu_get_alphatestenable.htm">gpu_get_alphatestenable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_colourwriteenable
+gpu_get_colorwriteenable
+-->
+  <!-- TAGS
+gpu_get_colorwriteenable
+-->
+</body>
+</html>

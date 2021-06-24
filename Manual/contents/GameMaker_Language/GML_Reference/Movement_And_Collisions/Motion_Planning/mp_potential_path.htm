@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_potential_path</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_potential_path" />
+  <meta name="rh-index-keywords" content="mp_potential_path" />
+  <meta name="search-keywords" content="mp_potential_path" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_potential_path</h1>
+  <p>Эта функция рассчитывает путь для экземпляра от его текущего положения <i>и ориентации</i> до положения, заданного аргументами xgoal,ygoal. Она использует указанный размер шага, стараясь избежать столкновения либо со всеми экземплярами, либо только с
+    теми, которые помечены как твердые. Как и в функции <a href="mp_potential_step.htm"><tt>mp_potential_step()</tt></a> она использует шаги потенциального поля для достижения этой цели, а способ, которым она это делает, может быть изменен с помощью функции <a href="mp_potential_settings.htm"><tt>mp_potential_settings()</tt></a>.
+    Указанный путь должен уже существовать, и он будет перезаписан новым путем. Функция возвращает, был ли найден путь (true) или нет (false).</p>
+  <p>Чтобы функция не продолжала вычислять до бесконечности, необходимо задать коэффициент больше 1 - функция остановится и сообщит о неудаче, если не сможет найти путь короче, чем этот коэффициент, умноженный на расстояние от начала до цели. Коэффициент 4
+    обычно достаточно, но если вы ожидаете длительных обходов, то можно сделать его больше. В случае неудачи все равно будет создан путь, проходящий в приблизительном направлении к цели, но он не достигнет ее.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция не перемещает экземпляр. Она только задает путь, а для перемещения необходимо использовать функции <a href="../../Asset_Management/Paths/Paths.htm">Path</a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">mp_potential_path(path, xgoal, ygoal, stepize, factor, checkall)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>путь</td>
+        <td>индекс пути, который будет использоваться функцией</td>
+      </tr>
+      <tr>
+        <td>xgoal</td>
+        <td>Положение цели x.</td>
+      </tr>
+      <tr>
+        <td>ygoal</td>
+        <td>Положение цели по оси y.</td>
+      </tr>
+      <tr>
+        <td>размер шага</td>
+        <td>Скорость перемещения экземпляра в пикселях за шаг.</td>
+      </tr>
+      <tr>
+        <td>фактор</td>
+        <td>Это число используется для предотвращения бесконечного цикла. Оно должно быть больше 1. Более подробную информацию см. в описании функции.</td>
+      </tr>
+      <tr>
+        <td>checkall</td>
+        <td>Проверять ли все экземпляры (true) или только твердые (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">path = path_add();<br> mp_potential_path(path, obj_Player.x, obj_Player.y, 3, 4, 0);<br> path_start(path, 3, 0, 0);</p>
+  <p>Приведенный выше код создает новый ресурс пути и сохраняет его индекс в переменной &quot;path&quot;. Затем он генерирует путь с помощью <tt>mp_potential_path</tt> между объектом с этим кодом и объектом &quot;obj_Player&quot;, проверяя столкновения
+    со всеми объектами в комнате. Наконец, он запускает объект по этому пути, даже если функция не смогла вернуть полный маршрут к &quot;obj_Player&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Motion_Planning.htm">Планирование движения</a></div>
+        <div style="float:right">Далее: <a href="mp_potential_path_object.htm">mp_potential_path_object</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_potential_path
+-->
+  <!-- TAGS
+mp_potential_path
+-->
+</body>
+</html>

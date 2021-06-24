@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>строковый_формат</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_format" />
+  <meta name="rh-index-keywords" content="string_format" />
+  <meta name="search-keywords" content="string_format" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>строковый_формат</h1>
+  <p>Превращает вещественное число в строку, используя собственное форматирование, где можно выбрать, сколько &quot;знаков&quot; сохраняется в строке и сколько десятичных знаков также сохраняется. Оба варианта могут быть очень удобны, некоторые игры предпочитают отображать счет в виде заданного числа
+    цифр, а контроль над десятичными знаками может быть полезен для высокой точности, которую два знака после запятой <a href="string.htm"><tt>string()</tt></a> не может обеспечить. Если количество указанных знаков больше, чем отображаемое значение и/или число
+    плюс указанные десятичные знаки меньше общего количества знаков, то перед значением будут добавлены пробелы, чтобы компенсировать разницу (см. пример ниже). Справа от десятичной точки будут добавлены нули, если указанное значение
+    меньше, чем общее значение и количество знаков после запятой. Формат по умолчанию - без дополнительных пробелов слева и только два десятичных знака справа, например, &quot;265,73&quot;.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">string_format(val, tot, dec);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>Вещественное число, которое должно быть преобразовано в строку.</td>
+      </tr>
+      <tr>
+        <td>tot</td>
+        <td>Общее количество мест основного числа, которое должно быть показано. Нули или пробелы будут вставлены в соответствии с этим.</td>
+      </tr>
+      <tr>
+        <td>дек</td>
+        <td>Количество десятичных знаков, которые должны быть включены.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Строка</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">str1 = string_format(1234, 8, 0);<br> str2 = string_format(pi, 1, 10);<br> str3 = string_format(pi, 5, 5);</p>
+  <p>Это установит <tt>str1</tt> в &quot; 1234&quot;, str2 в &quot;3 <tt>.1415926535</tt> &quot; и str3 в &quot; 3.14159 <tt>&quot;</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Strings.htm">Струны</a></div>
+        <div style="float:right">Далее: <a href="string_insert.htm">string_insert</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_format
+-->
+  <!-- TAGS
+string_format
+-->
+
+</body></html>

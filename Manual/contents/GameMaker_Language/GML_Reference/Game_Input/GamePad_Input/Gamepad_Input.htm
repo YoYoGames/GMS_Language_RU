@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Вход геймпада</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Gamepad Input" />
+  <meta name="rh-index-keywords" content="gp_face1,gp_face2,gp_face3,gp_face4,gp_shoulderl,gp_shoulderlb,gp_shoulderr,gp_shoulderrb,gp_select,gp_start,gp_stickl,gp_stickr,gp_padu,gp_padd,gp_padl,gp_padr,gp_axislh,gp_axislv,gp_axisrh,gp_axisrv,gp_axis_acceleration_x,gp_axis_acceleration_y,gp_axis_acceleration_z,gp_axis_angular_velocity_x,gp_axis_angular_velocity_y,gp_axis_angular_velocity_z,gp_axis_orientation_x,gp_axis_orientation_y,gp_axis_orientation_z,gp_axis_orientation_w" />
+  <meta name="search-keywords" content="Gamepad Input,gamepads,gp_face1,gp_face2,gp_face3,gp_face4,gp_shoulderl,gp_shoulderlb,gp_shoulderr,gp_shoulderrb,gp_select,gp_start,gp_stickl,gp_stickr,gp_padu,gp_padd,gp_padl,gp_padr,gp_axislh,gp_axislv,gp_axisrh,gp_axisrv,gp_axis_acceleration_x,gp_axis_acceleration_y,gp_axis_acceleration_z,gp_axis_angular_velocity_x,gp_axis_angular_velocity_y,gp_axis_angular_velocity_z,gp_axis_orientation_x,gp_axis_orientation_y,gp_axis_orientation_z,gp_axis_orientation_w" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>GamepadInput</h1>
+  <p><b></b><span class="notranslate">GameMaker Studio 2</span> имеет ряд специальных функций, которые можно использовать для обнаружения аналоговых и цифровых элементов управления с нескольких подключенных геймпадов. Эти функции работают аналогично функциям <a href="../Device_Input/Device_Input.htm">Device Inputs</a>,
+    Вы можете обнаружить до четырех различных подключенных геймпадов XInput (и до 8 геймпадов DirectInput) и обрабатывать входные данные от каждого из них с помощью одних и тех же функций. Обратите внимание, что когда геймпад подключается к вашему устройству (или извлекается)
+    запускается асинхронное <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events.htm">системное событие</a>, в котором вы можете действовать в соответствии с ситуацией, используя соответствующие функции.</p>
+  <p>Слоты для геймпадов индексируются от 0 вверх, и фактический слот, назначенный геймпаду, зависит от множества факторов, не последним из которых является ОС, на которой работает проект. На <strong><span class="notranslate">Windows</span></strong> цели, слоты 0 -
+    3 включительно <i>предназначены только для геймпадов Xinput</i>, то есть контроллеров Xbox360 и совместимых с ними. Однако вы также можете проверить слоты 4 - 11 включительно для геймпадов <i>DirectInput</i>, что означает, что вы можете обнаружить множество других моделей контроллеров при подключении
+    через эти слоты. На других платформах геймпады могут быть обнаружены в <em>любом</em> слоте, назначенном ОС, это может быть слот 3, слот 20 или более. Например, <strong><span class="notranslate">Android</span></strong> устройства будут хранить геймпады bluetooth в слоте и затем резервировать
+    Поэтому <em>нельзя</em> считать, что один подключенный геймпад подключен к слоту 0, так как это, скорее всего, не так.</p>
+  <p>Стоит отметить, что при использовании геймпадов DirectInput на <span class="notranslate">Windows</span> или общих геймпадов на других платформах, приведенные ниже константы <strong>могут не соответствовать кнопкам, которые вы ожидаете увидеть при нажатии</strong>, из-за фрагментарного и
+    нестандартизированного способа реализации API производителями контроллеров. В связи с этим рекомендуется использовать в играх экран настройки геймпада, на котором можно переопределить кнопки геймпада на основе данных, полученных от любого подключенного устройства.
+    (существуют функции &quot;отображения&quot; геймпада, которые могут помочь в этом на Windows <span class="notranslate">Desktop,</span> Ubuntu, <span class="notranslate">macOS</span> и Android <span class="notranslate">,</span> в то время как на всех остальных вам придется делать это самостоятельно с помощью кода).</p>
+  <h2>Входные константы</h2>
+  <p>При работе с функциями геймпада входные данные могут поступать от <strong>осей</strong>, <strong>кнопок</strong> или <strong>шляп</strong>, которые <span class="notranslate">GameMaker Studio 2</span> присвоит следующим встроенным константам (обратите внимание, что &quot;шляпы&quot; обычно
+    обнаруживаются только на нестандартных контроллерах):</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td><tt>gp_face1</tt></td>
+        <td>Верхняя кнопка 1 (соответствует кнопке <i>&quot;A&quot; на</i> контроллере Xbox 360 и кресту на контроллере <i>PS</i> )</td>
+      </tr>
+      <tr>
+        <td><tt>gp_face2</tt></td>
+        <td>Верхняя кнопка 2 (соответствует кнопке <i>&quot;B&quot; на</i> контроллере Xbox 360 и кругу на контроллере <i>PS</i> )</td>
+      </tr>
+      <tr>
+        <td><tt>gp_face3</tt></td>
+        <td>Верхняя кнопка 3 (соответствует <i>&quot;X&quot; на</i> контроллере Xbox 360 и квадрату на контроллере <i>PS</i> )</td>
+      </tr>
+      <tr>
+        <td><tt>gp_face4</tt></td>
+        <td>Верхняя кнопка 4 (соответствует букве <i>&quot;Y&quot; на</i> контроллере Xbox 360 и треугольнику <i>на</i> контроллере <i>PS</i> )</td>
+      </tr>
+      <tr>
+        <td><tt>gp_shoulderl</tt></td>
+        <td>Пуговица на левом плече</td>
+      </tr>
+      <tr>
+        <td><tt>gp_shoulderlb</tt></td>
+        <td>Спусковой крючок левого плеча</td>
+      </tr>
+      <tr>
+        <td><tt>gp_shoulderr</tt></td>
+        <td>Правая плечевая кнопка</td>
+      </tr>
+      <tr>
+        <td><tt>gp_shoulderrb</tt></td>
+        <td>Спусковой крючок правого плеча</td>
+      </tr>
+      <tr>
+        <td><tt>gp_select</tt></td>
+        <td>Кнопка выбора (это кнопка <i>PS</i> на контроллере DS4)</td>
+      </tr>
+      <tr>
+        <td><tt>gp_start</tt></td>
+        <td>Кнопка запуска (это кнопка &quot;опции&quot; на контроллере PS4)</td>
+      </tr>
+      <tr>
+        <td><tt>gp_stickl</tt></td>
+        <td>Левый стик нажат (как кнопка)</td>
+      </tr>
+      <tr>
+        <td><tt>gp_stickr</tt></td>
+        <td>Правый стик нажат (как кнопка)</td>
+      </tr>
+      <tr>
+        <td><tt>gp_padu</tt></td>
+        <td>D-пад вверх</td>
+      </tr>
+      <tr>
+        <td><tt>gp_padd</tt></td>
+        <td>D-пад вниз</td>
+      </tr>
+      <tr>
+        <td><tt>gp_padl</tt></td>
+        <td>D-pad влево</td>
+      </tr>
+      <tr>
+        <td><tt>gp_padr</tt></td>
+        <td>D-pad вправо</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axislh</tt></td>
+        <td>Горизонтальная ось левого стика (аналоговая)</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axislv</tt></td>
+        <td>Вертикальная ось левого стика (аналоговая)</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axisrh</tt></td>
+        <td>Горизонтальная ось правого стика (аналоговая)</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axisrv</tt></td>
+        <td>Вертикальная ось правого стика (аналоговая)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Чтобы лучше понять, какую именно часть контроллера представляет каждая константа, вы можете обратиться к следующему изображению стандартного геймпада XInput:</p>
+  <p><img alt="Xinput gamepad illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Game_Input/GamePad.png" /></p>
+  <p>Следующие константы могут быть использованы с функцией <tt><a href="gamepad_axis_value.htm">gamepad_axis_value()</a></tt> при использовании геймпада DualSense на PS4 или PS5:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td><tt>gp_axis_acceleration_x</tt></td>
+        <td>Ускорение геймпада по оси X</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axis_acceleration_y</tt></td>
+        <td>Ускорение геймпада по оси Y</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axis_acceleration_z</tt></td>
+        <td>Ускорение геймпада по оси Z</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axis_angular_velocity_x</tt></td>
+        <td>Угловая скорость геймпада по оси X</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axis_angular_velocity_y</tt></td>
+        <td>Угловая скорость геймпада по оси Y</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axis_angular_velocity_z</tt></td>
+        <td>Угловая скорость геймпада по оси Z</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axis_orientation_x</tt></td>
+        <td>Ориентация геймпада по оси X</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axis_orientation_y</tt></td>
+        <td>Ориентация геймпада по оси Y</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axis_orientation_z</tt></td>
+        <td>Ориентация геймпада по оси Z</td>
+      </tr>
+      <tr>
+        <td><tt>gp_axis_orientation_w</tt></td>
+        <td>Ориентация геймпада по оси W</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Ориентация геймпада - это кватернион <a href="https://en.wikipedia.org/wiki/Quaternion" title="Quaternion">,</a> поэтому он имеет четыре значения (X, Y, Z и W).</p>
+  <p>В настоящее время эти константы поддерживаются только на PS4 и PS5, при использовании на других платформах функции ввода возвращают <tt>0</tt>, даже при использовании геймпада DualSense.</p>
+  <h2>Функции</h2>
+  <p>Ниже приведен список всех функций геймпада:</p>
+  <ul class="colour">
+    <li><a href="gamepad_is_supported.htm">gamepad_is_supported</a></li>
+    <li><a href="gamepad_is_connected.htm">gamepad_is_connected</a></li>
+    <li><a href="gamepad_get_guid.htm">gamepad_get_guid</a></li>
+    <li><a href="gamepad_get_device_count.htm">gamepad_get_device_count</a></li>
+    <li><a href="gamepad_get_description.htm">gamepad_get_description</a></li>
+    <li><a href="gamepad_get_button_threshold.htm">gamepad_get_button_threshold</a></li>
+    <li><a href="gamepad_get_axis_deadzone.htm">gamepad_get_axis_deadzone</a></li>
+    <li><a href="gamepad_get_option.htm">gamepad_get_option</a></li>
+    <li><a href="gamepad_set_button_threshold.htm">gamepad_set_button_threshold</a></li>
+    <li><a href="gamepad_set_axis_deadzone.htm">gamepad_set_axis_deadzone</a></li>
+    <li><a href="gamepad_set_vibration.htm">gamepad_set_vibration</a></li>
+    <li><a href="gamepad_set_colour.htm">gamepad_set_colour</a></li>
+    <li><a href="gamepad_set_option.htm">gamepad_set_option</a></li>
+    <li><a href="gamepad_axis_count.htm">gamepad_axis_count</a></li>
+    <li><a href="gamepad_axis_value.htm">значение_оси_геймпада</a></li>
+    <li><a href="gamepad_button_check.htm">проверка_кнопки_геймпада</a></li>
+    <li><a href="gamepad_button_check_pressed.htm">gamepad_button_check_pressed</a></li>
+    <li><a href="gamepad_button_check_released.htm">gamepad_button_check_released</a></li>
+    <li><a href="gamepad_button_count.htm">счётчик_кнопок_геймпада</a></li>
+    <li><a href="gamepad_button_value.htm">значение_кнопки_геймпада</a></li>
+    <li><a href="gamepad_hat_count.htm">gamepad_hat_count</a></li>
+    <li><a href="gamepad_hat_value.htm">gamepad_hat_value</a></li>
+  </ul>
+  <p> </p>
+  <p>Существуют также следующие функции геймпада, которые используются для переназначения встроенных констант на прямые физические входы данного геймпада. Эти функции предназначены только для целевых платформ <span class="notranslate">Windows</span> Desktop, <span class="notranslate">Ubuntu</span>, <span class="notranslate">macOS</span> и <span class="notranslate">Android</span>, а в <span class="notranslate">Windows</span>,
+    они будут действительны только для устройств прямого ввода. Хотя <span class="notranslate">GameMaker Studio 2</span> поставляется с отображениями для ряда различных геймпадов на основе <a href="https://github.com/gabomdq/SDL_GameControllerDB" target="_blank">SDL Gamepad Controller DB</a>, однако
+    из-за огромного количества типов и марок контроллеров невозможно сопоставить константы <span class="notranslate">GML</span> с правильными входами для каждой марки и модели, поэтому с помощью этих функций у вас есть возможность создать собственные пользовательские сопоставления.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="gamepad_get_mapping.htm">gamepad_get_mapping</a></li>
+    <li><a href="gamepad_test_mapping.htm">gamepad_test_mapping</a></li>
+    <li><a href="gamepad_remove_mapping.htm">gamepad_remove_mapping</a></li>
+  </ul>
+  <p> </p>
+  <p>Стоит отметить, что геймпады с прямым вводом работают в <i>кооперативном режиме</i>, что означает, что ваша игра имеет к ним доступ только тогда, когда она является приложением переднего плана, что, в свою очередь, приведет к тому, что контроллеры прямого ввода будут &quot;потеряны&quot;, если игра потеряет фокус, а затем снова &quot;найдены&quot;, когда она вернется в фокус (это можно определить по системному событию).
+    игра теряет фокус, а затем снова &quot;находит&quot;, когда возвращается в фокус (это может быть обнаружено в системном событии и обработано). Аналогично, никакой ввод от геймпадов не будет обнаружен, пока игра не в фокусе, и мы рекомендуем вам
+    использовать функцию <a href="../../OS_And_Compiler/os_is_paused.htm"><tt>os_is_paused()</tt></a> или <a href="../../Cameras_And_Display/The_Game_Window/window_has_focus.htm"><tt>window_has_focus()</tt></a> чтобы обнаружить это и поставить игру на паузу или что-то подобное.
+    Так как любая кнопка, удерживаемая в момент, когда игра теряет фокус, будет удерживаться до тех пор, пока игра не вернет фокус.</p>
+  <p> </p>
+  <h2>Совместимость</h2>
+  <p>В приведенном ниже списке указана текущая совместимость платформ (обратите внимание, что она будет меняться с будущими обновлениями):</p>
+  <ul class="colour">
+    <li><strong><span class="notranslate">Windows</span> </strong>полностью поддерживается, причем одновременно можно подключить до 12 устройств (нумерация от 0 до 11, причем 0 - 3 - устройства XInput, а 4 - 11 - DirectInput). Также разрешено переназначение констант контроллера.</li>
+    <li><strong><span class="notranslate">macOS</span> </strong>поддерживается не более 4 подключенных устройств одновременно, причем эти устройства могут быть ТОЛЬКО типа <span class="notranslate">Playstation3</span>или Xbox 360. Обратите внимание, что опция &quot;Build for Mac AppStore&quot; в Mac Game Options
+      должна быть ВЫКЛЮЧЕНА, чтобы поддержка пэдов работала. Также разрешено переназначение констант контроллера.</li>
+    <li><strong><span class="notranslate">Ubuntu</span> </strong>также поддерживает ввод с геймпада, но вам может потребоваться установить дополнительные библиотеки из репозитория <span class="notranslate">Ubuntu</span>. Вы можете сделать это легко, открыв терминал командной строки и набрав следующее (это установит поддержку GUI
+      для джойстика/геймпада, а также сам API джойстика/геймпада - перестановка констант контроллера <i>не</i> разрешена):
+     <p class="code">sudo apt-get install jstest-gtk<br> sudo apt-get install joystick.</p>
+    </li>
+    <li><strong>HTML5-игры </strong>с использованием геймпадов поддерживаются большинством основных браузеров, кроме <i>Safari</i>. Переназначение констант контроллера <i>не</i> допускается.</li>
+    <li>Поддержка геймпадов также распространяется на <strong><span class="notranslate">iOS</span> </strong>с корпусом iCade. Левая ось соответствует контроллеру стиков (хотя вход цифровой, а не аналоговый), четыре кнопки &quot;лица&quot; соответствуют передним кнопкам корпуса, а четыре кнопки &quot;плеча&quot; соответствуют кнопкам на задней панели корпуса.
+      плечевые кнопки соответствуют кнопкам на задней панели корпуса.</li>
+    <li><strong><span class="notranslate">Android</span> </strong>(и <strong><span class="notranslate">Amazon Fire</span></strong>) поддерживает контроллеры NYKO и общие контроллеры Bluetooth, но только если они включены, что означает, что вам придется отметить опцию iCade/Bluetooth в разделе " <a href="../../../../Settings/Game_Options/Android.htm">Общие"</a> в опциях игры <span class="notranslate">Android</span>. Для их полноценной работы требуется уровень API 12, и следует отметить, что <span class="notranslate">GameMaker Studio 2</span> зарегистрирует как подключенные все Bluetooth-устройства, с которыми сопряжено ваше устройство, независимо от того, подключено оно на самом деле или нет.
+      подключено. Поэтому это следует учитывать при назначении и проверке &quot;слотов&quot;. Обратите внимание, что также разрешено переназначение констант контроллера.</li>
+    <li>На <strong>PS4</strong>, если вы хотите использовать отслеживание сенсорной панели, вам нужно использовать <a href="../Device_Input/Device_Input.htm"><tt>device_mouse_*</tt></a> кнопки. Переназначение констант контроллера <i>не</i> допускается.</li>
+    <li>На <strong><span class="notranslate">Windows</span> </strong><strong>UWP</strong>, <strong>XBoxOne </strong>и <strong><span class="notranslate">Nintendo</span> <span class="notranslate">Switch</span></strong> цели, геймпады полностью поддерживаются, но ремаппинг констант контроллера <i>не</i> допускается.</li>
+  </ul>
+  <p>В идеале, на <i>всех</i> целевых платформах вы хотите перечислить список доступных &quot;слотов&quot; для геймпадов, а затем проверить, обнаружены ли какие-либо устройства, примерно так:</p>
+  <p class="code">var _maxpads = gamepad_get_device_count();<br>
+    <br> for (var i = 0; i &lt; _maxpads; i++)<br> {
+    <br> if (gamepad_is_connected(i))<br> {
+    <br> // делаем что-то с пэдом &quot;i&quot;<br> }
+    <br> }
+  </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Game_Input.htm">Игровой вход</a></div>
+        <div style="float:right">Следующее: <a href="../Virtual_Keys_And_Keyboards/Virtual_Keys_And_Keyboards.htm">Виртуальные клавиши и виртуальные клавиатуры</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Gamepad Input Functions
+gp_face1
+gp_face2
+gp_face3
+gp_face4
+gp_shoulderl
+gp_shoulderlb
+gp_shoulderr
+gp_shoulderrb
+gp_select
+gp_start
+gp_stickl
+gp_stickr
+gp_padu
+gp_padd
+gp_padl
+gp_padr
+gp_axislh
+gp_axislv
+gp_axisrh
+gp_axisrv
+gp_axis_acceleration_x
+gp_axis_acceleration_y
+gp_axis_acceleration_z
+gp_axis_angular_velocity_x
+gp_axis_angular_velocity_y
+gp_axis_angular_velocity_z
+gp_axis_orientation_x
+gp_axis_orientation_y
+gp_axis_orientation_z
+gp_axis_orientation_w
+-->
+  <!-- TAGS
+gamepad_functions
+-->
+</body>
+</html>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>физика_тест_перекрытие</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_test_overlap" />
+  <meta name="rh-index-keywords" content="physics_test_overlap" />
+  <meta name="search-keywords" content="physics_test_overlap" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>физика_тест_перекрытие</h1>
+  <p>Эта функция может быть использована для проверки и определения, перекрывает ли физическое тело (т.е. приспособление экземпляра) или <i>будет</i> ли оно перекрывать друг друга при вращении и размещении в заданной позиции в комнате. аргумент &quot;angle&quot; - это угол поворота, который имеет (или будет иметь) вызывающий экземпляр в проверяемой позиции.
+    угол поворота, который имеет (или будет иметь) вызывающий экземпляр в проверяемой позиции, а аргумент &quot;obj&quot; может быть либо одним идентификатором экземпляра, либо индексом объекта, либо <a href="../../GML_Overview/Instance_Keywords.htm"><i>ключевые слова</i></a> <b>все</b> или <b>другие</b>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_test_overlap(xpos, ypos, angle, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>Х положение в комнате для проверки</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>Положение y в комнате для проверки</td>
+      </tr>
+      <tr>
+        <td>угол</td>
+        <td>Угол для проверки (вызывающего экземпляра)</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Объект для проверки</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if physics_test_overlap(x+20, y-35, 0, obj_Bomb)<br> {
+    <br> alarm[0] = room_speed;<br> ignited = true;<br> }
+  </p>
+  <p>Приведенный выше код проверяет позицию на наличие перекрытия физического приспособления, и если оно есть, то устанавливает переменную и сигнал тревоги.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Physics.htm">Физика</a></div>
+        <div style="float:right">Далее: <a href="physics_mass_properties.htm">физика_масса_свойства</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_test_overlap
+-->
+  <!-- TAGS
+physics_test_overlap
+-->
+
+</body></html>

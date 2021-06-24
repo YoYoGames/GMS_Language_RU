@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_set_rich_presence</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_set_rich_presence" />
+  <meta name="rh-index-keywords" content="xboxlive_set_rich_presence" />
+  <meta name="search-keywords" content="xboxlive_set_rich_presence" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_set_rich_presence</h1>
+  <p>Эта функция устанавливает строку богатого присутствия для данного пользователя. Строка богатого присутствия показывает активность пользователя в игре после названия игры, в которую играет пользователь, через дефис. Эта строка отображается под
+    Gamertag в списке &quot;Друзья и клубы&quot;, а также в профиле пользователя Xbox Live.</p>
+  <p>При использовании этой функции вам необходимо предоставить указатель User ID для пользователя, а затем вы можете отметить пользователя как активного в данный момент в игре или нет (используя <tt>true/false</tt>). Если установлено значение <tt>false</tt>, то к строке присутствия будет
+    будет добавлено &quot;/afk&quot; или что-нибудь подходящее. Следующим аргументом является ID строки присутствия, которую нужно показать, и, наконец, вы можете (опционально) указать строку <tt>service_config_id</tt>. Обратите внимание, что это необязательный аргумент, так как если вы
+    вызвали <a href="../Stats_And_Leaderboards/xboxlive_stats_setup.htm"><tt>xboxlive_stats_setup()</tt></a> вам не нужно передавать здесь <tt>service_config_id</tt>.</p>
+  <p>Для получения дополнительной информации о богатом присутствии и о том, как настроить строки для использования в партнерском центре, обратитесь к следующей документации Microsoft:</p>
+  <ul>
+    <li><a href="https://docs.microsoft.com/en-us/gaming/xbox-live/features/social/rich-presence/" target="_blank">Обзор строк присутствия</a></li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">xboxlive_set_rich_presence(user_id, is_user_active, rich_presence_string, [service_config_id])</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор пользователя</td>
+        <td>Указатель ID пользователя для проверки.</td>
+      </tr>
+      <tr>
+        <td>is_user_active</td>
+        <td>Пометить пользователя как активного или нет.</td>
+      </tr>
+      <tr>
+        <td>rich_presence_string</td>
+        <td>Идентификатор строки присутствия, который необходимо использовать (как определено в Центре партнеров - не более 50 символов).</td>
+      </tr>
+      <tr>
+        <td>service_config_id</td>
+        <td>[OPTIONAL] Это строка config_id для игры.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var pad_uid = xboxlive_user_for_pad(0);<br> xboxlive_set_rich_presence(pad_uid, true, &quot;Playing_Challenge&quot;);</p>
+  <p>Приведенный выше код получает указатель идентификатора пользователя, назначенного на слот [0] геймпада, а затем устанавливает строку присутствия для этого пользователя.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Users_And_Accounts.htm">Пользователи и учетные записи</a></div>
+        <div style="float:right">Далее: <a href="xboxlive_gamedisplayname_for_user.htm">xboxlive_gamedisplayname_for_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_set_rich_presence
+-->
+  <!-- TAGS
+xboxlive_set_rich_presence
+-->
+</body>
+</html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Структура ключевого кадра</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Keyframe Struct" />
+  <meta name="rh-index-keywords" content="Sequence Keyframe Struct" />
+  <meta name="search-keywords" content="The Keyframe Struct,frame,length,stretch,channels" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Структура <span class="notranslate">ключевого кадра</span> </h1>
+  <p>Каждая дорожка (как определено на странице, описывающей <a href="The_Track_Struct.htm">структуры дорожек</a>) будет иметь одну или более <a href="../../../../GML_Overview/Structs.htm">структур</a> <span class="notranslate">ключевых кадров</span>, назначенных ей (которые вы можете получить из свойства <tt><span class="notranslate">ключевые кадры</span></tt> свойство
+    track struct), и каждый из них будет иметь следующие свойства:</p>
+  <ul class="colour">
+    <li><tt>кадр</tt>: Позиция (в кадрах) на временной шкале для <span class="notranslate">ключевого кадра</span>. Значение по умолчанию равно 0.<tt></tt></li>
+    <li><tt>длина</tt>: Длина <span class="notranslate">ключевого кадра</span>. Значение по умолчанию равно 1, при установке больших значений свойство дорожки, на которое ссылается <span class="notranslate">ключевой кадр</span>, будет поддерживаться на начальном значении в течение заданной длины. Обратите внимание, что свойство <tt>stretch</tt> 
+      отменяет это свойство, если оно установлено в <tt>true</tt>.</li>
+    <li><tt>stretch</tt>: Если это свойство установлено в <tt>true</tt>, то <span class="notranslate">ключевой кадр</span> растягивается либо до следующего <span class="notranslate">ключевого кадра</span> дорожки, либо до конца дорожки, если это последний ключевой кадр <span class="notranslate">.</span> Вы можете получить или установить это значение, а
+      значение по умолчанию равно <tt>false</tt>.</li>
+    <li><tt>каналы</tt>: Это свойство позволяет получить доступ к списку <a href="The_Keyframe_Data_Struct.htm">структур данных<span class="notranslate">ключевых кадров</span></a> для каналов дорожки. При получении этого свойства возвращается <a href="../../../../GML_Overview/Arrays.htm">массив</a> 
+     <span class="notranslate">keyframe</span> data structs возвращается, а при установке этого свойства должен быть указан массив <span class="notranslate">keyframe</span> data structs.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Sequences.htm">Последовательности</a></div>
+        <div style="float:right">Следующее: <a href="The_Keyframe_Data_Struct.htm">Структура данных <span class="notranslate">ключевого кадра</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+The <span class="notranslate">Keyframe</span> Struct
+-->
+  <!-- TAGS
+sequence_<span class="notranslate">keyframe</span>
+-->
+
+</body></html>

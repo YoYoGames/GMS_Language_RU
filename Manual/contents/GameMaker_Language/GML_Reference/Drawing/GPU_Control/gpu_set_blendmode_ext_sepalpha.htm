@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_blendmode_ext_sepalpha</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_blendmode_ext_sepalpha" />
+  <meta name="rh-index-keywords" content="gpu_set_blendmode_ext_sepalpha,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour" />
+  <meta name="search-keywords" content="gpu_set_blendmode_ext_sepalpha,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_blendmode_ext_sepalpha</h1>
+  <p>Когда <span class="notranslate">GameMaker Studio 2</span> рисует пиксель, есть исходный цвет (цвет пикселя, который мы собираемся нарисовать) и конечный цвет (цвет, который уже есть в пикселе, к которому мы рисуем).
+    пикселя, исходный и конечный цвета вычисляются в соответствии с выбранным режимом наложения. Каждый компонент цветов хранится как значение с плавающей точкой между 0 и 1, а новый цвет вычисляется путем умножения каждого компонента
+    исходного цвета на некоторый коэффициент и умножением каждого компонента цвета назначения на некоторый другой коэффициент, а затем суммированием результатов по компонентам.</p>
+  <p>Эта функция позволяет установить различные компоненты, которые должны быть разложены вместе для создания пользовательского режима наложения, выбирая различные части различных коэффициентов режима наложения для компонентов RGB и компонента Alpha. Таким образом, аргументы &quot;src&quot;
+    и &quot;dest&quot; будут использовать первые 3 значения режима наложения (RGB), а аргументы &quot;alphasrc&quot; и &quot;alphadest&quot; - последнюю часть коэффициента режима наложения. Например, если источник RGB имеет значение <tt>bm_zero</tt>,
+    то будет использовано значение (0, 0, 0). Если затем задать для источника Alpha значение bm_one, то будет использовано значение (1), что даст окончательный режим наложения источника (0, 0, 0, 0, 1).</p>
+  <p>На следующей диаграмме показаны значения RGBA для каждого режима наложения, где (Rs, Gs, Bs, As) считаются исходными значениями, а (Rd, Gd, Bd, Ad) - конечными. Одиннадцать констант, доступных для использования, могут быть как исходными, так и целевыми
+    (или обе) при использовании в этой функции.</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Коэффициент смешивания (красный, зеленый, синий, альфа)</th>
+      </tr>
+      <tr>
+        <td>bm_zero</td>
+        <td>(0, 0, 0, 0)</td>
+      </tr>
+      <tr>
+        <td>bm_one</td>
+        <td>(1, 1, 1, 1)</td>
+      </tr>
+      <tr>
+        <td>bm_src_colour</td>
+        <td>(Rs, Gs, Bs, As)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_src_colour</td>
+        <td>(1-Rs, 1-Gs, 1-Bs, 1-As)</td>
+      </tr>
+      <tr>
+        <td>bm_src_alpha</td>
+        <td>(As, As, As, As, As)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_src_alpha</td>
+        <td>(1-Ас, 1-Ас, 1-Ас, 1-Ас, 1-Ас)</td>
+      </tr>
+      <tr>
+        <td>bm_dest_alpha</td>
+        <td>(Ad, Ad, Ad, Ad, Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_dest_alpha</td>
+        <td>(1-Ad, 1-Ad, 1-Ad, 1-Ad, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_dest_colour</td>
+        <td>(Rd, Gd, Bd, Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_dest_colour</td>
+        <td>(1-Rd, 1-Gd, 1-Bd, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_src_alpha_sat</td>
+        <td>(f, f, f, 1), где f = min(As, 1-Ad)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><b>ВАЖНО!</b> HTML5 без включенного WebGL <b>не</b> сможет корректно отображать следующие режимы:</p>
+  <ul class="colour" style="padding-left: 120px">
+    <li><tt>bm_src_colour</tt></li>
+    <li><tt>bm_inv_src_colour</tt></li>
+    <li><tt>bm_dest_colour</tt></li>
+    <li><tt>bm_inv_dest_colour</tt></li>
+    <li><tt>bm_src_alpha_sat</tt></li>
+  </ul>
+  <p> </p>
+  <p>Обратите внимание, что вы можете либо передать четыре отдельных аргумента этой функции, либо массив аргументов (как возвращает функция <a href="gpu_get_blendmode_ext_sepalpha.htm"><tt>gpu_get_blendmode_ext_sepalpha()</tt></a> например).
+    Если вы передаете массив, то он должен содержать следующие четыре элемента:</p>
+  <ul class="colour">
+    <li>[0] = режим наложения источника за вычетом альфа-компонента (по умолчанию <tt>bm_src_alpha</tt> (As, As, As))</li>
+    <li>[1] = Режим наложения назначения за вычетом альфа-компонента (по умолчанию <tt>bm_inv_src_alpha</tt> (1-As, 1-As, 1-As)).</li>
+    <li>[2] = исходный альфа-компонент (по умолчанию <tt>bm_src_alpha</tt> (As))</li>
+    <li>[3] = Альфа-компонент назначения (по умолчанию <tt>bm_inv_src_alpha</tt> (1-As))</li>
+  </ul>
+  <p>Чтобы максимально использовать режимы наложения и понять, как они работают и как влияют на конечное изображение, выводимое на экран, мы рекомендуем вам ознакомиться со следующим руководством:</p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Using_Blendmodes.htm">Руководство по использованию блендмодов</a></li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gpu_set_blendmode(src, dest, alphasrc, alphadest);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>src</td>
+        <td>Коэффициент исходного режима наложения для RGB (см. константы выше).</td>
+      </tr>
+      <tr>
+        <td>dest</td>
+        <td>Коэффициент режима наложения для RGB (см. константы выше)</td>
+      </tr>
+      <tr>
+        <td>alphasrc</td>
+        <td>Коэффициент режима наложения Alpha (см. константы выше).</td>
+      </tr>
+      <tr>
+        <td>alphadest</td>
+        <td>Коэффициент режима наложения назначения Альфа (см. константы выше)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var bm = gpu_get_blendmode_ext_sepalpha();<br> bm[0] = bm_src_alpha;<br> bm[1] = bm_inv_src_alpha;<br> gpu_set_blendmode_ext_sepalpha(bm);
+  </p>
+  <p>Приведенный выше код создает локальный массив и получает текущий расширенный режим наложения с отдельными альфа-значениями. Затем этот массив обрабатывается и возвращается для установки режима наложения.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="GPU_Control.htm">Управление графическим процессором</a></div>
+        <div style="float:right">Далее: <a href="gpu_set_colourwriteenable.htm">gpu_set_colourwriteenable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_blendmode_ext_sepalpha
+bm_zero
+bm_one
+bm_src_colour
+bm_inv_src_colour
+bm_src_alpha
+bm_inv_src_alpha
+bm_dest_alpha
+bm_inv_dest_alpha
+bm_dest_colour
+bm_inv_dest_colour
+bm_src_alpha_sat
+-->
+  <!-- TAGS
+gpu_set_blendmode_ext_sepalpha
+-->
+</body>
+</html>

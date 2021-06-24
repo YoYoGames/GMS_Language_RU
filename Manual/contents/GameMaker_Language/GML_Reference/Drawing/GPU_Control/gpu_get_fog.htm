@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_get_fog</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_get_fog" />
+  <meta name="rh-index-keywords" content="gpu_get_fog" />
+  <meta name="search-keywords" content="gpu_get_fog" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_get_fog</h1>
+  <p>Эта функция может быть использована для получения настроек тумана. Функция возвращает 4-элементный массив 1D со следующей информацией:</p>
+  <ul class="colour">
+    <li>[0] = включенный тумблер (булево значение, либо <tt>истина</tt>, либо <tt>ложь</tt>), по умолчанию <tt>false</tt></li>
+    <li>[1] = цвет (реальный), по умолчанию <tt>c_black</tt></li>
+    <li>[2] = начальное расстояние (реальное), по умолчанию 0</li>
+    <li>[3] = конечное расстояние (реальное), по умолчанию 1</li>
+  </ul>
+  <p>Обратите внимание, что вы можете изменить эти значения и передать полный массив в <a href="gpu_set_fog.htm"><tt>gpu_set_fog()</tt></a> функции в качестве одного аргумента.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gpu_get_fog();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">4-элементный одномерный массив (элементы массива см. выше)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var fog_a = gpu_get_fog();<br> fog_a[1] = c_red;<br> gpu_set_fog(fog_a);
+  </p>
+  <p>Приведенный выше код получает текущие настройки тумана, затем устанавливает элемент color массива в <tt>c_red</tt>, после чего снова устанавливает туман, используя измененный массив.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="GPU_Control.htm">Управление графическим процессором</a></div>
+        <div style="float:right">Далее: <a href="gpu_get_cullmode.htm">gpu_get_cullmode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_fog
+-->
+  <!-- TAGS
+gpu_get_fog
+-->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>комната_существует</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_exists" />
+  <meta name="rh-index-keywords" content="room_exists" />
+  <meta name="search-keywords" content="room_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>комната_существует</h1>
+  <p>С помощью этой функции вы можете проверить, существует ли указанная вами комната или нет. Эта функция принимает <i>индекс</i> комнаты (вещественное число), а <b>не</b> имя комнаты (строка). Эта функция наиболее полезна, когда вы создаете комнаты динамически
+    с помощью функции <a href="room_add.htm"><tt>room_add()</tt></a>но вы также можете использовать переменные, доступные <b>только для чтения</b> <a href="room_first.htm"><tt>комната_первая</tt></a> и <a href="room_last.htm"><tt>комната_последний</tt></a> или функции <a href="room_next.htm"><tt>room_next()</tt></a>    и <a href="room_previous.htm"><tt>комната_предыдущая()</tt></a> чтобы получить определенный индекс комнаты, или предоставить переменную, в которой хранится индекс любой другой комнаты в вашей игре.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">room_exists(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс помещения для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if room_exists(global.rm[0])<br> {
+    <br> room_goto(global.rm[0]);
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет, существует ли комната, указанная в массиве &quot;global.rm[]&quot;, и если существует, то переходит в эту комнату.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Rooms.htm">Номера</a></div>
+        <div style="float:right">Далее: <a href="room_add.htm">room_add</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_exists
+-->
+  <!-- TAGS
+room_exists
+-->
+</body>
+</html>

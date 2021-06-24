@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Руководство по использованию шейдеров</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how to set up and use shaders" />
+  <meta name="rh-index-keywords" content="Guide To Using Shaders" />
+  <meta name="search-keywords" content="shaders,shader,use shaders,shader guide,shader setup,shader examples,shader example" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Руководство по использованию <span class="notranslate">шейдеров</span></h1>
+  <p><span class="notranslate">Шейдеры</span> часто используются для создания красивых графических эффектов в играх. Они также являются одними из самых продвинутых функций <span class="notranslate">GameMaker Studio 2</span>, поэтому необходимо иметь базовое понимание программирования и работы <span class="notranslate">GameMaker Studio 2</span>.
+    прежде чем приступать к работе с ними.</p>
+  <p>Итак, что же такое <span class="notranslate">шейдер</span>? Изначально они создавались для создания теней для освещения (отсюда и название), но сейчас они используются для создания огромного количества разнообразных эффектов. Код <span class="notranslate">шейдера</span> похож на обычный код, но он (почти всегда) выполняется графическим процессором, а не
+    центральным процессором. Это отличие имеет свой набор правил и ограничений, но мы рассмотрим их позже.</p>
+  <p>Каждый <span class="notranslate">шейдер</span> состоит из двух отдельных компонентов: <strong>вершинного <span class="notranslate">шейдера</span> </strong>и <strong>фрагментного <span class="notranslate">шейдера</span> </strong>(также называемого <strong>пиксельным <span class="notranslate">шейдером</span></strong>). Начнем с вершинного <span class="notranslate">шейдера</span>. Каждый спрайт формируется прямоугольником,
+    но компьютеры любят рисовать треугольники, поэтому прямоугольники делятся на два треугольника (иногда их называют <em>квадратами</em>). В результате у нас остается шесть вершин (углов) на спрайт, но две из них одинаковые, поэтому нам следует беспокоиться только о четырех.
+    Теперь представьте, что у нас есть цикл for, который перебирает все вершины и выполняет код вершинного <span class="notranslate">шейдера</span> для каждой из них. Это позволяет нам изменять положение и цвет вершины перед передачей ее в <span class="notranslate">шейдер</span> фрагмента, поскольку <span class="notranslate">шейдер</span> вершины выполняется
+    раньше.</p>
+  <p>Вот как это будет выглядеть:</p>
+  <p><img alt="Shader Vertices" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Vertices.gif">Для фрагментного <span class="notranslate">шейдера</span> можно представить тот же цикл, что и раньше, но на этот раз он просматривает каждый отдельный пиксель в вашем
+    спрайта, предоставляя вам такую информацию, как местоположение и цвет этого пикселя. В коде фрагментного <span class="notranslate">шейдера</span> вы выполняете операции и вычисления для определения цвета этого пикселя, чтобы получить нужный эффект. Например, если вы хотите, чтобы <span class="notranslate">шейдер</span> сделал
+    ваш спрайт черно-белым, то вы вычислите, какого оттенка серого должен быть каждый пиксель, чтобы создать эффект.</p>
+  <p>Это будет выглядеть примерно так:</p>
+  <p><img alt="Shader Fragments" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Fragments.gif">Причина, по которой код <span class="notranslate">шейдеров</span> обычно выполняется графическим процессором, заключается в том, что он более эффективен в этом. Современные центральные процессоры обычно имеют
+    от двух до восьми ядер. Каждое ядро может выполнять одну задачу за раз, поэтому, используя преимущества нескольких ядер, мы можем выполнять множество задач одновременно. В отличие от них, современные графические процессоры могут выполнять тысячи и даже десятки тысяч задач одновременно.
+    одновременно. Это полезно для <span class="notranslate">шейдеров</span>, поскольку мы можем одновременно выполнять код <span class="notranslate">шейдера</span> для тысяч пикселей. Ограничение заключается в том, что мы имеем доступ только к начальному состоянию спрайта, поэтому мы не знаем о любых модификациях, сделанных
+    в других пикселях, поскольку мы не можем быть уверены, что код уже выполнялся на них.</p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: <span class="notranslate">GameMaker Studio 2</span> позволяет пользователям писать <span class="notranslate">шейдеры</span> на языках <strong>GLSL</strong> (OpenGL <span class="notranslate">Shader</span> Language), <strong>HLSL</strong> (High-level <span class="notranslate">Shader</span> Language, используется при работе с DirectX) и <strong>GLSL ES</strong> (подмножество GLSL, распространенное в мобильных устройствах).
+    GLSL, распространенное в мобильных устройствах). Здесь мы используем <strong>GLSL ES</strong> в качестве языка <span class="notranslate">шейдеров</span>, поскольку именно он обеспечивает наилучшую совместимость с целевыми платформами. Как правило, именно его вы всегда хотите использовать, если только у вас нет
+    если только у вас нет очень специфических потребностей и вы не понимаете ограничения других <span class="notranslate">шейдерных</span> языков. Математика и методы должны быть схожими для всех трех языков, за исключением некоторых различий в синтаксисе.</p>
+  <p>Вершинный <span class="notranslate">шейдер</span> выполняется первым, и, как мы объясняли выше, он работает с <strong>вершинами</strong>. Он используется для вычисления позиций, нормалей и координат текстуры. Эти <span class="notranslate">шейдеры</span> не особенно полезны в 2D, так как каждый спрайт обычно является
+    квадрат, но они могут быть использованы для некоторого перекоса, масштабирования и т.д.. Они становятся гораздо более полезными в 3D для расчетов освещения и деформации сетки. Фрагментные <span class="notranslate">шейдеры</span> гораздо интереснее, и именно они будут рассматриваться здесь, поскольку фрагментный шейдер - это то место, где мы получаем информацию о фрагменте.
+   <span class="notranslate">шейдер</span> - это место, где мы получаем информацию о наших текстурах и можем настраивать конечный цвет каждого пикселя в нашем изображении.</p>
+  <p> </p>
+  <h2>Переменные<span class="notranslate">шейдера</span> </h2>
+  <p>Если вы создавали <span class="notranslate">шейдер</span> в <span class="notranslate">GameMaker Studio 2</span>, вы могли заметить следующие ключевые слова в стандартном <strong>проходном</strong> <span class="notranslate">шейдере</span>. Эти ключевые слова помогают <span class="notranslate">шейдеру</span> понять назначение и область применения каждой переменной:</p>
+  <ul class="colour">
+    <li><strong>Атрибут</strong>: Это переменные, передаваемые OpenGL <strong>вершинному </strong><span class="notranslate">шейдеру</span>. Они могут изменяться для каждой вершины и доступны только для чтения. Они включают такую информацию, как положение вершины, координаты текстуры, цвет вершины и ее
+      нормаль.</li>
+    <li><strong>Переменные</strong>: Это переменные, используемые для передачи данных между <strong>вершинным </strong>и <strong>фрагментным </strong><span class="notranslate">шейдерами</span>. Они доступны для записи в вершинном <span class="notranslate">шейдере</span>, но доступны только для чтения во фрагментном <span class="notranslate">шейдере</span>.</li>
+    <li><strong>Унифицированные</strong>: Это переменные, которые изменяются для каждого объекта и передаются <span class="notranslate">шейдеру</span> пользователем. Они могут использоваться как в вершинных, так и во фрагментных <span class="notranslate">шейдерах</span>, но доступны только для чтения.</li>
+  </ul>
+  <p>Вы также увидите использование vec в <strong>качестве</strong> ключевого слова. Оно используется для идентификации векторной переменной в <span class="notranslate">шейдере</span>, и вскоре вы увидите, что векторы очень важны при работе с шейдерами <span class="notranslate">.</span> Именно поэтому они реализованы как базовый
+    типа в GLSL. Если вы не знакомы с ними, то это математический термин, представленный в виде матрицы с одним столбцом. В программировании мы обычно представляем их в виде массива, где количество компонентов соответствует размерности. Двухмерные и трехмерные
+    векторы часто используются для позиций, координат текстур или цветов без альфа-канала, в то время как четырехмерные векторы используются для цветов с альфа-каналом. Мы также можем указать, какие значения они содержат: булевы, целые числа или значения с плавающей запятой. Синтаксис
+    синтаксис для объявления вектора следующий:</p>
+  <p class="code">vec2 firstVec; // Двумерный вектор плавающих чисел<br> vec3 secondVec; // Трехмерный вектор плавающих чисел<br> vec4 thirdVec; // Четырехмерный вектор плавающих чисел<br>
+    <br> bvec3 boolVec; // Трехмерный вектор булевых чисел<br> ivec4 intVec; // Четырехмерный вектор булевых чисел</p>
+  <p>Чтобы инициализировать их, мы можем использовать конструктор для создания вектора. Вам нужно предоставить столько же значений, сколько длина вектора, но вы можете смешивать и сопоставлять скаляры и меньшие векторы, чтобы достичь заданной длины. Вот несколько примеров
+    этого:</p>
+  <p class="code">// Простой 2D вектор с 2 скалярными значениями<br> vec2 firstVec = vec2(2.0, 1.0);<br> // Четырехмерный вектор с использованием 2 скаляров и vec2 для создания 4 значений<br> vec4 secondVec = vec4(1.0, firstVec, 0.0);<br> // Трехмерный вектор с использованием 1 компонента vec4 плюс a
+    vec2 для создания 3 значений<br> vec3 thirdVec = vec3(secondVec.x, firstVec);</p>
+  <p>Мы также можем присвоить им другой вектор той же длины (или <em>изменить </em>вектор до нужной длины, но об этом мы расскажем чуть позже):</p>
+  <p class="code">vec3 firstVec;<br> vec3 secondVec = firstVec;<br> vec4 thirdVec = secondVec.xyz;<br> vec2 fourthVec = thirdVec.zx;</p>
+  <p>При обращении к компонентам вектора в GLSL у нас есть несколько вариантов. Самый простой - рассматривать вектор как массив и обращаться к компонентам с помощью квадратных скобок, например, так:</p>
+  <p class="code">vec4 myVec;<br> myVec[0] = 1.0;<br> myVec[1] = 0.0;<br> myVec[2] = 2.0;<br> myVec[3] = 1.0;</p>
+  <p>Однако существует и другой способ доступа к компонентам со следующим синтаксисом:</p>
+  <p class="code">vec4 myVec;<br> myVec.x = 1.0;<br> myVec.y = 2.0;</p>
+  <p>Для доступа к ним используются имена компонентов внутри вектора. Вы можете использовать x, y, z или w, чтобы получить первый, второй, третий или четвертый компонент соответственно. Мы называем этот метод <strong>swizzling </strong>, потому что следующий синтаксис также
+    действителен:</p>
+  <p class="code">vec4 firstVec;<br> vec3 secondVec = firstVec.xyz;<br> vec2 thirdVec = secondVec.zy;<br> vec4 fourthVec = thirdVec.yxxy;</p>
+  <p>Как видите, мы можем использовать любую комбинацию до четырех букв для создания вектора такой длины. Мы не можем попытаться получить доступ к компоненту, который будет выходить за рамки (например, попытаться получить доступ к w в <span class="inline">secondVec</span> или
+   <span class="inline">thirdVec</span>, так как у них нет четвертого компонента). Кроме того, мы можем повторять буквы и использовать их в любом порядке, если векторная переменная, которой она присваивается, имеет тот же размер, что и количество используемых букв.</p>
+  <p>По очевидным причинам, при использовании swizzle для установки значений компонентов, вы не можете использовать один и тот же компонент дважды. Например, приведенный ниже вариант не подходит, так как вы пытаетесь установить один и тот же компонент на два разных значения:</p>
+  <p class="code">myVec.xx = vec2(2.0, 3.0);</p>
+  <p>И последнее, мы использовали <span class="inline">xyzw</span> в качестве маски, что обычно происходит при работе с позициями. Есть еще два набора масок, которые вы можете использовать: <span class="inline">rgba</span> (используется для цветов) или <span class="inline">stpq</span> (используется для координат текстуры). Внутренне между этими масками нет никакой разницы, и мы используем их только для того, чтобы сделать код более понятным, что представляет собой вектор в данном случае. Кроме того, мы не можем комбинировать маски swizzle в одной операции, поэтому
+    это недействительно:</p>
+  <p class="code"><span class="inline"></span>myVec = otherVec.ybp;</p>
+  <p>Это было много определений и информации, но знание этих вещей необходимо для понимания самих <span class="notranslate">шейдеров</span>.</p>
+  <p> </p>
+  <h2>Создание <span class="notranslate">шейдера</span></h2>
+  <p>Когда вы создаете <span class="notranslate">шейдер</span> в <span class="notranslate">GameMaker Studio 2</span>, он открывает для вас два файла: вершинный <span class="notranslate">шейдер</span> (<span class="inline">.vsh</span>) и фрагментный <span class="notranslate">шейдер</span> (<span class="inline">.fsh</span>). Это самый простой <span class="notranslate">шейдер</span>, который вы можете создать, который берет спрайт,
+    считывает текстуру и окрашивает каждый пиксель в этот цвет. Если вы укажете цвета вершин при рисовании, эти цвета будут смешиваться с текстурой.</p>
+  <p>Давайте пройдемся по коду только что созданного <span class="notranslate">шейдерного</span> актива и проанализируем его, начиная с вершинного <span class="notranslate">шейдера</span>.</p>
+  <p class="code">// Passthrough Vertex <span class="notranslate">Shader</span><br> атрибут vec3 in_Position; // (x,y,z)<br> // атрибут vec3 in_Normal; // (x,y,z) не используется в этом <span class="notranslate">шейдере</span>.<br> атрибут vec4 in_Colour; // (r,g,b,a)<br> атрибут
+    vec2 in_TextureCoord; // (u,v)<br>
+    <br> изменяющийся vec2 v_vTexcoord;<br> изменяющийся vec4 v_vColour;<br>
+    <br> void main()<br> {
+    <br> vec4 object_space_pos = vec4( in_Position.x, in_Position.y, in_Position.z, 1.0);<br> gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * object_space_pos;<br>     <br> v_vColour = in_Colour;<br> v_vTexcoord = in_TextureCoord;<br> }
+  </p>
+  <p>За пределами главной функции мы видим объявления некоторых переменных и их классификаторы. Атрибуты даны нам <span class="notranslate">GameMaker</span>. Переменные создаются пользователем, чтобы передать информацию <span class="notranslate">шейдеру</span> фрагмента. Внутри главной функции
+    производятся вычисления для определения экранной позиции вершины:</p>
+  <ul class="colour">
+    <li>Сначала мы создаем <span class="inline">vec4</span> и инициализируем его компонентами позиции, добавляя единицу в качестве четвертого компонента. В линейной алгебре принято, что мы добавляем единицу к четвертой компоненте, если вектор представляет
+      точку, или ноль, если вектор представляет реальный вектор.</li>
+    <li>Далее нам нужно добавить этот четвертый компонент, чтобы умножить его на матрицу <span class="inline">MATRIX_WORLD_VIEW_PROJECTION</span>, которая представляет собой матрицу 4x4. Это умножение спроецирует мировую позицию вершины на экранные координаты.</li>
+    <li>Наконец, мы передаем цвет вершины и координаты текстуры в <span class="notranslate">шейдер</span> фрагмента через наши изменяемые переменные.</li>
+  </ul>
+  <p>Этот <span class="notranslate">шейдер</span> следует оставить в покое, если вы не планируете играть с позициями вершин, и он не будет использоваться ни в одном из примеров, приведенных ниже, потому что все показанные эффекты будут созданы с помощью <span class="notranslate">шейдера</span> фрагмента.</p>
+  <p>Давайте теперь быстро посмотрим на <span class="notranslate">шейдер</span> фрагмента:</p>
+  <p class="code">// Passthrough Fragment <span class="notranslate">Shader</span><br> изменяющийся vec2 v_vTexcoord;<br> изменяющийся vec4 v_vColour;<br>
+    <br> void main()<br> {
+    <br> gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );<br> }
+  </p>
+  <p>Как уже объяснялось, идея фрагментного <span class="notranslate">шейдера</span> заключается в том, чтобы вернуть цвет текущего пикселя. Это делается путем присвоения переменной <span class="inline">gl_FragColor</span> конечного значения цвета. Функция <span class="inline">texture2D</span> 
+    принимает текстуру и <span class="inline">vec2</span> с UV-координатами, которые вы хотите проверить в этой текстуре, и возвращает <span class="inline">vec4</span> с цветом. В проходном <span class="notranslate">шейдере</span> все, что мы делаем, это захватываем цвет
+    текстуры в координатах этого пикселя и умножаем его на цвет вершины, связанной с этим пикселем.</p>
+  <p>Теперь, когда у нас есть наш первый <span class="notranslate">шейдер</span>, все, что нам нужно сделать для его тестирования, это создать объект и присвоить ему спрайт, затем в <strong>событии Draw Event</strong> объекта установить <span class="notranslate">шейдер</span> следующим образом:</p>
+  <p class="code">// Событие рисования<br> <span class="notranslate">shader_set</span>(shdrColorOverlay);
+    <br> draw_self();
+    <br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>Каждый вызов рисования, который мы делаем между <a href="../GameMaker_Language/GML_Reference/Asset_Management/Shaders/shader_set.htm"><span class="inline"><span class="notranslate">shader</span>_set()</a> и <a href="../GameMaker_Language/GML_Reference/Asset_Management/Shaders/shader_reset.htm"><span class="inline"><span class="notranslate">shader</span>_reset()</a>, будет
+    будет применяться <span class="notranslate">шейдер</span>. Здесь мы рисуем спрайт объекта с помощью нашего <span class="notranslate">шейдера</span> passthrough:</p>
+  <p><img alt="Drawing Sprite Using Passthough Shader" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_PassThrough.gif">Как вы уже догадались, визуально это ничего не меняет, так как это простой сквозной шейдер.
+   <span class="notranslate">шейдер</span>. Однако в следующих разделах описаны некоторые простые шаги, которые вы можете предпринять, чтобы изменить его и изменить способ отрисовки спрайта. Каждый из разделов показывает различные <span class="notranslate">шейдеры</span>, которые вы можете создать и использовать в своих проектах, объясняя шаги, необходимые для их создания, и почему мы это делаем.
+    для их создания и почему мы делаем это именно так.</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"> <span class="notranslate">Шейдер</span>наложения цвета</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Теперь мы можем отредактировать базовый <span class="notranslate">шейдер</span>, чтобы сделать что-то другое. Мы не будем трогать вершинный шейдер, а отредактируем только фрагментный шейдер <span class="notranslate">,</span> и для начала выполним очень простую операцию, которая заключается в том, чтобы заставить шейдер <span class="notranslate">нарисовать</span> спрайт
+      используя красный цвет. Мы сделаем это, просто изменив <span class="inline">gl_FragColor</span> на красный цвет, вот так:</p>
+    <p class="code">// Фрагментный <span class="notranslate">шейдер</span>наложения цвета<br> void main()<br> {
+      <br> gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);<br> }
+    </p>
+    <p class="dropspot">Это даст нам следующий результат:</p>
+    <p class="dropspot"><img alt="Initial Colour Overlay Block" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_ColourOverlay_Block.gif">Не совсем то, что мы ожидали! Нам нужно помнить, что каждый спрайт в конечном итоге является прямоугольником,
+      поэтому, если не учитывать прозрачность - а мы ее не учитывали, - мы получим именно такой результат.</p>
+    <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: На изображении выше прямоугольник меняет размер, потому что базовый спрайт имеет &quot;пустое&quot; пространство вокруг себя, которое было автоматически обрезано, когда он был помещен на страницу текстуры в GameMaker, <span class="notranslate">поэтому каждый</span> кадр анимации треугольники
+      которые его образуют, имеют разный размер, чтобы соответствовать обрезанному размеру кадра. Если отключить эту опцию, то на экране будет просто неподвижный красный квадрат.</p>
+    <p class="dropspot">Выше мы упоминали функцию <span class="inline">texture2D</span>, и мы будем использовать ее для захвата цвета в пикселе, над которым мы работаем, и получения из него прозрачности. Возвращаемым значением функции <span class="inline">texture2D</span> является
+      <span class="inline">vec4</span> , где компонентами являются красный, зеленый, синий и альфа-канал, в таком порядке. Мы можем получить доступ к альфа-каналу, поставив точку, за которой следует <span class="inline">a</span> или <span class="inline">w</span> после имени переменной. Это соответствует RGBA и XYZW, соответственно.</p>
+    <p class="dropspot">Вот обновленный код:</p>
+    <p class="code">// Фрагментный <span class="notranslate">шейдер</span>наложения цвета<br> изменяющийся vec2 v_vTexcoord;<br>
+      <br> void main()<br> {
+      <br> vec4 texColor = texture2D(gm_BaseTexture, v_vTexcoord);<br> gl_FragColor = vec4(1.0, 0.0, 0.0, texColor.a);<br> }
+    </p>
+    <p class="dropspot">Теперь мы назначаем новый <span class="inline">vec4</span> на <span class="inline">gl_FragColor</span>, где красный канал максимален, зеленый и синий каналы равны нулю, а альфа-канал такой же, как у оригинальной текстуры. Выходные данные выглядят
+      вот так:</p>
+    <p class="dropspot"><img alt="Overlay Shader Making Sprite Red" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_ColourOverlay.gif">Именно этого мы и добивались! Мы заменили цвет каждого пикселя на красный, но сохранили
+      альфа-канал остался нетронутым.</p>
+    <p class="dropspot">Менять <span class="notranslate">шейдер</span> каждый раз, когда мы хотим использовать другой цвет, - не самая лучшая идея, особенно если учесть, что для каждого цвета нам потребуется отдельный <span class="notranslate">шейдер</span>. Вместо этого мы передадим <span class="notranslate">шейдеру</span> информацию о цвете с помощью <strong>формы</strong>.
+      Для этого нам сначала нужно получить <strong>указатель </strong>на форму. Мы сделаем это в <strong>событии Create</strong> нашего объекта, содержащего спрайт, добавив:</p>
+    <p class="code">// Создаем событие<br> _uniColor = <span class="notranslate">shader_get_uniform</span>(shdrColorOverlay, &quot;u_colour&quot;);<br> _color = [1.0, 1.0, 0.0, 1.0];</p>
+    <p class="dropspot">Все, что нам нужно сделать, это вызвать <a href="../GameMaker_Language/GML_Reference/Asset_Management/Shaders/shader_get_uniform.htm"><span class="inline"><span class="notranslate">shader</span>_get_uniform()</a>, чтобы получить указатель на форму. Параметрами, которые нам нужно передать, являются <span class="notranslate">шейдер</span>
+      имя актива (без кавычек, потому что мы хотим передать ID, который <span class="notranslate">GameMaker</span> генерирует для нас) и имя переменной униформы внутри <span class="notranslate">шейдера</span>, на этот раз в виде строки. Это имя должно точно совпадать с именем в коде <span class="notranslate">шейдера</span>, чтобы он
+      чтобы он работал. Мы также добавили переменную цвета, чтобы мы могли изменять его во <span class="notranslate">время выполнения</span> и чтобы он запомнил наши изменения.</p>
+    <p class="dropspot">Теперь код в нашем событии draw немного изменится, чтобы передать переменную uniform.</p>
+    <p class="code">// Событие рисования<br> <span class="notranslate">shader_set</span>(shdrColorOverlay);
+      <br> <span class="notranslate">shader_set_uniform_f_array</span>(_uniColor, _color);<br> draw_self();
+      <br> <span class="notranslate">shader_reset</span>();
+    </p>
+    <p class="dropspot">Это тот же код, что и раньше, но прежде чем мы нарисуем что-либо, нам нужно передать <span class="notranslate">шейдеру</span> все однородные значения. В данном случае мы передаем цвет как массив плавающих значений. Что касается <span class="notranslate">шейдера</span>, мы изменим его так, чтобы он включал униформу и использовал ее,
+      таким образом:</p>
+    <p class="code">// Фрагментный <span class="notranslate">шейдер</span>наложения цвета<br> изменяющийся vec2 v_vTexcoord;<br> uniform vec4 u_color;<br> void main()<br> {
+      <br> vec4 texColor = texture2D(gm_BaseTexture, v_vTexcoord);<br> gl_FragColor = vec4(u_color.rgb, texColor.a);<br> }
+    </p>
+    <p class="dropspot">Мы объявляем переменную с тем же именем, что и в <span class="notranslate">шейдере</span> create (<span class="inline">u_color</span>), и передаем ее в качестве первых трех компонентов вектора <span class="inline">gl_FragColor</span>, используя преимущества swizzling. Если мы скомпилируем
+      снова, мы увидим следующее:</p>
+    <p class="dropspot"><img alt="Overlay Shader Making Sprite Yellow" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_ColourOverlay_Yellow.gif">Теперь <span class="notranslate">шейдер</span> стал гораздо более полезным и многоразовым. Вам решать, как добавить больше функциональности
+      если вам нужно, чтобы он устанавливал цвет (используя переменную <span class="inline">_color</span>) во время <span class="notranslate">выполнения</span>.</p>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Черно-белый <span class="notranslate">шейдер</span></a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Создание черно-белого <span class="notranslate">шейдера</span> - отличный способ узнать больше о том, как работают <span class="notranslate">шейдеры</span>, и многие новички начинают с попытки сделать это, поскольку концептуально это довольно просто: получить каждый пиксель и присвоить ему оттенок серого. Но так ли это просто? Не
+      не совсем...
+    </p>
+    <p class="dropspot">При использовании цвета RGB, если все три компонента имеют одинаковое значение, то мы получаем серый тон. Наивный подход к созданию <span class="notranslate">шейдера</span> для использования этой идеи заключается в том, чтобы сложить все три цветовых канала (красный, зеленый и синий), а затем разделить на три. После
+      этого вы присвоили бы значение всем трем каналам, создав таким образом серый тон. Вот как выглядит <span class="notranslate">шейдер</span> фрагмента:</p>
+    <p class="code">// <span class="notranslate">Шейдер</span>черно-белого фрагмента<br> изменяющийся vec2 v_vTexcoord;<br> изменяющийся vec4 v_vColour;<br>
+      <br> void main()<br> {
+      <br> vec4 texColor = texture2D(gm_BaseTexture, v_vTexcoord);<br> float gray = (texColor.r + texColor.g + texColor.b) / 3.0;<br> gl_FragColor = v_vColour * vec4(gray, gray, gray, texColor.a);<br> }
+    </p>
+    <p class="dropspot">Вы могли заметить, что в коде <span class="inline">gl_FragColor</span> мы умножаем <span class="inline">vec4</span> на что-то под названием <span class="inline">v_vColour</span>. Это переменная, передаваемая
+      вершинным <span class="notranslate">шейдером</span>, которая сообщает нам цвет вершины, связанной с этим пикселем. Всегда полезно умножать конечный вычисленный цвет на цвет вершины. В большинстве случаев это ничего не даст, но если вы изменили цвет вершины в <span class="notranslate">GML</span>,
+      это будет отражено (с помощью таких функций, как <a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_ext.htm"><span class="inline">draw_sprite_ext()</span></a> или <a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_general.htm"><span class="inline">draw_sprite_general()</span></a> для
+      изменить <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_blend.htm"><span class="inline">image_blend</span></a>).</p>
+    <p class="dropspot">Что касается события draw, то оно довольно простое, поскольку у нас нет формы для передачи:</p>
+    <p class="code">// Событие рисования<br> <span class="notranslate">shader_set</span>(shdrBlackAndWhite);
+      <br> draw_self();
+      <br> <span class="notranslate">shader_reset</span>();
+    </p>
+    <p class="dropspot">Давайте скомпилируем и посмотрим, что у нас получилось.</p>
+    <p class="dropspot"><img alt="Black And White Shader" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_BlackAndWhite.gif">Это уже выглядит отлично, верно? И да, и нет... Есть решение, которое является более "правильным", поскольку вместо того, чтобы
+      вместо сложения компонентов и деления на три, мы умножаем каждый компонент на стандартные значения NTSC для черного и белого. Вот измененный код фрагментного <span class="notranslate">шейдера</span>:</p>
+    <p class="code">// <span class="notranslate">Шейдер</span>черно-белого фрагмента<br> изменяющийся vec2 v_vTexcoord;<br>
+      <br> void main()<br> {
+      <br> vec4 texColor = texture2D(gm_BaseTexture, v_vTexcoord);<br> float gray = dot(texColor.rgb, vec3(0.299, 0.587, 0.114));<br> gl_FragColor = vec4(gray, gray, gray, texColor.a);<br> }
+    </p>
+    <p class="dropspot">Мы используем точечное произведение как сокращение для умножения каждого компонента <span class="inline">texColor</span> с правильными весами, а затем складываем их вместе. Если вы не знакомы с точечным произведением, то, по сути, происходит следующее:</p>
+    <p class="code">float gray = (texColor.r * 0.299) + (texColor.g * 0.587) + (texColor.b * 0.114);</p>
+    <p class="dropspot">В конечном итоге, это выглядит очень похоже, но технически более правильно.</p>
+    <p class="dropspot"><img alt="Corrected Black And White Shader" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_BlackAndWhite_Improved.gif" /></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Радужный <span class="notranslate">шейдер</span></a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Наш последний пример <span class="notranslate">шейдера</span> - это забавный пример, который можно использовать для придания жизни тексту, кнопкам и другим вещам. Мы начнем с простого и будем постепенно добавлять функциональность, поскольку этот шейдер <span class="notranslate">очень</span> настраиваемый. В этом примере мы рассмотрим довольно много вопросов,
+      поэтому если вы чувствуете себя немного потерянным или запутавшимся, пожалуйста, вернитесь назад и перечитайте некоторые разделы выше.</p>
+    <p class="dropspot">Первое, что мы хотим сделать, - это окрасить пиксели в любой оттенок в зависимости от горизонтального положения пикселя. Для этого нужно установить положение x в качестве оттенка, а затем преобразовать формат HSV (оттенок, насыщенность, яркость) в формат RGB (красный, зеленый,
+      и синий). Для этого нам нужно написать вспомогательную функцию в <span class="notranslate">шейдере</span> фрагмента, которая принимает значения HSV и возвращает вектор RGB. Мы будем использовать одну функцию, которая делает это без необходимости использования каких-либо операторов <span class="inline">if</span>,
+      поскольку использование условий в коде <span class="notranslate">шейдера</span> делает <span class="notranslate">шейдеры</span> <em>очень </em>медленными, и его следует избегать.</p>
+    <p class="dropspot">Вот как выглядит <span class="notranslate">шейдер</span> на данном этапе:</p>
+    <p class="code">// Фрагментный <span class="notranslate">шейдер</span><br> изменяющийся vec2 v_vTexcoord;<br> изменяющийся vec4 v_vColour;<br>
+      <br> vec3 hsv2rgb(vec3 c) <br> {
+      <br> vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);<br> vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);<br> return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);<br> }
+      <br>
+      <br> void main()<br> {
+      <br> vec3 col = vec3(v_vTexcoord.x, 1.0, 1.0);<br> float alpha = texture2D(gm_BaseTexture, v_vTexcoord).a;<br> gl_FragColor = v_vColour * vec4(hsv2rgb(col), alpha);<br> }
+    </p>
+    <p class="dropspot">Здесь происходит немного больше событий, чем в предыдущих примерах, но большинство из них должно быть достаточно очевидным для вас. Во-первых, есть наша функция <span class="inline">hsv2rgb</span>, которая принимает <span class="inline">vec3</span> с нашим цветом HSV
+      и возвращает другой <span class="inline">vec3</span> с нашим преобразованием в RGB. В основной функции мы начинаем с создания нашего цвета HSV, где оттенок - это наша позиция x, а насыщенность и яркость мы пока оставим равными 1.0. Затем мы получаем
+      альфа из текстуры, чтобы она окрашивала только наш персонаж, а не весь прямоугольник спрайта (как мы делали в примере наложения цветов выше). Наконец, мы задаем цвет фрагмента как цвет HSV, преобразованный в RGB с альфой и умноженный
+      на цвет вершины (хорошая практика - делать это всегда).</p>
+    <p class="dropspot">Что касается нашего кода для рисования, то на данный момент он тривиален:</p>
+    <p class="code">// Событие рисования<br> <span class="notranslate">shader_set</span>(shdrRainbow);
+      <br> draw_self();
+      <br> <span class="notranslate">shader_reset</span>();
+    </p>
+    <p class="dropspot">Давайте проверим, что мы получили:</p>
+    <p class="dropspot"><img alt="Initial Rainbow Shader" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Rainbow_Overlay.gif">Мы близки к тому, что хотим, но есть проблема: мы не видим все цвета одновременно в каждом кадре
+      анимации, и кажется, что цвета меняются случайным образом. Причина в том, что мы предположили, что <span class="inline">v_vTexcoord</span> дал нам координаты спрайта, начинающиеся в левом верхнем углу (0,0) и заканчивающиеся в правом нижнем углу
+      (1,1), что является стандартным для <span class="notranslate">шейдеров</span>. Однако для оптимизации <span class="notranslate">GameMaker</span> запихивает столько текстур вместе, сколько может поместиться в так называемую <a href="../Settings/Texture_Information/Texture_Pages.htm">текстурную страницу,</a> и поэтому вот так
+      вот как на самом деле выглядит наша текстура:</p>
+    <p class="dropspot"><img class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Texture.png">Как объяснялось выше, <span class="inline">v_vTexcoord</span> дает нам абсолютные координаты спрайта в пределах всей страницы текстуры,
+      но нам нужно значение от 0.0 до 1.0, которое охватывает только наш текущий спрайт. Этот процесс называется <strong>нормализацией</strong> (получение значения и перевод его в диапазон от 0 до 1). Чтобы нормализовать наши горизонтальные значения, нам нужно знать
+      значения x0 и x1 на рисунке выше. К счастью, в <span class="notranslate">GameMaker</span> есть функция, которая позволяет определить расположение каждого угла в нашем спрайте на странице текстуры. Сначала нам нужно перейти к событию Create Event и создать форму для передачи этих данных в
+     <span class="notranslate">шейдеру</span>:</p>
+    <p class="code">// Создаем событие<br> _uniUV = <span class="notranslate">shader_get_uniform</span>(shdrRainbow, &quot;u_uv&quot;);</p>
+    <p class="dropspot">И мы изменяем событие draw, чтобы получить значения и затем передать их <span class="notranslate">шейдеру</span>:</p>
+    <p class="code">// Событие рисования<br> <span class="notranslate">shader_set</span>(shdrRainbow);
+      <br> var uv = sprite_get_uvs(sprite_index, image_index);<br> <span class="notranslate">shader_set_uniform_f</span>(_uniUV, uv[0], uv[2]);<br> draw_self();
+      <br> <span class="notranslate">shader_reset</span>();
+    </p>
+    <p class="dropspot">Функция <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_uvs.htm"><span class="inline">sprite_get_uvs()</span></a> принимает спрайт и индекс, и возвращает массив с массой информации,
+      например, координаты каждого угла, сколько пикселей было обрезано для оптимизации и т.д. Нас интересуют два из этих значений: левая и правая координаты спрайта, которые хранятся в <span class="inline">uv[0]</span> и <span class="inline">uv[2]</span> соответственно. В <span class="notranslate">шейдере</span> фрагмента мы будем использовать эти значения для вычисления нормализованной горизонтальной позиции следующим образом:</p>
+    <p class="code">// Fragment <span class="notranslate">Shader</span><br> varing vec2 v_vTexcoord;<br> varing vec4 v_vColour;<br>
+      <br> uniform vec2 u_uv;<br>
+      <br> vec3 hsv2rgb(vec3 c) <br> {
+      <br> vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);<br> vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);<br> return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);<br> }
+      <br>
+      <br> void main()<br> {
+      <br> float pos = (v_vTexcoord.x - u_uv[0]) / (u_uv[1] - u_uv[0]);<br> vec3 col = vec3(pos, 1.0, 1.0);<br> float alpha = texture2D(gm_BaseTexture, v_vTexcoord).a;<br> gl_FragColor = v_vColour * vec4(hsv2rgb(col), alpha);<br> }
+    </p>
+    <p class="dropspot">Здесь мы добавляем однородную переменную в верхней части файла с тем же именем, которое мы использовали в событии Create Event. Далее мы вычисляем нормализованную горизонтальную позицию, переводя нашу текущую координату <span class="inline">x</span> в начало координат (
+      <span class="inline">v_vTexcoord.x - u_uv[0]</span> ), а затем делим ее на ширину спрайта, чтобы получить диапазон от 0 до 1 (<span class="inline">u_uv[1] - u_uv[0]</span>).</p>
+    <p class="dropspot">В результате:</p>
+    <p class="dropspot"><img alt="Rainbow Overlay Shader Improved" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Rainbow_Overlay_Improved.gif">Вот так! Это именно то, что мы хотели. Мы можем видеть каждый цвет спектра внутри
+      нашего спрайта.</p>
+    <p class="dropspot">Вы можете быть довольны этим, но мы можем еще немного поразвлечься с этим <span class="notranslate">шейдером</span>. Что если мы добавим смещение цветов, основанное на времени, чтобы создать движение? Для этого нам понадобятся две дополнительные переменные для <strong>скорости </strong>и <strong>времени</strong>.
+      Нам также понадобятся еще две формы, по одной для каждой из новых переменных, так что событие Create Event станет:</p>
+    <p class="code">// Создание события<br> _uniUV = <span class="notranslate">shader_get_uniform</span>(shdrRainbow, &quot;u_uv&quot;);<br> _uniTime = shader_get_uniform(shdrRainbow, &quot;u_time&quot;);<br> _uniSpeed = shader_get_uniform( <span class="notranslate">shdrRainbow</span>, &quot;u_speed&quot;);<br> _time = 0;<br> _speed = 1.0;</p>
+    <p class="dropspot">Нам также необходимо увеличивать время на каждом кадре, поэтому в событии Step Event мы добавляем:</p>
+    <p class="code">// Шаг события<br> _time += 1 / room_speed;</p>
+    <p class="dropspot">Давайте теперь перейдем к событию draw, чтобы отправить эти формы в <span class="notranslate">шейдер</span>:</p>
+    <p class="code">// Событие рисования<br> <span class="notranslate">shader_set</span>(shdrRainbow);
+      <br> var uv = sprite_get_uvs(sprite_index, image_index);<br> <span class="notranslate">shader_set_uniform_f</span>(_uniUV, uv[0], uv[2]);<br> <span class="notranslate">shader_set_uniform_f</span>(_uniSpeed, _speed);<br> <span class="notranslate">shader_set_uniform_f</span>(_uniTime, _time);<br> draw_self();
+      <br> <span class="notranslate">shader_reset</span>();
+    </p>
+    <p class="dropspot">Наконец, мы вернемся к нашему шейдеру, <span class="notranslate">чтобы</span> фактически использовать эти переменные. Мы умножим скорость на время и добавим это к положению, как показано ниже:</p>
+    <p class="code">// Fragment <span class="notranslate">Shader</span><br> varing vec2 v_vTexcoord;<br> varing vec4 v_vColour;<br>
+      <br> uniform vec2 u_uv;<br> uniform float u_speed;<br> uniform float u_time;<br>
+      <br> vec3 hsv2rgb(vec3 c) <br> {
+      <br> vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);<br> vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);<br> return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);<br> }
+      <br>
+      <br> void main()<br> {
+      <br> float pos = (v_vTexcoord.x - u_uv[0]) / (u_uv[1] - u_uv[0]);<br> vec3 col = vec3((u_time * u_speed) + pos, 1.0, 1.0);<br> float alpha = texture2D(gm_BaseTexture, v_vTexcoord).a;<br> gl_FragColor = v_vColour * vec4(hsv2rgb(col),
+      alpha);
+      <br> }
+    </p>
+    <p class="dropspot">Если вы все сделали правильно, вы должны увидеть что-то вроде этого:</p>
+    <p class="dropspot"><img alt="Rainbow Shader Overlay Moving With Time" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Rainbow_Overlay_Final.gif">Чтобы завершить этот <span class="notranslate">шейдер</span>, мы добавим еще несколько форм для его дальнейшей настройки.
+      Первые две будут управлять насыщенностью и яркостью. Следующую мы назовем &quot;секция&quot;, и ее функция заключается в том, чтобы позволить пользователю передать число от нуля до единицы, чтобы определить, какой процент всего спектра мы видим за
+      время. Наконец, мы добавим переменную &quot;mix&quot;, которая будет определять, насколько мы хотим смешать <span class="notranslate">цвет</span> шейдера с цветом оригинальной текстуры (1.0 - вся радуга, 0.0 - вся текстура). Как обычно, давайте начнем с добавления переменных в
+      событие Create Event:</p>
+    <p class="code">// Создание события<br> _uniUV = <span class="notranslate">shader_get_uniform</span>(shdrRainbow, &quot;u_uv&quot;);<br> _uniTime = shader_get_uniform(shdrRainbow, &quot;u_time&quot;);<br> _uniSpeed = shader_get_uniform( <span class="notranslate">shdrRainbow</span>, &quot;u_speed&quot;);<br> _uniSection
+         = <span class="notranslate">shader_get_uniform</span>(shdrRainbow, &quot;u_section&quot;);<br> _uniSaturation = shader_get_uniform(shdrRainbow, &quot;u_saturation&quot;); <br> _uniBrightness = shader_get_uniform( <span class="notranslate">shdrRainbow</span>, &quot;u_brightness&quot;);<br> _uniMix =
+     <span class="notranslate">shader_get_uniform</span>(shdrRainbow, &quot;u_mix&quot;);<br>
+      <br> _time = 0;<br> _speed = 1.0;<br> _section = 0.5;<br> _saturation = 0.7;<br> _brightness = 0.8;<br> _mix = 0.5;</p>
+    <p class="dropspot">В ходе жеребьевки мы меняем униформу таким образом:</p>
+    <p class="code">// Событие рисования<br> <span class="notranslate">shader_set</span>(shdrRainbow);
+      <br> var uv = sprite_get_uvs(sprite_index, image_index);<br> <span class="notranslate">shader_set_uniform_f</span>(_uniUV, uv[0], uv[2]);<br> <span class="notranslate">shader_set_uniform_f</span>(_uniSpeed, _speed);<br> <span class="notranslate">shader_set_uniform_f</span>(_uniTime, _time); <br> <span class="notranslate">shader_set_uniform_f</span>(_uniSaturation, _saturation);<br> <span class="notranslate">shader_set_uniform_f</span>(_uniBrightness, _brightness);<br> <span class="notranslate">shader_set_uniform_f</span>(_uniSection, _section);<br> <span class="notranslate">shader_set_uniform_f</span>(_uniMix, _mix);<br> draw_self();
+      <br> <span class="notranslate">shader_reset</span>();
+    </p>
+    <p class="dropspot">Что касается <span class="notranslate">шейдера</span>, нам нужно передать насыщенность и яркость в цвет, что повлияет на цвет, генерируемый нашей вспомогательной функцией. Отрезок нужно умножить на нашу позицию, чтобы уменьшить диапазон. Мы также захватим всю текстуру
+      цвет, чтобы мы могли вычислить наш окончательный цвет, смешав цвет текстуры с RGB-преобразованием нашего цвета. Последний параметр функции mix определяет, сколько второго цвета мы хотим добавить. Это наш окончательный код <span class="notranslate">шейдера</span>:</p>
+    <p class="code">// Fragment <span class="notranslate">Shader</span><br> varying vec2 v_vTexcoord;<br> varying vec4 v_vColour;<br>
+      <br> uniform vec2 u_uv;<br> uniform float u_speed;<br> uniform float u_time;<br> uniform float u_saturation;<br> uniform float u_brightness;<br> uniform float u_section;<br> Uniform float u_mix;<br>
+      <br> vec3 hsv2rgb(vec3 c) <br> {
+      <br> vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);<br> vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);<br> return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);<br> }
+      <br>
+      <br> void main()<br> {
+      <br> float pos = (v_vTexcoord.x - u_uv[0]) / (u_uv[1] - u_uv[0]);<br> vec4 texColor = texture2D(gm_BaseTexture, v_vTexcoord); <br>     <br> vec3 col = vec3(u_section * ((u_time * u_speed) + pos), u_saturation, u_brightness);<br> vec4 finalCol = mix(texColor, vec4(hsv2rgb(col), texColor.a), u_mix);<br>     <br> gl_FragColor = v_vColour * finalCol;<br> }
+    </p>
+    <p class="dropspot">И наш конечный результат таков!</p>
+    <p class="dropspot"><img alt="Rainbow Shader Final" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Rainbow_Final.gif" /></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p>На этом мы заканчиваем это краткое руководство, и теперь вы должны лучше понимать, как работают шейдеры и как их можно использовать. Не спешите играть с <span class="notranslate">шейдерами</span>, которые вы создали, следуя этому руководству, и попробуйте
+    поэкспериментируйте с ними и сделайте другие вещи - как насчет создания <span class="notranslate">шейдера</span> размытия или <span class="notranslate">шейдера</span>, который делает монохромный экран в стиле Gameboy? - поскольку <span class="notranslate">шейдеры</span> - это невероятно мощный инструмент для добавления визуальной сложности и стиля в ваши игры.</p>
+  <p> </p>
+  <p class="note">Компания<span class="notranslate">YoYo Games</span> выражает благодарность <a href="https://twitter.com/AleHitti">Алехандро Хитти</a> и <strong><span class="notranslate">Amazon</span></strong> за разрешение воспроизвести это руководство. Оригинальную версию можно найти в <a href="https://developer.amazon.com/es/blogs/appstore/post/acefafad-29ba-4f31-8dae-00805fda3f58/intro-to-shaders-and-surfaces-with-gamemaker-studio-2">блоге разработчиков<span class="notranslate">Amazon</span></a>.</p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Additional_Information.htm">Дополнительная информация</a></div>
+        <div style="float:right">Следующий: <a href="Guide_To_Primitives_And_Vertex_Building.htm">Руководство по примитивам и построению вершин</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Shaders</span>
+Using <span class="notranslate">Shaders</span>
+<span class="notranslate">Shader</span> Guide
+Guide To Using <span class="notranslate">Shaders</span>
+-->
+  <!-- TAGS
+using_<span class="notranslate">shaders</span>
+-->
+</body>
+</html>

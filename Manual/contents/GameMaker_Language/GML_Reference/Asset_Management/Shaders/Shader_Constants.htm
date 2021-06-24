@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Константы шейдера</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different Shader Constants" />
+  <meta name="rh-index-keywords" content="gm_Matrices,MATRIX_VIEW,MATRIX_PROJECTION,MATRIX_WORLD,MATRIX_WORLD_VIEW,MATRIX_WORLD_VIEW_PROJECTION,MATRIX_MAX,MAX_VS_LIGHTS,gm_BaseTexture,gm_LightingEnabled,gm_FogStart,gm_RcpFogRange,gm_PS_FogEnabled,gm_FogColour,gm_VS_FogEnabled,gm_AlphaTestEnabled,gm_AlphaRefValue" />
+  <meta name="search-keywords" content="Shader Constants,gm_Matrices,MATRIX_VIEW,MATRIX_PROJECTION,MATRIX_WORLD,MATRIX_WORLD_VIEW,MATRIX_WORLD_VIEW_PROJECTION,MATRIX_MAX,MAX_VS_LIGHTS,gm_BaseTexture,gm_LightingEnabled,gm_FogStart,gm_RcpFogRange,gm_PS_FogEnabled,gm_FogColour,gm_VS_FogEnabled,gm_AlphaTestEnabled,gm_AlphaRefValue" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Константы<span class="notranslate">шейдера</span> </h1>
+  <p>Помимо <span class="notranslate">шейдерных</span> функций и констант, определенных в <a href="http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf" target="_blank">справочных страницах</a> OpenGL ES Shading Language (GLSL ES), существует также ряд
+   <span class="notranslate">шейдерных</span> констант, доступных только в <span class="notranslate">GameMaker Studio 2</span>.</p>
+  <p>Следующие константы матрицы дисплея могут быть использованы в качестве индексов массива при использовании константы массива <span class="notranslate">шейдера</span> <tt>gm_Matrices</tt>:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>MATRIX_VIEW</td>
+        <td>Эта константа индекса массива хранит индекс текущей матрицы представления. Возвращаемый индекс будет использоваться как значение массива при вызове константы <tt>gm_Matrices</tt> в коде <span class="notranslate">шейдера</span>.</td>
+      </tr>
+      <tr>
+        <td>МАТРИЧНАЯ_ПРОЕКЦИЯ</td>
+        <td>Эта константа индекса массива хранит индекс текущей матрицы проекции. Возвращаемый индекс будет использоваться как значение массива при вызове константы <tt>gm_Matrices</tt> в коде <span class="notranslate">шейдера</span>.</td>
+      </tr>
+      <tr>
+        <td>MATRIX_WORLD</td>
+        <td>Эта константа индекса массива хранит индекс текущей матрицы мира. Это можно использовать для таких вещей, как освещение, если у вас есть информация о свете в мировом пространстве. Возвращаемый индекс будет использоваться как значение массива при вызове константы <tt>gm_Matrices</tt> в коде <span class="notranslate">шейдера</span>.</td>
+      </tr>
+      <tr>
+        <td>МАТРИЧНЫЙ_МИР_ПРОСМОТРА</td>
+        <td>Эта константа индекса массива содержит индекс результата умножения матриц мира и вида. Это часто используется для таких вещей, как туман. Возвращаемый индекс будет использоваться как значение массива при вызове константы <tt>gm_Matrices</tt> 
+          в коде <span class="notranslate">шейдера</span>.</td>
+      </tr>
+      <tr>
+        <td>МАТРИЧНАЯ_ПРОЕКЦИЯ_МИРОВОГО_ВИДА</td>
+        <td>Эта индексная константа массива содержит индекс результата перемножения матриц мира, вида и проекции. Это обычная матрица преобразования, используемая для позиций вершин. Возвращаемый индекс будет использоваться как значение массива при
+          вызове константы <tt>gm_Matrices</tt> в коде <span class="notranslate">шейдера</span>.</td>
+      </tr>
+      <tr>
+        <td>MATRIX_MAX</td>
+        <td>Это не индекс массива, а скорее возвращает размер массива матрицы в вершинном <span class="notranslate">шейдере</span>.</td>
+      </tr>
+      <tr>
+        <td>MAX_VS_LIGHTS</td>
+        <td>Это не индекс массива, а скорее возвращает количество огней в вершинном <span class="notranslate">шейдере</span>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Следующая константа также доступна для освещения:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>MAX_VS_LIGHTS</td>
+        <td>Максимальное количество точечных и направленных огней, доступных в <span class="notranslate">шейдере</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Следующие предопределенные матричные формы и константы могут быть использованы в вашем <span class="notranslate">шейдере</span> для доступа к специфическим значениям <span class="notranslate">GameMaker Studio 2</span>:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>gm_Matrices[matrix]</td>
+        <td>Эта константа массива возвращает матрицу преобразования и является одной из доступных предопределенных форм, которые <span class="notranslate">GameMaker Studio 2</span> создает для использования в редакторе кода <span class="notranslate">шейдеров</span>. Индекс массива выбирается из одной из перечисленных выше констант.</td>
+      </tr>
+      <tr>
+        <td>gm_BaseTexture</td>
+        <td>Это константа 2D-сэмплера, которая возвращает текстуру текущего объекта, как установлено в <span class="notranslate">GameMaker Studio 2</span>. Таким образом, это будет текущий спрайт, поверхность или текстура, которая обычно используется при рисовании без вызова <span class="notranslate">шейдера</span>.</td>
+      </tr>
+      <tr>
+        <td>gm_LightingEnabled</td>
+        <td>С его помощью можно получить или установить освещение <span class="notranslate">GameMaker Studio 2</span> при использовании 3D.</td>
+      </tr>
+      <tr>
+        <td>gm_FogStart</td>
+        <td>Это можно использовать для получения расстояния, на котором полигоны начинают смешиваться с цветом тумана.</td>
+      </tr>
+      <tr>
+        <td>gm_RcpFogRange</td>
+        <td>Это можно использовать для получения расстояния, на котором туман максимален и уже ничего не видно.</td>
+      </tr>
+      <tr>
+        <td>gm_PS_FogEnabled</td>
+        <td>Возвращает <tt>true</tt> или <tt>false</tt>, если на GPU включен пиксельный туман или нет.</td>
+      </tr>
+      <tr>
+        <td>gm_FogColour</td>
+        <td>С его помощью можно получить цвет тумана, используемый в <span class="notranslate">GameMaker Studio 2</span>.</td>
+      </tr>
+      <tr>
+        <td>gm_VS_FogEnabled</td>
+        <td>Возвращает <tt>true</tt> или <tt>false</tt>, если на GPU включен вершинный туман или нет.</td>
+      </tr>
+      <tr>
+        <td>gm_AlphaTestEnabled</td>
+        <td>Это можно использовать для получения альфа-тестирования в <span class="notranslate">шейдере</span>. См. <a href="../../Drawing/GPU_Control/gpu_set_alphatestenable.htm"><tt>gpu_set_alphatestenable()</tt></a> более подробную информацию об альфа-тестировании.</td>
+      </tr>
+      <tr>
+        <td>gm_AlphaRefValue</td>
+        <td>Это можно использовать для получения текущего опорного значения альфа-тестирования. См. <a href="../../Drawing/GPU_Control/gpu_set_alphatestref.htm"><tt>gpu_set_alphatestref()</tt></a> дополнительную информацию об эталоне альфа-тестирования.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Shaders.htm"><span class="notranslate">Шейдеры</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Shader</span> Constants
+gm_Matrices
+MATRIX_VIEW
+MATRIX_PROJECTION
+MATRIX_WORLD
+MATRIX_WORLD_VIEW
+MATRIX_WORLD_VIEW_PROJECTION
+MATRIX_MAX
+MAX_VS_LIGHTS
+gm_Matrices[matrix]
+gm_BaseTexture
+gm_LightingEnabled
+gm_FogStart
+gm_RcpFogRange
+gm_PS_FogEnabled
+gm_FogColour
+gm_VS_FogEnabled
+gm_AlphaTestEnabled
+gm_AlphaRefValue
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_constants
+-->
+</body>
+</html>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>вершина_argb</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_argb" />
+  <meta name="rh-index-keywords" content="vertex_argb" />
+  <meta name="search-keywords" content="vertex_argb" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>вершина_argb</h1>
+  <p>Эта функция устанавливает значения <a class="glossterm" data-glossterm="ARGB" href="#">ARGB</a> для вершины, определяемой в данный момент для пользовательского примитива. Вы предоставляете буфер для записи данных, а также значения красного, зеленого, синего и альфа.
+    которые вы хотите использовать в виде одного 32-битного беззнакового целого числа - альфа-образец в старших 8 битах, затем красный образец, зеленый образец и, наконец, синий образец в младших 8 битах. Вы можете использовать шестнадцатеричную нотацию ($AARRGGBB) как вещественное число или использовать любой
+    функции <tt>make_colour_*()</tt> для определения значения цвета.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">vertex_argb(buffer, argb);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>буфер</td>
+        <td>Буфер для записи информации.</td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>Альфа-значение для цвета (0 - 255).</td>
+      </tr>
+      <tr>
+        <td>r</td>
+        <td>Красная составляющая цвета (0 - 255).</td>
+      </tr>
+      <tr>
+        <td>g</td>
+        <td>Зеленая составляющая цвета (0 - 255).</td>
+      </tr>
+      <tr>
+        <td>b</td>
+        <td>Синяя составляющая цвета (0 - 255).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">vertex_argb(buff, $FFFFFFFF);</p>
+  <p>Приведенный выше код установит значения ARGB определяемой вершины в белый цвет.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Primitives_And_Vertex_Formats.htm">Примитивы и форматы вершин</a></div>
+        <div style="float:right">Далее: <a href="vertex_texcoord.htm">vertex_texcoord</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_argb
+-->
+  <!-- TAGS
+vertex_argb
+-->
+
+</body></html>

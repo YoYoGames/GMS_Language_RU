@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skeleton_animation_mix</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_mix" />
+  <meta name="rh-index-keywords" content="skeleton_animation_mix" />
+  <meta name="search-keywords" content="skeleton_animation_mix" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skeleton_animation_mix</h1>
+  <p>Вы можете легко переключать наборы анимаций с помощью функции <a href="skeleton_animation_set.htm"><tt>skeleton_animation_set()</tt></a> но это может привести к пропуску или заиканию при смене одной анимации на другую. Чтобы предотвратить это, вы можете установить значение mix
+    Обычно это нужно сделать в событии Create экземпляра со скелетной анимацией, так как его нужно установить только один раз, а <span class="notranslate">GameMaker Studio 2</span> будет интерполировать все дальнейшие изменения спрайта, используя анимацию.
+    интерполирует все дальнейшие изменения спрайта, используя наборы анимации в этом экземпляре. Обратите внимание, что значение длительности варьируется от 0 до 1, при значении 0,5 интерполяция от одного набора к другому будет &quot;половинной&quot;.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">skeleton_animation_mix(animfrom, animto, duration);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>animfrom</td>
+        <td>Имя (строка) первого набора анимации для интерполяции.</td>
+      </tr>
+      <tr>
+        <td>анимто</td>
+        <td>Имя (строка) второго набора анимации для интерполяции.</td>
+      </tr>
+      <tr>
+        <td>продолжительность</td>
+        <td>Продолжительность интерполяции (от 0 до 1)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">skeleton_animation_set(&quot;walk&quot;);<br> skeleton_animation_mix(&quot;walk&quot;, &quot;jump&quot;, 0.2);<br> skeleton_animation_mix(&quot;jump&quot;, &quot;walk&quot;, 0.4);</p>
+  <p>Приведенный выше код будет входить в событие Create Event экземпляра со скелетным анимационным спрайтом и устанавливает длительность анимационного микса для интерполяции между двумя анимационными наборами &quot;ходить&quot; и &quot;прыгать&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Animation.htm">Анимация</a></div>
+        <div style="float:right">Далее: <a href="skeleton_animation_list.htm">skeleton_animation_list</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_mix
+-->
+  <!-- TAGS
+skeleton_animation_mix
+-->
+</body>
+</html>

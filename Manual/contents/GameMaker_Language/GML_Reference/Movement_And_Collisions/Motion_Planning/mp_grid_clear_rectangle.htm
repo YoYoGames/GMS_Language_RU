@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_clear_rectangle</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_clear_rectangle" />
+  <meta name="rh-index-keywords" content="mp_grid_clear_rectangle" />
+  <meta name="search-keywords" content="mp_grid_clear_rectangle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_clear_rectangle</h1>
+  <p>С помощью этой функции вы можете определить область <i>в комнатных координатах</i>, которая затем очистит соответствующие ячейки в указанной MP-сетке. Даже если ячейка частично попадает в заданную прямоугольную область, она будет очищена.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">mp_grid_clear_rectangle(id, x1, y1, x2, y2);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Индекс mp_grid, который будет использоваться</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Координата x левой стороны прямоугольника для проверки.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Координата y верхней стороны прямоугольника для проверки.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Координата x правой стороны прямоугольника для проверки.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Координата x нижней стороны прямоугольника для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">mp_grid_clear_rectangle(grid, 0, 0, 100, 200);</p>
+  <p>Приведенный выше код пометит как свободные все ячейки mp_grid, индексированные в переменной &quot;grid&quot;, которые попадают в область от 0,0 до 100,200.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Motion_Planning.htm">Планирование движения</a></div>
+        <div style="float:right">Далее: <a href="mp_grid_to_ds_grid.htm">mp_grid_to_ds_grid</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_clear_rectangle
+-->
+  <!-- TAGS
+mp_grid_clear_rectangle
+-->
+</body>
+</html>

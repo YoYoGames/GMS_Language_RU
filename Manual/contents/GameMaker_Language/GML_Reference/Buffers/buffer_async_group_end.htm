@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_async_group_end</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_async_group_end" />
+  <meta name="rh-index-keywords" content="buffer_async_group_end" />
+  <meta name="search-keywords" content="buffer_async_group_end" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_async_group_end</h1>
+  <p>Эта функция завершает определение группы сохранения буфера. Вы должны предварительно вызвать функцию <a href="buffer_async_group_begin.htm"><tt>buffer_async_group_begin()</tt></a> для инициирования группы, а затем вызвать функцию <a href="buffer_save_async.htm"><tt>buffer_save_async()</tt></a>    для каждого файла, который вы хотите сохранить. Наконец, вы вызываете эту функцию, которая начнет сохранение файлов. Функция вернет уникальное значение ID для сохранения, которое затем может быть использовано в <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Save_Load.htm">событии Asynchronous Save / Load</a> для разбора результатов из карты <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a> DS.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">buffer_async_group_end();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Расширенный пример:</h4>
+  <p>Функция <tt>buffer_async_group_end()</tt> может быть вызвана из любого события, и поскольку она является асинхронной, обратный вызов может быть почти мгновенным, а может занять несколько секунд. Вызов функции прост и выглядит следующим образом:</p>
+  <p class="code">buffer_async_group_begin(&quot;SaveGame&quot;);<br> save1 = buffer_save_async(buff1, &quot;Player_Save1.sav&quot;, 0, 16384);<br> save2 = buffer_save_async(buff2, &quot;Player_Save2.sav&quot;, 0, 16384);<br> save3 = buffer_save_async(buff3, &quot;Player_Save3.sav&quot;,
+    0, 16384);<br> save4 = buffer_save_async(buff4, &quot;Player_Save4.sav&quot;, 0, 16384);<br> save_id = buffer_async_group_end();</p>
+  <p>Приведенный выше код запускает буферную группу, затем устанавливает ее для асинхронного сохранения 4 файлов. Затем определение группы завершается (в этот момент начнется сохранение), сохраняя идентификатор вызова функции в переменной &quot; save_id<i>&quot;.</i> Когда сохранение
+    завершится, сработает событие асинхронного сохранения/загрузки, и вы сможете проанализировать карту <tt>async_load</tt> на предмет правильного идентификатора функции, как показано ниже:</p>
+  <p class="code">если ds_map_find_value(async_load, &quot;id&quot;) == saveid<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) == false<br> {
+    <br> show_debug_message(&quot;Save failed!&quot;);<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код сначала проверит id созданной карты DS, затем проверит статус обратного вызова, опубликовав отладочное сообщение, если возникли какие-либо проблемы.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Buffers.htm">Буферы</a></div>
+        <div style="float:right">Далее: <a href="buffer_copy.htm">buffer_copy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_async_group_end
+-->
+  <!-- TAGS
+buffer_async_group_end
+-->
+</body>
+</html>

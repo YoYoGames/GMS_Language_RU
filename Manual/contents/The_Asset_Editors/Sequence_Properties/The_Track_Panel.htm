@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Путевая панель</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the sequence canvas" />
+  <meta name="rh-index-keywords" content="Sequences - The Track Panel" />
+  <meta name="search-keywords" content="tracks,track panel,track editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Путевая панель</h1>
+  <p><img alt="The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Panel.png">Действия ваших последовательностей определяются активами и параметрами, которые были добавлены на <strong>панель дорожек</strong>. Вы можете добавить дорожку в
+    редакторе либо:</p>
+  <ul class="colour">
+    <li>перетаскивание актива в последовательность <a href="The_Sequence_Canvas.htm">Canvas</a></li>
+    <li>перетаскивание актива в саму панель дорожек</li>
+    <li>нажав кнопку &quot;Добавить актив&quot; <img alt="Add Track Icon" class="icon" src="../../assets/Images/Icons/Icon_AddAsset.png"> в нижней части панели отслеживания.</li>
+  </ul>
+  <p>Последний способ откроет для вас проводник активов, где вы сможете выбрать актив для добавления.</p>
+  <p>Независимо от выбранного метода, для актива будет создана новая <a class="glossterm" data-glossterm="отслеживание активов" href="#">дорожка актива</a>. Эта дорожка является основной дорожкой для актива в последовательности, и для нее будет создана соответствующая <a class="glossterm" data-glossterm="ключ актива" href="#">ключевая</a> дорожка <a class="glossterm" data-glossterm="ключ актива" href="#">актива</a> в <span class="notranslate">Dope Sheet</span> в позиции <a class="glossterm" data-glossterm="playhead" href="#">головки воспроизведения</a>:</p>
+  <p><img alt="Add An Asset To The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Add_Asset.gif">Обратите внимание, что цвет ключа актива в <span class="notranslate">Листе допинга</span> можно установить с панели путей, щелкнув по цветной полоске в конце
+    конце. Откроется окно <strong>выбора цвета</strong>, где вы можете выбрать, какой цвет использовать для ключевых дорожек в <span class="notranslate">Dope Sheet</span>.</p>
+  <p>К каждому активу в редакторе дорожек можно добавить набор <a class="glossterm" data-glossterm="дорожки параметров" href="#">дорожек параметров</a>. Эти дорожки управляют различными свойствами (параметрами), которые могут быть изменены
+    для дорожки с течением времени. Различные доступные параметры подробно рассматриваются в разделе &quot;Добавление<strong>дорожек параметров&quot;</strong> далее на этой странице, но чтобы дать вам представление о том, что доступно, вот краткий список:</p>
+  <ul class="colour">
+    <li><strong>Все активы</strong>: <em>Положение </em>и <em>вращение</em>.</li>
+    <li><strong>Звуки</strong>: <em>Высота </em>и <em>громкость</em>.</li>
+    <li><strong>Последовательности</strong>: <em>Происхождение </em>и <em>масштабы</em>.</li>
+    <li><strong>Спрайты и объекты</strong>: <em>Происхождение</em>, <em>Масштаб</em>, <em>Индекс изображения</em>, <em>Скорость изображения</em> и <em>Умножение цвета</em>.</li>
+  </ul>
+  <p>Чтобы добавить дорожку параметров в редакторе, можно включить функцию &quot;Автоматическая<strong>запись изменений&quot;</strong> <img alt="Record Changes Icon" src="../../assets/Images/Icons/Icon_Seq_Record.png"> на панели дорожек, которая добавит ключи параметров
+    для любых изменений, внесенных в актив на холсте в текущей позиции головки воспроизведения, как показано здесь:</p>
+  <p><img alt="Adding A Parameter Key To An Asset In The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Add_Keys.gif">Также вы можете нажать кнопку &quot;Add<strong>Parameter Track&quot;</strong> <img alt="Add Parameter Track Button" src="../../assets/Images/Icons/Icon_Add_Param.png">, которая откроет меню с различными доступными опциями:</p>
+  <p><img alt="Adding A Parameter Track To An Asset In The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Add_Parameter.png">Выбор любой опции из этого меню или запись непосредственно из IDE создаст одну или более дорожек параметров под основной дорожкой актива, а также добавит ключ параметра в Dope Sheet.
+    дорожки параметров под основной дорожкой актива, а также добавит <a class="glossterm" data-glossterm="ключ параметра" href="#">ключ параметра</a> в <span class="notranslate">Dope Sheet</span>, окрашенный в тот же цвет, что и цвет основной дорожки актива:</p>
+  <p><img alt="Parameter Tracks In The Track Panel And Dope Sheet" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_ParameterTracks.png">Как только вы добавите дорожку параметров к дорожке основного актива, на <span class="notranslate">доп. листе</span> появится цветная полоса.
+    чтобы показать длину дорожки актива в кадрах, а в точках, где нужно изменить параметр, будут добавлены <strong>ключи параметров </strong><span class="notranslate">(ключевые кадры</span>). Эти ключи можно увидеть на изображении выше в виде простых &quot;точек&quot;
+    на кадре. Когда дорожка имеет такие ключи параметров, параметр, на который они ссылаются, будет интерполирован (с помощью <a class="glossterm" data-glossterm="линейная интерполяция" href="#">линейной интерполяции</a>) по умолчанию между каждой из показанных точек.
+    Например, если у вас есть параметр поворота и в кадре 0 он установлен на 90°, то в кадре 30 он будет равен 180°, а в кадре 15 он будет равен 135°. Вы можете увидеть изменение значений с течением времени, выбрав дорожку параметров и &quot;прокрутив&quot;
+    головку воспроизведения в <span class="notranslate">допинг-листе</span>:</p>
+  <p><img alt="Interpolating Between Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Changing_Parameter.gif" /></p>
+  <p>Обратите внимание, что для всех дорожек параметров вы можете отключить линейную интерполяцию по умолчанию между различными клавишами из меню правой кнопки мыши <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> на дорожке параметров, что
+    означает, что переходы между значениями параметров будут происходить <em>мгновенно </em>на данном кадре, а не постепенно с течением времени:</p>
+  <p><img alt="Disable Linear Interpolation On Parameter Track" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_RMB_Menu_Params.png">Помимо возможности выбора типа перехода для дорожек параметров, меню RMB также предлагает вам
+    следующие опции:</p>
+  <ul class="colour">
+    <li><strong>Вырезать</strong>, <strong>Копировать</strong> и <strong>Вставить</strong>: Эти опции позволяют вырезать/копировать/вставлять дорожки активов или параметров.</li>
+    <li><strong>Дублировать дорожку(и)</strong>: Это создаст дубликат выбранной в данный момент дорожки (дорожек). Если это дорожка актива, она также дублирует дорожки параметров, связанные с ней.</li>
+    <li><strong>Удалить дорожку (дорожки)</strong>: Это приведет к удалению выбранной дорожки или дорожек. Если вы удалите дорожку актива, то связанные с ней дорожки параметров также будут удалены, однако вы можете удалить дорожки параметров по отдельности.</li>
+    <li><strong>Группа</strong>: При использовании этой опции на пустом месте панели дорожек создается папка группы, которую можно использовать для более упорядоченного хранения активов. Вы можете добавить актив в группу, просто щелкнув на нем и перетащив
+      его в папку. Если вы уже выбрали трек или треки, то использование этой опции не только создаст групповую папку, но и добавит в нее трек(и).</li>
+    <li><strong>Переименовать</strong>: С помощью этой опции можно переименовать любой трек актива или папку группы.</li>
+  </ul>
+  <p>Важной особенностью дорожек активов и параметров является возможность <strong>родительских </strong>дорожек и групп. Если перетащить дорожку активов на другую дорожку на панели дорожек, первый актив становится <strong>дочерним </strong>по отношению к тому активу, на который он был опущен.
+    который, в свою очередь, становится <strong>родительским</strong>. Все дорожки параметров, назначенные родительской дорожке активов, будут автоматически применены к дочерним дорожкам активов, так что вы можете иметь несколько спрайтов (например), использующих одну позицию.
+    asset track to move:<img alt="Parent And Child Sprites Share Parameters" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Parenting.gif" style="cursor: nwse-resize;">То же самое можно сделать с помощью групп. Вы можете создать папку группы
+    нажав кнопку в нижней части панели дорожек, а затем перетащите дорожки активов, которые вы хотите сгруппировать вместе, в папку группы. Эти активы сохранят свои собственные дорожки параметров, но вы можете задать дополнительные дорожки параметров для группы и всех активов.
+    и все активы в группе будут затронуты этими дорожками параметров, а также своими собственными дорожками параметров.</p>
+  <p>При работе с панелью треков можно использовать и обычные сочетания клавиш, то есть: <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> и левую кнопку мыши <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> для выбора одного или нескольких треков в любом порядке, <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> и левую кнопку мыши <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> для выбора последовательных треков, а также вырезать, копировать и вставлять их с помощью комбинаций клавиш <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> +&quot;<span class="inline">X</span>&quot;, <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">C</span>&quot; и <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">V</span>&quot;.</p>
+  <p>Это основы работы с редактором дорожек, но ниже мы рассмотрим более подробно, для чего нужен каждый из разделов и как их использовать:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Ориентация на изменения</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Кнопка изменения ориентации <img data-cke-saved-src="../../assets/Images/Icons/Icon_ChangeOrientation.png" src="../../assets/Images/Icons/Icon_ChangeOrientation.png" class="icon" alt="Change Orientation Icon"> может быть использована для изменения способа отображения различных разделов в редакторе последовательностей.
+      Редактор последовательности отображает различные разделы. По умолчанию вид Cnavas находится вверху, а редактор дорожек и доп. лист - внизу, но это можно изменить, нажав на кнопку для перебора различных раскладок, или нажав на кнопку опций , чтобы открыть меню и выбрать раскладку.
+      кнопку Опции <img alt="Icon Grid Menu" class="icon" height="24" data-cke-saved-src="../../assets/Images/Icons/Icon_CanvasOptions.png" src="../../assets/Images/Icons/Icon_CanvasOptions.png" width="10">, чтобы открыть меню и выбрать нужный макет.
+      который вам нужен. Доступны следующие макеты:</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_SplitWindow.png" src="../../assets/Images/Icons/Icon_Seq_SplitWindow.png" alt="Split Window Sequence Editor Button" /></td>
+          <td class="icons"><strong>Раздельное окно</strong></td>
+          <td class="text">
+            <p>При этой опции редактор последовательностей будет разделен на два отдельных окна, где в главном окне IDE будет отображаться вид Canvas на полном рабочем столе, а в новом окне - <span class="notranslate">Dope Sheet</span> и редактор дорожек. Повторное нажатие кнопки
+              снова изменит расположение и уберет дополнительное окно.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Top.png" src="../../assets/Images/Icons/Icon_Seq_Top.png" alt="Snap Top Sequence Editor Button" /></td>
+          <td class="icons"><b>Защелкивающийся верх</b></td>
+          <td class="text">
+            <p>Эта опция привязывает редактор дорожек и доп. лист к верхней части IDE.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Right.png" src="../../assets/Images/Icons/Icon_Seq_Right.png" alt="Snap Right Sequence Editor Button" /></td>
+          <td class="icons"><strong>Snap Right</strong></td>
+          <td class="text">
+            <p>Эта опция привязывает редактор дорожек и доп. лист к правой части IDE.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Bottom.png" src="../../assets/Images/Icons/Icon_Seq_Bottom.png" alt="Snap Bottom Sequence Editor Button" /></td>
+          <td class="icons"><strong>Защелка нижняя</strong></td>
+          <td class="text">
+            <p>Этот параметр привязывает редактор дорожек и доп. лист к нижней части IDE (это вид по умолчанию.</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="icons"><img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Left.png" src="../../assets/Images/Icons/Icon_Seq_Left.png" alt="Snap Left Sequence Editor Button" /></td>
+          <td class="icons"><strong>Защелка левая</strong></td>
+          <td class="text">
+            <p>Эта опция привязывает редактор дорожек и доп. лист к левой части IDE.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">Вы также можете в любой момент сбросить настройки редактора последовательностей, нажав на опцию Сброс <img data-cke-saved-src="../../assets/Images/Icons/Icon_Seq_Reset.png" src="../../assets/Images/Icons/Icon_Seq_Reset.png" class="icon" alt="Reset Editor Layout Button">. Это вернет редактор в состояние по умолчанию и вновь откроет все закрытые разделы.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Поиск пути</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Это поле поиска позволяет быстро перебирать различные дорожки последовательности, чтобы найти ту, которую вы хотите отредактировать. Введя здесь любой текст, вы узнаете, сколько дорожек актива было найдено с этой строкой, а также подсветите стрелками
+      сбоку от поля поиска. Нажав на эти стрелки, вы перейдете к первому и последующим активам, соответствующим критериям поиска.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Отслеживание активов</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Каждый актив, добавляемый в последовательность, получает свою собственную дорожку, и они перечислены здесь. Если для дорожки актива заданы какие-либо параметры, то они также будут показаны под ней в виде дорожек параметров. Дорожки параметров можно развернуть или свернуть
+      дорожки параметров, щелкнув <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> на значке стрелки слева от названия дорожки, а название дорожки можно изменить, выполнив медленный двойной щелчок <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> на дорожке и присвоив ей нужное название. Обратите внимание, что нет никаких ограничений на название, которое вы даете, и вы можете использовать пробелы, небуквенно-цифровые символы
+      и начинать их с цифры, если хотите.</p>
+    <p class="dropspot">Различные типы доступных дорожек параметров более подробно описаны в разделе &quot;Добавление<strong>дорожек параметров&quot;</strong> далее на этой странице.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Ключевые элементы управления</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">После добавления дорожки параметров можно добавлять и удалять клавиши параметров к определенным кадрам для установки значения этого параметра. Это можно сделать с помощью кнопки &quot;<strong>Клавиша записи&quot;</strong> <img alt="Add Keys Icon" class="icon" src="../../assets/Images/Icons/Icon_Seq_Add.png"> или &quot;Клавиша удаления&quot; <strong><img alt="Delete Keys Icon" class="icon" src="../../assets/Images/Icons/Icon_Seq_Delete.png"> </strong>(более подробную информацию см. в разделе &quot;<strong>Управление клавишами</strong> дорожки<strong>&quot;</strong>),
+      или с помощью <strong>кнопок управления</strong> на самом параметре. Чтобы использовать эти элементы управления, необходимо установить головку воспроизведения в <span class="notranslate">Dope Sheet</span> на кадр, который вы хотите отредактировать, а затем нажать на круглый значок &quot;клавиша&quot;
+      слева от дорожки параметра. Если кадру не назначен ключ, круг будет &quot;пустым&quot;, и щелчок по нему добавит новый ключ и позволит редактировать значение параметра. Если кадр уже имеет ключ, то круг будет
+      &quot;заполненным&quot;, и щелчок по нему приведет к удалению ключа из кадра:</p>
+    <p class="dropspot"><img alt="Adding And Removing Parameter Keys Using The Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Add_Param_Key.gif">Вы также заметите, что на изображении выше вы можете использовать кнопки со стрелками по обеим сторонам
+      маркера ключа параметра, чтобы быстро переходить между ключевыми кадрами в <span class="notranslate">доп. листе</span>, без необходимости позиционировать головку воспроизведения вручную.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Значения параметров</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Когда дорожка параметров добавлена, вы можете редактировать значения некоторых из них, просто установив головку воспроизведения в <span class="notranslate">Dope Sheet</span> на кадр с ключом, который вы хотите изменить, а затем используйте различные виджеты холста для редактирования положения, вращения,
+      масштаб или происхождение актива. Эти изменения будут отражены в значении ключа для этого кадра. Однако не все параметры можно редактировать таким образом, или это может быть недостаточно точно для ваших нужд, и в этих случаях вы можете редактировать значение параметра
+      непосредственно, щелкнув его на дорожке и установив нужное значение для данного типа параметра.</p>
+    <p class="dropspot">Обратите внимание, что некоторые дорожки параметров могут иметь значок &quot;ссылка&quot; <img alt="Track Link Icon" height="14" src="../../assets/Images/Icons/Icon_Track_Link.png" width="14"> рядом с их значениями, что означает, что они могут быть связаны вместе. Это делается путем
+      щелчком по значку, чтобы включить/выключить связь, и если она включена, редактирование одного значения также установит другое.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">События</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">Подобно обычным объектам, последовательности могут иметь события, которые могут запускать определенный код, назначенный им. Код назначается в виде <a href="../../GameMaker_Language/GML_Overview/Script_Functions.htm">скриптовой функции</a>, которая может принимать
+      никаких аргументов и будет вызвана при наступлении события.</p>
+    <p class="dropspot">События добавляются нажатием кнопки <strong>Добавить событие</strong> <img alt="Add Event Icon" src="../../assets/Images/Icons/Icon_AddEvent.png">, в результате чего откроется следующее окно:</p>
+    <p class="dropspot"><img alt="Sequence Editor Add Event Window" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Events.png" /></p>
+    <p class="dropspot">Здесь перечислены следующие события:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Create </strong>- Это событие происходит при первом создании экземпляра последовательности, и это самое первое, что происходит в последовательности, помещенной в комнату через редактор комнат при входе в комнату.</li>
+      <li class="dropspot"><strong>Уничтожение </strong>- Это событие выполняется, когда экземпляр последовательности уничтожается, и будет запущено до события Очистка (см. ниже).</li>
+      <li class="dropspot"><strong>Clean Up</strong> - Это событие будет вызываться после любого события, которое удаляет экземпляр последовательности из комнаты. Таким образом, оно будет вызвано, если последовательность будет уничтожена, если комната закончится, или если игра закончится, и предназначено для выполнения
+        любую задачу, которую вам нужно выполнить один раз, когда экземпляр последовательности удаляется из игры по любой причине. Если вы уничтожили экземпляр последовательности, используя, например, layer_sequence_destroy(), то это событие будет вызвано после события Destroy
+        (см. выше).</li>
+      <li class="dropspot"><strong>Begin Step</strong> / <strong>Step </strong>/ <strong>End Step</strong> - Событие Step Event - это событие, которое проверяется на каждом шаге (кадре) игры, пока существует экземпляр последовательности, и состоит из трех частей: begin, step и
+        конец. Для большинства вещей стандартное событие шага вполне подходит, но иногда вы хотите немного больше контроля над тем, какой код выполняется и в какое время, поэтому для этого вам предоставляются события шага Begin и End, и эти события всегда будут
+        срабатывать в одном и том же порядке на каждом шаге (кадре) игры. <strong>Важно!</strong> Если последовательность поставлена на паузу, то эти события <em>не </em>сработают, а когда игра возобновится, они сработают на <em>следующем кадре после того, как последовательность снова начнет воспроиз</em>водиться.
+        Также обратите внимание, что порядок событий не зависит от направления головки воспроизведения, и даже если последовательность воспроизводится в обратном направлении, события все равно будут запускаться как Начало, Шаг и Конец.</li>
+      <li class="dropspot"><strong>Асинхронное событие</strong>: Это эквивалент объекта <a href="../Object_Properties/Async_Events.htm">Asynchronous System Event</a>. <strong>Важно!</strong> Если последовательность приостановлена, то это событие <em>не </em>будет вызвано.</li>
+    </ul>
+    <p class="dropspot">Каждому событию можно назначить одну функцию, которая будет вызываться при срабатывании события. Вы можете назначить функцию с помощью поля ввода, а нажатие на кнопку со стрелкой откроет редактор сценария для редактирования функции.
+      Вы также можете нажать кнопку Create New внизу, чтобы создать новый ресурс сценария с уже определенными и готовыми к заполнению &quot;шаблонными&quot; функциями. Обратите внимание, что вы можете изменить имена функций на любые, какие вам нужны, и необязательно
+      использовать предопределенные имена, и вы также можете удалить все определения функций, которые вам не нужны. Важно отметить, что функции, используемые для событий последовательности, не могут принимать никаких аргументов.</p>
+    <p class="dropspot">Последовательность событий также можно добавлять и редактировать с помощью кода. Более подробную информацию можно найти <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Events_Moments_Broadcast.htm">здесь</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Управление<span class="notranslate">ключевыми кадрами</span> </a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">Кнопки управления <span class="notranslate">ключевыми кадрами</span> - это один из способов добавления, удаления или редактирования определенных ключей в <span class="notranslate">допинг-листе</span>. Кнопки выглядят следующим образом:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><img alt="Split Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Split.png"> - Это кнопка &quot;Разделить выбранные клавиши&quot;. Когда вы выбрали одну или несколько клавиш параметров на <span class="notranslate">доп. листе</span>, вы можете нажать эту кнопку, и они будут
+        будут разделены на две отдельные клавиши в позиции головки воспроизведения временной шкалы:<br>
+        <img alt="Split Asset and Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Split.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Delete Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Delete.png"> - Это кнопка &quot;Удалить выбранные ключи&quot;. Когда вы выбрали один или несколько ключей параметров в <span class="notranslate">доп. листе</span>, вы можете нажать эту кнопку, и они
+        будут удалены:<br>
+        <img alt="Delete Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Delete.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Add Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Add.png"> - Это кнопка &quot;Записать новый ключ&quot;. Когда вы выбрали ключ актива в <span class="notranslate">доп. листе</span> и нажали эту кнопку, новые ключи параметров будут добавлены в
+        дорожке актива как дорожки параметров, а ключи параметров будут добавлены как точки на временной шкале <span class="notranslate">доп. листа</span> в позиции головки воспроизведения:<br>
+        <img alt="Add Parameter Keys At Playhead Position" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Record.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+      <li class="dropspot"><img alt="Record Keys Icon" src="../../assets/Images/Icons/Icon_Seq_Record.png"> - Это кнопка &quot;Автоматически записывать изменения&quot;. Когда эта кнопка включена, любые изменения, внесенные в актив в пределах холста, будут автоматически записаны
+        и соответствующие дорожки параметров и ключи параметров будут добавлены в позиции головки воспроизведения в <span class="notranslate">доп-листе</span>. Например, если переместить головку воспроизведения с кадра 0 на кадр 10, а затем на холсте переместить актив на 100 пикселей вправо, будет добавлена дорожка параметров
+        дорожка параметров будет добавлена для позиции, а ключи параметров будут добавлены в кадре 0 (начальная позиция) и в кадре 10 (позиция головки воспроизведения), и когда вы нажмете кнопку &quot;Play&quot; в последовательности, актив переместится на 100 пикселей вправо на десять кадров.
+        кадров.
+       <br>
+        <img alt="Automatically Record Parameter Keys" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Auto.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Переключатели видимости/блокировки</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">Как дорожки активов, так и дорожки параметров имеют кнопку для переключения видимости дорожки <img alt="Track Visibility Icon" src="../../assets/Images/Icons/Icon_Track_Visible.png"> и для блокировки дорожки <img alt="Track Lock Icon" src="../../assets/Images/Icons/Icon_Track_Lock.png">. Если отключить видимость дорожки, то она не будет отображаться при запуске последовательности в комнате, а также не будет отображаться на холсте последовательности во время тестирования, а переключение видимости дорожки актива также переключит видимость
+      дорожки параметров. Блокировка дорожки означает, что эту дорожку больше нельзя будет редактировать никаким образом. Обратите внимание, что невидимые дорожки будут нарисованы на <span class="notranslate">доп-листе</span> блекло, в то время как заблокированные дорожки будут нарисованы с наложением,
+      так что вы можете сразу увидеть, в каком состоянии находится каждая дорожка:</p>
+    <p class="dropspot"><img alt="Locked And Invisible Tracks In The Dope Sheet" class="center" src="../../assets/Images/Asset_Editors/Track_Editor_Locked_And_Visible.png" /> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Цвет дорожки</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">Каждой созданной вами дорожке актива IDE присваивает случайный цвет, чтобы облегчить ее идентификацию в <span class="notranslate">Dope Sheet</span>. Этот цвет можно изменить в любое время, просто щелкнув по цветовой полосе дорожки, а затем выбрав цвет, который вы хотите
+      в открывшемся окне "Выбор цвета". Любой цвет, выбранный для дорожки актива, будет автоматически применен ко всем связанным с ней дорожкам параметров, однако вы можете отредактировать цвет каждой дорожки параметров по отдельности, чтобы он был другим.
+      при необходимости. Обратите внимание, что если вы снова измените цвет дорожки актива, это отменит все изменения, внесенные в дорожки параметров.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Добавление дорожек параметров</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot">Кнопку Add Parameter <img alt="Add Parameter Track Icon" height="15" src="../../assets/Images/Icons/Icon_Add_Param.png" width="15"> можно использовать для добавления одной дорожки параметров к выбранной дорожке актива. Как уже упоминалось ранее на этой странице, дорожки параметров
+      дорожки параметров могут быть различных типов в зависимости от актива, к которому они относятся. Ниже приведен список всех доступных дорожек параметров и их назначение, а также активы, к которым они могут быть применены:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Позиция</strong>: Этот параметр дорожки может быть добавлен к любому из четырех типов активов последовательности<em>(спрайты</em>, <em>объекты</em>, <em>звуки </em>или <em>последовательности</em>) и используется для установки пространственной позиции в последовательности для данного актива.
+        актива. Он принимает значения X и Y.</li>
+      <li class="dropspot"><strong>Вращение</strong>: Как и параметр положения, параметр вращения доступен для <em>всех </em>активов последовательности и может быть использован для установки вращения в градусах для актива. Следует помнить, что <span class="notranslate">GameMaker Studio 2</span> рассчитывает вращение <em>против часовой стрелки</em>,
+        начиная с 0° справа, поэтому 90° - это вверх, 180° - влево и 270° - вниз.</li>
+      <li class="dropspot"><strong>Origin</strong>: Параметр origin доступен для активов <em>спрайта</em>, <em>объекта </em>и <em>последовательности </em>и может использоваться для установки положения X и Y начала актива. Изменение начала координат повлияет на то, как актив будет
+        позиционирование, поворот и масштабирование.</li>
+      <li class="dropspot"><strong>Масштаб</strong>: Параметр scale доступен для активов <em>спрайтов</em>, <em>объектов </em>и <em>последовательностей </em>и используется для установки горизонтального и вертикального масштаба актива. Это влияет на то, как актив будет отображаться в IDE и
+        и <span class="notranslate">вычисляется</span> как скалярное значение, где 100% - это размер актива по умолчанию, 50% - половина размера, а 200% - двойной размер. Обратите внимание, что у вас есть возможность связать значения горизонтального и вертикального масштаба, нажав на кнопку
+        кнопку &quot;Связать&quot; <img alt="Track Link Icon" height="14" src="../../assets/Images/Icons/Icon_Track_Link.png" width="14">. Это означает, что изменение одного значения автоматически изменит и другое.</li>
+      <li class="dropspot"><strong>Индекс изображения</strong> и <strong>скорость изображения</strong>: эти параметры доступны только для <em>спрайтов </em>и <em>объектов </em>и могут использоваться для изменения текущего кадра анимации (см. страницу об <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm">индексе_изображения</a> для
+        подробнее), а также текущую скорость анимации, которая задается с помощью FPS и работает так же, как значение, установленное для используемого спрайта в редакторе спрайтов.</li>
+      <li class="dropspot"><strong>Умножение цвета</strong>: Этот параметр доступен только для <em>спрайтов </em>и <em>объектов </em>и может быть использован для изменения текущего цвета наложения для рисуемого спрайта. Это эквивалентно установке значения <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_blend.htm">image_blend</a> 
+        и любые цвета, заданные здесь, будут &quot;умножены&quot; (т.е. смешаны) с цветом спрайта, а значение white (#ffffffff) означает, что смешивания не должно происходить. Обратите внимание, что при работе с этим типом дорожки вы можете задать
+        или щелкните на образце цвета, чтобы открыть <span class="notranslate">GameMaker Studio 2</span> Colour Picker. Обратите внимание, что цвета задаются в формате <a class="glossterm" data-glossterm="ARGB" href="#">ARGB</a>, поэтому вы можете установить значение
+        для альфа, используя этот тип параметра (Colour Picker также позволяет установить значение альфа). Это будет эквивалентно установке параметра <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_alpha.htm">image_alpha</a> для
+        спрайта.</li>
+      <li class="dropspot"><strong>Громкость</strong>: Параметр громкости применяется только к дорожкам <em>звукового </em>актива и может использоваться для установки усиления звука (фактическое усиление звукового актива не будет изменено, так как это, по сути, эмиттер, который используется для дорожки актива в секвенции).
+        дорожки в последовательностях). Значение громкости рассчитывается в процентах, где 0% - отсутствие громкости, а 100% - полная громкость.</li>
+      <li class="dropspot"><strong>Pitch</strong>: Параметр pitch применяется только к дорожкам <em>звукового </em>актива и может использоваться для установки высоты звука (как и в случае с громкостью, фактическое усиление звукового актива не изменяется, поскольку это, по сути, эмиттер, который используется
+        для дорожки актива в последовательностях). Значение высоты тона рассчитывается в процентах, 100% - это &quot;естественная&quot; высота тона звука, меньше 100% - понижение, больше 100% - повышение.</li>
+      <li class="dropspot"><strong>Falloff</strong>: Параметр falloff применяется только к дорожкам <em>звуковых </em>активов и в настоящее время не реализован.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Отслеживание действий</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot">Кнопки в нижней части редактора треков представляют собой различные действия с треком и могут использоваться для следующих целей:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><img alt="Add Track Icon" src="../../assets/Images/Icons/Icon_AddAsset.png"> - Эта кнопка открывает проводник активов, в котором можно выбрать актив для использования в качестве новой дорожки. После выбора актива дорожка будет создана, а кадры добавлены в Dope
+        Лист в текущей позиции головки воспроизведения.</li>
+      <li class="dropspot"><img alt="Duplicate Asset Icon" src="../../assets/Images/Icons/Icon_DuplicateAsset.png"> - Когда вы выбрали одну или несколько дорожек активов в редакторе дорожек, нажатие этой кнопки дублирует их (вместе с любыми дорожками параметров, которые они могут содержать).
+        вместе с любыми дорожками параметров, которые они могут содержать).
+      </li>
+      <li class="dropspot"><img alt="Clip Mask Icon" src="../../assets/Images/Icons/Icon_AddClipMask.png"> - Щелчок по этой ссылке создаст специальную <strong>группу обтравочных масок</strong>, в которой вы можете указать спрайты для использования в качестве масок и спрайты для маскирования. Дополнительную информацию см. <a href="Clipping_Masks.htm">здесь</a>.</li>
+      <li class="dropspot"><img alt="Group Folder Icon" height="18" src="../../assets/Images/Icons/Icon_AddGroup.png" width="25"> - Нажав на эту кнопку, вы добавите в редактор треков новую папку группы, которую можно использовать для лучшей организации треков. Вы можете добавить трек в группу
+        перетащив трек в папку группы, а удалить его можно, перетащив из папки. Обратите внимание, что любому активу, добавленному в папку группы, автоматически присваивается цвет папки, хотя затем можно изменить цвет дорожки для отдельных дорожек, чтобы они были окрашены в цвет папки.
+        при необходимости можно изменить цвет дорожки для отдельных дорожек.</li>
+      <li class="dropspot"><img alt="Track Delete Icon" src="../../assets/Images/Icons/Icon_DeleteTrack.png"> - Как и следовало ожидать, нажатие этой кнопки приведет к удалению выбранной дорожки (дорожек). Если это дорожка актива, то все содержащиеся в ней дорожки параметров также будут удалены, хотя
+        вы можете использовать эту функцию для выбранных дорожек параметров, чтобы удалить их самостоятельно, не удаляя дорожки активов, с которыми они связаны. Если вы используете эту функцию для пустой папки группы, то папка будет удалена, однако если в ней есть какие-либо дорожки, то будет показано предупреждение.
+        будет показано предупреждение, так как при удалении папки будут удалены все дорожки, находящиеся в ней.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p>Есть еще две страницы с информацией о дорожках и параметрах, которые также представляют интерес: первая посвящена использованию активов <a href="../Animation_Curves.htm">Animation Curve</a> для создания дорожек параметров, а вторая описывает, как
+    создания <strong>обтравочных масок</strong>:</p>
+  <ul class="colour">
+    <li><a href="Using_Animation_Curves.htm">Использование анимационных кривых</a></li>
+    <li><a href="Clipping_Masks.htm">Обтравочные маски</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Sequences.htm">Последовательности</a></div>
+        <div style="float:right">Следующее: <a href="Clipping_Masks.htm">Обтравочные маски</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sequences - The Track Panel
+Track Panel
+-->
+  <!-- TAGS
+sequences_track_panel
+-->
+
+</body></html>

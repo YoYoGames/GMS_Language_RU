@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Частицы мягких тел</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Physics Soft Body Particle functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Soft Body Particles" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Частицы мягких тел</h1>
+  <p><span class="notranslate">GameMaker Studio 2</span> использует библиотеку физики жестких тел Box2D и, как таковая, не позволяет использовать физику мягких тел. Однако <a href="https://google.github.io/liquidfun/"><b>Жидкие забавы</b></a> расширение добавляет <i>частицы</i> в
+    которые позволяют создавать симулированные мягкие тела, используя физику жесткого тела. В принципе, вы можете создать <i>форму</i> из частиц, которые поддерживают сцепление и таким образом имитируют полное тело, которое, благодаря
+    взаимодействию частиц, создается впечатление мягкого тела. Вы также можете использовать физические частицы для моделирования жидкостей и других физических систем, основанных на частицах.</p>
+  <p>Прежде чем приступить к созданию физических частиц, необходимо задать для них основные физические свойства, как для обычных физических <i>частиц</i>. Обратите внимание, что установка этих свойств повлияет на <i>все частицы, созданные ранее</i>, а также на все новые частицы.
+    а также на все новые частицы, которые вы создадите, поэтому обычно эти функции используются только в начале игры или уровня. Однако существуют специальные функции для установки <i>флагов</i> частиц для отдельных частиц
+    (и групп частиц), которые будут изменять их свойства, такие как &quot;отскок&quot; или &quot;вязкость&quot;, позволяя вам создавать различные типы частиц в пределах диапазона этих глобальных настроек.</p>
+  <p>Для настройки и получения данных глобальной системы частиц доступны следующие функции:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_particle_count.htm">счётчик_частиц</a></li>
+    <li><a href="physics_particle_group_count.htm">физика_частиц_группы_счет</a></li>
+    <li><a href="physics_particle_set_max_count.htm">physics_particle_set_max_count</a></li>
+    <li><a href="physics_particle_set_radius.htm">physics_particle_set_radius</a></li>
+    <li><a href="physics_particle_set_density.htm">physics_particle_set_density</a></li>
+    <li><a href="physics_particle_set_damping.htm">physics_particle_set_damping</a></li>
+    <li><a href="physics_particle_set_gravity_scale.htm">physics_particle_set_gravity_scale</a></li>
+    <li><a href="physics_particle_get_max_count.htm">physics_particle_get_max_count</a></li>
+    <li><a href="physics_particle_get_radius.htm">physics_particle_get_radius</a></li>
+    <li><a href="physics_particle_get_density.htm">physics_particle_get_density</a></li>
+    <li><a href="physics_particle_get_damping.htm">physics_particle_get_damping</a></li>
+    <li><a href="physics_particle_get_gravity_scale.htm">physics_particle_get_gravity_scale</a></li>
+  </ul>
+  <p> </p>
+  <p>Также доступны следующие функции для установки <i>флагов</i> на отдельные частицы (или группы частиц), а также для получения информации, такой как положение или цвет, от отдельной частицы или отдельной группы:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_particle_set_flags.htm">physics_particle_set_flags</a></li>
+    <li><a href="physics_particle_set_category_flags.htm">physics_particle_set_category_flags</a></li>
+    <li><a href="physics_particle_set_group_flags.htm">physics_particle_set_group_flags</a></li>
+    <li><a href="physics_particle_get_group_flags.htm">physics_particle_get_group_flags</a></li>
+    <li><a href="physics_particle_group_get_inertia.htm">physics_particle_group_get_inertia</a></li>
+    <li><a href="physics_particle_group_get_centre_x.htm">physics_particle_group_get_centre_x</a></li>
+    <li><a href="physics_particle_group_get_centre_y.htm">physics_particle_group_get_centre_y</a></li>
+    <li><a href="physics_particle_group_get_vel_x.htm">physics_particle_group_get_vel_x</a></li>
+    <li><a href="physics_particle_group_get_vel_y.htm">physics_particle_group_get_vel_y</a></li>
+    <li><a href="physics_particle_group_get_ang_vel.htm">physics_particle_group_get_ang_vel</a></li>
+    <li><a href="physics_particle_group_get_x.htm">physics_particle_group_get_x</a></li>
+    <li><a href="physics_particle_group_get_y.htm">physics_particle_group_get_y</a></li>
+    <li><a href="physics_particle_group_get_angle.htm">physics_particle_group_get_angle</a></li>
+    <li><a href="physics_particle_get_data.htm">physics_particle_get_data</a></li>
+    <li><a href="physics_particle_get_data_particle.htm">physics_particle_get_data_particle</a></li>
+    <li><a href="physics_particle_group_get_data.htm">physics_particle_group_get_data</a></li>
+  </ul>
+  <p> </p>
+  <p>Вы можете создавать частицы двумя способами - по отдельности или группами. Отдельные частицы будут вести себя точно так, как определено глобальными настройками и флагами, которые были установлены при их создании, но группы частиц могут проявлять различное поведение
+    в зависимости от их <i>групповых флагов</i>. Эти <i>групповые флаги</i> могут быть установлены на различные значения, чтобы придать группе различные свойства, например, проникаемость и жесткость.</p>
+  <p>Для создания частиц доступны следующие функции:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_particle_create.htm">физика_частицы_создать</a></li>
+    <li><a href="physics_particle_group_begin.htm">physics_particle_group_begin</a></li>
+    <li><a href="physics_particle_group_circle.htm">physics_particle_group_circle</a></li>
+    <li><a href="physics_particle_group_box.htm">physics_particle_group_box</a></li>
+    <li><a href="physics_particle_group_polygon.htm">physics_particle_group_polygon</a></li>
+    <li><a href="physics_particle_group_add_point.htm">physics_particle_group_add_point</a></li>
+    <li><a href="physics_particle_group_end.htm">physics_particle_group_end</a></li>
+    <li><a href="physics_particle_group_join.htm">physics_particle_group_join</a></li>
+    <li><a href="physics_particle_group_delete.htm">physics_particle_group_delete</a></li>
+  </ul>
+  <p> </p>
+  <p>Вы можете не только создавать частицы, но и удалять их, как по отдельности, так и в регионе. Для удаления частиц из системы доступны следующие функции:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_particle_delete.htm">физика_частицы_удалить</a></li>
+    <li><a href="physics_particle_delete_region_circle.htm">physics_particle_delete_region_circle</a></li>
+    <li><a href="physics_particle_delete_region_box.htm">physics_particle_delete_region_box</a></li>
+    <li><a href="physics_particle_delete_region_poly.htm">physics_particle_delete_region_poly</a></li>
+  </ul>
+  <p> </p>
+  <p>Если вы не активировали отладку рисования с помощью функции <a href="../The_Physics_World/physics_draw_debug.htm"><tt>physics_draw_debug()</tt></a>вы не увидите частиц на экране при их создании. Поэтому, чтобы увидеть
+    частицы, вам нужно нарисовать их на экране в <b>событии Draw Event</b> экземпляра с помощью следующих функций (обратите внимание, что вы также можете нарисовать их с помощью обычных функций <tt>draw_sprite</tt> 
+    если вы получите данные для каждой частицы с помощью функции <a href="physics_particle_get_data.htm"><tt>physics_particle_get_data()</tt></a>):</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_particle_draw.htm">физика_частицы_рисовать</a></li>
+    <li><a href="physics_particle_draw_ext.htm">physics_particle_draw_ext</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Physics.htm">Физика</a></div>
+        <div style="float:right">Следующее: <a href="../Physics_Variables/Physics_Variables.htm">Физические переменные</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Soft Body Particles
+-->
+  <!-- TAGS
+physics_soft_body_functions
+-->
+
+</body></html>

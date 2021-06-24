@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>слой</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable layer" />
+  <meta name="rh-index-keywords" content="layer" />
+  <meta name="search-keywords" content="layer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>слой</h1>
+  <p>Эта <b>встроенная переменная</b> создается для каждого экземпляра в комнате и содержит значение ID слоя, к которому приписан данный экземпляр. Это значение затем может быть использовано в других функциях, таких как <a href="../../Rooms/General_Layer_Functions/layer_get_depth.htm"><tt>layer_get_depth()</tt></a> или
+    его можно изменить, чтобы переместить экземпляр на другой слой, но учтите, что если назначаемый слой не существует в текущей комнате, то вы получите ошибку, которая приведет к закрытию игры. При назначении слоя вы должны указать уникальный
+   <b>идентификатор слоя</b>, возвращаемый функцией <a href="../../Rooms/General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a> (при использовании именованных слоев комнаты), или идентификатор слоя, возвращаемый функцией <a href="../../Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a> (когда
+    вы создаете свои собственные слои во время выполнения).</p>
+  <p class="note"><b>ВАЖНО!</b> Если вы создали экземпляр с помощью функции <span style="font-size:1px;"><a href="../instance_create_depth.htm"><tt style="font-size: 14px">instance_create_depth()</tt></a></span> или вручную изменили <span style="font-size:1px;"><a href="depth.htm"><tt style="font-size: 14px">глубина</tt></a></span>    переменную layer, слой, назначенный экземпляру, становится &quot;управляемым&quot; слоем, то есть таким, который GameMaker <span class="notranslate">Studio 2 контролирует</span> и управляет автоматически. В этих случаях переменная <tt>layer</tt> вернет значение -1.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">слой;</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (целое число - значение индекса ресурса)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">layer = layer_create(-1000);</p>
+  <p>Приведенный выше код создаст новый слой с глубиной -1000, а затем установит переменную <tt>layer</tt> экземпляра в возвращаемый ID слоя, перемещая экземпляр со слоя, на котором он сейчас находится, на новый создаваемый слой.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Instance_Variables.htm">Переменные экземпляра</a></div>
+        <div style="float:right">Далее: <a href="alarm.htm">сигнализация</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer
+-->
+  <!-- TAGS
+layer
+-->
+</body>
+</html>

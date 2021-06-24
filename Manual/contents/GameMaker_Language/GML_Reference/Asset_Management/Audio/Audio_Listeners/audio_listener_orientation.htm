@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ориентация аудио_слушателя</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_listener_orientation" />
+  <meta name="rh-index-keywords" content="audio_listener_orientation" />
+  <meta name="search-keywords" content="audio_listener_orientation" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ориентация аудио_слушателя</h1>
+  <p>С помощью этой функции можно изменить ориентацию <i>слушателя</i> в трехмерном аудиопространстве. Направление <b>взгляда</b> и направление <b>вверх</b> основаны на векторах
+    которые определяются из заданных относительных положений x, y и z, и по умолчанию имеют значения (0, 0, 1000) для направления взгляда и (0, 1, 0) для направления вверх, как показано на рисунке ниже:</p>
+  <p><img alt="Listener Orientation Diagram" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Orientation_Base.png" /></p>
+  <p class="note"><b>ПРИМЕЧАНИЕ: </b>если у вас несколько слушателей, вы должны использовать функцию <a href="audio_listener_set_orientation.htm"><tt>audio_listener_set_orientation()</tt></a>.</p>
+  <p>Изменение ориентации слушателя с помощью этой функции изменит то, как звуки, создаваемые звуковыми эмиттерами в игровой комнате, будут восприниматься игроком вашей игры. В приведенном ниже примере звуки, создаваемые излучателем, когда слушатель находится в положении по умолчанию
+    будут казаться исходящими снизу и справа от слушателя, но при новом положении и ориентации слушателя они будут восприниматься как исходящие <i>сверху</i> и справа.</p>
+  <p><img alt="Listener Orientation Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Orientation_Example.png" /></p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_listener_orientation(lookat_x, lookat_y, lookat_z, up_x, up_y, up_z);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>lookat_x</td>
+        <td>Вектор вида x (по умолчанию 0).</td>
+      </tr>
+      <tr>
+        <td>lookat_y</td>
+        <td>Вектор вида y (по умолчанию 0).</td>
+      </tr>
+      <tr>
+        <td>lookat_z</td>
+        <td>Вектор вида z (по умолчанию 1000).</td>
+      </tr>
+      <tr>
+        <td>up_x</td>
+        <td>Вектор x вверх (по умолчанию 0).</td>
+      </tr>
+      <tr>
+        <td>up_y</td>
+        <td>Вектор y вверх (по умолчанию 1).</td>
+      </tr>
+      <tr>
+        <td>up_z</td>
+        <td>Вектор z вверх (по умолчанию 0).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">xt = x + dcos(direction);<br> yt = y - dsin(direction);<br> zt = z - dsin(zdirection);<br> audio_listener_position(x, y, z)<br> audio_listener_orientation(xt, yt, zt, 0, 0, 1)</p>
+  <p>В приведенном выше коде используются три переменные для установки положения и ориентации 3D аудиослушателя.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio_Listeners.htm">Слушатели аудио</a></div>
+        <div style="float:right">Далее: <a href="audio_listener_get_data.htm">audio_listener_get_data</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_listener_orientation
+-->
+  <!-- TAGS
+audio_listener_orientation
+-->
+</body>
+</html>

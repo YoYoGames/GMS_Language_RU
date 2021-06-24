@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>массив_высота_2d</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_height_2d" />
+  <meta name="rh-index-keywords" content="array_height_2d (Deprecated)" />
+  <meta name="search-keywords" content="array_height_2d" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_height_2d<em>(Исправлено</em>)</h1>
+  <h3><b>ВНИМАНИЕ!</b> Эта функция устарела, так как массивы больше не ограничиваются только 1 или 2 измерениями, и как таковая эта функция предоставляется только для поддержки старых проектов. Все новые проекты должны использовать текущий способ создания и доступа к многомерным
+    массивов (более подробную информацию см. <a href="../../GML_Overview/Arrays.htm">здесь</a> ).</h3>
+  <p>С помощью этой функции вы можете получить высоту (количество записей) первого измерения двумерного массива. Вы задаете массив для проверки, а на выходе функции вы узнаете, сколько начальных записей он содержит. Вы можете получить количество записей для
+    второго измерения массива с помощью функции <a href="array_length_2d.htm"><tt>array_length_2d</tt></a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">array_height_2d(array_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс_массива</td>
+        <td>Индекс массива для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">for (var i = 0; i &lt; array_height_2d(a); ++i;) <br> {
+    <br> for (var j = 0; j &lt; array_length_2d(a, i); ++j;) <br> {
+    <br> a[i, j] = -1;<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код будет циклически просматривать двумерный массив и устанавливать для каждой записи значение -1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Variable_Functions.htm">Переменные функции</a></div>
+        <div style="float:right">Далее: <a href="method.htm">метод</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_height_2d (deprecated)
+-->
+  <!-- TAGS
+array_height_2d
+-->
+</body>
+</html>

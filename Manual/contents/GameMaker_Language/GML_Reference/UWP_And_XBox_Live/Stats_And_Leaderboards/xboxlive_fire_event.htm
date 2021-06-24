@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_fire_event</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_fire_event" />
+  <meta name="rh-index-keywords" content="xboxlive_fire_event" />
+  <meta name="search-keywords" content="xboxlive_fire_event" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_read_player_leaderboard</h1>
+  <p>Эта функция может быть использована для запуска события stat. Аргумент &quot;имя_события&quot; - это имя события, которое должно быть запущено, как определено в консоли XDP для вашей игры, а следующие дополнительные параметры также будут зависеть от того, что у вас настроено
+    для статистики. Функция вернет 0, если событие было отправлено (и должно быть получено/обработано сервером), или -1, если произошла ошибка (т.е. ваше событие не было настроено, так как в файле манифеста событий, включенном в проект, указано другое число).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">xboxlive_fire_event(event_name, [stat_parameters]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>имя_события</td>
+        <td>Имя события, которое должно произойти.</td>
+      </tr>
+      <tr>
+        <td>stat_parameters</td>
+        <td>[OPTIONAL] Дополнительные параметры для добавления к событию.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Строка</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _user = xboxlive_get_user(0);<br> var _uid = xboxlive_user_id_for_user(_user);<br> result = xboxlive_fire_event(&quot;PlayerSessionStart&quot;, _uid, global.guid_str, 0, 42, 42);</p>
+  <p>Приведенный выше код получает некоторую информацию о пользователе, затем запускает событие stat вместе с этими (и дополнительными) данными.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Stats_And_Leaderboards.htm">Статистика и таблицы лидеров</a></div>
+        <div style="float:right">Далее: <a href="xboxlive_stats_setup.htm"> xboxlive_stats_setup </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_fire_event
+-->
+  <!-- TAGS
+xboxlive_fire_event
+-->
+</body>
+</html>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>нарисовать_часть</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_part" />
+  <meta name="rh-index-keywords" content="draw_sprite_part" />
+  <meta name="search-keywords" content="draw_sprite_part" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>нарисовать_часть</h1>
+  <p>С помощью этой функции вы можете нарисовать часть любого спрайта в заданной позиции в комнате. Как и в случае с <a href="draw_sprite.htm"><tt>нарисовать_спрайт()</tt></a> вы можете указать спрайт и суб-изображение для рисования, затем вы должны указать <i>относительные координаты</i> внутри спрайта области, которую нужно выбрать для рисования. Это означает, что левая позиция 0 и верхняя позиция 0 будут левым верхним углом спрайта, и все дальнейшие координаты должны быть взяты из этой позиции. На рисунке ниже показан пример
+    как это работает:</p>
+  <p><img alt="draw_sprite_part example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/spr_part.png">Следует отметить, что если страница текстуры допускает автоматическое обрезание, то эта функция может не работать так, как ожидается,
+    поскольку при создании текстурной страницы будет удалено лишнее &quot;пустое&quot; пространство вокруг спрайта. Чтобы решить эту проблему, необходимо в настройках страницы текстуры (в <a href="../../../../Settings/Texture_Groups.htm">редакторе группы текстур</a>)
+    отключить опцию <b>Automatic Crop</b>.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: При рисовании с помощью этой функции, <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">смещение</a> спрайта по <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">x</a> и <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y</a> игнорируется, и часть спрайта будет нарисована с левым верхним углом в заданной позиции x / y в комнате.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция полезна только для <b>растровых</b> спрайтов и не работает со спрайтами SWF или JSON (Spine).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_sprite_part(sprite, subimg, left, top, width, height, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>спрайт</td>
+        <td>Индекс спрайта для рисования.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>Подimg (кадр) спрайта для рисования (image_index или -1 соотносятся с текущим кадром анимации в объекте).</td>
+      </tr>
+      <tr>
+        <td>слева</td>
+        <td>Позиция x на спрайте левого верхнего угла области для рисования.</td>
+      </tr>
+      <tr>
+        <td>топ</td>
+        <td>Позиция y на спрайте левого верхнего угла области для рисования.</td>
+      </tr>
+      <tr>
+        <td>ширина</td>
+        <td>Ширина области для рисования.</td>
+      </tr>
+      <tr>
+        <td>высота</td>
+        <td>Высота области для рисования.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Координата x места рисования спрайта.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Координата y места рисования спрайта.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_sprite_part(sprite_index, image_index, 4, 0, sprite_width-16, sprite_height-16, x, y );</p>
+  <p>Это отрисует назначенный экземпляр спрайта (sprite_index) и его текущий кадр анимации (image_index), однако при этом будет сбрито 4px поля по ширине с обеих сторон и 8 pixel поля по высоте от нижней части оригинального 24x24
+    пикселей.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprites_And_Tiles.htm">Спрайты и плитки</a></div>
+        <div style="float:right">Далее: <a href="draw_sprite_part_ext.htm">draw_sprite_part_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_part
+-->
+  <!-- TAGS
+draw_sprite_part
+-->
+</body>
+</html>

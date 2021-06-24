@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_add_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_add_user" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_add_user,achievement_stat_event" />
+  <meta name="search-keywords" content="xboxlive_stats_add_user,achievement_stat_event" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_add_user</h1>
+  <p>Эта функция может быть использована для добавления заданного указателя ID пользователя в менеджер статистики. Это должно быть сделано до использования любой другой функции статистики, чтобы автоматически синхронизировать игру с сервером XBox Live и получить последние значения. Вы предоставляете
+    идентификатор пользователя, возвращенный (например) функцией <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>, и функция вернет -1, если произошла ошибка или если ID пользователя недействителен, или любое другое значение, если
+    функция была успешно вызвана.</p>
+  <p>Эта функция генерирует обратный вызов, который вызовет <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">системное асинхронное событие</a>. Это событие будет иметь специальную карту DS <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>    которая затем должна быть разобрана на наличие следующих ключей:</p>
+  <ul>
+    <li>&quot; id&quot; - Будет содержать константу <tt>achievement_stat_event</tt></li>
+    <li>&quot; eventname<b>&quot; -</b> Будет содержать строку &quot; LocalUserAdded&quot;.</li>
+    <li>&quot; userid<b>&quot; -</b> Идентификатор пользователя, связанный с запросом</li>
+    <li>&quot; error<b>&quot; - 0</b> в случае успеха, другое значение, если произошла ошибка</li>
+    <li>&quot; errormessage<b>&quot; -</b> Строка с сообщением об ошибке, если таковое имеется</li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">xboxlive_stats_add_user(user_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор пользователя</td>
+        <td>Идентификатор пользователя (указатель) для добавления</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">for(var i = 0; i &lt; xboxlive_get_user_count(); ++i;) <br> {
+    <br> user_id[i] = xboxlive_get_user(i);<br> xboxlive_stats_add_user(user_id[i]);
+    <br> }
+  </p>
+  <p>Приведенный выше код получит количество доступных учетных записей пользователей, затем пройдется по ним и присвоит идентификатор учетной записи массиву, а также зарегистрирует пользователя в менеджере статистики.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Stats_And_Leaderboards.htm">Статистика и таблицы лидеров</a></div>
+        <div style="float:right">Далее: <a href="xboxlive_stats_remove_user.htm">xboxlive_stats_remove_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_add_user
+achievement_stat_event
+-->
+  <!-- TAGS
+xboxlive_stats_add_user
+-->
+</body>
+</html>

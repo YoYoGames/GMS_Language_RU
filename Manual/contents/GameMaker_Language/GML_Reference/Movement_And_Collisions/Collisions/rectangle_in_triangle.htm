@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>прямоугольник_в_треугольнике</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion rectangle_in_triangle" />
+  <meta name="rh-index-keywords" content="rectangle_in_triangle" />
+  <meta name="search-keywords" content="rectangle_in_triangle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>прямоугольник_в_треугольнике</h1>
+  <p>Эта функция проверит заданную вами прямоугольную область на предмет отсутствия столкновений, полного попадания в границы назначения или просто касания с заданной треугольной областью. Если они вообще не соприкасаются, функция
+    вернет 0, если источник полностью находится в пределах места назначения, то вернет 1, а если они просто пересекаются, то вернет 2. Изображение ниже иллюстрирует это:</p>
+  <p><img alt="Rectangle triangle collision example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/rectangle_in_triangle.png" /></p>
+  <h4>Синтаксис:</h4>
+  <p class="code">rectangle_in_triangle(sx1, sy1, sx2, sy2, dx1, dy1, dx2, dy2, dx3, dy3);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>sx1</td>
+        <td>Координата x левой стороны исходного прямоугольника.</td>
+      </tr>
+      <tr>
+        <td>си1</td>
+        <td>Координата y верхней стороны исходного прямоугольника.</td>
+      </tr>
+      <tr>
+        <td>sx2</td>
+        <td>Координата x правой стороны исходного прямоугольника.</td>
+      </tr>
+      <tr>
+        <td>си2</td>
+        <td>Координата y нижней стороны исходного прямоугольника.</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Координата x первой стороны треугольника для проверки.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Координата y первой стороны треугольника для проверки.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Координата x второй стороны треугольника для проверки.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Координата y второй стороны треугольника для проверки.</td>
+      </tr>
+      <tr>
+        <td>x3</td>
+        <td>Координата x третьей стороны треугольника для проверки.</td>
+      </tr>
+      <tr>
+        <td>y3</td>
+        <td>Координата y третьей стороны треугольника для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var inst = instance_nearest(x, y, obj_Player);<br> if instance_exists(inst)<br> {
+    <br> var x1 = x + lengthdir_x(100, image_angle - 45);<br> var y1 = y + lengthdir_y(100, image_angle - 45);<br> var x2 = x + lengthdir_x(100, image_angle + 45);<br> var y2 = y + lengthdir_y(100, image_angle + 45);<br> if rectangle_in_triangle(inst.bbox_left,
+    inst.bbox_top, inst.bbox_right, inst.bbox_bottom, x, y, x1, y1, x2, y2) == 1<br> {
+    <br> can_see = true;<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код использует функцию <tt>rectangle_in_triangle</tt> в качестве &quot;конуса зрения&quot; для проверки наличия экземпляра &quot;obj_player&quot;. Если полное граничное поле находится в пределах заданной треугольной области, то переменная будет установлена в <tt>true</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Collisions.htm">Коллизии</a></div>
+        <div style="float:right">Далее: <a href="rectangle_in_circle.htm">прямоугольник_в_круге</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+rectangle_in_triangle
+-->
+  <!-- TAGS
+rectangle_in_triangle
+-->
+</body>
+</html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>точка_в_круге</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion point_in_circle" />
+  <meta name="rh-index-keywords" content="point_in_circle" />
+  <meta name="search-keywords" content="point_in_circle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>точка_в_круге</h1>
+  <p>При использовании этой функции вы задаете круглую область, а <span class="notranslate">GameMaker Studio 2</span> определяет, попадает ли заданная точка в ее пределы или нет. Если точка попадает в заданную окружность, функция вернет <tt>true</tt>, в противном случае функция вернет false.
+    функция вернет <tt>false</tt>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">point_in_circle(px, py, x1, y1, rad);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>px</td>
+        <td>Координата x точки, которую нужно проверить.</td>
+      </tr>
+      <tr>
+        <td>py</td>
+        <td>Координата y точки для проверки.</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Координата x центра окружности.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Координата y центра окружности.</td>
+      </tr>
+      <tr>
+        <td>rad</td>
+        <td>Радиус окружности.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if point_in_circle(mouse_x, mouse_y, x, y, 16)<br> {
+    <br> over = true;<br> }
+    <br> else
+    <br> {
+    <br> over = false;<br> }
+  </p>
+  <p>Приведенный выше код использует функцию <tt>point_in_circle</tt> для проверки того, попадает ли позиция мыши в определенную круговую область, устанавливая переменную &quot;over&quot; в true, если попадает, или false в <tt>противном случае</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Collisions.htm">Коллизии</a></div>
+        <div style="float:right">Далее: <a href="rectangle_in_rectangle.htm">прямоугольник_в_прямоугольнике</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+point_in_circle
+-->
+  <!-- TAGS
+point_in_circle
+-->
+</body>
+</html>

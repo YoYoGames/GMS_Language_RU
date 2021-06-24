@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>irandom</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for irandom" />
+  <meta name="rh-index-keywords" content="irandom" />
+  <meta name="search-keywords" content="irandom" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>irandom</h1>
+  <p>Эта очень полезная функция возвращает только целые числа (целые числа). Так, например, чтобы получить случайное число от 0 до 9, вы можете использовать <tt>irandom(9)</tt>, и она вернет число от 0 до 9 <i>включительно</i>. Обратите внимание, что можно использовать и плавающие числа, но при этом
+    верхнее значение после точки будет исключено, поэтому <tt>irandom(9.7)</tt> вернет значение только от 0 до 9. Верхняя граница функции составляет $7fffffffffffffLL, поэтому при использовании очень больших чисел следует соблюдать осторожность.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ:</b> Эта функция будет возвращать одно и то же значение при каждом новом запуске игры, поскольку <span class="notranslate">GameMaker Studio 2</span> каждый раз генерирует одно и то же начальное случайное зерно, чтобы облегчить отладку кода. Чтобы избежать такого поведения, используйте
+    <span style="font-size:1px;"><a href="randomise.htm"><tt style="font-size: 14px">randomise()</tt></a></span> в начале игры.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">irandom(n);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>Верхний диапазон, из которого будет выбрано случайное число.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Целое число</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if (irandom(9) == 1)<br> {
+    <br> score += 100;<br> }
+  </p>
+  <p>Это даст один шанс из десяти (поскольку 0 включено) добавить 100 к счету.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Number_Functions.htm">Функции чисел</a></div>
+        <div style="float:right">Далее: <a href="irandom_range.htm">irandom_range</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+irandom
+-->
+  <!-- TAGS
+irandom
+-->
+
+</body></html>

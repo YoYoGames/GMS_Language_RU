@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>тип_части_направление</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_type_direction" />
+  <meta name="rh-index-keywords" content="part_type_direction" />
+  <meta name="search-keywords" content="part_type_direction" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>тип_части_направление</h1>
+  <p>Эта функция используется для определения направления частицы при ее создании, а также может быть использована для того, чтобы частица увеличивала или уменьшала свое направление в течение жизни. Минимальное и максимальное значения направления по умолчанию равны 0, что означает, что
+    частица будет двигаться вправо без изменений, но эти значения можно изменить, чтобы ограничить направление движения в соответствии со стандартными направлениями <span class="notranslate">GameMaker Studio 2</span>: 0 - вправо, 90 - вверх, 180 - влево и 270 - вниз.
+    Если установить одинаковые значения, частицы будут двигаться только в одном направлении.</p>
+  <p>Вы также можете задать значение приращения, которое будет добавлять (если это положительное число) или вычитать (если это отрицательное число) количество градусов к направлению в течение срока службы. Это значение может составлять минимум (+/-) 0,01.</p>
+  <p>Наконец, вы можете задать коэффициент &quot;вихляния&quot;. Это значение, которое будет случайным образом добавляться или вычитаться к направлению на каждом шаге жизни частиц. Очевидно, что большие значения более выражены, чем меньшие, и это значение может быть даже
+    быть отрицательным с максимальным диапазоном от -20 до 20.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">part_type_direction(ind, dir_min, dir_max, dir_incr, dir_wiggle);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс типа частицы, который необходимо изменить.</td>
+      </tr>
+      <tr>
+        <td>dir_min</td>
+        <td>Минимальное направление, с которого может стартовать частица.</td>
+      </tr>
+      <tr>
+        <td>dir_max</td>
+        <td>Максимальное направление, с которого может стартовать частица.</td>
+      </tr>
+      <tr>
+        <td>dir_incr</td>
+        <td>На сколько должно увеличиваться или уменьшаться направление частиц за шаг.</td>
+      </tr>
+      <tr>
+        <td>dir_wiggle</td>
+        <td>Сколько случайным образом должно прибавляться или отниматься от направления частицы за шаг.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">part_type_shape(particle1, pt_shape_pixel);<br> part_type_size(particle1, 0.19, 0.79, 0.01, 0);<br> part_type_scale(particle1, 5, 5);<br> part_type_colour3(particle1, 32768, 8454016, 8454016);<br> part_type_alpha3(particle1, 0, 0.80, 0);<br> part_type_speed(particle1,
+    8, 10, -0.50, 1);<br> part_type_direction(particle1, 0, 359, 1, 20);<br> part_type_gravity(particle1, 0, 270);<br> part_type_orientation(particle1, 0, 359, 0, 0, 1);<br> part_type_blend(particle1, 1);<br> part_type_life(particle1, 10, 50);</p>
+  <p>Приведенный выше код установит различные значения частиц, включая направление, которое будет случайным значением от 0 до 359 градусов. Оно также будет увеличиваться на 1 градус с каждым шагом, и к нему будет добавляться случайная величина от 0 до 20 с каждым шагом.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Particle_Types.htm">Типы частиц</a></div>
+        <div style="float:right">Далее: <a href="part_type_gravity.htm">часть_типа_гравитации</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_direction
+-->
+  <!-- TAGS
+part_type_direction
+-->
+</body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>часть_излучателя_уничтожить</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_emitter_destroy" />
+  <meta name="rh-index-keywords" content="part_emitter_destroy" />
+  <meta name="search-keywords" content="part_emitter_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>часть_излучателя_уничтожить</h1>
+  <p>Эта функция удалит указанный излучатель из данной системы и очистит его из памяти (это также остановит производство любых частиц данным излучателем, но <i>НЕ</i> удалит их из комнаты). Эта функция всегда должна
+    вызывать, когда данный эмиттер больше не нужен системе, чтобы предотвратить утечку памяти и ошибки.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">part_emitter_destroy( ps, ind );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>ps</td>
+        <td>Система частиц для уничтожения эмиттера.</td>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс излучателя, который нужно уничтожить.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if part_emitter_exists(global.Sname, p_emit)<br> {
+    <br> part_emitter_destroy(global.Sname, p_emit1);<br> }
+  </p>
+  <p>Приведенный выше код проверит, существует ли эмиттер частиц, указанный в переменной &quot;p_emit&quot;, в системе частиц give, и если да, то он будет уничтожен.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Particle_Emitters.htm">Излучатели частиц</a></div>
+        <div style="float:right">Далее: <a href="part_emitter_destroy_all.htm">part_emitter_destroy_all</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_emitter_destroy
+-->
+  <!-- TAGS
+part_emitter_destroy
+-->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skeleton_animation_get_duration</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_get_duration" />
+  <meta name="rh-index-keywords" content="skeleton_animation_get_duration" />
+  <meta name="search-keywords" content="skeleton_animation_get_duration" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skeleton_animation_get_duration</h1>
+  <p>Эта функция возвращает время, необходимое для выполнения заданного набора анимации перед возвратом к началу. Возвращаемое значение выражается в секундах.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">skeleton_animation_get_duration(animname);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>animname</td>
+        <td>Имя (строка) используемого набора анимации.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример1:</h4>
+  <p class="code">time += delta_time / 1000000;<br> var duration = skeleton_animation_get_duration(skeleton_animation_get());<br> var frame = floor((image_number * (mTime / duration)) + 0.5) % image_number;<br> image_index = frame;<br> draw_self();
+  </p>
+  <p>Приведенный выше код установит <tt>image_index</tt> в правильное значение для текущего назначенного спрайта скелетной анимации.</p>
+  <h4>Пример2:</h4>
+  <p class="code">time += delta_time / 1000000;<br> var d = skeleton_animation_get_duration(&quot;walk&quot;);<br> if time &gt; d time -= d;<br> draw_skeleton_time(sprite_index, &quot;walk&quot;, &quot;skin1&quot;, time, x, y, image_xscale, image_yscale, image_angle,
+    c_white);</p>
+  <p>Приведенный выше код нарисует заданный скелетный анимационный спрайт, используя дельта-время для установки рисуемого кадра.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Animation.htm">Анимация</a></div>
+        <div style="float:right">Далее: <a href="skeleton_animation_mix.htm">skeleton_animation_mix</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_get_duration
+-->
+  <!-- TAGS
+skeleton_animation_get_duration
+-->
+</body>
+</html>

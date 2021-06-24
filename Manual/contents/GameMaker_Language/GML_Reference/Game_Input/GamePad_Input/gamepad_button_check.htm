@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>кнопка_геймпада_проверка</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_button_check" />
+  <meta name="rh-index-keywords" content="gamepad_button_check" />
+  <meta name="search-keywords" content="gamepad_button_check" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>проверка_кнопки_геймпада</h1>
+  <p>Эта функция возвращает <tt>true</tt> или <tt>false</tt> в зависимости от того, определена ли данная кнопка геймпада как удерживаемая или нет. Если вы проверяете аналоговую кнопку, то проверка будет учитывать <a href="gamepad_set_button_threshold.htm">пороговое значение</a> и возвращать <span class="inline">true</span> только в том случае, если необработанное значение входа превышает заданный порог (вы можете получить это необработанное значение с помощью функции <span class="inline"><a href="gamepad_button_value.htm">gamepad_button_value()</a></span>).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gamepad_button_check(device, button);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>устройство</td>
+        <td>Какой &quot;слот&quot; устройства геймпада нужно проверить.</td>
+      </tr>
+      <tr>
+        <td>кнопка</td>
+        <td>Какую <a href="Gamepad_Input.htm">константу</a> кнопки геймпада следует проверить.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if gamepad_button_check(0, gp_face1)<br> {
+    <br> if canshoot = true<br> {
+    <br> audio_play_sound(snd_Shoot, 0, false);<br> instance_create_layer(x, y, &quot;Bullets&quot;, obj_Bullet)<br> canshoot = false;<br> alarm[0] = room_speed / 2;<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код определит, удерживается ли нижняя кнопка верхней грани (кнопка &quot;X&quot; на контроллере ps3), и если да, то выстрелит &quot;пулей&quot; и подаст сигнал тревоги.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Gamepad_Input.htm">Вход геймпада</a></div>
+        <div style="float:right">Далее: <a href="gamepad_button_check_pressed.htm"> gamepad_button_check_pressed </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_button_check
+-->
+  <!-- TAGS
+gamepad_button_check
+-->
+</body>
+</html>

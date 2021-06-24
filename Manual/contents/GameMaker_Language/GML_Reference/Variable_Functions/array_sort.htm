@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>сортировка массивов</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_sort" />
+  <meta name="rh-index-keywords" content="array_sort" />
+  <meta name="search-keywords" content="array_sort" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span>сортировка массивов</span></h1>
+  <p>С помощью этой функции вы можете отсортировать массив по возрастанию или по убыванию, а также используя пользовательскую функцию для определения порядка сортировки. Функция требует, чтобы вы указали массив для сортировки, а затем одно из следующих действий:</p>
+  <ul class="colour">
+    <li>Константы <span class="inline">true</span> или <span class="inline">false</span> указывают на <span>порядок сортировки по возрастанию (<span class="inline">true</span>) или по убыванию (<span class="inline">false</span>)</span>.
+    </li>
+    <li>Пользовательская функция для определения порядка сортировки</li>
+  </ul>
+  <p>Если вы используете для сортировки пользовательскую функцию, она должна принимать 2 аргумента, которые будут получать значения текущего элемента и следующего элемента соответственно. Функция должна возвращать любое из следующих значений, чтобы повлиять на порядок сортировки (где <tt>elm1</tt> - это
+    текущий элемент, а <tt>elm2</tt> - следующий элемент):</p>
+  <ul class="colour">
+    <li><tt>0</tt>: если <tt>elm1</tt> и <tt>elm2</tt> равны</li>
+    <li><tt>&lt;0 (</tt> отрицательное число): если elm1 идет раньше elm2</li>
+    <li><tt>&gt;0 (</tt> положительное число): если elm1 идет после elm2</li>
+  </ul>
+  <p>Если массив содержит набор строк, то строки будут отсортированы в алфавитном порядке на основе английского алфавита при использовании стандартного типа сортировки по возрастанию/убыванию. Все остальные типы данных будут отсортированы на основе их числового значения, точное
+    точные значения которых зависят от самого типа данных (например, массив буферов будет отсортирован по числовым значениям их адресов памяти).</p>
+  <p>Обратите внимание, что эта функция изменит содержимое исходного массива, который был предоставлен. Чтобы создать отсортированную копию, используйте <tt><a href="array_copy.htm">array_copy()</a></tt> для дублирования массива, а затем передайте его в эту функцию.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">array_sort(variable, sorttype_or_function);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>переменная</td>
+        <td>Переменная, в которой хранится массив.</td>
+      </tr>
+      <tr>
+        <td><span>sorttype_or_function<span> </span></span>
+        </td>
+        <td>Тип сортировки (<span><span class="inline">true</span> для восходящей или <span class="inline">false</span> для нисходящей) или ссылка на функцию, которую следует использовать для сортировки</span>.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _a = [10, 9, 8, 7, 6, 5];<br>
+    <br> array_sort(_a, function(elm1, elm2)<br> {<br> return elm1 - elm2;<br> });</p>
+  <p>Приведенный выше код использует пользовательскую функцию сортировки для сортировки массива в порядке возрастания. Функция сортировки берет два элемента массива <tt>elm1</tt> и <tt>elm2</tt> и выполняет над ними вычитание. Если <tt>elm1</tt> больше <tt>elm2</tt>,
+    в результате вычитания получается положительное число, которое перемещает <tt>elm1</tt> после <tt>elm2</tt>, тем самым располагая их в порядке возрастания.</p>
+  <p>Вот расширенный пример:</p>
+  <p class="code">var _xx, _yy, _a;<br> for (var i = 0; i &lt; 10; i++)<br> {<br> _xx = irandom(room_width);<br> _yy = irandom(room_height);<br> _a[i] = instance_create_layer(_xx, _yy, layer, obj_Bullet);<br> } <br>
+    <br> show_debug_message(_a);
+    <br>
+    <br> var _f = function(inst1, inst2)<br> {<br> return inst1.x - inst2.x;<br> } <br>
+    <br> array_sort(_a, _f);<br> show_debug_message(_a);
+  </p>
+  <p>Приведенный выше код создаст массив из 10 экземпляров, расположенных в случайных местах в комнате. Отладочное сообщение покажет что-то вроде следующего:</p>
+  <p class="code">[ 100003,100004,100005,100006,100007,100008,100009,100010,100011,100012 ]</p>
+  <p>Затем код создает метод для использования в функции <span class="inline">array_sort()</span>, который возвращает разницу между каждым из X-позиций экземпляров в комнате. Затем выполняется функция <span class="inline">array_sort()</span> 
+    запускается с использованием этого метода, сортируя экземпляры по X от наименьшего к наибольшему. Выходные данные для массива будут выглядеть следующим образом:</p>
+  <p class="code">[ 100011,100004,100009,100006,100012,100008,100010,100005,100007,100003 ]</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Variable_Functions.htm">Переменные функции</a></div>
+        <div style="float:right">Далее: <a href="array_length.htm">array_length</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_sort
+-->
+  <!-- TAGS
+array_sort
+-->
+</body>
+</html>

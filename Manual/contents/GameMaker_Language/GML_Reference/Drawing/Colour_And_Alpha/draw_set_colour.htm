@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_set_colour</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section the function draw_set_colour" />
+  <meta name="rh-index-keywords" content="draw_set_colour,draw_set_color" />
+  <meta name="search-keywords" content="draw_set_colour,draw_set_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_set_colour</h1>
+  <p>С помощью этой функции вы можете установить базовый цвет рисования для игры. Это значение будет влиять на все дальнейшее рисование, где это необходимо, включая шрифты, формы, примитивы и 3D. Если какие-либо из этих активов рисуются с измененным собственным значением цвета, это значение
+    будет проигнорировано.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_set_colour(col);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Цвет, который будет установлен для рисования.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_set_alpha(0.5);<br> draw_set_colour(c_black);
+    <br> draw_text(x+5, y+5, &quot;LEVEL 1&quot;);<br> draw_set_alpha(1);
+    <br> draw_set_colour(c_white);
+    <br> draw_text(x, y, &quot;LEVEL 1&quot;);</p>
+  <p>Приведенный выше код нарисует текст в указанной позиции с эффектом тени, созданным измененными альфа и цветом рисунка.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Colour_And_Alpha.htm">Цвет и альфа</a></div>
+        <div style="float:right">Далее: <a href="colour_get_blue.htm">color_get_blue</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_set_colour
+draw_set_color
+-->
+  <!-- TAGS
+draw_set_colour
+-->
+</body>
+</html>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Скрипты</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the script editor works" />
+  <meta name="rh-index-keywords" content="Script Editor" />
+  <meta name="search-keywords" content="scripts" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Редактор сценариев</h1>
+  <p><img alt="The Script Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts.png">В этом разделе рассматривается <strong>редактор сценариев</strong> (также называемый <strong>текстовым редактором</strong>), в котором вы вводите весь код, необходимый для запуска игры.
+    требуется для запуска вашей игры. Этот редактор используется для создания пользовательских скриптовых активов, а также для кодирования <a href="Object_Properties/Object_Events.htm">событий объектов</a>, для добавления <a href="Room_Properties/Room_Properties.htm">кода создания комнат</a>,
+    и для многих других целей, и поэтому в данном разделе просто описывается работа редактора сценариев, а <em>не</em> то, как создавать активы сценариев и как использовать <span class="notranslate">Drag and Drop™</span>для создания сценариев. Об этом читайте в следующих разделах: </p>
+  <ul class="colour">
+    <li><a href="../GameMaker_Language/GML_Overview/Script_Functions.htm">Сценарии<span class="notranslate">GML</span> </a></li>
+    <li><a href="../Drag_And_Drop/Drag_And_Drop_Overview/Action_Block_Functions.htm">Сценарии<span class="notranslate">DnD™</span></a></li>
+  </ul>
+  <p>Редактор сценариев - это место, где вы пишете код на <span class="notranslate">языке GameMaker Language</span>, который является встроенным языком программирования, используемым в <span class="notranslate">GameMaker Studio 2</span> (подробнее см. раздел " <a href="../GameMaker_Language/GameMaker_Language_Index.htm">Справочник</a> по <a href="../GameMaker_Language/GameMaker_Language_Index.htm"><span class="notranslate">GML</span></a> ").
+    Как только вы освоите <span class="notranslate">GameMaker Studio 2</span> и захотите использовать ее в полной мере, рекомендуется начать изучать этот язык, поскольку он значительно расширяет ваши возможности при создании игр.</p>
+  <p>Активу сценария можно присвоить имя, щелкнув правой кнопкой мыши <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> на нем в <a href="../Introduction/The_Asset_Browser.htm">браузере активов</a> и выбрав команду <em>Переименовать</em>,
+    но обратите внимание, что имя сценария должно соответствовать правилам написания сценариев для функций, поэтому они могут быть только буквенно-цифровыми, начинаться с буквы, и единственный символ, который они могут содержать, это символ &quot;_&quot; под баром. Редактор сценариев в других местах
+    не может быть переименован и будет иметь имя, характерное для того, что редактируется, например, событие объекта.</p>
+  <p>Когда вы откроете окно редактора сценариев, оно будет иметь следующие параметры и расположение:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Вкладка сценариев / событий</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Редактор сценариев открывается в окне с вкладками в верхней части, что позволяет разместить несколько сценариев или событий в одном окне (хотя это поведение можно изменить в <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Text_Editor_Preferences.htm">настройках</a>, чтобы для каждого сценария или события открывалось новое окно). Вы можете щелкнуть <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> на вкладке и затем перетащить ее, чтобы изменить порядок вкладок, или - если вы предпочитаете - вы можете вытащить ее из текущего окна и разместить в нем.
+      можно вытащить вкладку из текущего окна и поместить ее на рабочую область, чтобы создать новое окно для этого сценария (или добавить его в другое окно), также можно развернуть редактор сценариев, чтобы создать новую рабочую область. Если вы перетащите вкладку сценария из
+     <a class="glossterm" data-glossterm="IDE" href="#">IDE</a>, то будет создана новая IDE для хранения этого ресурса сценария, и ее можно использовать так же, как и главное окно.</p>
+    <p class="dropspot">Обратите внимание, что если вы редактируете код из <strong>события объекта </strong>в редакторе сценариев и вы максимизировали редактор сценариев или разместили его в отдельном окне или рабочей области, то меню редактора <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21">, вызываемое правой кнопкой мыши, будет содержать некоторые дополнительные опции:</p>
+    <p class="dropspot"><img alt="Script Editor RMB Object Menu" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_RMB_Object_Menu.png" /></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Восстановить в рабочее пространство</strong>: Это выведет редактор сценариев из состояния максимизации/рабочего пространства и повторно привяжет его к объекту в рабочем пространстве.</li>
+      <li class="dropspot"><strong>Перейдите к объекту</strong>: Это приведет вас к рабочей области, на которой находится объект с кодом, и сфокусирует внимание на объекте.</li>
+      <li class="dropspot"><strong>Добавить /Открыть событие</strong>: Это позволяет добавить новое событие к объекту, к которому принадлежит текущий скрипт, и откроет новую вкладку кода в редакторе скриптов для добавленного события. Если выбранное событие уже содержит код, то он будет
+        будет открыта в новой вкладке.</li>
+    </ul>
+    <p class="dropspot">Информацию об остальных опциях меню правой кнопки мыши <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> см. в разделе " <strong>Редактирование</strong>" ниже.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Желоб</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot"> <strong>Желоб </strong>используется для отображения номеров строк вашего кода, а также для передачи некоторых специфических сведений о состоянии кода. Самое главное, если вы допустите <a class="glossterm" data-glossterm="опечатка" href="#">опечатку</a> или неправильно построите код, то <a class="glossterm" data-glossterm="IDE" href="#">IDE</a> <span class="notranslate">GameMaker Studio 2</span> сообщит вам об этом, отметив строку кода красным восклицательным знаком <img alt="Code Error Icon" height="17" src="../assets/Images/Icons/Icon_CodeError.png" width="18">, показывающим <a class="glossterm" data-glossterm="синтаксис" href="#">синтаксическую</a> ошибку. Затем вы можете навести курсор мыши на этот знак, чтобы получить краткое описание проблемы:</p>
+    <p class="dropspot"><img alt="Script Editor Syntax Error" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Errors.png">Более подробную информацию об ошибках синтаксиса (и общих ошибках при тестировании или компиляции кода) вы можете найти в следующем разделе:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../Additional_Information/Error_Reporting.htm">Отчеты об ошибках</a></li>
+    </ul>
+    <p class="dropspot">Желоб также пометит любую строку сценария, в которой была добавлена <strong>точка останова </strong>. Точка останова - это просто место в сценарии, где вы хотите, чтобы <a href="../IDE_Tools/The_Debugger.htm">отладчик</a> приостановил выполнение вашей
+      игры, когда оно будет достигнуто. Вы можете переключить точку останова из любой строки любого сценария или события объекта, нажав &quot;<span class="inline">f9</span>&quot; или используя меню правой кнопки мыши <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21">. Когда вы добавите точку останова, она будет отображаться в желобе следующим образом:</p>
+    <p class="dropspot"><img alt="Script Editor Breakpoint Marker" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Breakpoint.png">Наконец, в желобе также будут отображаться элементы, помеченные закладками. Чтобы добавить строку кода в закладки, просто удерживайте нажатой кнопку <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + <span class="inline">Number</span> (от 0 до 9), и это позволит вам вернуться к этой строке кода из любой точки IDE, просто используя <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <span class="inline">Number</span> (от 0 до 9). Чтобы удалить закладку, просто выполните те же действия, что и для ее добавления.
+      на строке кода снова. Когда закладка добавлена, она будет отображаться следующим образом:</p>
+    <p class="dropspot"><img alt="Script Editor Bookmark Marker" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Bookmark.png" /></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Поиск / Замена</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Работая в редакторе сценариев, вы можете нажать <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">F</span>&quot;, чтобы открыть окно поиска, или <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">H</span>&quot;, чтобы открыть поиск и замену:</p>
+    <p class="dropspot"><img alt="Script Editor Search Box" class="center" src="../assets/Images/Asset_Editors/Editor_Scripts_Search.png">Здесь вы можете выполнить <em>локальный </em>поиск по введенному вами ключевому слову, а после того, как вы введете поисковый запрос, вы можете использовать
+      стрелки в правом верхнем углу окна поиска для перехода от одного найденного термина к следующему в сценарии. Вы можете изменить способ выполнения операции поиска, переключая следующие кнопки:</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img alt="Exact Word Icon" src="../assets/Images/Icons/Icon_ExactWord.png" style="margin-left: 24px;" /></td>
+          <td class="text">При выборе этого параметра функция поиска будет выделять только те строки, которые соответствуют всей введенной строке. Например, при выключенном параметре поиск по слову &quot;<em>random&quot;</em> покажет все слова, содержащие эту строку - например, <span class="inline">irandom()</span>,
+            или <span class="inline">randomise()</span> - в то время как при переключении в положение "вкл" будет показана только функция <span class="inline">random()</span>.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Case Sensitive Icon" src="../assets/Images/Icons/Icon_CaseSensitive.png" style="margin-left: 24px" /></td>
+          <td class="text">Когда эта опция включена, вы указываете <span class="notranslate">GameMaker Studio 2</span> проверять не только содержимое строки поиска, но и регистр. Например, если у вас есть спрайт под названием &quot;<span class="inline">spr_Dog</span>&quot; и вы выполняете поиск по запросу
+            &quot; dog&quot; с выключенным переключателем, то строка спрайта <em>будет</em> выделена, однако если переключатель включен, то не будет, поскольку &quot;Dog&quot; больше не считается тем же самым, что и &quot;dog&quot;.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">Если вы открыли окно поиска с помощью <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">F</span>&quot;, то функция замены не будет видна, поэтому вам нужно нажать кнопку Заменить <img alt="Replace Toggle Icon" class="icon" src="../assets/Images/Icons/Icon_ReplaceToggle.png">, чтобы открыть ее.
+      ее. После открытия вы можете ввести строку, которая будет использоваться для замены любой заданной строки поиска, используя следующие кнопки для выполнения действия:</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img alt="Replace Next Icon" src="../assets/Images/Icons/Icon_ReplaceNext.png" style="margin-left: 24px" /></td>
+          <td class="text">При нажатии на эту кнопку следующая поисковая строка, найденная в скрипте, будет заменена на заданную строку замены. Обратите внимание, что &quot;следующий&quot; термин считается следующим после текущей позиции курсора, и вы можете переходить к разным терминам, используя кнопки со стрелками
+            в правом верхнем углу окна поиска.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Replace All Icon" src="../assets/Images/Icons/Icon_ReplaceAll.png" style="margin-left: 24px" /></td>
+          <td class="text">При нажатии на эту кнопку <em>все </em>примеры поисковой строки в сценарии будут заменены заданной строкой замены.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">Обратите внимание, что если вы хотите выполнить <em>глобальный </em>поиск (т.е. поиск во всем проекте, а не в текущем сценарии или событии), то вы можете нажать <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + &quot;F&quot;.</p>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Главный редактор кода</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Основной редактор кода - это место, где вы будете писать весь свой код для создания актива сценария или заполнения события объекта. Фактическое редактирование кода рассматривается в разделе " <strong>Редактирование</strong> " далее на этой странице.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Информация</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Информационная строка в нижней части IDE показывает номер текущей строки, на которой вы находитесь, и позицию в строке. Здесь же вы можете увидеть помощника кода, который представляет собой строку текста, показывающую редактируемую вами функцию вместе с
+      с аргументами, которые она требует. По мере заполнения функции в редакторе аргументы будут подсвечиваться, чтобы показать, какой из них вы сейчас редактируете.</p>
+    <p class="dropspot">Обратите внимание, что любые необязательные аргументы в функциях сценария будут показаны со скобками <tt>[]</tt> вокруг них. Если вы использовали <a href="Code_Editor_Properties/JSDoc_Script_Comments.htm">JSDoc Script Comments</a> в активе сценария, тогда
+      информация, которую вы предоставили, также будет показана здесь.</p>
+  </div>
+  <p> </p>
+  <p>Дополнительную информацию об использовании редакторов сценариев и кода вы можете получить на следующих страницах:</p>
+  <ul class="colour">
+    <li><a href="Code_Editor_Properties/Editing_Code.htm">Редактирование кода</a></li>
+    <li><a href="Code_Editor_Properties/JSDoc_Script_Comments.htm">Комментарии JSDoc</a></li>
+    <li><a href="Code_Editor_Properties/Code_Snippets.htm">Сниппеты кода</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="The_Asset_Editors.htm">Редакторы активов</a></div>
+        <div style="float:right">Следующий: <a href="Sequences.htm">Последовательности</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Script Editor
+-->
+  <!-- TAGS
+script_editor
+-->
+
+</body></html>

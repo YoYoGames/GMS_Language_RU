@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>изображение_альфа</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the variable image_alpha" />
+  <meta name="rh-index-keywords" content="image_alpha" />
+  <meta name="search-keywords" content="image_alpha" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>изображение_альфа</h1>
+  <p>Эта переменная используется для получения или установки значения альфа для спрайта. Альфа всегда рассчитывается как значение между 0 и 1, где 0 - полностью прозрачный, а 1 - полностью непрозрачный. Обратите внимание, что для того, чтобы изменения в этой переменной были видны, экземпляр
+    должен либо <i>не</i> иметь события рисования (и тогда <span class="notranslate">GameMaker Studio 2</span> по умолчанию нарисует спрайт), либо быть нарисованным с помощью одной из расширенных функций рисования, таких как <a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/drawing/sprites_and_tiles/draw_self.html"><tt></tt></a>
+    <a href="../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a><a href="https://docs2.yoyogames.com/source/_build/3_scripting/4_gml_reference/drawing/sprites_and_tiles/draw_self.html"><tt></tt></a> или <a href="../../../Drawing/Sprites_And_Tiles/draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">image_alpha;</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Вещественный (от 0 до 1 - значение с плавающей точкой одинарной точности)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">image_alpha = clamp(image_alpha - 0.01, 0, 1);</p>
+  <p>Приведенный выше код будет медленно уменьшать значение image_alpha, пока оно не достигнет 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Instance_Variables.htm">Переменные экземпляра спрайта</a></div>
+        <div style="float:right">Далее: <a href="image_angle.htm">image_angle</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+image_alpha
+-->
+  <!-- TAGS
+image_alpha
+-->
+</body>
+</html>

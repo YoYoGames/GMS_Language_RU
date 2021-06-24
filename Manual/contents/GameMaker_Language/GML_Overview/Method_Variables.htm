@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Переменные метода</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the use of Method Variables" />
+  <meta name="rh-index-keywords" content="Method Variables" />
+  <meta name="search-keywords" content="Method Variables,methods,method" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Переменные метода</h1>
+  <p>Переменная метода - это, по сути, переменная, которой назначена функция, &quot;привязывающая&quot; функцию к экземпляру и позволяющая использовать переменную для ссылки на функцию - точно так же, как вы используете <a href="Runtime_Functions.htm">имя<span class="notranslate">функции</span></a> времени выполнения <a href="Runtime_Functions.htm">для</a> ссылки на встроенную <span class="notranslate">функцию</span> GML <span class="notranslate">.</span> Используемая переменная может быть <em>локальной</em>, <em>экземпляром</em> или <em>глобальной</em> (более подробную информацию об области видимости переменных см. <a href="Variables_And_Variable_Scope.htm">здесь</a> ).</p>
+  <p>Синтаксис для создания переменной метода следующий:</p>
+  <p class="code">&lt;переменная&gt; = function(&lt;параметр1&gt;, &lt;параметр2&gt;, и т.д... )<br> {
+    <br> &lt;statement1&gt;;<br> &lt;statement1&gt;;<br>...<br> }
+  </p>
+  <p>или</p>
+  <p class="code">function &lt;variablename&gt;(&lt;parameter1&gt;, &lt;parameter2&gt;, etc... )<br> {
+    <br> &lt;statement1&gt;;<br> &lt;statement1&gt;;<br>...<br> }
+  </p>
+  <p>В общем случае, однако, вы будете использовать <em>первую </em>форму для методов, а вторую - для определения <a href="Script_Functions.htm">скриптовых функций</a>, поскольку вторая форма будет также присваивать индекс скрипта имени функции, в то время как первая
+    будет &quot;истинным&quot; методом (и потребует использования глобального префикса, <a href="Variables/Global_Variables.htm">если</a> используется для определения скриптовой функции).</p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Вы можете проверить это, используя обе формы в проекте, а затем вызвав функцию <span class="notranslate">выполнения</span> <a href="../GML_Reference/Variable_Functions/typeof.htm">typeof()</a> для каждой из них. Одна из них будет классифицирована как &quot;число&quot; - поскольку
+    она возвращает идентификатор индекса скрипта, а другая будет классифицирована как &quot;метод&quot;.</p>
+  <p>Поэтому имейте в виду, что в общем случае, говоря о методах и переменных методов, мы всегда будем ссылаться на функции, которые <em>не </em>были определены с помощью индекса сценария. </p>
+  <p>Ниже приведены три простых примера создания переменной метода с использованием различных диапазонов:</p>
+  <p class="code">// Local<br> var _debug = function(message)<br> {
+    <br> show_debug_message(message);<br> }
+    <br>
+    <br> // Instance<br> do_maths = function(val1, val2, val3)<br> {
+    <br> return (val1 * val2) - val3;<br> }
+    <br>
+    <br> // Глобальный<br> global.pd = function(_x1, _y1, _x2, _y2);<br> {
+    <br> return point_distance(_x1, _y1, _x2, _y2);<br> }
+  </p>
+  <p>Обратите внимание, что в приведенном выше коде различные параметры, заданные в качестве входных данных для функции, имеют имена, и именно эти имена должны использоваться в функции для обозначения различных входных данных. Также обратите внимание, что вы можете использовать оператор <span class="inline"><a href="Language_Features/return.htm">return</a></span> для возврата значения из функции для использования в других частях кода, и что функция, для которой <em>не</em> определено возвращаемое значение, по умолчанию возвращает <span class="inline">undefined</span>.</p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Хотя переменная будет находиться в выбранной области видимости, фактическая функция будет привязана к той области видимости, в которой она была изначально определена. Например, <a href="Script_Functions.htm">функции сценария</a> имеют глобальную область видимости и &quot;не привязаны&quot;.
+    (т.е. они не связаны ни с какими экземплярами), но если у вас есть функция скрипта, которая создает другую функцию в качестве переменной метода, а затем вы вызываете эту функцию скрипта из экземпляра, функция, используемая в скрипте, <strong>будет привязана к переменной экземпляра как метод</strong>.
+    В общем случае об этом не нужно задумываться, но для более сложных операций с переменными метода это стоит принять во внимание. Это также применимо при использовании других конструкций, таких как <a href="Language_Features/with.htm"><span class="inline">with</span></a>    - когда вы создаете переменную метода внутри функции with, функция будет привязана к экземпляру, который в данный момент находится в области видимости.</p>
+  <p>После создания переменную метода можно использовать так же, как, например, функцию <span class="notranslate">времени выполнения</span> или функцию сценария:</p>
+  <p class="code">create_vec = function(_x1, _y1, _x2, _y2);<br> {
+    <br> var _array;<br> _array[0] = point_distance(_x1, _y1, _x2, _y2);<br> _array[1] = point_direction(_x1, _y1, _x2, _y2);<br> return _array;<br> }
+    <br>
+    <br> vec = create_vec(x, y, mouse_x, mouse_y);</p>
+  <p>Переменные, созданные внутри функции, подчиняются тем же правилам, что и обычные, и имеют область видимости в соответствии с используемым ключевым словом или областью видимости вызова функции. В приведенном выше примере мы используем <span class="inline">var</span>, поэтому переменная массива находится в
+   <em>локальной </em>области видимости функции. Если бы мы не использовали ключевое слово, то переменная была бы создана в области видимости экземпляра, вызвавшего функцию.</p>
+  <p>Методы, как и функции сценария, могут принимать необязательные аргументы, которые имеют значения по умолчанию, когда они не переданы:</p>
+  <p class="code">create_attachment = function(_attachment, <strong>_x = x</strong>, <strong>_y = y</strong>)<br> {
+    <br> return instance_create_layer(_x, _y, layer, _attachment);<br> }
+  </p>
+  <p>Приведенная выше функция принимает три аргумента, причем последние два являются необязательными. Если они не переданы при вызове функции, то по умолчанию будут использоваться <tt>координаты</tt> x и y экземпляра.</p>
+  <p>Обратите внимание, что если аргумент не передан, и у него нет значения по умолчанию, то он будет равен <tt>undefined</tt>.</p>
+  <p>Методы также могут использовать статические переменные, которые сохраняют свои значения при каждом вызове функции. Для получения дополнительной информации <a href="Functions/Static_Variables.htm">прочтите эту страницу</a>.</p>
+  <p>Ниже мы перечислим несколько вспомогательных функций, связанных с переменными метода:</p>
+  <ul class="colour">
+    <li><a href="../GML_Reference/Variable_Functions/is_method.htm">is_method</a></li>
+    <li><a href="../GML_Reference/Variable_Functions/method.htm">метод</a></li>
+    <li><a href="../GML_Reference/Variable_Functions/method_get_self.htm">метод_get_self</a></li>
+    <li><a href="../GML_Reference/Variable_Functions/method_get_index.htm">метод_get_index</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="GML_Overview.htm">Обзор<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Следующее: <a href="Structs.htm">Структуры</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Script Functions
+User Defined Functions
+-->
+  <!-- TAGS
+method_variables
+-->
+</body>
+</html>

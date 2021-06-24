@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_set_view_speed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_set_view_speed" />
+  <meta name="rh-index-keywords" content="camera_set_view_speed" />
+  <meta name="search-keywords" content="camera_set_view_speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_set_view_speed</h1>
+  <p>Вы можете использовать эту функцию для обновления скорости камеры обзора в помещении. Вы задаете уникальное значение ID камеры (как возвращается различными <a href="camera_create.htm"><tt>camera_create()</tt></a> функциями), а затем задаете x и y (горизонтальную
+    и вертикальную) скорость, с которой она должна двигаться, если установлена для следования за данным экземпляром. Скорость рассчитывается как пиксели за шаг и может быть установлена на &quot;-1&quot;, чтобы камера двигалась мгновенно, но если камера не настроена следовать за каким-либо объектом, то заданные здесь значения не будут иметь видимого эффекта.
+    установленные здесь значения не будут иметь видимого эффекта.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">camera_set_view_speed(camera_id, xspeed, yspeed)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор камеры</td>
+        <td>Уникальное значение ID камеры, полученное при создании камеры.</td>
+      </tr>
+      <tr>
+        <td>xspeed</td>
+        <td>Скорость (количество пикселей за игровой кадр), с которой вид должен двигаться по горизонтальной (x) оси.</td>
+      </tr>
+      <tr>
+        <td>yspeed</td>
+        <td>Скорость (количество пикселей за игровой кадр), с которой вид должен двигаться по вертикальной оси (y).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">camera_set_view_speed(view_camera[0], 5, 5);</p>
+  <p>Приведенный выше код установит скорость камеры просмотра для камеры, назначенной на порт просмотра[0].</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Cameras_And_View_Ports.htm">Камеры и порты для просмотра</a></div>
+        <div style="float:right">Далее: <a href="camera_set_view_border.htm">camera_set_view_border</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_set_view_speed
+-->
+  <!-- TAGS
+camera_set_view_speed
+-->
+</body>
+</html>

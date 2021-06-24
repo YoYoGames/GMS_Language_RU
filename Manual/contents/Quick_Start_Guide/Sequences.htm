@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Последовательности</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Overview of Sequences in games." />
+  <meta name="rh-index-keywords" content="Quick Start - Sequences" />
+  <meta name="search-keywords" content="sequences,dope sheet,track panel,tracks,parameters" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Последовательности</h1>
+  <p>Последний актив, который мы рассмотрим в этом руководстве, прежде чем перейти к обсуждению того, как все это объединяется в <strong>редакторе</strong> помещений <strong>, - это</strong> актив "Последовательности". Последовательность - это, по сути, коллекция других активов, которые собраны
+    в одном месте и затем анимируются вместе. Окончательная анимация (последовательность) может быть добавлена к комнатам в вашей игре подобно инстансам.</p>
+  <p>Последовательности создаются с помощью <a href="../The_Asset_Editors/Sequences.htm"><strong>Редактор последовательностей</strong></a> который открывается каждый раз, когда вы создаете новый актив последовательности в <a href="../Introduction/The_Asset_Browser.htm">браузере активов</a>:</p>
+  <p><img alt="The Sequences Editor" class="center" src="../assets/Images/QS_Guide/QS_Sequences_Editor.png">Чтобы создать базовую последовательность, вы добавляете звук, спрайт или экземпляр на <em>холст</em> последовательности, а затем позиционируете его в то место, где вы хотите
+    в начале последовательности. При этом создается <strong><a class="glossterm" data-glossterm="Asset Track" href="#">Отслеживание активов</a></strong> в <a class="glossterm" data-glossterm="Панель для отслеживания" href="#">панели дорожек</a> <em></em>, а также
+    добавляет <strong></strong>a <strong><a class="glossterm" data-glossterm="ключевой кадр" href="#"><span class="notranslate">ключевые кадры</span></a></strong> в <a class="glossterm" data-glossterm="Наркотический лист" href="#"><span class="notranslate">Dope Sheet</span></a> чтобы показать продолжительность, в течение которой актив будет виден.</p>
+  <p>Время для последовательности задается в кадрах (что для инстансов то же самое, что шаги, т.е. один кадр равен одному игровому шагу), и вы можете увидеть, что произойдет на любом данном кадре, перемещая последовательность <strong><a class="glossterm" data-glossterm="playhead" href="#">плейхед</a></strong> в
+   <span class="notranslate">листе допинга</span>. Положение головки воспроизведения также используется для добавления <strong><span class="notranslate">ключевые кадры</span> </strong>которые являются кадрами, где вы хотите, чтобы какое-то состояние изменилось в начале или в конце. Ключи параметров хранятся на <strong><a class="glossterm" data-glossterm="дорожки параметров" href="#">дорожки параметров</a></strong> для
+    данного актива.</p>
+  <p>Таким образом, вы позиционируете актив и устанавливаете его масштаб, цвет и другие свойства в кадре 0 последовательности. Затем нужно записать ключи параметров для актива и переместить головку воспроизведения на кадр, где нужно установить следующее состояние актива (положение,
+    цвет и т.д.....). На этом кадре вы снова измените различные параметры и запишите ключи для них, а затем повторите этот процесс в течение всей последовательности. Когда вы нажмете кнопку воспроизведения последовательности, актив будет анимирован, причем
+    последовательность <a class="glossterm" data-glossterm="линейная интерполяция" href="#">интерполируется</a> между различными состояниями параметров, что дает в итоге примерно такой результат: </p>
+  <p><img alt="Sequence Example Image" class="center" src="../assets/Images/QS_Guide/QS_Sequence_Example.gif">Мы не будем вдаваться в подробности о том, как работают последовательности, но достаточно сказать, что они являются невероятно мощным инструментом для выполнения любых действий.
+    от cut-scenes, до меню, состояний персонажей и многого другого.</p>
+  <p>На странице, ссылка на которую приведена ниже, подробно описано, как использовать последовательности в своих играх:</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Sequences.htm">Редактор последовательностей</a></li>
+  </ul>
+  <p>Теперь мы можем перейти к разговору о <strong>редакторе комнат</strong>, в котором все эти части вашей игры собираются вместе...</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Content.htm">Указатель</a></div>
+        <div style="float:right">Следующий: <a href="Rooms.htm">Номера</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Quick Start: Sequences
+Sequences
+-->
+  <!-- TAGS
+qs_sequences
+-->
+
+</body></html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>высота помещения</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_height" />
+  <meta name="rh-index-keywords" content="room_height" />
+  <meta name="search-keywords" content="room_height" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>высота помещения</h1>
+  <p>В этой переменной хранится высота текущей комнаты в пикселях. Вы можете изменить эту переменную, чтобы изменить высоту комнаты в любое время, и изменения будут применены к нижней части комнаты, так как началом координат считается левый верхний угол. Таким образом,
+    например, если высота комнаты составляет 480px, а вы установили значение 640px, комната будет расширена вниз с добавлением дополнительных 180px к нижней части.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">высота помещения;</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">если bbox_bottom &gt; room_height<br> {
+    <br> y += room_height - bbox_bottom;<br> }
+  </p>
+  <p>Приведенный выше код проверяет, превышает ли граничная область спрайта текущего экземпляра высоту комнаты, и если да, то перемещает экземпляр вверх.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Rooms.htm">Номера</a></div>
+        <div style="float:right">Далее: <a href="room_width.htm">ширина_комнаты</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_height
+-->
+  <!-- TAGS
+room_height
+-->
+</body>
+</html>

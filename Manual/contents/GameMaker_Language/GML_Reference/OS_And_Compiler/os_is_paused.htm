@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>os_is_paused</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for os_is_paused" />
+  <meta name="rh-index-keywords" content="os_is_paused" />
+  <meta name="search-keywords" content="os_is_paused" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_is_paused</h1>
+  <p>При разработке для мобильных устройств необходимо иметь способ проверить, сосредоточено ли устройство на вашей игре или нет, особенно если ваша игра на устройстве <span class="notranslate">iOS</span>, <span class="notranslate">Android</span> или <span class="notranslate">Windows Phone</span>, то она может быть прервана телефонными звонками и другими приложениями.
+    Вы можете использовать эту функцию, чтобы проверить, приостановлено устройство или нет.</p>
+  <p>Стоит отметить, что эта функция запустит любой код, содержащийся в блоке кода, на устройствах, но сразу после этого <span class="notranslate">GameMaker Studio 2</span> будет приостановлена, поскольку устройство кэширует игру как фоновый процесс. Поэтому если у вас есть что-то
+    как в приведенном ниже примере, создаваемый экземпляр не будет появляться или выполнять какие-либо события <i>до тех пор, пока игра не будет перезапущена из кэшированного состояния</i>. Это означает, что вы можете предпочесть, чтобы функция <tt>os_is_paused</tt> вызывала сигнал тревоги, а затем в событии тревоги (которое будет установлено, когда устройство поставлено на паузу, но не будет запущено, пока оно не будет снято с паузы) создать меню паузы, перезапустить музыку и т.д..</p>
+  <p>Если вы используете эту функцию на платформах <span class="notranslate">Windows</span>, <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>), MacOS или HTML5, то функция переключается только на <b>один шаг</b> в <tt>true</tt>, когда игра теряет фокус, а затем снова возвращает <tt>false</tt>, пока игре не будет возвращен
+    в фокус (и снова потеряет его). Это происходит потому, что эти платформы не кэшируют приложения и игры, и поэтому они будут продолжать работать в фоновом режиме.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: На мобильных устройствах звуки и музыка будут остановлены, когда os будет приостановлена. Они <b>не</b> возобновятся, пока вы специально не запустите их с помощью соответствующей функции.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">os_is_paused()</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if os_is_paused()<br> {
+    <br> if !instance_exists(obj_PauseMenu)<br> {
+    <br> instance_create_layer(0, 0, &quot;Controllers&quot;, obj_PauseMenu);<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет, была ли игра поставлена на паузу, и если да, то создает экземпляр объекта &quot;obj_PauseMenu&quot;, если такового еще не существует.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="OS_And_Compiler.htm">ОС и компилятор</a></div>
+        <div style="float:right">Далее: <a href="os_is_network_connected.htm">os_is_network_connected</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+os_is_paused
+-->
+  <!-- TAGS
+os_is_paused
+-->
+</body>
+</html>

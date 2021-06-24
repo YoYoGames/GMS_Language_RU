@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>уничтожение слоя</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_destroy" />
+  <meta name="rh-index-keywords" content="layer_destroy" />
+  <meta name="search-keywords" content="layer_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>уничтожение слоя</h1>
+  <p>Эта функция уничтожит заданный слой. Вы передаете ID слоя (который вы получаете при создании слоя с помощью функции <a href="layer_create.htm"><tt>layer_create()</tt></a>) или имя слоя (в виде строки - это влияет на производительность), и эта функция
+    удалит его из текущей комнаты. Если слой был создан в редакторе комнат, то при следующем выходе из комнаты и последующем возвращении слой будет создан заново с исходным содержимым, однако если комната постоянна,
+    слой будет удален, если только постоянство помещения не будет снова отключено. При уничтожении слоя таким образом все его содержимое также будет удалено, поэтому любые идентификаторы ссылок для фонов, карт плиток и т.д. больше не будут действительны, а все экземпляры, назначенные слою, будут уничтожены.
+    назначенные слою, будут уничтожены (одновременно с этим будет выполнено <strong>событие Destroy</strong>, если оно у них есть, а также <strong>событие Clean Up</strong>).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_destroy(layer_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор слоя</td>
+        <td>Уникальное значение ID слоя для уничтожения (или имя слоя в виде строки)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if !instance_exists(obj_Bullet_Parent)<br> {
+    <br> layer_destroy(global.Bullet_Layer);
+    <br> }
+  </p>
+  <p>Приведенный выше код проверит, существуют ли экземпляры объекта &quot;obj_Bullet_Parent&quot;, и если нет, то уничтожит слой с идентификатором, сохраненным в глобальной переменной.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="General_Layer_Functions.htm">Общие функции слоя</a></div>
+        <div style="float:right">Далее: <a href="layer_x.htm">layer_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_destroy
+-->
+  <!-- TAGS
+layer_destroy
+-->
+</body>
+</html>

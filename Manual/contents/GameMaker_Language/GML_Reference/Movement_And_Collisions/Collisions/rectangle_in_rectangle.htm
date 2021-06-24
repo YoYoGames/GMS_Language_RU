@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>прямоугольник_в_прямоугольнике</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion rectangle_in_rectangle" />
+  <meta name="rh-index-keywords" content="rectangle_in_rectangle" />
+  <meta name="search-keywords" content="rectangle_in_rectangle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>прямоугольник_в_прямоугольнике</h1>
+  <p>Эта функция проверит две заданные вами прямоугольные области на предмет того, не сталкивается ли исходный прямоугольник, находится ли он полностью в границах прямоугольника назначения, или они просто соприкасаются. Если они вообще не соприкасаются, функция
+    вернет 0, если исходный прямоугольник полностью находится внутри конечного, то вернет 1, а если они просто перекрываются, то вернет 2. Изображение ниже иллюстрирует это:</p>
+  <p><img alt="Rectangle rectangle collision example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/rectangle_in_rectangle.png" /></p>
+  <h4>Синтаксис:</h4>
+  <p class="code">rectangle_in_rectangle(sx1, sy1, sx2, sy2, dx1, dy1, dx2, dy2);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>sx1</td>
+        <td>Координата x левой стороны исходного прямоугольника.</td>
+      </tr>
+      <tr>
+        <td>си1</td>
+        <td>Координата y верхней стороны исходного прямоугольника.</td>
+      </tr>
+      <tr>
+        <td>sx2</td>
+        <td>Координата x правой стороны исходного прямоугольника.</td>
+      </tr>
+      <tr>
+        <td>си2</td>
+        <td>Координата y нижней стороны исходного прямоугольника.</td>
+      </tr>
+      <tr>
+        <td>dx1</td>
+        <td>Координата x левой стороны целевого прямоугольника для проверки.</td>
+      </tr>
+      <tr>
+        <td>dy1</td>
+        <td>Координата y верхней стороны целевого прямоугольника для проверки.</td>
+      </tr>
+      <tr>
+        <td>dx2</td>
+        <td>Координата x правой стороны целевого прямоугольника для проверки.</td>
+      </tr>
+      <tr>
+        <td>dy2</td>
+        <td>Координата y нижней стороны целевого прямоугольника для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">switch(rectangle_in_rectangle(x - 50, y - 50, x + 50, y + 50, mouse_x - 50, mouse_y - 50, mouse_x + 50, mouse_y + 50))<br> {
+    <br> case 0: image_blend = c_yellow; break;<br> case 1: image_blend = c_red; break;<br> case 2: image_blend = c_orange; break;<br> }
+  </p>
+  <p>Приведенный выше код проверяет две прямоугольные области на столкновение и устанавливает экземпляр <tt>image_blend</tt> на основе возвращаемого значения.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Collisions.htm">Коллизии</a></div>
+        <div style="float:right">Далее: <a href="rectangle_in_triangle.htm">прямоугольник_в_треугольнике</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+rectangle_in_rectangle
+-->
+  <!-- TAGS
+rectangle_in_rectangle
+-->
+</body>
+</html>

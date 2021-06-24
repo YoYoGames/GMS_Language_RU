@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_add_enable_aa</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function font_add_enable_aa" />
+  <meta name="rh-index-keywords" content="font_add_enable_aa" />
+  <meta name="search-keywords" content="font_add_enable_aa" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_add_enable_aa</h1>
+  <p>Эта функция может быть использована для включения или отключения сглаживания (AA) для шрифтов, добавленных с помощью функции <a href="font_add.htm"><tt>font_add()</tt></a>. Эта функция должна быть вызвана <i>до</i> добавления шрифтов, и установка значения
+   <tt>true</tt> включит AA, а установка <tt>false</tt> отключит его. По умолчанию AA включено. Обратите внимание, что это не повлияет на шрифты, которые были добавлены до вызова функции
+    и функция должна вызываться только один раз при добавлении шрифта, а не на каждом отрисовке/шаге, когда шрифт используется.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">font_add_enable_aa(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>включить</td>
+        <td>Включать<tt>(true</tt>) или выключать<tt>(false</tt>) АА для добавленных шрифтов.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if !font_add_get_enable_aa()<br> {
+    <br> font_add_enable_aa(true);
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет состояние сглаживания для добавленных шрифтов, и если оно не включено, то мы включаем его.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Fonts.htm">Шрифты</a></div>
+        <div style="float:right">Далее: <a href="font_add_get_enable_aa.htm">font_add_get_enable_aa</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_add_enable_aa
+-->
+  <!-- TAGS
+font_add_enable_aa
+-->
+</body>
+</html>

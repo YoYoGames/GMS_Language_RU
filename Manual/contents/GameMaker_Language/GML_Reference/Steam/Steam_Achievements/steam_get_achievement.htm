@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_get_achievement</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_get_achievement" />
+  <meta name="rh-index-keywords" content="steam_get_achievement" />
+  <meta name="search-keywords" content="steam_get_achievement" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_get_achievement</span></h1>
+  <p>С помощью этой функции вы можете проверить <span class="notranslate">Steam</span> API, было ли получено определенное достижение. Достижение должно быть предварительно определено на странице учетных записей панели управления <span class="notranslate">Steamworks</span>для вашей игры, а строка, передаваемая в функцию
+    должна совпадать со строкой, используемой в качестве <b>имени API</b> на панели управления.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code"><span class="notranslate">steam_get_achievement</span>(ach_name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>ач_имя</td>
+        <td>Имя достижения, которое нужно получить (строка).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">если hp &lt;= 0<br> {
+    <br> global.Deaths += 1;<br> if global.Deaths == 10<br> {
+    <br> if !<span class="notranslate">steam_get_achievement</span>(&quot;ach_Player_Dies_Ten_Times&quot;) steam_set_achievement(&quot;ach_Player_Dies_Ten_Times&quot;);<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код наградит игрока достижением, если глобальная переменная &quot;Deaths&quot; равна 10 и если достижение еще не было получено.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Steam_Achievements.htm">Достижения и статистика</a></div>
+        <div style="float:right">Далее: <a href="steam_clear_achievement.htm"><span class="notranslate">пар_чистый_достижение</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_get_achievement
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_get_achievement
+-->
+</body>
+</html>

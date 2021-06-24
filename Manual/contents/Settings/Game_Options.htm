@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Параметры игры</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how to setup the different Game options" />
+  <meta name="rh-index-keywords" content="Game Options" />
+  <meta name="search-keywords" content="Game Options,Options" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Параметры игры</h1>
+  <p>Опции игры разделены на два раздела: Основные опции и Настройки платформы. Основные параметры начинаются с <strong>Общих</strong> параметров, где вы можете установить определенные вещи, которые будут влиять на игру независимо от платформы, на которой
+    для которой она предназначена.</p>
+  <p><img alt="General Game Options" class="center" src="../assets/Images/Settings/Game_Options/General_Options.png">Окно состоит из следующих разделов:</p>
+  <ul class="colour">
+    <li><strong>Использовать <span class="notranslate">DnD™</span></strong> как тип сценария по умолчанию: Когда эта опция отмечена, все новые сценарии и события объектов будут открываться с помощью редактора <span class="notranslate">DnD™</span>, а не редактора кода.</li>
+    <li><strong>Game Frames Per Second</strong>: Это значение устанавливает ограничение на количество кадров в секунду, которое <span class="notranslate">GameMaker Studio 2</span> должна пытаться поддерживать в процессе работы вашей игры. Это значение представляет собой количество раз, которое цикл игры будет выполняться за
+      одну секунду (один игровой цикл считается одним &quot;кадром&quot;) и по умолчанию установлено значение 60, хотя часто используется и 30. Существует много споров о том, какая скорость помещения является идеальной, но на самом деле ответ зависит от того, какой тип
+      игры, размера комнаты, количества экземпляров и интенсивности кода. Например, если у вас большая комната и скорость комнаты 30, игра может показаться &quot;неровной&quot;, так как чем больше область, на которую вы смотрите,
+      тем легче глазу воспринимать низкую скорость комнаты, но если игра интенсивна, то установка скорости комнаты на 120 может привести к &quot;лагам&quot; игры, так как fps падает из-за большого количества выполняемой обработки. Поэтому будьте осторожны с этим значением
+      и старайтесь всегда регулировать его в соответствии с потребностями вашей игры.</li>
+    <li><strong>Default Draw Colour</strong>: Цвет по умолчанию для рисования текста или форумов (и других вещей), когда цвет не был задан с помощью кода.</li>
+    <li><strong>Default Draw Colour Вне области комнаты</strong>: Цвет по умолчанию, который будет использоваться для очистки фона любой области за пределами игровой комнаты.</li>
+    <li><strong>Генерировать изображения проекта</strong>: При нажатии на эту кнопку откроется инструмент Генератор изображений проекта.</li>
+    <li><strong>Дата начала проекта</strong>: Дата начала проекта.</li>
+    <li><strong>Время использования проекта</strong>: Продолжительность времени, прошедшего с момента начала проекта.</li>
+    <li><strong>GUID проекта</strong>: Это уникальный идентификатор, который создается для каждого проекта в <span class="notranslate">GameMaker Studio 2</span>. Если вы хотите изменить его, вы можете нажать кнопку Create New GUID, чтобы создать новый идентификатор.</li>
+    <li><strong>Генерировать мипмапы для отдельных текстурных страниц</strong>: Эта опция заставит <span class="notranslate">GameMaker Studio 2</span> создавать мипмапы для тех спрайтов, которые отметили опцию Seperate Texture Page в настройках текстур редактора спрайтов. Включение мипмаппинга
+      означает, что исходная страница текстуры для спрайта будет масштабироваться и фильтроваться на несколько разрешений в файле текстуры. Обычно эта функция выключена, но если вы используете представления для увеличения или уменьшения больших областей игровой комнаты или работаете
+      с 3D-игрой, то вы, возможно, захотите включить эту функцию, а затем использовать функции Mipmapping Functions для настройки того, как игра работает с различными уровнями mipmap. Обратите внимание, что если вы не отмечаете спрайты как использующие отдельные текстурные страницы, вы все равно можете включить
+      mipmapping на основе каждой группы текстур в менеджере групп текстур. По умолчанию эта опция выключена.</li>
+    <li><strong><span class="notranslate">Steam</span></strong> ID: Если вы создаете игру, которая будет распространяться через <span class="notranslate">Steam</span>, то вам необходимо указать здесь <span class="notranslate">Steam</span> App ID. Убедитесь, что вы добавили путь к <span class="notranslate">Steamworks</span>SDK в Предпочтениях платформы при использовании этой опции,
+      и убедитесь, что все правильно настроено на панели <span class="notranslate">Steamworks</span>.</li>
+    <li><strong>Включить контроль исходных тек</strong>стов: Если вы хотите, чтобы проект находился под SCM (Source Control Management), то вам необходимо установить этот флажок. По умолчанию он выключен (дополнительную информацию о контроле исходных текстов см. здесь).</li>
+    <li><strong>Автор</strong>: Имя автора игры (или издателя, или студии).</li>
+    <li><strong>Последнее изменение проекта</strong>: В этом разделе просто отображается дата/время последнего изменения проекта (не редактируется).</li>
+    <li><strong>Принять лицензию Spine</strong>: Здесь вы можете установить флажок, чтобы вам была показана лицензия Spine <span class="notranslate">Runtime</span> License, и принять ее. Это позволит вам использовать спрайты Spine в вашей игре (эта лицензия также будет показана в первый раз, когда вы попытаетесь добавить спрайт Spine
+      в свой проект и не отметили лицензию заранее).</li>
+  </ul>
+  <p>В <a href="../Introduction/The_Asset_Browser.htm">браузере активов</a> будут доступны и другие игровые опции в зависимости от целевых платформ, доступных для имеющейся у вас <a href="../Setting_Up_And_Version_Information/GMS2_Version_Information.htm">лицензии</a>, и не все из них могут быть доступны или видны.</p>
+  <p>Существуют следующие варианты игр для конкретных платформ:</p>
+  <ul class="colour">
+    <li><a href="Game_Options/Windows.htm"><span class="notranslate">Windows</span></a></li>
+    <li><a href="Game_Options/macOS.htm"><span class="notranslate">macOS</span></a></li>
+    <li><a href="Game_Options/Ubuntu.htm"><span class="notranslate">Ubuntu</span></a></li>
+    <li><a href="Game_Options/Windows_UWP.htm"><span class="notranslate">Windows UWP</span></a></li>
+    <li><a href="Game_Options/HTML5.htm">HTML5</a></li>
+    <li><a href="Game_Options/Android.htm"><span class="notranslate">Android</span></a></li>
+    <li><a href="Game_Options/iOS.htm"><span class="notranslate">iOS</span></a></li>
+    <li><a href="Game_Options/tvOS.htm"><span class="notranslate">tvOS</span></a></li>
+  </ul>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Различные <strong>варианты консольных игр</strong> не перечислены здесь из-за различных юридических ограничений, поддерживаемых различными компаниями. Если у вас есть лицензия на консоль, вы можете получить эту информацию в <a href="https://help.yoyogames.com/hc/en-us/categories/202590248-Console-Support">службе поддержки<span class="notranslate">YoYo Games</span></a>,
+    но сначала вы должны связаться с <span class="notranslate">YoYo Games</span>, указав свой ID консоли, и запросить разрешение на просмотр различных разделов.</p>
+  <p>Некоторые лицензии <span class="notranslate">GameMaker Studio 2</span> могут также показывать опции Игры для <strong><span class="notranslate">Amazon Fire</span></strong> цель. Это устаревшие опции, так как новые лицензии поддерживают платформу Fire напрямую с помощью опции <strong><span class="notranslate">Android</span></strong> опции игры. Если ваша лицензия все еще
+    показывает <span class="notranslate">Amazon Fire</span>, вы можете получить информацию об этих опциях на следующей странице:</p>
+  <ul class="colour">
+    <li><a href="Game_Options/Amazon_Fire.htm"><span class="notranslate">Amazon Fire</span> (Legacy)</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Game_Settings.htm">Настройки игры</a></div>
+        <div style="float:right">Следующий: <a href="Configurations.htm">Конфигурации</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Game Settings
+-->
+  <!-- TAGS
+game_settings
+-->
+</body>
+</html>

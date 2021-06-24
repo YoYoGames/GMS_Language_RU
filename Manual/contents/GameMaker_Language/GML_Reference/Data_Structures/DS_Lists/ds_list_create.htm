@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_list_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_create" />
+  <meta name="rh-index-keywords" content="ds_list_create" />
+  <meta name="search-keywords" content="ds_list_create" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_create</h1>
+  <p>Эта функция создает новую структуру данных списка и возвращает значение индекса. Это значение следует сохранить в переменной и использовать во всех последующих вызовах функций, связанных со списком. Обратите внимание, что если вы попытаетесь получить доступ к значению в списке <i>до того, как</i> он был заполнен - т.е. список &quot;пуст&quot; - то возвращаемое значение может быть равно 0, поскольку при создании списка устанавливаются первые несколько записей, чтобы минимизировать проблемы с производительностью при первоначальном добавлении элементов в список (хотя функция
+    <a href="ds_list_size.htm"><tt>ds_list_size()</tt></a> функция все равно вернет 0 для только что созданного списка). Если вы хотите убедиться, что список &quot;действительно&quot; пуст при создании, то вам следует вызвать функцию <a href="ds_list_clear.htm"><tt>ds_list_clear()</tt></a>    после создания списка, что будет означать, что любые значения, возвращаемые для незаполненных слотов списка, будут <tt>неопределенными</tt>.</p>
+  <p class="note"><b>ВАЖНО!</b> Когда вы создаете структуру данных, значение индекса для ее идентификации является целым числом, начинающимся с 0. Это означает, что структуры данных разных типов могут иметь <b>одинаковое</b> значение индекса, поэтому, если вы сомневаетесь, вам следует использовать значение индекса
+    <span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists()</tt></a></span> функцию перед обращением к ним. Также обратите внимание, что индексы используются повторно, поэтому значение индекса уничтоженной структуры данных может быть использовано вновь созданной впоследствии.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_list_create();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">список = ds_list_create();</p>
+  <p>Это создаст новый список и присвоит его индекс id переменной экземпляра &quot;list&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="DS_Lists.htm">Списки DS</a></div>
+        <div style="float:right">Далее: <a href="ds_list_destroy.htm">ds_list_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_create
+-->
+  <!-- TAGS
+ds_list_create
+-->
+
+</body></html>

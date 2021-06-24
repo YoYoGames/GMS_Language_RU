@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>буферная_загрузка</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_load" />
+  <meta name="rh-index-keywords" content="buffer_load" />
+  <meta name="search-keywords" content="buffer_load" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>буферная_загрузка</h1>
+  <p>Эта функция используется для загрузки буфера, который был ранее сохранен с помощью <a href="buffer_save.htm"><tt>buffer_save()</tt></a> функций, а также любые <a href="../../../Settings/Included_Files.htm" title="Included Files">Включенные файлы</a> или файлы
+    загруженных извне. Она возвращает идентификатор нового буфера, который создается функцией как &quot;растущий&quot; буфер (см. здесь) с выравниванием по <a href="buffer_create.htm">байтам</a> 1. Этот идентификатор должен храниться в переменной и использоваться во всех последующих обращениях к этому буферу.
+    обращениях функции к этому буферу. Если по какой-либо причине загрузка не удалась, функция вернет -1, а в окне вывода компилятора появится сообщение о том, что загрузка не удалась.</p>
+  <p>Обратите внимание, что на HTML5 любые буферы, загруженные из локального хранилища, будут декодированы с использованием base64 (поскольку они сохраняются как строки base64), однако использование этой функции для Included Files или любых внешних файлов не будет использовать декодирование base64, что должно быть хорошо
+    для большинства случаев.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Важно, чтобы вы удаляли из памяти любые динамически созданные ресурсы, подобные этому, когда они вам больше не нужны, чтобы предотвратить утечку памяти, поэтому, когда вы закончите работу с созданным буфером, вы должны освободить его снова
+    использование <a href="buffer_delete.htm"><tt>buffer_delete()</tt></a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">buffer_load(filename);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>имя файла</td>
+        <td>Имя файла для загрузки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">настоящий</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">player_buffer = buffer_load(&quot;Player_Save.sav&quot;);</p>
+  <p>Приведенный выше код загружает в память ранее сохраненный буфер, создавая новый буфер. Индекс этого нового буфера хранится в переменной &quot;player_buffer&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Buffers.htm">Буферы</a></div>
+        <div style="float:right">Следующий: <a href="buffer_load_ext.htm"><span>buffer_load_ext</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_load
+-->
+  <!-- TAGS
+buffer_load
+-->
+</body>
+</html>

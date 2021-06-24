@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_queue_sound</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_queue_sound" />
+  <meta name="rh-index-keywords" content="audio_queue_sound" />
+  <meta name="search-keywords" content="audio_queue_sound" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_queue_sound</h1>
+  <p>Эта функция добавит данные из буфера в аудио очередь, которую вы ранее создали с помощью функции <a href="audio_create_play_queue.htm"><tt>audio_create_play_queue()</tt></a>. Вы указываете индекс очереди, в которую нужно добавить данные, и
+    ID буфера для получения данных, а также позицию (смещение) в буфере и количество байт для добавления. После добавления аудио из буфера в очередь, буфер не может быть удален, пока вы не освободите очередь с помощью функции 
+    <a href="audio_free_play_queue.htm"><tt>audio_free_play_queue()</tt></a>, а свойства буфера должны соответствовать свойствам очереди, в которую вы добавляете звук.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_queue_sound(queueIndex, bufferId, bufferOffset, bufferLength);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>queueIndex</td>
+        <td>Индекс очереди для добавления.</td>
+      </tr>
+      <tr>
+        <td>bufferId</td>
+        <td>Буфер для добавления в очередь.</td>
+      </tr>
+      <tr>
+        <td>bufferOffset</td>
+        <td>Смещение в исходном буфере, с которого следует начинать.</td>
+      </tr>
+      <tr>
+        <td>bufferLength</td>
+        <td>Длина буфера (количество байтов в буфере).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">len = async_load[? &quot;data_len&quot;];<br> audio_buff = buffer_create(len, buffer_fast, 1);<br> buffer_copy(async_load[? &quot;buffer_id&quot;], 0, len, buff, 0);<br> audio_queue_sound(audio_queue, audio_buff, 0, len);<br> audio_play_sound(audio_queue,
+    10, 0);</p>
+  <p>Приведенный выше код будет вызван в событии асинхронной <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">аудиозаписи</a> и присвоит некоторые записанные данные буферу, который
+    затем добавляется в очередь аудио. Затем происходит воспроизведение.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Audio.htm">Аудио буферы</a></div>
+        <div style="float:right">Далее: <a href="audio_start_recording.htm">audio_start_recording</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_queue_sound
+-->
+  <!-- TAGS
+audio_queue_sound
+-->
+</body>
+</html>

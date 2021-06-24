@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_listener_set_velocity</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_listener_set_velocity" />
+  <meta name="rh-index-keywords" content="audio_listener_set_velocity" />
+  <meta name="search-keywords" content="audio_listener_set_velocity" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_listener_set_velocity</h1>
+  <p>Эта функция может быть использована для придания заданному слушателю эффекта <em>Доплера </em>и имитации движения звука на основе вектора, который определяется из заданных относительных положений x, y и z. По умолчанию индекс слушателя равен 0, но вы можете использовать функцию
+    <a href="audio_get_listener_info.htm"><tt>audio_get_listener_info()</tt></a> для получения различных индексов, доступных для целевой платформы.</p>
+  <p>Если данный слушатель никогда не будет двигаться, или движение не является постоянным, вам обычно не нужно устанавливать эти значения, но, например, если вы создаете скроллинговую игру, где игрок имеет постоянное движение снизу вверх и
+    враги имеют постоянное движение сверху вниз, вы должны установить скорости слушателя <i>и</i> эмиттера (для эмиттеров вы будете использовать <a href="../Audio_Emitters/audio_emitter_velocity.htm"><tt>audio_emitter_velocity()</tt></a>) на соответствующие векторы
+    чтобы смоделировать правильный эффект Доплера при движении мимо экземпляра игрока.</p>
+  <p>На рисунке ниже показано, как это можно настроить для приведенного выше примера игры:</p>
+  <p><img alt="Audio Listener Set Velocity Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Listener_Velocity.png" /></p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_listener_set_velocity(index, x, y, z);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Слушатель, для которого необходимо получить данные (по умолчанию 0).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>x-скорость слушателя (по умолчанию 0).</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Скорость y слушателя (по умолчанию 0).</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>Скорость z слушателя (по умолчанию 0).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var num = audio_get_listener_count();<br> for(var i = 0; i &lt; num; ++i;)<br> {
+    <br> var info = audio_get_listener_info(i);<br> var data = audio_listener_get_data(info[? &quot;index&quot;]);<br> if data[? &quot;vx&quot;] != 0<br> {
+    <br> audio_listener_set_velocity(info[? &quot;index&quot;], 0, 0, 0, 0);<br> }
+    <br> ds_map_destroy(info);
+    <br> ds_map_destroy(data);
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет количество доступных слушателей, затем перебирает их и, если их x-скорость не равна 0, устанавливает их значения скорости на 0, 0, 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio_Listeners.htm">Слушатели аудио</a></div>
+        <div style="float:right">Далее: <a href="audio_listener_set_orientation.htm">audio_listener_set_orientation</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_listener_set_velocity
+-->
+  <!-- TAGS
+audio_listener_set_velocity
+-->
+</body>
+</html>

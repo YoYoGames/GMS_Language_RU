@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>часть_излучателя_региона</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_emitter_region" />
+  <meta name="rh-index-keywords" content="part_emitter_region,ps_shape_rectangle,ps_shape_ellipse,ps_shape_diamond,ps_shape_line,ps_distr_linear,ps_distr_gaussian,ps_distr_invgaussian" />
+  <meta name="search-keywords" content="part_emitter_region,ps_shape_rectangle,ps_shape_ellipse,ps_shape_diamond,ps_shape_line,ps_distr_linear,ps_distr_gaussian,ps_distr_invgaussian" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>часть_излучателя_региона</h1>
+  <p>Эта функция используется для задания положения излучателя частиц в текущей комнате. Вы указываете ограничивающую область в функции, а затем используете любую из серии констант для определения окончательной формы излучателя в пределах этой ограничивающей области, а также распределения частиц в пределах этой формы.
+    а также распределение частиц внутри формы. Доступные константы для форм распределения перечислены ниже:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>ps_shape_rectangle</td>
+        <td>Прямоугольная форма, заполняющая заданную область.</td>
+      </tr>
+      <tr>
+        <td>ps_shape_ellipse</td>
+        <td>Эллипс, ширина и высота которого определяется площадью.</td>
+      </tr>
+      <tr>
+        <td>ps_shape_diamond</td>
+        <td>Форма ромба с точками на половине ширины и половине высоты.</td>
+      </tr>
+      <tr>
+        <td>ps_shape_line</td>
+        <td>Одиночная линия, начальная точка которой находится слева и сверху, а конечная точка - справа и снизу.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p><img alt="Emitter Shapes" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Emitter_Shapes.png">Помимо форм распределения, вы также можете определить кривую распределения для частиц, которые будут
+    испускать. Доступные константы для кривых распределения перечислены ниже:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>ps_distr_linear</td>
+        <td>Линейное распределение, при котором все частицы имеют равные шансы появиться в любой точке области.</td>
+      </tr>
+      <tr>
+        <td>ps_distr_gaussian</td>
+        <td>Гауссово распределение, в котором больше частиц генерируется в центре, а не по краям.</td>
+      </tr>
+      <tr>
+        <td>ps_distr_invgaussian</td>
+        <td>Обратное гауссово распределение, при котором на краях образуется больше частиц, чем в центре.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p><img alt="Emitter Distribution" class="center" height="321" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Emitter_Distribution.png" width="848" /></p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Если вам нужно, чтобы эмиттер двигался вместе с экземпляром, вам придется использовать эту функцию в событии шага и обновлять позицию эмиттера таким образом. Также стоит отметить, что для точечных выбросов, где не нужно создавать частицы
+    по площади или с определенным распределением, часто проще использовать функцию <span style="font-size:1px;"><a href="../Particle_Systems/part_particles_create.htm"><tt style="font-size: 14px">part_particles_create()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">part_emitter_region(ps, ind, xmin, xmax, ymin, ymax, shape, distribution);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>ps</td>
+        <td>Система частиц, в которой находится эмиттер.</td>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс эмиттера, который нужно установить.</td>
+      </tr>
+      <tr>
+        <td>xmin</td>
+        <td>Координата x левой стороны области.</td>
+      </tr>
+      <tr>
+        <td>xmax</td>
+        <td>Координата x правой стороны.</td>
+      </tr>
+      <tr>
+        <td>ymin</td>
+        <td>Координата y вершины области.</td>
+      </tr>
+      <tr>
+        <td>ymax</td>
+        <td>Координата y нижней части области.</td>
+      </tr>
+      <tr>
+        <td>форма</td>
+        <td>Форма региона.</td>
+      </tr>
+      <tr>
+        <td>распространение</td>
+        <td>Стиль распределения частиц.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">part_emitter_region(global.Sname , emit_1, x - 50, x + 50, y - 50, y + 50, ps_shape_ellipse, ps_distr_linear);</p>
+  <p>Приведенный выше код установит эмиттер в эллиптическую форму высотой 100px и шириной 100px вокруг текущей позиции (x,y) экземпляра, выполняющего код.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Particle_Emitters.htm">Излучатели частиц</a></div>
+        <div style="float:right">Далее: <a href="part_emitter_burst.htm">часть_эмиттера_взрыва</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_emitter_region
+ps_shape_rectangle
+ps_shape_ellipse
+ps_shape_diamond
+ps_shape_line
+ps_distr_linear
+ps_distr_gaussian
+ps_distr_invgaussian
+-->
+  <!-- TAGS
+part_emitter_region
+-->
+</body>
+</html>

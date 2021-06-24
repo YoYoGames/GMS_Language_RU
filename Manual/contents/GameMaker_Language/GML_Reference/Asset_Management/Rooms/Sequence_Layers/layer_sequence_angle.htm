@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>угол_последовательности_слоя</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_angle" />
+  <meta name="rh-index-keywords" content="layer_sequence_y" />
+  <meta name="search-keywords" content="layer_sequence_angle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>угол_последовательности_слоя</h1>
+  <p>С помощью этой функции можно установить угол поворота для заданного элемента последовательности. Вы передаете идентификатор элемента последовательности, возвращаемый функцией <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a> или одной из <a href="../General_Layer_Functions/General_Layer_Functions.htm">функций элемента слоя</a> вместе с новым углом, который нужно задать, и последовательность будет повернута вокруг своего начала в новое положение. Углы в <span class="notranslate">GameMaker</span> отсчитываются от 0º вправо и идут против часовой стрелки - 90º вверх, 180º влево и 270º вниз.
+    для последовательности будет 0º.</p>
+  <p>Обратите внимание, что вы не должны изменять переменные <span class="inline">image_xscale</span> \ <span class="inline">image_yscale</span> \ <span class="inline">image_angle</span> \ <span class="inline">x</span> \ <span class="inline">y</span> для любых экземпляров
+    в последовательности, использующей эту функцию, так как они будут перезаписаны, как только последовательность обновится после вызова функции.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_sequence_angle(sequence_element_id, angle)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>Уникальное значение ID элемента последовательности, на который нужно нацелиться</td>
+      </tr>
+      <tr>
+        <td>угол</td>
+        <td>Новый угол, на который нужно повернуть элемент последовательности</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if current_angle &lt; 90<br> {
+    <br> current_angle += 1;<br> layer_sequence_angle(my_seq, current_angle);<br> }
+  </p>
+  <p>Приведенный выше код проверяет значение, хранящееся в переменной <span class="inline">current_angle</span>, и если оно меньше 90, то прибавляет к нему значение, а затем использует его для установки угла элемента последовательности, на который ссылается переменная <span class="inline">my_seq</span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sequence_Layers.htm">Последовательность слоев</a></div>
+        <div style="float:right">Далее: <a href="layer_sequence_xscale.htm">layer_sequence_xscale</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_angle
+-->
+  <!-- TAGS
+layer_sequence_angle
+-->
+</body>
+</html>

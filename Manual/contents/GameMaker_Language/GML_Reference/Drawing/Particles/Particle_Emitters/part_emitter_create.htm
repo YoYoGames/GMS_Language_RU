@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>часть_излучателя_создать</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_emitter_create" />
+  <meta name="rh-index-keywords" content="part_emitter_create" />
+  <meta name="search-keywords" content="part_emitter_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>часть_излучателя_создать</h1>
+  <p>Эта функция должна использоваться для создания нового эмиттера и назначения его заданной системе частиц. Функция возвращает значение индекса для нового эмиттера, которое должно храниться в переменной и использоваться во всех последующих функциях, ссылающихся на эмиттер,
+    а сам эмиттер должен быть уничтожен, если он больше не используется, чтобы предотвратить утечку памяти (это можно сделать с помощью специальных функций уничтожения эмиттера или путем уничтожения всей системы частиц, к которой принадлежит эмиттер).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">part_emitter_create(ps);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>ps</td>
+        <td>Система частиц, в которой будет создан эмиттер.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">p_emit1 = part_emitter_create(Sname);</p>
+  <p>Это создаст новый эмиттер частиц и сохранит его индекс в переменной &quot;p_emit&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Particle_Emitters.htm">Излучатели частиц</a></div>
+        <div style="float:right">Далее: <a href="part_emitter_clear.htm">часть_эмиттера_чистая</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_emitter_create
+-->
+  <!-- TAGS
+part_emitter_create
+-->
+</body>
+</html>

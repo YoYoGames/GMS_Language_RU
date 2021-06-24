@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_is_user_logged_on</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_is_user_logged_on" />
+  <meta name="rh-index-keywords" content="steam_is_user_logged_on" />
+  <meta name="search-keywords" content="steam_is_user_logged_on" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_is_user_logged_on</span></h1>
+  <p>Эта функция возвращает <tt>true</tt>, если клиент <span class="notranslate">Steam</span> в настоящее время имеет активное соединение с серверами <span class="notranslate">Steam</span>. Если возвращается <tt>false</tt>, это означает, что активного соединения нет из-за сетевых проблем на локальной машине или из-за того, что сервер <span class="notranslate">Steam</span>
+    сервер не работает или занят.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code"><span class="notranslate">steam_is_user_logged_on</span>();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Строка</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if <span class="notranslate">steam_is_user_logged_on</span>()<br> {
+    <br> global.user_id = <span class="notranslate">steam_get_user_account_id</span>();<br> }
+  </p>
+  <p>Приведенный выше код проверит, вошел ли пользователь на сервер <span class="notranslate">Steam</span>, и если вошел, то сохранит идентификатор пользователя в глобальной переменной.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Steam_API.htm">Общий API <span class="notranslate">Steam</span></a></div>
+        <div style="float:right">Далее: <a href="steam_current_game_language.htm"><span class="notranslate">steam_current_game_language</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_is_user_logged_on
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_is_user_logged_on
+-->
+</body>
+</html>

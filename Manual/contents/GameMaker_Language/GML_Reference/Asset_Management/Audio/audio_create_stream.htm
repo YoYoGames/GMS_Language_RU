@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_create_stream</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_create_stream" />
+  <meta name="rh-index-keywords" content="audio_create_stream" />
+  <meta name="search-keywords" content="audio_create_stream" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_create_stream</h1>
+  <p>С помощью этой функции вы можете создать новый звуковой индекс, который затем может быть использован в обычных аудиофункциях для потоковой передачи аудио непосредственно из внешнего источника файла OGG. Функция требует имя файла (которое может быть, например, включенным файлом) и
+    вернет новый звуковой индекс для использования. Обратите внимание, что после того, как звук больше не нужен, необходимо вызвать функцию <a href="audio_destroy_stream.htm"><tt>audio_destroy_stream()</tt></a> с индексом звука, чтобы удалить его из
+    иначе может произойти утечка памяти, что приведет к замедлению и, в конечном итоге, к краху вашей игры.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функциональность недоступна для целевой платформы HTML5.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_create_stream(filename);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>имя файла</td>
+        <td>Файл (только OGG) для потокового воспроизведения аудио.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Звуковой указатель</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">snd = audio_create_stream(&quot;Music/Track1.ogg&quot;);<br> audio_play_sound(snd, 0, true);</p>
+  <p>Приведенный выше код создает новый индекс звука в переменной &quot;snd&quot; из заданного файла, затем воспроизводит этот звук.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio.htm">Аудио</a></div>
+        <div style="float:right">Далее: <a href="audio_destroy_stream.htm">audio_destroy_stream</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_create_stream
+-->
+  <!-- TAGS
+audio_create_stream
+-->
+</body>
+</html>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>изменение_позиции</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion position_change" />
+  <meta name="rh-index-keywords" content="position_change" />
+  <meta name="search-keywords" content="position_change" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>изменение_позиции</h1>
+  <p>Эта функция проверит позицию на столкновение с <i>любыми экземплярами</i> в заданной точке, и если таковое имеется, то изменит <b>все</b> экземпляры в столкновении на экземпляры выбранного объекта. Вы можете установить аргумент &quot;perf&quot; в значение
+   <tt>true</tt>, что заставит <span class="notranslate">GameMaker Studio 2</span> выполнить события <strong>Destroy</strong> и <strong>Clean Up</strong> найденного экземпляра, а также событие <strong>Create</strong> нового экземпляра, или <tt>false</tt>, чтобы не выполнить ни одно из этих событий.
+    чтобы не выполнять ни одно из этих событий. Обратите внимание, что если вы не выполните события Destroy, Clean Up и Create, то любой созданный экземпляр, использующий переменную, которая обычно определяется в событии create, приведет к аварийному завершению игры, так как переменная больше не будет существовать.
+    существовать.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">position_change(x, y, obj, perf);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Координата x места изменения сталкивающихся экземпляров.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Координата y места изменения сталкивающихся экземпляров.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Новый объект, в который превратится вызывающий объект.</td>
+      </tr>
+      <tr>
+        <td>перф</td>
+        <td>Выполнять ли событие Create этого нового объекта (true) или нет (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">position_change(200, 200, obj_Bird, true);</p>
+  <p>Это изменит все экземпляры, столкнувшиеся в точке (200,200), на экземпляр &quot;obj_Bird&quot;, выполнив для каждого из них событие Create.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Collisions.htm">Коллизии</a></div>
+        <div style="float:right">Далее: <a href="position_destroy.htm">position_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+position_change
+-->
+  <!-- TAGS
+position_change
+-->
+</body>
+</html>

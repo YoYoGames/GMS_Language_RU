@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_play_sound_on</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_play_sound_on" />
+  <meta name="rh-index-keywords" content="audio_play_sound_on" />
+  <meta name="search-keywords" content="audio_play_sound_on" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_play_sound_on</h1>
+  <p>С помощью этой функции вы можете воспроизводить любой звуковой ресурс через эмиттер, причем любые изменения усиления, положения, высоты тона или скорости эмиттера влияют на то, как пользователь слышит конечный воспроизводимый звук. Вы указываете индекс эмиттера для использования, индекс звука
+    звука, который будет воспроизводиться, а затем указываете, должен ли звук зацикливаться или нет. Наконец, вы можете назначить приоритет, который затем используется для определения того, как звуки будут обрабатываться, когда количество воспроизводимых звуков превысит предел, установленный функцией 
+    <a href="../audio_channel_num.htm"><tt>audio_channel_num()</tt></a>. Звуки с более низким приоритетом будут остановлены в пользу звуков с более высоким приоритетом, а значение приоритета может быть любым реальным числом (фактическое значение произвольно и может быть от 0 до 1 или от 0 до 100, так как <span class="notranslate">GameMaker Studio 2</span> будет расставлять приоритеты одинаково).
+      расставлять приоритеты одинаково). Обратите внимание, что при работе с приоритетами чем <i>больше</i> число, тем <i>выше</i> приоритет, поэтому звук с приоритетом 100 будет предпочтительнее звука с приоритетом
+      приоритет 1.</p>
+  <p>Эта функция также возвращает уникальный индексный номер воспроизводимого звука, который затем можно сохранить в переменной, чтобы затем приостановить или остановить его с помощью соответствующих функций. Это означает, что если у вас есть несколько экземпляров одного и того же
+    в любой момент времени вы можете выбрать только один экземпляр этого звука для работы с ним с помощью аудиофункций.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_play_sound_on(emitter, sound, loop, priority);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>эмиттер</td>
+        <td>Индекс эмиттера, который необходимо использовать.</td>
+      </tr>
+      <tr>
+        <td>звук</td>
+        <td>Индекс используемого звука.</td>
+      </tr>
+      <tr>
+        <td>петля</td>
+        <td>Помечает звук как зацикленный или нет.</td>
+      </tr>
+      <tr>
+        <td>приоритет</td>
+        <td>Установите приоритет канала для звука.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Индекс</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if global.SFX<br> {
+    <br> audio_play_sound_on(s_emit, snd_Explode, false, 1);<br> }
+  </p>
+  <p>Приведенный выше код проверяет глобальную переменную &quot;SFX&quot;, и если она возвращает true, то звук <tt>,</tt> индексированный в переменной &quot;snd_Explode&quot;, будет воспроизведен через эмиттер, индексированный в переменной &quot;s_emit&quot;
+    с низким приоритетом и без зацикливания.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio_Emitters.htm">Аудиоизлучатели</a></div>
+        <div style="float:right">Далее: <a href="audio_emitter_get_gain.htm">audio_emitter_get_gain</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_play_sound_on
+-->
+  <!-- TAGS
+audio_play_sound_on
+-->
+</body>
+</html>

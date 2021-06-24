@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>room_set_persistent</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_set_persistent" />
+  <meta name="rh-index-keywords" content="room_set_persistent" />
+  <meta name="search-keywords" content="room_set_persistent" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>room_set_persistent</h1>
+  <p>С помощью этой функции вы можете изменить (или установить) персистентность любой комнаты в вашей игре, <i>кроме текущей</i>. Комната, в которой постоянство отмечено как <tt>true</tt>, будет сохранять состояние всех экземпляров внутри этой комнаты, если игрок покинет ее, а затем вернется.
+    затем вернется, в то время как если постоянство отмечено как <tt>false</tt>, она будет каждый раз сбрасываться в начальное состояние. Следует отметить, что постоянная комната использует значительно больше памяти, чем обычная комната, поэтому не рекомендуется иметь слишком много таких комнат в игре.
+    их в вашей игре.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция <b>НЕ</b> будет работать для отключения постоянства, если комната уже была посещена! Постоянная комната, после посещения, хранится в памяти, и чтобы отключить постоянство, вы должны зайти в эту комнату и установить переменную <span style="font-size:1px;"><a href="room_persistent.htm"><tt style="font-size: 14px">room_persistent</tt></a></span>    переменную в <tt>false</tt>, а затем снова выйти из комнаты.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">room_set_persistent(index, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс комнаты, для которой нужно установить постоянство.</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>Должна ли комната быть постоянной<tt>(true</tt>) или нет<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">global.myroom = room_add();<br> room_set_width(global.myroom, 640);<br> room_set_height(global.myroom, 480);<br> room_set_persistent(global.myroom, true);</p>
+  <p>Это создаст новую комнату и сохранит ее индекс в переменной &quot;global.myroom&quot;. Затем она установит ее ширину 640 пикселей, высоту 480 пикселей, надпись 'Game Room' и постоянство 'true'.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Rooms.htm">Номера</a></div>
+        <div style="float:right">Далее: <a href="room_set_view_enabled.htm">room_set_view_enabled</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_set_persistent
+-->
+  <!-- TAGS
+room_set_persistent
+-->
+</body>
+</html>

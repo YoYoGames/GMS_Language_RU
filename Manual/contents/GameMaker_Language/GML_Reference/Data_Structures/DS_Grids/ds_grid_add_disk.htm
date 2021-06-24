@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_add_disk</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_add_disk" />
+  <meta name="rh-index-keywords" content="ds_grid_add_disk" />
+  <meta name="search-keywords" content="ds_grid_add_disk" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_add_disk</h1>
+  <p>Эта функция может быть использована для добавления заданного значения (вещественного или строкового) ко всем значениям ячеек, находящихся в пределах определенной области диска сетки. Добавляемое значение должно быть того же типа, что и ячейки сетки, т.е. нельзя добавить строку к вещественному значению или наоборот.
+    к вещественному или наоборот, а для строк это соответствует конкатенации.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_grid_add_disk(index, xm, ym, r, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс сетки.</td>
+      </tr>
+      <tr>
+        <td>xm</td>
+        <td>Позиция x диска на сетке.</td>
+      </tr>
+      <tr>
+        <td>ym</td>
+        <td>Позиция y диска на сетке.</td>
+      </tr>
+      <tr>
+        <td>r</td>
+        <td>Радиус диска на сетке.</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>Значение, добавляемое к ячейкам на диске.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">ds_grid_add_disk(grid, 7, 6, 5, 2)</p>
+  <p>Это добавит 2 ко всем значениям, хранящимся в ячейках в пределах определенной области диска сетки DS, на которую ссылается переменная &quot;grid&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="DS_Grids.htm">DS Grids</a></div>
+        <div style="float:right">Далее: <a href="ds_grid_add_grid_region.htm">ds_grid_add_grid_region</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_add_disk
+-->
+  <!-- TAGS
+ds_grid_add_disk
+-->
+
+</body></html>

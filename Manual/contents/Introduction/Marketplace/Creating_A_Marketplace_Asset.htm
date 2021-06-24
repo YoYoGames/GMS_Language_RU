@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Создание рыночного актива</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining how to make a Marketplace package" />
+  <meta name="rh-index-keywords" content="Marketplace - Creating An Asset" />
+  <meta name="search-keywords" content="Marketplace,upload,package" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Создание <span class="notranslate">рыночного</span> актива</h1>
+  <p>Когда вы выберете опцию <strong>Create Package</strong> из <a href="../../IDE_Navigation/Menus/The_Marketplace_Menu.htm">меню</a> IDE <a href="../../IDE_Navigation/Menus/The_Marketplace_Menu.htm"><span class="notranslate">Marketplace</span></a>, вы попадете в следующее рабочее пространство:<img alt="Marketplace Create Package" class="center" src="../../assets/Images/Introduction/Tools_Marketplace_CreatePackage.png">. <span style="display: none;"> </span> <span class="droptext" data-targetname="drop_down4"> <span class="dropspot">Здесь</span></span> Сначала вы должны выбрать издателя
+    в качестве которого вы хотите опубликовать пакет активов (который вы должны были настроить на <a href="Creating_A_Publisher_Account.htm">панели Publisher Dashboard</a>), затем указать <strong>отображаемое имя</strong> и <a class="glossterm" data-glossterm="Номер версии" href="#">номер версии</a>. Идентификатор пакета будет создан на основе отображаемого имени и используемой учетной записи издателя, но вы можете изменить его на другой, если хотите, чтобы он сохранял формат обратного URL. Затем вам нужно выбрать
+    тип пакета активов, который необходимо создать:</p>
+  <ul class="colour">
+    <li class="dropspot"><strong>Asset</strong>: Это коллекция активов (спрайты, скрипты, объекты и т.д...), которые вы хотите продать на <span class="notranslate">Marketplace</span>.</li>
+    <li class="dropspot"><strong>Демо</strong>: Это демо-версия для демонстрации некоторой концепции или идеи игры</li>
+    <li class="dropspot"><strong>Учебник</strong>: Загружаемый актив является учебником, предназначенным для запуска из среды <span class="notranslate">GameMaker Studio 2</span> (подробнее см. на <a href="Creating_A_Tutorial.htm">этой странице</a> ).</li>
+  </ul>
+  <p>После этого вы можете выбрать, какие активы из проекта вы хотите добавить в пакет активов, используя раздел справа. Вы можете добавить все активы или только некоторые из них, а также удалить те, которые вы могли добавить по ошибке.
+    Предполагается, что вы создали загружаемые активы ранее в <span class="notranslate">GameMaker Studio 2</span> и что текущий проект содержит все, что вам нужно загрузить.</p>
+  <p class="note"><strong>ПОМНИТЕ!</strong> Чтобы иметь возможность создавать или использовать пакеты активов, вы должны предварительно создать сертификат профиля пользователя. Вы можете сделать это в Настройках <span class="notranslate">Marketplace</span>, о чем рассказывается <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Marketplace_Preferences.htm">здесь</a>.</p>
+  <p>Когда вы будете удовлетворены выбором активов и захотите загрузить свой пакет в <span class="notranslate">Marketplace</span>, просто нажмите кнопку <em>Okay</em> внизу, и пакет активов будет создан и загружен в <span class="notranslate">Marketplace</span>. Когда загрузка будет завершена,
+    откроется новая рабочая область с просмотром страницы актива в браузере для редактирования. Более подробную информацию о том, как это настроить, см. на следующей странице:</p>
+  <ul class="colour">
+    <li><a href="Listing_An_Asset.htm">Перечисление активов</a></li>
+  </ul>
+  <p>Если вам нужно обновить <span class="notranslate">Marketplace</span> Asset, вы делаете примерно то же самое, что и при создании исходного пакета, только теперь вам нужно указать пакет для обновления из выпадающего списка доступных пакетов:</p>
+  <p><img alt="Update Asset List Of Assets" class="center" src="../../assets/Images/Introduction/Tools_Marketplace_UpdateAsset.png">При обновлении вы не сможете изменить ID пакета, и вы должны знать, что отображаемый <a class="glossterm" data-glossterm="Номер версии" href="#">номер версии</a> будет <em>текущим </em>номером версии, и вы <strong>должны увеличивать его по мере необходимости</strong>, иначе обновление будет неудачным (поскольку вы не можете иметь два пакета активов с одинаковым номером версии). На сайте
+    также есть поле, в котором можно добавить текст для журнала изменений актива, который будет загружен вместе с активом и отображен на странице <span class="notranslate">Marketplace</span>. </p>
+  <p class="note"><strong>ВАЖНО!</strong> Активы, созданные в <span class="notranslate">GameMaker Studio</span> версии 2.3+, будут доступны только тем пользователям, которые используют версию 2.3 и выше. Если вы обновляете актив с предыдущей версии, этот актив все еще будет доступен для пользователей.
+    которые не обновились, и будет сосуществовать с обновленной версией 2.3+.</p>
+  <p> </p>
+  <h2>Загрузка через веб-страницу</h2>
+  <p>Вы можете загружать активы через веб-страницу <span class="notranslate">Marketplace</span>, а не через IDE, что может понадобиться, если загрузка через IDE по какой-либо причине не удалась. Для начала вы создадите пакет и попытаетесь загрузить его через IDE, как показано выше.
+    IDE, как показано выше, и если это не удалось, перейдите в <a href="../The_Output_Window.htm">окно Output Window</a> и проверьте журнал на наличие строки, показывающей, куда был сохранен создаваемый пакет перед попыткой загрузки. Например:</p>
+  <p>На сайте <strong><span class="notranslate">Windows</span></strong>:</p>
+  <p class="code">Создан файл пакета:<br> C:\Users\WINDOWSUSERNAME\AppData\Roaming\GameMakerStudio2\GMS2USERNAME\Marketplace\Packages\com.publishername.assetname.yymp
+  </p>
+  <p>На сайте <strong><span class="notranslate">macOS</span></strong>:</p>
+  <p class="code">Создан файл пакета:<br> /Users/MACUSERNAME/.config/GameMakerStudio2/GMS2USERNAME/Marketplace/Packages/com.publishername.assetname.yymp
+  </p>
+  <p>Вам необходимо перейти в это место и скопировать файл <span class="inline">*.YYMP</span> в безопасное место, поскольку именно этот файл вы будете загружать на <span class="notranslate">Marketplace</span>.</p>
+  <p>На этом этапе вам необходимо открыть <span class="notranslate">Marketplace</span> в веб-браузере и перейти к листингу актива, затем перейти в раздел <strong>Версии</strong>, а затем нажать кнопку <strong>Загрузить версию</strong>, как показано на рисунке
+    ниже:</p>
+  <p><img alt="Upload A New Asset Version" class="center" src="../../assets/Images/Introduction/MP_CreateVersion.png">Это приведет вас на страницу загрузки новой версии, где вы можете добавить информацию о загружаемой версии, если это необходимо.
+    а также предоставить файл, нажав кнопку <strong>Choose FIle</strong> и выбрав ранее созданный файл <span class="inline">*.YYMP</span>:</p>
+  <p><img alt="New Version Marketplace Upload Window" class="center" src="../../assets/Images/Introduction/MP_NewVersion.png">Добавление файла загрузит версии и покажет индикатор &quot;прогресса&quot;, а когда загрузка будет завершена и вы будете удовлетворены
+    детали, вы можете нажать кнопку <strong>Сохранить</strong>, чтобы сохранить актив в листинге. Обратите внимание, что актив будет находиться в стадии <strong>обработки</strong> в течение нескольких минут, прежде чем его можно будет опубликовать.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../The_Marketplace.htm"> <span class="notranslate">Рынок</span></a></div>
+        <div style="float:right">Следующее: <a href="Creating_A_Tutorial.htm">Создание <span class="notranslate">торговой площадки</span></a>Учебник</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Marketplace</span> - Creating An Asset Package
+<span class="notranslate">Marketplace</span> - Updating An Asset
+Updating <span class="notranslate">Marketplace</span>
+Creating <span class="notranslate">Marketplace</span> Assets
+-->
+  <!-- TAGS
+marketplace_create
+-->
+
+</body></html>

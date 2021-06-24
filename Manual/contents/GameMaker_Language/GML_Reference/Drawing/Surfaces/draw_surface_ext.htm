@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>нарисовать_поверхность_экст</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_surface_ext" />
+  <meta name="rh-index-keywords" content="draw_surface_ext" />
+  <meta name="search-keywords" content="draw_surface_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>нарисовать_поверхность_экст</h1>
+  <p>Эта функция рисует заданную поверхность, как в функции <a href="draw_surface.htm"><tt>нарисовать_поверхность()</tt></a> но с дополнительными опциями для изменения масштаба, смешивания, вращения и альфа-функции рисуемой поверхности. Изменение этих значений
+    никак <i>не</i> изменяет ресурс (только то, как он рисуется).</p>
+  <p class="note"><b></b><b>ПРИМЕЧАНИЕ</b>: При работе с поверхностями существует вероятность того, что они могут перестать существовать в любой момент, поскольку хранятся в памяти текстур. Вы должны <b>ВСЕГДА</b> проверять существование поверхности с помощью функции <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    перед непосредственным обращением к ней.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_surface_ext(id, x, y, xscale, yscale, rot, col, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Уникальное значение ID поверхности для рисования.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Позиция x в месте рисования поверхности.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Положение по оси y места рисования поверхности.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>Горизонтальная шкала.</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>Вертикальная шкала.</td>
+      </tr>
+      <tr>
+        <td>гниение</td>
+        <td>Поворот или угол для рисования поверхности.</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Цвет, которым будет смешиваться поверхность.</td>
+      </tr>
+      <tr>
+        <td>альфа</td>
+        <td>Альфа-прозрачность для рисования поверхности.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_surface_ext(surf, 0, 0, 0, 2, 2, 0, c_red, 0.5);</p>
+  <p>Приведенный выше код нарисует поверхность, индексированную в переменной &quot;surf&quot; в позиции (0,0) в комнате, с удвоенным исходным масштабом, с красной и полупрозрачной смесью.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Surfaces.htm">Поверхности</a></div>
+        <div style="float:right">Далее: <a href="draw_surface_part.htm">нарисовать_поверхность_части</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_surface_ext
+-->
+  <!-- TAGS
+draw_surface_ext
+-->
+</body>
+</html>

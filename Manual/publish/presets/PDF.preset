@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preset>
+  <content>
+    <toc>
+      <path>../../toc/Default.toc</path>
+      <name>Default</name>
+    </toc>
+    <masterpage>
+      <path>../../contents/assets/masterpages/pdf.htt</path>
+    </masterpage>
+    <brs type="array"></brs>
+    <mapFiles type="array"></mapFiles>
+    <includereftopics type="boolean">true</includereftopics>
+  </content>
+  <starterPage>Default.pdf</starterPage>
+  <search>
+    <context type="boolean">false</context>
+    <contextLimit></contextLimit>
+  </search>
+  <sitemap>
+    <use type="boolean">false</use>
+    <changeFrequency></changeFrequency>
+    <helpBaseURL></helpBaseURL>
+  </sitemap>
+  <name>PDF</name>
+  <type>pdf</type>
+  <title>Blank Project</title>
+  <pdf>
+    <multiHeaders type="boolean">false</multiHeaders>
+    <margin type="array">
+      <marginitem>15mm</marginitem>
+      <marginitem>15mm</marginitem>
+      <marginitem>15mm</marginitem>
+      <marginitem>15mm</marginitem>
+    </margin>
+    <multiheaders type="boolean">false</multiheaders>
+    <useTopicsAndChaptersForToc type="boolean">true</useTopicsAndChaptersForToc>
+    <portraitLayout type="boolean">true</portraitLayout>
+    <startTopicsFromNewPage type="boolean">true</startTopicsFromNewPage>
+    <startChapterFromNewPage type="boolean">true</startChapterFromNewPage>
+    <mergePdfs type="boolean">true</mergePdfs>
+    <embeddFonts type="boolean">true</embeddFonts>
+  </pdf>
+  <outputPath>C:/Users/Kai/Documents/My RoboHelp Projects/outputs/GMS2 Manual/PDF</outputPath>
+  <patchHomepage type="boolean">true</patchHomepage>
+</preset>

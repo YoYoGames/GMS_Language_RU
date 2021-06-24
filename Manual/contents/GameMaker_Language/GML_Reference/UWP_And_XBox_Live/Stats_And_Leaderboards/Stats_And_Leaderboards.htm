@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Статистика и таблицы лидеров</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the XBox Live Stats And Leaderboards functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="XBox Live Stats,Xbox Live Leaderboards" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Статистика и таблицы лидеров</h1>
+  <p>Xbox One Stats (достижения и таблицы лидеров) функционируют при использовании UWP и имеют некоторые специальные функции для работы с ними, хотя они также используют некоторые стандартные встроенные функции для таблиц лидеров. Система статистики Xbox Live 2017 года упрощает
+    всю процедуру создания достижений и таблиц лидеров, позволяя создавать и использовать различные системы из <span class="notranslate">GameMaker Studio 2</span>. Основное отличие системы 2017 года от предыдущих систем
+    заключается в том, что вам больше не нужно определять все статистики, используемые в игре, в XDP, и вам также не нужно привязывать разблокировку достижений к событию/правилу статистики (поскольку они разблокируются прямым вызовом функции).</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Хотя для этой системы не требуется файл манифеста, вы все равно можете установить некоторые статистики на XDP/MDC. Установленные там статистики будут считаться <b>специальными статистиками</b>, что означает, что вы можете иметь глобальные таблицы лидеров и
+    статистика будет отображаться на странице приборной панели игры. Для получения дополнительной информации см. статью MS <a href="https://docs.microsoft.com/en-us/windows/uwp/xbox-live/leaderboards-and-stats-2017/player-stats-configure-2017" target="_blank">Configuring Featured Stats or Leaderboards on Universal Dev Center with Data Platform 2017</a>.</p>
+  <p>Перед вызовом любой из функций статистики, перечисленных ниже, вы должны убедиться, что пользователь вошел в систему (см. функции User, перечисленные выше), затем настроить систему статистики и добавить пользователя в нее с помощью этих функций:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="xboxlive_stats_setup.htm">xboxlive_stats_setup</a></li>
+    <li><a href="xboxlive_stats_add_user.htm">xboxlive_stats_add_user</a></li>
+  </ul>
+  <p> </p>
+  <p>Остальные статфункции 2017 года следующие:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="xboxlive_stats_remove_user.htm">xboxlive_stats_remove_user</a></li>
+    <li><a href="xboxlive_stats_flush_user.htm">xboxlive_stats_flush_user</a></li>
+    <li><a href="xboxlive_stats_set_stat_real.htm">xboxlive_stats_set_stat_real</a></li>
+    <li><a href="xboxlive_stats_set_stat_int.htm">xboxlive_stats_set_stat_int</a></li>
+    <li><a href="xboxlive_stats_set_stat_string.htm">xboxlive_stats_set_stat_string</a></li>
+    <li><a href="xboxlive_stats_delete_stat.htm">xboxlive_stats_delete_stat</a></li>
+    <li><a href="xboxlive_stats_get_stat_names.htm">xboxlive_stats_get_stat_names</a></li>
+    <li><a href="xboxlive_stats_get_stat.htm">xboxlive_stats_get_stat</a></li>
+    <li><a href="xboxlive_stats_get_leaderboard.htm">xboxlive_stats_get_leaderboard</a></li>
+    <li><a href="xboxlive_stats_get_social_leaderboard.htm">xboxlive_stats_get_social_leaderboard</a></li>
+    <li><a href="xboxlive_achievements_set_progress.htm">xboxlive_achievements_set_progress</a></li>
+    <li><a href="xboxlive_get_stats_for_user.htm">xboxlive_get_stats_for_user</a></li>
+    <li><a href="xboxlive_read_player_leaderboard.htm">xboxlive_read_player_leaderboard</a></li>
+    <li><a href="xboxlive_fire_event.htm">xboxlive_fire_event</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../UWP_And_XBox_Live.htm">UWP и XBox Live</a></div>
+        <div style="float:right">Следующий: <a href="../Match_Making/Match_Making.htm">Сопоставление</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+XBox Live Stats And Leaderboards
+-->
+  <!-- TAGS
+xboxlive_stat_functions
+-->
+</body>
+</html>

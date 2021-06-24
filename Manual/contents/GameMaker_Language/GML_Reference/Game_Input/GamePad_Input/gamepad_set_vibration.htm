@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_set_vibration</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_set_vibration" />
+  <meta name="rh-index-keywords" content="gamepad_set_vibration" />
+  <meta name="search-keywords" content="gamepad_set_vibration" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_set_vibration</h1>
+  <p>С помощью этой функции вы можете настроить вибрацию моторов геймпада, причем для каждого мотора используется значение от 0 (без вибрации) до 1 (полная вибрация). Обратите внимание, что в этой функции нет ограничения по времени, поэтому вам нужно будет использовать переменную или сигнал тревоги, чтобы отключить вибрацию (установить моторы на 0) по истечении заданного времени.
+    отключить вибрацию (установить моторы в 0) по истечении заданного времени, иначе геймпад будет продолжать вибрировать бесконечно.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция в настоящее время доступна только для стандартных <b><span class="notranslate">Windows</span></b>, <b>PS4</b> и <b>Xbox One</b> целевых модулей.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gamepad_set_vibration(device, left_motor, right_motor);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>устройство</td>
+        <td>Какой &quot;слот&quot; устройства геймпада нужно проверить.</td>
+      </tr>
+      <tr>
+        <td>левый двигатель</td>
+        <td>Величина вибрации от левого двигателя от 0 до 1.</td>
+      </tr>
+      <tr>
+        <td>правый двигатель</td>
+        <td>Величина вибрации от правого двигателя от 0 до 1.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if lives = 0<br> {
+    <br> gamepad_set_vibration(0, 1, 1);<br> alarm[0] = room_speed / 2;<br> }
+  </p>
+  <p>Приведенный выше код можно использовать (например) в событии столкновения, чтобы заставить геймпад, подключенный к &quot;гнезду&quot; 0, вибрировать в течение половины секунды, а установленный сигнал тревоги будет использоваться для его повторного отключения по истечении этого времени.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Gamepad_Input.htm">Вход геймпада</a></div>
+        <div style="float:right">Далее: <a href="gamepad_set_colour.htm"> gamepad_set_colour </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_set_vibration
+-->
+  <!-- TAGS
+gamepad_set_vibration
+-->
+
+</body></html>

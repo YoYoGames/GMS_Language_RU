@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Типы данных</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining Data Types" />
+  <meta name="rh-index-keywords" content="Data Types" />
+  <meta name="search-keywords" content="Data Types" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Типы данных</h1>
+  <p>В предыдущих разделах мы рассмотрели <a href="Variables_And_Variable_Scope.htm">переменные и правила их определения</a>, но мало что было сказано о различных <b>типах данных</b>, которые может хранить переменная. Поэтому в этом разделе мы объясним различные
+    типы и для чего они могут быть использованы.</p>
+  <p>Прежде чем продолжить, давайте вкратце объясним, что мы подразумеваем под &quot;типами данных&quot;. Когда вы создаете переменную, она может использоваться для хранения информации, а когда вы вызываете функцию, она также может хранить возвращаемую информацию. Однако эта информация
+    может иметь различные &quot;вкусы&quot; - например, это может быть вещественное <em>число или</em> строка. Эти различные типы используемых значений называются <b>типами данных</b>, и при использовании<span class="notranslate">языка GameMaker</span> они могут
+    быть любыми из следующих:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Струны</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot"><label for="one">Строка - это любой текст, заключенный в кавычки &quot;...&quot;. Со строками можно выполнять определенные операции, например, складывать две строки вместе для создания более длинной строки (конкатенация), а также изменять свойства строки и даже извлекать из нее вещественные числа. Более подробную информацию о строках и строковых функциях см: <a href="../GML_Reference/Strings/Strings.htm"><span class="notranslate">GML</span></a> Reference - Strings.</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Реальные цифры</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Вещественные числа - это любое значение, которое не является ни строкой, ни одним из других возможных типов данных. Так, 124, 45639.566546456, 0, -45.5 и т.д... - все это примеры вещественных чисел. Все вещественные числа хранятся в виде значений с плавающей точкой двойной точности или целых чисел (либо 32-битных целых чисел).
+      (либо 32-битные целые числа - <span class="inline">int32</span> - либо 64-битные целые числа - <span class="inline">int64</span>), и компилятор оптимизирует их там, где это возможно (например, 0.0 будет оптимизировано до целочисленного значения 0). При работе
+      с любым значением, которое не является целым числом, вы можете столкнуться с небольшими ошибками округления из-за природы математики с плавающей запятой. Для получения дополнительной информации об этой и других функциях, связанных с числами, см: <a href="../GML_Reference/Maths_And_Numbers/Number_Functions/Number_Functions.htm"><span class="notranslate">GML</span></a> Reference - Number Functions.</p>
+    <p class="note"><b>ПРИМЕЧАНИЕ</b>: В цели <b>HTML5</b> все действительные числа являются двойными.</p>
+    <p class="dropspot">Обратите внимание, что хотя все созданные переменные в <span class="notranslate">GameMaker Studio 2</span> хранятся как числа с плавающей точкой двойной точности или целые числа, вы можете использовать другие форматы при работе с расширениями. Они могут быть переданы в <span class="notranslate">GameMaker Studio 2</span> из расширения
+      и затем проверить с помощью соответствующей функции <tt>is_*()</tt>, список которых можно найти <a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">здесь</a>.</p>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Массивы</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot"><label for="three">Массив - это специальный тип данных, который можно использовать для хранения нескольких значений. Вы присваиваете массив переменной, а затем &quot;заполняете&quot; различные индексы массива значениями. Этот массив можно передавать скриптам и функциям по ссылке, однако если вы измените переданный массив, он станет копией исходного массива, поэтому для обновления массива его нужно будет вернуть обратно в исходную переменную. Для получения дополнительной информации о массивах см: <a href="Arrays.htm">Обзор<span class="notranslate">GML</span></a>- Массивы.</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Структуры</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot"><label for="eleven">Структура (иногда называемая &quot;легким объектом&quot;) - это необработанная структура данных, которая служит контейнером для переменных всех типов данных. Вы присваиваете структуру переменной, а в структуре можно определить дополнительные переменные, которые можно читать или записывать по мере необходимости. Более подробную информацию о структурах можно найти в разделе <a href="Structs.htm">Обзор<span class="notranslate">GML</span></a>- Структуры.</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Переменные метода</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot"><label for="twelve">Переменная метода - это переменная, которой присвоена функция, и ее можно использовать точно так же, как и функцию <span class="notranslate">времени выполнения</span> <span class="notranslate">GML</span>. Для получения более подробной информации см. раздел <a href="Method_Variables.htm">Переменные метода</a>.</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Шестнадцатеричные значения</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot"><span class="notranslate">GameMaker Studio 2</span> может принимать <b>шестнадцатеричные литералы</b> в качестве законных значений. Шестнадцатеричные значения особенно часто встречаются при работе с цветами, но могут использоваться везде, где требуется целочисленное положительное значение. Обратите внимание, что шестнадцатеричные значения могут
+      быть отформатированы одним из следующих двух способов, где <span class="inline">&lt;<em>abcd</em>&gt;</span> - это фактическое шестнадцатеричное значение:</p>
+    <p class="code"><span style="background-color: transparent;">$&lt; abcd&gt;</span><span style="background-color: transparent;"></span><br> 0x&lt;
+     <em>abcd&gt;</em></p>
+    <p class="dropspot">Например, следующие значения могут быть выражены в шестнадцатеричном виде, как показано на рисунке:</p>
+    <p class="code">11406 = $2c8e = 0x2c8e<br> 16777215 = $ffffffff = 0xffffffff</p>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Булево</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">Булево число - это просто значение, которое может быть либо <tt>истинным</tt>, либо <tt>ложным</tt>. Обратите внимание, что в настоящее время <span class="notranslate">GameMaker Studio 2</span> интерпретирует вещественное число, равное или меньшее 0,5, как <tt>ложное</tt> значение, а любое вещественное число, большее 0,5, как <tt>истинное</tt>.
+      Однако это <i>не</i> означает, что вы должны проверять 1 и 0 (или любое другое вещественное число) на истинность и ложность, поскольку вам также предоставляются <b>константы</b> <tt>true</tt> и <tt>false</tt>, которые всегда должны использоваться в вашем коде, чтобы
+      предотвратить любые проблемы в случае добавления реальных булевых типов данных в будущем обновлении.</p>
+    <p class="dropspot">Вы можете преобразовать любое вещественное число в неявное булево значение с помощью следующей функции:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../GML_Reference/Variable_Functions/bool.htm">bool</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Указатель</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">Указатель - это тип данных, который &quot;указывает&quot; на область памяти. Вы не можете выполнять операции с указателем, и он используется только для некоторых очень специфических функций, например, для получения адреса текстуры или буфера из памяти для другой функции. Для примера
+      функций, возвращающих указатель, вы можете посмотреть в разделе <a href="../GML_Reference/Buffers/buffer_get_address.htm"><tt>buffer_get_address()</tt></a> или <a href="../GML_Reference/Asset_Management/Sprites/Sprite_Information/sprite_get_texture.htm"><tt>sprite_get_texture()</tt></a>.</p>
+    <p class="dropspot">Существует также функция для проверки того, является ли значение указателем (см. раздел &quot;Проверка<b>типов данных&quot;,</b> ниже), и функция для преобразования значения в указатель:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="../GML_Reference/Variable_Functions/ptr.htm" style="background-color: transparent;">ptr</a></li>
+    </ul>
+    <p class="dropspot">Вы также можете использовать (и получать обратно) следующие встроенные константы при использовании указателей:</p>
+    <p class="dropspot"> </p>
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>Постоянная</th>
+          <th>Описание</th>
+        </tr>
+        <tr>
+          <td><span class="inline">pointer_null</span></td>
+          <td>Эта константа указывает, что указатель не указывает ни на что значимое (то же самое, что <tt>NULL</tt> в C++ или null в C#).</td>
+        </tr>
+        <tr>
+          <td><span class="inline">pointer_invalid</span></td>
+          <td>Эта константа просто означает, что значение не является действительным указателем</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Enum</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">Перечисление - это &quot;перечислитель&quot;, и оно позволяет создать собственный ограниченный тип данных со списком постоянных значений. Перечисления подробно описаны на странице <a href="Variables/Constants.htm">Константы</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Неопределенный</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot"><label for="seven">Неопределенное значение (также известное как &quot;нулевое&quot; значение) - это такое значение, когда выражение не имеет правильного значения, хотя синтаксически оно правильно, и поэтому должно что-то вернуть. Например, допустим, у вас есть <a href="../GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">карта DS</a> и вы используете функцию <a href="../GML_Reference/Data_Structures/DS_Maps/ds_map_find_value.htm"><tt>ds_map_find_value()</tt></a>. Что произойдет, если в карте не будет искомого значения? Ну, поскольку функция правильно отформатирована, и проблема в том, что такого значения не существует, то она вернет <b>константу</b> <tt>undefined</tt>, и вы можете проверить эту константу так же, как проверяли бы <tt>true</tt> или любое другое значение.</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">NaN</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot"><label for="nine"><tt>NaN</tt> означает &quot;не число&quot; и является константой, которая может быть возвращена, когда компилятор не может оценить результаты операции как число. Например, 0/0 не может быть определено как действительное число и поэтому представляется <tt>NaN</tt>, или квадратный корень из отрицательного числа - которое считается &quot;мнимым&quot; числом - не может быть представлен как действительное число и поэтому представляется NaN.</label></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">Бесконечность</a></p>
+  <div class="droptext" data-targetname="drop-down11">
+    <p class="dropspot">Постоянная <tt>бесконечность</tt> относится к числу, которое считается бесконечным, например, результат, который вы получите при делении любого значения с плавающей запятой на ноль, например: 1.0/0.</p>
+  </div>
+  <p> </p>
+  <p>Вы можете проверить тип данных любой переменной с помощью функций, перечисленных на следующей странице:</p>
+  <ul class="colour">
+    <li><a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">Переменные функции</a></li>
+  </ul>
+  <p>Здесь вы также можете найти таблицы арифметических типов, которые показывают результаты различных операций с использованием смешанных типов данных переменных:</p>
+  <ul class="colour">
+    <li><a href="../../Additional_Information/Type_Tables.htm">Типовые столы</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="GML_Overview.htm">Обзор<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Следующий: <a href="Instance_Keywords.htm">Ключевые слова экземпляра</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Data Type - Real
+Data Type - String
+Data Type - Pointer
+Data Type - Undefined
+Data Type - Enum
+Data Type - True
+Data Type - False
+Data Type - Array
+Data Type - Boolean
+Data Type - NaN
+Data Type - Infinite
+Data Type - Struct
+real
+string
+pointer
+undefined
+enum
+true
+false
+arrays
+boolean
+NaN
+infinite
+ptr
+struct
+pointer_null
+pointer_invalid
+-->
+  <!-- TAGS
+data_type
+real
+string
+pointer
+undefined
+enum
+true
+false
+arrays
+boolean
+ptr
+struct
+pointer_null
+pointer_invalid
+-->
+</body>
+</html>

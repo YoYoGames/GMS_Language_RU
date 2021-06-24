@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sync_group_debug</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_sync_group_debug" />
+  <meta name="rh-index-keywords" content="audio_sync_group_debug" />
+  <meta name="search-keywords" content="audio_sync_group_debug" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_sync_group_debug</h1>
+  <p>его функцию можно использовать для отображения отладочной информации о любой заданной группе синхронизации (индекс группы - это значение, возвращенное при создании группы с помощью функции <a href="audio_create_sync_group.htm"><tt>audio_create_sync_group()</tt></a>). Вы
+    можно вызвать функцию со значением -1, чтобы отключить наложение.</p>
+  <p>При отладке групп синхронизации звука будет отображаться накладка:</p>
+  <ul class="colour">
+    <li>Какая группа синхронизации отлаживается</li>
+    <li>Сколько каналов в нем</li>
+    <li>Сколько раз группа синхронизации терпела неудачу (это означает, что она пыталась выполнить слишком большой объем работы)</li>
+    <li>Список каналов
+      <ul class="colour">
+        <li>Красный цвет означает, что данный канал в настоящее время не выполняет никакой работы</li>
+        <li>Желтый означает, что канал находится в начальном состоянии (еще не декодирует и не воспроизводит)</li>
+        <li>Зеленый означает, что канал в настоящее время ищет/декодирует</li>
+        <li>Фиолетовый означает, что на канале закончились данные</li>
+      </ul>
+    </li>
+    <li>Полоса профилирования, показывающая, какую работу выполняет поток декодирования
+      <ul class="colour">
+        <li>синий цвет означает, что файл читается в первый раз</li>
+        <li>красный означает, что поток читает файл, чтобы определить, откуда читать данные</li>
+        <li>зеленый означает, что поток декодирует данные</li>
+        <li>фиолетовый означает, что поток находится в состоянии сна до тех пор, пока ему не понадобится работа</li>
+      </ul>
+    </li>
+  </ul>
+  <p>Обратите внимание, что для общей отладки аудио у вас также есть функция <a href="../audio_debug.htm"><tt>audio_debug()</tt></a>.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функциональность недоступна для целевой платформы HTML5.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_sync_group_debug(group_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>групповой_индекс</td>
+        <td>Индекс группы для отладки, или -1 для отключения отладки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if (debug_mode)<br> {
+    <br> audio_sync_group_debug(sg);
+    <br> }
+    <br> else
+    <br> {
+    <br> audio_sync_group_debug(-1);
+    <br> }
+  </p>
+  <p>Приведенный выше код будет включать или выключать отладочное наложение группы синхронизации звука, показывающее группу синхронизации, индексированную в переменной &quot;sg&quot;, в зависимости от того, запущена игра в режиме отладки или нет.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio_Synchronisation.htm">Синхронизация звука</a></div>
+        <div style="float:right">Далее: <a href="audio_sync_group_is_playing.htm">audio_sync_group_is_playing</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sync_group_debug
+-->
+  <!-- TAGS
+audio_sync_group_debug
+-->
+</body>
+</html>

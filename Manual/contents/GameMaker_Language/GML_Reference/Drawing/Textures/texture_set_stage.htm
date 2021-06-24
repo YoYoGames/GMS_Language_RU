@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>texture_set_stage</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ​texture_set_stage" />
+  <meta name="rh-index-keywords" content="texture_set_stage" />
+  <meta name="search-keywords" content="texture_set_stage" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>texture_set_stage</h1>
+  <p>Эта функция задаст заданному &quot;слоту&quot; сцены текстуру, которая будет использоваться. Количество доступных &quot;слотов&quot; сцены зависит от платформы, под которую вы компилируете, максимальное количество - 8 для Windows, <span class="notranslate">Mac и</span> Linux, но <span class="notranslate">на</span> более дешевых устройствах Android (например.
+    Стоит также отметить, что первый &quot;слот&quot; сцены всегда автоматически используется GameMaker <span class="notranslate">Studio 2.</span></p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция ничего не делает вне контекста запущенного <span class="notranslate">шейдера</span>! См. <a href="../../Asset_Management/Shaders/Shaders.htm"><span class="notranslate">Шейдеры</span> </a>для получения дополнительной информации.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">texture_set_stage(stage, tex);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>сцена</td>
+        <td>Текстурный &quot;слот&quot; для использования.</td>
+      </tr>
+      <tr>
+        <td>tex</td>
+        <td>Текстура для использования.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">glassshader_bgsampler = <span class="notranslate">shader_get_sampler_index</span>(GlassShader, &quot;s_BackgroundSampler&quot;)<br> spr = sprite_get_texture(sprite_index, 0);<br> shader_set <span class="notranslate">(GlassShader</span>);
+    <br> texture_set_stage(glassshader_bgsampler, spr);<br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>Приведенный выше код получит <i>хэндл</i> для сэмплера в <span class="notranslate">шейдере</span> с индексом &quot;GlassShader<span class="notranslate">&quot;, а</span> затем установит <span class="notranslate">константу</span> этого шейдера на заданную текстуру спрайта.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Textures.htm">Текстуры</a></div>
+        <div style="float:right">Далее: <a href="texture_global_scale.htm">texture_global_scale</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+texture_set_stage
+-->
+  <!-- TAGS
+texture_set_stage
+-->
+</body>
+</html>

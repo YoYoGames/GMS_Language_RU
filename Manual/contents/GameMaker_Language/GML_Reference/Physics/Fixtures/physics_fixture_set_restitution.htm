@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_restitution</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_restitution" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_restitution" />
+  <meta name="search-keywords" content="physics_fixture_set_restitution" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_set_restitution</h1>
+  <p>В физике реституция определяется как &quot;возвращение объекта или системы в исходное состояние после упругой деформации&quot;, но поскольку фикстуры в GameMaker <span class="notranslate">Studio 2 являются</span> действительно жесткими телами и не могут быть деформированы, реституция - это
+    это способ сказать, насколько &quot;упругим&quot; является крепление. Этот параметр влияет на то, насколько сильно объект &quot;отскакивает&quot; при столкновении с другими объектами, и зависит от других сил, действующих на объект, таких как гравитация и трение,
+    и обычно имеет значение от 0 до 1 (более высокие значения могут быть использованы, но могут дать непредсказуемые результаты). Вот иллюстрация того, как это работает:</p>
+  <p><img alt="Physics restitution illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_set_restitution_image.png" /></p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_fixture_set_restitution(fixture, restitution)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>приспособление</td>
+        <td>Индекс приспособления</td>
+      </tr>
+      <tr>
+        <td>реституция</td>
+        <td>Реституция приспособления (обычно от 0 до 1)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">physics_fixture_set_restitution(fix_Ball, 0.9);</p>
+  <p>Приведенный выше код установит реституцию приспособления, проиндексированного в &quot;fix_ball&quot;, равной 0,9.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Fixtures.htm">Приспособления</a></div>
+        <div style="float:right">Далее: <a href="physics_fixture_set_sensor.htm">physics_fixture_set_sensor</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_restitution
+-->
+  <!-- TAGS
+physics_fixture_set_restitution
+-->
+</body>
+</html>

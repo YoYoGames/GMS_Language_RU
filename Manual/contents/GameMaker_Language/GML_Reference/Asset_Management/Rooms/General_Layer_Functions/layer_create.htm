@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>слой_создать</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_create" />
+  <meta name="rh-index-keywords" content="layer_create" />
+  <meta name="search-keywords" content="layer_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>слой_создать</h1>
+  <p>Эта функция используется для создания нового слоя в текущей комнате. Вы указываете глубину, которую должен занять новый слой, и функция возвращает уникальное значение Layer ID, которое затем может быть использовано для доступа к слою в дальнейших функциях. Вы также можете
+    указать необязательный аргумент &quot;имя&quot;, который позволит вам дать слою определенное имя (в виде строки), и вместо ID слоя для доступа к слою вы можете использовать эту строку имени, хотя следует отметить, что использование
+    строк имен будет иметь большее влияние на производительность, чем использование только значения ID. Если вы не укажете имя слоя, то созданному слою будет присвоено имя в формате &quot; _layer_XXX<tt>&quot;,</tt> где &quot;XXX&quot;
+    шестнадцатеричное значение, используемое для присвоения слою уникального имени.</p>
+  <p>Когда задается значение глубины, оно будет тем выше, чем &quot;дальше&quot; от камеры находится слой, и тем ниже, чем &quot;ближе&quot; к камере находится слой, поэтому если у вас есть три слоя с глубинами -100, 0, 100, то слои будут рисоваться в следующем порядке
+    100, 0, -100, так что &quot;верхним&quot; слоем (т.е. самым близким к виду камеры и поэтому нарисованным поверх всех остальных) будет слой с глубиной -100.</p>
+  <p>На следующем изображении показана схема работы глубины для слоев:</p>
+  <p><img alt="Layer depth example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/Layer_Depths.png">Стоит отметить, что хотя вы <i>можете</i> назначить более одного слоя на одну глубину, <i>вы никак не можете гарантировать, что слои на одной и той же глубине будут отрисовываться в определенном порядке</i>, поэтому лучше всего назначать только один слой на любую глубину. Также обратите внимание, что минимальная и максимальная глубина слоя составляет от -16000 до 16000, и все, что находится за пределами этих глубин, <b>не</b> будет отрисовано. Если вам нужна глубина за пределами этого диапазона
+    то вам необходимо использовать функцию <a href="layer_force_draw_depth.htm"><tt>layer_force_draw_depth()</tt></a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_create(depth, [name])</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>глубина</td>
+        <td>Глубина, на которой должен быть создан слой.</td>
+      </tr>
+      <tr>
+        <td>имя</td>
+        <td>Имя, которое нужно дать слою (строка - необязательно).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Идентификатор слоя (реальный)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">global.Bullet_Layer = layer_create(-100);</p>
+  <p>Приведенный выше код создаст новый слой со значением глубины -100 и присвоит его ID значение глобальной переменной.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="General_Layer_Functions.htm">Общие функции слоя</a></div>
+        <div style="float:right">Далее: <a href="layer_destroy.htm">layer_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_create
+-->
+  <!-- TAGS
+layer_create
+-->
+</body>
+</html>

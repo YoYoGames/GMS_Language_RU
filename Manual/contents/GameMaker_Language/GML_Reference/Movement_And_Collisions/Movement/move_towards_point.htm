@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>перемещение_к_точке</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function move_towards_point" />
+  <meta name="rh-index-keywords" content="move_towards_point" />
+  <meta name="search-keywords" content="move_towards_point" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>перемещение_к_точке</h1>
+  <p>Эта функция просто указывает экземпляру, выполняющему код, двигаться к заданной точке с заданной скоростью. Имейте в виду, что именно вы должны указать ему, что делать, когда он достигнет точки, поскольку он не остановится сам по себе. Это означает, что вы можете получить &quot;вибрирующий&quot;
+    при перемещении (например) на 3 пикселя вперед, превышении целевой позиции x/y на 2, затем снова на 3 пикселя назад, превышении целевой точки на 1 и так далее... Есть несколько способов избежать этого, например, используя
+    <a href="../../Maths_And_Numbers/Angles_And_Distance/distance_to_point.htm"><tt>distance_to_point()</tt></a> чтобы узнать, как далеко от указанного места находится экземпляр перед перемещением.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: эта функция устанавливает скорость экземпляра, поэтому даже если вы остановите использование этого кода, экземпляр продолжит двигаться в прежнем направлении, поэтому необходимо установить экземпляр <a href="../../Asset_Management/Instances/Instance_Variables/speed.htm"><tt style="font-size: 14px">скорость</tt></a>    на 0, если вы хотите, чтобы он остановился. См. пример кода ниже.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">move_towards_point( x, y, sp );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Позиция x точки, к которой нужно двигаться.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Позиция y точки, к которой нужно двигаться.</td>
+      </tr>
+      <tr>
+        <td>sp</td>
+        <td>Скорость перемещения в пикселях за шаг.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if point_distance(x, y, target.x, target.y) &gt; 5<br> {
+    <br> move_towards_point(target.x, target.y, 5);<br> }
+    <br> else speed = 0;</p>
+  <p>Приведенный выше код будет перемещать экземпляр к позиции экземпляра, индексированной в переменной &quot;target&quot;, со скоростью 5 пикселей за шаг. Как только он достигнет этой позиции, скорость будет установлена на 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Movement.htm">Движение</a></div>
+        <div style="float:right">Далее: <a href="move_bounce_all.htm">move_bounce_all</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+move_towards_point
+-->
+  <!-- TAGS
+move_towards_point
+-->
+</body>
+</html>

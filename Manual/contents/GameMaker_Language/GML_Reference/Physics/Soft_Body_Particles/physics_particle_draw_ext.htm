@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_draw_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_draw_ext" />
+  <meta name="rh-index-keywords" content="physics_particle_draw_ext" />
+  <meta name="search-keywords" content="physics_particle_draw_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_particle_draw_ext</h1>
+  <p>Эта функция нарисует спрайт в позиции всех частиц, которые имеют одно и то же значение категории, определенное пользователем, и у которых флаги совпадают с флагами, установленными для маски. Значение маски задается так же, как и значение
+    флаги при создании частиц (см. функции <a href="physics_particle_create.htm"><tt>physics_particle_create()</tt></a> для примера), т.е. используя <a href="../../../../Additional_Information/Bitwise_Operators.htm">побитовую</a> комбинацию <a href="../../../../Additional_Information/Bitwise_Operators.htm"> <i>или</i></a> &quot;|&quot; для маскирования соответствующих битов для каждого флага.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция нарисует <b>все</b> частицы в физической симуляции с флагами, совпадающими с флагами маски, будь то отдельные частицы или группы, если категория пользователя одинакова.</p>
+  <p>Нарисованная частица будет игнорировать значения цвета и альфа, установленные при ее создании, и вместо этого будет нарисована с использованием параметров масштаба, угла, цвета и альфа, заданных в этой функции. Обратите внимание, что эта функция предназначена исключительно для рисования спрайта в позиции частицы
+    и никак не влияет на поведение частицы.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_particle_draw_ext(typemask, category, sprite, subimg, xscale, yscale, ang, col, alpha)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>typemask</td>
+        <td>Маска для сравнения флагов частиц.</td>
+      </tr>
+      <tr>
+        <td>категория</td>
+        <td>Определенная пользователем категория для рисования (используйте 0 для рисования всех категорий).</td>
+      </tr>
+      <tr>
+        <td>спрайт</td>
+        <td>Спрайт, который будет использоваться для каждой частицы.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td> <tt>Индекс изображения</tt> спрайта для рисования.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>Коэффициент масштабирования, применяемый к спрайту вдоль оси x.</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>Коэффициент масштабирования, применяемый к спрайту вдоль оси y.</td>
+      </tr>
+      <tr>
+        <td>анг</td>
+        <td>Угол (в градусах), под которым будет рисоваться спрайт.</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Цвет для смешивания со спрайтом (по умолчанию <tt>c_white</tt>).</td>
+      </tr>
+      <tr>
+        <td>альфа</td>
+        <td>Значение альфа, используемое при рисовании (0 - 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br> physics_particle_draw_ext(flags, 2, sprBlob, 0, 2, 2, 0, c_white, 0.5);</p>
+  <p>Приведенный выше код нарисует спрайт для всех частиц в заданной пользователем категории &quot;2&quot;, которые имеют те же флаги, что и заданная маска, масштабированные на 2 по обеим осям и с альфой 0,5.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Soft_Body_Particles.htm">Частицы мягкого тела</a></div>
+        <div style="float:right">Далее: <a href="physics_particle_count.htm">physics_particle_count</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_draw_ext
+-->
+  <!-- TAGS
+physics_particle_draw_ext
+-->
+</body>
+</html>

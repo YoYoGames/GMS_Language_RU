@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gc_get_stats</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gc_get_stats" />
+  <meta name="rh-index-keywords" content="gc_get_stats" />
+  <meta name="search-keywords" content="gc_get_stats" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gc_get_stats</h1>
+  <p>С помощью этой функции вы можете получить информацию о текущем состоянии сборщика мусора. Функция вернет <a href="../../GML_Overview/Structs.htm">структуру</a>, которая будет содержать следующие переменные-члены (обратите внимание, что &quot;объекты&quot;
+    здесь относится ко всему, что может быть собрано в мусор, а <i>не</i> к общим экземплярам объектов, как определено в Asset Browser):</p>
+  <ul class="colour">
+    <li><tt>objects_touched</tt> - это количество активных объектов, найденных сборщиком мусора в предыдущем кадре. Это значение зависит от того, какое поколение было собрано.</li>
+    <li><tt>objects_collected</tt> - количество объектов, которые, по определению сборщика мусора, не были активны в предыдущем кадре, и поэтому могут быть удалены.</li>
+    <li><tt>traversal_time</tt> - это время в микросекундах (на основном потоке), которое потребовалось сборщику мусора, чтобы выяснить, какие объекты были активны.</li>
+    <li><tt>время_сбора</tt> - это время в микросекундах (в отдельном потоке), которое понадобилось сборщику мусора для очистки объектов, считающихся неактивными.</li>
+    <li><tt>gc_frame</tt> - это счетчик, который увеличивается каждый раз, когда происходит проход сборки мусора. Если сборка мусора отключена, этот счетчик не будет увеличиваться.</li>
+    <li><tt>generation_collected</tt> - это индекс поколения, которое было собрано последним. 0 - самое молодое поколение, а 3 - самое старое.</li>
+    <li><tt>num_generations</tt> - общее количество поколений сборки мусора.</li>
+    <li><tt>num_objects_in_generation</tt> - массив (размером <tt>num_generations</tt>), содержащий количество объектов в каждом поколении.</li>
+  </ul>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: На целевой платформе HTML5 сборка мусора осуществляется движком JavaScript, поэтому все переменные-члены в приведенной выше структуре вернут 0, если эта функция используется на этой платформе.</p>
+  <p>При использовании этой функции следует учитывать, что информация, отображаемая для объектов, <em>обновляется только после завершения обработки полного поколения</em>, что может занять несколько кадров в зависимости от настройки времени кадра (более подробную информацию о времени кадра см. <a href="gc_target_frame_time.htm">здесь</a> ).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gc_get_stats();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Структура</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if (global.debug == true)<br> {
+    <br> var _s = gc_get_stats();<br> var _t = _s.traversal_time;<br> var _c = _s.collection_time;<br> show_debug_message(&quot;Traversal time = &quot; + string(_t))<br> show_debug_message(&quot;Collection time = &quot; + string(_c))<br> }
+  </p>
+  <p>Приведенный выше код проверяет глобальную переменную, и если она <tt>истинна</tt>, то получает информацию из garabge collector и выводит ее на консоль в виде отладочных сообщений.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Garbage_Collection.htm">Сбор мусора</a></div>
+        <div style="float:right">Далее: <a href="gc_enable.htm">gc_enable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gc_get_stats
+-->
+  <!-- TAGS
+gc_get_stats
+-->
+</body>
+</html>

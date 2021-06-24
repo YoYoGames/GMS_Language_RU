@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>часть_излучателя_взрыва</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_emitter_burst" />
+  <meta name="rh-index-keywords" content="part_emitter_burst" />
+  <meta name="search-keywords" content="part_emitter_burst" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>часть_излучателя_взрыва</h1>
+  <p>Эта функция позволяет настроить эмиттер на выброс определенного типа частиц и обычно используется в событиях тревоги и уничтожения, поскольку это одноразовый код, который создает указанное количество частиц одновременно, следуя распределению, форме и
+    положению, заданному функцией <a href="part_emitter_region.htm"><tt>part_emitter_region()</tt></a>. Если вам нужно, чтобы частицы появлялись каждый шаг, вам следует использовать функцию <a href="part_emitter_stream.htm"><tt>part_emitter_stream()</tt></a>    а не вызывать эту функцию на каждом шаге.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">part_emitter_burst(ps, ind, parttype, number);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>ps</td>
+        <td>Система частиц, в которой находится эмиттер.</td>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс эмиттера, из которого будет происходить взрыв.</td>
+      </tr>
+      <tr>
+        <td>тип детали</td>
+        <td>Индекс (тип) создаваемых частиц.</td>
+      </tr>
+      <tr>
+        <td>номер</td>
+        <td>Количество частиц для создания.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">part_emitter_burst(global. Sname, p_emit1, p1, 30 + irandom(30));</p>
+  <p>Приведенный выше код выпустит случайное количество частиц от 30 до 60 из выбранного эмиттера.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Particle_Emitters.htm">Излучатели частиц</a></div>
+        <div style="float:right">Далее: <a href="part_emitter_stream.htm">part_emitter_stream</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_emitter_burst
+-->
+  <!-- TAGS
+part_emitter_burst
+-->
+</body>
+</html>

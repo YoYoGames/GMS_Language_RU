@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_matchmaking_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_create" />
+  <meta name="rh-index-keywords" content="xboxlive_matchmaking_create,xboxlive_match_visibility_open,xboxlive_match_visibility_private,xboxlive_match_visibility_usetemplate" />
+  <meta name="search-keywords" content="xboxlive_matchmaking_create,xboxlive_match_visibility_open,xboxlive_match_visibility_private,xboxlive_match_visibility_usetemplate" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_create</h1>
+  <p>Эта функция создаст многопользовательскую сессию, используя шаблон сессии, бункер подбора и шаблон Secure Device Association, который вы должны были предварительно создать в приборной панели XDP. Идентификатор пользователя, который вы можете получить для конкретного игрового
+    площадки, вызвав <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm"><tt>xboxlive_user_for_pad()</tt></a> функции и видимость будет одной из следующих констант:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>xboxlive_match_visibility_open</td>
+        <td>указывает, что к сеансу могут присоединиться другие.</td>
+      </tr>
+      <tr>
+        <td>xboxlive_match_visibility_private</td>
+        <td>указывает, что сессия не видна пользователям, которые не являются членами сессии.</td>
+      </tr>
+      <tr>
+        <td>xboxlive_match_visibility_usetemplate</td>
+        <td>указывает, что должно использоваться значение, используемое в шаблоне сессии (обычно используется это значение, так как вы не можете отменить значение шаблона, если оно было установлено в XDP).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Функция возвращает уникальное значение Request ID, которое затем может быть использовано для определения правильного Social Asynchronous Event для этой функции. Это событие будет запущено после создания сессии и будет содержать DS Map в переменной <tt>async_load</tt> со следующими парами ключ/значение:</p>
+  <ul class="colour">
+    <li>&quot;requestid&quot; - содержит идентификатор запроса, возвращенный вызывающей функцией</li>
+    <li>&quot;status&quot; - содержит строку &quot;session_created&quot; для информирования о том, какой тип события был вызван.</li>
+    <li>&quot;sessionid&quot; - содержит идентификатор сессии, или -1 в случае неудачи</li>
+    <li>&quot;error&quot; - содержит 0 в случае успеха, или -1 в случае неудачи</li>
+    <li>&quot;correlationid&quot; - хэндл сессии для корреляции с функцией <tt><a href="xboxlive_matchmaking_join_session.htm">xboxlive_matchmaking_join_session()</a></tt></li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">xboxlive_matchmaking_create(user_id, visibility, template, hopper, sdatemplate, [matchattributes]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор пользователя</td>
+        <td>Указатель идентификатора пользователя для использования</td>
+      </tr>
+      <tr>
+        <td>видимость</td>
+        <td>Одна из перечисленных выше констант</td>
+      </tr>
+      <tr>
+        <td>шаблон</td>
+        <td>Имя шаблона сеанса</td>
+      </tr>
+      <tr>
+        <td>бункер</td>
+        <td>Название бункера для спичек</td>
+      </tr>
+      <tr>
+        <td>sdatemplate</td>
+        <td>Имя шаблона ассоциации защищенных устройств</td>
+      </tr>
+      <tr>
+        <td>matchattributes</td>
+        <td>[ВАРИАНТ]</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Идентификатор запроса (целое число)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var userID = xboxlive_user_for_pad(global.PadIndex);<br> result = xboxlive_matchmaking_create(userID, xboxlive_match_visibility_usetemplate, &quot;MatchTicketSession&quot;, &quot;MatchTicketHopper&quot;, &quot;PeerServerTraffic&quot;);</p>
+  <p>Приведенные выше действия позволят получить идентификатор пользователя на данном геймпаде, а затем инициализировать для него сеанс подбора.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Match_Making.htm">Сопоставление</a></div>
+        <div style="float:right">Далее: <a href="xboxlive_matchmaking_find.htm">xboxlive_matchmaking_find</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_matchmaking_create
+xboxlive_match_visibility_open
+xboxlive_match_visibility_private
+xboxlive_match_visibility_usetemplate
+-->
+  <!-- TAGS
+xboxlive_matchmaking_create
+-->
+</body>
+</html>

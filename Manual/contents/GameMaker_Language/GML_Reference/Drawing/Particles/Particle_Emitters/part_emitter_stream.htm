@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>часть_излучателя_потока</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_emitter_stream" />
+  <meta name="rh-index-keywords" content="part_emitter_stream" />
+  <meta name="search-keywords" content="part_emitter_stream" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>часть_излучателя_потока</h1>
+  <p>Эта функция позволяет настроить эмиттер на поток частиц определенного типа и обычно используется в событии create, поскольку это одноразовый код, который устанавливает эмиттер на генерацию указанного количества частиц на каждом последующем шаге игры. 
+    частицы испускаются в соответствии с распределением, формой и положением, заданными функцией <a href="part_emitter_region.htm"><tt>part_emitter_region()</tt></a>. Вы можете установить количество излучаемых частиц на ноль и снова вызвать эту функцию.
+    функция также может принимать отрицательные числа для количества частиц, в этом случае эмиттер будет испускать частицы по случайному принципу. Например, если вы установили количество частиц равным -5, то
+    вероятность того, что на каждом шаге будет произведена частица, будет 1:5. Если вам нужно, чтобы частицы появлялись все сразу, а не на каждом шаге, используйте функцию <a href="part_emitter_burst.htm"><tt>part_emitter_burst()</tt></a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">part_emitter_stream(ps, ind, parttype, number);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>ps</td>
+        <td>Система частиц, в которой находится эмиттер.</td>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс эмиттера, из которого будет происходить взрыв.</td>
+      </tr>
+      <tr>
+        <td>тип детали</td>
+        <td>Индекс (тип) создаваемых частиц.</td>
+      </tr>
+      <tr>
+        <td>номер</td>
+        <td>Количество частиц, создаваемых за шаг.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">part_emitter_stream(global. Sname, p_emit1, p1, 1);</p>
+  <p>Приведенный выше код будет передавать по 1 частице на каждом шаге игры, пока эмиттер не будет уничтожен или поток не установится на 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Particle_Emitters.htm">Излучатели частиц</a></div>
+        <div style="float:right">Далее: <a href="part_emitter_destroy.htm">part_emitter_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_emitter_stream
+-->
+  <!-- TAGS
+part_emitter_stream
+-->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>угловая разница</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for angle_difference" />
+  <meta name="rh-index-keywords" content="angle_difference" />
+  <meta name="search-keywords" content="angle_difference" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>угловая разница</h1>
+  <p>Эта функция возвращает наименьшую разницу между двумя углами в виде значения от -180 до 180 градусов (где положительный угол - против часовой стрелки, а отрицательный - по часовой).</p>
+  <p> </p>
+  <h4><b>Синтаксис:</b></h4>
+  <p class="code">разность углов(ang1, ang2)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>анг1</td>
+        <td>Первый угол, который можно использовать.</td>
+      </tr>
+      <tr>
+        <td>угол2</td>
+        <td>Второй угол для использования.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var pd = point_direction(x, y, mouse_x, mouse_y);<br> var dd = angle_difference(image_angle, pd);<br> image_angle -= min(abs(dd), 10) * sign(dd);</p>
+  <p>Приведенный выше код получит угол направления от экземпляра к курсору мыши, затем получит разницу между этим углом и текущим значением. <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_angle.htm"><tt>угол_изображения</tt></a>,
+    используя это значение для медленного поворота в сторону мыши.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Angles_And_Distance.htm">Углы и расстояние</a></div>
+        <div style="float:right">Далее: <a href="lengthdir_x.htm">lengthdir_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+angle_difference
+-->
+  <!-- TAGS
+angle_difference
+-->
+
+</body></html>

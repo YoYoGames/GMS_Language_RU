@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>vertex_format_add_custom</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_format_add_custom" />
+  <meta name="rh-index-keywords" content="vertex_format_add_custom,vertex_type_float1,vertex_type_float2,vertex_type_float3,vertex_type_float4,vertex_type_colour,vertex_type_ubyte4,vertex_usage_position,vertex_usage_colour,vertex_usage_normal,vertex_usage_textcoord,vertex_usage_blendweight,vertex_usage_blendindices,vertex_usage_depth,vertex_usage_tangent,vertex_usage_binormal,vertex_usage_fog,vertex_usage_sample" />
+  <meta name="search-keywords" content="vertex_format_add_custom,vertex_type_float1,vertex_type_float2,vertex_type_float3,vertex_type_float4,vertex_type_colour,vertex_type_ubyte4,vertex_usage_position,vertex_usage_colour,vertex_usage_normal,vertex_usage_textcoord,vertex_usage_blendweight,vertex_usage_blendindices,vertex_usage_depth,vertex_usage_tangent,vertex_usage_binormal,vertex_usage_fog,vertex_usage_sample" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>vertex_format_add_custom</h1>
+  <p>Эта функция позволяет использовать пользовательский тип данных для определенных атрибутов формата вершин как часть создаваемого нового формата вершин. Доступные для использования значения определяются выбранной вами константой типа данных, перечисленной ниже:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>vertex_type_float1</td>
+        <td>Одно значение с плавающей запятой</td>
+      </tr>
+      <tr>
+        <td>тип_вершины_плоат2</td>
+        <td>Два значения с плавающей запятой</td>
+      </tr>
+      <tr>
+        <td>тип_вершины_плоат3</td>
+        <td>Три значения с плавающей запятой</td>
+      </tr>
+      <tr>
+        <td>vertex_type_float4</td>
+        <td>Четыре значения с плавающей запятой</td>
+      </tr>
+      <tr>
+        <td>тип_вершины_цвета</td>
+        <td>Значения четырех компонентов (r, g, b, a)</td>
+      </tr>
+      <tr>
+        <td>vertex_type_ubyte4</td>
+        <td>Четырехкомпонентные беззнаковые байтовые значения (от 0 до 255)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Также необходимо определить, как будут использоваться эти константы, чтобы их значения можно было правильно &quot;привязать&quot; к <span class="notranslate">создаваемому</span> шейдеру. Это необходимо в связи с тем, что DX и OpenGL имеют разные требования, поэтому если
+    вы не свяжете их должным образом, они не будут правильно отображаться в шейдере. Доступные константы использования, которые вы можете выбрать, перечислены ниже, и их использование будет зависеть от специфики создаваемого <span class="notranslate">шейдера</span>:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>вершина_использования_позиции</td>
+        <td>значения положения (x, y, z)</td>
+      </tr>
+      <tr>
+        <td>цвет_использования_вершины</td>
+        <td>значения цветов (r, g, b, a)</td>
+      </tr>
+      <tr>
+        <td>нормальное_использование_вершины</td>
+        <td>нормальные значения вершин (nx, ny, nz)</td>
+      </tr>
+      <tr>
+        <td>вершинный_пользовательский_текстовый_корд</td>
+        <td>Ультрафиолетовые координаты (u, v)</td>
+      </tr>
+      <tr>
+        <td>вес смешивания вершин</td>
+        <td>вес смеси входной матрицы (например, для скелетной анимации)</td>
+      </tr>
+      <tr>
+        <td>вершинные_использования_блиндинды</td>
+        <td>индексы матриц для использования (например, для скелетной анимации)</td>
+      </tr>
+      <tr>
+        <td>глубина использования вершин</td>
+        <td>значение буфера глубины вершины</td>
+      </tr>
+      <tr>
+        <td>вершина_использования_тангенса</td>
+        <td>значения касательных</td>
+      </tr>
+      <tr>
+        <td>вершинное_использование_бинормальное</td>
+        <td>бинормальные значения</td>
+      </tr>
+      <tr>
+        <td>вершина_использования_тумана</td>
+        <td>значения тумана</td>
+      </tr>
+      <tr>
+        <td>образец_использования_вершин</td>
+        <td>индекс пробоотборника</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Есть несколько важных моментов, на которые следует обратить внимание при использовании таких пользовательских форматов:</p>
+  <ul class="colour">
+    <li>Функция <tt>vertex_format_add_custom()</tt> поддерживает только <tt>vertex_usage_position</tt>, <tt>vertex_usage_colour</tt>, <tt>vertex_usage_normal</tt> и <tt>vertex_usage_textcoord</tt> при использовании <span class="notranslate">шейдеров</span> GLSL. Они будут отображаться на атрибуты <span class="notranslate">шейдера</span> 
+     <tt>in_Position</tt>, <tt>in_Colour[0 - ...]</tt>, <tt>in_Normal</tt> соответственно (все, что не является одним из этих трех атрибутов - например, текстурные координаты - может быть отображено на любой определенный вами атрибут).</li>
+    <li>В общем случае следует использовать <tt>vertex_usage_textcoord</tt> для всех дополнительных параметров, где это возможно, так как такие типы, как <tt>vertex_usage_blendweight</tt> и <tt>vertex_usage_tangent</tt> близки к устаревшим в большинстве <span class="notranslate">шейдерных</span> языков и, вероятно, не будут
+      конвертироваться правильно. Вместо этого используйте <tt>vec</tt>, <tt>vec2</tt>, <tt>vec3</tt> или <tt>vec4</tt> типы <tt>vertex_usage_textcoord</tt>, и все должно работать нормально.</li>
+    <li>GLSL ES <i>не</i> поддерживает целочисленные атрибуты, поэтому передача <tt>ivec4</tt> не работает (этот тип обычно используется при передаче vertex_usage_blendindices <tt>).</tt> Что вам нужно сделать, так это передать координаты текстуры, а затем в
+     <span class="notranslate">шейдере</span> преобразовать их в <tt>ivec4</tt> следующим образом:</li>
+  </ul>
+  <p> </p>
+  <p class="code">атрибут vec3 in_Position;<br> атрибут vec4 in_BlendIndices;<br> атрибут vec4 in_BlendWeights;<br>
+    <br> изменяемый vec4 v_vColour;<br> изменяемый mat4 v_mat;<br>
+    <br> void main()<br> {
+    <br> gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * vec4( in_Position.xyz, 1.0);<br> v_vColour = in_BlendWeights;<br> ivec4 t = ivec4(in_BlendIndices);<br> v_mat = gm_Matrices[ t.x ];<br> }
+  </p>
+  <ul class="colour">
+    <li>Веса блендов обычно хранятся в массиве, а затем доступ к ним осуществляется с помощью индексов блендов, но здесь вы видите, что вместо определения <tt>in_BlendIndices</tt> как атрибута <tt>ivec4</tt>, это vec4 <tt>,</tt> затем приведенный к ivec4 <tt>в</tt> 
+      коде. Это затем используется для индексации массива, созданного с помощью <tt>gm_Matrix</tt> (доступ к массиву можно получить только с помощью значения <tt>INT</tt> - не float).</li>
+    <br />
+  </ul>
+  <h4>Синтаксис:</h4>
+  <p class="code">vertex_format_add_custom(type, usage);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>тип</td>
+        <td>Тип данных, которые будут содержать эти пользовательские данные вершины (см. <b><i>константы типа</i></b> перечисленные ниже).</td>
+      </tr>
+      <tr>
+        <td>использование</td>
+        <td>Использование, которое получат данные (см. <b><i>константы использования</i></b> перечисленные ниже).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">vertex_format_begin();<br> vertex_format_add_textcoord();
+    <br> vertex_format_add_custom(vertex_type_float3, vertex_usage_position);<br> my_format = vertex_format_end();</p>
+  <p>Приведенный выше код создаст новый формат вершин, содержащий только текстуру и 3 пользовательских значения с плавающей точкой для позиции. Затем он сохраняет идентификатор формата в переменной &quot;my_format&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Primitives_And_Vertex_Formats.htm">Примитивы и форматы вершин</a></div>
+        <div style="float:right">Далее: <a href="vertex_format_end.htm">vertex_format_end</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_format_add_custom
+vertex_type_float1
+vertex_type_float2
+vertex_type_float3
+vertex_type_float4
+vertex_type_colour
+vertex_type_ubyte4
+vertex_usage_position
+vertex_usage_colour
+vertex_usage_normal
+vertex_usage_textcoord
+vertex_usage_blendweight
+vertex_usage_blendindices
+vertex_usage_depth
+vertex_usage_tangent
+vertex_usage_binormal
+vertex_usage_fog
+vertex_usage_sample
+-->
+  <!-- TAGS
+vertex_format_add_custom
+-->
+
+</body></html>

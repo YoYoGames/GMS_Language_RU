@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>нарисовать_эллипс</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function draw_ellipse" />
+  <meta name="rh-index-keywords" content="draw_ellipse" />
+  <meta name="search-keywords" content="draw_ellipse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>нарисовать_эллипс</h1>
+  <p>С помощью этой функции можно нарисовать либо контур эллипса, либо заполненный эллипс, определив прямоугольную область, под которую затем будет создан эллипс. Вы можете определить, насколько точным будет рисунок, с помощью функции <a href="draw_set_circle_precision.htm"><tt>draw_set_circle_precision()</tt></a>.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Если вы хотите нарисовать фигуру с помощью <span class="notranslate">шейдера</span>, вы должны знать, что большинство <span class="notranslate">шейдеров</span> ожидают следующих входных данных: вершина, текстура, цвет. Однако при использовании этой функции передаются только данные вершин и цвета, поэтому шейдер может ничего не нарисовать (или нарисовать, но не отрисовать).
+   <span class="notranslate">шейдер</span> может ничего не нарисовать (или нарисовать, но неправильно). Если вам нужно рисовать фигуры таким образом, то <span class="notranslate">шейдер</span> должен быть настроен с учетом этого.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_ellipse(x1, y1, x2, y2, контур);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>Координата x левой части эллипса.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>Координата y вершины эллипса.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>Координата x правой части эллипса.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>Координата y нижней части эллипса.</td>
+      </tr>
+      <tr>
+        <td>конспект</td>
+        <td>Будет ли эллипс рисоваться заполненным (false) или в виде контура шириной в один пиксель (true).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_set_colour(c_white);<br> draw_ellipse(100, 100, 300, 200, false);</p>
+  <p>Это позволит нарисовать заполненный эллипс в пределах заданной прямоугольной области.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Basic_Forms.htm">Основные формы</a></div>
+        <div style="float:right">Далее: <a href="draw_ellipse_colour.htm">draw_ellipse_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_ellipse
+-->
+  <!-- TAGS
+draw_ellipse
+-->
+</body>
+</html>

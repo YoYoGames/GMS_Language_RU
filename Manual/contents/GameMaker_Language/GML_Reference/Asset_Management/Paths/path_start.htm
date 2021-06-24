@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>путь_начало</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_start" />
+  <meta name="rh-index-keywords" content="path_start,path_action_stop,path_action_restart,path_action_continue,path_action_reverse" />
+  <meta name="search-keywords" content="path_start,path_action_stop,path_action_restart,path_action_continue,path_action_reverse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>путь_начало</h1>
+  <p>Путь создается из серии определяющих точек, которые соединяются вместе и затем используются для планирования движения экземпляра. Они могут быть созданы с помощью кода <i>или</i> в редакторе путей, и они назначаются экземпляру
+    для использования в игре. С помощью этой функции можно указать экземпляру, по какому пути следовать, с какой скоростью (измеряется в пикселях за шаг), как вести себя, когда он достигнет конца пути, и следовать ли <i>абсолютному</i> или <i>относительному</i> положению пути.
+    позиция. Последняя часть означает, что он либо начинает и следует по пути точно так, как вы его спроектировали и разместили в <a href="../../../../The_Asset_Editors/Paths.htm">редакторе путей</a> (абсолютный), либо он начинает и следует по пути с позиции
+    в которой был создан экземпляр (относительная).</p>
+  <p><img alt="Relative or Absolute path examples" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Paths/path_relative_image.png">Как видно из приведенного выше изображения, два экземпляра следуют по одному и тому же пути, начатому с помощью <tt>path_start()</tt>,
+    но один из экземпляров следует по абсолютному пути, а другой - по относительному. Следует отметить, что при установке relative в false (абсолютный) экземпляр будет &quot;прыгать&quot; к началу пути независимо от того, в какой части комнаты он находится.
+    комнате, где бы он ни находился.</p>
+  <p>Константы, используемые для определения поведения экземпляра, когда он достигает конца пути, следующие:<br>
+  </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>путь_действия_остановки</td>
+        <td>Завершить путь</td>
+      </tr>
+      <tr>
+        <td>путь_действия_перезапуска</td>
+        <td>Продолжить путь с самого начала, снова переходя к начальной позиции, если путь не закрыт</td>
+      </tr>
+      <tr>
+        <td>путь_действия_продолжить</td>
+        <td>Продолжить с текущей позиции</td>
+      </tr>
+      <tr>
+        <td>путь_действия_обратный</td>
+        <td>Снова пройти назад по тропинке (достигается путем изменения скорости движения по тропинке)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">path_start(path, speed, endaction, absolute);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>путь</td>
+        <td>Индекс пути для запуска.</td>
+      </tr>
+      <tr>
+        <td>скорость</td>
+        <td>Скорость, с которой нужно следовать по пути в пикселях за шаг, отрицательная означает движение назад.</td>
+      </tr>
+      <tr>
+        <td>endaction</td>
+        <td>Что делать, когда достигнут конец пути (см. константы, перечисленные ниже).</td>
+      </tr>
+      <tr>
+        <td>абсолютный</td>
+        <td>Должен ли вызывающий экземпляр следовать по абсолютному пути, как он находится в редакторе (true) или по относительному пути к его текущей позиции (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">path_start(path, 4, path_action_reverse, 0);</p>
+  <p>Это заставит вызывающий экземпляр следовать по пути, индексированному в переменной &quot;path&quot;, со скоростью 4 пикселя за шаг. Он будет следовать по пути относительно собственной позиции, а когда достигнет конца, изменит направление и вернется назад по пути
+    путь, по которому он пришел.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Paths.htm">Пути</a></div>
+        <div style="float:right">Далее: <a href="path_end.htm">path_end</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_start
+path_action_stop
+path_action_restart
+path_action_continue
+path_action_reverse
+-->
+  <!-- TAGS
+path_start
+-->
+</body>
+</html>

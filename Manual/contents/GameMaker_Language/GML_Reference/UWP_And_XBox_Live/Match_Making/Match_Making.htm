@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Сопоставление</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the XBox Live Match Making functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Match Making,Xbox Live Match Making" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Сопоставление</h1>
+  <p>Matchmaking (многопользовательская игра) для Xbox Live и UWP требует некоторой настройки, частично через конфигурационный файл, который определяет, какие сетевые соединения вы собираетесь использовать, и частично через настройку шаблонов сессий и бункеров matchmaking на Xbox
+    Портал разработчиков. <span class="notranslate">GameMaker Studio 2</span> поддерживает это с помощью цели UWP и позволяет сделать следующее:</p>
+  <ul class="colour">
+    <li>Создание многопользовательской сессии</li>
+    <li>Найти (и/или присоединиться) к многопользовательской сессии</li>
+    <li>Получать уведомления о том, что соответствующие игроки присоединяются или покидают сессию, а также получать данные об их сетевом подключении</li>
+    <li>Получайте уведомления, когда хозяин сеанса переходит к другому пользователю</li>
+    <li>Получение списка пользователей в сессии</li>
+    <li>Оставить сессию</li>
+  </ul>
+  <p>Подключение к сети Xbox Live опирается на так называемую <b>Ассоциацию безопасных устройств</b>, которая представляет собой договор, определяющий, как именно устройство подключается к другим устройствам и какие данные оно может передавать с помощью соединения.
+    это соединение. Они настраиваются с помощью файла, который необходимо включить в проект. Пример этого файла вы можете найти <a href="http://help.yoyogames.com/attachments/token/aF6pHTwVLjGal1JOQbV3NpyZg/?name=test_xbox_network_manifest.man" target="_blank">здесь</a>. Основные важные пункты в файле - это протокол и номера портов для описания каждого сокета, поскольку они должны соответствовать тому, что вы фактически установили в коде.</p>
+  <p>После создания файла сетевого манифеста его следует добавить в проект в качестве <a href="../../../../Settings/Included_Files.htm">включенного файла</a>. Затем, внутри UWP Game Options, на вкладке Xbox One General, он должен быть
+    выбран в комбинированном поле &quot;Включенный файл для манифеста сетевой конфигурации&quot;.</p>
+  <p>Чтобы создать многопользовательскую сессию, необходимо указать, какой <b>шаблон сессии</b> будет использоваться. Эти шаблоны сессий определяются в XDP, но пример показан ниже:</p>
+  <p class="code">Имя сессии: MatchSession<br> Версия контракта: 107<br> Шаблон сессии (текст JSON):<br> {
+    <br> &quot;constants&quot;: {<br> &quot;system&quot;: {<br> &quot;version&quot;: 1,<br> &quot;maxMembersCount&quot;: 12,<br> &quot;capabilities&quot;: {<br> },
+    <br> &quot;memberInitialization&quot;: {<br> &quot;externalEvaluation&quot;: false,<br> &quot;membersNeededToStart&quot;: 1<br> }
+    <br> },
+    <br> &quot;custom&quot;: {<br> }
+    <br> }
+  </p>
+  <p>Описание полей можно найти в разделе &quot;Обзор сессии&quot; в файле справки XDK. Обратите внимание, что в настоящее время мы не поддерживаем динамическую установку параметров сессии из GameMaker <span class="notranslate">Studio 2.</span></p>
+  <p>Вместе с шаблоном сессии необходимо также установить бункер подбора, чтобы сессия могла быть найдена (это также делается на XDP). Хопперы используются для определения правил, которые используются при подборе игроков. Как и в случае с параметрами сессии, мы не
+    В настоящее время мы не поддерживаем динамическую установку параметров бункера из <span class="notranslate">GameMaker</span>: Studio. Дополнительные сведения см. в разделе &quot;SmartMatch Matchmaking Configuration&quot; в файле справки XDK.</p>
+  <p>Следующие функции доступны для XboxLive matchmaking (обратите внимание, что вам также потребуется использовать <a href="../../Networking/Networking.htm">функции</a> <span class="notranslate">GameMaker Studio 2</span> <a href="../../Networking/Networking.htm">Networking Functions</a> для соединений
+    и т.д.):</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="xboxlive_matchmaking_start.htm">xboxlive_matchmaking_start</a></li>
+    <li><a href="xboxlive_matchmaking_stop.htm">xboxlive_matchmaking_stop</a></li>
+    <li><a href="xboxlive_matchmaking_create.htm">xboxlive_matchmaking_create</a></li>
+    <li><a href="xboxlive_matchmaking_find.htm">xboxlive_matchmaking_find</a></li>
+    <li><a href="xboxlive_matchmaking_session_get_users.htm">xboxlive_matchmaking_session_get_users</a></li>
+    <li><a href="xboxlive_matchmaking_join_session.htm">xboxlive_matchmaking_join_session</a></li>
+    <li><a href="xboxlive_matchmaking_session_leave.htm">xboxlive_matchmaking_session_leave</a></li>
+  </ul>
+  <p> </p>
+  <p><span class="notranslate">GameMaker Studio 2</span> предоставляет дополнительный набор функций подбора игроков, которые можно использовать для приглашения других игроков в сети присоединиться к сессии или для принятия приглашения присоединиться к чужой сессии. Доступны следующие функции
+    следующие:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="xboxlive_matchmaking_send_invites.htm">xboxlive_matchmaking_send_invites</a></li>
+    <li><a href="xboxlive_matchmaking_set_joinable_session.htm">xboxlive_matchmaking_set_joinable_session</a></li>
+    <li><a href="xboxlive_matchmaking_join_invite.htm">xboxlive_matchmaking_join_invite</a></li>
+  </ul>
+  <p> </p>
+  <p>Когда игрок принимает приглашение от другого игрока, происходит одно из двух событий:</p>
+  <ul class="colour">
+    <li>Если ваша игра запущена, вы получите <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">социальное асинхронное событие</a> с картой <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a> DS, содержащей следующие ключи/значения:
+      <ul>
+        <li>&quot; id&quot; - Это значение будет установлено в MATCHMAKING_INVITATION.</li>
+        <li>&quot;<strong>invitation_id&quot; -</strong> Это уникальное значение идентификатора сессии.</li>
+        <li>&quot;<strong>invitation_host&quot; -</strong> Это уникальное значение ID сеанса для ведущего сеанса.</li>
+      </ul>
+      Вы должны сохранить значения ID и Host, затем покинуть все необходимые сессии и вызвать функцию <tt>xboxlive_matchmaking_join_invite()</tt>, передав в качестве аргументов значения ID приглашения и хоста приглашения в событии Step.</li>
+    <li>Если ваша игра в данный момент не запущена, она будет запущена ОС. Вы получите <b>асинхронное событие</b> типа <b>Social Asynchronous Event</b> с тем же набором ключей, что и перечисленные выше. Сохраните их в переменных, затем подключитесь к
+      Xbox Live matchmaking и, наконец, вызовите <tt>xboxlive_matchmaking_join_invite()</tt>.</li>
+  </ul>
+  <p>После вызова <tt>xboxlive_matchmaking_join_invite()</tt> пользователь попытается присоединиться к сессии, и вы получите асинхронные социальные события, как если бы вы вызвали <tt>xboxlive_matchmaking_find()</tt> на
+    этой сессии.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../UWP_And_XBox_Live.htm">UWP и XBox Live</a></div>
+        <div style="float:right">Следующий: <a href="../Users_And_Accounts/Users_And_Accounts.htm">Пользователи и учетные записи</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+XBox Live Match Making
+-->
+  <!-- TAGS
+xboxlive_matchmaking_functions
+-->
+</body>
+</html>

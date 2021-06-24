@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>значение_кнопки_геймпада</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_button_value" />
+  <meta name="rh-index-keywords" content="gamepad_button_value" />
+  <meta name="search-keywords" content="gamepad_button_value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>значение_кнопки_геймпада</h1>
+  <p>С помощью этой функции вы можете получить текущее значение аналоговой кнопки, от 0 до 1, где 0 - отсутствие нажатия, а 1 - полное нажатие. Вы указываете индекс слота геймпада для проверки, а также либо константу кнопки (как указано <a href="Gamepad_Input.htm">здесь</a>),
+    либо целочисленное значение между 0 и <a href="gamepad_button_count.htm"><tt>gamepad_button_count()</tt></a> -1.</p>
+  <p>Обратите внимание, что это возвращает <em>необработанное</em> значение для кнопки и <em>не</em> учитывает настройки порога (более подробную информацию о порогах см. <a href="gamepad_set_button_threshold.htm">здесь</a> ).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gamepad_button_value(device, button);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>устройство</td>
+        <td>Какой &quot;слот&quot; устройства геймпада нужно проверить.</td>
+      </tr>
+      <tr>
+        <td>кнопка</td>
+        <td>Какую <a href="Gamepad_Input.htm">константу</a> кнопки геймпада следует проверить.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">скорость = gamepad_button_value(0, gp_shoulderrb) * 4;</p>
+  <p>Приведенный выше код использует значение аналогового триггера от геймпада, подключенного к устройству &quot;слот&quot; 0, для установки скорости экземпляра.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Gamepad_Input.htm">Вход геймпада</a></div>
+        <div style="float:right">Далее: <a href="gamepad_hat_count.htm">gamepad_hat_count</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_button_value
+-->
+  <!-- TAGS
+gamepad_button_value
+-->
+</body>
+</html>

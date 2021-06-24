@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>variable_instance_get_names</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function variable_instance_get_names" />
+  <meta name="rh-index-keywords" content="variable_instance_get_names" />
+  <meta name="search-keywords" content="variable_instance_get_names" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>variable_instance_get_names</h1>
+  <p>С помощью этой функции можно получить массив, заполненный именами переменных <b>экземпляра</b> или <b>глобальных</b> переменных игры. Когда вы передаете значение идентификатора экземпляра, каждый
+    каждая запись в массиве будет строкой имени переменной, соответствующей переменной <a href="../../GML_Overview/Variables_And_Variable_Scope.htm">области видимости экземпляра</a>, которая была создана в данном экземпляре. Однако если вы
+    передать ключевое слово <tt>global</tt>, каждая запись в массиве будет строкой имени переменной, соответствующей переменной <a href="../../GML_Overview/Variables_And_Variable_Scope.htm">глобальной области видимости</a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">variable_instance_get_names(instance_id/global);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>instance_id/global</td>
+        <td>Уникальное значение ID экземпляра для проверки или ключевое слово <tt>global</tt></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Массив (каждая запись - строка)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var str = &quot;&quot;;<br> var array = variable_instance_get_names(id);<br> show_debug_message(&quot;Переменные для &quot; + object_get_name(object_index) + string(id));<br> for (var i = 0; i &lt; array_length(array); i++;) <br> {
+    <br> str = array[i] + &quot;:&quot; + string(variable_instance_get(id, array[i]));<br> show_debug_message(str);
+    <br> }
+  </p>
+  <p>Приведенный выше код получит массив всех переменных области видимости экземпляра для экземпляра, выполняющего блок кода, а затем отобразит их вместе с их значениями в отладочном выводе.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Variable_Functions.htm">Переменные функции</a></div>
+        <div style="float:right">Далее: <a href="variable_instance_names_count.htm">variable_instance_names_count</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_instance_get_names
+-->
+  <!-- TAGS
+variable_instance_get_names
+-->
+</body>
+</html>

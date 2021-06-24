@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_has_instance</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_has_instance" />
+  <meta name="rh-index-keywords" content="layer_has_instance" />
+  <meta name="search-keywords" content="layer_has_instance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_has_instance</h1>
+  <p>Эта функция может быть использована для проверки того, назначен ли данный экземпляр на данный момент данному слою. Вы передаете идентификатор слоя (который вы получаете при создании слоя с помощью функции <a href="layer_create.htm"><tt>layer_create()</tt></a>) или имя слоя (в виде строки
+    - это повлияет на производительность) и ID экземпляра, который нужно проверить. Можно также указать <tt>object_index</tt> (т.е. имя объекта в браузере активов), и функция проверит, есть ли экземпляры этого объекта на данном слое.
+    заданном слое. Функция вернет <tt>true</tt>, если экземпляр находится на слое, и <tt>false</tt>, если нет.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_has_instance(layer_id, instance_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор слоя</td>
+        <td>Уникальное значение ID слоя, на который нужно нацелиться (или имя слоя в виде строки).</td>
+      </tr>
+      <tr>
+        <td>идентификатор экземпляра</td>
+        <td>Уникальный идентификатор экземпляра или индекс объекта экземпляра для проверки</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if !layer_has_instance(global.Bullet_Layer, obj_Bullet_Parent)<br> {
+    <br> layer_destroy(global.Bullet_Layer);
+    <br> }
+  </p>
+  <p>Приведенный выше код проверит, содержит ли данный слой какие-либо экземпляры объекта &quot;obj_Bullet_Parent&quot;, и если нет, то уничтожит слой.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="General_Layer_Functions.htm">Общие функции слоя</a></div>
+        <div style="float:right">Далее: <a href="layer_instance_get_instance.htm">layer_instance_get_instance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_has_instance
+-->
+  <!-- TAGS
+layer_has_instance
+-->
+</body>
+</html>

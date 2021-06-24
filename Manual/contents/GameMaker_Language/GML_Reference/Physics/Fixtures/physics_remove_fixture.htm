@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>физика_удаление_приспособления</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_remove_fixture" />
+  <meta name="rh-index-keywords" content="physics_remove_fixture" />
+  <meta name="search-keywords" content="physics_remove_fixture" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>физика_удаление_приспособления</h1>
+  <p>Эта функция удаляет (или &quot;отвязывает&quot;) приспособление от экземпляра или экземпляров. Для этого требуется уникальный &quot;id&quot; привязанного приспособления (возвращаемый функцией <a href="physics_fixture_bind.htm"><tt>physics_fixture_bind()</tt></a> и
+    Она удалит все определенные в данный момент физические свойства для экземпляра, что позволит вам переопределить новое приспособление и привязать его к экземпляру. Таким образом, вы можете изменить физические свойства экземпляра без необходимости уничтожать и создавать его заново.
+    его.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_remove_fixture(id, fixture)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Идентификатор экземпляра, из которого нужно удалить приспособление</td>
+      </tr>
+      <tr>
+        <td>приспособление</td>
+        <td>Идентификатор приспособления, которое должно быть удалено из экземпляра</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">physics_remove_fixture(id, my_fix);</p>
+  <p>Приведенный выше код удалит из экземпляра приспособление с &quot;id&quot;, хранящимся в переменной &quot;my_fix&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Fixtures.htm">Приспособления</a></div>
+        <div style="float:right">Далее: <a href="physics_fixture_set_box_shape.htm">physics_fixture_set_box_shape</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_remove_fixture
+-->
+  <!-- TAGS
+physics_remove_fixture
+-->
+</body>
+</html>

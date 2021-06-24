@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_assign</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_assign" />
+  <meta name="rh-index-keywords" content="sprite_assign" />
+  <meta name="search-keywords" content="sprite_assign" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_assign</h1>
+  <p>Эта функция берет два ранее созданных (или включенных) индекса спрайта и копирует изображение из одного в другой. Таким образом, вы можете копировать (или &quot;клонировать&quot;) один спрайт в другой индекс. Обратите внимание, что <i>копирование в игровой ресурс невозможно</i>.
+    Вы должны были создать спрайт, в который будет производиться копирование, ранее с помощью функции <a href="sprite_add.htm"><tt>sprite_add()</tt></a> или  <a href="sprite_duplicate.htm"><tt>sprite_duplicate()</tt></a> функции.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">sprite_assign(index, sprite);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс спрайта, в который будет скопирован (т.е. перезаписан).</td>
+      </tr>
+      <tr>
+        <td>спрайт</td>
+        <td>Спрайт, с которого нужно скопировать.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращает</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if sprite_exists(global.Player_Sprite)<br> {
+    <br> var t_spr = sprite_add(&quot;player.png&quot;, 16, true, true, 0, 0);<br> sprite_assign(global.Player_Sprite, t_spr);<br> sprite_delete(t_spr);
+    <br> }
+    <br> else
+    <br> {
+    <br> global.Player_Sprite = sprite_add(&quot;player.png&quot;, 16, true, true, 0, 0);<br> }
+  </p>
+  <p>Приведенный выше код проверяет, содержит ли глобальная переменная &quot;Player_Sprite&quot; спрайт, и если содержит, то использует sprite_assign для замены его на тот, который был загружен из внешнего файла. Если переменная не содержит спрайта, он загружается и его
+    индекс хранится в этой переменной.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Manipulation.htm">Манипуляция спрайтом</a></div>
+        <div style="float:right">Далее: <a href="sprite_merge.htm">sprite_merge</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_assign
+-->
+  <!-- TAGS
+sprite_assign
+-->
+</body>
+</html>

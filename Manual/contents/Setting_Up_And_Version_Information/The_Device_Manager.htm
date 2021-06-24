@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Диспетчер устройств</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section dedicated explaining the Device Manager
+" />
+  <meta name="rh-index-keywords" content="Device Manager" />
+  <meta name="search-keywords" content="Device Manager,device,device setup" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Диспетчер устройств</h1>
+  <p>Доступ к <strong>диспетчеру устройств</strong> осуществляется нажатием <img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> на кнопку с карандашом <img alt="Icon Pencil" class="icon" src="../assets/Images/Icons/Icon_Pencil.png"> в <a href="../Introduction/Compiling.htm">списке целей</a>:</p>
+  <p><img alt="Target List" class="center" src="../assets/Images/Setup_And_Version/TargetList.png">При нажатии на эту кнопку откроется <strong>Диспетчер устройств</strong>, где вы можете настроить различные устройства для целевых платформ, на которых вы хотите компилировать
+    и тестировать на них (обратите внимание, что доступные платформы будут зависеть от имеющейся у вас <a href="GMS2_Version_Information.htm">Лицензии</a>, и не все из них могут быть видны). Ниже вы найдете подробную информацию о настройке устройств для каждой из целевых платформ:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span class="notranslate">Android</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">
+      <img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_Android.png" src="../assets/Images/Setup_And_Version/Device_Manager_Android.png" class="center" alt="Android Device Manager"> Здесь вы можете нажать на кнопку
+     <em>Добавить новое устройство</em>, чтобы добавить новое устройство <span class="notranslate">Android</span> в список вручную, или вы можете нажать кнопку
+     <em>Detect Device</em>, чтобы <span class="notranslate">GameMaker Studio 2</span> автоматически определила все устройства, подключенные через проводное соединение. Вы также можете настроить
+     <strong><span class="notranslate">Android</span></strong> Virtual Device, нажав на кнопку с надписью
+     <em>Запустить AVD</em>. Откроется менеджер виртуальных устройств <span class="notranslate">Android</span>, где можно создать новое AVD (см.
+     <a href="https://developer.android.com/studio/run/managing-avds.html">здесь</a> для получения дополнительной информации). После того как устройство будет создано, его нужно запустить из менеджера AVD, а затем в <span class="notranslate">GameMaker Studio 2</span> нажать на кнопку
+     <em>Detect Device (Определить устройство</em> ), и оно должно быть автоматически добавлено в список устройств:
+     <br></p>
+    <p class="dropspot">
+      <img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_AVD.png" src="../assets/Images/Setup_And_Version/Device_Manager_AVD.png" alt="Android Virtual Device" class="center"> После добавления устройства (физического или виртуального),
+      вы можете проверить соединение с помощью кнопки
+     <em>Проверить соединение</em> или удалить его из списка, нажав кнопку
+      <em> Удалить устройство</em>.</p>
+    <p class="dropspot">
+      <br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">HTML5</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">
+      <img alt="HTML5 Device Manager" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_HTML5.png"> Менеджер устройств HTML5 предназначен для добавления различных браузеров в список устройств для таргетинга при запуске. Для начала вам следует
+      нажать кнопку
+     <em>Detect Browsers</em>, что приведет к созданию устройств для каждого из установленных на вашем компьютере браузеров. Если вашего браузера нет в списке, вы также можете нажать кнопку
+     <em>Add New Browser</em>, а затем дать устройству имя и указать <span class="notranslate">GameMaker Studio 2</span> путь к исполняемому файлу браузера.</p>
+    <p class="dropspot">Дополнительные доступные поля могут быть настроены для управления тем, как браузер запускает ваши проекты, с помощью следующих опций:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">
+       <strong>Аргументы командной строки браузера</strong>: Здесь вы можете добавить любые аргументы командной строки, которые будут добавлены к пути браузера. Вы можете найти список этих аргументов в следующих ссылках на основные популярные браузеры:
+        <ul>
+          <li>
+            <a href="https://peter.sh/experiments/chromium-command-line-switches/">Chromium (Chrome)</a></li>
+          <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options">Firefox</a></li>
+          <li>
+            <a href="https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/general-info/hh826025(v=vs.85)">Internet Explorer</a></li>
+        </ul>
+      </li>
+      <li class="dropspot">
+       <strong>Адрес веб-сервера</strong>: Адрес веб-сервера
+       <a data-glossterm="сервер" class="glossterm" href="#">сервера</a> (по умолчанию 127.0.0.1). Вам может понадобиться изменить этот параметр в зависимости от спецификаций различных API, например, Facebook потребует, чтобы этот параметр был установлен на
+        <span class="inline">http://localhost</span> (и затем внести его в белый список в консоли приложений).</li>
+      <li class="dropspot">
+       <strong>Порт веб-сервера</strong>: установите
+       <a data-glossterm="номер порта" class="glossterm" href="#">номер порта</a> для веб-сервера (по умолчанию 51264).</li>
+      <li class="dropspot">
+       <strong>Разрешенные IP-адреса веб-сервера / диапазоны CIDR IP</strong>: Установите разрешенный веб-сервер, имена хостов и диапазоны CIDR IP при необходимости.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span class="notranslate">iOS</span></a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">
+      <img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_iOS.png" src="../assets/Images/Setup_And_Version/Device_Manager_iOS.png" class="center" alt="iOS Device Manager"> Прежде чем настраивать устройства <span class="notranslate">iOS</span>, необходимо настроить
+      настроить устройство Mac и проверить его подключение (подробности см. ниже). После этого вы можете выбрать Mac, который вы хотите настроить, из выпадающего меню в верхней части окна, а затем нажать кнопку
+     <em>Detect Device</em>, чтобы <span class="notranslate">GameMaker Studio 2</span> автоматически нашла все подключенные устройства <span class="notranslate">iOS</span>, включая симуляторы. После подключения информация об устройстве будет показана в списке в этом окне, и вы можете изменить имя устройства, чтобы сделать его
+      более удобным для пользователя (это изменение влияет только на то, как устройство будет представлено в диспетчере целей, и ни на что другое).</p>
+    <p class="dropspot">
+      <br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span class="notranslate">tvOS</span></a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">
+      <img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_tvOS.png" src="../assets/Images/Setup_And_Version/Device_Manager_tvOS.png" class="center" alt="tvOS Device Manager"> Прежде чем настраивать устройства <span class="notranslate">tvOS</span>, необходимо
+      настроить устройство Mac и проверить его подключение (подробности см. ниже). После этого вы можете выбрать Mac, который вы хотите настроить, из выпадающего меню в верхней части окна, а затем нажать кнопку
+     <em>Detect Device</em>, чтобы <span class="notranslate">GameMaker Studio 2</span> автоматически нашла все подключенные устройства <span class="notranslate">tvOS</span>, включая симуляторы. После подключения информация об устройстве будет показана в списке в этом окне, и вы можете изменить имя устройства, чтобы сделать его
+      более удобным для пользователя (это изменение влияет только на то, как устройство будет представлено в диспетчере целей, и ни на что другое).</p>
+    <p class="dropspot">
+      <br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#"><span class="notranslate">macOS</span></a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">
+      <img data-cke-saved-src="../assets/Images/Setup_And_Version/Device_Manager_Mac.png" src="../assets/Images/Setup_And_Version/Device_Manager_Mac.png" class="center" alt="Mac Device Manager"> Чтобы добавить устройство Mac в менеджер, необходимо сначала нажать на кнопку
+      на кнопку с надписью
+     <em>Добавить новое устройство</em>, которая добавит устройство и создаст несколько пустых полей, которые необходимо заполнить для включения соединения.
+     <br></p>
+    <p class="dropspot">Сначала вам необходимо
+     <strong>дать имя </strong>устройству, чтобы его можно было идентифицировать в списке целей, а затем указать
+     <strong>имя хоста</strong> (или IP) компьютера Mac. Затем необходимо указать
+     <strong>имя пользователя </strong>, с которым вы хотите установить связь, и
+     <strong>пароль </strong>, который он использовал. При желании вы также можете изменить
+     <strong>Install Folder</strong> на компьютере Mac на то место, где вы предпочитаете, чтобы <span class="notranslate">GameMaker Studio 2</span> хранила файлы сборки ваших проектов.</p>
+    <p class="dropspot">Когда все будет готово, можно нажать кнопку
+     <em>Проверить соединение</em>, чтобы убедиться, что <span class="notranslate">GameMaker Studio 2</span> может взаимодействовать с компьютером Mac.</p>
+    <p class="note">
+     <strong>ПРИМЕЧАНИЕ</strong>: Если вы разрабатываете для <span class="notranslate">iOS</span>, вы должны сначала сделать это и установить рабочее соединение с Mac, который вы хотите использовать для разработки.
+     <br></p>
+    <p class="note">
+     <strong>ПРИМЕЧАНИЕ</strong>: Вы
+     <strong>должны </strong>быть включены
+     <strong>Удаленный вход</strong> на целевом компьютере mac. Это можно сделать, перейдя в
+     <strong>Предпочтения </strong>-&gt;
+     <strong>Общий доступ</strong> и
+     <strong>Включить удаленный вход</strong> для пользователя, которому вы хотите предоставить возможность входа.</p>
+    <p class="dropspot"></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#"><span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>)</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot"><img alt="Ubuntu (Linux) Device Manager" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_Ubuntu.png">Чтобы добавить устройство <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>) в менеджер, необходимо сначала нажать на кнопку " <em>Добавить новое устройство </em>".
+      добавит устройство и создаст несколько пустых полей, которые необходимо заполнить для включения соединения.</p>
+    <p class="dropspot">Сначала нужно <strong>назвать </strong>устройство, чтобы его можно было идентифицировать в списке целей, а затем указать <strong>имя хоста</strong> (или IP) машины <span class="notranslate">Ubuntu</span> (или виртуальной машины). Затем вы должны указать <strong>имя пользователя </strong>, на которого
+      вы хотите связать с ним, и <strong>пароль </strong>, который он использовал. Также необходимо указать <strong>папку установки </strong>на машине <span class="notranslate">Ubuntu</span>, которую вы хотите использовать для установки ваших проектов. Когда все это будет сделано, вы можете нажать
+      на кнопку <em>Test Connection</em>, чтобы убедиться, что <span class="notranslate">GameMaker Studio 2</span> может взаимодействовать с машиной <span class="notranslate">Ubuntu</span>.</p>
+    <p class="dropspot">Обратите внимание, что конечный исполняемый файл, созданный <span class="notranslate">GameMaker</span>, <strong>будет зависеть от архитектуры устройства, на которое он нацелен</strong>, которая может быть либо <strong>x64</strong>, либо <strong>ARM</strong>. Например, если вы подключите Raspberry Pi 3 или 4,
+      созданный исполняемый файл будет 32-разрядным ARM-исполняемым файлом, а если вы подключите ПК с <span class="notranslate">Linux</span>, то это будет 64-разрядный x64-исполняемый файл.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#"><span class="notranslate">Windows UWP</span></a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot">Прежде чем добавить устройство для цели <span class="notranslate">Windows 10</span> UWP, необходимо включить <strong>режим разработчика</strong> и настроить <strong>портал устройств</strong> на устройстве. Если вы этого не сделаете, <span class="notranslate">GameMaker Studio 2</span> не сможет взаимодействовать
+      с устройством и не сможет правильно создавать UWP-приложения.</p>
+    <p class="dropspot">Самый простой способ включить режим разработчика - это просто ввести в <span class="notranslate">поиске</span> Windows &quot; <em>Режим разработчика&quot;</em>, а затем щелкнуть на <em>открывшемся</em> окне &quot;Настройки&quot;. Откроется следующее окно:</p>
+    <p class="dropspot"><img alt="Windows UWP Device Developer Mode" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_UWP_DeveloperMode.png">Вам нужно выбрать опцию <strong>Режим разработчика</strong> (что может потребовать загрузки и
+      установить некоторые дополнительные пакеты), а затем выбрать расположенную под ним опцию <strong>Enable Device Portal</strong>. Портал устройства - это то, что позволит <span class="notranslate">GameMaker Studio 2</span> взаимодействовать с ПК с <span class="notranslate">Windows 10</span>, и когда он будет включен, вам потребуется
+      указать <em>имя пользователя</em> и <em>пароль</em>:</p>
+    <p class="dropspot"><img alt="Windows UWP Device Settings" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_UWP_ShowDevMode.png">Обратите внимание, что имя пользователя и пароль должны быть уникальными для портала и не должны быть теми, которые используются в вашей учетной записи Microsoft
+      или другими учетными данными <span class="notranslate">Windows</span>. После ввода этой информации нажмите кнопку <em>Apply (Применить </em>), затем закройте менеджер настроек и вернитесь в <span class="notranslate">GameMaker Studio 2</span>.</p>
+    <p class="dropspot">Для получения дополнительной информации о Портале устройств см. статью Microsoft: Портал <a href="https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop">устройств для настольных компьютеров</a>.</p>
+    <p class="dropspot">Теперь вы можете открыть <strong>диспетчер устройств</strong> в <span class="notranslate">GameMaker Studio 2</span> и настроить устройство (или устройства) для использования:</p>
+    <p class="dropspot"><img alt="Windows UWP Device Manager" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_UWP.png">Чтобы добавить устройство, совместимое с <span class="notranslate">Windows 10</span> UWP, в менеджер, необходимо сначала нажать на кнопку " <em>Добавить новое устройство</em> ".
+      добавит устройство и создаст несколько пустых полей, которые необходимо заполнить для включения соединения.</p>
+    <p class="dropspot">Сначала необходимо <strong>назвать </strong>устройство, чтобы его можно было идентифицировать в списке целей, а затем указать <strong>хост </strong>- это IP-адрес устройства <span class="notranslate">Windows 10</span> в сети, на котором будет размещена игра, с <strong>суффиксом</strong> &quot; <span class="inline">:50443</span>&quot; для задания номера порта. После этого добавьте <strong>имя пользователя</strong> и <strong>пароль </strong>, которые вы установили в Device Portal (как упоминалось ранее). Вы можете оставить PIN-код пустым, так как он
+      не требуется для UWP <span class="notranslate">Windows 10</span> Desktop.</p>
+    <p class="dropspot">Более подробную информацию о настройке для различных выходов UWP (Desktop, XboxOne) можно найти в службе поддержки YYG: <a href="https://help.yoyogames.com/hc/en-us/sections/115000309028-UWP">Настройка UWP</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p>В нижней части всех окон различных устройств имеется опция <strong>Очистить устройства</strong>, при нажатии на которую все подключенные устройства будут удалены из списка.</p>
+  <p>После настройки устройств вы можете подключиться к любому из них с помощью опции Target в верхней части IDE <span class="notranslate">GameMaker Studio 2</span>, и тестирование/создание вашей игры приведет к переносу проекта на это устройство:</p>
+  <p><img alt="Device Manager Target List" class="center" src="../assets/Images/Setup_And_Version/Device_Manager_TargetList.png" /></p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="GMS2_Version_Information.htm">Настройка и версии GMS2</a></div>
+        <div style="float:right">Следующий: <a href="Error_Reporting.htm">Отчеты об ошибках</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Preferences
+-->
+  <!-- TAGS
+preferences
+-->
+
+</body></html>

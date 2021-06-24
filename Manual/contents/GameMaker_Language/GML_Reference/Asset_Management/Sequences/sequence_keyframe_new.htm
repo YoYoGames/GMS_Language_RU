@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sequence_keyframe_new</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining function sequence_keyframe_new" />
+  <meta name="rh-index-keywords" content="sequence_keyframe_new" />
+  <meta name="search-keywords" content="sequence_keyframe_new,seqtracktype_graphic,seqtracktype_audio,seqtracktype_instance,seqtracktype_sequence,seqtracktype_clipmask,seqtracktype_clipmask_mask,seqtracktype_clipmask_subject,seqtracktype_group,seqtracktype_colour,seqtracktype_real,seqtracktype_message,seqtracktype_moment,seqtracktype_bool,seqtracktype_string,seqtracktype_spriteframes,seqtracktype_empty" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sequence_keyframe_new</h1>
+  <p>С помощью этой функции вы можете создать новую <a href="../../../GML_Overview/Structs.htm">структуру</a> <span class="notranslate">ключевых кадров</span> трека, указав тип трека, к которому будет применен <span class="notranslate">ключевой кадр</span>, который будет одной из следующих констант:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+        <th>Значение</th>
+      </tr>
+      <tr>
+        <td>seqtracktype_graphic</td>
+        <td>Это дорожка графических (спрайтовых) активов.</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_audio</td>
+        <td>Это дорожка аудиоактивов.</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_instance</td>
+        <td>Это трек актива экземпляра.</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_sequence</td>
+        <td>Это трек актива последовательности.</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_clipmask</td>
+        <td>Это дорожка активов группы масок клипов.</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_clipmask_mask</td>
+        <td>Это дорожка актива спрайта маски клипа, используемая для генерации маски клипа.</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_clipmask_subject</td>
+        <td>Это дорожка актива спрайта маски клипа, который маскируется.</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_group</td>
+        <td>Эта групповая папка отслеживает активы.</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_colour</td>
+        <td>Это дорожка параметров цветовых данных.</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_real</td>
+        <td>Это трек параметра значения реального числа.</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_message</td>
+        <td>Это дорожка широковещательных сообщений.</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_moment</td>
+        <td>Это трек события/момента.</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_bool</td>
+        <td>В настоящее время не используется.</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_string</td>
+        <td>В настоящее время не используется.</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_spriteframes</td>
+        <td>В настоящее время не используется.</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_empty</td>
+        <td>В настоящее время не используется.</td>
+        <td>12</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Функция возвращает <a href="Sequence_Structs/The_Keyframe_Struct.htm">структуру <span class="notranslate">ключевых кадров</span></a> дорожки, в которую затем могут быть добавлены данные, прежде чем она будет назначена <a href="Sequence_Structs/The_Track_Struct.htm">структуре дорожки</a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">sequence_keyframe_new(type);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>тип</td>
+        <td>Тип <span class="notranslate">ключевого кадра</span> для создания, константа, перечисленная выше.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Структура</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">myseq = sequence_create();<br> var mytracks = array_create(1);<br> mytracks[0] = sequence_track_new(seqtracktype_graphic);<br> var graphickeys = array_create(1);<br> graphickeys[0] = sequence_keyframe_new(seqtracktype_graphic);<br> graphickeys[0].frame
+    = 0;<br> graphickeys[0].length = 1;<br> graphickeys[0].stretch = true;<br> graphickeys[0].disabled = false;<br> var graphickeydata = array_create(1);<br> graphickeydata[0] = sequence_keyframedata_new(seqtracktype_graphic);<br> graphickeydata[0].spriteIndex
+    = spr_Platform;<br> graphickeydata[0].channel = 0;<br> graphickeys[0].channels = graphickeydata;<br> mytracks[0].name = &quot;TestGraphicTrack&quot;;<br> mytracks[0]. keyframes<span class="notranslate">= graphickeys</span>;<br> myseq.tracks = mytracks;</p>
+  <p>Приведенный выше код создает новую последовательность, затем создает дорожку графического актива и устанавливает на ней данные <span class="notranslate">ключевых кадров</span>. Затем эта дорожка назначается экземпляру.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sequences.htm">Последовательности</a></div>
+        <div style="float:right">Далее: <a href="sequence_keyframedata_new.htm">sequence_keyframedata_new</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_<span class="notranslate">keyframe</span>_new
+seqtracktype_graphic
+seqtracktype_audio
+seqtracktype_instance
+seqtracktype_sequence
+seqtracktype_clipmask
+seqtracktype_clipmask_mask
+seqtracktype_clipmask_subject
+seqtracktype_group
+seqtracktype_colour
+seqtracktype_real
+seqtracktype_message
+seqtracktype_moment
+seqtracktype_bool
+seqtracktype_string
+seqtracktype_spriteframes
+seqtracktype_empty
+-->
+  <!-- TAGS
+sequence_<span class="notranslate">keyframe</span>_new
+-->
+</body>
+</html>

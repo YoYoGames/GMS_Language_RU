@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>скорость</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable speed" />
+  <meta name="rh-index-keywords" content="speed" />
+  <meta name="search-keywords" content="speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>скорость</h1>
+  <p>Все экземпляры в <span class="notranslate">GameMaker Studio 2</span> имеют определенные &quot;встроенные&quot; свойства, которые можно использовать и устанавливать для управления их внешним видом и поведением. Скорость является <tt>одним</tt> из таких свойств и определяет, на сколько пикселей экземпляр будет перемещаться каждый шаг.
+    В отличие от <a href="hspeed.htm"><tt>hspeed</tt></a> и <a href="vspeed.htm"><tt>vspeed</tt></a> <tt>скорость</tt> не связана с направлением, так как оно зависит от <a href="direction.htm"><tt>направление</tt></a> значением экземпляра, но она
+    может иметь отрицательное значение, в этом случае экземпляр будет двигаться в направлении, противоположном тому, которое задано функцией <tt>direction</tt> (т.е. <tt>direction</tt> - 180°). Обратите внимание, что установка параметров <span class="inline">speed</span> и/или <span class="inline">direction</span>,
+    также изменит значения переменных <span class="inline">hspeed</span> и <span class="inline">vspeed</span>, и что <a href="gravity.htm"><span class="inline">gravity</span></a>, <a href="gravity_direction.htm"><span class="inline">gravity_direction</span></a>    и <a href="friction.htm"><span class="inline">friction</span></a> могут изменять значение этой переменной, когда они используются в ваших играх.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">скорость;</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (значение с плавающей точкой одинарной точности)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if keyboard_check(vk_up) speed = 2;<br> if keyboard_check(vk_left) direction += 5;<br> if keyboard_check(vk_right) direction -= 5;</p>
+  <p>Приведенный выше код будет использовать клавиши со стрелками для установки скорости и направления движения экземпляра.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Instance_Variables.htm">Переменные экземпляра</a></div>
+        <div style="float:right">Далее: <a href="xstart.htm">xstart</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+speed
+-->
+  <!-- TAGS
+speed
+-->
+</body>
+</html>

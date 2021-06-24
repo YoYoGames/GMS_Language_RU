@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_replace_list</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_replace_list" />
+  <meta name="rh-index-keywords" content="ds_map_replace_list" />
+  <meta name="search-keywords" content="ds_map_replace_list" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_replace_list</h1>
+  <p>С помощью этой функции вы можете заменить <a href="../DS_Lists/DS_Lists.htm">список DS</a>, который был сохранен в заданном &quot;ключе&quot;, на другой список, созданный ранее. Эта функция предназначена для создания JSON-совместимых карт, которые
+    вы затем закодируете с помощью <a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><tt>json_encode()</tt></a> и должна использоваться только в сочетании с этой функцией.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_map_replace_list(id, key, value)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Идентификатор карты, которую нужно использовать.</td>
+      </tr>
+      <tr>
+        <td>ключ</td>
+        <td>Ключ на замену.</td>
+      </tr>
+      <tr>
+        <td>значение</td>
+        <td>Идентификатор списка ds_list, который будет использоваться для замены списка, ранее хранившегося в данном ключе.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var j_list = ds_list_create();<br> ds_list_add(j_list, health);<br> ds_list_add(j_list, lives);<br> ds_list_add(j_list, score);<br> ds_map_replace_list(j_map, &quot;list&quot;, j_list);<br> var j = json_encode(j_map);<br> ds_list_destroy(j_list);
+  </p>
+  <p>Приведенный выше код создаст <tt>DS List</tt> и заполнит его значениями различных глобальных переменных, а затем заменит ранее сохраненный список в <tt>DS Map</tt> &quot;j_map&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="DS_Maps.htm">Карты DS</a></div>
+        <div style="float:right">Далее: <a href="ds_map_replace_map.htm">ds_map_replace_map</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_replace_list
+-->
+  <!-- TAGS
+ds_map_replace_list
+-->
+</body>
+</html>

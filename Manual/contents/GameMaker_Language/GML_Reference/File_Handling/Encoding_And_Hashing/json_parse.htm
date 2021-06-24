@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>json_parse</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for json_parse" />
+  <meta name="rh-index-keywords" content="json_parse" />
+  <meta name="search-keywords" content="json_parse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>json_parse</h1>
+  <p>Эта функция может быть использована для разбора строки JSON (созданной ранее с помощью <a href="json_stringify.htm">json_stringify</a> или из любого корректного источника) и преобразования ее в коллекцию массивов или структур, где массив эквивалентен массиву JSON, а структура - объекту JSON.
+    JSON-массив, а struct - эквивалент JSON-объекта. Вы предоставляете строку для разбора, и функция возвращает массив или структуру верхнего уровня, которые затем можно проверить в вашем коде. Если вы не уверены в содержимом JSON, вы можете
+    использовать различные <a href="../../Variable_Functions/Variable_Functions.htm">функции переменных</a> (например <a href="../../Variable_Functions/typeof.htm"><span class="inline">typeof()</span></a> или <a href="../../Variable_Functions/variable_struct_get_names.htm"><span class="inline">variable_struct_get_names()</span></a>)
+    для проверки возвращаемого содержимого. Обратите внимание, что при попытке разобрать недопустимое значение (т.е. не строку) возникнет ошибка исключения.</p>
+  <p>Если предоставленная строка JSON содержит &quot;undefined&quot; в качестве значения для любого свойства, то <tt>при</tt> разборе она будет преобразована в pointer_null.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code"><code>json_parse</code>(json)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>json</td>
+        <td>JSON для разбора (строка)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Вложенные структуры и массивы</p>
+  <p> </p>
+  <h4>Расширенный пример:</h4>
+  <p>В этом примере мы разберем следующую строку JSON, которую будем хранить в переменной &quot;json&quot;:</p>
+  <p class="code">json = &quot;{\&quot;myObj\&quot;: {\&quot;яблоки\&quot;:10,\&quot;апельсины\&quot;:12,\&quot;картофель\&quot;:100000,\&quot;авокадо\&quot;:0 }, \&quot;myArray\&quot;:[0, 1, 1, 2, 2, 4, 0, 1, 5, 1]}&quot;</p>
+  <p>Эта строка будет разобрана примерно так:</p>
+  <p class="code">data = json_parse(json);<br> if variable_struct_exists(data, &quot;myObj&quot;)<br> {
+    <br> if is_struct(data.myObj)<br> {<br> var _names = variable_struct_get_names(data.myObj);<br> var _str = &quot;&quot;;<br> for (var i = 0; i &lt; array_length(_names); i++;) <br> {<br> _str = _names[i] + &quot;:
+    &quot; + string(variable_struct_get(data.myObj, _names[i]));<br> show_debug_message(_str);<br> } <br> } <br> if variable_struct_exists(data, &quot;myArray&quot;)<br> {<br> if is_array(data.myArray)<br> {<br> show_debug_message(data.myArray);<br> } <br> } <br> }
+  </p>
+  <p>Приведенный выше код разберет заданную строку JSON, выдав следующий консольный вывод:</p>
+  <p class="code">апельсины: 12<br> картофель: 100000<br> авокадо: 0<br> яблоки: 10<br> [ 0,1,2,2,4,0,1,5,1 ]</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Encoding_And_Hashing.htm">Кодирование файлов</a></div>
+        <div style="float:right">Далее: <a href="base64_encode.htm">base64_encode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+json_parse
+-->
+  <!-- TAGS
+json_parse
+-->
+</body>
+</html>

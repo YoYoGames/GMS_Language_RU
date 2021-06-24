@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_matchmaking_join_session</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_join_session" />
+  <meta name="rh-index-keywords" content="xboxlive_matchmaking_join_session,MATCHMAKING_SESSION" />
+  <meta name="search-keywords" content="xboxlive_matchmaking_join_session,MATCHMAKING_SESSION" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_join_session</h1>
+  <p>Эта функция позволяет присоединиться к определенной сессии через хэндл сессии. Это похоже на присоединение к приглашению сессии, но полезно, когда у вас есть собственный сервер, выполняющий матчмейкинг, а не полагающийся на матчмейкинг xbox live.</p>
+  <p>Функция требует, чтобы вы предоставили идентификатор пользователя, который вы можете получить для конкретного геймпада, вызвав функцию <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm"><tt>xboxlive_user_for_pad()</tt></a> функцию, а также шаблон Secure Device
+    Association, который вы должны были предварительно создать на панели управления XDP.</p>
+  <p>Чтобы получить хэндл сессии, необходимо сначала получить &quot;идентификатор корреляции&quot; из сессии, к которой вы хотите присоединиться. При создании оригинальной сессии асинхронное социальное событие будет &quot;<tt>session_created&quot; и</tt> оно будет
+    включает запись &quot; correlationid<b>&quot;</b> в возвращаемую карту (см. <a href="xboxlive_matchmaking_create.htm"><tt>xboxlive_matchmaking_create()</tt></a>). Вам нужно будет передать этот идентификатор обратно на сервер, чтобы он затем был передан при
+    получении запроса на сопоставление. Как только присоединяющаяся игра получит &quot;идентификатор корреляции&quot; от сервера, она может вызвать эту функцию, передав идентификатор корреляции в качестве аргумента session handle.</p>
+  <p>Функция вернет -1, если произошла ошибка (в этом случае должен появиться консольный вывод с подробным описанием проблемы), или значение Request ID в противном случае. Значение Request ID может быть использовано для определения правильного <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">Social Asynchronous Event</a> для этой функции. Это событие будет запущено после создания сессии и будет содержать DS Map в переменной <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> со следующими
+    парами ключ/значение:</p>
+  <ul class="colour">
+    <li>&quot;<b>requestid&quot; -</b> содержит идентификатор запроса, возвращенный вызывающей функцией</li>
+    <li>&quot;<b>status&quot; -</b> содержит строку &quot;session_player_joined&quot; для информирования о том, какой тип события был вызван.</li>
+    <li>&quot;<b>sessionid&quot; -</b> содержит идентификатор сессии, или -1 в случае неудачи.</li>
+    <li>&quot;<b>sessionOwner&lt; index&gt; &quot;<i>-</i></b> содержит ID хозяина сессии, если сессия была найдена (&lt; index&gt; - это значение<i>от 0</i> до &quot;num_results&quot; - 1)</li>
+    <li>&quot; id&quot; - содержит константу MATCHMAKING_SESSION</li>
+    <li>&quot; error<b>&quot; -</b> будет 0, если все в порядке, или -1, если что-то не получилось</li>
+  </ul>
+  <p>Когда новый игрок присоединяется к сессии, карта DS будет содержать эти пары ключ/значение:</p>
+  <ul class="colour">
+    <li>&quot; id&quot; - содержит константу MATCHMAKING_SESSION</li>
+    <li>&quot;<b>sessionid&quot; -</b> содержит идентификатор сессии</li>
+    <li>&quot;<b>status&quot; -</b> содержит строку &quot;session_player_joined&quot;.</li>
+    <li>&quot;<b>requestid&quot; -</b> Значение ID, которое было возвращено функцией, создавшей запрос</li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">xboxlive_matchmaking_join_session(user_id, session_handle, sdatemplate);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор пользователя</td>
+        <td>Указатель идентификатора пользователя для использования</td>
+      </tr>
+      <tr>
+        <td>рукоятка_сеанса</td>
+        <td>&quot;Идентификатор корреляции&quot;, используемый для идентификатора сессии (см. описание выше)</td>
+      </tr>
+      <tr>
+        <td>sdatemplate</td>
+        <td>Имя шаблона ассоциации безопасных устройств, который необходимо использовать</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Идентификатор запроса (целое число)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">Request_ID = xboxlive_matchmaking_join_session(global.UserID, global.SessionID, &quot;PeerServerTraffic&quot;);</p>
+  <p>Вышеприведенная команда отправит запрос на присоединение к заданной многопользовательской сессии, сохраняя значение ID запроса в переменной, чтобы его можно было проверить в асинхронном событии.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Match_Making.htm">Сопоставление</a></div>
+        <div style="float:right">Далее: <a href="xboxlive_matchmaking_session_leave.htm">xboxlive_matchmaking_session_leave</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_matchmaking_join_session
+MATCHMAKING_SESSION
+-->
+  <!-- TAGS
+xboxlive_matchmaking_join_session
+-->
+</body>
+</html>

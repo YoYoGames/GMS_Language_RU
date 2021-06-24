@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_stack_write</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_stack_write" />
+  <meta name="rh-index-keywords" content="ds_stack_write" />
+  <meta name="search-keywords" content="ds_stack_write" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_stack_write</h1>
+  <p>Эта функция возвращает строку, которая затем может быть сохранена или передана в другую структуру данных с помощью функции <a href="ds_stack_read.htm"><tt>ds_stack_read()</tt></a> функцию.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Возвращаемая строка не является человекочитаемой строкой, а скорее дампом содержимого структуры данных.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_stack_write(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Идентификатор структуры данных для записи.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Строка</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">ini_open(&quot;save.ini&quot;);<br> var str = ds_stack_write(stack);<br> ini_write_string(&quot;Stacks&quot;, &quot;0&quot;, str);<br> ds_stack_clear(stack);
+    <br> ini_close();
+  </p>
+  <p>Приведенный выше код открывает ini-файл, а затем записывает строку, содержащую информацию, хранящуюся в стеке DS, индексированном в переменной &quot;stack&quot;. Затем стек очищается, а ini-файл закрывается.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="ds_stack_create.htm">ds_stack_create</a></div>
+        <div style="float:right">Далее: <a href="ds_stack_create.htm">ds_stack_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_stack_write
+-->
+  <!-- TAGS
+ds_stack_write
+-->
+
+</body></html>

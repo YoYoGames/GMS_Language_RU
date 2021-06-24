@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>motion_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function motion_set" />
+  <meta name="rh-index-keywords" content="motion_set" />
+  <meta name="search-keywords" content="motion_set" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>motion_set</h1>
+  <p>Эта функция задает новое направление движения и новую скорость для экземпляра, выполняющего код. Обратите внимание, что она <i>не</i> добавляет к текущей скорости и направлению движения (для этого используется функция <a href="motion_add.htm"><tt>motion_add()</tt></a>)
+    , а скорее принудительно устанавливает новые параметры.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">motion_set(dir, speed);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>dir</td>
+        <td>Новое направление.</td>
+      </tr>
+      <tr>
+        <td>скорость</td>
+        <td>Новая скорость.`</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if irandom(9) = 1<br> {<br> motion_set(random(360), 1 + random(3));<br> }</p>
+  <p>Приведенный выше код заставит экземпляр менять скорость и направление движения через случайные промежутки времени.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Movement.htm">Движение</a></div>
+        <div style="float:right">Далее: <a href="move_towards_point.htm">перемещение_к_точке</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+motion_set
+-->
+  <!-- TAGS
+motion_set
+-->
+</body>
+</html>

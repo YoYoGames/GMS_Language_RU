@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>размер_окна</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for window_set_size" />
+  <meta name="rh-index-keywords" content="window_set_size" />
+  <meta name="search-keywords" content="window_set_size" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>размер_окна</h1>
+  <p>С помощью этой функции можно изменить размер игрового окна. Если вы используете эту функцию для изменения размера игрового окна, содержимое окна будет масштабироваться в соотношении 1:1 к фоновому холсту, что сохранит четкость и ясность изображения.
+    и четким (хотя масштаб будет изменен, если окно отличается от размера комнаты или вида). Например, если у вас есть окно размером 200 x 150 пикселей, и игрок растягивает окно, перетаскивая границы, конечный размер окна может быть 400 x 300 пикселей, но холст рисунка будет по-прежнему 200 x 150.
+    холст все еще 200 x 150, что дает размытое изображение, поскольку соотношение пикселей теперь 1:2. Однако если вы используете эту функцию для установки размера окна, соотношение 1:1 сохраняется, даже если изображение масштабируется в соответствии с новым размером окна.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">window_set_size( w, h );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Новая ширина окна.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Новая высота окна.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> global.scale += 1;<br> window_set_size(200 * global.scale, 150 * global.scale);<br> }
+  </p>
+  <p>Приведенный выше код будет изменять размер окна в зависимости от значения переменной &quot;global.scale&quot; при нажатии кнопки мыши.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../The_Game_Window/The_Game_Window.htm">Окно игры</a></div>
+        <div style="float:right">Далее: <a href="../The_Game_Window/window_set_rectangle.htm">window_set_rectangle</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+window_set_size
+-->
+  <!-- TAGS
+window_set_size
+-->
+
+</body></html>

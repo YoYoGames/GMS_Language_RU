@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>счетчик жестов</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gesture_tap_count" />
+  <meta name="rh-index-keywords" content="gesture_tap_count" />
+  <meta name="search-keywords" content="gesture_tap_count" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>счетчик жестов</h1>
+  <p>Эта функция используется для установки того, включен или выключен отсчет касаний. При значении <tt>true</tt> счетчик включается, а при значении <tt>false</tt> - отключается, хотя вы можете проверить, в каком состоянии он находится, используя функцию <a href="gesture_get_tap_count.htm"><tt>gesture_get_tap_count()</tt></a>.
+    Если функция включена, каждое событие касания будет иметь дополнительный элемент карты DS &quot;tapcount&quot;, который будет регистрировать количество касаний, а если включена, это означает, что все события касания будут срабатывать, т.е. два касания будут срабатывать как при одинарном касании, так и при двойном, т.е. два касания будут срабатывать как при одинарном, так и при двойном касании.
+    и двойное касание, при этом количество касаний при одиночном касании будет равно 1, а при двойном - 2. Значение счета переключений будет сброшено на 0 по истечении времени, установленного для обнаружения двойного переключения (см. функцию <a href="gesture_double_tap_time.htm"><tt>gesture_double_tap_time()</tt></a>).
+    Если счетчик касаний отключен, то первое касание не будет зарегистрировано, пока не пройдет время двойного касания и не будет обнаружено второе касание. Обратите внимание, что по умолчанию эта функция <b>включена</b>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gesture_tap_count(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>включить</td>
+        <td>Включить (установить значение <tt>true</tt>) или отключить (установить значение <tt>false</tt>) подсчет касаний.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if !gesture_get_tap_count()<br> {
+    <br> getsure_tap_count(true);
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет, включен ли подсчет касаний, и если нет, то он включается.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Gesture_Input.htm">Ввод с помощью жестов</a></div>
+        <div style="float:right">Далее: <a href="gesture_pinch_distance.htm">жест_пинч_дистанция</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gesture_tap_count
+-->
+  <!-- TAGS
+gesture_tap_count
+-->
+
+</body></html>

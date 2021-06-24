@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>os_type</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for os_type" />
+  <meta name="rh-index-keywords" content="os_type,os_windows,os_uwp,os_linux,os_macosx,os_ios,os_tvos,os_android,os_ps4,os_xboxone,os_switch,os_unknown" />
+  <meta name="search-keywords" content="os_type,os_windows,os_uwp,os_linux,os_macosx,os_ios,os_tvos,os_android,os_ps4,os_xboxone,os_switch,os_unknown" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_type</h1>
+  <p>Эта переменная, <strong>доступная только для чтения</strong>, содержит одну из различных констант <span class="notranslate">GameMaker Studio 2</span>, позволяющих определить, для какой операционной системы была создана игра. Обратите внимание, что это <i>не</i> обязательно то же самое, что и ОС устройства, на котором запущена игра.
+    Например, ваша игра может работать на <span class="notranslate">Amazon Fire</span> OS, но быть создана для платформы <span class="notranslate">Android</span> (в этом случае <tt>os_type</tt> будет <tt>os_android</tt>).</p>
+  <p>Могут быть возвращены следующие константы:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>os_windows</td>
+        <td>ОС<span class="notranslate">Windows</span> </td>
+      </tr>
+      <tr>
+        <td>os_uwp</td>
+        <td>Универсальная платформа<span class="notranslate">Windows 10</span> </td>
+      </tr>
+      <tr>
+        <td>os_linux</td>
+        <td><span class="notranslate">Linux</span></td>
+      </tr>
+      <tr>
+        <td>os_macosx</td>
+        <td><span class="notranslate">macOS</span> X</td>
+      </tr>
+      <tr>
+        <td>os_ios</td>
+        <td><span class="notranslate">iOS</span> (iPhone, iPad, iPod Touch)</td>
+      </tr>
+      <tr>
+        <td>os_tvos</td>
+        <td>Apple <span class="notranslate">tvOS</span></td>
+      </tr>
+      <tr>
+        <td>os_android</td>
+        <td><span class="notranslate">Android</span></td>
+      </tr>
+      <tr>
+        <td>os_ps4</td>
+        <td>Sony PlayStation 4</td>
+      </tr>
+      <tr>
+        <td>os_xboxone</td>
+        <td>Microsoft <span class="notranslate">XBox One</span></td>
+      </tr>
+      <tr>
+        <td>os_switch</td>
+        <td><span class="notranslate">Nintendo</span> <span class="notranslate">Switch</span></td>
+      </tr>
+      <tr>
+        <td>os_unknown</td>
+        <td>неизвестная ОС</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">os_type;</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Постоянная</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">switch (os_type)<br> {
+    <br> case os_windows: global.Config = 0; break;<br> case os_android: global.Config = 1; break;<br> case os_linux: global.Config = 2; break;<br> case os_macosx: global.Config = 3; break;<br> case os_ios: global.Config = 4; break;<br> case os_winphone: global.Config = 5; break;<br> }
+  </p>
+  <p>Приведенный выше код проверяет ОС, на которой запущена игра, и соответствующим образом устанавливает глобальную переменную.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="OS_And_Compiler.htm">ОС и компилятор</a></div>
+        <div style="float:right">Далее: <a href="os_version.htm">os_version</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+os_type
+os_windows
+os_uwp
+os_linux
+os_macosx
+os_ios
+os_tvos
+os_android
+os_ps4
+os_xboxone
+os_switch
+os_unknown
+-->
+  <!-- TAGS
+os_type
+-->
+</body>
+</html>

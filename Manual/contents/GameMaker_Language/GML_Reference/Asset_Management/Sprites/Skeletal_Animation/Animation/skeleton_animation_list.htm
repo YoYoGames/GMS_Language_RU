@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>список_анимации_скелета</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_list" />
+  <meta name="rh-index-keywords" content="skeleton_animation_list" />
+  <meta name="search-keywords" content="skeleton_animation_list" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>список_анимации_скелета</h1>
+  <p>С помощью этой функции вы можете заполнить (предварительно созданный) <a href="../../../../Data_Structures/DS_Lists/DS_Lists.htm">список DS</a> всеми именами анимаций, включенных в скелетный анимационный спрайт. Эти имена будут строками и могут быть
+    использовать в других функциях анимации для этих типов спрайтов.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">skeleton_animation_list(sprite, list);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>спрайт</td>
+        <td>Индекс спрайта скелетной анимации Spine для получения списка.</td>
+      </tr>
+      <tr>
+        <td>список</td>
+        <td>Идентификатор списка DS для заполнения именами анимаций.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var list = ds_list_create();<br> skeleton_animation_list(sprite_index, list);<br> for (var i = 1; i &lt; ds_list_size(list); i++;) <br> {
+    <br> skeleton_animation_mix(list[| 0], list[| i], 0.5);<br> }
+    <br> ds_list_destroy(list);
+  </p>
+  <p>Приведенный выше код создает список DS всех имен анимаций для спрайта, используемого данным экземпляром. Затем он перебирает их и устанавливает значение mix для всех анимаций с первой анимацией равным 0,5.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Animation.htm">Анимация</a></div>
+        <div style="float:right">Далее: <a href="skeleton_animation_clear.htm">skeleton_animation_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_list
+-->
+  <!-- TAGS
+skeleton_animation_list
+-->
+</body>
+</html>

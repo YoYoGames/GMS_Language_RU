@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_alpha</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_alpha" />
+  <meta name="rh-index-keywords" content="layer_background_alpha" />
+  <meta name="search-keywords" content="layer_background_alpha" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_background_alpha</h1>
+  <p>Эта функция управляет альфа (прозрачностью) фонового спрайта. Вы передаете ID фонового элемента (который вы получаете при создании фонового элемента с помощью функции <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a> или когда
+    вы используете функцию <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>), а затем задаете используемое значение альфа. Альфа может быть в диапазоне от 0 (полностью прозрачный) до 1 (полностью непрозрачный), а значение альфа по умолчанию для элемента фона
+    элемента по умолчанию равно 1. Обратите внимание, что если слой, которому был назначен фоновый элемент, не виден, или сам элемент был сделан невидимым, вы не увидите никакой разницы с помощью этой функции, пока слой или элемент не станут видимыми.
+    снова.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_background_alpha(background_element_id, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>background_element_id</td>
+        <td>Уникальное значение ID элемента фона для изменения</td>
+      </tr>
+      <tr>
+        <td>альфа</td>
+        <td>Альфа для фонового спрайта, от 0 до 1 (по умолчанию 1)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Background_sky&quot;);<br> var back_id = layer_background_get_id(lay_id);<br> layer_background_alpha(back_id, random(1));</p>
+  <p>Приведенный выше код получает значение ID фона, назначенного слою &quot;Background_sky&quot;, а затем устанавливает его альфа-фактор на случайное значение между 0 и 1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Background_Layers.htm">Фоновые слои</a></div>
+        <div style="float:right">Далее: <a href="layer_background_index.htm">layer_background_index</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_alpha
+-->
+  <!-- TAGS
+layer_background_alpha
+-->
+</body>
+</html>

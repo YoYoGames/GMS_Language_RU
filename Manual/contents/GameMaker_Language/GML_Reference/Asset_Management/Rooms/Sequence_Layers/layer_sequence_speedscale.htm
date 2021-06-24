@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sequence_speedscale</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_speedscale" />
+  <meta name="rh-index-keywords" content="layer_sequence_speedscale" />
+  <meta name="search-keywords" content="layer_sequence_speedscale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sequence_speedscale</h1>
+  <p>С помощью этой функции вы можете изменить скорость воспроизведения заданной последовательности. Вы передаете идентификатор элемента последовательности, возвращаемый <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a> или одной из <a href="../General_Layer_Functions/General_Layer_Functions.htm">функций элемента слоя</a>, а затем значение шкалы скорости. Это значение представляет собой <i>множитель</i>, где 1 - скорость воспроизведения по умолчанию, значения меньше 1 замедляют воспроизведение, а значения больше 1 ускоряют его, например: значение 0,5 означает половинную скорость воспроизведения, в то время как
+    значение 2 - удвоенная скорость воспроизведения.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_sequence_speedscale(sequence_element_id, speedscale)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>Уникальное значение ID элемента последовательности, на который нужно нацелиться</td>
+      </tr>
+      <tr>
+        <td>шкала скорости</td>
+        <td>Используемая шкала скорости (множитель), по умолчанию 1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br> layer_sequence_speedscale(_seq, 0.75);</p>
+  <p>Приведенный выше код создает новую последовательность на слое вызывающего экземпляра, а затем устанавливает значение шкалы скорости 0,75 (три четверти скорости воспроизведения по умолчанию).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sequence_Layers.htm">Последовательность слоев</a></div>
+        <div style="float:right">Далее: <a href="layer_sequence_get_x.htm">layer_sequence_get_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_speedscale
+-->
+  <!-- TAGS
+layer_sequence_speedscale
+-->
+</body>
+</html>

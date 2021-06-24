@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Параметры репозитория</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section that covers Source Control and the repository options" />
+  <meta name="rh-index-keywords" content="Source Control - Repository Options" />
+  <meta name="search-keywords" content="Source Control Repository,repository options,repository" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Параметры репозитория</h1>
+  <p>После <a href="Setting_Up_Git_Plugin.htm">настройки учетных данных <span class="notranslate">GIT</span></a> и включения функции Source Control для вашего проекта, вам необходимо связать IDE <span class="notranslate">GameMaker Studio 2</span> с репозиторием, что делается одним из трех способов:</p>
+  <ul class="colour">
+    <li>Создание репозитория проекта</li>
+    <li>Вставьте текущий проект во внешний репозиторий</li>
+    <li>Клонирование существующего репозитория</li>
+  </ul>
+  <p>В первом случае, при <strong>создании репозитория проекта</strong>, будет создан <span class="notranslate">GIT-репозиторий</span> непосредственно там, где находится ваш проект. На языке <span class="notranslate">GIT</span> это &quot;непустой<em>репозиторий&quot;, поэтому</em> Push/Pull в данном случае не <strong>имеют</strong> смысла.
+    не имеют смысла в этом случае, но вы все равно можете фиксировать и отслеживать изменения проекта, а также возвращать изменения и ревизии, если это необходимо. Чтобы настроить его, вам просто нужно выбрать <strong>Source Control</strong> &gt; <strong>Create Project Repository</strong> в главном меню.</p>
+  <p><img alt="Source Control Create Repository" class="center" src="../../assets/Images/IDE Tools/SCM_CreateProjectRepository.png">Однако, возможно, у вас уже есть существующий проект, и вы хотите поместить его во внешнее хранилище для отслеживания и совместного использования.
+    среди вашей команды. Для этого необходимо, чтобы <strong>внешний репозиторий</strong> был уже создан, а также чтобы в настройках идентификации были заданы правильные имя пользователя и пароль для доступа к нему. Если у вас все готово, нажмите <strong>Source Control</strong> &gt; <strong>Import Project into Repository</strong> и заполните URL:</p>
+  <p><img alt="Source Control Import Project To Repository" class="center" src="../../assets/Images/IDE Tools/SCM_ImportProject.png" /></p>
+  <p>Наконец, в качестве удобной функции вы можете <strong>клонировать </strong>внешний репозиторий через IDE. Опять же, вам понадобится имя пользователя и пароль для хранилища, к которому вы собираетесь подключиться, установленные в ваших настройках идентификации, а затем это
+    просто нажмите <strong>Source Control</strong> &gt; Clone <strong>Repository.</strong> Заполните URL (используя вариант HTTPS, а не SSH) и укажите, куда вы хотите его отправить:</p>
+  <p><img alt="Source Control Clone Repository" class="center" src="../../assets/Images/IDE Tools/SCM_CloneRepository.png">После завершения клонирования автоматически откроется браузер файлов, чтобы вы могли открыть проект, если захотите.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Source_Control.htm">Контроль источников</a></div>
+        <div style="float:right">Следующее: <a href="Standard_Workflow.htm">Стандартный рабочий процесс</a> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Source Control Repositories
+setup repositories
+-->
+  <!-- TAGS
+source_control_repositories
+-->
+</body>
+</html>

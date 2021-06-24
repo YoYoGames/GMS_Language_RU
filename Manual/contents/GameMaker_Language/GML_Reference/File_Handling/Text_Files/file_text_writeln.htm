@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>file_text_writeln</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_text_writeln" />
+  <meta name="rh-index-keywords" content="file_text_writeln" />
+  <meta name="search-keywords" content="file_text_writeln" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>file_text_writeln</h1>
+  <p>С помощью этой функции можно записать новую строку в открытый текстовый файл. Таким образом, вы можете пропускать строки или записывать информацию построчно (см. пример кода ниже).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">file_text_writeln(fileid);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>fileid</td>
+        <td>Идентификатор файла для редактирования.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var file = file_text_open_write(working_directory + &quot;hiscore.txt&quot;);<br> for (var i = 0; i &lt; 10; ++i;)<br> {
+    <br> file_text_write_real(file, scr[i]);<br> file_text_writeln(file);
+    <br> file_text_write_string(file, scr_name[i]);<br> file_text_writeln(file);
+    <br> }
+    <br> file_text_close(file);
+  </p>
+  <p>Приведенный выше код открывает файл для записи, а затем в цикле просматривает два массива, записывая каждое значение массива в новую строку файла. После завершения цикла файл закрывается.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Text_Files.htm">Текстовые файлы</a></div>
+        <div style="float:right">Далее: <a href="file_text_eoln.htm">file_text_eoln</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_text_writeln
+-->
+  <!-- TAGS
+file_text_writeln
+-->
+</body>
+</html>

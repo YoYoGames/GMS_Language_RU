@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Push-уведомления</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for all the Push Notification functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Push Notifications,local notifications,remote notifications" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Push-уведомления</h1>
+  <p>На мобильных устройствах обычно только одно приложение может быть активным на переднем плане в любой момент времени, но многие игры и приложения работают в привязанной ко времени или взаимосвязанной среде, где события, представляющие интерес для пользователей, могут происходить, когда приложение <i>не</i> находится на переднем плане. В таких случаях <b>локальные</b> и <b>удаленные</b> push-уведомления могут позволить этим играм уведомлять своих пользователей о происходящих событиях.</p>
+  <p>Когда операционная система доставляет локальное или удаленное push-уведомление, а целевое приложение не запущено на переднем плане, она представляет уведомление пользователю в виде баннера. Если есть уведомление и пользователь нажимает на него
+    на него, то запускается игра и вызывается <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Push_Notifications.htm">асинхронное событие Push</a>, где вы можете проверить указанную вами строку обратного вызова и разрешить push
+    на основе ее значения. Если в момент доставки уведомления приложение работает на переднем плане, оно все равно получит Asynchronous Push Event, но пользователю не будет выведено сообщение, если вы не создадите его сами.</p>
+  <p>Следует отметить несколько различий между поддерживаемыми платформами:</p>
+  <ul class="colour">
+    <li>На <span class="notranslate">Android</span> <i>все</i> уведомления, полученные, когда приложение не запущено/находится в фоновом режиме, будут сохранены, и данные будут доставлены асинхронным событием при следующем запуске приложения, и для их работы необходимо включить push-уведомления в <a href="../../../../Settings/Game_Options/Android.htm">настройках игры<span class="notranslate">Android</span></a>.</li>
+    <li>На <span class="notranslate">iOS</span> данные для конкретного уведомления будут доставлены только в том случае, если уведомление выбрано (или если приложение работает на переднем плане в момент получения уведомления), и для их работы необходимо включить push-уведомления в <a href="../../../../Settings/Game_Options/iOS.htm">настройках игры<span class="notranslate">iOS</span></a>.</li>
+  </ul>
+  <p> </p>
+  <h2>Местные уведомления</h2>
+  <p>Локальное push-уведомление локально для устройства, на котором установлена игра, и не требует внутреннего сервера. Вы просто устанавливаете дату и время для уведомления, и оно будет показано пользователю, если игра в данный момент не запущена. Этот тип
+    уведомления полезен для установки &quot;напоминаний&quot; пользователю о необходимости сыграть в вашу игру еще раз, или предложить ежедневное вознаграждение за игру и т.д. ... Когда пользователь нажимает на уведомление, оно запускает игру и передает строку данных, которая может быть разобрана игрой.
+    обработанная игрой для выдачи награды или чего-либо еще.</p>
+  <p><b>ПРИМЕЧАНИЕ</b>: Эта функциональность ограничена <b><span class="notranslate">iOS</span></b> и <b><span class="notranslate">Android</span></b> целевыми модулями. Для <b><span class="notranslate">Android</span></b> необходимо установить расширение <a href="https://help.yoyogames.com/hc/en-us/articles/360024582692" target="_blank">Google Push Notification</a>.</p>
+  <p>Для локальных уведомлений доступны следующие функции:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="push_local_notification.htm">push_local_notification</a></li>
+    <li><a href="push_get_first_local_notification.htm">push_get_first_local_notification</a></li>
+    <li><a href="push_get_next_local_notification.htm">push_get_next_local_notification</a></li>
+    <li><a href="push_cancel_local_notification.htm">push_cancel_local_notification</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <h2><label for="b">Удаленные уведомления</label></h2>
+  <p>Сообщения об удаленных уведомлениях отправляются сервером в службу, предоставляемую магазином приложений платформы устройства, которая затем пересылает эти сообщения на все устройства, на которых установлено ваше приложение. Это поддерживается в <span class="notranslate">GameMaker Studio 2</span> в целевых модулях
+    целевых модулях <span class="notranslate">iOS</span> и <span class="notranslate">Android</span>.</p>
+  <p>В <span class="notranslate">GameMaker Studio 2</span> нет функций для работы с удаленными уведомлениями, поскольку все они должны генерироваться вашим сервером и обрабатываться соответствующими магазинами приложений. Однако после правильной настройки игры <span class="notranslate">GameMaker Studio 2</span> будут получать эти уведомления,
+    которые затем можно обработать в <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Push_Notifications.htm">асинхронном событии Push</a>, как и локальное уведомление.</p>
+  <p>Обратите внимание, что нет никакой гарантии, что удаленные push-уведомления будут доставлены, и что допустимый объем данных довольно мал. Это зависит от платформы, но <span class="notranslate">iOS</span> особенно ограничена - служба apple доставляет только самое последнее
+    уведомление, которое должно быть выбрано получателем, чтобы данные полезной нагрузки были доставлены в ваше асинхронное событие, и эти уведомления имеют максимальный размер полезной нагрузки 256 байт. Обычно удаленное push-уведомление просто указывает, что новые данные
+    например, доступны с вашего сервера.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Реализация серверной части полностью зависит от конечного пользователя, и <span class="notranslate">YoYo Games</span> не предоставляет никакой поддержки по этой части, кроме базовой информации по настройке, доступной из их базы знаний.</p>
+  <p>Более подробную информацию о том, как настроить сервер, а также информацию, специфичную для доступных платформ, можно найти в следующих статьях:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="https://help.yoyogames.com/hc/en-us/articles/360024582652"><span class="notranslate">Android</span>: Удаленные уведомления с помощью Firebase</a></li>
+    <li><a href="https://help.yoyogames.com/hc/en-us/articles/216753838"><span class="notranslate">iOS</span>: Удаленные Push-уведомления</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Asynchronous_Functions.htm">Асинхронные функции</a></div>
+        <div style="float:right">Следующий: <a href="../Facebook/Facebook.htm">Facebook</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Push Notification Functions
+-->
+  <!-- TAGS
+push_functions
+-->
+</body>
+</html>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>get_string_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for get_string_async" />
+  <meta name="rh-index-keywords" content="get_string_async" />
+  <meta name="search-keywords" content="get_string_async" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>get_string_async</h1>
+  <p>Эта функция открывает окно и отображает сообщение, а также место для ввода пользователем строки (которая будет содержать заданную по умолчанию строку для начала). Это асинхронная функция, поэтому <span class="notranslate">GameMaker Studio 2</span> <i>не</i> блокирует устройство, на котором она выполняется, в ожидании ответа.
+    устройство, на котором она выполняется, в ожидании ответа, а продолжает выполнять события в обычном режиме. После того как пользователь набрал свою строку и нажал кнопку &quot;Ок&quot;, запускается асинхронное <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">событие Dialog </a>, которое в течение всего времени ожидания ответа на вопрос
+    которое, <i>только</i> на время этого события, будет иметь карту DS, хранящуюся в переменной <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>.</p>
+  <p>Эта карта будет содержать три ключа, &quot; id&quot;,<strong>&quot;</strong> status&quot; и &quot;<strong>result</strong>&quot;. &quot;id&quot; - это<strong>значение, которое</strong> было возвращено функцией при вызове, &quot;status&quot; будет
+    будет либо <tt>true</tt>, если кнопка &quot;Ок&quot; была нажата, либо false, если сообщение <tt>было</tt> отменено (где это применимо, поскольку не все целевые платформы позволяют отменить сообщение). Наконец, &quot;result&quot; вернет строку
+    которую ввел пользователь (или пустую строку &quot;&quot;, если она не была введена).</p>
+  <p class="note"><strong><em>ПРИМЕЧАНИЕ:</em></strong><em> Эта функция <span data-keyref="Dialog for debug only">предназначена <strong>только</strong> для <strong>отладки и тестирования</strong></span>и не должна использоваться в выпущенных играх. Для этих целей вы должны создать пользовательский интерфейс для получения ввода от игроков, чтобы иметь полный контроль над тем, как выглядят и ведут себя диалоги.</em></p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">get_string_async(string, default);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>Строка</td>
+        <td>Сообщение, которое будет показано в диалоге.</td>
+      </tr>
+      <tr>
+        <td>по умолчанию</td>
+        <td>Строка по умолчанию.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Расширенный пример:</h4>
+  <p> </p>
+  <p> <b>Событие нажатия левой кнопки мыши</b> (например) объекта, который показывает сообщение, будет иметь следующий код:</p>
+  <p class="code">msg = get_string_async(&quot;What's your name?&quot;, &quot;Anon&quot;);</p>
+  <p>Выше будет показано сообщение, требующее, чтобы пользователь ввел строку и нажал &quot;Ок&quot;. Идентификатор функции хранится в переменной &quot;msg&quot; и будет использован в асинхронном событии Dialogs, как показано ниже:</p>
+  <p class="code">var i_d = ds_map_find_value(async_load, &quot;id&quot;);<br> if i_d == msg<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;)<br> {
+    <br> if ds_map_find_value(async_load, &quot;result&quot;) != &quot;&quot;<br> {
+    <br> global.Name = ds_map_find_value(async_load, &quot;result&quot;);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код сверяет ключ &quot;id&quot; возвращаемой DS Map <tt>со</tt> значением, хранящимся в переменной &quot;msg&quot;. Если они совпадают, то проверяется, было ли нажато &quot;Okay&quot; (а не закрыто/отменено окно)
+    и если возвращается <tt>true</tt>, то проверяется &quot;результат&quot; строки, чтобы убедиться, что не были возвращены пустые строки, прежде чем устанавливать глобальную переменную.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Dialog.htm">Диалог</a></div>
+        <div style="float:right">Далее: <a href="get_integer_async.htm">get_integer_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+get_string_async
+-->
+  <!-- TAGS
+get_string_async
+-->
+</body>
+</html>

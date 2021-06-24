@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_crc32</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_crc32" />
+  <meta name="rh-index-keywords" content="buffer_crc32" />
+  <meta name="search-keywords" content="buffer_crc32" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_crc32</h1>
+  <p>Эта функция принимает входные данные из буфера и возвращает хэш контрольной суммы crc32. Вы указываете ID буфера, который нужно использовать, затем значение смещения (в байтах) для начала, а затем размер (опять же в байтах) для области, которую нужно хэшировать, и
+    функция вернет 32-битное целочисленное значение для этого региона.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">buffer_crc32(buffer, offset, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>буфер</td>
+        <td>Индекс используемого буфера.</td>
+      </tr>
+      <tr>
+        <td>смещение</td>
+        <td>Значение смещения данных.</td>
+      </tr>
+      <tr>
+        <td>размер</td>
+        <td>Размер буфера.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Инт 32</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">check_val = buffer_crc32(buff, 0, buffer_get_size(buff));</p>
+  <p>Приведенный выше код создаст хэш-значение контрольной суммы crc32 для полных данных, хранящихся в буфере, индексируемом переменной &quot;buff&quot;, и сохранит возвращаемое целочисленное хэш-значение в переменной &quot;check_val&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Buffers.htm">Буферы</a></div>
+        <div style="float:right">Далее: <a href="buffer_base64_encode.htm">buffer_base64_encode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_crc32
+-->
+  <!-- TAGS
+buffer_crc32
+-->
+</body>
+</html>

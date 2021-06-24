@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>дублирование спрайта</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_duplicate" />
+  <meta name="rh-index-keywords" content="sprite_duplicate" />
+  <meta name="search-keywords" content="sprite_duplicate" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>дублирование спрайта</h1>
+  <p>Эта функция возвращает индекс вновь созданного спрайта, который является дубликатом (копией) того, который был введен в качестве аргумента &quot;index&quot;. Если функция не выполнится, возвращается -1. Эта функция <i>должна</i> быть использована для копирования любых
+    спрайты из исходных активов, прежде чем с ними можно будет производить какие-либо преобразования. Например, если вы хотите изменить ограничивающую рамку спрайта или установить его альфу из другого спрайта, вы должны сначала продублировать его, затем выполнить операцию на
+    дублированном спрайте и использовать его. Дублированный спрайт при создании будет размещен на своей собственной уникальной текстурной странице, поэтому дублирование нескольких спрайтов приведет к созданию нескольких текстурных страниц и повлияет на производительность, поэтому используйте эту функцию только в случае необходимости.
+    при необходимости.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Когда вы дублируете спрайт в <span class="notranslate">GameMaker Studio 2</span>, вы должны не забыть удалить его снова (с помощью функции <span style="font-size:1px;"><a href="sprite_delete.htm"><tt style="font-size: 14px">sprite_delete()</tt></a></span>)
+    когда он больше не нужен, иначе существует риск утечки памяти, что приведет к замедлению и, в конечном итоге, к краху вашей игры.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">sprite_duplicate(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс спрайта, который нужно продублировать.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращает</h4>
+  <p class="code">Real (уникальное значение ID спрайта)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">new_spr = sprite_duplicate(sprite_index)</p>
+  <p>Приведенный выше код дублирует спрайт, используемый в настоящее время в качестве индекса спрайта экземпляра, и сохраняет индекс для этого нового спрайта в переменной &quot;new_spr&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Manipulation.htm">Манипуляция спрайтом</a></div>
+        <div style="float:right">Далее: <a href="sprite_assign.htm">sprite_assign</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_duplicate
+-->
+  <!-- TAGS
+sprite_duplicate
+-->
+</body>
+</html>

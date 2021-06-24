@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>room_set_viewport</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_set_viewport" />
+  <meta name="rh-index-keywords" content="room_set_viewport" />
+  <meta name="search-keywords" content="room_set_viewport" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>room_set_viewport</h1>
+  <p>С помощью этой функции вы можете установить свойства порта вида для любой комнаты в вашей игре, <i>кроме текущей</i>. Вы передаете индекс комнаты, в которой нужно установить порт вида, индекс порта вида (от 0 до 7), а также указываете, должен ли порт вида быть видимым при
+    в начале комнаты или нет (установите значение <tt>true</tt>, чтобы сделать порт видимым, и <tt>false</tt> в противном случае). После этого задаются координаты x и y (соответствующие верхнему левому положению порта просмотра), а затем ширина и высота в пикселях.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">room_set_viewport(rm, vind, vis, xport, yport, wport, hport);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>rm</td>
+        <td>Индекс комнаты для установки</td>
+      </tr>
+      <tr>
+        <td>vind</td>
+        <td>Индекс порта представления для установки</td>
+      </tr>
+      <tr>
+        <td>vis</td>
+        <td>Видимость порта просмотра<tt>(true</tt> - видимый, <tt>false - невидимый</tt>)</td>
+      </tr>
+      <tr>
+        <td>xport</td>
+        <td>Положение x для смотрового отверстия в комнате</td>
+      </tr>
+      <tr>
+        <td>yport</td>
+        <td>Положение y порта просмотра в помещении</td>
+      </tr>
+      <tr>
+        <td>wport</td>
+        <td>Ширина (в пикселях) порта просмотра</td>
+      </tr>
+      <tr>
+        <td>hport</td>
+        <td>Высота (в пикселях) порта просмотра</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">global.myroom = room_add();<br> room_set_width(global.myroom, 640);<br> room_set_height(global.myroom, 480);<br> room_set_viewport(global.myroom, 0, true, 0, 0, 640, 480);</p>
+  <p>Это установит свойства порта просмотра [0] в комнате, проиндексированной в переменной &quot;global.myroom&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Rooms.htm">Номера</a></div>
+        <div style="float:right">Далее: <a href="room_get_viewport.htm">room_get_viewport</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_set_viewport
+-->
+  <!-- TAGS
+room_set_viewport
+-->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sprite_get_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_get_x" />
+  <meta name="rh-index-keywords" content="layer_sprite_get_x" />
+  <meta name="search-keywords" content="layer_sprite_get_x" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sprite_get_x</h1>
+  <p>Эта функция может быть использована для получения x-позиции элемента спрайта в комнате. Вы передаете ID элемента спрайта (который вы получаете при создании элемента спрайта с помощью функции <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a> или когда вы
+    использовать функцию <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>), а функция вернет значение позиции x.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_sprite_get_x(sprite_element_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>sprite_element_id</td>
+        <td>Уникальное значение ID элемента спрайта, из которого нужно получить информацию</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;sprite_sky&quot;);<br> var spr_id = layer_sprite_get_id(lay_id, &quot;Clouds&quot;);<br> if layer_sprite_get_x(spr_id) &lt; 0<br> {
+    <br> layer_sprite_x(spr_id, room_width);<br> }
+  </p>
+  <p>Приведенный выше код получит идентификатор слоя для слоя с именем &quot;sprite_sky&quot; и затем использует его для получения идентификатора элемента спрайта на этом слое. Этот идентификатор затем используется для проверки позиции x элемента, и если он меньше 0, то элемент слоя
+    перемещается в другое положение x.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Layers.htm">Слои спрайта</a></div>
+        <div style="float:right">Далее: <a href="layer_sprite_get_y.htm">layer_sprite_get_y</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_get_x
+-->
+  <!-- TAGS
+layer_sprite_get_x
+-->
+</body>
+</html>

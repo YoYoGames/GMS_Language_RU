@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_blend</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_blend" />
+  <meta name="rh-index-keywords" content="layer_background_blend" />
+  <meta name="search-keywords" content="layer_background_blend" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_background_blend</h1>
+  <p>Эта функция управляет смешиванием (или &quot;тонированием&quot;) фонового спрайта. Значение по умолчанию равно -1 (что представляет константу c_white, <tt>которая</tt> также может быть использована). Любое другое значение (включая внутренние цветовые константы, такие как <tt>c_red</tt>,
+    или <tt>c_aqua</tt>) будет смешивать указанный цвет с исходным спрайтом. Вы задаете ID элемента фона (который вы получаете при создании элемента фона с помощью функции <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a>    или при использовании функции <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>), а затем задаете цвет смешивания. Ниже показан пример спрайта, который был смешан с разными цветами:</p>
+  <p><img alt="Colour blend example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/blend_image.png">Обратите внимание, что на платформе <b>HTML5</b> следует ограничить смешивание (если только не используется WebGL), так как каждый
+    смешиваемый спрайт должен кэшироваться отдельно, поэтому большое количество смешиваемых спрайтов может негативно сказаться на производительности (вы также можете установить размер кэша с помощью функции <a href="../../Sprites/Sprite_Manipulation/sprite_set_cache_size.htm"><tt>sprite_set_cache_size()</tt></a>).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_background_blend(background_element_id, blend);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>background_element_id</td>
+        <td>Уникальное значение ID элемента фона для изменения</td>
+      </tr>
+      <tr>
+        <td>смесь</td>
+        <td>Цвет, который будет смешиваться с фоновым спрайтом (по умолчанию <tt>c_white</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Background_sky&quot;);<br> var back_id = layer_background_get_id(lay_id);<br> layer_background_blend(back_id, c_aqua);</p>
+  <p>Приведенный выше код получает значение ID фона, назначенного слою &quot;Background_sky&quot;, и затем оттеняет его цветом.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Background_Layers.htm">Фоновые слои</a></div>
+        <div style="float:right">Далее: <a href="layer_background_alpha.htm">layer_background_alpha</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_blend
+-->
+  <!-- TAGS
+layer_background_blend
+-->
+</body>
+</html>

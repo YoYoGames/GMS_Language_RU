@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>физика_сустава_трения_создать</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_friction_create" />
+  <meta name="rh-index-keywords" content="physics_joint_friction_create" />
+  <meta name="search-keywords" content="physics_joint_friction_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>физика_сустава_трения_создать</h1>
+  <p>Фрикционное соединение немного отличается от всех других соединений в физическом моделировании тем, что созданное соединение не будет ограничивать положение или движение экземпляра, а скорее его скорость и вращение. Для этого берутся максимальные входные значения
+    для силы и крутящего момента и применяя их ко второму креплению, чтобы привести скорость и угловой момент к тем же значениям, что и у первого экземпляра. Таким образом, если у вас есть неподвижный экземпляр и подвижный экземпляр, а затем соединить их фрикционным
+    то движущийся экземпляр будет постепенно замедляться, пока тоже не станет неподвижным. Если оба экземпляра движутся, то скорость движения второго экземпляра будет изменена так, чтобы соответствовать скорости движения первого экземпляра.</p>
+  <p><img alt="Friction joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/friction_joint_image.png">Как и в случае с большинством других соединений, вы предоставляете экземпляры для соединения, а также положение
+    в котором будет создано соединение в комнате. Затем задается максимальная сила и максимальный крутящий момент (направленное и вращательное трение), и если вы установите значение &quot;col&quot; в true, то два <tt>экземпляра</tt> могут взаимодействовать и сталкиваться друг с другом, но только если у них есть события столкновения.
+    друг с другом, но <i>только</i> если у них есть события столкновения, однако если установить значение <tt>false</tt>, они не будут сталкиваться независимо ни от чего.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_joint_friction_create(inst1, inst2, anchor_x, anchor_y, max_force, max_torque, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>инст1</td>
+        <td>Первая инстанция, которая соединяется с суставом</td>
+      </tr>
+      <tr>
+        <td>инст2</td>
+        <td>Вторая инстанция для соединения с суставом</td>
+      </tr>
+      <tr>
+        <td>якорь_х</td>
+        <td>Координата x для сустава в пределах игрового мира</td>
+      </tr>
+      <tr>
+        <td>якорь_y</td>
+        <td>Координата y для сустава в пределах игрового мира</td>
+      </tr>
+      <tr>
+        <td>максимальная_сила</td>
+        <td>Максимальная сила трения, которая будет приложена</td>
+      </tr>
+      <tr>
+        <td>максимальный_крутящий момент</td>
+        <td>Максимальное вращательное усилие, которое будет приложено</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Могут ли два экземпляра столкнуться (true) или нет (false)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Целое число (индекс сустава)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var mainFixture, o_id;<br> mainFixture = physics_fixture_create();<br> physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2);<br> o_id = instance_create_layer(x+300, y, &quot;Instances&quot;, obj_Rudder);<br> physics_fixture_bind(mainFixture,
+    id);<br> physics_fixture_bind(mainFixture, o_id);<br> physics_joint_friction_create(id, o_id, x, y, 10, 0.3, true);<br> physics_fixture_delete(mainFixture);
+  </p>
+  <p>Приведенный выше код создаст приспособление, затем свяжет его с двумя экземплярами, после чего соединит их с помощью фрикционного соединения.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Joints.htm">Суставы</a></div>
+        <div style="float:right">Далее: <a href="physics_joint_delete.htm">physics_joint_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_friction_create
+-->
+  <!-- TAGS
+physics_joint_friction_create
+-->
+</body>
+</html>

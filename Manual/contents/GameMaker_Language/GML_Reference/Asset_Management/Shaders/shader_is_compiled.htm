@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>shader_is_compiled</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function shader_is_compiled" />
+  <meta name="rh-index-keywords" content="shader_is_compiled" />
+  <meta name="search-keywords" content="shader_is_compiled" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">shader_is_compiled</span></h1>
+  <p>Эта функция проверяет <span class="notranslate">шейдер</span> во время выполнения, чтобы убедиться, что он был успешно скомпилирован. Если это так, то функция возвращает <tt>true</tt>, в противном случае - <tt>false</tt>. Эту функцию следует
+    использовать в начале игры, чтобы убедиться, что платформа, на которой запущена игра, успешно скомпилировала все используемые <span class="notranslate">шейдеры</span> (особенно на <span class="notranslate">Windows</span>, где некоторые компьютеры могут использовать DX9 с уровнем <span class="notranslate">шейдеров</span> 2.0, а не более позднюю версию с уровнем <span class="notranslate">шейдеров</span> 
+    3.0).</p>
+  <p>Если ваш <span class="notranslate">шейдер</span> <i>НЕ</i> был скомпилирован, и вы вызываете команду <a href="shader_set.htm"><tt><span class="notranslate">shader_set</span>()</tt></a> игра потерпит крах, поэтому стоит иметь какую-то проверку всякий раз, когда вы используете
+    что-либо кроме простых GLSL ES <span class="notranslate">шейдеров</span>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code"><span class="notranslate">shader_is_compiled</span><span class="notranslate">(shader</span>);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">шейдер</span></td>
+        <td> <span class="notranslate">Шейдер</span> для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">global.GFX = false;<br> if<span class="notranslate">(shader_is_compiled</span>(sh_glass) &amp;&amp; shader_is_compiled(sh_warp))<br> {
+    <br> global.GFX = true;<br> }
+  </p>
+  <p>Приведенный выше код установит глобальную переменную в <tt>false</tt>, а затем, если оба проверяемых <span class="notranslate">шейдера</span> скомпилированы правильно, она будет установлена в <tt>true</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Shaders.htm"><span class="notranslate">Шейдеры</span></a></div>
+        <div style="float:right">Далее: <a href="shaders_are_supported.htm"><span class="notranslate">shaders_are_supported</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">shader</span>_is_compiled
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_is_compiled
+-->
+</body>
+</html>

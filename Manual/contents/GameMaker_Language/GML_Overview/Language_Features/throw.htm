@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>бросок</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the throw function" />
+  <meta name="rh-index-keywords" content="throw" />
+  <meta name="search-keywords" content="throw" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>бросок</h1>
+  <p>Оператор <span class="notranslate">времени выполнения</span> <tt>throw</tt> позволяет генерировать собственные <a href="../../../Additional_Information/Errors/Runner_Errors.htm">исключения<span class="notranslate">времени выполнения</span></a>, завершая игру и показывая сообщение об ошибке, используя следующий синтаксис:</p>
+  <p class="code">бросить (&lt;выражение&gt;);</p>
+  <p>Используемое выражение может быть значением, строкой или любым другим типом данных, и тогда оно сгенерирует ошибку исключения, которая - по умолчанию - отображается на экране, и при закрытии сообщения об ошибке игра завершится. Например, вызывается следующее:</p>
+  <p class="code">throw (&quot;Hello World!&quot;);</p>
+  <p>приведет к появлению следующей ошибки не обработанного исключения:</p>
+  <p><img alt="Unhandled runtime exception error message example" class="center" src="../../../assets/Images/Scripting_Reference/GML/Overview/ThrowUnhandledMessage.png">Вы можете, однако, взять на себя это сообщение об ошибке и использовать свой собственный код обработчика, вызвав функцию
+    функцию <a href="../../GML_Reference/Debugging/exception_unhandled_handler.htm"><tt>exception_unhandled_handler()</tt></a>. Эта <a href="../Runtime_Functions.htm">функция<span class="notranslate">времени выполнения</span></a> позволяет вам предоставить пользовательский <a href="../Method_Variables.htm">метод</a>, который будет вызываться всякий раз, когда в вашей игре возникают необработанные исключения.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Language_Features.htm">Особенности языка</a></div>
+        <div style="float:right">Далее: <a href="new.htm">новый</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+throw
+-->
+  <!-- TAGS
+throw
+-->
+</body>
+</html>

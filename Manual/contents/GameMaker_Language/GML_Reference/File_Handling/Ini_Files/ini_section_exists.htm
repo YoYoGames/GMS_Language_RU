@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ini_section_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ini_section_exists" />
+  <meta name="rh-index-keywords" content="ini_section_exists" />
+  <meta name="search-keywords" content="ini_section_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ini_section_exists</h1>
+  <p>Эта функция проверяет, существует ли раздел в текущем открытом ini, и возвращает <tt>true</tt>, если существует, или <tt>false</tt> в противном случае. Это не является необходимой проверкой для предотвращения ошибок, поскольку, если раздел не существует, чтение из несуществующего раздела просто вернет значение по умолчанию.
+    просто вернет значение по умолчанию, однако это может быть полезно, чтобы узнать, сохранил ли ini файл определенные данные.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ini_section_exists(section);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>раздел</td>
+        <td>Раздел в открытом .ini файле для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">ini_open(&quot;savedata.ini&quot;);<br> if !ini_section_exists(&quot;save1&quot;)<br> {
+    <br> global.savegame = &quot;1&quot;;<br> }
+    <br> ini_close();
+  </p>
+  <p>Это установит переменную global.savegame в значение &quot;1&quot;, если &quot;save1&quot; НЕ найден. С помощью цикла for это можно использовать как основной способ определения количества сохранений для игры (т.е. создать систему для нескольких одновременных сохранений для одной игры).
+    игр для одной игры).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Ini_Files.htm">Ini Files</a></div>
+        <div style="float:right">Далее: <a href="ini_key_delete.htm">ini_key_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ini_section_exists
+-->
+  <!-- TAGS
+ini_section_exists
+-->
+</body>
+</html>

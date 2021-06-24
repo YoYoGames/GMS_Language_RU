@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>рисовать_свет_определять_направление</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_light_define_direction" />
+  <meta name="rh-index-keywords" content="draw_light_define_direction" />
+  <meta name="search-keywords" content="draw_light_define_direction" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>рисовать_свет_определять_направление</h1>
+  <p>Эта функция предназначена для определения направленного света, где направление и интенсивность задаются значениями, введенными для единичного вектора x, y и z (это означает, что они должны быть между -1 и 1, где 1 или -1 - полная интенсивность, а 0 - отсутствие интенсивности). 
+    можно задать цвет, который также влияет на воспринимаемую интенсивность света, так как некоторые цвета кажутся &quot;темнее&quot; других. Вы также должны присвоить свету индексный номер, который будет использоваться в других функциях для ссылки на него.
+    на него.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Имеется только 8 аппаратных светильников, поэтому одновременно могут быть включены только 8 определенных светильников (хотя можно определить и больше).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_light_define_direction(ind, x, y, z, col);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индексный номер света (произвольный)</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>x-компонент светового вектора</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Компонент y светового вектора</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>Компонента z светового вектора</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Цвет, который будет использоваться для освещения (либо константа, либо вещественное или шестнадцатеричное значение).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_set_lighting(true);<br> draw_light_define_direction(1, 0, 1, 0, c_white);<br> draw_light_enable(1, true);</p>
+  <p>Приведенный выше код включит освещение для всей сцены, затем определит белый направленный свет в пространстве комнаты и, наконец, включит этот свет.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Lighting.htm">Освещение</a></div>
+        <div style="float:right">Далее: <a href="draw_light_enable.htm">draw_light_enable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_light_define_direction
+-->
+  <!-- TAGS
+draw_light_define_direction
+-->
+</body>
+</html>

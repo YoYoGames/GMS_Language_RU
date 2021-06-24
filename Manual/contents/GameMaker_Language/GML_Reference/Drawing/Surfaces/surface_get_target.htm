@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>surface_get_target</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_get_target" />
+  <meta name="rh-index-keywords" content="surface_get_target" />
+  <meta name="search-keywords" content="surface_get_target" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>surface_get_target</h1>
+  <p>С помощью этой функции можно получить идентификатор текущей поверхности, на которую нацелено рисование. Если вы создали эту поверхность с помощью функции <a href="surface_create.htm"><tt>surface_create()</tt></a>, то это будет целое положительное число, которое является уникальным идентификатором для
+    этой поверхности</p>
+  <p>Если пользовательская поверхность не задана, но поверхность приложения_по умолчанию все еще включена, то функция обычно возвращает 0. Однако, если вы ранее манипулировали с application_surface, вы можете захотеть проверить, что полученный вами идентификатор не
+    не совпадает с текущим значением переменной application_surface, в случае если это уже не 0.</p>
+  <p>Если пользовательская поверхность не задана, и поверхность приложения_по умолчанию также была отключена, то функция вернет -1.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">surface_get_target();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Целое число (-1, если не существует целевой поверхности, иначе - идентификатор целевой поверхности)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">surface_get_target() != -1<br> {
+    <br> surface_reset_target();
+    <br> }
+    <br> draw_surface(surf, 0, 0);</p>
+  <p>Приведенный выше код проверяет, является ли текущая цель рендеринга поверхностью или нет, и если да, то сбрасывает цель, а затем рисует поверхность.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Surfaces.htm">Поверхности</a></div>
+        <div style="float:right">Далее: <a href="surface_get_target_ext.htm">surface_get_target_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_get_target
+-->
+  <!-- TAGS
+surface_get_target
+-->
+</body>
+</html>

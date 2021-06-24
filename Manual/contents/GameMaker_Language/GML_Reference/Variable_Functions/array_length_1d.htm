@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>длина_массива_1d</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_length_1d" />
+  <meta name="rh-index-keywords" content="array_length_1d (Deprecated)" />
+  <meta name="search-keywords" content="array_length_1d" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_length_1d<em>(Исправлено</em>)</h1>
+  <h3><b>ВНИМАНИЕ!</b> Эта функция устарела, так как массивы больше не ограничиваются только 1 или 2 измерениями, и как таковая эта функция предоставляется только для поддержки старых проектов. Все новые проекты должны использовать текущий способ создания и доступа к многомерным
+    массивов (более подробную информацию см. <a href="../../GML_Overview/Arrays.htm">здесь</a> ).</h3>
+  <p>С помощью этой функции вы можете получить длину (количество записей) одномерного массива. Для двумерных массивов следует использовать функции <a href="array_height_2d.htm"><tt>array_height_2d</tt></a> и <a href="array_length_2d.htm"><tt>длина_массива_2d</tt></a> функции.</p>
+  <p class="note"><b>ВАЖНО!!! </b>Если массив содержит более 32 000 записей, эта функция вернет ошибочное значение и не должна использоваться.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">array_length_1d(array_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс_массива</td>
+        <td>Индекс массива для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">for (var i = array_length_1d(a) - 1; i &gt; -1; i--;) <br> {
+    <br> a[i] = -1;<br> }
+  </p>
+  <p>Приведенный выше код будет циклически просматривать массив и устанавливать для каждого элемента значение -1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Variable_Functions.htm">Переменные функции</a></div>
+        <div style="float:right">Далее: <a href="array_length_2d.htm">array_length_2d</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_length_1d (deprecated)
+-->
+  <!-- TAGS
+array_length_1d
+-->
+</body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>физика_мира_гравитации</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_world_gravity" />
+  <meta name="rh-index-keywords" content="physics_world_gravity" />
+  <meta name="search-keywords" content="physics_world_gravity" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>физика_мира_гравитации</h1>
+  <p>Как и все функции физики, <tt>physics_world_gravity()</tt> будет работать с экземпляром только в том случае, если для комнаты определен физический мир в редакторе комнат или с помощью функции <a href="physics_world_create.htm"><tt>physics_world_create()</tt></a>. В этом случае
+    затем использовать точку 0,0, определяющую физический мир, для вычисления направления и силы гравитации на основе вектора, вычисленного по входам xg и yg. Вот несколько изображений для иллюстрации...</p>
+  <p><img alt="Physics world gravity illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_gravity_image.png">Как вы можете видеть, координаты xg,yg относятся к позиции 0,0, как определено для
+    физического мира, а сама гравитация рассчитывается как вектор этих двух компонентов. Так, значения по умолчанию 0,10 дадут направление гравитации вниз (270 градусов) с ускорением 10 метров в секунду в квадрате. Обратите внимание на <i>метры в секунду в квадрате</i>!
+    Как и все функции физики, гравитация рассчитывается с использованием метров в качестве базового измерения, поэтому здесь важен масштаб от пикселя до метра, который вы установили в функции <tt>physics_world_create</tt>. Гравитация также <i>накапливается</i> на объекте (но
+    точная величина зависит от того, что вы задали в функции <a href="../Fixtures/physics_fixture_set_linear_damping.htm"><tt>physics_fixture_set_linear_damping()</tt></a>), что означает, что в комнате со скоростью 60, без демпфирования, объект
+    будет ускоряться на 10 метров в секунду каждую секунду - что при масштабе 0,1 пикселя в метр равносильно тому, что он будет ускоряться до скорости 100 пикселей в секунду за 60 шагов.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_world_gravity(xg, yg)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>xg</td>
+        <td>Компонент x вектора силы тяжести</td>
+      </tr>
+      <tr>
+        <td>yg</td>
+        <td>Компонент y вектора силы тяжести</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">physics_world_gravity(-5, 0);</p>
+  <p>Приведенный выше код установит гравитацию (при условии, что физика комнаты 0,0 установлена в верхнем левом углу) вправо - 0 градусов - с ускорением 5 метров в секунду в квадрате.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="The_Physics_World.htm">Мир физики</a></div>
+        <div style="float:right">Далее: <a href="physics_world_update_iterations.htm">physics_world_update_iterations</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_world_gravity
+-->
+  <!-- TAGS
+physics_world_gravity
+-->
+</body>
+</html>

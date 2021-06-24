@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_ugc_send_query</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_ugc_send_query" />
+  <meta name="rh-index-keywords" content="steam_ugc_send_query" />
+  <meta name="search-keywords" content="steam_ugc_send_query" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_ugc_send_query</span></h1>
+  <p>Эта функция может быть использована для отправки запроса. Сначала вы определяете запрос, используя соответствующие функции <tt><span class="notranslate">steam_ugc_create_query_*</span></tt> (), которые возвращают &quot;хэндл запроса&quot;. Этот хэндл затем используется для установки фильтров и т.д. .... перед тем, как будет использован в этой функции для отправки запроса.
+    используется в этой функции для отправки запроса. Функция возвращает уникальное значение async ID, которое может быть использовано для правильной проверки деталей в <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm">событии<span class="notranslate">Steam</span></a> Async.
+    Это событие будет иметь <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> DS map, которая будет заполнена следующими парами ключ/значение:</p>
+  <ul class="colour">
+    <li>&quot; id&quot; - Идентификатор async, возвращаемый функцией, которая вызвала событие</li>
+    <li>&quot;<b>result&quot; -</b> Результат операции (вещественное значение). Это будет либо <span class="notranslate">GML-константа</span> <tt>ugc_result_success</tt>, либо какое-то другое вещественное число. Поэтому вы должны проверить наличие этой константы, чтобы убедиться, что вызов был успешным, и если
+      в противном случае что-то сработало неправильно. Остальные возможные возвращаемые значения отображаются как результат значения <span class="notranslate">Steam</span> &quot;EResult&quot;, и вы должны увидеть steamclientpublic <tt>.h в</tt> заголовках <tt>SDK</tt> для всех 89 возможных значений.</li>
+    <li>&quot; event_type<b>&quot; -</b> Строка &quot; ugc_query&quot;.</li>
+    <li>&quot; num_results<b>&quot; -</b> Количество возвращаемых результатов (максимум 50)</li>
+    <li>&quot; total_matching<b>&quot; -</b> Общее количество совпадающих результатов</li>
+    <li>&quot; cached_data<b>&quot; -</b> Указывает, были ли эти данные получены из локального кэша на диске или нет (будет либо true, либо <tt>false)</tt>.</li>
+    <li>&quot;<b>results_list&quot; -</b> индекс списка DS, где каждая запись списка является индексом DS Map, содержащим подробную информацию о конкретном элементе</li>
+  </ul>
+  <p>Получив событие async типа &quot;ugc_query&quot;, вы можете разобрать список результатов и извлечь следующую информацию из каждой из карт DS (по одной карте на элемент списка):</p>
+  <ul class="colour">
+    <li>&quot;<b>published_file_id&quot; &quot; - Содержит</b> уникальный идентификатор опубликованного файла для элемента</li>
+    <li>&quot; file_type<b>&quot; -</b> Тип используемого файла</li>
+    <li>&quot; creator_app_id<b>&quot; -</b> Steam ID создателя предмета</li>
+    <li>&quot;<b>consumer_app_id&quot; -</b> Steam ID потребителя товара</li>
+    <li>&quot; title<b>&quot; -</b> Название элемента</li>
+    <li>&quot;<b>description&quot; -</b> Описание элемента</li>
+    <li>&quot; steam_id_owner<b>&quot; -</b> Steam ID владельца предмета</li>
+    <li>&quot; time_created<b>&quot; -</b> Время, когда элемент был впервые создан</li>
+    <li>&quot; time_updated<b>&quot; -</b> Последний раз, когда элемент был обновлен</li>
+    <li>&quot; time_added_to_user_list<b>&quot; -</b> Время, когда элемент был подписан на него</li>
+    <li>&quot; visibility<b>&quot; -</b> Видимость элемента (см. <a href="steam_ugc_set_item_visibility.htm"><tt><span class="notranslate">steam_ugc_set_item_visibility</span>()</tt></a> возвращаемые константы)</li>
+    <li>&quot; banned<b>&quot; -</b> Был ли предмет запрещен (true) или<tt>нет (</tt>false).</li>
+    <li>&quot;<b>accepted_for_use&quot; -</b> Принят ли элемент к использованию (true) или<tt>нет (</tt>false).</li>
+    <li>&quot; tags_truncated<b>&quot; -</b> Краткая версия тегов в виде массива</li>
+    <li>&quot; tags&quot;<b>-</b> Строка, содержащая теги для элемента, каждый из которых разделяется запятой.</li>
+    <li>&quot;<b>handle_file&quot; -</b> Уникальное имя файла для элемента</li>
+    <li>&quot;<b>handle_preview_file&quot; -</b> Уникальное имя файла предварительного просмотра изображения для элемента (может быть использовано в качестве аргумента с параметром <a href="steam_ugc_download.htm"><tt><span class="notranslate">steam_ugc_download</span>()</tt></a> для загрузки изображения предварительного просмотра)</li>
+    <li>&quot; filename<b>&quot; -</b> Имя файла элемента</li>
+    <li>&quot; file_size<b>&quot; -</b> Размер файла элемента</li>
+    <li>&quot; preview_file_size<b>&quot; -</b> Размер изображения предварительного просмотра</li>
+    <li>&quot; url&quot;<b>-</b> Полный URL-адрес элемента</li>
+    <li>&quot; votes_up<b>&quot; -</b> Количество полученных голосов &quot;против</li>
+    <li>&quot; votes_down<b>&quot; -</b> Количество полученных голосов &quot;против</li>
+    <li>&quot; score<b>&quot; -</b> Общая оценка предмета</li>
+    <li>&quot;<b>account_id_owner&quot; -</b> ID аккаунта от <span class="notranslate">владельца</span> Steam ID (это можно использовать в функции <a href="steam_ugc_create_query_user_ex.htm"><tt><span class="notranslate">steam_ugc_create_query_user_ex</span>()</tt></a>)</li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code"><span class="notranslate">steam_ugc_send_query</span>(ugc_query_handle);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>ugc_query_handle</td>
+        <td>Ручка запроса для отправки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var query_handle = <span class="notranslate">steam_ugc_create_query_all</span>(ugc_query_RankedByTrend, ugc_match_Items, 1);<br> <span class="notranslate">steam_ugc_query_add_required_tag</span>(query_handle, &quot;RPG&quot;);<br> <span class="notranslate">steam_ugc_query_set_return_long_description</span>(query_handle, true);<br> <span class="notranslate">steam_ugc_query_set_allow_cached_response</span>(query_handle,
+    true);<br> query_ID = <span class="notranslate">steam_ugc_send_query</span>(query_handle);</p>
+  <p>Приведенный выше код создает запрос запроса и сохраняет его хэндл в локальной переменной для дальнейшего использования в остальных функциях, которые определяют запрос перед отправкой запроса.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">Далее: <a href="steam_ugc_download.htm"><span class="notranslate">steam_ugc_download</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_ugc_send_query
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_ugc_send_query
+-->
+</body>
+</html>

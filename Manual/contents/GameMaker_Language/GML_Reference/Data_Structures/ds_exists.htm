@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_exists" />
+  <meta name="rh-index-keywords" content="ds_exists,ds_type_priority,ds_type_queue,ds_type_grid,ds_type_stack,ds_type_list,ds_type_map" />
+  <meta name="search-keywords" content="ds_exists,ds_type_priority,ds_type_queue,ds_type_grid,ds_type_stack,ds_type_list,ds_type_map" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_exists</h1>
+  <p>С помощью этой функции вы можете проверить, существует ли структура данных заданного типа. Вы передаете значение &quot;index&quot; (хранящееся в переменной) и &quot;тип&quot; DS, который может быть любой из перечисленных ниже констант, и функция возвращает
+   <tt>true</tt>, если структура данных существует, и <tt>false</tt> в противном случае.</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>ds_type_map</td>
+        <td>Структура данных <a href="DS_Maps/DS_Maps.htm">карты</a> </td>
+      </tr>
+      <tr>
+        <td>ds_type_list</td>
+        <td> <a href="DS_Lists/DS_Lists.htm">Списочная</a> структура данных</td>
+      </tr>
+      <tr>
+        <td>ds_type_stack</td>
+        <td>Структура данных <a href="DS_Stacks/DS_Stacks.htm">стека</a> </td>
+      </tr>
+      <tr>
+        <td>ds_type_grid</td>
+        <td>Структура данных <a href="DS_Grids/DS_Grids.htm">сетки</a> </td>
+      </tr>
+      <tr>
+        <td>ds_type_queue</td>
+        <td>Структура данных <a href="DS_Queues/DS_Queues.htm">очереди</a> </td>
+      </tr>
+      <tr>
+        <td>ds_type_priority</td>
+        <td>Структура данных о <a href="DS_Priority_Queues/DS_Priority_Queues.htm">приоритетах</a> </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_exists(ind, type);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс переменной для проверки структуры данных</td>
+      </tr>
+      <tr>
+        <td>тип</td>
+        <td>Тип структуры данных для проверки (см. список констант ниже)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if !ds_exists(ai_grid, ds_type_grid)<br> {
+    <br> ai_grid = ds_grid_create(room_width / 32, room_height / 32);<br> }
+  </p>
+  <p>Приведенный выше код проверяет (предварительно инициализированную) переменную &quot;ai_grid&quot; на предмет индексации структуры данных типа DS grid, и если таковой нет, то создает ее и сохраняет ее индекс в переменной.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Data_Structures.htm">Структуры данных</a></div>
+        <div style="float:right">Далее: <a href="ds_set_precision.htm">ds_set_precision</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_exists
+ds_type_map
+ds_type_list
+ds_type_stack
+ds_type_grid
+ds_type_queue
+ds_type_priority
+-->
+  <!-- TAGS
+ds_exists
+-->
+</body>
+</html>

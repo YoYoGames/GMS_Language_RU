@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>буфер_get_address</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_get_address" />
+  <meta name="rh-index-keywords" content="buffer_get_address" />
+  <meta name="search-keywords" content="buffer_get_address" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>буфер_get_address</h1>
+  <p>С помощью этой функции вы можете получить <i>указатель</i> на необработанный, <i>выровненный</i> адрес буфера. Это в первую очередь предназначено для использования расширениями, так как вы можете передать им это значение, позволяя им получить доступ к данным буфера. Обратите внимание, что есть несколько вещей
+    которые нельзя делать с буфером при доступе из расширения:</p>
+  <ul class="colour">
+    <li>Вы не можете освободить память.</li>
+    <li>Изменить размер памяти невозможно.</li>
+    <li>Вы не можете записывать дальше адреса буфера плюс размер буфера (вы можете использовать <a href="buffer_get_size.htm"><tt>buffer_get_size()</tt></a> для этого), иначе вы получите ошибку выхода за границы.</li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">buffer_get_address(buffer);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>буфер</td>
+        <td>Индекс используемого буфера.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">указатель</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var b_address = buffer_get_address(buff_model);<br> var b_end_address = b_address + buffer_get_size(buff_model);</p>
+  <p>Приведенный выше код получит адрес памяти буфера, индексированного в переменной &quot;buff_model&quot;, а затем получит адрес памяти для конца буфера с помощью <tt>функции</tt> buffer_get_size <tt>(),</tt> сохраняя оба значения в локальных переменных для дальнейшего использования.
+    дальнейшего использования.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Buffers.htm">Буферы</a></div>
+        <div style="float:right">Далее: <a href="buffer_get_size.htm">buffer_get_size</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_get_address
+-->
+  <!-- TAGS
+buffer_get_address
+-->
+</body>
+</html>

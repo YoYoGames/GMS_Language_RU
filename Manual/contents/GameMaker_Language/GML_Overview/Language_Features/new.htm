@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>новый</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the new function" />
+  <meta name="rh-index-keywords" content="new" />
+  <meta name="search-keywords" content="new" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>новый</h1>
+  <p>Оператор <tt>new</tt> можно использовать для создания структуры с функцией, которая вызывается с заданными аргументами. Затем функция может заполнить структуру переменными из аргументов - подобно тому, как событие create экземпляра устанавливает начальные переменные для экземпляра - и затем оператор new возвращает структуру.
+    переменные для экземпляра, а затем оператор <tt>new</tt> вернет структуру. Перед использованием этого оператора важно отметить, что заданная функция <i>должна быть помечена как <tt>функция-конструктор</tt></i>, иначе оператор <tt>new</tt> не создаст структуру (пример кода ниже показывает это, а более подробную информацию можно найти на странице <a href="../Structs.htm">Структуры</a>).</p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Вы можете проверить структуру, чтобы узнать, какая функция была использована для ее создания, с помощью функции <span class="notranslate">времени выполнения</span> <a href="../../GML_Reference/Variable_Functions/instanceof.htm"><tt>instanceof()</tt></a>.</p>
+  <p>Этот оператор имеет следующий синтаксис:</p>
+  <p class="code"><span>&lt;переменная&gt; = новая &lt;функция&gt; </span>(&lt;аргумент&gt;, &lt;аргумент&gt;, ...);</p>
+  <p>Когда вы используете оператор new вместе с функцией, он возвращает ссылку на struct, которая хранится в данной переменной, позволяя вам получить доступ к struct и любым переменным, которые были созданы в ней функцией.</p>
+  <p>В следующем примере показана функция, которая была определена для использования в качестве конструктора:</p>
+  <p class="code">function init_struct(_a, _b, _c) конструктор<br> {
+    <br> a = _a;<br> b = _b;<br> c = _c;<br> }
+  </p>
+  <p>Затем эту функцию можно использовать вместе с оператором <tt>new</tt> для создания структуры и заполнения ее переменными, установленными на значения аргументов, используемых в функции, как это сделано ниже:</p>
+  <p class="code">mystruct = new init_struct(10, 100, &quot;Hello World&quot;);</p>
+  <p>Важно отметить, что вызов new на любой функции, которая <em>не</em> была отмечена как конструктор, вызовет <a href="../../../Additional_Information/Errors/Runner_Errors.htm">исключение<span class="notranslate">во время выполнения</span></a>.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Language_Features.htm">Особенности языка</a></div>
+        <div style="float:right">Далее: <a href="delete.htm">удалить</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+new
+-->
+  <!-- TAGS
+new
+-->
+
+</body></html>

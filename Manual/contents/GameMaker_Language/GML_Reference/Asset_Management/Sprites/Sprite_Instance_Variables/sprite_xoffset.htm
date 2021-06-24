@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_xoffset</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the variable sprite_xoffset" />
+  <meta name="rh-index-keywords" content="sprite_xoffset" />
+  <meta name="search-keywords" content="sprite_xoffset" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_xoffset</h1>
+  <p>Эта переменная, доступная <b>только для чтения</b>, возвращает локальное смещение x (x-компонент начала координат, определенный в редакторе спрайтов) спрайта, который был назначен данному экземпляру. Смещение xoffset возвращается в пикселях и зависит от значения параметра <a href="image_xscale.htm"><tt>image_xscale</tt></a>,
+    так что (например) если квадратный спрайт 32x32 определен как имеющий начало x в 16, то при масштабировании этого спрайта на 2 эта переменная вернет 32. Если вам нужно немасштабированное смещение x, используйте <a href="../Sprite_Information/sprite_get_xoffset.htm"><tt>sprite_get_xoffset()</tt></a>.</p>
+  <p><img alt="X Offset Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/xoffset_image.png" /></p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">sprite_xoffset;</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (значение с плавающей точкой одинарной точности)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">если x - sprite_xoffset &lt; 0<br> {
+    <br> x = sprite_xoffset;<br> }
+  </p>
+  <p>Приведенный выше код проверяет, находится ли левый край спрайта экземпляра за пределами комнаты, и если да, то перемещает экземпляр так, чтобы весь спрайт был виден.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Instance_Variables.htm">Переменные экземпляра спрайта</a></div>
+        <div style="float:right">Далее: <a href="sprite_yoffset.htm">sprite_yoffset</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_xoffset
+-->
+  <!-- TAGS
+sprite_xoffset
+-->
+</body>
+</html>

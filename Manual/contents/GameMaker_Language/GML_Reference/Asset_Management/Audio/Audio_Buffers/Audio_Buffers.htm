@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Аудио буферы</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Audio Buffers" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Audio Buffers" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Аудио буферы</h1>
+  <p>Вы можете использовать <b>аудиобуферы</b> для загрузки, сохранения и манипулирования аудиофайлами в ваших играх. Эти буферы создаются заранее с помощью соответствующих <a href="../../../Buffers/Buffers.htm">функций буферов</a>, а затем вы можете использовать следующие функции
+    для создания звука для использования в вашем проекте:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="audio_create_buffer_sound.htm">audio_create_buffer_sound</a></li>
+    <li><a href="audio_free_buffer_sound.htm">audio_free_buffer_sound</a></li>
+  </ul>
+  <p> </p>
+  <p>Обратите внимание, что после создания звука из звукового буфера вы <i>не</i> создаете новый звук в памяти, а скорее указываете на позицию в буфере, где хранится звук. Вы не должны изменять этот буфер после того, как звук был
+    и нельзя удалять буфер, пока с ним ассоциирован звук. Вместо этого сначала освободите звук (или звуки), а затем удалите буфер. После того как вы создали новый аудиоресурс из
+    буфера, вы можете использовать его индексное значение в любой из обычных аудиофункций, чтобы воспроизвести его, изменить усиление или высоту тона, поставить на паузу и т.д.. Обратите внимание, что буфер, используемый для загрузки звука, <b>может поддерживать только звуки PCM</b>, поэтому такие форматы, как OGG не будут
+    поддерживаться не будут.</p>
+  <p>Еще одна особенность буферизованного аудио заключается в том, что вы можете использовать буфер для создания очереди аудио, которая затем может быть передана на устройство, на котором работает ваш проект. Очередь аудио берет обычный буфер, который вы предварительно заполнили аудиоданными, и позволяет
+    &quot;указывать&quot; на его части и приказывать GameMaker <span class="notranslate">Studio 2: Studio</span> передавать аудио в определенном порядке из этого буфера. Для аудиоочереди доступны следующие функции:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="audio_create_play_queue.htm">audio_create_play_queue</a></li>
+    <li><a href="audio_free_play_queue.htm">audio_free_play_queue</a></li>
+    <li><a href="audio_queue_sound.htm">audio_queue_sound</a></li>
+  </ul>
+  <p> </p>
+  <p>После создания очереди вы можете использовать возвращенный индекс очереди так же, как и индекс звука для любого обычного звука, чтобы воспроизвести его, поставить на паузу, перезапустить или изменить усиление и высоту тона. Единственное, что вы не можете сделать, это получить длину дорожки
+    или установить позицию дорожки, но в остальном звуковую очередь можно использовать так же, как и любой другой звук. Следует также отметить, что некоторые функции аудиоочереди также вызывают <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Playback.htm">асинхронное событие Audio Playback Asynchronous Event</a>.</p>
+  <p>Аудио буферы также позволяют записывать звук из любого доступного источника (например, микрофона или ОС), который затем может быть поставлен в очередь и передан с помощью вышеуказанных функций (например). Запись звука вызовет <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">асинхронное событие Audio Recording Asynchronous Event</a>, которое будет содержать конкретную информацию о том, что записывается.<br>
+    <br> Для записи звука доступны следующие функции:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="audio_start_recording.htm">audio_start_recording</a></li>
+    <li><a href="audio_stop_recording.htm">аудио_остановка_записи</a></li>
+    <li><a href="audio_get_recorder_count.htm">audio_get_recorder_count</a></li>
+    <li><a href="audio_get_recorder_info.htm">audio_get_recorder_info</a></li>
+  </ul>
+  <p> </p>
+  <p class="note"><b>ПРИМЕЧАНИЕ: </b>Большинство платформ <b>, кроме HTML5</b>, поддерживают запись звука в той или иной форме, но это не означает, что все устройства позволят это сделать, даже если платформа это делает, поэтому всегда следует проверять, что функция <span style="font-size:1px;"><a href="audio_get_recorder_count.htm"><tt style="font-size: 14px">audio_get_recorder_count()</tt></a></span>    возвращает значение больше 0, чтобы убедиться, что записывающие устройства доступны, прежде чем использовать остальные функции записи.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Audio.htm">Аудио</a></div>
+        <div style="float:right">Следующее: <a href="../Audio_Synchronisation/Audio_Synchronisation.htm">Синхронизация звука</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Audio Buffers
+-->
+  <!-- TAGS
+audio_buffer_functions
+-->
+</body>
+</html>

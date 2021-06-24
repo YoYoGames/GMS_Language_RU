@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>экземпляр_найти</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_find" />
+  <meta name="rh-index-keywords" content="instance_find" />
+  <meta name="search-keywords" content="instance_find" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>экземпляр_найти</h1>
+  <p>Все экземпляры имеют уникальный идентификатор (<a href="Instance_Variables/id.htm"><tt>id</tt></a>), который можно использовать для изменения и манипулирования ими во время игры, но вы не всегда можете знать, какой идентификатор у конкретного экземпляра, поэтому эта функция
+    может помочь, так как с ее помощью вы можете перебрать их все, чтобы найти то, что вам нужно. Вы указываете объект, экземпляр которого хотите найти, и число, и если в списке экземпляров есть экземпляр в данной позиции, то функция возвращает
+    идентификатор этого экземпляра, а если нет, то возвращает специальное <a href="../../../GML_Overview/Instance_Keywords.htm">ключевое слово</a> <span class="inline"><b>noone</b></span>. Вы также можете использовать ключевое слово <span class="inline"><b>all</b></span> для перебора
+    все экземпляры в комнате, а также родительский объект для итерации по всем экземплярам, которые являются частью иерархии родитель/ребенок, и вы даже можете указать экземпляр (если у вас есть его <span class="inline">id</span>) в качестве проверки, существует ли он в текущей комнате.
+    он действительно существует в текущей комнате. Обратите внимание, что поскольку экземпляры сортируются <i>произвольным</i> образом, нет определенного порядка проверки экземпляров этой функцией, и любой экземпляр может находиться в любой позиции.</p>
+  <p>Максимальное значение для &quot;n&quot; в этой функции будет равно</p>
+  <ul class="colour">
+    <li>Для ключевого слова <span class="inline"><b>all</b></span>: <a href="instance_count.htm"><tt>количество экземпляров - 1</tt></a></li>
+    <li>Для индекса объекта: <a href="instance_number.htm"><tt>instance_number(OBJ) - 1</tt></a></li>
+  </ul>
+  <p> </p>
+  <h4><b>Синтаксис:</b></h4>
+  <p class="code">instance_find(obj, n);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Объект для поиска n-го экземпляра</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>Номер экземпляра, который необходимо найти.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (либо значение ID экземпляра, либо ключевое слово <tt>noone</tt>)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">for (var i = 0; i &lt; instance_number(obj_Enemy); ++i;) <br> {
+    <br> enemy[i] = instance_find(obj_Enemy,i);<br> }
+  </p>
+  <p>Приведенный выше код будет использовать цикл <tt>for</tt> для перебора всех экземпляров &quot;obj_Enemy&quot; и сохранения их id в массиве &quot;enemy[]&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Instances.htm">Инстанции</a></div>
+        <div style="float:right">Далее: <a href="instance_furthest.htm">instance_furthest</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_find
+-->
+  <!-- TAGS
+instance_find
+-->
+</body>
+</html>

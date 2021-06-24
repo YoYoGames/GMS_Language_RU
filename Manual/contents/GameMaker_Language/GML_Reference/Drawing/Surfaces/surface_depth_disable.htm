@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>глубина_поверхности_запрещена</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_depth_disable" />
+  <meta name="rh-index-keywords" content="surface_depth_disable" />
+  <meta name="search-keywords" content="surface_depth_disable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>глубина_поверхности_запрещена</h1>
+  <p>Эта функция отключает автоматическое создание буфера глубины для <i>всех</i> поверхностей, которые создаются после ее отключения. Обычно все поверхности имеют буферы глубины, так что если вы рисуете 3D объекты на них, то они будут правильно отсортированы по глубине, чтобы
+    для поддержания функционального паритета между рендерингом на поверхности и рендерингом в обратный буфер, однако выделение буферов глубины, по сути, удваивает объем памяти, требуемый для поверхностей, что может быть чрезмерным и ненужным накладным расходом.
+    особенно если ваша игра очень требовательна к памяти, а для 2D игр они обычно не нужны.</p>
+  <p>Чтобы использовать эту функцию, нужно вызвать ее <i>перед</i> созданием поверхности, а затем снова включить ее после (если потребуется). Все поверхности, созданные при отключенном буфере глубины, больше не будут использовать буфер глубины при отрисовке, что приводит к тому.
+    что приводит к тому, что объекты, нарисованные на поверхности, имеют паритет глубины. Изображения ниже иллюстрируют это на практике:</p>
+  <p><img alt="Surface depth buffer example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Surface_Depth_Buffer.png">На изображении выше мы рисуем прямоугольник и треугольник, используя буфер вершин в 3D. Координаты
+    координаты для красного треугольника располагают его позади зеленого прямоугольника, но код для рисования треугольника вызывается <i>после</i> кода для прямоугольника, и когда включен буфер глубины, треугольник все равно рисуется позади прямоугольника.
+    поскольку соблюдается 3D-глубина. Однако когда мы отключаем буфер глубины для поверхности, соблюдается только порядок кода, поэтому треугольник рисуется поверх прямоугольника.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Чтобы правильно сохранять глубину в 3D при использовании поверхностей, необходимо не только включить буфер глубины, но и включить z-запись и z-тестирование. См. функции <a href="../GPU_Control/gpu_get_ztestenable.htm"><tt><span style="font-size:14px;">gpu_set_ztestenable()</span></tt></a>    и <a href="../GPU_Control/gpu_get_zwriteenable.htm"><tt><span style="font-size:14px;">gpu_set_zwriteenable()</span></tt></a> для получения дополнительной информации.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Если ваша игра на 100% 2D или вы знаете, что вам не нужен буфер глубины поверхности, то вполне достаточно вызвать эту функцию один раз в начале игры, чтобы отключить буфер.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">surface_depth_disable(disable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>отключить</td>
+        <td>Если установлено значение <tt>true</tt>, буфер глубины будет отключен для созданных поверхностей.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _depth_setting = surface_get_depth_disable();<br> surface_depth_disable(false);
+    <br> surface_with_depth = surface_create(room_width, room_height);<br> surface_depth_disable(true);
+    <br> surface_without_depth = surface_create(room_width, room_height);<br> surface_depth_disable(_depth_setting);
+  </p>
+  <p>Приведенный выше код сохраняет текущую настройку буфера глубины в переменной, а затем создает две поверхности, одну с включенной буферизацией глубины, а другую без нее, после чего снова восстанавливает исходную настройку.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Surfaces.htm">Поверхности</a></div>
+        <div style="float:right">Далее: <a href="surface_get_height.htm">surface_get_height</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_depth_disable
+-->
+  <!-- TAGS
+surface_depth_disable
+-->
+</body>
+</html>

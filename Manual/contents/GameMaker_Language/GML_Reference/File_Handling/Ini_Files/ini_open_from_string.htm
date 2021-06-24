@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ini_open_from_string</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ini_open_from_string" />
+  <meta name="rh-index-keywords" content="ini_open_from_string" />
+  <meta name="search-keywords" content="ini_open_from_string" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ini_open_from_string</h1>
+  <p>Эта функция создаст ini файл из строки и откроет его для чтения/записи. Строка должна быть правильно отформатирована как ini файл (т.е. с секциями, ключами перевода строки и значениями), иначе ini файл не будет создан правильно. Обратите внимание
+    что этот ini файл является временным и будет удален из памяти в момент закрытия, потеряв всю информацию, которая хранилась в нем, однако функция <a href="ini_close.htm"><tt>ini_close()</tt></a> функция возвращает строку полного ini-файла, который
+    может быть сохранен на сервере или на диске.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ini_open_from_string(string);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>строка</td>
+        <td>Строка, содержащая всю информацию ini.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">ini_open_from_string(str)<br> global.sound = ini_read_string(&quot;Options&quot;, &quot;Sound&quot;, true);<br> ini_close();
+  </p>
+  <p>Приведенный выше код создает временный ini для хранения информации из строки &quot;str&quot;, затем читает из ini, прежде чем снова закрыть его.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Ini_Files.htm">Ini Files</a></div>
+        <div style="float:right">Далее: <a href="ini_open.htm">ini_open</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ini_open_from_string
+-->
+  <!-- TAGS
+ini_open_from_string
+-->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>аудио_остановка_записи</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_stop_recording" />
+  <meta name="rh-index-keywords" content="audio_stop_recording" />
+  <meta name="search-keywords" content="audio_stop_recording" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>аудио_остановка_записи</h1>
+  <p>Эта функция остановит запись на заданном канале рекордера (индекс канала возвращается при вызове функции <a href="audio_start_recording.htm"><tt>audio_start_recording()</tt></a>). Когда вы остановите запись, для данного канала рекордера не будет инициировано никаких дальнейших <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">асинхронных событий аудиозаписи</a>, поэтому обычно вы используете эту функцию в фактическом
+    асинхронном событии, чтобы убедиться, что вы записали все данные.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ: </b>Большинство платформ <b>, за исключением HTML5</b>, поддерживают запись звука в той или иной форме, но это не означает, что все устройства позволят это сделать, даже если платформа позволяет, поэтому всегда следует проверять, что функция     <span style="font-size:1px;"><a href="audio_get_recorder_count.htm"><tt style="font-size: 14px">audio_get_recorder_count()</tt></a></span> возвращает значение больше 0, чтобы убедиться, что записывающие устройства доступны, прежде чем использовать
+    остальные функции записи.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_stop_recording(channel_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс канала</td>
+        <td>Индекс канала регистратора для остановки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">audio_stop_recording(audio_channel);</p>
+  <p>Приведенный выше код указывает <span class="notranslate">GameMaker Studio 2</span> остановить запись на заданном индексе аудиоканала.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Audio.htm">Аудио буферы</a></div>
+        <div style="float:right">Далее: <a href="audio_get_recorder_count.htm">audio_get_recorder_count</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+udio_stop_recording
+-->
+  <!-- TAGS
+udio_stop_recording
+-->
+</body>
+</html>

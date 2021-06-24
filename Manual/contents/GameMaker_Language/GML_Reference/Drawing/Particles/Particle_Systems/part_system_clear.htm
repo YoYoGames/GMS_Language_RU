@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>часть_системы_очистить</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_system_clear" />
+  <meta name="rh-index-keywords" content="part_system_clear" />
+  <meta name="search-keywords" content="part_system_clear" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>часть_системы_очистить</h1>
+  <p>С помощью этой функции вы можете очистить индексированную систему до состояния по умолчанию, удалив все эмиттеры и сбросив глубину и положение (если они были изменены). Будьте осторожны, используя эту функцию, так как если у вас есть какие-либо установки экземпляра, разрывы или любое другое
+    действие, использующее эмиттер, связанный с этой системой, вы получите ошибку, если только вы не используете эту <a href="../Particle_Emitters/part_emitter_exists.htm"><tt>part_emitter_exists()</tt></a> для проверки. Также нет необходимости вызывать <tt><a href="../Particle_Emitters/part_emitter_destroy.htm">part_emitter_destroy()</a></tt> функцию
+    так как это происходит автоматически.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: эта функция очистит видимые частицы в комнате, но она <b>не</b> очищает свойства частиц и не удаляет их из памяти. Для этого вам следует использовать функции <span style="font-size:1px;"><a href="../Particle_Types/part_type_clear.htm"><tt style="font-size: 14px">part_type_clear()</tt></a></span>    и <span style="font-size:1px;"><a href="../Particle_Types/part_type_destroy.htm"><tt style="font-size: 14px">part_type_destroy()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">part_system_clear(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс системы частиц для очистки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">part_system_clear(global.Sname);</p>
+  <p>Приведенный выше код очистит систему частиц, индексированную в глобальной переменной &quot;Sname&quot;, до состояния по умолчанию.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Particle_Systems.htm">Системы частиц</a></div>
+        <div style="float:right">Далее: <a href="part_system_destroy.htm">часть_системы_уничтожить</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_clear
+-->
+  <!-- TAGS
+part_system_clear
+-->
+</body>
+</html>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>номер_следующий</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_goto_next" />
+  <meta name="rh-index-keywords" content="room_goto_next" />
+  <meta name="search-keywords" content="room_goto_next" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>номер_следующий</h1>
+  <p>С помощью этой функции вы можете заставить вашу игру перейти в следующую комнату, указанную в <a href="../../../../Settings/The_Room_Manager.htm">Менеджере комнат</a> на момент компиляции игры. Если такой комнаты не существует, будет выдана ошибка и игра
+    будет принудительно закрыта. Обратите внимание, что комната не изменится до конца события, в котором была вызвана функция, поэтому любой код после ее вызова будет выполняться, если он находится в том же событии. Оговорка заключается в том, что любой код, создающий экземпляры
+    который будет вызван после этого, <i>не</i> создаст экземпляр и поэтому должен быть вызван до смены комнаты. Эта функция также вызовет событие <b>Room End</b>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">room_goto_next();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if room_exists(room_next(room))<br> {<br> room_goto_next();<br> }</p>
+  <p>Приведенный выше код проверит, есть ли еще одна комната после текущей, и если да, то перейдет в эту комнату.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Rooms.htm">Номера</a></div>
+        <div style="float:right">Далее: <a href="room_goto_previous.htm">room_goto_previous</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_goto_next
+-->
+  <!-- TAGS
+room_goto_next
+-->
+</body>
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>переменная_объекта_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function variable_instance_get" />
+  <meta name="rh-index-keywords" content="variable_instance_get" />
+  <meta name="search-keywords" content="variable_instance_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>переменная_объекта_get</h1>
+  <p>С помощью этой функции вы можете получить значение из заданной именованной переменной. Вы предоставляете уникальное значение ID экземпляра (которое можно найти в <a href="../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">Свойствах экземпляра</a> в редакторе комнаты).
+    редактора или возвращается при вызове функции <a href="../Asset_Management/Instances/instance_create_layer.htm"><tt>instance_create_layer()</tt></a>), а также имя переменной, значение которой нужно получить в <i>виде строки</i> (см. пример кода
+    ниже). Функция вернет значение переменной или <span class="inline">undefined</span>, если переменная не существует.</p>
+  <p class="note"><b>ВАЖНО!</b> Если переменная, которую вы получаете, не существует, то функция вернет ключевое слово <tt>undefined</tt>, и вы можете получить ошибки, которые остановят работу игры, поэтому, если вы сомневаетесь, используйте функцию <a href="variable_instance_exists.htm"><tt>переменная_экземпляр_существует</tt></a>    first.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">variable_instance_get(instance_id, name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор экземпляра</td>
+        <td>Уникальное значение ID экземпляра для использования</td>
+      </tr>
+      <tr>
+        <td>имя</td>
+        <td>Имя переменной, которую нужно получить (в виде строки)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Значение (любой тип данных) или <tt>undefined</tt> (если именованная переменная не существует)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if variable_instance_exists(id, &quot;shields&quot;)<br> {
+    <br> var ss = variable_instance_get(id, &quot;shields&quot;);<br> }
+    <br> else
+    <br> }
+    <br> var ss = -1;<br> }
+  </p>
+  <p>Приведенный выше код проверяет, существует ли переменная, и если существует, то значение, которое она содержит, извлекается и сохраняется в локальной переменной. Если она не существует, то локальная переменная устанавливается в -1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Variable_Functions.htm">Переменные функции</a></div>
+        <div style="float:right">Далее: <a href="variable_instance_set.htm">variable_instance_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_instance_get
+-->
+  <!-- TAGS
+variable_instance_get
+-->
+</body>
+</html>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_replace_sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function font_replace_sprite" />
+  <meta name="rh-index-keywords" content="font_replace_sprite" />
+  <meta name="search-keywords" content="font_replace_sprite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_replace_sprite</h1>
+  <p>С помощью этой функции вы можете использовать &quot;спрайтовую полосу&quot; для замены ранее созданного актива спрайтового шрифта, где каждое подизображение будет отдельным символом или буквой. Индекс - это номер карты UTF8 для первого используемого символа, а диапазоны
+    для использования такие же, как и для обычного шрифта, начинаются с &quot;!&quot;, но помните, что вы должны включать только то, что вам нужно, и что вы должны использовать функцию <a href="../../Strings/ord.htm"><tt>ord()</tt></a> для получения правильного
+    UTF8 для начальной буквы.</p>
+  <p>Вы также можете установить пропорциональное<tt>(true</tt>) или непропорциональное<tt>(false</tt>) расстояние между буквами шрифта. При пропорциональном шрифте расстояние между буквами определяется их фактической шириной (например, буква &quot;i&quot; занимает меньше места, чем буква &quot;w&quot;,
+    в то время как непропорциональный шрифт будет размещаться на основе ширины суб-изображения, как моноширинный шрифт. Наконец, вы можете определить пространство, которое нужно оставить между каждой буквой при написании, и это может быть любое целое значение, при этом 0 означает отсутствие пространства (буквы будут "соприкасаться", если шрифт пропорциональный).
+    буквы будут &quot;соприкасаться&quot;, если они пропорциональны). </p>
+  <p>Если функция завершится неудачно, то она завершится молча, не заменив заданный шрифт спрайта.</p>
+  <p>Также стоит отметить, что в карте символов не может быть <i>пробелов</i>, поэтому если вы, например, используете '.' и '0', но не '/', вам нужно либо включить '/' в любом случае, либо оставить пустое подизображение между двумя используемыми символами.
+    двумя используемыми символами. На рисунке ниже показана типичная схема шрифта спрайта:</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">font_replace_sprite(ind, spr, first, prop, sep);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>инд</td>
+        <td>Индекс шрифта, который будет заменен (т.е. все ссылки на этот ресурс после этой функции будут относиться к новому шрифту, а не к оригиналу).</td>
+      </tr>
+      <tr>
+        <td>spr</td>
+        <td>Спрайт, на основе которого будет добавлен шрифт.</td>
+      </tr>
+      <tr>
+        <td>первый</td>
+        <td>Индекс первого доступного символа.</td>
+      </tr>
+      <tr>
+        <td>реквизит</td>
+        <td>Нужно ли удалять белое пространство вокруг каждой буквы (если false, то созданный шрифт будет моноширинным, в противном случае он будет похож на большинство обычных шрифтов).</td>
+      </tr>
+      <tr>
+        <td>сеп</td>
+        <td>Пробел между каждой буквой, 0 означает, что правая часть одной буквы касается левой части следующей.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">font_replace_sprite(global.Font, working_directory + &quot;Sprites\spr_Font.png&quot;, ord(&quot;!&quot;), true, 2);</p>
+  <p>Приведенный выше код заменит актив шрифта, указанный в глобальной переменной &quot;Font&quot;, на новый актив шрифта из внешнего файла изображения.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Fonts.htm">Шрифты</a></div>
+        <div style="float:right">Далее: <a href="font_replace_sprite_ext.htm">font_replace_sprite_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_replace_sprite
+-->
+  <!-- TAGS
+font_replace_sprite
+-->
+</body>
+</html>

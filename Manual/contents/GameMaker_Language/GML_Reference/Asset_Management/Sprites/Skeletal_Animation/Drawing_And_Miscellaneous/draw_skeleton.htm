@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>нарисовать_скелет</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function draw_skeleton" />
+  <meta name="rh-index-keywords" content="draw_skeleton" />
+  <meta name="search-keywords" content="draw_skeleton" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>нарисовать_скелет</h1>
+  <p>Эта функция предназначена <i>только</i> для спрайтов, созданных с помощью программы скелетной анимации, такой как Spine. Хотя вы можете рисовать эти спрайты с помощью обычных функций рисования (таких как <a href="../../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt>нарисовать_себя()</tt></a>),
+    бывают случаи, когда нужно нарисовать один кадр или показать изменение текстуры кожи без изменения свойств спрайта. В таких случаях можно нарисовать спрайт с помощью этой функции, где вы указываете индекс спрайта, а затем имя
+    анимации, из которой нужно взять кадр (строка, заданная в программе, используемой для создания спрайта). Затем вы указываете имя скина, который нужно использовать (опять же, заданное при создании спрайта), и значение кадра. Значение кадра указывает программе <span class="notranslate">GameMaker Studio</span>
+    2, какую часть анимации показывать, и представляет собой значение между 0 и <a href="../../Sprite_Instance_Variables/image_number.htm"><tt>номер_изображения</tt></a>. Остальные аргументы аналогичны тем, которые используются при обычном рисовании спрайта, и изменяют
+    масштаб, угол, цвет наложения и альфа-код конечного рисуемого кадра анимации.<b></b></p>
+  <p class="note"><b>ВНИМАНИЕ!</b> Из-за того, что скелетная анимация интерполируется между различными &quot;ключевыми&quot; кадрами, с этим вызовом связаны дополнительные накладные расходы, поэтому рекомендуется избегать рисования скелетных спрайтов с помощью этого метода, если это не необходимо.
+    этот метод, если в этом нет крайней необходимости.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_skeleton(sprite, animname, skinname, frame, x, y, xscale, yscale, rot, color, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>спрайт</td>
+        <td>Индекс спрайта для рисования.</td>
+      </tr>
+      <tr>
+        <td>animname</td>
+        <td>Имя анимации, из которой нужно получить кадр (строка).</td>
+      </tr>
+      <tr>
+        <td>skinname</td>
+        <td>Имя кожи для использования (строка).</td>
+      </tr>
+      <tr>
+        <td>рама</td>
+        <td>Кадр анимации для рисования (от 0 до image_number - 1).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Координата x места рисования спрайта.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Координата y места рисования спрайта.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>Горизонтальное масштабирование спрайта в виде множителя: 1 = нормальное масштабирование, 0.5 - половина и т.д....</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>Вертикальное масштабирование спрайта в виде множителя: 1 = нормальное масштабирование, 0.5 - половина и т.д....</td>
+      </tr>
+      <tr>
+        <td>гниение</td>
+        <td>Поворот спрайта. 0=нормальный, 90=повернутый на 90 градусов против часовой стрелки и т.д.</td>
+      </tr>
+      <tr>
+        <td>цвет</td>
+        <td>Цвет, с которым будет смешиваться спрайт.</td>
+      </tr>
+      <tr>
+        <td>альфа</td>
+        <td>Альфа спрайта (от 0 до 1, где 0 - прозрачный, а 1 - непрозрачный).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p> </p>
+  <p class="code">draw_skeleton(spr_Jump, &quot;jump&quot;, &quot;skin1&quot;, 0, x, y, image_xscale, image_yscale, image_angle, c_white, 0.5);</p>
+  <p>Приведенный выше код нарисует первый кадр заданного скелетного анимационного спрайта, используя набор анимации &quot;прыжок&quot;, скин, определенный как &quot;skin1&quot;, в том же масштабе и положении, как определено в свойствах экземпляра, но с альфой
+    0,5.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Drawing_And_Miscellaneous.htm">Рисование и разное</a></div>
+        <div style="float:right">Далее: <a href="draw_skeleton_instance.htm">draw_skeleton_instance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_skeleton
+-->
+  <!-- TAGS
+draw_skeleton
+-->
+</body>
+</html>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>экземпляр_создания_слоя</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_create_layer" />
+  <meta name="rh-index-keywords" content="instance_create_layer" />
+  <meta name="search-keywords" content="instance_create_layer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>экземпляр_создания_слоя</h1>
+  <p>С помощью этой функции можно создать новый экземпляр указанного объекта в любой заданной точке помещения и на указанном слое. Слой может быть идентифицирован с помощью значения ID слоя (возвращаемого функцией <a href="../Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>)
+    или по имени слоя (в виде строки, например, &quot;instance_layer&quot;), заданному в <a href="../../../../The_Asset_Editors/Rooms.htm">редакторе</a> помещения <a href="../../../../The_Asset_Editors/Rooms.htm">.</a></p>
+  <p>Эта функция возвращает <a href="Instance_Variables/id.htm"><tt>id</tt></a> нового экземпляра, который затем может быть сохранен в переменной или использован для доступа к этому экземпляру. Обратите внимание, что эта функция также вызовет <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">событие Create Event</a> создаваемого экземпляра, <i>прежде чем</i> продолжить код или действия для события, вызвавшего функцию.</p>
+  <p class="note"><b>ВАЖНО!</b> Существует минимальная и максимальная глубина слоя от -16000 до 16000. Все, что размещено на слое вне этого диапазона, <b>не будет нарисовано</b>, хотя все события будут проходить в обычном режиме.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">instance_create_layer(x, y, layer_id, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Позиция x, в которой будет создан объект</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Позиция y, в которой будет создан объект</td>
+      </tr>
+      <tr>
+        <td>идентификатор слоя</td>
+        <td>Идентификатор слоя (или имя), которому следует присвоить созданный экземпляр</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Индекс объекта для создания экземпляра объекта</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (значение идентификатора экземпляра)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var inst = instance_create_layer(x, y, &quot;instance_layer&quot;, obj_Bullet);<br> with (inst)<br> {
+    <br> speed = other.shoot_speed;<br> direction = other.image_angle;<br> }
+  </p>
+  <p>Приведенный выше код создает новый экземпляр объекта &quot;obj_Bullet&quot; и сохраняет идентификатор экземпляра в переменной. Эта переменная затем используется для присвоения <tt>скорости</tt> и <tt>направления</tt> новому экземпляру.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Instances.htm">Инстанции</a></div>
+        <div style="float:right">Далее: <a href="instance_create_depth.htm">instance_create_depth</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_create_layer
+-->
+  <!-- TAGS
+instance_create_layer
+-->
+</body>
+</html>

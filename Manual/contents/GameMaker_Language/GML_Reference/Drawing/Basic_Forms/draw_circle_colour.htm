@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>нарисовать_круг_цвета</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function draw_circle_colour" />
+  <meta name="rh-index-keywords" content="draw_circle_colour,draw_circle_color" />
+  <meta name="search-keywords" content="draw_circle_colour,draw_circle_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>нарисовать_круг_цвета</h1>
+  <p>С помощью этой функции можно нарисовать либо контур круга, либо заполненный круг, а если он заполнен, то можно задать внутренний и внешний цвета заливки. Если эти цвета не совпадают, вы получите эффект градиента от одного к другому и
+    настройки цвета будут перекрывать базовый цвет, заданный с помощью функции <a href="../Colour_And_Alpha/draw_set_colour.htm"><tt>draw_set_colour()</tt></a>. Вы можете определить, насколько точным будет рисунок, с помощью функции <a href="draw_set_circle_precision.htm"><tt>draw_set_circle_precision()</tt></a>.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Если вы хотите нарисовать фигуру с помощью <span class="notranslate">шейдера</span>, вы должны знать, что большинство <span class="notranslate">шейдеров</span> ожидают следующих входных данных: вершина, текстура, цвет. Однако при использовании этой функции передаются только данные вершин и цвета, поэтому шейдер может ничего не нарисовать (или нарисовать, но не отрисовать).
+   <span class="notranslate">шейдер</span> может ничего не нарисовать (или нарисовать, но неправильно). Если вам нужно рисовать фигуры таким образом, то <span class="notranslate">шейдер</span> должен быть настроен с учетом этого.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_circle_colour(x, y, r, col1, col2, outline);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Координата x центра окружности.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Координата y центра окружности.</td>
+      </tr>
+      <tr>
+        <td>r</td>
+        <td>Радиус (расстояние от центра до края) круга в пикселях.</td>
+      </tr>
+      <tr>
+        <td>кол1</td>
+        <td>Цвет в центре круга.</td>
+      </tr>
+      <tr>
+        <td>кол2</td>
+        <td>Цвет на краю круга.</td>
+      </tr>
+      <tr>
+        <td>конспект</td>
+        <td>Является ли круг контуром<tt>(true</tt>) или нет<tt>(false</tt>). Если true, то col1 не имеет значения.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_circle_colour(x, y, 100, c_white, c_black, false);</p>
+  <p>Это позволит нарисовать заполненный круг с центром в позиции x и y исполняющего экземпляра, с радиусом 100 пикселей, от белого в центре до черного снаружи.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Basic_Forms.htm">Основные формы</a></div>
+        <div style="float:right">Далее: <a href="draw_ellipse.htm">draw_ellipse</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_circle_colour
+draw_circle_color
+-->
+  <!-- TAGS
+draw_circle_colour
+-->
+</body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_group_load_progress</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_group_load_progress" />
+  <meta name="rh-index-keywords" content="audio_group_load_progress" />
+  <meta name="search-keywords" content="audio_group_load_progress" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_group_load_progress</h1>
+  <p>Эта функция проверяет прогресс загрузки для аудиогруппы и возвращает (приблизительное) значение от 0 до 100.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_group_load_progress(groupID);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>groupID</td>
+        <td>Индекс аудиогруппы, которую необходимо проверить (как определено в <a href="../../../../../Settings/Audio_Groups.htm">окне Аудиогруппы</a>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if load<br> {
+    <br> var pc = audio_group_load_progress(audiogroup_level1);<br> draw_text(32, 32, &quot;Loading: &quot; + string(pc));<br> }
+  </p>
+  <p>Приведенный выше код проверяет переменную, и если она возвращает <tt>true</tt>, то будет нарисован текст, показывающий прогресс загрузки аудио.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio_Groups.htm">Аудиогруппы</a></div>
+        <div style="float:right">Далее: <a href="audio_group_name.htm">audio_group_name</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_group_load_progress
+-->
+  <!-- TAGS
+audio_group_load_progress
+-->
+</body>
+</html>

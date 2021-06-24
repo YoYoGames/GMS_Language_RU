@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ОС и компилятор</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for OS And Compiler functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="OS And Compiler,OS functions,Compiler Functions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ОС и компилятор</h1>
+  <p>При создании кроссплатформенных игр часто бывает крайне важно получить подробную информацию об операционной системе, которую использует устройство, на котором работает ваша игра. Такие вещи, как язык, версия или состояние сети, могут быть использованы для адаптации вашей игры к системе, на которой она работает, и для обеспечения наилучшего опыта конечного пользователя.
+   <span class="notranslate">GameMaker Studio 2</span> имеет ряд специальных функций, которые можно использовать для получения необходимой информации.</p>
+  <p>Следующие функции и переменные можно использовать для получения определенных сведений об операционной системе или браузере, в котором запущена ваша игра:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="os_browser.htm">os_browser</a></li>
+    <li><a href="os_device.htm">os_device</a></li>
+    <li><a href="os_type.htm">os_type</a></li>
+    <li><a href="os_version.htm">os_version</a></li>
+    <li><a href="os_is_paused.htm">os_is_paused</a></li>
+    <li><a href="os_is_network_connected.htm">os_is_network_connected</a></li>
+    <li><a href="os_get_config.htm">os_get_config</a></li>
+    <li><a href="os_get_language.htm">os_get_language</a></li>
+    <li><a href="os_get_region.htm">os_get_region</a></li>
+    <li><a href="os_get_info.htm">os_get_info</a></li>
+    <li><a href="os_powersave_enable.htm">os_powersave_enable</a></li>
+    <li><a href="os_lock_orientation.htm">os_lock_orientation</a></li>
+    <li><a href="os_check_permission.htm">os_check_permission</a></li>
+    <li><a href="os_request_permission.htm">os_request_permission</a></li>
+  </ul>
+  <p> </p>
+  <p>Некоторые функции <i>предварительно компилируются</i> при запуске игры (т.е. они используются для определения того, как будет скомпилирована конечная игра), а некоторые также используются после компиляции игры для получения конкретных сведений о среде <span class="notranslate">выполнения</span>. Здесь
+    вы можете найти полный список этих функций:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="GM_build_date.htm">GM_build_date</a></li>
+    <li><a href="GM_version.htm">GM_version</a></li>
+    <li><a href="GM_runtime_version.htm">GM_runtime_version</a></li>
+    <li><a href="gml_release_mode.htm">gml_release_mode</a></li>
+    <li><a href="gml_pragma.htm">gml_pragma</a></li>
+    <li><a href="parameter_count.htm">счётчик параметров</a></li>
+    <li><a href="parameter_string.htm">строка_параметра</a></li>
+    <li><a href="environment_get_variable.htm">environment_get_variable</a></li>
+  </ul>
+  <p> </p>
+  <p>В <span class="notranslate">Windows</span> разрешение планировщика потоков <span class="notranslate">Windows</span> по умолчанию устанавливается на 1 мс при запуске игры. Для получения и изменения разрешения планировщика потоков <span class="notranslate">Windows</span> во <span class="notranslate">время выполнения</span> доступны следующие функции:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="scheduler_resolution_get.htm">scheduler_resolution_get</a></li>
+    <li><a href="scheduler_resolution_set.htm">scheduler_resolution_set</a></li>
+  </ul>
+  <p> </p>
+  <p>Наконец, при работе с <a href="../../../The_Asset_Editors/Extensions.htm">расширениями</a> вам может понадобиться возможность определять и вызывать внешние функции во <span class="notranslate">время выполнения</span>, и тогда вы будете использовать следующее:</p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Это унаследованные функции, и вы должны определить любые функции расширения в самом редакторе расширений.</p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Эти функции предназначены для <strong><span class="notranslate">Windows</span></strong> и <b><span class="notranslate">macOS</span></b> только для целевых платформ.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="external_define.htm">внешнее определение</a></li>
+    <li><a href="external_call.htm">внешний_вызов</a></li>
+    <li><a href="external_free.htm">внешний_свободный</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../GML_Reference.htm">Ссылка на<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Следующий: <a href="../Debugging/Debugging.htm">Отладка</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">GML</span> Reference
+-->
+  <!-- TAGS
+gml_reference
+-->
+</body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Функции сценария блока действий</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Article explaining how to make action block script functions" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Action Block Script Functions" />
+  <meta name="search-keywords" content="DnD,Code DnD,DnD Scripts,Drag and Drop Scripts" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Функции сценария блока действий</h1>
+  <p>Одним из самых важных активов в <a href="../../Introduction/The_Asset_Browser.htm">браузере активов</a> является актив " <a href="../../The_Asset_Editors/Scripts.htm">Скрипт</a> ". Сценарии - это особые активы, поскольку они представляют собой &quot;контейнеры&quot;
+    для функций, определяемых пользователем, и сами по себе не вызываются непосредственно в вашей игре. Все скрипты имеют <strong>глобальную</strong> область применения и будут автоматически запускаться <span class="notranslate">GameMaker</span> при запуске игры, поэтому вы можете использовать их для определения глобальных
+    переменных и функций, которые вы хотите использовать в своей игре.</p>
+  <p>В каждый сценарий <span class="notranslate">DnD™</span>можно добавить одну или несколько пользовательских функций, которые создаются с помощью действия <a href="../Drag_And_Drop_Reference/Common/Declare_A_New_Function.htm">Declare A New Function</a>:</p>
+  <p><img alt="Declare A New Function Syntax" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Common_Declare_Function.png">Функции, которые вы определите здесь, будут глобальными по области применения и будут действовать подобно любому встроенному действию <span class="notranslate">DnD™</span>.
+    т.е. они могут принимать различные значения - или вообще не принимать их - называемые <a class="glossterm" data-glossterm="аргумент" href="#">аргументами</a>(или параметрами), а затем выполнять задачу, возвращая значение или не возвращая ничего.
+    в зависимости от необходимости. Затем вы вызываете функцию в своей игре с помощью действия <a href="../Drag_And_Drop_Reference/Common/Function_Call.htm">Function Call</a> <img alt="Function Call Icon" class="icon" height="24" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Execute_Function.png" width="24">, которое выглядит следующим образом:</p>
+  <p><img alt="Function Call Syntax" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Common_Execute_Function.png">Чтобы создать сценарий <span class="notranslate">DnD™</span>, достаточно воспользоваться правой кнопкой мыши <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> в любом месте браузера активов и выбрать " <strong>Создать </strong>", затем " <strong>Сценарий</strong>". Это создаст новый сценарий <span class="notranslate">DnD™</span>и откроет окно редактора:</p>
+  <p><img alt="D&amp;D Script editor" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scripts.png">Вы можете назвать скрипт, щелкнув правой кнопкой мыши <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> на нем в Браузере активов и выбрав <strong>Переименовать </strong>(или с помощью медленного двойного щелчка левой кнопкой мыши <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21">), но учтите, что имя скрипта должно соответствовать общим правилам, поэтому оно должно начинаться с буквы и содержать только буквы и цифры.
+    должно соответствовать общим правилам для активов, поэтому оно должно начинаться с буквы и содержать только буквы, цифры или символ &quot;_&quot; под баром. Ваш скрипт также будет предварительно заполнен действием <strong>Declare A New Function</strong>,
+    и вы сможете добавить дополнительные объявления функций по мере необходимости (один скрипт может содержать несколько функций, что удобно для группировки функций с похожим или связанным использованием).</p>
+  <p>Как упоминалось выше, вы можете передать функции несколько аргументов, и она будет использовать их для выполнения задачи, для которой вы ее написали. Чтобы лучше понять это, возьмите, например, любое из встроенных действий и подумайте о том, как оно работает... вы
+    помещаете его в событие, задаете ряд значений, и он заставляет ваш экземпляр что-то сделать. Определяемые пользователем функции работают точно так же, с той лишь разницей, что их пишете <em>вы </em>.</p>
+  <p>При определении новой функции вы даете ей имя, а также определяете имена аргументов, которые она принимает, если принимает (функции могут не принимать аргументы или принимать несколько аргументов, в зависимости от того, что вам требуется). Если вы задаете имена аргументов, то они будут
+    будут использоваться в действиях, которые вызывает функция, как <strong>локальные переменные </strong>, содержащие входные значения функции.</p>
+  <p>Также хорошей практикой является добавление комментария к действию, который объясняет, что оно делает, следуя <a href="../../The_Asset_Editors/Code_Editor_Properties/JSDoc_Script_Comments.htm">правилам JS Doc</a>. Например, рассмотрим эту функцию <span class="inline">set_vec()</span>:</p>
+  <p><img alt="D&amp;D Function Example With Comments" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_FunctionExample.png">Для вызова приведенного выше сценария достаточно использовать действие <strong>Call Function</strong>,
+    например, так:</p>
+  <p><img alt="Call A Function From A Script" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Declare_Function_2.png">Вы можете не только передавать аргументы в функцию, но и просить функцию вернуть значение.
+    (используя действие <a href="../Drag_And_Drop_Reference/Common/Return.htm">Return</a> <img alt="Return Action Icon" class="icon" height="24" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Return.png" width="24"> ), так что вы можете
+    можете использовать их, например, для построения вычислительных методов или возврата идентификатора экземпляра после сложного обнаружения столкновений, а также для любых других целей. Обратите внимание, однако, что использование return <strong>завершает функцию</strong>, и поэтому никакие действия, выполненные после
+    Это означает, что необходимо продумать структуру функций.</p>
+  <p>Ниже приведена функция <span class="notranslate">Drag and Drop</span>, которая возвращает значение:</p>
+  <p><img alt="D&amp;D Script Return Example" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Script_Example_Return.png" /></p>
+  <p>Приведенная выше функция просто проверяет все объекты в комнате на предмет их <span class="inline">object_index</span> и если один из них является объектом игрока, то функция возвращает <span class="inline">true</span> (завершая вызов функции) или
+    <span class="inline">false</span> . Вы можете вызвать эту функцию следующим образом:</p>
+  <p><img alt="Call D&amp;D Script With Return Value" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Script_Call_Return.png">Итак, мы вызываем функцию и заставляем ее создать временную (локальную) переменную для хранения возвращаемого значения (которое в данном случае или ), а затем эта переменная проверяется и выполняется действие.
+    (которая в данном случае является либо <span class="inline">true</span>, либо <span class="inline">false</span>), а затем эта переменная проверяется и выполняется действие.</p>
+  <p>При создании функций для ваших сценариев <span class="notranslate">DnD™</span>вы можете использовать все те же действия, что и при добавлении действий в событие объекта, и даже можете вызывать функции изнутри функций, создавая таким образом более &quot;модульный&quot; код действий. Построение
+    Сценарии с функциями могут сэкономить вам много времени на создание одинаковых последовательностей действий, а также облегчить чтение и отладку ваших последовательностей действий.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../../Content.htm">Указатель</a></div>
+        <div style="float:right">Следующий: <a href="Changing_DnD_To_Code.htm">Изменение <span class="notranslate">DnD™</span></a>в коде</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Drag And Drop</span> Scripts
+<span class="notranslate">DnD</span> Scripts
+-->
+  <!-- TAGS
+drag_and_drop_scripts
+-->
+
+</body></html>

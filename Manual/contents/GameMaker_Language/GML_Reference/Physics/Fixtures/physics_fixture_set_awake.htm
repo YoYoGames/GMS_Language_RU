@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_awake</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_awake" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_awake" />
+  <meta name="search-keywords" content="physics_fixture_set_awake" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_set_awake</h1>
+  <p>Когда вы запускаете комнату с физикой или привязываете светильники к экземплярам, светильники всегда считаются &quot;бодрствующими&quot;... то есть они обрабатывают события и взаимодействуют с окружающими экземплярами. Однако это иногда может привести
+    к проблемам, особенно если у вас есть несколько экземпляров со светильниками, которые находятся рядом друг с другом, когда начинается комната (представьте себе башню, состоящую из различных экземпляров со светильниками), поскольку в &quot;бодрствующем&quot; состоянии они будут двигаться и, возможно, менять положение
+    из-за внезапного начала действия гравитации и столкновений, влияющих на них. В таких случаях вы можете использовать эту функцию, чтобы пометить приспособление как &quot;спящее&quot;, в этом случае оно не будет ничего обрабатывать при первом создании в комнате.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_fixture_set_awake(fixture, state)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>приспособление</td>
+        <td>индекс приспособления</td>
+      </tr>
+      <tr>
+        <td>флаг</td>
+        <td>бодрствует ли светильник<tt>(true</tt>) или нет<tt>(false</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">physics_fixture_set_awake(fix_Cloud, true);</p>
+  <p>Приведенный выше код отмечает приспособление как &quot;бодрствующее&quot;, когда оно привязано к экземпляру.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Fixtures.htm">Приспособления</a></div>
+        <div style="float:right">Далее: <a href="physics_get_friction.htm">physics_get_friction</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_awake
+-->
+  <!-- TAGS
+physics_fixture_set_awake
+-->
+</body>
+</html>

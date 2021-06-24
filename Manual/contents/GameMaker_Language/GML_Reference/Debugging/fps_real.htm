@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fps_real</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for fps_real" />
+  <meta name="rh-index-keywords" content="fps_real" />
+  <meta name="search-keywords" content="fps_real" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>fps_real</h1>
+  <p>В <span class="notranslate">GameMaker Studio 2</span> есть два основных способа, которые можно использовать для определения скорости, с которой работает ваша игра. <a href="../General_Game_Control/game_get_speed.htm"><tt>скорость игры</tt></a> (как указано в опциях игры) и <tt>fps</tt> (кадры в секунду). Эти значения часто путают, но в основном одно из них - это количество шагов игры, которое <span class="notranslate">GameMaker Studio 2</span> должна выполнить за секунду (скорость игры), а другое - количество шагов процессора, которое <span class="notranslate">GameMaker Studio 2</span> фактически выполняет за секунду (реальный fps), и это значение обычно намного выше, чем скорость игры, но будет снижаться по мере усложнения игры и использования большей вычислительной мощности для поддержания заданной скорости комнаты.</p>
+  <p>Эта переменная, <b>доступная только для чтения</b>, возвращает текущий fps в виде целочисленного значения. Обратите внимание, что функция будет обновляться только один раз на каждом шаге вашей игры, поэтому может показаться, что значение &quot;прыгает&quot; от одного к другому, но это вполне нормально.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: В HTML5-цели эта переменная вместо этого будет возвращать значение, кратное частоте обновления монитора, поскольку <span class="notranslate">GameMaker Studio 2</span> должна полагаться на браузер для определения времени и отправки.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">fps_real</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if debug_mode<br> {
+    <br> draw_text(32, 32, &quot;FPS = &quot; + string(fps_real));<br> }
+  </p>
+  <p>Приведенный выше код проверит, находится ли игра в режиме отладки, и если да, то отобразит на экране текущий реальный fps.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Debugging.htm">Отладка</a></div>
+        <div style="float:right">Далее: <a href="debug_mode.htm">debug_mode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+fps_real
+-->
+  <!-- TAGS
+fps_real
+-->
+</body>
+</html>

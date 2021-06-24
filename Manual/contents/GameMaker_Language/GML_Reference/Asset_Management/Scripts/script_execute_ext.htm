@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>script_execute_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function script_execute_ext" />
+  <meta name="rh-index-keywords" content="script_execute_ext" />
+  <meta name="search-keywords" content="script_execute_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>script_execute_ext</h1>
+  <p>Эта функция работает аналогично функции <a href="script_execute.htm">script_execute()</a>, только вы можете предоставить <a href="../../../GML_Overview/Arrays.htm">массив</a>, содержащий аргументы, необходимые для вызываемой функции/скрипта. Вы
+    также можете передать два необязательных аргумента, чтобы указать смещение в массиве для получения аргументов, а также количество аргументов из массива (оно должно быть не более array_length - offset). </p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">script_execute(scr, array_args, [offset], [num_args]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>scr</td>
+        <td>Имя функции/скрипта, который вы хотите вызвать</td>
+      </tr>
+      <tr>
+        <td>array_args</td>
+        <td>Массив, содержащий аргументы для функции/скрипта</td>
+      </tr>
+      <tr>
+        <td>[смещение].</td>
+        <td><em>ВАРИАНТ!</em> Смещение в массиве аргументов</td>
+      </tr>
+      <tr>
+        <td>[num_args]</td>
+        <td><em>ВАРИАНТ!</em> Количество аргументов для (начиная со смещения и далее)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Будет зависеть от возвращаемого значения вызываемой функции/скрипта</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">script_execute_ext(move_inst, move_array, floor(random(4)), 1);</p>
+  <p>Приведенный выше код примера будет использовать <tt>script_execute_ext</tt> для вызова заданной функции, предоставляя массив из четырех аргументов, но используя только один из них случайным образом.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция не может использоваться со встроенными функциями.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Scripts.htm">Скрипты</a></div>
+        <div style="float:right">Далее: <a href="script_exists.htm">script_exists</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+script_execute_ext
+-->
+  <!-- TAGS
+script_execute_ext
+-->
+</body>
+</html>

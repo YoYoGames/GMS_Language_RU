@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>рисовать_вершину_цвета</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_vertex_colour" />
+  <meta name="rh-index-keywords" content="draw_vertex_colour,draw_vertex_color" />
+  <meta name="search-keywords" content="draw_vertex_colour,draw_vertex_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>рисовать_вершину_цвета</h1>
+  <p>Эта функция определяет положение вершины для примитива, с ее собственным цветом и настройкой альфа. Окончательный вид примитива будет зависеть от типа примитива, выбранного для рисования, и порядка, в котором вы добавляете к нему вершины (см. <a href="draw_primitive_begin.htm"><tt>draw_primitive_begin()</tt></a>    более подробную информацию), и вершины с разными цветами и альфа будут плавно переходить одна в другую. Чтобы завершить и нарисовать примитив, необходимо вызвать команду <a href="draw_primitive_end.htm"><tt>draw_primitive_end()</tt></a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_vertex_colour(x, y, col, alpha)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Координата x вершины.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Координата y вершины.</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Цвет, которым будет рисоваться эта вершина.</td>
+      </tr>
+      <tr>
+        <td>альфа</td>
+        <td>Альфа, с которой будет рисоваться эта вершина (0-1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_primitive_begin(pr_trianglelist);<br> draw_vertex_colour(100, 100, c_blue, 0.1);<br> draw_vertex_colour(100, 200, c_red, 0.1);<br> draw_vertex_colour(150, 150, c_green, 1);<br> draw_primitive_end();
+  </p>
+  <p>Приведенный выше код нарисует полупрозрачный треугольник, каждая вершина которого окрашена в свой цвет.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Primitives_And_Vertex_Formats.htm">Примитивы и форматы вершин</a></div>
+        <div style="float:right">Далее: <a href="draw_vertex_texture.htm">draw_vertex_texture</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_vertex_colour
+draw_vertex_color
+-->
+  <!-- TAGS
+draw_vertex_colour
+-->
+
+</body></html>

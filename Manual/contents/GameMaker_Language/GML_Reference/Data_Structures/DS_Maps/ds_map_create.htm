@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_create" />
+  <meta name="rh-index-keywords" content="ds_map_create" />
+  <meta name="search-keywords" content="ds_map_create" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_create</h1>
+  <p>Эта функция используется для создания новой, пустой, DS карты и возвращает ее id, который затем используется для доступа к структуре данных во всех других функциях DS карты.</p>
+  <p class="note"><b>ВАЖНО!</b> Когда вы создаете структуру данных, значение индекса для ее идентификации является целым числом, начинающимся с 0. Это означает, что структуры данных разных типов могут иметь <b>одинаковое</b> значение индекса, поэтому, если вы сомневаетесь, вам следует использовать значение индекса
+    <span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists()</tt></a></span> функцию перед обращением к ним. Также обратите внимание, что индексы используются повторно, поэтому значение индекса уничтоженной структуры данных может быть использовано вновь созданной впоследствии.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_map_create();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Целое число (идентификатор карты DS)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">инвентарь = ds_map_create();</p>
+  <p>Приведенный выше код создаст новую, пустую карту DS и сохранит ее индекс id в переменной &quot;inventory&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="DS_Maps.htm">Карты DS</a></div>
+        <div style="float:right">Далее: <a href="ds_map_add.htm">ds_map_add</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_create
+-->
+  <!-- TAGS
+ds_map_create
+-->
+
+</body></html>

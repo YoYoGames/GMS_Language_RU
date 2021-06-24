@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tag_get_assets</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function tag_get_assets" />
+  <meta name="rh-index-keywords" content="tag_get_assets" />
+  <meta name="search-keywords" content="tag_get_assets" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tag_get_assets</h1>
+  <p>С помощью этой функции вы можете получить имена всех активов, которым был присвоен заданный тег или теги. Вы передаете либо одну строку тега, либо <a href="../../../GML_Overview/Arrays.htm">массив</a>, где каждый элемент массива - это строка тега.
+    Функция вернет массив, каждый элемент которого является именем (в виде строки) актива с заданным тегом. Если вам нужен уникальный индекс для актива, то вы можете использовать функцию <a href="asset_get_index.htm"><tt>asset_get_index()</tt></a> вместе с
+    вместе с возвращаемым именем. Если активов с заданным тегом (тегами) нет, или если произошла ошибка (например, заданные теги не существуют), то будет возвращен пустой массив.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">tag_get_assets(tags);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>теги</td>
+        <td>Одна строка тега актива или массив с различными тегами актива.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Массив</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">backgrounds = ds_list_create();<br> var _assets = tag_get_assets(&quot;background&quot;);<br> for (var i = 0; i&lt; array_length(_assets); ++i;) <br> {
+    <br> if asset_get_type(_assets[i]) == asset_sprite<br> {
+    <br> ds_list_add(backgrounds, asset_get_index(_assets[i]));<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код создает список, затем извлекает имена всех активов с тегом &quot;background&quot;. Он циклически просматривает массив возвращенных имен, проверяя, являются ли какие-либо из них спрайтовыми активами, и если да, то уникальное значение индекса
+    для актива добавляется в список для дальнейшего использования.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Assets_And_Tags.htm">Активы и метки</a></div>
+        <div style="float:right">Далее: <a href="asset_get_tags.htm">asset_get_tags</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+tag_get_assets
+-->
+  <!-- TAGS
+tag_get_assets
+-->
+</body>
+</html>

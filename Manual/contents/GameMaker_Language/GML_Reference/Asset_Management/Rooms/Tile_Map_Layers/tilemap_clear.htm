@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_clear</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function tilemap_clear" />
+  <meta name="rh-index-keywords" content="tilemap_clear" />
+  <meta name="search-keywords" content="tilemap_clear" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tilemap_clear</h1>
+  <p>С помощью этой функции вы можете очистить/установить все плитки на заданной карте плиток. Вы передаете ID элемента карты плиток (который вы получаете при создании элемента карты плиток с помощью функции <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a> или при использовании
+    функция <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>), а затем предоставляете данные плитки, которую вы хотите очистить. Значение по умолчанию 0 очистит все плитки из слоя (по сути, сделает все плитки &quot;пустыми&quot;),
+    В то время как вы можете использовать специальные функции <span class="inline">tile_*</span> для создания собственных данных тайлов для очистки карты тайлов.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">tilemap_clear(tilemap_element_id, tiledata)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>Уникальное значение ID элемента карты плитки, которое необходимо изменить</td>
+      </tr>
+      <tr>
+        <td>tiledata</td>
+        <td>Данные плитки, используемые для очистки слоя</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var layer_id = layer_get_id(&quot;Forest&quot;);<br> var tile_id = layer_tilemap_get_id(layer_id);<br> tilemap_clear(tile_id, 0);</p>
+  <p>Приведенный выше код получает значение ID карты плиток, созданной в редакторе комнат, а затем очищает ее, используя &quot;пустые&quot; плитки.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Tile_Map_Layers.htm">Плитка Слои карты</a></div>
+        <div style="float:right">Далее: <a href="tilemap_x.htm">tilemap_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_clear
+-->
+  <!-- TAGS
+tilemap_clear
+-->
+</body>
+</html>

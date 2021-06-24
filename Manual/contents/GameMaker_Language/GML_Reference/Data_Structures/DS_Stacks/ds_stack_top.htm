@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_stack_top</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_stack_top" />
+  <meta name="rh-index-keywords" content="ds_stack_top" />
+  <meta name="search-keywords" content="ds_stack_top" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_stack_top</h1>
+  <p>Эта функция считывает <i>только</i> первое значение стека (то, которое находится &quot;сверху&quot;). Она не <i>выгружает</i> значение, то есть оно все еще может быть прочитано в будущем этой функцией или функцией <a href="ds_stack_pop.htm"><tt>ds_stack_pop()</tt></a>.
+    Если стек пуст, то функция вернет константу <tt>undefined</tt>, в противном случае она вернет вещественное или строковое значение, содержащееся в стеке.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_stack_top(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Идентификатор структуры данных для чтения.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Значение типа данных, хранящееся в стеке или неопределенное</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">num = ds_stack_top(control_stack);</p>
+  <p>Приведенный выше код будет считывать значение из стека, индексированного в переменной &quot;control_stack&quot;, и сохранять возвращаемое значение в переменной &quot;num&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="ds_stack_create.htm">ds_stack_create</a></div>
+        <div style="float:right">Далее: <a href="ds_stack_pop.htm">ds_stack_pop</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_stack_top
+-->
+  <!-- TAGS
+ds_stack_top
+-->
+
+</body></html>

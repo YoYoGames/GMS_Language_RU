@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>экземпляр_последовательности</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the variable sequence_instance" />
+  <meta name="rh-index-keywords" content="sequence_instance" />
+  <meta name="search-keywords" content="sequence_instance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>экземпляр_последовательности</h1>
+  <p>Это <strong>встроенная переменная</strong>, которая является частью <a href="../Instances/Instance_Variables/Instance_Variables.htm">переменных экземпляра</a>, созданных для каждого экземпляра объекта в вашей игре. Если экземпляр управляется последовательностью,
+    эта переменная будет содержать <a href="Sequence_Structs/The_Sequence_Instance_Struct.htm">структуру экземпляра последовательности</a> для последовательности, управляющей экземпляром, в противном случае она будет <tt>неопределена</tt>. Это переменная <strong>только для чтения</strong> 
+    и не может быть изменена.</p>
+  <p>Обратите внимание, что эта переменная станет <tt>неопределенной</tt> после завершения управляющей Последовательности, даже если ее элемент Последовательности все еще существует, и снова получит структуру, если этот элемент Последовательности будет <a href="../Rooms/Sequence_Layers/layer_sequence_play.htm">воспроизведен</a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">экземпляр_последовательности</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if (in_sequence)<br> {
+    <br> sequence_instance.speedScale = 2;<br> }
+  </p>
+  <p>Приведенный выше код проверяет <a href="in_sequence.htm"><span class="inline">in_sequence</span></a> переменную, и если она равна <span class="inline">true</span> (то есть экземпляр управляется последовательностью), то он изменит шкалу скорости этой
+    последовательности на 2.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sequences.htm">Последовательности</a></div>
+        <div style="float:right">Далее: <a href="sequence_exists.htm">sequence_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_instance
+-->
+  <!-- TAGS
+sequence_instance
+-->
+</body>
+</html>

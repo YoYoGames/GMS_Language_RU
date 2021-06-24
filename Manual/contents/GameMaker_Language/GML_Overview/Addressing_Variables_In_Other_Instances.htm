@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Обращение к переменным в других случаях</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining hoe to address variables in other instances" />
+  <meta name="rh-index-keywords" content="Addressing Variables In Other Instances" />
+  <meta name="search-keywords" content="" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Обращение к переменным в других случаях</h1>
+  <p>В разделах, посвященных <a href="Variables_And_Variable_Scope.htm">переменным</a>, вы узнали, как создавать и использовать переменные в пределах одного экземпляра или в глобальной области видимости, но что произойдет, если вы хотите, чтобы один экземпляр обращался к переменной в другом,
+    другом экземпляре? Есть много случаев, когда вы можете захотеть сделать это, например, при столкновении с объектом пули вы можете захотеть узнать, сколько повреждений нанесла пуля, обратившись к переменной в пуле, или вы можете захотеть остановить движение
+    или остановить движение всех шариков в головоломке, или переместить главного героя в определенную позицию, или в любой другой ситуации, с которой вы обычно сталкиваетесь в любой игре. К счастью, <span class="notranslate">язык GameMaker Language</span> оснащен механизмами для достижения этой цели.
+    этого.</p>
+  <p>Одним из наиболее распространенных методов доступа к переменной или ее изменения в другом экземпляре является использование имени объекта в качестве идентификатора, а затем использование точки &quot;<span class="inline">.</span>&quot; для указания GameMaker <span class="notranslate">Studio 2, что</span> переменная, используемая после точки
+    должна быть присвоена или изменена в этом объекте. Синтаксис для этого следующий:</p>
+  <p class="code">&lt;object_id&gt;.&lt;переменная&gt;<em>= &lt;значение&gt;;</em></p>
+  <p>На практике это будет выглядеть следующим образом:</p>
+  <p class="code">obj_ball.speed = 0;</p>
+  <p>С помощью приведенного выше кода вы устанавливаете скорость экземпляра &quot; obj_ball<tt>&quot;.</tt> Однако если у вас в комнате более одного экземпляра данного объекта, <em>то это значение будет применяться ко всем им одинаково</em> - если только вы не используете <b>HTML5</b>,
+    в этом случае он будет действовать только на <em>один</em>, но у вас нет возможности узнать, на какой именно - поэтому, если вам нужно получить доступ ко всем экземплярам объекта, вы должны использовать <a href="Language_Features/with.htm"><tt>with()</tt></a>, так как это
+    100% кроссплатформенная совместимость. В общем, этот формат следует использовать только тогда, когда в комнате находится единственный экземпляр объекта, или (как вы увидите в следующей части) когда у вас есть определенный <i> <b>ID</b></i> экземпляра.</p>
+  <p>Вы также можете получить доступ к одному экземпляру объекта, если в комнате имеется несколько экземпляров, используя уникальное <b>имя экземпляра</b>, чтобы сообщить <span class="notranslate">GameMaker Studio 2</span>, к какому именно экземпляру мы хотим обратиться. <b>Константа имени экземпляра</b> - это
+    уникальная идентифицирующая константа, которая присваивается каждому экземпляру, добавленному в комнату в вашей игре. Вы можете найти эту константу, дважды щелкнув на экземпляре в <a href="../../The_Asset_Editors/Rooms.htm">редакторе комнат</a>:</p>
+  <p><img alt="The instance constant in the room editor" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/Instance_Constant.png">Обратите внимание, что это имя можно отредактировать и дать ему более описательное название - хотя оно <em>должно</em> быть
+    уникальным для всей игры - и оно может быть использовано в качестве левой части точки:</p>
+  <p class="code">inst_4DB70D2.speed = 0;</p>
+  <p>Однако наиболее распространенным и практичным методом является использование <i>переменной</i> слева от точки, при условии, что данная переменная<i> хранит действительный <b>идентификатор экземпляра</b></i>. Следующие примеры иллюстрируют это.</p>
+  <p class="code">// Пример 1<br> var _inst = instance_position(mouse_x, mouse_y, all);<br> if instance_exists(_inst)<br> {
+    <br> _inst.speed = 0;<br> }
+    <br>
+    <br> // Пример 2<br> var _inst = instance_create_layer(mouse_x, mouse_y, &quot;Enemies&quot;, obj_E_Parent);<br> _inst.direction = point_direction(_inst.x, _inst.y, x, y);<br> _inst.target = id;</p>
+  <p>В приведенном выше коде для примера 1 имеется <a href="../GML_Reference/Asset_Management/Instances/instance_exists.htm"><tt>экземпляр_существует()</tt></a> вызов в блоке кода. Это связано с тем, что использование метода point для доступа или изменения другого экземпляра
+    приведет к ошибке и аварийному завершению игры, если экземпляр не существует, а в данном примере есть вероятность, что так и есть. Однако в примерах 2 и 3 проверка не нужна, поскольку мы знаем, что экземпляр существует.
+    поскольку в примере 2 мы создали его, а в примере 3 - другой экземпляр в событии столкновения. Однако, если существует <i>вероятность</i> того, что экземпляр может быть уничтожен, деактивирован или иным образом удален из комнаты при использовании этого метода,
+    следует <i>всегда</i> проверять это заранее с помощью функции <tt>instance_exists()</tt> или функции <a href="../GML_Reference/Asset_Management/Instances/instance_number.htm"><tt>instance_number()</tt></a> функция.</p>
+  <p>Обратите внимание, что вы не можете использовать специальное <a href="Instance_Keywords.htm">ключевое слово</a> &quot; all&quot; с этим методом, чтобы нацелить все экземпляры (например: <span class="inline">all.val = 10</span> выдаст ошибку), но вы можете использовать ключевые <i>слова</i> 
+    &quot; other<tt>&quot; и</tt>&quot; self&quot; без проблем. Например, использование <tt>other</tt> в <a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">событии столкновения</a>:</p>
+  <p class="code">// Пример 3 other.hp -= 10;<br> if other.hp &lt;= 0<br> {
+    <br> other.sprite_index = spr_E_Dead;<br> }
+  </p>
+  <p>Также важно отметить, что нельзя использовать любую функцию саму по себе в качестве левой части присваивания. Например, следующий код приведет к ошибке:</p>
+  <p class="code">instance_nearest(x, y, obj).speed = 0;</p>
+  <p>Возвращаемое значение для выражения в этом примере кода является целым числом (уникальное значение ID для ближайшего экземпляра), поэтому оно должно быть заключено в скобки <span class="inline">()</span>, чтобы использоваться таким образом и правильно обращаться к экземпляру.
+    требуется. Приведенный выше код будет правильно записать как:</p>
+  <p class="code">(instance_nearest(x, y, obj)).speed = 0;<br>
+    <br> //or
+    <br>
+    <br> var inst = instance_nearest(x, y, obj);<br> inst.speed = 0;</p>
+  <p>Все эти способы чтения, изменения и установки переменных в других экземплярах являются вполне допустимыми и работают потому, что точка на самом деле является <i>оператором</i>. Он принимает значение в качестве левого <a class="glossterm" data-glossterm="операнд" href="#">операнда</a>, переменную в качестве правого операнда и возвращает адрес этой конкретной переменной в указанном объекте или экземпляре. Все имена объектов, константы, идентификаторы и т.д... просто представляют значения, и с ними можно работать как с любыми другими значениями.</p>
+  <p>Другим способом ссылки на переменные в другом экземпляре является использование функции <span class="notranslate">языка GameMaker</span> <span class="inline">with()</span>, которая подробно рассматривается <a href="Language_Features/with.htm">здесь</a>:</p>
+  <p class="code">// Это повлияет на все экземпляры объекта &quot;obj_Enemy&quot;<br> with (obj_Enemy)<br> {<br> target = other.parent;<br> } <br>
+    <br> // Это повлияет на один экземпляр объекта &quot;obj_Enemy&quot;<br> var _enemy = instance_nearest(x, y, obj_Enemy);<br> if instance_exists(_enemy)<br> {<br> with (_enemy)<br> {<br> target_x = mouse_x;<br> target.y = mouse_y;<br> } <br> }</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="GML_Overview.htm">Обзор<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Следующее: <a href="Evaluation_Order.htm">Порядок оценки</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+variables - addressing
+addressing variables
+-->
+  <!-- TAGS
+addressing_variables
+-->
+
+</body></html>

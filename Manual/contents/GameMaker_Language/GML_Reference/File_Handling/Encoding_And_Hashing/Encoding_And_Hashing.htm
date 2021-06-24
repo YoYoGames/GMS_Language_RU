@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Кодирование и хэширование</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the File Encoding And Hashing functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="File Encoding,File Hashing,encode,decode,sha1,md5,crc32,base64" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Кодирование и хэширование</h1>
+  <p>При работе с внешними файлами всегда существует вероятность того, что конечный пользователь может открыть и изменить содержащуюся в них информацию и тем самым изменить вашу игру. Это может привести к поломке игровых элементов или подделке оценок в Интернете (например),
+    Поэтому <span class="notranslate">GameMaker Studio 2</span> предоставляет вам некоторые базовые функции <a class="glossterm" data-glossterm="кодирование" href="#">кодирования</a>, а также функции для проверки <a class="glossterm" data-glossterm="хэширование" href="#">хэширования</a> строк
+    и файлов, чтобы убедиться, что они сохранили свою целостность перед использованием. Есть также несколько функций для кодирования и декодирования строк в формате <a class="glossterm" data-glossterm="JSON" href="#">JSON</a>.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ: </b>Кодирование - это НЕ шифрование! Кодировка base64 делает файл нечитаемым невооруженным глазом и требует усилий со стороны пользователя для декодирования, но она не защищает от взлома. Рекомендуется смешивать эти функции с
+    собственным шифрованием (в Интернете можно найти множество форм шифрования и скриптовых функций для <span class="notranslate">GameMaker</span> ).</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="json_encode.htm">json_encode</a></li>
+    <li><a href="json_decode.htm">json_decode</a></li>
+    <li><a href="json_stringify.htm">json_stringify</a></li>
+    <li><a href="json_parse.htm">json_parse</a></li>
+    <li><a href="base64_encode.htm">base64_encode</a></li>
+    <li><a href="base64_decode.htm">base64_decode</a></li>
+    <li><a href="md5_string_utf8.htm">md5_string_utf8</a></li>
+    <li><a href="md5_string_unicode.htm">md5_string_unicode</a></li>
+    <li><a href="md5_file.htm">md5_file</a></li>
+    <li><a href="sha1_string_utf8.htm">sha1_string_utf8</a></li>
+    <li><a href="sha1_string_unicode.htm">sha1_string_unicode</a></li>
+    <li><a href="sha1_file.htm">sha1_file</a></li>
+    <li><a href="zip_unzip.htm">zip_unzip</a></li>
+    <li><a href="load_csv.htm">load_csv</a></li>
+  </ul>
+  <p> </p>
+  <p>Стоит отметить, что существует также ряд функций, связанных с кодированием и хэшированием <a href="../../Buffers/Buffers.htm">буферов</a>, которые вы можете найти по следующим ссылкам:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../../Buffers/buffer_md5.htm">buffer_md5</a></li>
+    <li><a href="../../Buffers/buffer_sha1.htm">буфер_sha1</a></li>
+    <li><a href="../../Buffers/buffer_crc32.htm">buffer_crc32</a></li>
+    <li><a href="../../Buffers/buffer_base64_encode.htm">buffer_base64_encode</a></li>
+    <li><a href="../../Buffers/buffer_base64_decode.htm">buffer_base64_decode</a></li>
+    <li><a href="../../Buffers/buffer_base64_decode_ext.htm">buffer_base64_decode_ext</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../File_Handling.htm">Работа с файлами</a></div>
+        <div style="float:right">Следующий: <a href="../File_System/File_System.htm">Файловая система</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+File Encoding
+-->
+  <!-- TAGS
+file_encoding_functions
+-->
+
+</body></html>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Объявление новой функции</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing Declare A New Function" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Declare A New Function" />
+  <meta name="search-keywords" content="Declare A New Function" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>
+    <img alt="Declare A New Function Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Declare_Function.png"> Объявление новой функции</h1>
+  <p>Это действие можно использовать для создания новой определяемой пользователем функции, которая затем может быть вызвана в любое время в вашем коде. Определяемая пользователем функция - это функция, которую вы определяете для выполнения задачи, не охваченной доступными действиями DnD™ или функциями <span class="notranslate">бегущей строки</span> GML,
+    Они могут быть глобальными, экземплярами или локальными по области применения (более подробную информацию об области применения см. <a href="../../../GameMaker_Language/GML_Overview/Variables_And_Variable_Scope.htm">здесь</a> ), а также могут использоваться в качестве <b>конструкторов</b> для создания <a href="../../../GameMaker_Language/GML_Overview/Structs.htm">структур</a>.
+    Чтобы узнать больше об использовании этого действия для создания глобальных функций, обратитесь к разделу <a href="../../Drag_And_Drop_Overview/Action_Block_Functions.htm">Создание функций действия</a>. Вы также можете пометить функцию как <b>статическую</b>,
+    это означает, что она будет определена только один раз при первом использовании.</p>
+  <p>Чтобы использовать это действие, вы можете добавить его в событие экземпляра, а затем дать имя функции, которую вы хотите объявить. Затем вы указываете необходимые имена аргументов для каждого из параметров, которые будет принимать функция. Если функция будет использоваться в качестве конструктора
+    (т.е. она будет создавать структуру), то вам нужно установить <strong>флаг </strong>Constructor, а затем для вызова функции использовать действие New. Если функция будет использоваться только локально в одном и том же
+    событии и нигде больше, то можно также выбрать флаг <strong>Temp </strong>. После определения имени и параметров вы можете добавить действия, которые должны выполняться при вызове функции в вашем коде, переместив их в сторону
+    как показано на рисунке ниже:</p>
+  <p><img alt="Declare A New Function drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/drop_declare_function.png">Примеры использования в качестве обычной функции и функции-конструктора вы можете увидеть
+    ниже.</p>
+  <p> </p>
+  <h4>Синтаксис действия:</h4>
+  <p><img alt="Declare A New Function Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Declare_Function.png" /></p>
+  <h4>Аргументы:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>Функция</td>
+        <td>Имя новой функции.</td>
+      </tr>
+      <tr>
+        <td>Аргумент0 ... АргументХ</td>
+        <td>Имена различных аргументов для каждого из параметров, которые должны быть переданы в функцию.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Расширенный пример 1:</h4>
+  <p><img alt="Declare A New Function Example 1" class="center" height="491" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_1.png" width="492">Приведенный выше код блока действий помещается в <b>событие Create</b> экземпляра и объявляет новую функцию <tt>set_vec</tt> с тремя аргументами: <tt>_x</tt>, <tt>_y</tt> и <tt>spd</tt>. Эти аргументы затем используются в действиях, которые функция будет вызывать для установки направления и скорости движения экземпляра,
+    когда функция будет вызвана. Вызовите функцию с помощью действия <a href="Function_Call.htm">Function Call</a> в любом последующем событии, например, так:</p>
+  <p><img alt="Declare A New Function Exmaple 2" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_2.png">Вызывается функция, которая устанавливает направление движения экземпляра в сторону позиции
+    X/Y позиции мыши, и устанавливает скорость экземпляра равной 5.</p>
+  <p> </p>
+  <h4>Расширенный пример 2:</h4>
+  <p><img alt="Declare A New Function Exmaple 3" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_3.png">Приведенный выше код блока действий, вероятно, будет размещен в <b>событии Create</b> экземпляра
+    экземпляра, и объявляет новую конструкторскую функцию <tt>init_char_struct</tt> с четырьмя аргументами: <tt>_str1</tt>, <tt>_str2</tt>, <tt>_val1</tt> и <tt>_val2</tt>. Эти аргументы затем используются для заполнения заданных переменных в структуре
+    которую создает функция. Затем вы будете вызывать эту функцию с помощью действия <a href="New.htm">New</a> в любом последующем событии, например, так:</p>
+  <p><img alt="Declare A New Function Exmaple 4" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_4.png">Вызывается функция, которая вернет новый struct в массив &quot;char&quot;,
+    и struct будет заполнен переменными &quot;name&quot;, &quot;location&quot;, &quot;hp&quot; и &quot;mana&quot;, установленными в значения, используемые для соответствующих аргументов в функции.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Common_Actions_Library.htm">Общие действия</a></div>
+        <div style="float:right">Следующий: <a href="Assign_Variable.htm">Присвоение переменной</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Declare A New Function
+-->
+  <!-- TAGS
+action_declare_function
+-->
+</body>
+</html>

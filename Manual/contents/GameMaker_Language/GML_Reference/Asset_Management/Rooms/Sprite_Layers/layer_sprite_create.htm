@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>слой_спрайта_создать</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_create" />
+  <meta name="rh-index-keywords" content="layer_sprite_create" />
+  <meta name="search-keywords" content="layer_sprite_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>слой_спрайта_создать</h1>
+  <p>С помощью этой функции вы можете назначить ресурс спрайта слою, который будет использоваться в вашем проекте. Вы передаете идентификатор слоя (который вы получаете при создании слоя с помощью функции <a href="../General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a> или когда
+    вы используете имя слоя вместе с <a href="../General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a>), позицию в комнате и индекс спрайта (это имя спрайта, отображаемое в браузере активов), и он будет
+    будет добавлен в слой. Функция возвращает уникальное значение ID для элемента, которое затем можно использовать в дальнейших функциях слоя для спрайтов.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">layer_sprite_create(layer_id, x, y, sprite)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор слоя</td>
+        <td>Уникальное значение идентификатора слоя, на который нужно нацелиться</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Позиция x для использования</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Позиция y для использования</td>
+      </tr>
+      <tr>
+        <td>спрайт</td>
+        <td>Индекс спрайта, который будет использоваться</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Идентификатор элемента спрайта (реальный)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">global.asset_layer = layer_create(10000);<br> for (var i = 0; i&lt; 10; i++;)<br> {
+    <br> var _x = random(room_width);<br> var _y = room_height - 100;<br> global.asset_spr_trees[i] = layer_sprite_create(global.asset_layer, _x, _y, spr_Trees);<br> }
+  </p>
+  <p>Приведенный выше код создает новый слой, а затем добавляет в него 10 новых элементов спрайта, сохраняя ID каждого элемента в массив.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Layers.htm">Слои спрайта</a></div>
+        <div style="float:right">Далее: <a href="layer_sprite_destroy.htm">layer_sprite_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_create
+-->
+  <!-- TAGS
+layer_sprite_create
+-->
+</body>
+</html>

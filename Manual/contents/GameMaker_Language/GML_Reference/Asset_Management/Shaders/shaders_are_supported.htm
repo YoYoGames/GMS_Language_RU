@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>шейдеры_поддерживаются</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function shaders_are_supported" />
+  <meta name="rh-index-keywords" content="shaders_are_supported" />
+  <meta name="search-keywords" content="shaders_are_supported" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">шейдеры_поддерживаются</span></h1>
+  <p>Эта функция проверяет, поддерживает ли выбранная целевая платформа <span class="notranslate">шейдеры</span>, и возвращает <tt>true</tt>, если поддерживает, и <tt>false</tt>, если не поддерживает. Важно отметить, что на <b><span class="notranslate">Android</span></b>,
+    если в проекте не определены <span class="notranslate">шейдерные</span> ресурсы, то функция <i>всегда</i> будет <i>возвращать <tt>false</tt></i>, независимо от того, поддерживает устройство <span class="notranslate">шейдеры</span> или нет.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code"><span class="notranslate">shaders_are_supported</span>();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">global.GFX = false;<br> if <span class="notranslate">shaders_are_supported</span>()<br> {
+    <br> if <span class="notranslate">shader_is_compiled</span>(sh_glass) &amp;&amp; shader_is_compiled(sh_warp)<br> {
+    <br> global.GFX = true;<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код установит глобальную переменную в <tt>false</tt>, а затем, если платформа поддерживает <span class="notranslate">шейдеры</span> и оба проверяемых <span class="notranslate">шейдера</span> скомпилированы правильно, она будет установлена в <tt>true</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Shaders.htm"><span class="notranslate">Шейдеры</span></a></div>
+        <div style="float:right">Далее: <a href="shader_current.htm"><span class="notranslate">shader_current</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">shaders</span>_are_supported
+-->
+  <!-- TAGS
+<span class="notranslate">shaders</span>_are_supported
+-->
+</body>
+</html>

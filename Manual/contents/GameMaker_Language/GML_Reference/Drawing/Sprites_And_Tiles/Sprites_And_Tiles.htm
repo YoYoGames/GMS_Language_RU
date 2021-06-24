@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Спрайты и плитки</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Sprites And Tiles functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Sprites And Tiles" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Спрайты и плитки</h1>
+  <p>Несмотря на то, что в редакторе комнат можно устанавливать фоны и назначать спрайты экземплярам, часто это недостаточно гибко для создаваемой игры. Например, если у вас есть экземпляр, который должен рисовать меню, вы можете захотеть отображать различные
+    или если у вас игра с прокручивающимися параллаксными фонами, вам нужно иметь возможность задавать их через код в экземпляре контроллера определенного типа. В этих ситуациях вам следует использовать следующие функции, которые могут
+    рисовать спрайты и фоновые активы в любом месте комнаты, причем некоторые из функций также позволяют манипулировать формой, размером, цветом и альфой спрайта для достижения специальных эффектов.</p>
+  <p>Вы можете назначить спрайт экземпляру, и по умолчанию <span class="notranslate">GameMaker Studio 2</span> будет рисовать его со свойствами, заданными различными <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">переменными спрайта</a>,
+    Однако если вы добавляете что-либо в событие рисования, вы &quot;берете управление в свои руки&quot; и должны указать GameMaker <span class="notranslate">Studio 2</span>, что <span class="notranslate">именно</span> рисовать. Это означает, что если вы должны использовать следующие функции для определения того, что именно экземпляр должен
+    нарисовать и в каком месте комнаты он должен это сделать:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_self.htm">нарисовать_себя</a></li>
+    <li><a href="draw_sprite.htm">рисовать_спрайт</a></li>
+    <li><a href="draw_sprite_ext.htm">draw_sprite_ext</a></li>
+    <li><a href="draw_sprite_general.htm">нарисовать_спрайт_общий</a></li>
+    <li><a href="draw_sprite_part.htm">нарисовать_часть</a></li>
+    <li><a href="draw_sprite_part_ext.htm">draw_sprite_part_ext</a></li>
+    <li><a href="draw_sprite_stretched.htm">нарисовать_спрайт_растянутый</a></li>
+    <li><a href="draw_sprite_stretched_ext.htm">draw_sprite_stretched_ext</a></li>
+    <li><a href="draw_sprite_pos.htm">draw_sprite_pos</a></li>
+    <li><a href="draw_sprite_tiled.htm">нарисовать_прямую_плитку</a></li>
+    <li><a href="draw_sprite_tiled_ext.htm">draw_sprite_tiled_ext</a></li>
+  </ul>
+  <p> </p>
+  <p>Если вы используете спрайты формата SWF, то у вас есть дополнительные возможности управления сглаживанием, используемым при отрисовке (см.
+    дополнительную информацию об этих типах спрайтов). Обратите внимание, что эти функции работают на <i>глобальном</i> уровне и устанавливают AA для всех векторных SWF-спрайтов, отрисованных после их вызова.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_enable_swf_aa.htm">draw_enable_swf_aa</a></li>
+    <li><a href="draw_set_swf_aa_level.htm">draw_set_swf_aa_level</a></li>
+    <li><a href="draw_get_swf_aa_level.htm">draw_get_swf_aa_level</a></li>
+  </ul>
+  <p> </p>
+  <p>Помимо перечисленных выше функций, существуют также две специальные функции, предназначенные для использования со скелетной анимацией (см <a href="../../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm">.</a> 
+    более подробную информацию об этих типах спрайтов, а в разделе <a href="../../Asset_Management/Sprites/Skeletal_Animation/Skeletal_Animation.htm">Скелетная анимация</a> - конкретные функции, связанные с этими типами спрайтов):</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton.htm">нарисовать_скелет</a></li>
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_instance.htm">draw_skeleton_instance</a></li>
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_collision.htm">draw_skeleton_collision</a></li>
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_time.htm">рисовать_скелет_время</a></li>
+  </ul>
+  <p> </p>
+  <p>Плитки рисуются автоматически на основе данных, которые они содержат, используемого набора плиток и свойств карты плиток. Однако вы <i>можете</i> рисовать отдельные плитки или карты плиток с помощью следующих функций:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_tile.htm">нарисовать_плитку</a></li>
+    <li><a href="draw_tilemap.htm">нарисовать_картинку</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Drawing.htm">Рисунок</a></div>
+        <div style="float:right">Следующий: <a href="../Text/Text.htm">Текст</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sprites And Tiles
+-->
+  <!-- TAGS
+sprite_tile_functions
+-->
+</body>
+</html>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_edge_shape</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_edge_shape" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_edge_shape" />
+  <meta name="search-keywords" content="physics_fixture_set_edge_shape" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_set_edge_shape</h1>
+  <p>Эта функция определяет &quot;краевую&quot; форму фикстуры. Форма края - это просто линия, которая будет генерировать столкновение, когда другие фикстуры пересекают ее, и может быть очень полезна для создания (например) рельефа или для создания границ вокруг комнаты.
+    Положение края определяется с помощью <i>локального</i> пространства, т.е. позиция x/y экземпляра считается (0,0), поэтому это следует учитывать при их создании (в приведенном ниже примере кода экземпляр был бы размещен в точке
+    (0,0) в комнате, чтобы избежать осложнений).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_fixture_set_edge_shape(fixture, local_x1, local_y1, local_x2, local_y2)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>приспособление</td>
+        <td>индекс приспособления</td>
+      </tr>
+      <tr>
+        <td>local_x1</td>
+        <td>начальное положение x для края</td>
+      </tr>
+      <tr>
+        <td>локальный_y1</td>
+        <td>начальная позиция y для края</td>
+      </tr>
+      <tr>
+        <td>local_x2</td>
+        <td>конечное положение x для края</td>
+      </tr>
+      <tr>
+        <td>локальный_y2</td>
+        <td>конечное положение y для края</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var xx = 0;<br> var y1 = room_height - 100;<br> var y2 = room_height - 50 - irandom(100);<br> for (var i = 0; i &lt; 10; i++;)<br> {
+    <br> var fix = physics_fixture_create();<br> physics_fixture_set_edge_shape(fix, xx, y1, xx + 50, y2);<br> physics_fixture_bind(fix, id);<br> physics_fixture_delete(fix);
+    <br> xx += 50;<br> y1 = y2;<br> y2 = room_height - 50 - irandom(100);<br> }
+  </p>
+  <p>Приведенный выше код создаст линию &quot;краевых&quot; светильников с различной высотой по всей длине комнаты.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Fixtures.htm">Приспособления</a></div>
+        <div style="float:right">Далее: <a href="physics_fixture_set_chain_shape.htm">physics_fixture_set_chain_shape</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_edge_shape
+-->
+  <!-- TAGS
+physics_fixture_set_edge_shape
+-->
+</body>
+</html>

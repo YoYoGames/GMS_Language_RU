@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>экземпляр_активировать_слой</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_activate_layer" />
+  <meta name="rh-index-keywords" content="instance_activate_layer" />
+  <meta name="search-keywords" content="instance_activate_layer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>экземпляр_активировать_слой</h1>
+  <p>С помощью этой функции можно активировать слой, который ранее был деактивирован. Вам необходимо указать <b>ID слоя</b>, который может быть либо именем слоя, записанным в редакторе кода (в виде строки), либо фактическим значением ID слоя, возвращаемым
+    программой <a href="../../Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a> и все деактивированные экземпляры на этом слое снова активируются. Обратите внимание, что если вы деактивировали слой, который имеет постоянные экземпляры, вам необходимо
+    необходимо снова активировать слой с помощью этой функции перед сменой комнаты, иначе все постоянные экземпляры <i>не</i> будут перенесены и будут отброшены. Обратите также внимание, что активация не является мгновенной, и экземпляр, который был активирован
+    не будет считаться активным до окончания события, в котором была вызвана эта функция.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">instance_activate_layer(layer_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор слоя</td>
+        <td>Строка (или значение) идентификатора слоя, который будет использоваться</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">instance_activate_all();<br> var _vx = camera_get_view_x(view_camera[0]);<br> var _vy = camera_get_view_y(view_camera[0]);<br> instance_deactivate_region(view_xview[0] - 64, view_yview - 64, _vx + 128, _vy + 128, false, false);<br> instance_activate_layer(&quot;Player_Layer&quot;);
+  </p>
+  <p>Приведенный выше код активирует все экземпляры в пределах комнаты, а затем деактивирует те, которые находятся за пределами текущего обзора камеры, за исключением экземпляров на слое &quot;Player_Layer&quot;, которые снова активируются в конце.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Deactivating_Instances.htm">Деактивация экземпляров</a></div>
+        <div style="float:right">Далее: <a href="instance_deactivate_all.htm">instance_deactivate_all</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_activate_layer
+-->
+  <!-- TAGS
+instance_activate_layer
+-->
+</body>
+</html>

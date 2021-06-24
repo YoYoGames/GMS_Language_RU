@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Структура из девяти ломтиков</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet Matharoo" />
+  <meta name="topic-comment" content="Page explaining the contents of a Nine Slice struct" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Nine Slice,9slice,9-slice,9 slice" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Структура девяти ломтиков</h1>
+  <p> <a href="../../../GML_Overview/Structs.htm">Структура</a> Nine Slice может быть создана с помощью <a href="Sprite_Manipulation/sprite_nineslice_create.htm" title="sprite_nineslice_create"><span class="inline">sprite_nineslice_create()</span></a>или получить
+    из спрайта с помощью <a href="Sprite_Information/sprite_get_nineslice.htm" title="sprite_get_nineslice"><span class="inline">sprite_get_nineslice()</span></a>. Эта структура будет содержать свойства, которые могут быть изменены и применены к спрайту с помощью
+    <a href="Sprite_Manipulation/sprite_set_nineslice.htm" title="sprite_set_nineslice"><span class="inline">sprite_set_nineslice()</span></a>.</p>
+  <p>При извлечении из спрайта изменение значений в этой структуре повлияет на исходный спрайт <strong>. </strong></p>
+  <p>В этой структуре будут доступны следующие свойства:</p>
+  <ul class="colour">
+    <li><strong>enabled</strong>: Это <a class="glossterm" data-glossterm="булево" href="#">булево</a> значение будет <strong>истинным </strong>, если для спрайта включена функция <span data-keyref="Nine Slicing">Nine Slicing</span>, и <strong>ложным </strong>, если она отключена.
+      отключено. Вы можете изменить этот параметр, чтобы включить или отключить <span data-keyref="Nine Slicing">Nine Slicing</span> для спрайта.</li>
+    <li><strong>левая</strong>: Это смещение левой направляющей по оси x относительно левого края спрайта.</li>
+    <li><strong>правая</strong>: Это смещение правой направляющей по оси x относительно правого края спрайта.</li>
+    <li><strong>top</strong>: Это смещение верхней направляющей по оси y относительно верхнего края спрайта.</li>
+    <li><strong>нижняя</strong>: Это смещение нижней направляющей по оси y относительно нижнего края спрайта.</li>
+    <li><strong>tilemode</strong>: Возвращает <a href="../../../GML_Overview/Arrays.htm">массив</a>, содержащий <strong>режимы плитки</strong> для краевого и центрального срезов.</li>
+  </ul>
+  <p> <strong>Режим Tile Mode</strong> каждого фрагмента можно прочитать или изменить, используя эти константы в качестве индекса массива:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td><tt>nineslice_left</tt></td>
+        <td>Левый краевой срез</td>
+      </tr>
+      <tr>
+        <td><tt>nineslice_top</tt></td>
+        <td>Верхний краевой срез</td>
+      </tr>
+      <tr>
+        <td><tt>nineslice_right</tt></td>
+        <td>Правый краевой срез</td>
+      </tr>
+      <tr>
+        <td><tt>дно</tt></td>
+        <td>Нижний краевой срез</td>
+      </tr>
+      <tr>
+        <td><tt>девятиликий_центр</tt></td>
+        <td>Центральный ломтик</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> <strong>Режим плитки</strong> для среза будет (или может быть установлен) одной из следующих констант:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td><tt>nineslice_stretch</tt></td>
+        <td>Ломтик будет растянут</td>
+      </tr>
+      <tr>
+        <td><tt>nineslice_repeat</tt></td>
+        <td>Нарезка будет повторяться</td>
+      </tr>
+      <tr>
+        <td><tt>nineslice_mirror</tt></td>
+        <td>Срез будет повторяться путем зеркального отображения</td>
+      </tr>
+      <tr>
+        <td><tt>nineslice_blank</tt></td>
+        <td>Ломтик не будет растягиваться или повторяться, в результате чего после него останется пустая область</td>
+      </tr>
+      <tr>
+        <td><tt>nineslice_hide</tt></td>
+        <td>Ломтик не появится вообще</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Поскольку <strong>tilemode </strong>является массивом, для изменения режима плитки среза необходимо использовать синтаксис массива. Приведенный ниже пример кода устанавливает режим черепицы верхнего фрагмента на <strong>Repeat</strong>:</p>
+  <h4>Пример:</h4>
+  <p class="code"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Calibri,sans-serif"><span style="font-family:Consolas">var _nineslice = sprite_get_nineslice(spr_box);<br>
+<br>
+_nineslice.tilemode<strong>[nineslice_top</strong>] = <strong>nineslice_repeat</strong>;</span></span>
+    </span>
+    </span>
+  </p>
+  <p>Более подробную информацию о технике "Девять ломтиков" см. на <a href="../../../../The_Asset_Editors/Sprite_Properties/Nine_Slices.htm" title="Nine Slice">этой странице</a>.</p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Asset_Management.htm">Управление активами</a></div>
+        <div style="float:right">Следующий: <a href="../Tilsets/Tile_Sets.htm">Комплекты плитки</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sprites
+-->
+  <!-- TAGS
+sprite_functions
+-->
+
+</body></html>

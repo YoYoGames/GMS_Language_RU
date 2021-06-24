@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>animcurve_channel_evaluate</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function animcurve_channel_evaluate" />
+  <meta name="rh-index-keywords" content="animcurve_channel_evaluate" />
+  <meta name="search-keywords" content="animcurve_channel_evaluate" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>animcurve_channel_evaluate</h1>
+  <p>Эта функция может быть использована для получения значения в определенный момент времени из <a href="../../../GML_Overview/Structs.htm">структуры</a> канала. Вы передаете указатель struct для канала (как возвращается функцией <a href="animcurve_get_channel.htm"><tt>animcurve_get_channel()</tt></a>,
+    или как возвращается в структуре анимационной кривой из функции <a href="animcurve_get.htm"><tt>animcurve_get()</tt></a>) и позицию &quot;x&quot; (время) вдоль канала кривой для оценки. Эта позиция должна быть между 0 и
+    1, и функция вернет значение кривой в этой позиции, или вернет 0, если предоставленная структура канала недействительна.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Синтаксис: </h4>
+  <p class="code">animcurve_channel_evaluate(channel_struct, posx);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>структура канала</td>
+        <td>Указатель struct для оцениваемого канала.</td>
+      </tr>
+      <tr>
+        <td>posx</td>
+        <td>Положение во времени для проверки (от 0 до 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается: </h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример: </h4>
+  <p class="code">var _channel = animcurve_get_channel(ac_AlphaCurve, 0);<br> var _val = animcurve_channel_evaluate(_channel, sin(current_time/1000));<br> image_alpha = _val;</p>
+  <p>Приведенный выше код получает структуру канала для актива кривой анимации &quot;ac_AlphaCurve&quot;. Затем он использует возвращаемое значение оценки для установки альфа-канала изображения для данного экземпляра.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Animation_Curves.htm">Анимационные кривые</a></div>
+        <div style="float:right">Далее: <a href="animcurve_create.htm">animcurve_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_channel_evaluate
+-->
+  <!-- TAGS
+animcurve_channel_evaluate
+-->
+</body>
+</html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xprevious</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable xprevious" />
+  <meta name="rh-index-keywords" content="xprevious" />
+  <meta name="search-keywords" content="xprevious" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xprevious</h1>
+  <p>Эта встроенная переменная возвращает <i>предыдущую</i> позицию x для данного экземпляра. Эта переменная будет установлена непосредственно перед началом <b>события begin step</b>, но она также может быть установлена через код в любое время, что означает, что вы можете дать ей собственное пользовательское значение
+    если в этом возникнет необходимость.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">xprevious;</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (значение с плавающей точкой одинарной точности)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if x != xprevious || y != yprevious<br> {
+    <br> moved = true;<br> }
+  </p>
+  <p>Приведенный выше код проверяет, есть ли разница между <tt>предыдущими</tt> значениями <tt>xprevious</tt> и <tt>yprevious</tt> и текущими значениями x и y. Если есть, то переменная устанавливается в true.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Instance_Variables.htm">Переменные экземпляра</a></div>
+        <div style="float:right">Далее: <a href="yprevious.htm">yprevious</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+xprevious
+-->
+  <!-- TAGS
+xprevious
+-->
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_user_owns_dlc</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_user_owns_dlc" />
+  <meta name="rh-index-keywords" content="steam_user_owns_dlc" />
+  <meta name="search-keywords" content="steam_user_owns_dlc" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_user_owns_dlc</span></h1>
+  <p>Если для вашей игры созданы DLC, вы можете использовать эту функцию, чтобы проверить, купил ли пользователь их, прежде чем получить доступ к любым связанным с ними файлам. Функция возвращает <tt>true</tt>, если игрок владеет содержимым, и <tt>false</tt>, если
+    но обратите внимание, что даже если пользователь владеет DLC, он может не иметь его установленным, поэтому вам следует использовать дополнительную функцию <a href="steam_user_installed_dlc.htm"><tt><span class="notranslate">steam_user_installed_dlc</span>()</tt></a> чтобы проверить, установлено ли оно
+    перед использованием. Обратите внимание, что идентификаторы <span class="notranslate">Steam</span> могут быть большими числами, поэтому вам может понадобиться привести значение идентификатора к виду <a href="../../Variable_Functions/int64.htm"><tt>int64()</tt></a> перед передачей в функцию.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code"><span class="notranslate">steam_user_owns_dlc</span>(dlc_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>dlc_id</td>
+        <td>Уникальный идентификатор для проверяемого DLC (целое число int64).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">global.Level_Max = 100;<br> if <span class="notranslate">steam_user_owns_dlc</span>(10354)<br> {
+    <br> if <span class="notranslate">steam_user_installed_dlc</span>(10354)<br> {
+    <br> global.Level_max = 200;<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код проверит, купил ли пользователь и установил DLC с идентификатором 10354, и если да, то установит глобальную переменную на другое значение.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Steam_DLC.htm">DLC</a></div>
+        <div style="float:right">Далее: <a href="steam_user_installed_dlc.htm"><span class="notranslate">steam_user_installed_dlc</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_user_owns_dlc
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_user_owns_dlc
+-->
+</body>
+</html>

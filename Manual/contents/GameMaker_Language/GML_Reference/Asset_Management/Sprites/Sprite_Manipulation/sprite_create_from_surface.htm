@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_create_from_surface</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_create_from_surface" />
+  <meta name="rh-index-keywords" content="sprite_create_from_surface" />
+  <meta name="search-keywords" content="sprite_create_from_surface" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_create_from_surface</h1>
+  <p>С помощью этой функции можно создать спрайт из ранее инициализированной поверхности (значение идентификатора индекса поверхности возвращается при создании поверхности с помощью функции <a href="../../../Drawing/Surfaces/surface_create.htm"><tt>surface_create()</tt></a>). Координаты x и
+    y, которые вы затем вводите в функцию, должны быть относительно позиции (0,0) <i>поверхности</i> (левый верхний угол), а не окна игры (или вида, если он активен). Аргументы width и height задаются в пикселях и
+    определяют ширину и высоту используемой части поверхности.</p>
+  <p>Установка аргумента &quot;removeback&quot; в true удалит цвет из спрайта, проверяя <i>левый</i> нижний <i>пиксель</i> спрайта на наличие там цвета и затем используя его в качестве удаляемого цвета.</p>
+  <p>Если вы выбрали опцию &quot;removeback&quot;, вы также можете захотеть, чтобы GameMaker <span class="notranslate">Studio 2 сгладила</span> края спрайта, установив аргумент &quot;smooth&quot; в true. При этом создается полупрозрачная граница по краям спрайта.
+    спрайта после удаления его фона.</p>
+  <p>Наконец, вы можете указать <i>начало</i> координат x и y для спрайта. Это точка, в которой спрайт &quot;фиксируется&quot; на экземпляре, который его использует, и всегда вычисляется относительно левого верхнего угла 0,0 одного подизображения спрайта. Таким образом,
+    например, спрайт размером 32 x 32 пикселя с этими значениями, установленными на (16,16), будет иметь начало в центре.</p>
+  <p>По умолчанию все новые спрайты имеют свои ограничивающие рамки, которые рассчитываются автоматически (точный размер bbox зависит от размера и прозрачности спрайта), однако вы можете захотеть настроить это, в этом случае вам также следует использовать функцию <a href="sprite_collision_mask.htm"><tt>sprite_collision_mask()</tt></a>.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ:</b> Когда вы создаете спрайт в <span class="notranslate">GameMaker Studio 2</span> с помощью этого метода, вы должны не забыть удалить его снова (с помощью функции <a href="sprite_delete.htm"><tt>sprite_delete()</tt></a>), когда он больше не нужен, иначе существует риск утечки памяти, что приведет к замедлению и, в конечном счете, к краху вашей игры.
+    замедлит работу и в конечном итоге приведет к краху вашей игры.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">sprite_create_from_surface(index, x, y, w, h, removeback, smooth, xorig, yorig);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс поверхности, на основе которой будет создано изображение.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Позиция x для копирования.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Позиция y для копирования.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Ширина копируемой области (от позиции x).</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Высота копируемой области (от позиции y).</td>
+      </tr>
+      <tr>
+        <td>удалить назад</td>
+        <td>Указывает, делать ли все пиксели с цветом фона (левый-нижний пиксель) прозрачными.</td>
+      </tr>
+      <tr>
+        <td>гладкий</td>
+        <td>Указывает, нужно ли сглаживать края.</td>
+      </tr>
+      <tr>
+        <td>xorig</td>
+        <td>Указывает x-позицию начала координат в спрайте.</td>
+      </tr>
+      <tr>
+        <td>yorig</td>
+        <td>Указывает позицию y начала координат в спрайте.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращает</h4>
+  <p class="code">Real (уникальное значение ID спрайта)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var surf;<br> surf = surface_create(32, 32);<br> surface_set_target(surf);
+    <br> draw_clear_alpha(c_black, 0);<br> draw_sprite(spr_Body, 0, 0, 0);<br> draw_sprite(spr_Clothes, 0, 0, 0);<br> draw_sprite(spr_Hair, 0, 0, 0);<br> spr_custom = sprite_create_from_surface(surf, 0, 0, 0, 32, 32, true, true, 16, 16);<br> surface_reset_target();
+    <br> surface_free(surf);
+  </p>
+  <p>Приведенный выше код создает поверхность и сохраняет ее индекс в локальной переменной &quot;surf&quot;. Затем он нацеливается на эту поверхность, очищает ее и рисует несколько спрайтов друг над другом. Наконец, он создает новый спрайт из составного изображения, нарисованного на поверхности
+    и присваивает его индекс переменной &quot;spr_Custom&quot;, после чего освобождает память, используемую поверхностью.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Manipulation.htm">Манипуляция спрайтом</a></div>
+        <div style="float:right">Далее: <a href="sprite_add_from_surface.htm">sprite_add_from_surface</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_create_from_surface
+-->
+  <!-- TAGS
+sprite_create_from_surface
+-->
+</body>
+</html>

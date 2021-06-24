@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Создание расширения</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how to create a generic extension" />
+  <meta name="rh-index-keywords" content="Extensions - Creating An Extension" />
+  <meta name="search-keywords" content="creating extensions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Создание расширения</h1>
+  <p>Чтобы создать расширение, сначала нужно щелкнуть правой кнопкой мыши <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> в браузере активов и выбрать <strong>Создать расширение</strong>. Откроется главное окно свойств расширения:</p>
+  <p><img alt="Extension Properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions.png">Теперь все готово для добавления необходимых файлов и функций, здесь же можно дать расширению имя (следуя обычному соглашению
+    только буквы/цифры и никаких специальных символов, кроме символа &quot;_&quot;). Вы также можете задать номер версии расширения, если хотите.</p>
+  <p>Чтобы добавить файл в новое расширение, необходимо щелкнуть значок меню <img alt="Estension Options Icon" class="icon" src="../../assets/Images/Icons/Icon_ExtensionMenu.png"> и выбрать либо файл-заглушку, либо реальный файл, который требуется для
+    целевой платформы:</p>
+  <p class="dropspot"><img alt="Add Files To An Extension" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_Files.png" /></p>
+  <p>Общий&quot; заполнитель - это файл, который может быть любого типа, кроме тех, которые требуются для конкретных платформ (например, никаких файлов <span class="inline">DLL</span> или <span class="inline">SO </span>), и он не будет использоваться, кроме как в качестве &quot;компоновщика&quot;.
+    файл для соединения набора функций или констант с данным расширением (обычно он используется только для расширений <span class="notranslate">iOS</span> и <span class="notranslate">Android</span>, что объясняется в разделах ниже для этих целей). Вы также можете добавить &quot; GML&quot;<span class="notranslate">и</span>&quot;JS&quot;
+    файлы-заполнители для более специфического использования.</p>
+  <p>Обычно вам не нужно использовать заполнители, если вы не собираете для iOS <span class="notranslate">и</span> <span class="notranslate">Android, поэтому</span> вы выбираете опцию Add <em>Files</em>, чтобы добавить любой из следующих файлов в зависимости от целевой платформы, для которой они предназначены:</p>
+  <ul class="colour">
+    <li class="dropspot"><span class="inline">.gml</span>: Это файл, созданный только с помощью <span class="notranslate">языка GameMaker Language</span> и совместимый со всеми платформами.</li>
+    <li class="dropspot"><span class="inline">.js</span>: Это формат расширения JavaScript и совместим только с целевыми модулями JS (HTML5).</li>
+    <li class="dropspot"><span class="inline">.dll</span>: Это формат расширения динамически подключаемой библиотеки, совместимый только с целями <span class="notranslate">Windows</span>, UWP и Xbox One (для каждой цели потребуется свой файл <span class="inline">*.dll</span>, совместимый с ее спецификациями).</li>
+    <li class="dropspot"><span class="inline">.dylib</span>: Это эквивалент DLL для Mac и совместим только с Mac target (не <span class="notranslate">iOS</span>).</li>
+    <li class="dropspot"><span class="inline">.so</span>: Это <span class="notranslate">Linux-эквивалент</span> DLL и совместим только с <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>).</li>
+    <li class="dropspot"><span class="inline">.prx</span>: Это формат файла для добавления функциональности PS4 цели (для каждой цели потребуется свой файл <span class="inline">*.prx</span>, совместимый с ее спецификациями).</li>
+  </ul>
+  <p>Вы заметите, что нет ни типа файла для <strong><span class="notranslate">Android</span> </strong>ни <strong><span class="notranslate">iOS</span></strong>это потому, что их настройка немного отличается. Далее вы найдете объяснения, как их настроить, но сначала давайте рассмотрим создание
+    общего расширения <span class="notranslate">GML</span> для любой из целевых платформ, поскольку процесс одинаков для всех них.</p>
+  <p>Для начала необходимо создать файл, который будет использоваться. Для расширения <span class="notranslate">GML</span> это будет текстовый файл (сохраненный с расширением <span class="inline">.gml</span> ), который будет иметь следующий формат:</p>
+  <p class="code">#define c_alice_blue<br> return make_color_rgb(240,248,255);<br>
+    <br>
+    <br> #define instance_create_colour<br> var i = instance_create_layer(argument0, argument1, argument2);<br> with (i)<br> {<br> image_blend = argument3;<br> } <br> return i;</p>
+  <p>Как вы видите, каждый раздел начинается с вызова <span class="inline">#define</span>, который в приведенном выше примере используется для определения двух функций. Вам не нужно предоставлять поля аргументов для функций, так как они будут добавлены позже, просто используйте
+    define, затем имя функции и добавьте <span class="notranslate">GML</span> для соответствия. Если бы вы писали расширение DLL или JS, то процесс был бы аналогичным, но на языке, соответствующем формату файла расширения.</p>
+  <p>После этого вам нужно добавить файл в расширение (объяснено выше), что вызовет новое окно в Свойствах расширений для Свойств файла:</p>
+  <p class="dropspot"><img alt="File Property Window" class="center" height="553" src="../../assets/Images/Asset_Editors/Editor_Extensions_FileProperties.png" width="1050" /></p>
+  <p>Здесь вы можете выбрать целевую платформу для расширения (для GM вы можете выбрать их все), а также переименовать файл расширения и установить несколько других деталей, которые мы рассмотрим в ближайшее время. Редактор должен быть автоматически заполнен
+    функции, включенные в наш <span class="notranslate">GML-файл</span>, но если это не так, вы можете добавить их, нажав кнопку меню функций <img alt="Estension Options Icon" class="icon" src="../../assets/Images/Icons/Icon_ExtensionMenu.png"> и выбрав то, что вам нужно:</p>
+  <p class="dropspot"><img alt="Add functions/Constants To An Extension" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_AddFunctions.png" /></p>
+  <p>Выбрав <em>Add Function</em>, вы сможете добавить функцию в расширение, которую затем можно будет вызывать в <span class="notranslate">GameMaker Studio 2</span>, как и любую другую встроенную функцию. <span>После добавления функции откроется следующее окно, в котором можно задать свойства функции (или дважды щелкнуть на функции, чтобы открыть ее):</span></p>
+  <p class="dropspot"><img alt="Function Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_FunctionEditor.png" /></p>
+  <p>На изображении выше мы заполнили редактор функций деталями для функции <span class="inline">instance_create_colour()</span>, которую мы определили в сценарии расширения <span class="notranslate">GML</span> (редактор функций предназначен не только для определения функций GML.
+    и будет таким же для любого другого типа расширения). Вы можете видеть, что мы дали функции имя, которое вы будете называть при использовании функции в вашем проекте, и это имя не обязательно должно совпадать с именем, используемым в расширении - вы можете
+    задать ему любое имя, а затем использовать опцию <em>External Name</em>, чтобы связать его с реальным именем, определенным в расширении. Ниже находится раздел для определения текста <em>справки </em>- текста, который будет использован во всплывающем коде и вспомогательном тексте в расширении.
+    и вспомогательном тексте в нижней части редактора кода.</p>
+  <p>Далее вы можете определить <em>тип возврата</em>, который может быть <strong>двойным </strong>(вещественное число с <a class="glossterm" data-glossterm="плавающая запятая" href="#">плавающей точкой</a> ) или строкой - если внешняя функция ничего не возвращает.
+    тогда это не имеет значения - и под этим вы определяете аргументы, которые будет принимать функция.</p>
+  <p>Аргументы могут быть <strong>двойными </strong>или <strong>строками</strong>, и вы можете добавить их, нажав на кнопку add <img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18">, и удалить, нажав на кнопку remove .
+    удалить их, нажав кнопку remove <img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png">. Если ваша функция может принимать переменные аргументы, вам также следует установить флажок <em>Аргументы переменной длины</em> внизу.</p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Если вы создаете файл <span class="notranslate">Windows</span> <span class="inline">dll </span>и он содержит более четырех аргументов, <strong>все аргументы должны быть одного типа</strong>.</p>
+  <p>После этого функция готова к использованию в проекте, она будет отображаться в автозавершении и иметь цветовую маркировку. Определенные функции можно также установить в качестве <strong>начальных</strong> или <strong>конечных функций</strong>, то есть
+    что означает, что они будут автоматически вызываться при запуске игры (Init) и при завершении игры (Final).</p>
+  <p class="note"><strong>ВАЖНО!</strong> Все платформы поддерживают вызов функции Init, <strong>но не все платформы будут выполнять вызов функции Final.</strong> Это связано с тем, что некоторые платформы просто закрывают приложение, не давая никакого уведомления или времени для
+    вызова этой функции. К платформам, на которые это влияет, относятся: <strong><span class="notranslate">iOS</span></strong>, <strong><span class="notranslate">Android</span></strong>, <strong>HTML5</strong>, <strong>PlayStation </strong>и <strong>XboxOne</strong>.</p>
+  <p>Другой вариант - создать <strong>макрос</strong>. Макросом может быть <a class="glossterm" data-glossterm="постоянная" href="#">постоянное</a> значение или отдельный фрагмент кода (более подробную информацию о макросах можно найти здесь). Например, мы
+    можем удалить определенную функцию из нашего примера расширения <span class="notranslate">GML</span> выше для цвета c_alice_blue и сделать ее макросом. Чтобы создать макрос, просто нажмите кнопку Макросы в окне Свойства расширения:</p>
+  <p class="dropspot"><img alt="Macro Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_MacroEditor.png" /></p>
+  <p>Редактор здесь практически ничего не объясняет - вы указываете имя макроса/константы и значение или короткую строку кода. Обратите внимание, что если макрос представляет собой строку кода, <strong>она будет оцениваться каждый раз при вызове макроса</strong>.</p>
+  <p>При работе с несколькими целевыми платформами стоит отметить, что вы можете создать одно расширение с одним набором функций/макросов, которое будет работать на <em>всех </em>платформах. Это достигается путем добавления только одной из библиотек ссылок в вашу
+    игру в качестве расширения, а другую (другие) поместить в список <strong>Proxy Files</strong> из окна <strong>Extension Properties</strong>. Например, допустим, у вас есть расширение для <span class="notranslate">Windows</span> с адресом <span class="inline"> <strong>dll </strong></span>&quot;
+    <span class="inline">Haggis.dll</span> &quot;. Вы просто скопируете этот <span class="inline"> <strong>dll</strong></span> как Mac <span class="inline"> <strong>DyLib</strong></span>, назвав его &quot; <span class="inline"> <strong>libHaggis.dylib</strong></span>&quot;.
+    и убедиться, что имена внутренних функций совпадают с именами оригинального расширения <span class="notranslate">Windows</span> <span class="inline"> <strong>dll</strong></span>. Этот <strong> <span class="inline">DyLib</span> </strong>затем добавляется в файлы прокси и устанавливается на экспорт
+    при запуске игры на Mac, и <span class="notranslate">GameMaker Studio 2</span> будет автоматически использовать его при вызове функций расширения.</p>
+  <p>Чтобы добавить файл прокси, просто нажмите кнопку <img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18"> в окне свойств расширения для расширения и найдите местоположение файла.
+    После его добавления вам может понадобиться изменить цель расширения на соответствующий модуль, и при следующем запуске игры он будет включен в качестве прокси для этой платформы. Вы также можете удалить прокси-файлы, нажав кнопку <img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png">, которая при каждом нажатии будет удалять последний в списке.</p>
+  <p>После добавления прокси-файлов они будут храниться в файлах проекта вашей игры, в папке Extensions (вы можете легко найти их, щелкнув правой кнопкой мыши <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> на расширении
+    и выбрав <em>Open in Explorer</em>), поэтому если вам понадобится их отредактировать, вам следует редактировать скопированные файлы, которые идут в комплекте с игрой, а не оригиналы, поскольку <span class="notranslate">GameMaker Studio 2</span> будет использовать для компиляции те, которые находятся в проекте.</p>
+  <p>Очень важно, чтобы ваши прокси-файлы соответствовали приведенным ниже соглашениям об именовании, поскольку <span class="notranslate">GameMaker Studio 2</span> будет анализировать эти имена и назначать целевой модуль для файла в соответствии с его расширением и именем, а также автоматически связывать файлы.
+    вас. Если вы не будете следовать этим соглашениям, ваша игра может не работать во <span class="notranslate">время выполнения</span>, поскольку <span class="notranslate">GameMaker Studio 2</span> не сможет определить, какой файл использовать, или загрузит его неправильно.</p>
+  <p>Ниже приведены соглашения об именовании для каждой целевой платформы:</p>
+  <p class="dropspot">  </p>
+  <table>
+    <tbody>
+      <tr>
+        <th style="">Платформа</th>
+        <th style="">Имена</th>
+      </tr>
+      <tr>
+        <td style=""><span class="notranslate">Windows</span> 32bit <span class="notranslate">Runtime</span></td>
+        <td style=""><span class="inline">&lt;<em>Name</em>&gt;.dll, lib&lt;<em>Name</em>&gt;.dll</span></td>
+      </tr>
+      <tr>
+        <td style=""><span class="notranslate">Windows</span> 64bit <span class="notranslate">Runtime</span></td>
+        <td style=""><span class="inline">&lt;N<em>ame</em>&gt;_x64.dll, lib&lt;<em>Name</em>&gt;_x64.dll</span></td>
+      </tr>
+      <tr>
+        <td style=""><span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>)</td>
+        <td style=""><span class="inline">&lt;<em>Name</em>&gt;.so, lib&lt;<em>Name</em>&gt;.so, &lt;<em>Name</em>&gt;_linux.so, lib&lt;<em>Name</em>&gt;_linux.so</span></td>
+      </tr>
+      <tr>
+        <td style=""><span class="notranslate">macOS</span></td>
+        <td style=""><span class="inline">&lt;<em>Name</em>&gt;.dylib, lib&lt;Name&gt;.dylib</span></td>
+      </tr>
+      <tr>
+        <td style="">HTML5</td>
+        <td style=""><span class="inline">&lt;<em>Name</em>&gt;.js</span></td>
+      </tr>
+      <tr>
+        <td style="">PS4</td>
+        <td style=""><span class="inline">&lt;<em>Name</em>&gt;.prx, lib&lt; <em>Name</em>&gt;.prx, &lt; <em>Name</em>&gt;_ps4.prx, lib&lt; <em>Name</em>&gt;_ps4.prx</span></td>
+      </tr>
+      <tr>
+        <td style=""><span class="notranslate">XBox One</span></td>
+        <td style=""><span class="inline">&lt;<em>Name</em>&gt;_xboxone.dll</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="dropspot"> </p>
+  <p>Используя вышеприведенные соглашения, вы замените часть <span class="inline">&lt;<em>Name</em>&gt;</span> на имя базового файла, для которого вы добавляете прокси-файлы.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Extensions.htm">Редактор расширений</a></div>
+        <div style="float:right">Следующее: <a href="Android_Extensions.htm">Расширения для<span class="notranslate">Android</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Creating Extensions
+-->
+  <!-- TAGS
+extensions_create
+-->
+
+</body></html>

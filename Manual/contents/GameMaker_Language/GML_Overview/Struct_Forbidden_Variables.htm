@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Структура Запрещенные переменные</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page lists all the built-in global variables that cannot be used as member variable names for structs" />
+  <meta name="rh-index-keywords" content="Struct Forbidden Variables" />
+  <meta name="search-keywords" content="Struct Forbidden Variables,Struct Variables" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Структура Запрещенные переменные</h1>
+  <p>При создании struct можно использовать определенные встроенные переменные в качестве имен переменных-членов, например:</p>
+  <p class="code">mystruct = {<br> object_index : obj_Player,<br> speed : 3,<br> image_blend : c_red<br> }
+  </p>
+  <p>Однако таким образом можно использовать только локальные встроенные переменные и встроенные переменные в области видимости экземпляра, которым можно присваивать значения, как обычным переменным-членам struct. Использование встроенных переменных <strong>глобальной</strong> области видимости запрещено и приведет к проблемам в вашей игре.
+    Ниже приведен полный список этих переменных, чтобы вы знали, каких из них следует избегать.</p>
+  <p>Следующие встроенные глобальные переменные доступны для использования в ваших проектах, но не могут быть использованы в качестве переменных-членов struct:</p>
+  <ul class="colour">
+    <li><a href="Variables/Builtin_Global_Variables/argument.htm">аргумент[n]</a></li>
+    <li><a href="Variables/Builtin_Global_Variables/argument.htm">аргумент0 ... аргумент15</a></li>
+    <li><a href="Variables/Builtin_Global_Variables/argument_count.htm">счётчик аргументов</a></li>
+    <li><a href="Variables/Builtin_Global_Variables/async_load.htm">async_load</a></li>
+    <li><a href="../GML_Reference/Debugging/debug_mode.htm">режим отладки</a></li>
+    <li><a href="Variables/Constants.htm">указатель_недействительный</a></li>
+    <li><a href="Variables/Constants.htm">указатель_null</a></li>
+    <li><a href="Variables/Constants.htm">неопределенный</a></li>
+    <li><a href="Variables/Constants.htm">NaN</a></li>
+    <li><a href="Variables/Constants.htm">бесконечность</a></li>
+    <li><a href="Variables/Constants.htm">правда</a></li>
+    <li><a href="Variables/Constants.htm">ложный</a></li>
+    <li><a href="Variables/Constants.htm">pi</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Rooms/room.htm">номер</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Rooms/room_first.htm">первая комната</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Rooms/room_last.htm">номер_последний</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Rooms/room_width.htm">ширина_комнаты</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Rooms/room_height.htm">высота помещения</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Rooms/room_persistent.htm">комната_постоянная</a></li>
+    <li><a href="Variables/Builtin_Global_Variables/score.htm">счет</a></li>
+    <li><a href="Variables/Builtin_Global_Variables/lives.htm">жизни</a></li>
+    <li><a href="Variables/Builtin_Global_Variables/health.htm">здоровье</a></li>
+    <li><a href="../GML_Reference/General_Game_Control/game_id.htm">игровой идентификатор</a></li>
+    <li><a href="../GML_Reference/General_Game_Control/game_display_name.htm">имя_игрового_дисплея</a></li>
+    <li><a href="../GML_Reference/General_Game_Control/game_project_name.htm">имя_игрового_проекта</a></li>
+    <li><a href="../GML_Reference/General_Game_Control/game_save_id.htm">game_save_id</a></li>
+    <li><a href="../GML_Reference/File_Handling/File_Directories/working_directory.htm">рабочий_каталог</a></li>
+    <li><a href="../GML_Reference/File_Handling/File_Directories/temp_directory.htm">каталог temp_directory</a></li>
+    <li><a href="../GML_Reference/File_Handling/File_Directories/program_directory.htm">директория программы</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Instances/instance_count.htm">счётчик экземпляров</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Instances/instance_id.htm">идентификатор экземпляра</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_enabled.htm">view_enabled</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_current.htm">view_current</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_visible.htm">view_visible</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_xport.htm">view_xport</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_yport.htm">view_yport</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_wport.htm">view_wport</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_hport.htm">view_hport</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_surface_id.htm">view_surface_id</a></li>
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_camera.htm">просмотр_камеры</a></li>
+    <li><a href="../GML_Reference/Game_Input/Mouse_Input/mouse_x.htm">мышь_x</a></li>
+    <li><a href="../GML_Reference/Game_Input/Mouse_Input/mouse_y.htm">мышь_y</a></li>
+    <li><a href="../GML_Reference/Game_Input/Mouse_Input/mouse_button.htm">кнопка_мыши</a></li>
+    <li><a href="../GML_Reference/Game_Input/Mouse_Input/mouse_lastbutton.htm">кнопка_мыши</a></li>
+    <li><a href="../GML_Reference/Game_Input/Keyboard_Input/keyboard_key.htm">клавиша_клавиатуры</a></li>
+    <li><a href="../GML_Reference/Game_Input/Keyboard_Input/keyboard_lastkey.htm">клавиатура_последней клавиши</a></li>
+    <li><a href="../GML_Reference/Game_Input/Keyboard_Input/keyboard_lastchar.htm">keyboard_lastchar</a></li>
+    <li><a href="../GML_Reference/Game_Input/Keyboard_Input/keyboard_string.htm">строка_клавиатуры</a></li>
+    <li><a href="../GML_Reference/General_Game_Control/cursor_sprite.htm">курсор_спрайт</a></li>
+    <li><a href="../GML_Reference/Debugging/fps.htm">fps</a></li>
+    <li><a href="../GML_Reference/Debugging/fps_real.htm">fps_real</a></li>
+    <li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_time.htm">текущее_время</a></li>
+    <li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_year.htm">текущий_год</a></li>
+    <li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_month.htm">текущий_месяц</a></li>
+    <li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_day.htm">текущий_день</a></li>
+    <li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_weekday.htm">текущий_недельный день</a></li>
+    <li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_hour.htm">текущий_час</a></li>
+    <li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_minute.htm">текущая_минута</a></li>
+    <li><a href="../GML_Reference/Maths_And_Numbers/Date_And_Time/current_second.htm">текущая_секунда</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Objects/Object_Events/event_type.htm">тип события</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Objects/Object_Events/event_number.htm">номер_события</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Objects/Object_Events/event_object.htm">объект_события</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Objects/Object_Events/event_action.htm">действие_события</a></li>
+    <li><a href="../GML_Reference/Drawing/Surfaces/application_surface.htm">поверхность_приложения</a></li>
+    <li><a href="../GML_Reference/Asset_Management/Fonts/font_texture_page_size.htm">размер_текстуры_страницы</a></li>
+    <li><a href="../GML_Reference/OS_And_Compiler/os_type.htm">os_type</a></li>
+    <li><a href="../GML_Reference/OS_And_Compiler/os_device.htm">os_device</a></li>
+    <li><a href="../GML_Reference/OS_And_Compiler/os_version.htm">os_version</a></li>
+    <li><a href="../GML_Reference/OS_And_Compiler/os_browser.htm">os_browser</a></li>
+    <li><a href="../GML_Reference/Web_And_HTML5/browser_width.htm">ширина браузера</a></li>
+    <li><a href="../GML_Reference/Web_And_HTML5/browser_height.htm">высота_браузера</a></li>
+  </ul>
+  <p> </p>
+  <p>Помимо этих глобальных переменных, существует также ряд <em></em><strong>устаревших</strong> встроенных глобальных переменных, которые недоступны из-за возможности их включения в импортируемые старые продукты<span class="notranslate">(GameMaker Studio 2</span> должна зарезервировать
+    эти переменные, чтобы она могла распознать их при импорте и отметить, что они должны быть обновлены/удалены):</p>
+  <ul class="colour">
+    <li><span class="inline">gamemaker_registered</span></li>
+    <li><span class="inline">gamemaker_progamemaker_version</span></li>
+    <li><span class="inline">error_occurred</span></li>
+    <li><span class="inline">error_last</span></li>
+    <li><span class="inline">secure_mode</span></li>
+    <li><span class="inline">show_score</span></li>
+    <li><span class="inline">show_lives</span></li>
+    <li><span class="inline">show_health</span></li>
+    <li><span class="inline">caption_score</span></li>
+    <li><span class="inline">caption_lives</span></li>
+    <li><span class="inline">caption_health</span></li>
+    <li><span class="inline">game_guid</span></li>
+    <li><span class="inline">argument_relative</span></li>
+    <li><span class="inline">room_caption</span></li>
+    <li><span class="inline">room_speed</span></li>
+    <li><span class="inline">view_xview</span></li>
+    <li><span class="inline">view_yview</span></li>
+    <li><span class="inline">view_wview</span></li>
+    <li><span class="inline">view_hview</span></li>
+    <li><span class="inline">view_angle</span></li>
+    <li><span class="inline">view_hborder</span></li>
+    <li><span class="inline">view_vborder</span></li>
+    <li><span class="inline">view_hspeed</span></li>
+    <li><span class="inline">view_vspeed</span></li>
+    <li><span class="inline">view_object</span></li>
+    <li><span class="inline">transition_kind</span></li>
+    <li><span class="inline">transition_steps</span></li>
+    <li><span class="inline">background_color</span></li>
+    <li><span class="inline">background_showcolor</span></li>
+    <li><span class="inline">background_colour</span></li>
+    <li><span class="inline">background_showcolour</span></li>
+    <li><span class="inline">background_visible</span></li>
+    <li><span class="inline">background_foreground</span></li>
+    <li><span class="inline">background_index</span></li>
+    <li><span class="inline">background_x</span></li>
+    <li><span class="inline">background_y</span></li>
+    <li><span class="inline">background_width</span></li>
+    <li><span class="inline">background_height</span></li>
+    <li><span class="inline">background_htiled</span></li>
+    <li><span class="inline">background_vtiled</span></li>
+    <li><span class="inline">background_xscale</span></li>
+    <li><span class="inline">background_yscale</span></li>
+    <li><span class="inline">background_hspeed</span></li>
+    <li><span class="inline">background_vspeed</span></li>
+    <li><span class="inline">background_blend</span></li>
+    <li><span class="inline">background_alpha</span></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Structs.htm">Структуры</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Struct Forbidden Variables
+-->
+  <!-- TAGS
+struct_forbidden_vars
+-->
+</body>
+</html>

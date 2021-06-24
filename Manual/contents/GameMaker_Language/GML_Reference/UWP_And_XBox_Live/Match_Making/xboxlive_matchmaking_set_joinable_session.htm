@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_matchmaking_set_joinable_session</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_set_joinable_session" />
+  <meta name="rh-index-keywords" content="xboxlive_matchmaking_set_joinable_session" />
+  <meta name="search-keywords" content="xboxlive_matchmaking_set_joinable_session" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_set_joinable_session</h1>
+  <p>Эта функция устанавливает (ранее созданную) сессию доступной для присоединения других пользователей через пользовательский интерфейс системы. У пользователя есть только одна сессия, к которой можно присоединиться одновременно, и когда он покидает сессию (или сессия завершается), это значение будет очищено, однако вы можете
+    очистить его вручную, передав -1 в качестве аргумента session.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">xboxlive_matchmaking_set_joinable_session(local_user, session_that_is_joinable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>локальный_пользователь</td>
+        <td>Указатель локального идентификатора пользователя.</td>
+      </tr>
+      <tr>
+        <td>session_that_is_joinable</td>
+        <td>Идентификатор сеанса, который нужно сделать присоединяемым, или -1.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if (global.session_ID != -1)<br> {<br> xboxlive_matchmaking_set_joinable_session(xboxlive_user_for_pad(0), global.session_ID);<br> }</p>
+  <p>Приведенный выше код проверяет наличие действительного значения ID сессии, и если оно обнаружено, то устанавливает сессию как присоединяемую.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Match_Making.htm">Сопоставление</a></div>
+        <div style="float:right">Далее: <a href="xboxlive_matchmaking_join_invite.htm">xboxlive_matchmaking_join_invite</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_matchmaking_set_joinable_session
+-->
+  <!-- TAGS
+xboxlive_matchmaking_set_joinable_session
+-->
+</body>
+</html>

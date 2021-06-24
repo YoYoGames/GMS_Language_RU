@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>path_get_point_speed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_get_point_speed" />
+  <meta name="rh-index-keywords" content="path_get_point_speed" />
+  <meta name="search-keywords" content="path_get_point_speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>path_get_point_speed</h1>
+  <p>С помощью этой функции можно получить скорость точки (как определено в <a href="../../../../The_Asset_Editors/Paths.htm">редакторе контура</a> или при динамическом добавлении точки контура с помощью функции <a href="Path_Manipulation/path_add_point.htm"><tt>path_add_point()</tt></a>)
+    выраженную в процентах. Так, если в редакторе путей для точки пути установлено значение 50, эта функция при использовании вернет 50.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">path_get_point_speed(index, n);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс пути для проверки.</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>Идентификация точки для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if (path_get_point_speed(pth_Patrol, 0) != 100)<br> {
+    <br> var _px = path_get_point_x(pth_Patrol, 0);<br> var _py = path_get_point_x(pth_Patrol, 0);<br> path_change_point(pth_Patrol, 0, _px, _py, 100);<br> }
+  </p>
+  <p>Приведенный выше код проверяет точку &quot;0&quot; пути, проиндексированную &quot;pth_Patrol&quot;, на предмет того, не равна ли скорость 100. Если это не так, то скорость этой точки устанавливается равной 100.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Paths.htm">Пути</a></div>
+        <div style="float:right">Далее: <a href="path_get_point_x.htm">path_get_point_x</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_get_point_speed
+-->
+  <!-- TAGS
+path_get_point_speed
+-->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_start_sync_group</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_start_sync_group" />
+  <meta name="rh-index-keywords" content="audio_start_sync_group" />
+  <meta name="search-keywords" content="audio_start_sync_group" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_start_sync_group</h1>
+  <p>С помощью этой функции вы можете начать воспроизведение ранее созданной группы синхронизации. Вам необходимо предоставить <i>индекс группы</i>, который является значением, возвращенным при создании группы с помощью функции <a href="audio_create_sync_group.htm"><tt>audio_create_sync_group()</tt></a>.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функциональность недоступна для целевой платформы HTML5.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_start_sync_group(group_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>групповой_индекс</td>
+        <td>Групповой индекс для игры.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">sg = audio_create_sync_group(true);<br> audio_play_in_sync_group(sg, sound1);<br> audio_play_in_sync_group(sg, sound2);<br> audio_sound_gain(sound2, 0, 0);<br> audio_play_in_sync_group(sg, sound3);<br> audio_sound_gain(sound3, 0, 0);<br> audio_play_in_sync_group(sg,
+    sound4);<br> audio_sound_gain(sound4, 0, 0);<br> audio_start_sync_group(sg);
+  </p>
+  <p>Вышеописанное создает новую группу синхронизации и присваивает индекс группы переменной &quot;sg&quot;. Затем в группу добавляются четыре звука, причем усиление для трех из них устанавливается на 0. Наконец, группа синхронизации воспроизводится.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio_Synchronisation.htm">Синхронизация звука</a></div>
+        <div style="float:right">Далее: <a href="audio_stop_sync_group.htm">audio_stop_sync_group</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_start_sync_group
+-->
+  <!-- TAGS
+audio_start_sync_group
+-->
+</body>
+</html>

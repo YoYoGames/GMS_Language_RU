@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_exists" />
+  <meta name="rh-index-keywords" content="audio_exists" />
+  <meta name="search-keywords" content="audio_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_exists</h1>
+  <p>Эта функция возвращает, существует ли звук<tt>(true</tt>) или нет<tt>(false</tt>). Обратите внимание, что если искомый индекс не был инициализирован ранее, эта функция вызовет ошибку, так как она ищет несуществующие индексы активов. 
+    звук для проверки может быть либо одним экземпляром звука (индекс для отдельных воспроизводимых звуков может быть сохранен в переменной при использовании функции <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> или <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> функции)
+    либо звуковой актив.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_exists(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс звука, существование которого необходимо проверить.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if audio_exists(global.Music)<br> {
+    <br> audio_play_sound(global.Music, 0, true);<br> }
+  </p>
+  <p>Приведенный выше код проверяет, существует ли звук. Если он существует, он устанавливается для воспроизведения в цикле.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio.htm">Аудио</a></div>
+        <div style="float:right">Далее: <a href="audio_get_name.htm">audio_get_name</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_exists
+-->
+  <!-- TAGS
+audio_exists
+-->
+</body>
+</html>

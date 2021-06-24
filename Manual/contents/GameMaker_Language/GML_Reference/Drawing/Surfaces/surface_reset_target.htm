@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>поверхность_сброса_цели</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_reset_target" />
+  <meta name="rh-index-keywords" content="surface_reset_target" />
+  <meta name="search-keywords" content="surface_reset_target" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>поверхность_сброса_цели</h1>
+  <p>С помощью этой функции вы сбрасываете все дальнейшее рисование с целевой поверхности обратно на экран. Обратите внимание, что для начала рисования на поверхности вы должны сначала вызвать функцию <a href="surface_set_target.htm"><tt>surface_set_target()</tt></a> и
+    а затем эту функцию <i>для каждой заданной поверхности</i>, иначе на экране ничего не будет нарисовано, так как все дальнейшее рисование (даже в других экземплярах) будет происходить на поверхности. Вы также должны понимать, что ничего
+    не будет видно, если сама поверхность не будет нарисована на экране в событии draw экземпляра.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Если вы ранее не устанавливали цель рендеринга с помощью функции <span style="font-size:1px;"><a href="surface_set_target.htm"><tt style="font-size: 14px">surface_set_target()</tt></a></span>то использование этой функции беззвучно (т.е. без
+    без сообщений об ошибках) завершит дальнейшее выполнение кода для этого события.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">surface_reset_target();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if view_current = 0<br> {
+    <br> surface_set_target(surf);
+    <br> with (obj_Effect)<br> {
+    <br> draw_self();
+    <br> }
+    <br> surface_reset_target();
+    <br> }
+    <br> else
+    <br> {
+    <br> draw_surface(surf, 0, 0);<br> }
+  </p>
+  <p>Приведенный выше код проверяет, какой вид в данный момент рисуется, и если это вид[0], то устанавливает цель рисования на поверхность и рисует все экземпляры объекта &quot;obj_Effect&quot;, после чего снова сбрасывает цель рисования. Если вид не является view[0]
+    поверхность рисуется на экране.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Surfaces.htm">Поверхности</a></div>
+        <div style="float:right">Далее: <a href="surface_copy.htm">surface_copy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_reset_target
+-->
+  <!-- TAGS
+surface_reset_target
+-->
+</body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>уничтожение камеры</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_destroy" />
+  <meta name="rh-index-keywords" content="camera_destroy" />
+  <meta name="search-keywords" content="camera_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>уничтожение камеры</h1>
+  <p>С помощью этой функции вы можете уничтожить любую камеру. При вызове функции вы передаете уникальное значение ID камеры, которое вы получаете из функций <tt>camera_create_*</tt> или из <a href="view_camera.htm"><tt>view_camera</tt></a> массива при использовании
+    Room Editor для настройки порта просмотра и вида. Вы <i>никогда не</i> должны уничтожать камеру, которая в данный момент назначена на видимый вид, если только вы не назначаете новую камеру на этот вид в том же шаге, и вы <i>всегда</i> должны уничтожать любые камеры, которые вы создали с помощью кода, когда их нет.
+    которые вы создали с помощью кода, если они больше не нужны в игре, чтобы предотвратить утечку памяти, а также вы можете уничтожить камеры по умолчанию, если они назначены в редакторе комнат, но вы должны назначить новую камеру на порт вида (или отключить ее), иначе вы получите странные результаты.
+    иначе вы получите странные результаты.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">camera_destroy(camera_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор камеры</td>
+        <td>Уникальное значение ID камеры, полученное при создании камеры.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (уникальное значение идентификатора камеры)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">camera_destroy(view_camera[0]);<br> view_camera[0] = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1);</p>
+  <p>Приведенный выше код уничтожает камеру, назначенную в данный момент порту просмотра [0], затем создает новую камеру и назначает ее ID этому порту.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Cameras_And_View_Ports.htm">Камеры и порты для просмотра</a></div>
+        <div style="float:right">Далее: <a href="camera_apply.htm">camera_apply</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_destroy
+-->
+  <!-- TAGS
+camera_destroy
+-->
+</body>
+</html>

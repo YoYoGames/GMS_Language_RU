@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_get_leaderboard</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_get_leaderboard" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_get_leaderboard,achievement_stat_event" />
+  <meta name="search-keywords" content="xboxlive_stats_get_leaderboard,achievement_stat_event" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_get_leaderboard</h1>
+  <p>Эта функция может быть использована для получения глобальной таблицы рейтингов для заданной статистики. Вы предоставляете идентификатор пользователя (который возвращается, например, функцией <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>), строку
+    (как определено при регистрации статистики в качестве &quot;Featured Stat&quot;), а затем указываете ряд подробностей о том, какую информацию о таблице лидеров вы хотите получить. Обратите внимание, что вы можете получить глобальную таблицу лидеров только для int или real
+    статистики, но <i>не</i> для строковых статистик.</p>
+  <p class="note"><b>ВАЖНО!</b> Статы, используемые в глобальных таблицах лидеров, должны быть зарегистрированы как &quot;Featured Stats&quot; в XDP/Windows<span class="notranslate">Dev</span> Center, иначе будет выдана ошибка. Если вам нужны локальные (социальные) таблицы лидеров, то, пожалуйста, обратитесь к функции <a href="xboxlive_stats_get_social_leaderboard.htm"><tt><span style="font-size:14px;">xboxlive_stats_get_social_leaderboard()</span></tt></a>.</p>
+  <p>Функция создаст обратный вызов, который вызовет <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">системное асинхронное событие</a>. Это событие будет иметь встроенную карту DS <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"> <tt>async_load</tt> </a>    которая затем должна быть проанализирована на предмет следующих ключей:</p>
+  <ul class="colour">
+    <li>&quot; id&quot; - Будет содержать константу <tt>achievement_stat_event</tt></li>
+    <li>&quot; event<b>&quot; -</b> Будет содержать строку &quot;GetLeaderboardComplete<i>&quot;</i>.</li>
+    <li>&quot; userid<b>&quot; -</b> Идентификатор пользователя, связанный с запросом</li>
+    <li>&quot; error<b>&quot; - 0</b> в случае успеха, другое значение, если произошла ошибка. Ниже приведены две наиболее часто возвращаемые ошибки:
+      <ul>
+        <li>2145844844: Невозможно найти запрашиваемую таблицу лидеров (статистика не зарегистрирована в качестве основной).</li>
+        <li>-2145844848: Неправильный запрос (стат не является допустимым типом таблицы лидеров, т.е. строкой)</li>
+      </ul>
+    </li>
+    <li>&quot; errormessage<b>&quot; -</b> Строка с сообщением об ошибке, если таковое имеется</li>
+    <li>&quot;<b>display_name&quot; -</b> Уникальный ID для таблицы лидеров, определенный на приборной панели провайдера.</li>
+    <li>&quot; numentries<b>&quot; -</b> Количество записей в таблице лидеров, которые вы получили.</li>
+  </ul>
+  <p>Остальная часть карты DS также будет содержать данные таблицы лидеров со следующим форматом (где &quot;N&quot; - позиция в таблице лидеров, от 0 до &quot;numentries&quot;):</p>
+  <ul class="colour">
+    <li>&quot;<b>PlayerN&quot; -</b> Имя игрока, где &quot;N&quot; - целочисленное значение, соответствующее его позиции в списке лидеров.</li>
+    <li>&quot;<b>PlayeridN&quot; -</b> Уникальный идентификатор пользователя игрока, &quot;N&quot;.</li>
+    <li>&quot; RankN<b>&quot; -</b> Ранг игрока &quot;N&quot; в таблице лидеров.</li>
+    <li>&quot; ScoreN<b>&quot; -</b> счет игрока &quot;N&quot;.</li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">xboxlive_stats_get_leaderboard(user_id, stat, num_entries, start_rank, start_at_user, ascending);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор пользователя</td>
+        <td>Идентификатор пользователя, для которого нужно получить таблицу лидеров</td>
+      </tr>
+      <tr>
+        <td>статистика</td>
+        <td>Статистика (в виде строки) для создания глобальной таблицы лидеров</td>
+      </tr>
+      <tr>
+        <td>num_entries</td>
+        <td>Количество записей из глобальной таблицы лидеров для извлечения</td>
+      </tr>
+      <tr>
+        <td>начальный_ранг</td>
+        <td>Ранг в таблице лидеров, с которого нужно начинать (используйте 0, если аргумент &quot;start_at_user&quot; установлен в true)</td>
+      </tr>
+      <tr>
+        <td>start_at_user</td>
+        <td>Устанавливается в <tt>true</tt>, чтобы начать с ранга ID пользователя, <tt>false</tt> в противном случае (устанавливается в <tt>false</tt>, если аргумент &quot;start_rank&quot; не равен 0).</td>
+      </tr>
+      <tr>
+        <td>по возрастанию</td>
+        <td>Установите значение <tt>true</tt> для возрастающего порядка и <tt>false</tt> для убывающего.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Расширенный пример:</h4>
+  <p>Ниже приведен расширенный пример использования этой функции. Для начала вы должны вызвать ее в каком-либо событии, например, в событии Room <b>Start или</b> <b>Create:</b></p>
+  <p class="code">xboxlive_stats_get_leaderboard(user_id, &quot;GlobalTime&quot;, 20, 1, false, true);</p>
+  <p>Приведенный выше код будет вызван для получения списка всех позиций в социальной таблице лидеров игры и сгенерирует обратный вызов Social Asynchronous Event, с которым мы поступим следующим образом:</p>
+  <p class="code">if (async_load[? &quot;id&quot;] == achievement_stat_event)<br> {
+    <br> if (async_load[? &quot;event&quot;] == &quot;GetLeaderboardComplete&quot;)<br> {
+    <br> global.numentries = async_load[? &quot;numentries&quot;];<br> for(var i = 0; i &lt; numentries; i++;)<br> {
+    <br> global.playername[i] = async_load[? &quot;Player&quot; + string(i)];<br> global.playerid[i] = async_load[? &quot;Playerid&quot; + string(i)];<br> global.playerrank[i] = async_load[? &quot;Rank&quot; + string(i)];<br> global.playerscore[i] = async_load[? &quot;Score&quot; + string(i)];<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет возвращенную карту DS в Social Asynchronous Event, и если ее &quot;id&quot; совпадает с проверяемой константой, он затем проверяет, было ли событие вызвано возвращенными данными таблицы лидеров, после чего перебирает карту
+    и сохраняет все различные значения в нескольких глобальных массивах.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Stats_And_Leaderboards.htm">Статистика и таблицы лидеров</a></div>
+        <div style="float:right">Далее: <a href="xboxlive_stats_get_social_leaderboard.htm">xboxlive_stats_get_social_leaderboard</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_get_leaderboard
+achievement_stat_event
+-->
+  <!-- TAGS
+xboxlive_stats_get_leaderboard
+-->
+</body>
+</html>

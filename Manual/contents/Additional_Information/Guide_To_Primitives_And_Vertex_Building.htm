@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Руководство по примитивам и построению вершин</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how to set up and use primitives and vertex buffers" />
+  <meta name="rh-index-keywords" content="Guide To Primitives And Vertex Building" />
+  <meta name="search-keywords" content="primitive building,primitives,vertex,vertex buffers,vertex formats" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Руководство по примитивам и построению вершин</h1>
+  <p>Это руководство кратко описывает, как создавать и использовать <a href="../GameMaker_Language/GML_Reference/Drawing/Primitives/Primitives_And_Vertex_Formats.htm">примитивы</a>, используя пользовательские <strong>форматы вершин</strong> и <strong>вершинные буферы</strong>. </p>
+  <p>Обычно, когда вы начинаете работать с 3D, спецэффектами, сложными процессами рисования или <span class="notranslate">шейдерами</span>, вам не нужно слишком беспокоиться об используемом формате вершин, поскольку GameMaker <span class="notranslate">Studio 2</span> автоматически установит и передаст вершинные данные за вас. Однако иногда необходимо создать собственные вершинные данные и отформатировать их в соответствии с требованиями, особенно если вам нужно увеличить скорость или передать дополнительную информацию. Например, стандартный
+    формат вершин включает в себя x, y, z 3D позицию, цвет (с альфа) и UV координаты текстуры, которые, если бы вы создавали их самостоятельно, выглядели бы примерно так:</p>
+  <p class="code">vertex_format_begin();<br> vertex_format_add_position_3d();
+    <br> vertex_format_add_colour();
+    <br> vertex_format_add_textcoord();
+    <br> my_format = vertex_format_end();</p>
+  <p>Однако если вы используете (например) <span class="notranslate">шейдер</span> только для манипулирования положением вершины, то нет необходимости передавать данные цвета или текстуры. В этом случае вы создадите свой собственный формат следующим образом:</p>
+  <p class="code">vertex_format_begin();<br> vertex_format_add_position_3d();
+    <br> my_format = vertex_format_end();</p>
+  <p>Всего существует пять различных атрибутов вершин, которые можно использовать при определении формата вершин:</p>
+  <ul class="colour">
+    <li>Цвет</li>
+    <li>Нормальный</li>
+    <li>Позиция</li>
+    <li>3D-позиция</li>
+    <li>Координата текстуры</li>
+  </ul>
+  <p>В общем случае вы <em>всегда</em> должны указывать позицию или 3D-позицию как часть формата, но все остальные параметры являются необязательными.</p>
+  <p>Следует отметить, что после создания формата вершин, порядок, в котором вы определили атрибуты вершин, <i>должен соблюдаться</i> при построении <strong>примитивов</strong>. Так, если вы определили формат вершины как позицию, цвет,
+    и текстурная координата, то <b>вы <i>должны</i></b> добавить эти атрибуты в примитив в том же порядке, иначе вы получите ошибку. Также обратите внимание, что, как и любой другой динамический ресурс, формат вершины требует памяти и поэтому должен быть удален
+    когда он не нужен, используя функцию <a href="../GameMaker_Language/GML_Reference/Drawing/Primitives/vertex_format_delete.htm"><tt>vertex_format_delete()</tt></a>.</p>
+  <p>Все примитивы, которые вы создаете, хранятся в <b>буфере вершин</b>. Он должен быть создан заранее, а затем на него ссылаются функции, которые используются для создания вашего примитива. Буфер вершин можно использовать повторно столько раз, сколько необходимо для создания различных
+    или его можно &quot;заморозить&quot;, чтобы сохранить определенный тип примитива на весь период игры или уровня (это самый быстрый подход, поэтому если вы знаете, что созданный вами примитив не изменится, всегда используйте этот вариант).</p>
+  <p>Пример построения примитива с одним треугольником показан в следующем коде:</p>
+  <p class="code">// СОЗДАТЬ СОБЫТИЕ<br> v_buff = vertex_create_buffer();<br> vertex_begin(v_buff, global.my_format);<br> vertex_position(v_buff, 10, 10);<br> vertex_colour(v_buff, c_white, 1);<br> vertex_texcoord(v_buff, 0, 0);<br> vertex_position(v_buff, 110, 10);<br> vertex_colour(v_buff, c_white, 1); <br> vertex_texcoord(v_buff, 1, 0);<br> vertex_position(v_buff, 110, 110);<br> vertex_colour(v_buff, c_white, 1);<br> vertex_texcoord(v_buff, 1, 1);<br> vertex_end(v_buff);
+    <br>
+    <br> // DRAW EVENT<br> var tex = sprite_get_texture(spr_Background, 0);<br> <span class="notranslate">shader_set</span>(shd_shimmer);
+    <br> vertex_submit(v_buff, pr_trianglelist, tex);<br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>Здесь мы сначала создаем буфер вершин в событии Create экземпляра, затем начинаем определение различных вершин, составляющих наш треугольный примитив, указывая положение, цвет и UV-координаты текстуры для каждой из трех точек.
+    трех точек, которые мы хотим использовать. Затем мы завершаем определение вершин и узнаем, что буфер вершин с данными вершин хранится в переменной &quot;v_buff&quot;.  </p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Если содержимое буфера будет постоянно обновляться, буфер будет создан, ему будут переданы данные вершин, а затем он будет снова уничтожен - после того, как будет отрисован - и все это на одном шаге.</p>
+  <p>Затем мы отрисовываем содержимое буфера вершин в событии Draw Event с помощью <span class="notranslate">шейдера</span>. Это очень простой пример, и в основном <span class="notranslate">GameMaker Studio 2</span> работает следующим образом: когда вы рисуете спрайт, <span class="notranslate">GameMaker</span> создает буфер вершин с четырьмя вершинами.
+    создает два треугольника (которые образуют квадрат, также называемый &quot;quad&quot;), и текстурирует эти два треугольника изображением спрайта. Когда мы рисуем спрайт, мы передаем вершинный буфер, и его содержимое выводится на экран.</p>
+  <p>Вы заметите, что когда мы передаем буфер вершин для отрисовки, мы предоставляем тип примитива. Тип используемого примитива может быть точкой, списком или полосой линий, списком или полосой треугольников, но вы <i>не</i> можете использовать веер треугольников, так как большинство мобильных устройств принимают этот тип примитива.
+    аппаратное обеспечение не принимает этот тип примитива. Не забудьте правильно отформатировать вершинный буфер для типа примитива, который будет использоваться для его отрисовки. Например, рисование примитива с двумя треугольниками в виде списка треугольников требует 6 вершин,
+    но в виде полосы треугольников требуется только 4 точки. Какой тип использовать - решать вам, это зависит от того, что вы хотите нарисовать, и от эффекта, которого вы хотите добиться.</p>
+  <p>Последний важный момент, который следует отметить при использовании собственных вершинных буферов таким образом, - это то, как это влияет на пакеты вершин, которые отправляются на GPU. Когда вы создаете буфер вершин, вы создаете самый низкий уровень графических данных, поэтому при рисовании все, что происходит, это то, что GameMaker Studio 2 отправляет ваш буфер непосредственно в GPU.
+   <span class="notranslate">GameMaker Studio 2</span> отправляет ваш буфер непосредственно на видеокарту. Поэтому, если вы хотите улучшить пакетную обработку, вы должны сделать это самостоятельно и хранить то, что вы хотите пакетно обрабатывать, в одном и том же буфере.</p>
+  <p>Как мы уже говорили выше, вершинные форматы строятся с помощью следующих 5 типов атрибутов (добавляются с помощью соответствующей функции <tt>vertex_format_add_*</tt> ):</p>
+  <ul class="colour">
+    <li>Цвет</li>
+    <li>Нормальный</li>
+    <li>Позиция</li>
+    <li>3D-позиция</li>
+    <li>Координата текстуры</li>
+  </ul>
+  <p>В <span class="notranslate">шейдере</span> GLSL ES эти виды распознаются с помощью следующих 4 атрибутов:</p>
+  <ul class="colour">
+    <li>Цвет</li>
+    <li>Нормальный</li>
+    <li>Позиция</li>
+    <li>Координата текстуры</li>
+  </ul>
+  <p>Теперь это может показаться странным, так как кажется, что мы можем указать больше видов атрибутов в нашем вершинном формате, чем в вершинном <span class="notranslate">шейдере</span>. Однако в <span class="notranslate">шейдере</span> <i>Position</i> и <i>3D Position</i> рассматриваются как один и тот <em>же </em>атрибут, за исключением того, что
+    Предполагается, что <i>Position</i> имеет только координаты &quot;x&quot; и &quot;y&quot;, в то время как 3D Position имеет координаты &quot;x <i>&quot;, &quot;y&quot;</i> и &quot;z&quot;. Как же сопоставить то, что находится в вашем формате вершин, с тем, как вы определяете атрибуты в шейдере <span class="notranslate">?</span> Давайте
+    начнем с рассмотрения типичного набора атрибутов из <span class="notranslate">шейдера</span> по умолчанию:</p>
+  <p> </p>
+  <p class="code">attribute vec3 in_Position; // (x,y,z)<br> //attribute vec3 in_Normal; // (x,y,z) не используется в этом <span class="notranslate">шейдере</span>.<br> attribute vec4 in_Colour; // (r,g,b,a)<br> attribute vec2 in_TextureCoord; // (u,v)</p>
+  <p>А вот фрагмент кода, который устанавливает формат вершин <span class="notranslate">,</span> совместимый с этим шейдером:</p>
+  <p class="code">vertex_format_begin();<br> vertex_format_add_position_3d();
+    <br> vertex_format_add_colour();
+    <br> vertex_format_add_textcoord();
+    <br> my_format = vertex_format_end();</p>
+  <p>Итак, как атрибут <span class="notranslate">шейдера</span> сопоставляется с видом вершинного формата? Это просто основано на соглашении об именовании:</p>
+  <ul class="colour">
+    <li>&quot;in_Position&quot; соответствует vertex_format_add_position <tt>/ _3d()</tt></li>
+    <li><tt>&quot;in_Colour&quot; соответствует функции vertex_format_add_colour <tt>()</tt></tt>
+    </li>
+    <li><tt><tt>&quot;in_TextureCoord&quot; соответствует функции vertex_format_add_textcoord <tt>()</tt></tt>
+      </tt>
+    </li>
+  </ul>
+  <p><tt><tt><tt></tt></tt>
+    </tt>Теперь все становится сложнее, когда у вас есть несколько атрибутов одного типа, но все равно все основано на одном и том же соглашении об именовании. <b>Теперь</b> мы рассмотрим предоставление дополнительных <b>координат</b> <b>цвета и</b> <b>текстуры</b>, поскольку в шейдере <span class="notranslate">или</span> вершинном формате может быть только один атрибут Position и один Normal, но может <em>быть</em> несколько атрибутов цвета или текстуры.</p>
+  <p>При добавлении дополнительных цветовых атрибутов в <span class="notranslate">шейдер</span> к концу атрибута <span class="notranslate">шейдера</span> необходимо добавить число, указывающее, к какой именно записи вершинного формата относится атрибут. Вот пример - сначала формат вершин:</p>
+  <p class="code">vertex_format_begin();<br> vertex_format_add_position_3d();
+    <br> vertex_format_add_colour();
+    <br> vertex_format_add_colour();
+    <br> vertex_format_add_textcoord();
+    <br> my_format = vertex_format_end();</p>
+  <p>А теперь связанные атрибуты <span class="notranslate">шейдера</span>:</p>
+  <p class="code">attribute vec3 in_Position; // (x,y,z)<br> attribute vec4 in_Colour0; // (r,g,b,a)<br> attribute vec4 in_Colour1; // (r,g,b,a)<br> attribute vec2 in_TextureCoord; // (u,v)</p>
+  <p>В этом случае <tt>in_Colour0</tt> используется для первой <tt>вершины vertex_format_add_colour()</tt>, а <tt>in_Colour1</tt> - для второй.</p>
+  <p>Координаты текстуры обрабатываются несколько иначе, чем цвет. В основном, все, что не называется in_Position <tt>, in_Normal</tt> <tt>или</tt> одним из <tt>атрибутов</tt> in_Colour <tt>[0 ... ]</tt>, рассматривается как координата текстуры. Порядок, в котором они
+    в списке атрибутов в <span class="notranslate">шейдере</span>, обозначает, с каким атрибутом в вершинном формате они связаны. См. следующий пример <span class="notranslate">GML</span>:</p>
+  <p class="code">vertex_format_begin();<br> vertex_format_add_position_3d();
+    <br> vertex_format_add_colour();
+    <br> vertex_format_add_textcoord();
+    <br> vertex_format_add_textcoord();
+    <br> vertex_format_add_textcoord();
+    <br> my_format = vertex_format_end();</p>
+  <p>А код <span class="notranslate">шейдера</span> будет выглядеть примерно так:</p>
+  <p class="code">attribute vec3 in_Position; // (x,y,z)<br> attribute vec4 in_Colour; // (r,g,b,a)<br> attribute vec2 in_myTexcoord; // (u,v)<br> attribute vec2 in_TextureCoord; // (u,v)<br> attribute vec2 in_Something; // (u,v)</p>
+  <p>В этом примере <tt>in_myTexcoord</tt>, <tt>in_TextureCoord</tt> и <tt>in_Something</tt> отображаются на три последовательных атрибута текстурных координат, определенных в формате вершин.</p>
+  <p>Полный список всех функций, необходимых для создания вершинных форматов, вершинных буферов и примитивов, можно найти на следующей странице:</p>
+  <ul class="colour">
+    <li><a href="../GameMaker_Language/GML_Reference/Drawing/Primitives/Primitives_And_Vertex_Formats.htm">Примитивы и форматы вершин</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Additional_Information.htm">Дополнительная информация</a></div>
+        <div style="float:right">Следующее: <a href="Guide_To_Using_Blendmodes.htm">Руководство по использованию блендмодов</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Primitive Building
+Vertex Formats
+Vertex Buffers
+-->
+  <!-- TAGS
+using_primitives_vertex_buffers
+-->
+
+</body></html>

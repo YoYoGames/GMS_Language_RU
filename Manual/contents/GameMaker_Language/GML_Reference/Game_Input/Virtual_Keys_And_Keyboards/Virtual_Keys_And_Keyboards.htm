@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Виртуальные клавиши и виртуальные клавиатуры</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Virtual Keys And Virtual Keyboards" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Virtual Keys And Virtual Keyboards,Virtual Keyboard,Virtual Key" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Виртуальные клавиши и виртуальные клавиатуры</h1>
+  <p><b></b>При разработке игр для устройств с сенсорным экраном часто бывает важно получить от пользователя ввод с клавиатуры. При использовании <span class="notranslate">GameMaker Studio 2</span> это можно сделать одним из двух способов:</p>
+  <ul class="colour">
+    <li>Создайте свои собственные <b>виртуальные клавиши</b> на экране для ввода информации</li>
+    <li>Всплывающая <b>виртуальная клавиатура</b> ОС и получение ввода с нее</li>
+  </ul>
+  <p>То, что вы будете использовать, во многом зависит от игры и того, что вам нужно, но в целом вы будете использовать виртуальные клавиши, когда вам нужны экранные кнопки для управления игроком или для меню, в то время как вы будете использовать виртуальную клавиатуру, когда вам нужен ввод игрока,
+    например, для получения имени или установки значения.</p>
+  <p>Для того чтобы ваши игры работали должным образом на мобильных устройствах с сенсорным экраном, вам может понадобиться возможность назначить участки экрана, которые будут реагировать на определенные действия при прикосновении к ним пользователя. Это делается путем назначения &quot;виртуальной клавиши&quot;
+    внутренне сопоставленной стандартной клавише клавиатуры, а затем используя генерируемые ею события клавиатуры для управления вашим приложением. Стоит отметить, что эти &quot;виртуальные клавиши&quot; сопоставлены с <i>положением</i> экрана, а не с положением комнаты
+    и поэтому значения x/y являются абсолютными, основанными на размере дисплея. Это означает, что вам не нужно беспокоиться об использовании представлений или относительных координат помещения, а можно просто определить ключи в событии Create объекта (определять виртуальный ключ нужно только один раз для каждого помещения).
+    виртуальный ключ только один раз для каждой комнаты), а затем нарисовать спрайты ключей в <a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">событии Draw GUI Event</a>, установив размер слоя GUI равным размеру экрана.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ: </b>Эти функции не будут работать на целевых платформах <span class="notranslate">Windows</span>, <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>) и MacOS, использующих сенсорный экран, хотя они будут воспринимать щелчки мыши как &quot;прикосновения&quot;.</p>
+  <p>Доступны следующие функции виртуальных клавиш:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="virtual_key_add.htm">виртуальный_ключ_добавить</a></li>
+    <li><a href="virtual_key_show.htm">виртуальный_ключ_показывать</a></li>
+    <li><a href="virtual_key_hide.htm">virtual_key_hide</a></li>
+    <li><a href="virtual_key_delete.htm">virtual_key_delete</a></li>
+  </ul>
+  <p> </p>
+  <p>Если вам требуется ввод текста или цифр в игре на устройстве с сенсорным экраном, то вы можете использовать функции <b>виртуальной клавиатуры</b>, предоставляемые для использования клавиатуры ОС устройства. Эти функции будут вызывать или скрывать клавиатуру ОС и принимать с нее ввод,
+    однако они <i>не</i> будут вызывать обычные события клавиатуры, а скорее обновят переменную <tt><a href="../Keyboard_Input/keyboard_string.htm">строка_клавиатуры</a></tt> переменную с вводом пользователя (это связано с тем, что виртуальная клавиатура может
+    вводить целые слова, а не только отдельные символы).</p>
+  <p>Открытие или закрытие виртуальной клавиатуры генерирует <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events.htm">системные асинхронные события</a>, в которых <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> DS
+    будет заполнена следующими парами ключ/значение:</p>
+  <ul class="colour">
+    <li>&quot; event_type<b>&quot; -</b> тип полученного системного события,<b>для</b> виртуальных клавиатур это будет &quot; virtual<b>keyboard status&quot;</b>.</li>
+    <li>&quot;<b>screen_height&quot; -</b> высота виртуальной клавиатуры (в пикселях). Это значение будет равно 0, если клавиатура невидима.</li>
+    <li>&quot;<b>keyboard_status&quot; -</b> текущее состояние клавиатуры, возвращается в виде одной из следующих строк:
+      <ul class="colour">
+        <li>&quot;скрытие&quot;</li>
+        <li>&quot;скрытый&quot;</li>
+        <li>&quot;показывающий&quot;</li>
+        <li>&quot;видимый&quot;</li>
+      </ul>
+    </li>
+  </ul>
+  <p>Доступны следующие функции виртуальной клавиатуры:</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ: </b>Эти функции действительны только для устройства <strong><span class="notranslate">Android</span></strong> (включая <strong><span class="notranslate">AndroidTV</span></strong>), <strong><span class="notranslate">iOS</span> </strong>(включая <strong><span class="notranslate">tvOS</span></strong>), и целевых платформ <strong>UWP </strong>.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="keyboard_virtual_show.htm">keyboard_virtual_show</a></li>
+    <li><a href="keyboard_virtual_hide.htm">keyboard_virtual_hide</a></li>
+    <li><a href="keyboard_virtual_status.htm">состояние_виртуальной_клавиатуры</a></li>
+    <li><a href="keyboard_virtual_height.htm">высота клавиатуры_виртуальная_высота</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Game_Input.htm">Игровой вход</a></div>
+        <div style="float:right">Следующий: <a href="../Keyboard_Input/Keyboard_Input.htm">Ввод с клавиатуры</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Virtual Keys
+Virtual Keyboards
+Virtual Keys And Keyboards
+-->
+  <!-- TAGS
+virtual_key_functions
+-->
+</body>
+</html>

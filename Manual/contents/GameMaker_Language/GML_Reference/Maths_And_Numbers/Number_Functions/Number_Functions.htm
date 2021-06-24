@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Функции чисел</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Number functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Number Functions,numbers" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Функции чисел</h1>
+  <p>Вещественные числа в <span class="notranslate">GameMaker Studio 2</span> считаются <i>числами с плавающей точкой двойной точности</i> - то есть они имеют десятичную точку без фиксированного количества цифр до или после точки - или целыми числами - то есть это целые числа без десятичной точки.
+    или <i>целыми числами</i> - то есть это целые числа без десятичной точки. Например, 2 - это целое число, а 2,01 - вещественное число с плавающей точкой.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: В цели <b>HTML5</b> все действительные числа являются двойными.</p>
+  <p>Это различие между целыми и плавающими числами очень важно при кроссплатформенной разработке, поскольку точность вычислений, выполненных на компьютере под управлением <span class="notranslate">Windows</span>, <i>не</i> совпадает с точностью тех же самых вычислений
+    на мобильном устройстве. Это означает, что вы должны быть особенно внимательны при выполнении сравнений, например:</p>
+  <p class="code">if (image_index == 1)<br> {<br> сделайте что-нибудь...<br> }</p>
+  <p>В приведенном выше примере, если мы устанавливали <tt>image_speed</tt> на 0.25 - например, - то после четырех шагов вы можете предположить, что значение <tt>image_index</tt> будет равно 1, но это <i>может</i> быть
+    значение 1.0000002 из-за того, как работает математика с плавающей точкой, и поэтому оценка не будет <tt>верной</tt>. Подобные ошибки могут быть довольно сложными для отладки, поэтому всегда полезно знать о них и планировать заранее и использовать
+    другие средства проверки значений или использовать соответствующие функции перекрытия или округления (перечислены ниже) для преобразования проверяемого числа в целое (более подробную информацию о математике с плавающей точкой и о том, почему это является проблемой, <a href="https://floating-point-gui.de/" target="_blank">смотрите здесь</a>). Например, приведенный выше код можно записать как:</p>
+  <p class="code">if (floor(image_index) == 1)<br> {<br> сделайте что-нибудь...<br> }</p>
+  <p>Также стоит отметить, что при использовании целей <b><span class="notranslate">YoYo</span></b> Compiler все выражения и функции <i>оцениваются слева направо</i>, в то время как на всех других целевых платформах они оцениваются <i>справа налево</i>,
+    Это означает, что, например, это - будет давать разные результаты в зависимости от платформы:</p>
+  <p class="code">val = max(num, ++num, num++);</p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Для получения дополнительной информации см. раздел " <a href="../../../GML_Overview/Evaluation_Order.htm">Порядок оценки</a>".</p>
+  <p>Вы также можете использовать специальную функцию, доступную в <span class="notranslate">GameMaker Studio 2</span>, чтобы установить значение <b>эпсилон</b> для математики с плавающей точкой. Когда вещественное число округляется до ближайшего числа с плавающей точкой,
+    эпсилон (также известный как &quot;машинный эпсилон&quot;) формирует верхнюю границу относительной ошибки, и вы можете получить и установить значение эпсилона с помощью следующих функций:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="math_set_epsilon.htm">math_set_epsilon</a></li>
+    <li><a href="math_get_epsilon.htm">math_get_epsilon</a></li>
+  </ul>
+  <p> </p>
+  <p>Все эти функции связаны с использованием случайных чисел и значений:</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ: </b>При использовании функций random, <span class="notranslate">GameMaker Studio 2</span> сохраняет одно и то же случайное зерно при каждом запуске игры. Это значительно облегчает отладку, так как гарантируется, что функции random всегда будут возвращать одно и то же значение.
+    одно и то же значение, однако если вы не хотите, чтобы это происходило, то в самом начале игры необходимо установить новое случайное зерно, либо используя <span style="font-size:1px;"><a href="randomise.htm"><tt style="font-size: 14px">рандомизировать()</tt></a></span> или 
+    <span style="font-size:1px;"><a href="random_set_seed.htm"><tt style="font-size: 14px">random_set_seed()</tt></a></span>.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="choose.htm">выбрать</a></li>
+    <li><a href="random.htm">случайный</a></li>
+    <li><a href="random_range.htm">случайный_диапазон</a></li>
+    <li><a href="irandom.htm">irandom</a></li>
+    <li><a href="irandom_range.htm">ирандомный_диапазон</a></li>
+    <li><a href="random_set_seed.htm">random_set_seed</a></li>
+    <li><a href="random_get_seed.htm">random_get_seed</a></li>
+    <li><a href="randomise.htm">рандомизировать</a><b></b></li>
+  </ul>
+  <p> </p>
+  <p>Это все функции, которые округляют значения каким-либо образом или выбирают одно значение из различных заданных значений:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="round.htm">круглый</a></li>
+    <li><a href="floor.htm">пол</a></li>
+    <li><a href="frac.htm">ГРП</a></li>
+    <li><a href="abs.htm">абс</a></li>
+    <li><a href="sign.htm">подписать</a></li>
+    <li><a href="ceil.htm">потолок</a></li>
+    <li><a href="max.htm">max</a></li>
+    <li><a href="mean.htm">среднее</a></li>
+    <li><a href="median.htm">медиана</a></li>
+    <li><a href="min.htm">min</a></li>
+    <li><a href="lerp.htm">lerp</a></li>
+    <li><a href="clamp.htm">зажим</a></li>
+  </ul>
+  <p> </p>
+  <p>В заключение мы приводим подборку важных математических функций:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="exp.htm">exp</a></li>
+    <li><a href="ln.htm">ln</a></li>
+    <li><a href="power.htm">мощность</a></li>
+    <li><a href="sqr.htm">sqr</a></li>
+    <li><a href="sqrt.htm">sqrt</a></li>
+    <li><a href="log2.htm">log2</a></li>
+    <li><a href="log10.htm">log10</a></li>
+    <li><a href="logn.htm">logn</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Maths_And_Numbers.htm">Математика и цифры</a></div>
+        <div style="float:right">Следующее: <a href="../Angles_And_Distance/Angles_And_Distance.htm">Векторы</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Number Functions
+-->
+  <!-- TAGS
+number_functions
+-->
+
+</body></html>

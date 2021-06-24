@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>переменная_структура_существует</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function variable_struct_exists" />
+  <meta name="rh-index-keywords" content="variable_struct_exists" />
+  <meta name="search-keywords" content="variable_struct_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>переменная_структура_существует</h1>
+  <p>С помощью этой функции вы можете проверить, существует ли переменная в заданной структуре или нет. Вы передаете ссылку на структуру, которую нужно использовать, а также имя переменной, которую нужно проверить, <i>в виде строки</i> (см. пример кода ниже). Функция
+    вернет <tt>true</tt>, если переменная с заданным именем существует в структуре, и <tt>false</tt> в противном случае.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">variable_struct_exists(struct, name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>struct</td>
+        <td>Ссылка на структуру для проверки</td>
+      </tr>
+      <tr>
+        <td>имя</td>
+        <td>Имя переменной struct для проверки (в виде строки)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if !variable_struct_exists(mystruct, &quot;shields&quot;))<br> {
+    <br> mystruct.shields = 0;<br> }
+  </p>
+  <p>Приведенный выше код проверит, существует ли переменная &quot;shields&quot; в данной структуре, и если нет, то она будет создана и инициализирована в 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Variable_Functions.htm">Переменные функции</a></div>
+        <div style="float:right">Далее: <a href="variable_struct_get.htm">variable_struct_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_struct_exists
+-->
+  <!-- TAGS
+variable_struct_exists
+-->
+</body>
+</html>

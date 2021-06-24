@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Шейдеры</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Shaders" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Shaders,_YY_GLSLES_,_YY_GLSL_,_YY_HLSL11_,_YY_PSSL_" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">Шейдеры</span></h1>
+  <p><span class="notranslate">Шейдеры</span> - это невероятно мощный инструмент для манипулирования тем, что и как <a class="glossterm" data-glossterm="rendered" href="#">выводится</a> на экран с помощью видеокарты. Поскольку эти крошечные программы выполняются на самой видеокарте.
+    это означает, что они очень быстро обрабатываются, освобождая ценные циклы процессора для более сложной игровой логики.</p>
+  <p>Чтобы создать <span class="notranslate">шейдер</span>, необходимо написать <b>вершинный <span class="notranslate">шейдер</span></b> и <b>фрагментный <span class="notranslate">шейдер</span></b> (также известный как <b>пиксельный <span class="notranslate">шейдер</span></b>) с помощью <a href="../../../../The_Asset_Editors/Shaders.htm">редактора<span class="notranslate">шейдеров</span></a>, и даже если (например)
+    вы хотите изменить только положение вершин для рисуемого экземпляра или изменить только значения цвета для пикселей, для работы полного <span class="notranslate">шейдера</span> вам все равно понадобятся <b>обе</b> программы.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: <span class="notranslate">Шейдеры</span> <b>не</b> позволяют изменять значения переменных, которые вы передаете в них, поэтому во всей документации, которая на них ссылается, они будут называться <b>константами<span class="notranslate">шейдера</span></b>.</p>
+  <p>Полный обзор доступных функций и переменных GLSL ES, которые можно использовать для программирования <span class="notranslate">шейдеров</span>, можно найти на <a href="https://www.khronos.org/registry/OpenGL/specs/es/2.0/es_cm_spec_2.0.pdf" target="_blank">справочных страницах OpenGL ES Shading Language (GLSL ES)</a>.
+    Следующая ссылка также полезна, поскольку содержит несколько кратких справочных карточек по API OpenGL ES (обратите внимание, что только две последние карточки применимы к <span class="notranslate">GameMaker Studio 2</span>): <a href="https://www.khronos.org/opengles/sdk/docs/reference_cards/OpenGL-ES-2_0-Reference-card.pdf">OpenGL ES Reference Cards</a>.</p>
+  <p>Использовать <span class="notranslate">шейдер</span> в своих проектах очень просто, и для того, чтобы получить от него самое необходимое, требуется всего пара строк кода:</p>
+  <p class="code"><span class="notranslate">shader_set</span>(myShader);<br> draw_self();
+    <br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>Как видите, они используются так же, как режимы наложения и поверхности, когда вы сначала выбираете (устанавливаете) <span class="notranslate">шейдер</span>, рисуете с его помощью то, что хотите, а затем снова сбрасываете цель рисования. Если вы хотите отрисовать весь экран через <span class="notranslate">шейдер</span>,
+    а не только один спрайт или фон, вам нужно установить поверхность, чтобы поймать текущий вид, а затем передать его в <span class="notranslate">шейдер</span> (см. раздел " <a href="../../Drawing/Surfaces/Surfaces.htm">Поверхности"</a> для получения дополнительной информации).</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: <span class="notranslate">Шейдеры</span>, как и все, что связано с рисованием, можно <b>использовать только в событии draw</b>. Также стоит отметить, что если вы пытаетесь использовать значение цвета в <span class="notranslate">шейдере</span>, а объект не имеет текстуры, результат получится черным.</p>
+  <p>Если используемый <span class="notranslate">шейдер</span> имеет входные значения, они устанавливаются с помощью функций <i>униформы</i>. Сначала нужно получить <i>хэндл</i> униформы (который, по сути, является значением ID для устанавливаемой униформы) с помощью функции <a href="shader_get_uniform.htm"><tt><span class="notranslate">shader_get_uniform</span>()</tt></a> в
+   <b>Create Event</b> экземпляра, использующего <span class="notranslate">шейдер</span>, а затем сохранить эти дескрипторы в переменных, примерно так:</p>
+  <p class="code">color_to_find = <span class="notranslate">shader_get_uniform</span>(sShaderDemo5, &quot;f_Colour1&quot;);<br> color_to_set = shader_get_uniform(sShaderDemo5<span class="notranslate">, &quot;f_Colour2</span>&quot;);</p>
+  <p>Когда у вас есть равномерные ручки, их можно установить в коде <span class="notranslate">шейдера</span> для <b>события Draw Event</b> следующим образом:</p>
+  <p class="code"><span class="notranslate">shader_set</span>(sShaderDemo5);<br> <span class="notranslate">shader_set_uniform_f</span>(color_to_find, 1,1,1 );<br> <span class="notranslate">shader_set_uniform_f</span>(color_to_set, 1,0,0 );<br> draw_sprite(sprite_index,image_index,x+24, y);<br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>И последнее, что следует отметить: хотя <span class="notranslate">шейдеры</span> принимаются на всех платформах, они все же зависят от устройства, и если аппаратное или программное обеспечение устройства не может использовать <span class="notranslate">шейдеры</span>, вы получите ошибку. Поэтому рекомендуется проверить, что
+   <span class="notranslate">шейдер</span> был скомпилирован перед установкой формы или использованием самого <span class="notranslate">шейдера</span>, например, так:</p>
+  <p class="code">if<span class="notranslate">(shader_is_compiled</span>(myShader))<br> {
+    <br> <span class="notranslate">shader_set</span>(myShader);
+    <br> draw_self();
+    <br> <span class="notranslate">shader_reset</span>();
+    <br> }
+    <br> else show_debug_message(&quot; Shader failed&quot;);</p>
+  <p>В качестве дополнительной проверки вы также можете вызвать функцию <a href="shaders_are_supported.htm"><tt><span class="notranslate">shaders_are_supported</span>()</tt></a> чтобы узнать, поддерживает ли аппаратное обеспечение <span class="notranslate">шейдеры</span>. В общем случае вы должны выполнять эти проверки при запуске игры и сохранять результаты как
+   <a href="../../../GML_Overview/Variables/Global_Variables.htm">глобальной переменной</a> для последующей проверки.</p>
+  <p>Важно отметить, что <span class="notranslate">GameMaker Studio 2</span> также поддерживает некоторые <b>макросы</b> условной компиляции, которые можно использовать в <span class="notranslate">шейдерах</span> GLSL ES, чтобы они могли выполнять альтернативный код на определенных поддерживаемых платформах. Макросы и платформы, на которых они будут
+    показаны в таблице ниже:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Макрос<span class="notranslate">шейдера</span> </th>
+        <th>Значение</th>
+        <th>Целевая платформа</th>
+      </tr>
+      <tr>
+        <td>_YY_GLSLES_</td>
+        <td>1</td>
+        <td>Все целевые платформы</td>
+      </tr>
+      <tr>
+        <td>_YY_GLSL_</td>
+        <td>2</td>
+        <td>Mac и <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>)</td>
+      </tr>
+      <tr>
+        <td>_YY_HLSL11_</td>
+        <td>3</td>
+        <td><span class="notranslate">Windows</span>, UWP, XboxOne</td>
+      </tr>
+      <tr>
+        <td>_YY_PSSL_</td>
+        <td>4</td>
+        <td>PS4</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>При компиляции проекта <span class="notranslate">GameMaker Studio 2</span> на любой из перечисленных платформ с использованием <span class="notranslate">шейдера</span> формата GLSL ES будет сгенерирован <i>один</i> из вышеуказанных макросов, который затем можно будет проверить в коде <span class="notranslate">шейдера</span> следующим образом:</p>
+  <p class="code">#ifdef _YY_HLSL11_<br> // Код <span class="notranslate">шейдера</span> HLSL здесь<br> #else
+    <br> // Код <span class="notranslate">шейдера</span> GLSL здесь<br> #endif
+  </p>
+  <p>Если вы новичок в <span class="notranslate">шейдерах</span> или хотите получить более полное руководство по их созданию и использованию в <span class="notranslate">GameMaker Studio 2</span>, то обратитесь к следующей странице руководства:</p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Using_Shaders.htm">Руководство по использованию <span class="notranslate">шейдеров</span></a></li>
+  </ul>
+  <p> </p>
+  <p>Для рисования и настройки <span class="notranslate">шейдеров</span> доступны следующие функции:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="shader_get_name.htm"><span class="notranslate">shader_get_name</span></a></li>
+    <li><a href="shader_get_uniform.htm"><span class="notranslate">shader_get_uniform</span></a></li>
+    <li><a href="shader_get_sampler_index.htm"><span class="notranslate">shader_get_sampler_index</span></a></li>
+    <li><a href="shader_set.htm"><span class="notranslate">шейдер_set</span></a></li>
+    <li><a href="shader_set_uniform_f.htm"><span class="notranslate">shader_set_uniform_f</span></a></li>
+    <li><a href="shader_set_uniform_f_array.htm"><span class="notranslate">shader_set_uniform_f_array</span></a></li>
+    <li><a href="shader_set_uniform_i.htm"><span class="notranslate">shader_set_uniform_i</span></a></li>
+    <li><a href="shader_set_uniform_i_array.htm"><span class="notranslate">shader_set_uniform_i_array</span></a></li>
+    <li><a href="shader_set_uniform_matrix.htm"><span class="notranslate">shader_set_uniform_matrix</span></a></li>
+    <li><a href="shader_set_uniform_matrix_array.htm"><span class="notranslate">shader_set_uniform_matrix_array</span></a></li>
+    <li><a href="shader_reset.htm"><span class="notranslate">сброс шейдера</span></a></li>
+    <li><a href="shader_is_compiled.htm"><span class="notranslate">shader_is_compiled</span></a></li>
+    <li><a href="shaders_are_supported.htm"><span class="notranslate">шейдеры_поддерживаются</span></a></li>
+    <li><a href="shader_current.htm"><span class="notranslate">shader_current</span></a></li>
+  </ul>
+  <p> </p>
+  <p>У нас также есть специальная функция, которая определяет глобальное состояние для всех <span class="notranslate">шейдеров</span>:</p>
+  <ul>
+    <li><a href="shader_enable_corner_id.htm"><span class="notranslate">shader_enable_corner_id</span></a></li>
+  </ul>
+  <p> </p>
+  <p>При работе с текстурными сэмплерами в <span class="notranslate">шейдерах</span> вам понадобится информация об используемой текстуре, и в этом случае вы можете использовать следующие функции:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../Sprites/Sprite_Information/sprite_get_texture.htm">sprite_get_texture</a></li>
+    <li><a href="../Sprites/Sprite_Information/sprite_get_uvs.htm">sprite_get_uvs</a></li>
+    <li><a href="../Fonts/font_get_texture.htm">font_get_texture</a></li>
+    <li><a href="../Fonts/font_get_uvs.htm">font_get_uvs</a></li>
+    <li><a href="../../Drawing/Textures/texture_get_width.htm">texture_get_width</a></li>
+    <li><a href="../../Drawing/Textures/texture_get_height.htm">texture_get_height</a></li>
+    <li><a href="../../Drawing/Textures/texture_get_texel_width.htm">texture_get_texel_width</a></li>
+    <li><a href="../../Drawing/Textures/texture_get_texel_height.htm">texture_get_texel_height</a></li>
+    <li><a href="../../Drawing/Textures/texture_set_stage.htm">texture_set_stage</a></li>
+    <li><a href="../../Drawing/GPU_Control/gpu_set_texfilter_ext.htm">gpu_set_texfilter_ext</a></li>
+    <li><a href="../../Drawing/GPU_Control/gpu_set_texrepeat.htm">gpu_set_texrepeat</a></li>
+  </ul>
+  <p> </p>
+  <p>Хотя в данном руководстве <b>не</b> рассматриваются все функции и переменные <span class="notranslate">шейдеров</span> Open GL, оно содержит список тех, которые уникальны для <span class="notranslate">GameMaker Studio 2</span>. Эти константы не являются частью спецификации Open GL для <span class="notranslate">шейдеров</span> и предоставляются
+    для упрощения интеграции <span class="notranslate">шейдеров</span> в ваши проекты.</p>
+  <ul class="colour">
+    <li><a href="Shader_Constants.htm">Константы<span class="notranslate">шейдера</span> </a></li>
+  </ul>
+  <p> </p>
+  <p>Наконец, <span class="notranslate">GameMaker Studio 2</span> позволяет определять собственные <b>форматы вершин</b>, на основе которых можно создавать собственные примитивы. Это может значительно ускорить работу <span class="notranslate">шейдеров</span> или расширить их возможности и создать удивительные эффекты.
+    Информацию об этом вы найдете в следующих разделах:</p>
+  <ul class="colour">
+    <li><a href="../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">Примитивы и форматы вершин</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Asset_Management.htm">Управление активами</a></div>
+        <div style="float:right">Следующий: <a href="../Sequences/Sequences.htm">Последовательности</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Shaders</span>
+_YY_GLSLES_
+_YY_GLSL_
+_YY_HLSL11_
+_YY_PSSL_
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_functions
+-->
+
+</body></html>

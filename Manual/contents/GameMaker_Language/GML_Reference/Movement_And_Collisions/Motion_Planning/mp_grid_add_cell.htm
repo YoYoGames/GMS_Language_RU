@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_add_cell</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_add_cell" />
+  <meta name="rh-index-keywords" content="mp_grid_add_cell" />
+  <meta name="search-keywords" content="mp_grid_add_cell" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_add_cell</h1>
+  <p>С помощью этой функции мы можем пометить отдельные ячейки в заданной сетке MP как &quot;запрещенные&quot;, что означает, что функции поиска пути никогда не будут пересекать их. Обычно вы работаете в координатах x/y <i>комнаты</i>, а не в координатах <i>ячеек</i> MP-сетки. Поэтому давайте рассмотрим следующее изображение, которое показывает, как эти два понятия могут соотноситься:</p>
+  <p><img alt="Add cell example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/mp_grid_add_cell_image.png">Как вы видите, сетка mp_grid пронумерована как ряд ячеек (начиная с 0,0 в левом верхнем углу).
+    углу), и когда вы помещаете эту сетку над комнатой, существует прямая корреляция между координатами комнаты (которые также начинаются с 0,0 в левом верхнем углу) и ячейками внутри сетки. На изображении видно, что экземпляр в позиции 260,130
+    попадает в ячейку сетки 8,4. Математически можно легко вычислить точную ячейку, на которую попадает позиция, либо разделив число на разрешение сетки и округлив вниз <i>, либо</i>, если вы используете разрешение сетки, равное 2 (например, 8,
+    16, 32 и т.д.), вы можете использовать <a href="../../../../Additional_Information/Bitwise_Operators.htm">побитовые операторы</a>. Следует отметить, что побитовые операции выполняются быстрее, и в приведенном ниже примере показаны оба метода.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">mp_grid_add_cell(id, h, v);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Индекс mp_grid, который будет использоваться</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Горизонтальное положение ячейки в сетке</td>
+      </tr>
+      <tr>
+        <td>v</td>
+        <td>Вертикальное положение ячейки в сетке</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">with (obj_Wall)<br> {
+    <br> mp_grid_add_cell(grid, floor(x / 32), floor(y / 32));<br> }
+    <br> with (obj_Door)<br> {
+    <br> mp_grid_add_cell(grid, x&gt;&gt;5, y&gt;&gt;5);<br> }
+  </p>
+  <p>Приведенный выше код заставит все &quot;obj_Wall&quot; и все obj_Door добавить их эквивалентные позиции ячеек в mp_grid, индексированную в переменной &quot;grid&quot;. В первой части примера это делается путем взятия координат x/y объекта
+    и делением их на разрешение сетки (с использованием <tt>floor</tt>, чтобы значения оставались целыми), а во второй части (поскольку разрешение сетки равно степени 2) это делается путем битового сдвига координат x,y на 5 мест вправо.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Motion_Planning.htm">Планирование движения</a></div>
+        <div style="float:right">Далее: <a href="mp_grid_add_instances.htm">mp_grid_add_instances</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_add_cell
+-->
+  <!-- TAGS
+mp_grid_add_cell
+-->
+</body>
+</html>

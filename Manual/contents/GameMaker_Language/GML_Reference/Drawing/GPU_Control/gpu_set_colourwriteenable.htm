@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_colorwriteenable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_colourwriteenable" />
+  <meta name="rh-index-keywords" content="gpu_set_colorwriteenable,gpu_set_colourwriteenable" />
+  <meta name="search-keywords" content="gpu_set_colorwriteenable,gpu_set_colourwriteenable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_colourwriteenable</h1>
+  <p>С помощью этой функции можно включить или выключить цветовые каналы и альфа-канал для всего дальнейшего рисования. Например, вы можете использовать эту функцию для создания поверхностей только с альфа-каналом (отключите запись RGB перед использованием поверхности) или для
+    создания специальных эффектов при рисовании на экране. Значение по умолчанию для каждого из компонентов равно <tt>true</tt>, и они могут быть заданы либо как четыре уникальных аргумента, либо как четырехэлементный одномерный массив со следующими элементами в нем, которые будут либо
+   <tt>true</tt> (включено) или <tt>false</tt> (отключено):</p>
+  <ul class="colour">
+    <li>[0] = Красный канал включен/выключен</li>
+    <li>[1] = Зеленый канал включен/выключен</li>
+    <li>[2] = Синий канал включен/выключен</li>
+    <li>[3] = Альфа-канал включен/выключен</li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">gpu_set_colorwriteenable(red, green, blue, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>красный</td>
+        <td>Включить/выключить красный канал</td>
+      </tr>
+      <tr>
+        <td>зеленый</td>
+        <td>Включить/выключить зеленый канал</td>
+      </tr>
+      <tr>
+        <td>синий</td>
+        <td>Включение/выключение синего канала</td>
+      </tr>
+      <tr>
+        <td>альфа</td>
+        <td>Включить/выключить альфа-канал</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var cw = gpu_get_colorwriteenable();<br> cw[3] = false;<br> gpu_set_colorwriteenable(cw);
+  </p>
+  <p>Приведенный выше код получает текущие значения записи цвета, а затем устанавливает компонент alpha в <tt>false</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="GPU_Control.htm">Управление графическим процессором</a></div>
+        <div style="float:right">Далее: <a href="gpu_set_alphatestenable.htm">gpu_set_alphatestenable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_colourwriteenable
+gpu_set_colorwriteenable
+-->
+  <!-- TAGS
+gpu_set_colourwriteenable
+-->
+</body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_get_uvs</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function font_get_uvs" />
+  <meta name="rh-index-keywords" content="font_get_uvs" />
+  <meta name="search-keywords" content="font_get_uvs" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_get_uvs</h1>
+  <p>Эта функция возвращает <a href="../../../GML_Overview/Arrays.htm">массив</a> с UV-координатами для текстуры шрифта на странице текстуры, заполняя массив следующими значениями:</p>
+  <ul class="colour">
+    <li>[0] = левый</li>
+    <li>[1] = верх</li>
+    <li>[2] = право</li>
+    <li>[3] = низ</li>
+  </ul>
+  <p>Это значение затем может быть использовано в других функциях рисования, особенно в общем рисовании при использовании <a href="../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">примитивов</a>, а также функций <a href="../Shaders/Shaders.htm"><span class="notranslate">Шейдер</span></a> функции.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">font_get_uvs(font);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>шрифт</td>
+        <td>Индекс используемого шрифта.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Массив</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var tex = font_get_uvs(fnt_Main);<br> tex_left = tex[0];<br> tex_top = tex[1];<br> tex_right = tex[2];<br> tex_left = tex[3];</p>
+  <p>Приведенный выше код сохранит УФ-координаты для заданного фона в локальном массиве, а затем присвоит значения переменным экземпляра.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Fonts.htm">Шрифты</a></div>
+        <div style="float:right">Далее: <a href="font_get_info.htm">font_get_info</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_get_uvs
+-->
+  <!-- TAGS
+font_get_uvs
+-->
+</body>
+</html>

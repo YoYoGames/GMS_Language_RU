@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>try / catch / finally</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the try / catch / finally functions" />
+  <meta name="rh-index-keywords" content="try,catch,finally" />
+  <meta name="search-keywords" content="try,catch,finally" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>try / catch / finally</h1>
+  <p>Операторы <tt>try</tt>, <tt>catch</tt> и <tt>finally</tt> могут быть использованы в вашей игре для проверки ошибок и позволяют вам тестировать блоки кода и контролировать, что произойдет, если возникнут какие-либо <a href="../../../Additional_Information/Errors/Runner_Errors.htm">исключения<span class="notranslate">во время выполнения</span></a>. Использование этих операторов предотвратит завершение игры и показ стандартного сообщения об ошибке пользователю, но это означает, что вам придется позаботиться о том, что произойдет дальше в этом случае, например, сохранить лог-файлы и завершить
+    (обратите внимание, что если вы ничего не сделаете, ваша игра может стать нестабильной и работать некорректно).</p>
+  <p>В самом простом виде синтаксис попытки выглядит следующим образом:</p>
+  <p class="code">try<br> {
+    <br> &lt;statement1&gt;;
+    <br> &lt;statement2&gt;;
+    <br> ...<br> }
+  </p>
+  <p>Однако <tt>попытка</tt>, не имеющая ничего для обработки исключений, которые может создать код, будет не очень полезна, поэтому мы обычно используем ее в паре с <tt>catch</tt>, используя следующий синтаксис:</p>
+  <p class="code">try<br> {
+    <br> &lt;statement1&gt;;
+    <br> &lt;утверждение2&gt;;
+    <br> ...
+    <br> }
+    <br> catch(&lt;переменная&gt;)
+    <br> {
+    <br> &lt;statement1&gt;;
+    <br> &lt;statement2&gt;;
+    <br> ...
+    <br> }
+  </p>
+  <p>Что делает <tt>catch</tt>, так это позволяет вам запускать дополнительный код, поставляемый в следующем блоке, когда исключение из предыдущей <tt>попытки</tt> было поймано. Если это исключение <span class="notranslate">времени выполнения</span>, то предоставленная переменная может быть использована для доступа к <a href="../Structs.htm">структуре</a>, которая будет содержать следующую информацию:</p>
+  <p class="code">{<br> message : &quot;&quot;, // строка, которая является коротким сообщением для этого исключения<br> longMessage : &quot;&quot;, // строка, которая является более длинным сообщением для этого исключения<br> script : &quot;&quot;, // строка
+    которая описывает, откуда пришло исключение<br> stacktrace : [ &quot;&quot;, &quot;&quot; ], // массив строк, который является кадром стека, на котором было сгенерировано исключение<br> }
+  </p>
+  <p>Простой пример использования показан ниже:</p>
+  <p class="code">var a = 0, b = 0, c = 0;<br> try
+    <br> {
+    <br> c = a div b;<br> }
+    <br> catch( _exception)<br> {
+    <br> show_debug_message(_exception.message);
+    <br> show_debug_message(_exception.longMessage);
+    <br> show_debug_message(_exception.script);
+    <br> show_debug_message(_exception.stacktrace);
+    <br> }
+  </p>
+  <p>Может оказаться, что вы хотите выполнить некоторый код независимо от того, было ли выброшено исключение или нет, и для этого вы можете добавить блок <tt>finally</tt>. Синтаксис <span class="inline">finally</span> следующий:</p>
+  <p class="code">finally<br> {
+    <br> &lt;утверждение1&gt;;
+    <br> &lt;утверждение2&gt;;
+    <br> и т.д..
+    <br> }
+  </p>
+  <p>Стоит отметить, что вы можете иметь любую комбинацию из них вместе, т.е:</p>
+  <ul class="colour">
+    <li><tt>попробовать</tt> / <tt>наконец</tt></li>
+    <li><tt>попытка</tt> / <tt>уловка</tt></li>
+    <li><tt>try</tt> / <tt>catch</tt> / <tt>finally</tt></li>
+  </ul>
+  <p>Обратите внимание, что внутри блока <tt>finally</tt> <em>нельзя </em>использовать <a href="break.htm"><tt>перерыв</tt></a>, <a href="continue.htm"><tt>продолжить</tt></a>, <a href="exit.htm"><tt>выход</tt></a> или <a href="return.htm"><tt>return</tt></a> утверждения, так как
+    они не имеют смысла в данном контексте, и компилятор выдаст ошибку, если они будут использованы.</p>
+  <p>Наконец, вы также можете вложить различные <tt>try</tt> / <tt>catch</tt> / <tt>finally</tt> друг в друга, например:</p>
+  <p class="code">var a = 0, b = 0, c = 0;<br> try
+    <br> {
+    <br> try
+    <br> {
+    <br> c = a div b;<br> }
+    <br> finally
+    <br> {
+    <br> ++a;
+    <br> }
+    <br> }
+    <br> catch(_exception)
+    <br> {
+    <br> ++a;
+    <br> show_debug_message(_exception.message);
+    <br> show_debug_message(_exception.longMessage);
+    <br> show_debug_message(_exception.script);
+    <br> show_debug_message(_exception.stacktrace);
+    <br> }
+    <br> finally
+    <br> {
+    <br> show_debug_message(&quot;a = &quot; + string(a));<br> }
+  </p>
+  <p>Стоит отметить, что вы можете заменить стандартное сообщение об ошибке <span class="notranslate">GML</span> и использовать свой собственный код обработчика, вызвав функцию <a href="../../GML_Reference/Debugging/exception_unhandled_handler.htm"><tt>exception_unhandled_handler()</tt></a>. Этот
+    позволяет <a href="../<span class=" notranslate"="">Runtime_Functions.htm"><span class="notranslate">указать</span></a> пользовательский <a href="../Method_Variables.htm">метод</a>, который будет вызываться всякий раз, когда в игре возникают необработанные исключения.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Language_Features.htm">Особенности языка</a></div>
+        <div style="float:right">Далее: <a href="throw.htm">бросок</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+try
+catch
+finally
+-->
+  <!-- TAGS
+try
+catch
+finally
+-->
+</body>
+</html>

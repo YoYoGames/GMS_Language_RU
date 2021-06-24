@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>keyboard_check</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for keyboard_check" />
+  <meta name="rh-index-keywords" content="keyboard_check" />
+  <meta name="search-keywords" content="keyboard_check" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>keyboard_check</h1>
+  <p>С помощью этой функции можно проверить, удерживается ли клавиша нажатой или нет. В отличие от <a href="keyboard_check_pressed.htm"><tt>keyboard_check_pressed()</tt></a> или <a href="keyboard_check_released.htm"><tt>keyboard_check_released()</tt></a> функции, которые
+    срабатывают только один раз при нажатии или отпускании клавиши, эта функция срабатывает на каждом шаге, в течение которого клавиша удерживается нажатой. Функция принимает значение кода клавиши, возвращаемое функцией <a href="../../Strings/ord.htm"><tt>ord()</tt></a>    (только <i>заглавные</i> буквы от A-Z или цифры от 0-9), или любую из констант <tt>vk_*</tt>, перечисленных на главной странице " <a href="Keyboard_Input.htm">Ввод с клавиатуры</a> ".</p>
+  <p> </p>
+  <h4><b>Синтаксис:</b></h4>
+  <p class="code">keyboard_check(key);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>ключ</td>
+        <td>Ключ для проверки состояния вниз.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4><b>Возвращается:</b></h4>
+  <p class="code"><b></b>Boolean</p>
+  <p> </p>
+  <h4><b><b>Пример:</b></b>
+  </h4>
+  <p class="code">if keyboard_check(vk_left)<br> {
+    <br> x -= 5;<br> }
+  </p>
+  <p>Приведенный выше код будет проверять, нажата ли клавиша со стрелкой, и перемещать экземпляр на 5 пикселей влево каждый шаг, когда возвращается true.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Keyboard_Input.htm">Ввод с клавиатуры</a></div>
+        <div style="float:right">Далее: <a href="keyboard_check_pressed.htm">keyboard_check_pressed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+keyboard_check
+-->
+  <!-- TAGS
+keyboard_check
+-->
+
+</body></html>

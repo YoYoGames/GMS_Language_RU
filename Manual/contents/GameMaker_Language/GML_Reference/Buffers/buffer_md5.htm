@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_md5</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_md5" />
+  <meta name="rh-index-keywords" content="buffer_md5" />
+  <meta name="search-keywords" content="buffer_md5" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_md5</h1>
+  <p>В криптографии MD5 (Message-Digest algorithm 5) - это широко используемая криптографическая функция <a class="glossterm" data-glossterm="хэширование" href="#">хэширования</a> со 128-битным хэш-значением, которая применяется в самых разных приложениях безопасности.
+    Она также часто используется для проверки целостности данных. Эта функция принимает входные данные из заданного буфера (или части буфера) и возвращает 32-символьный шестнадцатеричный хэш MD5, уникальный для этих данных. Таким образом, вы можете сгенерировать
+    безопасный ключ, который можно хранить и использовать для проверки целостности информации, отправляемой на внешний сервер (или получаемой от него) (например). При применении этой функции к буферам вы должны указать идентификатор буфера, который нужно
+    использовать, затем значение смещения (в байтах) для начала, а затем размер (опять же в байтах) для области, которая будет хэшироваться.</p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: MD5 не является полностью безопасным и может быть взломан. См. <a href="https://en.wikipedia.org/wiki/MD5">эту страницу</a> для получения дополнительной информации.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">buffer_md5(buffer, offset, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>буфер</td>
+        <td>Индекс используемого буфера.</td>
+      </tr>
+      <tr>
+        <td>смещение</td>
+        <td>Значение смещения данных.</td>
+      </tr>
+      <tr>
+        <td>размер</td>
+        <td>Размер буфера.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Строка</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">check_string = buffer_md5(buff, 0, buffer_get_size(buff));</p>
+  <p>Приведенный выше код создаст md5-хэш для полных данных, хранящихся в буфере, индексируемом переменной &quot;buff&quot;, и сохранит возвращенный хэш в переменной &quot;check_string&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Buffers.htm">Буферы</a></div>
+        <div style="float:right">Далее: <a href="buffer_sha1.htm">buffer_sha1</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_md5
+-->
+  <!-- TAGS
+buffer_md5
+-->
+
+</body></html>

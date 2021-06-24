@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_set_halign</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_set_halign" />
+  <meta name="rh-index-keywords" content="draw_set_halign,fa_left,fa_center,fa_right" />
+  <meta name="search-keywords" content="draw_set_halign,fa_left,fa_center,fa_right" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_set_halign</h1>
+  <p>Эта функция используется для выравнивания текста по горизонтальной оси, и изменение горизонтального выравнивания изменит положение и направление, в котором будет рисоваться весь дальнейший текст; значение по умолчанию - <tt>fa_left</tt>. Принимаются следующие константы
+    принимаются:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Выравнивание</th>
+      </tr>
+      <tr>
+        <td>fa_left</td>
+        <td style="text-align: center"><img alt="fa_left example" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/fa_left.png" /></td>
+      </tr>
+      <tr>
+        <td>fa_center</td>
+        <td style="text-align: center"><img alt="fa_center example" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/fa_center.png" /></td>
+      </tr>
+      <tr>
+        <td>fa_right</td>
+        <td style="text-align: center"><img alt="fa_right example" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/fa_right.png" /></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">draw_set_halign(halign);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>halign</td>
+        <td>Горизонтальное выравнивание.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">draw_set_halign(fa_left);<br> draw_text(100, 32, &quot;Score: &quot; + string(score));<br> draw_set_halign(fa_right);
+    <br> draw_text(room_width - 100, 32, &quot;Health: &quot; + string(health));</p>
+  <p>Приведенный выше код нарисует две строки на одной линии, причем счет будет выровнен по левому краю, а здоровье - по правому.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Text.htm">Текст</a></div>
+        <div style="float:right">Далее: <a href="draw_set_valign.htm">draw_set_valign</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_set_halign
+fa_left
+fa_center
+fa_right
+-->
+  <!-- TAGS
+draw_set_halign
+-->
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_is_paused</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_is_paused" />
+  <meta name="rh-index-keywords" content="audio_is_paused" />
+  <meta name="search-keywords" content="audio_is_paused" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_is_paused</h1>
+  <p>Эта функция проверяет заданный звук, чтобы узнать, не приостановлен ли он в данный момент. Звук может быть либо одним экземпляром звука (индекс для отдельных воспроизводимых звуков может быть сохранен в переменной при использовании функции <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> или
+    <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> или звуковой актив, в этом случае будут проверены <i>все</i> экземпляры данного звука, и если какой-либо из них находится на паузе, функция вернет <tt>true</tt>, иначе
+      она вернет <tt>false</tt>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_is_paused(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>индекс</td>
+        <td>Индекс звука для проверки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if audio_is_paused(snd_Waterfall)<br> {
+    <br> audio_resume_sound(snd_Waterfall);
+    <br> }
+  </p>
+  <p>Приведенный выше код проверяет, не приостановлен ли в данный момент звук, индексированный в переменной &quot;snd_Waterfall&quot;, и если он возвращает true, то <tt>воспроизведение</tt> звука будет возобновлено.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio.htm">Аудио</a></div>
+        <div style="float:right">Далее: <a href="audio_create_stream.htm">audio_create_stream</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_is_paused
+-->
+  <!-- TAGS
+audio_is_paused
+-->
+</body>
+</html>

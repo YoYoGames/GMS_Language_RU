@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_potential_step</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_potential_step" />
+  <meta name="rh-index-keywords" content="mp_potential_step" />
+  <meta name="search-keywords" content="mp_potential_step" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_potential_step</h1>
+  <p>Эта функция позволяет экземпляру сделать шаг к определенной позиции, заданной xgoal/ygoal, стараясь при этом избежать препятствий. Когда экземпляр столкнется с твердым объектом (или с любым объектом, когда checkall равен true), он изменит направление движения, чтобы попытаться обойти этот объект.
+    движения, чтобы попытаться избежать этого объекта и двигаться вокруг него. Не гарантируется, что этот подход сработает, но в большинстве простых случаев он будет эффективно перемещать экземпляр к цели. Функция возвращает, была ли цель достигнута или нет.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">mp_potential_step(xgoal, ygoal, stepize, checkall)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>xgoal</td>
+        <td>Положение цели x.</td>
+      </tr>
+      <tr>
+        <td>ygoal</td>
+        <td>Положение цели по оси y.</td>
+      </tr>
+      <tr>
+        <td>размер шага</td>
+        <td>Скорость перемещения экземпляра в пикселях за шаг.</td>
+      </tr>
+      <tr>
+        <td>checkall</td>
+        <td>Проверять ли все экземпляры (true) или только твердые (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Булево</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if instance_exists(obj_Enemy)<br> {
+    <br> var inst;<br> inst = instance_nearest(x, y, obj_Enemy);<br> mp_potential_step(inst.x, inst.y, 5, false);<br> }
+  </p>
+  <p>Приведенный выше код сначала проверяет, есть ли в комнате экземпляры &quot;obj_Enemy&quot;. Если таковые имеются, он находит ближайший из них и сохраняет его идентификатор в переменной. Эта переменная затем используется для того, чтобы указать <tt>mp_potential_step</tt> переместить экземпляр с кодом
+    в направлении x/y позиции объекта, который был найден, со скоростью 5 пикселей за шаг, избегая при этом только объектов, помеченных как твердые.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Motion_Planning.htm">Планирование движения</a></div>
+        <div style="float:right">Далее: <a href="mp_potential_step_object.htm">mp_potential_step_object</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_potential_step
+-->
+  <!-- TAGS
+mp_potential_step
+-->
+</body>
+</html>

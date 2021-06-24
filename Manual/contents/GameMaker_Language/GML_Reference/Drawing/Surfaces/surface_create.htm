@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>поверхность_создать</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_create" />
+  <meta name="rh-index-keywords" content="surface_create" />
+  <meta name="search-keywords" content="surface_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>поверхность_создать</h1>
+  <p>Эта функция используется для создания поверхности и возвращает индекс поверхности, который должен быть сохранен в переменной для последующих вызовов функции. Когда поверхность создается впервые, она может содержать &quot;шум&quot;, так как по сути это просто область
+    памяти, отведенная для этой цели (и эта память все еще может содержать информацию), поэтому вы можете захотеть очистить поверхность перед использованием с функцией типа <a href="../Colour_And_Alpha/draw_clear_alpha.htm"><tt>draw_clear_alpha()</tt></a>.</p>
+  <p>Настоятельно рекомендуется создавать все поверхности с размером, равным степени 2, то есть, например, 16, 128, 512 или 1024 пикселей. Это не совсем обязательно на некоторых платформах (например, <span class="notranslate">Windows</span> и MacOS), но это, безусловно, повысит совместимость на этих платформах.
+    совместимость на этих платформах, в то время как для HTML5 и устройств это необходимо, и очень важно, чтобы вы помнили об этом, иначе у вас могут возникнуть проблемы.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">surface_create(w, h);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>Ширина создаваемой поверхности.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Высота создаваемой поверхности.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">if !surface_exists(surf)<br> {
+    <br> surf = surface_create(1024, 1024);<br> surface_set_target(surf);
+    <br> draw_clear_alpha(c_black, 0);<br> surface_reset_target();
+    <br> view_surface_id[0] = surf;<br> }
+  </p>
+  <p>Приведенный выше код проверяет, существует ли поверхность, и если нет, то создает поверхность шириной 1024 пикселя и высотой 1024 пикселя, присваивая индекс переменной &quot;surf&quot;. Затем цель рисования устанавливается на новую поверхность, которая
+    очищается и становится прозрачной, после чего цель рисунка сбрасывается на экран. Наконец, поверхности присваивается вид.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Surfaces.htm">Поверхности</a></div>
+        <div style="float:right">Далее: <a href="surface_create_ext.htm">surface_create_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_create
+-->
+  <!-- TAGS
+surface_create
+-->
+</body>
+</html>

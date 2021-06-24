@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>surface_getpixel_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_getpixel_ext" />
+  <meta name="rh-index-keywords" content="surface_getpixel_ext" />
+  <meta name="search-keywords" content="surface_getpixel_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>surface_getpixel_ext</h1>
+  <p>С помощью этой функции можно получить полное <b>abgr 32-битное</b> значение любого пикселя (ранее созданной) поверхности.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Эта функция сильно снижает производительность, поэтому ее следует использовать только в случае крайней необходимости.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">surface_getpixel_ext(surface_id, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор поверхности</td>
+        <td>Идентификатор поверхности, которую необходимо использовать.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Координата x пикселя для проверки</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Координата y пикселя для проверки</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">col = surface_getpixel_ext(mouse_x, mouse_y);<br> alpha = (col &gt;&gt; 24) &amp; 255;<br> blue = (col &gt;&gt; 16) &amp; 255;<br> green = (col &gt;&gt; 8) &amp; 255;<br> red = col &amp; 255;</p>
+  <p>Приведенный выше код получит 32-битное значение цвета в позиции мыши, а затем разделит его на составляющие значения, сохранив их в переменных.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Surfaces.htm">Поверхности</a></div>
+        <div style="float:right">Далее: <a href="surface_free.htm">поверхность_свободная</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_getpixel_ext
+-->
+  <!-- TAGS
+surface_getpixel_ext
+-->
+</body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>вершинный_создать_буфер</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_create_buffer" />
+  <meta name="rh-index-keywords" content="vertex_create_buffer" />
+  <meta name="search-keywords" content="vertex_create_buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>вершинный_создать_буфер</h1>
+  <p>С помощью этой функции вы можете создать новый буфер вершин. Это специальный <i>растущий</i> буфер, созданный <span class="notranslate">GameMaker Studio 2</span>, который предварительно отформатирован для использования при построении примитивов (например, для использования с <span class="notranslate">шейдерами</span>). Функция возвращает
+    &quot;Pointer&quot; (индекс) для буфера, который затем должен использоваться во всех дальнейших обращениях к нему.</p>
+  <p>При использовании буфера вершин, созданного с помощью этой функции, вы просто вызываете функцию <a href="vertex_begin.htm"><tt>vertex_begin()</tt></a> чтобы начать присваивать ему вершинные данные, чтобы начать определять ваш пользовательский примитив, который затем будет храниться в буфере готовым для
+    передачи в <span class="notranslate">шейдер</span>. Буфер может быть использован повторно при необходимости (если вы не использовали функцию <a href="vertex_freeze.htm"><tt>vertex_freeze()</tt></a> ), при этом каждый вызов <a href="vertex_begin.htm"><tt>vertex_begin()</tt></a> стирает предыдущие
+    данные буфера, готового принять новые данные.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">vertex_create_buffer();</p>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Указатель</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">v_buff = vertex_create_buffer();</p>
+  <p>Приведенный выше код создаст новый вершинный буфер и сохранит его хэндл в переменной &quot;v_buff&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Primitives_And_Vertex_Formats.htm">Примитивы и форматы вершин</a></div>
+        <div style="float:right">Далее: <a href="vertex_create_buffer_ext.htm">vertex_create_buffer_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_create_buffer
+-->
+  <!-- TAGS
+vertex_create_buffer
+-->
+
+</body></html>

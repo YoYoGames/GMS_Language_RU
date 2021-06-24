@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Редактирование кода</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how to use the code editor windows
+" />
+  <meta name="rh-index-keywords" content="Code Editor - Editing" />
+  <meta name="search-keywords" content="edit code,code editor,autocomplete" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Редактирование кода</h1>
+  <p>Когда вы начинаете использовать редактор сценариев, вам нужно просто ввести код, который вы хотите иметь для актива сценария или для события, следуя правильному синтаксису GML <a class="glossterm" data-glossterm="синтаксис" href="#">.</a> Пока вы это делаете,
+    вам будет помогать окно <strong>автозаполнения</strong>:</p>
+  <p><img alt="Script Editor Code Complete" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_CodeComplete.png">Это окно будет появляться во время написания кода (обычно после небольшой паузы, но это можно настроить в <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Text_Editor_Preferences.htm">настройках</a>).
+    и предложит вам выбор &quot;наиболее подходящих&quot; ответов в алфавитном порядке.</p>
+  <p>При использовании редактора кода вы можете нажать <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> и перетащить мышь, чтобы выбрать строку кода, или, удерживая нажатой кнопку <img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55">, нажать <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> и перетащить мышь, чтобы выбрать столбцы кода. Все выделенное таким образом можно <em>копировать</em>, <em>вырезать </em>и <em>вставлять </em>, используя
+    стандартные комбинации клавиш <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot; <span class="inline">C</span>&quot;, <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">X</span>&quot; и <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">V</span>&quot;.</p>
+  <p>Стоит отметить, что вы можете <strong>комментировать </strong>свой код различными способами. Комментирование кода очень важно для поддержания производительности, так как оно сохраняет ясность и разделяет части кода таким образом, чтобы было очевидно, что каждая
+    что делает каждая часть и зачем она нужна. Это также означает, что если вы работаете в команде, вы можете оставлять заметки для других членов, и они будут точно знать, что вы сделали или для чего предназначен тот или иной участок кода. Даже если вы работаете в одиночку,
+    оставлять комментарии в коде очень важно, особенно если вам придется оставить проект и вернуться к нему позже.</p>
+  <p>Комментировать код очень просто: достаточно использовать &quot;<span class="inline">//</span>&quot; перед любой строкой текста или закомментировать целый абзац, используя &quot;<span class="inline">/* text here */</span>&quot;. Есть даже две комбинации клавиш
+    комбинации клавиш для комментирования и разкомментирования выделенных строк кода: <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">K</span>&quot; для комментирования и <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> + &quot;<span class="inline">K</span>&quot; для отмены комментирования. Следующее изображение иллюстрирует код, написанный с использованием обоих этих методов
+    а также некоторые комментарии <strong>JS Doc</strong> (более подробно описано ниже):</p>
+  <p><img alt="Script Editor Comments" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_Comments.png">Сценарии также могут иметь определенные комментарии в стиле JSDoc, добавленные для определения свойств функций, которые они содержат, чтобы, когда вы используете
+    функции в коде, они отображались в автозаполнении вместе с аргументами и другими деталями. Подробнее об этом вы можете узнать в разделе <a href="JSDoc_Script_Comments.htm">Комментарии сценариев JSDoc</a>.</p>
+  <p>По умолчанию весь написанный код будет иметь значки <strong>сворачивания кода</strong> рядом с каждым набором подходящих скобок <span class="inline">{}</span>. Они имеют вид маленьких значков плюс <span class="inline">+</span> или минус <span class="inline">-</span>, нажатие на которые &quot;сворачивает&quot; код в соответствующие скобки так, чтобы он занимал меньше места.</p>
+  <p>Вы также можете вручную задать области сворачивания кода, используя специальные теги <span class="inline">#region</span> для пометки участка кода. Это работает следующим образом: вы добавляете тег <span class="inline">#region</span> (вместе с любым текстом комментария) в верхнюю часть
+    раздела кода, а затем добавляете соответствующий тег <span class="inline">#endregion</span> в нижнюю часть раздела, после чего вы можете &quot;свернуть&quot; код, т.е. скрыть его, чтобы сократить количество строк кода, видимых в редакторе.
+    в любой момент времени:</p>
+  <p><img alt="Script Editor Code Regions" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_CodeRegion.gif">Фактический код выглядит примерно так:</p>
+  <p class="code">#region Это пример региона<br>
+    <br> width = sprite_get_width(sprite);<br> height = sprite_get_height(sprite);<br> xoff = sprite_get_xoffset(sprite);<br> yoff = sprite_get_yoffset(sprite);<br>
+    <br> #endregion Дальнейшие комментарии здесь, если необходимо.</p>
+  <p>Как вы могли заметить, части текста сценария окрашены. Редактор скриптов &quot;знает&quot; о существующих объектах, встроенных переменных и функциях и т.д... и окрашивает их соответствующим цветом. Цветовое кодирование очень помогает избежать ошибок
+    поскольку сразу видно, если вы неправильно написали какое-то имя, или использовали ключевое слово в качестве переменной, или допустили синтаксическую ошибку. Однако если вам не нравится цветовое кодирование, в настройках вы можете включить или выключить его (вы также можете использовать <span class="inline">F10</span>, чтобы включить или выключить его в редакторе), а также настроить используемые цвета.</p>
+  <p>Вы также можете щелкнуть правой кнопкой мыши <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> в любом месте редактора, чтобы открыть следующее меню:</p>
+  <p><img alt="Script Editor Menu" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_RMB_Menu.png">Помимо обычных функций вырезания, копирования и вставки строк кода у вас также есть возможность комментировать или не комментировать
+    выделенный текст, добавить или удалить отступы, а также разделить окно кода на 1, 2 или 3 отдельные панели (обратите внимание, что опции, относящиеся к <span class="inline">#regions</span>, будут недоступны, если вы не определили их в редактируемом коде).</p>
+  <p>Последняя опция для разделения на панели разделит фактическое окно на различные части, куда вы можете перетащить сценарий или событие и показать его рядом с другими для сравнения и редактирования.</p>
+  <p><img alt="Script Editor Panes" class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_Panes.png">Это исключительно полезно для сравнения двух сценариев или для одновременного просмотра связанных сценариев, без необходимости использования другого окна
+    или постоянного переключения между вкладками.</p>
+  <p>Другие опции этого меню - переключение точки останова для использования в <a href="../../IDE_Tools/The_Debugger.htm">отладчике</a>, а также преобразование кода <span class="notranslate">GML</span> в <span class="notranslate">DnD™</span>или наоборот. Обратите внимание, что при преобразовании кода в <span class="notranslate">DnD™</span> <em>не </em>будут создаваться
+    отдельные действия для каждой строки кода, а использует одно действие кода для хранения всего, что было ранее в событии или сценарии.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="../Scripts.htm">Редактор сценариев</a></div>
+        <div style="float:right">Следующий: <a href="JSDoc_Script_Comments.htm">Комментарии JSDoc</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+Editing Code
+Code Editor
+Autocomplete
+Split Panes
+Regions
+#region
+#endregion
+-->
+  <!-- TAGS
+code_editor
+-->
+
+</body></html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_flush_multi</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_flush_multi" />
+  <meta name="rh-index-keywords" content="sprite_flush_multi" />
+  <meta name="search-keywords" content="sprite_flush_multi" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_flush_multi</h1>
+  <p>С помощью этой функции вы можете удалить из текстурной памяти любое количество текстурных страниц для заданных спрайтов. Вы передаете индексы спрайтов в виде массива, и текстурные страницы, которым они назначены, будут удалены из текстурной памяти. Обратите внимание, что если одна из
+    текстурных страниц используется в другом месте комнаты (другим экземпляром спрайта или фоном и т.д.), вы можете получить небольшое снижение производительности, так как страница будет немедленно перезагружена обратно в память, поэтому при использовании этой функции следует соблюдать осторожность.
+    Обратите внимание, что функция вернет <tt>-1</tt>, если flush не поддерживается для выбранных ресурсов, или вернет <tt>0</tt>, если все работает правильно.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">sprite_flush_multi(array);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>массив</td>
+        <td>Массив с индексами спрайтов для промывки</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Int (-1 или 0)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">spr_a[0] = spr_Player_Aura1;<br> spr_a[1] = spr_Player_Aura2;<br> spr_a[2] = spr_Player_Aura3;<br> spr_a[3] = spr_Player_Aura4;<br> sprite_flush_multi(spr_a);
+  </p>
+  <p>Приведенный выше код создает массив, каждый элемент которого содержит индекс спрайта. Этот массив затем используется для очистки текстур спрайтов из памяти.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Sprite_Manipulation.htm">Манипуляция спрайтом</a></div>
+        <div style="float:right">Далее: <a href="sprite_prefetch.htm">sprite_prefetch</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_flush_multi
+-->
+  <!-- TAGS
+sprite_flush_multi
+-->
+</body>
+</html>

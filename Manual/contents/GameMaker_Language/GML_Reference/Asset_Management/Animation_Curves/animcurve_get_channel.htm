@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>animcurve_get_channel</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function animcurve_get_channel" />
+  <meta name="rh-index-keywords" content="animcurve_get_channel" />
+  <meta name="search-keywords" content="animcurve_get_channel,animcurvetype_linear,animcurvetype_catmullrom" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>animcurve_get_channel</h1>
+  <p>Эта функция возвращает <a href="../../../GML_Overview/Structs.htm">структуру</a>, содержащую данные канала для канала, указанного в активе кривой анимации. Вы передаете ID или struct анимационной кривой, а также имя или индекс канала,
+    и функция вернет структуру со следующим форматом:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Имя переменной</th>
+        <th>Тип данных</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>имя</td>
+        <td>строка</td>
+        <td>Это название канала.</td>
+      </tr>
+      <tr>
+        <td>тип</td>
+        <td>постоянная</td>
+        <td>Это будет одна из констант <tt><b>animcurvetype_linear</b></tt> для линейной интерполяции между точками, или <tt><b>animcurvetype_catmullrom</b></tt> для &quot;гладкой&quot; интерполяции между точками с помощью интерполяции catmull-rom.</td>
+      </tr>
+      <tr>
+        <td>итераций</td>
+        <td>целое число</td>
+        <td>Если канал использует интерполяцию катмул-ром (&quot;гладкую&quot;), это значение показывает, сколько точек было сгенерировано для каждого сегмента кривой (обратите внимание, что эти дополнительные точки являются внутренними для функции и используются только для расчетов во время выполнения).
+          Если канал использует линейную интерполяцию, это значение будет существовать, но его можно игнорировать, так как оно не влияет на то, как интерполируется кривая.</td>
+      </tr>
+      <tr>
+        <td>пункты</td>
+        <td>указатель массива</td>
+        <td>Это массив, где каждый элемент массива является структурой точки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> ID кривой анимации - это имя кривой анимации в том виде, в котором она была определена в браузере активов, или указатель struct, возвращаемый функцией <a href="animcurve_create.htm"><tt>animcurve_create()</tt></a>. Имя канала - это строка, которая
+    или вы можете указать значение индекса от 0 до <i>n</i>, где <i>n</i> - последний канал в активе кривой (например: если кривая анимации имеет 4 канала, они будут проиндексированы от 0 до 3).
+    от 0 до 3). Обратите внимание, что передача значения индекса требует меньше обработки, чем передача имени канала. Если функция не сработает (т.е. не существует канала с заданным именем или индексом), то вы получите ошибку.</p>
+  <p>Точки одного канала хранятся в виде структур в <a href="../../../GML_Overview/Arrays.htm">массиве</a>, где каждый элемент массива является структурой одной точки. Структура точки имеет следующие переменные:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Имя переменной</th>
+        <th>Тип данных</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>posx</td>
+        <td>настоящий</td>
+        <td>Положение во времени (нормированное от 0 до 1) точки.</td>
+      </tr>
+      <tr>
+        <td>значение</td>
+        <td>настоящий</td>
+        <td>Значение точки.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">animcurve_get_channel(curve_struct_or_id, channel_name_or_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>curve_struct_or_id</td>
+        <td>Идентификатор или указатель структуры анимационной кривой, на которую нужно нацелиться</td>
+      </tr>
+      <tr>
+        <td>имя_канала_или_индекс</td>
+        <td>Имя канала (строка) или индекс канала (целое число).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Структура</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var _channeldata = animcurve_get_channel(ac_ButtonTween, 0);<br> var _points = _channeldata.points;<br> for (var i = 0; i &lt; array_length(_points); ++i;) <br> {
+    <br> _points[i].value += 1;<br> }
+  </p>
+  <p>Приведенный выше код извлекает структуру канала для канала 0 в активе кривой &quot;ac_ButtonTween&quot;, затем проходит по точкам кривой канала и добавляет единицу к их значению.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Animation_Curves.htm">Анимационные кривые</a></div>
+        <div style="float:right">Далее: <a href="animcurve_channel_evaluate.htm">animcurve_channel_evaluate</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_get_channel
+-->
+  <!-- TAGS
+animcurve_get_channel
+-->
+</body>
+</html>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function font_add" />
+  <meta name="rh-index-keywords" content="font_add" />
+  <meta name="search-keywords" content="font_add" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_add</h1>
+  <p>Эта функция может быть использована для добавления шрифта в вашу игру из тех шрифтов, которые установлены в системе, на которой она запущена. Вы можете определить размер шрифта (в пунктах), а также то, должен ли шрифт быть <b>жирным</b> или <i>курсивным</i>, и вы можете
+    также определить диапазон символов, которые необходимо включить. Функция возвращает значение <i>индекса</i>, которое должно быть сохранено в переменной, так как оно будет необходимо во всех дальнейших кодах, обращающихся к этому шрифту, или возвращает -1, если функция не работает по какой-либо причине.
+    причине.</p>
+  <p>Для целевого модуля HTML5 эта функция <b>может использоваться только для добавления <i>веб-шрифтов</i></b> и будет работать, только если WebGL <b>не</b> включен - если WebGL включен, вы должны использовать общий ресурс шрифта (т.е. использовать <a href="../../Drawing/Text/draw_set_font.htm"><tt>draw_set_font()</tt></a>    вместе со шрифтом из Asset Browser) или растровые шрифты (см. <a href="font_add_sprite.htm"><tt>font_add_sprite()</tt></a>).</p>
+  <p class="note"><b>ВАЖНО!</b> При работе с HTML5 курсив и полужирный текст поддерживаются только в том случае, если актив шрифта или сам веб-шрифт содержит эти символы. Они не будут синтезированы из базового шрифта.</p>
+  <p>В следующей таблице приведены шрифты, которые являются стандартными для всех браузеров и должны быть доступны для использования без проблем. Любой другой шрифт может существовать или не существовать на компьютере или устройстве, на котором запущена ваша игра, поэтому использование этой функции
+    должно быть ограничено этими стандартными шрифтами:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Имя шрифта<span class="notranslate">Windows</span> </th>
+        <th>Имя шрифта Mac</th>
+        <th>Семейство шрифтов</th>
+      </tr>
+      <tr>
+        <td>Arial</td>
+        <td>Arial / Helvetica</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Arial Black</td>
+        <td>Arial Black / Gadget</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Comic Sans MS</td>
+        <td>Comic Sans MS</td>
+        <td>скоропись</td>
+      </tr>
+      <tr>
+        <td>Курьерская новинка</td>
+        <td>Курьерская новинка</td>
+        <td>моношрифт</td>
+      </tr>
+      <tr>
+        <td>Грузия</td>
+        <td>Грузия</td>
+        <td>засечка</td>
+      </tr>
+      <tr>
+        <td>Влияние</td>
+        <td>Удар / Древесный уголь</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Консоль Lucida</td>
+        <td>Монако</td>
+        <td>моношрифт</td>
+      </tr>
+      <tr>
+        <td>Lucida Sans Unicode</td>
+        <td>Lucida Grande</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Palatino Linotype / Book Antiqua</td>
+        <td>Палатино</td>
+        <td>засечка</td>
+      </tr>
+      <tr>
+        <td>Tahoma</td>
+        <td>Женева</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Times New Roman</td>
+        <td>Times New Roman / Times</td>
+        <td>засечка</td>
+      </tr>
+      <tr>
+        <td>Требушет МС</td>
+        <td>Требушет МС</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Verdana</td>
+        <td>Вердана / Женева</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Грузия</td>
+        <td>Грузия</td>
+        <td>засечка</td>
+      </tr>
+      <tr>
+        <td>Символ</td>
+        <td>Символ</td>
+        <td>Н/Д</td>
+      </tr>
+      <tr>
+        <td>Webdings</td>
+        <td>Webdings</td>
+        <td>Н/Д</td>
+      </tr>
+      <tr>
+        <td>Wingdings</td>
+        <td>Zapf Dingbats</td>
+        <td>Н/Д</td>
+      </tr>
+      <tr>
+        <td>MS Sans Serif</td>
+        <td>Женева</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>MS Serif</td>
+        <td>Нью-Йорк</td>
+        <td>sans-serif</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br>
+    <br> Для всех других (не веб-) целей можно использовать эту функцию для добавления шрифта из файла. Файл <b>должен быть включен в пакет игры</b> с помощью функции <a href="../../../../Settings/Included_Files.htm">Included Files</a> программы <span class="notranslate">GameMaker</span>
+    Studio 2, и это должен быть файл шрифта формата <tt>*.ttf</tt> или <tt>*.otf</tt>, что удобно для добавления нестандартных шрифтов, например, азиатских или арабских.</p>
+  <p class="note"><b>ВНИМАНИЕ!!! </b>Если вы включаете такой файл шрифта в игру, он <b>должен быть лицензирован</b> для распространения вместе с игрой.</p>
+  <p>При загрузке шрифта из файла таким способом <i>размер</i> шрифта указывается в <b>пикселях</b>, а <i>первое</i> и <i>последнее</i> значения игнорируются, то есть все глифы шрифта будут добавлены. Шрифты, добавленные таким образом, назначаются своей собственной текстуре
+    странице, поэтому при использовании этой функции следует соблюдать осторожность, так как она увеличивает количество смен текстур при рисовании. Также стоит отметить, что шрифты могут выглядеть немного больше при отрисовке, так как глифы могут иметь части, которые рисуются за пределами
+    граничного поля, определенного для шрифта. Также следует помнить, что существует ограничение на 200 глифов, которые могут быть отрисованы в одном кадре для определенного шрифта.</p>
+  <p>По умолчанию в добавленных шрифтах включено сглаживание. Однако вы можете проверить состояние AA в любое время с помощью функции <a href="font_add_get_enable_aa.htm"><tt>font_add_get_enable_aa()</tt></a> и вы можете включить/выключить AA с помощью функции
+    <a href="font_add_enable_aa.htm"><tt>font_add_enable_aa()</tt></a>.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ: </b>Когда вы загружаете шрифт в <span class="notranslate">GameMaker Studio 2</span>: Studio, вы должны не забыть удалить его снова (с помощью функции <span style="font-size:1px;"><a href="font_delete.htm"><tt style="font-size: 14px">font_delete()</tt></a></span>), когда он больше не нужен, иначе
+    в противном случае существует риск утечки памяти, что приведет к замедлению и, в конечном итоге, к краху вашей игры.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">font_add(name, size, bold, italic, first, last);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>имя</td>
+        <td>Имя шрифта, который будет добавлен (например, 'Arial'), или путь к файлу, если шрифт является включенным <tt> файлом</tt> *. ttf или *<tt>.otf</tt>.</td>
+      </tr>
+      <tr>
+        <td>размер</td>
+        <td>Размер шрифта - пункты для веб-шрифтов, пиксели для файловых шрифтов.</td>
+      </tr>
+      <tr>
+        <td>полужирный</td>
+        <td>Является ли шрифт полужирным (true) или нет (false).</td>
+      </tr>
+      <tr>
+        <td>курсив</td>
+        <td>Является ли шрифт курсивным (true) или нет (false).</td>
+      </tr>
+      <tr>
+        <td>первый</td>
+        <td>Первый символ для включения (если вы не уверены, выбирайте 32).</td>
+      </tr>
+      <tr>
+        <td>последний</td>
+        <td>Последний символ, который нужно включить (если вы не уверены, выбирайте 128).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">newfont = font_add(&quot;Arial&quot;, 24, true, true, 32, 128);</p>
+  <p>Это создаст новый шрифт размером 24pt, использующий &quot;Arial&quot;, который является полужирным и курсивным, а индекс для этого нового шрифта хранится в переменной newfont. Диапазон шрифтов включает заглавные и строчные буквы, цифры и все общепринятые знаки препинания.
+    пунктуацию.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Fonts.htm">Шрифты</a></div>
+        <div style="float:right">Далее: <a href="font_add_sprite.htm">font_add_sprite</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_add
+-->
+  <!-- TAGS
+font_add
+-->
+</body>
+</html>

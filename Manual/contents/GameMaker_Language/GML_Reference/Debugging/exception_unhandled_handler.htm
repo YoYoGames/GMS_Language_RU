@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>обработчик_исключений</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for exception_unhandled_handler" />
+  <meta name="rh-index-keywords" content="exception_unhandled_handler" />
+  <meta name="search-keywords" content="exception_unhandled_handler" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>обработчик_исключений</h1>
+  <p>Эта функция <span class="notranslate">времени выполнения</span> может быть использована для &quot;замены&quot; стандартного сообщения об <span class="notranslate">ошибке</span> GameMaker <span class="notranslate">Studio 2</span>, когда возникает <span class="notranslate">исключение</span> времени выполнения. Вы предоставляете метод или функцию, которая будет вызвана при возникновении исключения, а ее первым аргументом будет struct
+    содержащий информацию об исключении. Эта структура имеет следующий формат:</p>
+  <p class="code">{<br> message : &quot;&quot;, // строка, которая является коротким сообщением для этого исключения<br> longMessage : &quot;&quot;, // строка, которая является более длинным сообщением для этого исключения<br> script : &quot;&quot;, // строка
+    которая описывает, откуда пришло исключение<br> line: 0, // вещественное число, которое является номером строки, откуда пришло исключение<br> stacktrace : [ &quot;&quot;, &quot;&quot; ], // массив строк, который является кадром стека, на котором было сгенерировано исключение.
+    было сгенерировано<br> }
+  </p>
+  <p>Вы также можете указать в качестве аргумента <span class="inline">undefined</span>, что приведет к удалению пользовательского обработчика исключений (если он установлен) и возврату к стандартному сообщению об ошибке <span class="notranslate">GameMaker Studio 2</span>.</p>
+  <p>Эта функция вернет ранее установленный метод обработчика исключений, однако если он никогда не изменялся или был ранее сброшен с помощью <span class="inline">undefined</span>, то она просто вернет <span class="inline">undefined</span>.</p>
+  <p>Передача метода в эту функцию означает, что пользователю не будет показано сообщение об ошибке, и вам будет позволено самостоятельно обработать исключение. Однако вы не сможете использовать эту функцию для &quot;выхода&quot; из исключения, чтобы продолжить игру, так как игра
+    все равно закроется после вызова обработчика исключения.</p>
+  <p>Обратите внимание, что контекст для запуска метода <i>не</i> находится в событии, поэтому маловероятно, что в это время что-то может быть выведено на экран. В общем, самое безопасное, что можно сделать на данном этапе, это сохранить файл с
+    чтобы его можно было, например, разобрать и обработать при следующем запуске игры, а затем разобраться с ним.</p>
+  <p>Обратите внимание, что если вы используете оператор <tt>return</tt> в поставляемом методе, то заданное значение будет преобразовано в целое число и использовано в качестве кода выхода из бегуна.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">exception_unhandled_handler(user_handler);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>обработчик пользователя</td>
+        <td>Метод (определяемая пользователем функция), который будет использоваться в качестве обработчика исключений, или <span class="inline">undefined</span>, чтобы сбросить его на значение по умолчанию.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Метод (или неопределенный)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">exception_unhandled_handler(function(ex))<br> {
+    <br> show_debug_message(&quot;--------------------------------------------------------------&quot;);<br> show_debug_message(&quot;Unhandled exception &quot; + string(ex) );<br> show_debug_message(&quot;--------------------------------------------------------------&quot;);<br> if file_exists(&quot;crash.txt&quot;) file_delete(&quot;crash.txt&quot;);<br> var _f = file_text_open_write(&quot;crash.txt&quot;);<br> file_text_write_string(_f, string(ex));<br> file_text_close(_f);
+    <br> return 0;<br> }
+    <br> )
+  </p>
+  <p>Приведенный выше код создаст метод обработчика исключения и использует его для сохранения файла с данными исключения.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Debugging.htm">Отладка</a></div>
+        <div style="float:right">Далее: <a href="get_integer.htm">get_integer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+exception_unhandled_handler
+-->
+  <!-- TAGS
+exception_unhandled_handler
+-->
+</body>
+</html>

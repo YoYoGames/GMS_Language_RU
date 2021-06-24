@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_matchmaking_find</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_find" />
+  <meta name="rh-index-keywords" content="xboxlive_matchmaking_find" />
+  <meta name="search-keywords" content="xboxlive_matchmaking_find" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_find</h1>
+  <p>Эта функция будет искать многопользовательскую сессию, используя шаблон сессии, бункер подбора и шаблон Secure Device Association, который вы должны были предварительно создать в приборной панели XDP. Идентификатор пользователя, который вы можете получить для конкретного
+    игровой панели, вызвав <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm"><tt>xboxlive_user_for_pad()</tt></a> функцию. Функция вернет уникальное значение Request ID, которое затем может быть использовано для определения правильного <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">социального асинхронного события</a> для этой функции. Это событие будет запущено после создания сессии и будет содержать DS Map в переменной <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> со следующими
+    парами ключ/значение:</p>
+  <ul class="colour">
+    <li>&quot;requestid&quot; - содержит идентификатор запроса, возвращенный вызывающей функцией</li>
+    <li>&quot;status&quot; - содержит строку &quot;session_created&quot; для информирования о том, какой тип события был вызван.</li>
+    <li>&quot;num_results&quot; - содержит 1 или более, если сессия была найдена, в противном случае содержит 0.</li>
+    <li>&quot;sessionid&lt;index&gt;<i>&quot; -</i> содержит идентификатор сессии, или -1 в случае неудачи (&lt;index/gt; является<i> значением от 0</i> до &quot;num_results&quot; - 1).</li>
+    <li>&quot;sessionOwner&lt;index&gt;<i>&quot; -</i> содержит ID хозяина сессии, если сессия была найдена (&lt;index&gt; - это<i> значение от 0 до</i> &quot;num_results&quot; - 1).</li>
+    <li>&quot;error&quot; - содержит 0 в случае успеха, или -1 в случае неудачи</li>
+  </ul>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">xboxlive_matchmaking_find(user_id, template, hopper, sdatemplate, [matchattributes]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>идентификатор пользователя</td>
+        <td>Указатель идентификатора пользователя для использования</td>
+      </tr>
+      <tr>
+        <td>шаблон</td>
+        <td>Имя шаблона сеанса</td>
+      </tr>
+      <tr>
+        <td>бункер</td>
+        <td>Название бункера для спичек</td>
+      </tr>
+      <tr>
+        <td>sdatemplate</td>
+        <td>Имя шаблона ассоциации защищенных устройств</td>
+      </tr>
+      <tr>
+        <td>matchattributes</td>
+        <td>[ВАРИАНТ]</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Идентификатор запроса (целое число)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var userID = xboxone_user_for_pad(global.PadIndex);<br> result = xboxone_matchmaking_find(userID, &quot;MatchTicketSession&quot;, &quot;MatchTicketHopper&quot;, &quot;PeerServerTraffic&quot;);</p>
+  <p>Вышеприведенная команда получит идентификатор пользователя на данном геймпаде, а затем попытается найти для него сеанс подбора.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Match_Making.htm">Сопоставление</a></div>
+        <div style="float:right">Далее: <a href="xboxlive_matchmaking_session_get_users.htm">xboxlive_matchmaking_session_get_users</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_matchmaking_find
+-->
+  <!-- TAGS
+xboxlive_matchmaking_find
+-->
+</body>
+</html>

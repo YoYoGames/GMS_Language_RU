@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_list_mark_as_map</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_mark_as_map" />
+  <meta name="rh-index-keywords" content="ds_list_mark_as_map" />
+  <meta name="search-keywords" content="ds_list_mark_as_map" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_mark_as_map</h1>
+  <p>Эта функция &quot;пометит&quot; (или &quot;отметит&quot;) заданную позицию в ранее созданном списке DS как содержащую карту DS. Эта функция необходима при кодировании строк JSON (которые вы можете создавать
+    с помощью <a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><tt>json_encode()</tt></a>), но также может быть полезна при вложении структур данных, поскольку помеченные таким образом элементы будут автоматически собираться (уничтожаться) при уничтожении родительского списка DS.
+    список DS уничтожается. Это означает, что вам не нужно вручную просматривать содержимое списка и уничтожать помеченные структуры данных по отдельности перед уничтожением &quot;родительского&quot; списка. Однако, если вы удалите позицию списка по отдельности,
+    содержащаяся в ней структура данных <i>не</i> будет собрана, поэтому перед удалением позиции родительского списка следует вызвать соответствующую функцию уничтожения карты DS. Также обратите внимание, что если вы вызываете функцию <a href="ds_list_clear.htm"><tt>ds_list_clear()</tt></a>    на списке, все элементы, помеченные как карты, также будут уничтожены при очистке списка.</p>
+  <p>Также стоит отметить, что если отмеченная позиция меняется в списке, &quot;метка&quot; перемещается вместе с ней, поэтому если вы отметили позицию 3 в списке (например), а затем вставили еще 2 элемента под ней, чтобы она переместилась на позицию
+    5, она <i>все равно</i> будет отмечена как карта.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">ds_list_mark_as_map(id, pos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Идентификатор списка, который нужно отметить.</td>
+      </tr>
+      <tr>
+        <td>поз</td>
+        <td>Позиция в списке, которую нужно отметить.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Real (целое число - ID карты DS в случае успеха или -1 в случае неудачи)</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var sub_map = ds_map_create();<br> ds_map_add(sub_map, &quot;player&quot;, player_array);<br> ds_map_add(sub_map, &quot;enemy&quot;, enemy_array);<br> ds_list_add(j_list, sub_map);<br> ds_list_mark_as_map(j_list, 0);</p>
+  <p>Приведенный выше код создает карту DS, а затем заполняет ее двумя ключами, каждый из которых содержит массив значений. Затем эта карта добавляется в заданный список DS, а позиция &quot;помечается&quot; как таковая, чтобы впоследствии ее можно было правильно закодировать.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="DS_Lists.htm">Списки DS</a></div>
+        <div style="float:right">Далее: <a href="ds_list_is_list.htm">ds_list_is_list</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_mark_as_map
+-->
+  <!-- TAGS
+ds_list_mark_as_map
+-->
+</body>
+</html>

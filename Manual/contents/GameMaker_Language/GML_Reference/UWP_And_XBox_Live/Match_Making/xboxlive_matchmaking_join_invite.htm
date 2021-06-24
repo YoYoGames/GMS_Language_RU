@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_matchmaking_join_invite</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_join_invite" />
+  <meta name="rh-index-keywords" content="xboxlive_matchmaking_join_invite" />
+  <meta name="search-keywords" content="xboxlive_matchmaking_join_invite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_join_invite</h1>
+  <p>Эта функция может быть вызвана для обработки приглашения присоединиться после того, как вы успешно вызвали функцию <a href="xboxlive_matchmaking_start.htm"><tt>xboxlive_matchmaking_start()</tt></a>. Вы передаете локальный UserID и значения приглашения (ID и ID хоста)
+    которые были возвращены при получении приглашения, а также имя созданного вами шаблона сессии (строка). Затем пользователь присоединится к сессии, в которую он был приглашен, и вы получите социальные асинхронные события как
+    если бы вы вызвали <a href="xboxlive_matchmaking_find.htm"><tt>xboxlive_matchmaking_find()</tt></a>.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">xboxlive_matchmaking_join_invite(user_who_received_invite, invitation_id, invitation_host, sda_template_name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>пользователь_который_получил_приглашение</td>
+        <td>Указатель локального идентификатора пользователя.</td>
+      </tr>
+      <tr>
+        <td>идентификатор приглашения</td>
+        <td>Идентификатор приглашения.</td>
+      </tr>
+      <tr>
+        <td>пригласительный_хост</td>
+        <td>Идентификатор приглашающего хоста.</td>
+      </tr>
+      <tr>
+        <td>sda_template_name</td>
+        <td>Имя шаблона сеанса.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var userID = xboxlive_user_for_pad(global.PadIndex);<br> xboxlive_matchmaking_join_invite(userID, global.InviteID, global.InviteHost, global.SessionTemplate);</p>
+  <p>Приведенное выше действие получает идентификатор пользователя для данного геймпада, а затем пытается присоединиться к сессии, в которую он был приглашен.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Match_Making.htm">Сопоставление</a></div>
+        <div style="float:right">Далее: <a href="xboxlive_matchmaking_start.htm">xboxlive_matchmaking_start</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_matchmaking_join_invite
+-->
+  <!-- TAGS
+xboxlive_matchmaking_join_invite
+-->
+</body>
+</html>

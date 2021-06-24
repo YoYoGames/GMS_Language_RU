@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>network_create_socket</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for network_create_socket" />
+  <meta name="rh-index-keywords" content="network_create_socket,network_socket_tcp,network_socket_udp,network_socket_ws,network_socket_bluetooth" />
+  <meta name="search-keywords" content="network_create_socket,network_socket_tcp,network_socket_udp,network_socket_ws,network_socket_bluetooth" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>network_create_socket</h1>
+  <p>Эта функция используется для создания нового клиентского сокета для вашей игры для общения по сети. Вы должны определить тип сокета (см. список констант ниже), и функция вернет уникальный <i>идентификатор</i> для этого сокета, который должен использоваться
+    во всех дальнейших вызовах функций для этого сокета, или значение меньше 0, если соединение не удалось.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Вы можете использовать IP &quot;127.0.0.1&quot; для обратного подключения к тому же устройству, на котором запущена игра.</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>network_socket_tcp</td>
+        <td>Создайте сокет с помощью TCP.</td>
+      </tr>
+      <tr>
+        <td>network_socket_udp</td>
+        <td>Создайте сокет, используя UDP.</td>
+      </tr>
+      <tr>
+        <td>network_socket_ws</td>
+        <td>Создайте веб-сокет<i>(только</i> для проектов, работающих на HTML5), используя TCP.</td>
+      </tr>
+      <tr>
+        <td>network_socket_bluetooth</td>
+        <td>Создайте сокет bluetooth<i>(в настоящее время недоступен!</i>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">network_create_socket(type);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>тип</td>
+        <td>Тип создаваемого сокетного соединения (см. константы, перечисленные ниже).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">если os_browser == browser_not_a_browser<br> {
+    <br> client = network_create_socket(network_socket_tcp);<br> network_connect( client, &quot;192.134.0.1&quot;, 6510 );<br> }
+    <br> else
+    <br> {
+    <br> client = network_create_socket(network_socket_ws);<br> network_connect( client, &quot;192.134.0.1&quot;, 6520 );<br> }
+  </p>
+  <p>Приведенный выше код проверит, запущена ли игра в браузере или нет, и создаст новый TCP или Web-сокет, после чего попытается подключиться через него к заданному IP-адресу на заданном порту.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Networking.htm">Работа в сети</a></div>
+        <div style="float:right">Далее: <a href="network_create_socket_ext.htm">network_create_socket_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_create_socket
+network_socket_tcp
+network_socket_udp
+network_socket_ws
+network_socket_bluetooth
+-->
+  <!-- TAGS
+network_create_socket
+-->
+</body>
+</html>

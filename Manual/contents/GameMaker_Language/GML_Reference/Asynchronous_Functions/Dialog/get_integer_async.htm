@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>get_integer_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for get_integer_async" />
+  <meta name="rh-index-keywords" content="get_integer_async" />
+  <meta name="search-keywords" content="get_integer_async" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>get_integer_async</h1>
+  <p>Эта функция открывает окно и отображает сообщение, а также место для ввода пользователем значения (которое для начала будет содержать заданное по умолчанию значение). Это асинхронная функция, поэтому <span class="notranslate">GameMaker Studio 2</span> <i>не</i> блокирует устройство, на котором она выполняется, в ожидании выполнения.
+    устройство, на котором она выполняется, в ожидании ответа, а продолжает выполнять события в обычном режиме. После того как пользователь набрал свою строку и нажал кнопку &quot;Ок&quot;, запускается асинхронное событие <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm"><b>Диалог</b></a>    срабатывает асинхронное событие, которое <i>только</i> на время этого события будет иметь карту DS, хранящуюся в переменной <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>.</p>
+  <p>Эта карта будет содержать три ключа: &quot;id&quot;,<tt>&quot;</tt>status&quot; и &quot;<tt>value&quot;</tt>. &quot;id&quot; - это<tt>значение</tt>, которое<tt>было</tt> возвращено функцией при вызове, &quot;status&quot; будет либо true, если кнопка &quot;Ок&quot; была нажата, либо <tt>false</tt>, если сообщение было отменено (где это применимо, поскольку не <tt>все</tt> целевые платформы позволяют отменять сообщения). Наконец, &quot; value<tt>&quot;</tt> вернет целое число, которое пользователь ввел
+    в виде строки (пустая строка &quot;&quot; будет возвращена, если ввода не было).</p>
+  <p class="note"><strong><em>ПРИМЕЧАНИЕ:</em></strong><em> Эта функция <span data-keyref="Dialog for debug only">предназначена <strong>только</strong> для <strong>отладки и тестирования</strong></span>и не должна использоваться в выпущенных играх. Для этих целей вы должны создать пользовательский интерфейс для получения ввода от игроков, чтобы иметь полный контроль над тем, как выглядят и ведут себя диалоги.</em></p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">get_integer_async(string, default);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>Строка</td>
+        <td>Сообщение, которое будет показано в диалоге.</td>
+      </tr>
+      <tr>
+        <td>по умолчанию</td>
+        <td>Значение по умолчанию.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Расширенный пример:</h4>
+  <p> <b>Событие нажатия левой кнопки мыши</b> (например) объекта, который показывает сообщение, будет иметь следующий код:</p>
+  <p class="code">msg = get_integer_async(&quot;Сколько вам лет?&quot;, 0);</p>
+  <p>Выше будет показано сообщение, требующее, чтобы пользователь ввел строку и нажал &quot;Ок&quot;. Идентификатор функции хранится в переменной &quot;msg&quot; и будет использован в асинхронном событии Dialogs, как показано ниже:</p>
+  <p class="code">var i_d = ds_map_find_value(async_load, &quot;id&quot;);<br> if i_d == msg<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;)<br> {
+    <br> global.Age = ds_map_find_value(async_load, &quot;value&quot;);<br> }
+    <br> }
+  </p>
+  <p>Приведенный выше код сверяет<tt>ключ</tt>&quot; id&quot; возвращаемой DS Map <tt>со</tt> значением, хранящимся в переменной &quot;msg&quot;. Если они одинаковы, то проверяется, было ли нажато &quot;Okay&quot; (а не окно было
+    и если он возвращает <tt>true</tt>, то устанавливает глобальную переменную из возвращаемого целого числа.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Dialog.htm">Диалог</a></div>
+        <div style="float:right">Далее: <a href="show_message_async.htm">show_message_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+get_integer_async
+-->
+  <!-- TAGS
+get_integer_async
+-->
+</body>
+</html>

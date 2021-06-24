@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>физика_частицы_создать</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_create" />
+  <meta name="rh-index-keywords" content="physics_particle_create,phy_particle_flag_water,phy_particle_flag_zombie,phy_particle_flag_wall,phy_particle_flag_spring,phy_particle_flag_elastic,phy_particle_flag_viscous,phy_particle_flag_powder,phy_particle_flag_tensile,phy_particle_flag_colourmixing,phy_particle_flag_colormixing" />
+  <meta name="search-keywords" content="physics_particle_create,phy_particle_flag_water,phy_particle_flag_zombie,phy_particle_flag_wall,phy_particle_flag_spring,phy_particle_flag_elastic,phy_particle_flag_viscous,phy_particle_flag_powder,phy_particle_flag_tensile,phy_particle_flag_colourmixing,phy_particle_flag_colormixing" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>физика_частицы_создать</h1>
+  <p>С помощью этой функции вы можете создать одну частицу в любом месте вашей игровой комнаты, установив определенные флаги и свойства. Флаги&quot; являются возвращаемым значением комбинации следующих констант:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Постоянная</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_water</td>
+        <td>Свойства по умолчанию для частицы мягкого тела.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_zombie</td>
+        <td>Частица-зомби - это частица, которая будет уничтожена после одного шага, при этом все остальные будут помечены таким образом.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_wall</td>
+        <td>Это определяет частицу как <i>статическую</i>, по существу создавая ее как неподвижный объект в физическом моделировании, поскольку она будет оставаться в фиксированном положении независимо от того, что с ней столкнется. Вы должны использовать этот флаг, а не устанавливать плотность
+          в 0.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_spring</td>
+        <td>Пружинные частицы создают эффект прикрепления друг к другу, как будто пружиной. Частицы, созданные с помощью этого флага, &quot;соединяются&quot; попарно, причем каждая частица соединяется с той, которая была ближе всего к ней в момент создания.
+          Попав в пару, частицы не меняют &quot;партнеров&quot;, и чем дальше внешняя сила отталкивает их друг от друга, тем с большей силой они столкнутся, когда эта внешняя сила будет удалена. Обратите внимание, что независимо от того, насколько далеко парные
+          частиц друг от друга, связь между ними не разрывается.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_elastic</td>
+        <td>Упругие частицы деформируются и могут также отскакивать при столкновении с другими жесткими телами в физическом моделировании.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_viscous</td>
+        <td>Вязкая частица - это частица, которая проявляет &quot;цепкость&quot; или &quot;липкость&quot;, как масло. Вязкие частицы больше слипаются и склеиваются.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_powder</td>
+        <td>Частицы порошка создают эффект рассеивания, подобный тому, который можно наблюдать при использовании песка или пыли.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_tensile</td>
+        <td>Растягивающие частицы используются для создания эффекта поверхностного натяжения, или тугой кривизны на поверхности тела жидкости. Они могут использоваться, например, для создания поверхностного натяжения, которое можно наблюдать на капле воды. Как только натяжение
+          частицы отскакивают, как если бы они были упругими, но при этом продолжают притягиваться друг к другу. В результате частицы, отскакивая, образуют скопления.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_flag_colourmixing</td>
+        <td>Частицы, смешивающие цвета, принимают некоторые цвета других частиц, с которыми они сталкиваются. Обратите внимание, что если только одна из двух сталкивающихся частиц является смешивающей цвет, другая частица сохраняет свой цвет до столкновения.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Эти флаги используют битовую маскировку для создания конечного выходного значения, которое затем проверяется для установки различных основных свойств частицы (при этом базовым свойством всегда является свойство <tt>phy_particle_flag_water</tt>). Например, если вы хотите смоделировать
+    вязкую жидкость с поверхностным натяжением, вы будете использовать <a href="../../../../Additional_Information/Bitwise_Operators.htm">побитовую комбина</a> цию <a href="../../../../Additional_Information/Bitwise_Operators.htm"> <i>или</i></a> &quot;|&quot;, чтобы отметить соответствующие биты, как показано в примере ниже. Таким образом, вы можете установить различные
+    свойства (отличные от глобальных) для каждой отдельной созданной частицы.</p>
+  <p>Кроме флагов, вы также можете задать положение в комнате, в котором будет создана частица, начальную горизонтальную и вертикальную скорость, начальный цвет и альфа, а также <b>категорию</b> пользователя. Значения цвета и альфа используются только при
+    рисовании частицы с помощью функции <a href="physics_particle_draw.htm"><tt>physics_particle_draw()</tt></a>но значение категории используется во многих других функциях. Это значение представляет собой произвольное целое число, которое вы присваиваете каждой частице, которая
+    и может использоваться для установки флагов в дальнейшем для этой конкретной категории, а также для ряда других вещей. Например, если вы определили частицы &quot;вода&quot; и &quot;масло&quot;, то вы присвоите всем частицам, отмеченным как &quot;вода&quot;, флаг &quot;масло&quot;.
+    частицам, помеченным как &quot;вода&quot;, пользовательскую категорию 1, а всем частицам, созданным как &quot;масло&quot;, пользовательскую категорию 2, что позволит вам позже выбрать одну категорию для изменения ее флагов или получения конкретных данных.</p>
+  <p class="note"><b>ПРИМЕЧАНИЕ</b>: Вы можете использовать любое целочисленное значение для категории, <b>кроме 0</b>, которое зарезервировано симуляцией и используется для выбора всех категорий в других функциях (например, для рисования).</p>
+  <p>Функция возвращает уникальное значение индекса (или ID) для частицы, которое может быть сохранено в переменной для использования в других функциях, напрямую ссылающихся на частицу.</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">physics_particle_create(flags, x, y, xv, yv, col, alpha, category)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>флаги</td>
+        <td>Флаги для установки на частицу.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Позиция x для создания частицы.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>Позиция y для создания частицы.</td>
+      </tr>
+      <tr>
+        <td>xv</td>
+        <td>Начальная горизонтальная скорость.</td>
+      </tr>
+      <tr>
+        <td>yv</td>
+        <td>Начальная вертикальная скорость.</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Базовый цвет, который будет использоваться для частицы.</td>
+      </tr>
+      <tr>
+        <td>альфа</td>
+        <td>Базовая альфа, используемая для частицы.</td>
+      </tr>
+      <tr>
+        <td>категория</td>
+        <td>Определенная пользователем категория, к которой принадлежит частица.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Реально</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br> var x_vel = lengthdir_x(5, image_angle);<br> var y_vel = lengthdir_y(5, image_angle);<br> var p = physics_particle_create(flags, x, y, x_vel, y_vel,
+    c_white, 1, 1);</p>
+  <p>Приведенный выше код создаст переменные для установки типа частицы и ее начальной скорости, а затем использует их для создания частицы в позиции экземпляра x/y.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Soft_Body_Particles.htm">Частицы мягкого тела</a></div>
+        <div style="float:right">Далее: <a href="physics_particle_group_begin.htm">physics_particle_group_begin</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_create
+phy_particle_flag_water
+phy_particle_flag_zombie
+phy_particle_flag_wall
+phy_particle_flag_spring
+phy_particle_flag_elastic
+phy_particle_flag_viscous
+phy_particle_flag_powder
+phy_particle_flag_tensile
+phy_particle_flag_colourmixing
+-->
+  <!-- TAGS
+physics_particle_create
+-->
+</body>
+</html>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_emitter_velocity</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_emitter_velocity" />
+  <meta name="rh-index-keywords" content="audio_emitter_velocity" />
+  <meta name="search-keywords" content="audio_emitter_velocity" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_emitter_velocity</h1>
+  <p>Эта функция может быть использована для придания излучателю эффекта <em>Доплера </em>и имитации движения звука на основе вектора, который определяется из заданных относительных положений x, y и z. Если сам излучатель никогда не будет двигаться, то обычно нет необходимости в установке этих значений.
+    но, например, если вы делаете прокручивающуюся игру-стрелялку, где враги появляются справа и прокручиваются влево, вы установите скорость (hspeed, 0, 0) в событии создания врагов (и обновите эмиттер каждого экземпляра в событии создания).
+    излучатель каждого экземпляра в событии шага, используя <a href="audio_emitter_position.htm"><tt>audio_emitter_position()</tt></a>), чтобы придать любым звукам, издаваемым вражескими экземплярами, правильный доплер, когда они проходят мимо экземпляра игрока (который, в свою очередь, использует функцию
+    будет использовать функцию <a href="../Audio_Listeners/audio_listener_position.htm"><tt>audio_listener_position()</tt></a> для установки <i>слушателя</i> в правильное положение).</p>
+  <p> </p>
+  <h4>Синтаксис:</h4>
+  <p class="code">audio_emitter_velocity(emitter, vx, vy, vz);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Аргумент</th>
+        <th>Описание</th>
+      </tr>
+      <tr>
+        <td>эмиттер</td>
+        <td>Индекс излучателя, который нужно изменить.</td>
+      </tr>
+      <tr>
+        <td>vx</td>
+        <td>Значение вектора x (по умолчанию 0).</td>
+      </tr>
+      <tr>
+        <td>vy</td>
+        <td>Значение вектора y (по умолчанию 0).</td>
+      </tr>
+      <tr>
+        <td>vz</td>
+        <td>Значение вектора z (по умолчанию 0).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Возвращается:</h4>
+  <p class="code">Н/Д</p>
+  <p> </p>
+  <h4>Пример:</h4>
+  <p class="code">s_emit = audio_emitter_create();<br> audio_emitter_position(s_emit, room_width, 0, 0);<br> audio_emitter_velocity(s_emit, -5, 0, 0);</p>
+  <p>Приведенный выше код создает звуковой излучатель и присваивает его индекс переменной &quot;s_emit&quot;. Затем этот излучатель помещается в определенное место в комнате и ему присваивается скорость 5 пикселей за шаг вдоль оси x (он будет правильно доплеровски перемещаться относительно слушателя, как если бы он имел горизонтальную скорость 5 пикселей за шаг).
+    относительно слушателя, как если бы он имел горизонтальную скорость 5 пикселей за шаг).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Назад: <a href="Audio_Emitters.htm">Аудиоизлучатели</a></div>
+        <div style="float:right">Далее: <a href="audio_emitter_falloff.htm">audio_emitter_falloff</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_emitter_velocity
+-->
+  <!-- TAGS
+audio_emitter_velocity
+-->
+</body>
+</html>
