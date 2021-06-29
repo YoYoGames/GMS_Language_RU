@@ -1,0 +1,43 @@
+
+  
+  ini_section_delete
+  С помощью этой функции вы можете удалить целый раздел ini-файла, при этом будут удалены все пары ключ-значение, которые с ним связаны.
+   
+  Синтаксис:
+  ini_section_delete(section);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        раздел
+        Раздел для удаления.
+      
+    
+  
+   
+  Возвращается:
+  Н/Д
+   
+  Пример:
+  ini_open("savedata.ini"); ini_write_real("save1", "Score", score ); ini_section_delete("save1");
+     ini_close();
+  
+  Этот пример откроет файл "savedata.ini" и запишет значение в "save1" > "Score". Затем он удалит раздел "save1" и закроет файл .ini.
+   
+   
+   
+  
+    
+      
+        Назад: Ini Files
+        Далее: ini_open_from_string
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

@@ -1,0 +1,31 @@
+
+  
+  physics_particle_get_radius
+  С помощью этой функции вы можете узнать текущий радиус (в пикселях) для частиц в физическом моделировании (вы можете установить это значение с помощью функции physics_particle_set_radius()).
+   
+  Синтаксис:
+  physics_particle_get_radius()
+   
+  Возвращается:
+  Реально
+   
+  Пример:
+  if (physics_particle_get_radius() < 32) {
+     physics_particle_set_radius(physics_particle_get_radius() + 1); }
+  
+  Приведенный выше код проверит текущий радиус частиц в симуляции и, если он меньше 32, то увеличит их размер на 1.
+   
+   
+   
+  
+    
+      
+        Назад: Частицы мягкого тела
+        Далее: physics_particle_get_density
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

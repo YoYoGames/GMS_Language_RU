@@ -1,0 +1,174 @@
+
+  
+  steam_ugc_create_query_all_ex
+  Эта функция может быть использована для запроса базы данных UGC. Функция требует ID игры, которая будет потреблять элемент, и/или ID игры, которая создала элемент, а также необходимо использовать следующие константы для типа создаваемого запроса,
+    тип элемента для запроса и номер страницы для запроса. Обратите внимание, что запрос возвращает максимум 50 элементов.
+   
+  
+    
+      
+        Тип запроса Постоянный
+        Описание
+      
+      
+        ugc_query_RankedByVote
+        См. документациюSteam.
+      
+      
+        ugc_query_RankedByPublicationDate
+        -
+      
+      
+        ugc_query_AcceptedForGameRankedByAcceptanceDate
+        -
+      
+      
+        ugc_query_RankedByTrend
+        -
+      
+      
+        ugc_query_FavoritedByFriendsRankedByPublicationDate
+        -
+      
+      
+        ugc_query_CreatedByFriendsRankedByPublicationDate
+        -
+      
+      
+        ugc_query_RankedByNumTimesReported
+        -
+      
+      
+        ugc_query_CreatedByFollowedUsersRankedByPublicationDate
+        -
+      
+      
+        ugc_query_NotYetRated
+        -
+      
+      
+        ugc_query_RankedByTotalVotesAsc
+        -
+      
+      
+        ugc_query_RankedByVotesUp
+        -
+      
+      
+        ugc_query_RankedByTextSearch
+        -
+      
+    
+  
+   
+  
+    
+      
+        Тип соответствия Постоянная
+        Описание
+      
+      
+        ugc_match_Items
+        См. документациюSteam.
+      
+      
+        ugc_match_Items_Mtx
+        -
+      
+      
+        ugc_match_Items_ReadyToUse
+        -
+      
+      
+        ugc_match_Collections
+        -
+      
+      
+        ugc_match_Artwork
+        -
+      
+      
+        ugc_match_Videos
+        -
+      
+      
+        ugc_match_Screenshots
+        -
+      
+      
+        ugc_match_AllGuides
+        -
+      
+      
+        ugc_match_WebGuides
+        -
+      
+      
+        ugc_match_IntegratedGuides
+        -
+      
+      
+        ugc_match_UsableInGame
+        -
+      
+      
+        ugc_match_ControllerBindings
+        -
+      
+    
+  
+   Функция возвращает уникальное значение хэндла запроса, которое должно быть сохранено в переменной для использования в других функциях запроса. Обратите внимание, что эта функция только подготавливает запрос, но не отправляет его - для этого вы должны вызвать функцию
+    steam_ugc_send_query.htm">steam_ugc_send_query() - и вы можете использовать другие функции steam_ugc_query_* () для уточнения поискового запроса перед его отправкой.
+   
+  Синтаксис:
+  steam_ugc_create_query_all_ex(query_type, match_type, page, creator_app_id, consumer_app_id);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        тип запроса
+        Тип запроса данных для создания (см. константы, перечисленные ниже).
+      
+      
+        тип_соответствия
+        Тип элементов пользовательского контента для запроса (см. константы, перечисленные ниже).
+      
+      
+        страница
+        Номер страницы для запроса.
+      
+      
+        id_приложения_создателя
+        Идентификатор приложения создателя элемента.
+      
+      
+        идентификатор_приложения_потребителя
+        Идентификатор потребительского приложения.
+      
+    
+  
+   
+  Возвращается:
+  Ручка запроса
+   
+  Пример:
+  query_handle = steam_ugc_create_query_all_ex(ugc_query_RankedByVote, page, global.AccountID, 0, global.GameID);
+  Приведенный выше код создает запрос запроса и сохраняет его обработку в переменной для дальнейшего использования.
+   
+   
+   
+  
+    
+      
+        Назад: UGC
+        Далее: steam_ugc_query_set_cloud_filename_filter
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

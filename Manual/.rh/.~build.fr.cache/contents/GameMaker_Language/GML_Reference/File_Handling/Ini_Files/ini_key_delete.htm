@@ -1,0 +1,48 @@
+
+  
+  ini_key_delete
+  С помощью этой функции вы можете удалить выбранный ключ (и соответствующее ему значение) из ini-файла.
+   
+  Синтаксис:
+  ini_key_delete(section, key);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        раздел
+        Раздел, из которого нужно удалить ключ.
+      
+      
+        ключ
+        Ключ для удаления.
+      
+    
+  
+   
+  Возвращается:
+  Н/Д
+   
+  Пример:
+  ini_open("savedata.ini"); ini_write_real("save1", "Score",score);
+     ini_key_delete("save1", "Score");
+     ini_close();
+  
+  Этот пример откроет файл "savedata.ini" и запишет значение в "save1" > "Score". Затем он удалит ключ "Score" и закроет файл .ini.
+   
+   
+   
+  
+    
+      
+        Назад: Ini Files
+        Далее: ini_section_delete
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

@@ -1,0 +1,49 @@
+
+  
+  physics_particle_group_join
+  С помощью этой функции вы можете объединить две группы частиц вместе, при этом объединенные группы будут вести себя так, как будто они являются частью одного объекта. Группы должны быть созданы с перекрывающимися краями, так как, если они еще не соприкасаются, они не будут соединены.
+    не будут объединены. Функция принимает уникальные идентификаторы групп, которые нужно объединить, возвращаемые функцией physics_particle_group_end()и вы можете использовать функцию любое количество раз для
+    одной группы для соединения различных мягких тел вместе.
+   
+  Синтаксис:
+  physics_particle_group_join(to, from)
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        на
+        Первая группа частиц, к которой можно присоединиться.
+      
+      
+        с сайта
+        Вторая группа частиц, к которой можно присоединиться.
+      
+    
+  
+   
+  Возвращается:
+  Н/Д
+   
+  Пример:
+  var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile; var groupflags = phy_particle_group_flag_solid; physics_particle_group_begin(flags, groupflags, mouse_x- 45, mouse_y, 0, 0, 0, 0, 0, c_white, 1, 1, 2); physics_particle_group_circle(50);
+     var g1 = physics_particle_group_end(); physics_particle_group_begin(flags, groupflags, mouse_x + 45, mouse_y, 0, 0, 0, 0, 0, c_white, 1, 1, 2); physics_particle_group_circle(50);
+     var g2 = physics_particle_group_end(); physics_particle_group_join(g1, g2);
+  Приведенный выше код создает две круговые группы частиц и соединяет их вместе.
+   
+   
+   
+  
+    
+      
+        Назад: Частицы мягкого тела
+        Далее: physics_particle_group_delete
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

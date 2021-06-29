@@ -1,0 +1,33 @@
+
+  
+  steam_initialised
+  При использовании API Steam эта функция может быть вызвана для проверки правильности инициализации API клиента Steam перед дальнейшим обращением к функциям, специфичным для Steam, в вашей игре.
+   
+  Синтаксис:
+  steam_initialised();
+   
+  Возвращается:
+  Булево
+   
+  Пример:
+  global.steam_api= false; if steam_initialised() {
+     if steam_stats_ready() && steam_is_overlay_enabled() {
+     global.steam_api= true; }
+     }
+  
+  Приведенный выше код установит глобальную переменную в true, если API клиента Steam правильно инициализирован, вместе с функциями статистики и наложения Steam, или установит переменную в false в противном случае.
+   
+   
+   
+  
+    
+      
+        Назад: Общий API Steam
+        Далее: steam_stats_ready
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

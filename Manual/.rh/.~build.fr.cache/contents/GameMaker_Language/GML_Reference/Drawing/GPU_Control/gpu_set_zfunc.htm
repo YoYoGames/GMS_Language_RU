@@ -1,0 +1,54 @@
+
+  
+  gpu_set_zfunc
+  Эта функция может быть использована для установки режима сравнения тестирования z-буфера (см. gpu_set_ztestenable() для дополнительной информации). Доступными для использования значениями являются любые из следующих констант (значение по умолчанию
+   cmpfunc_lessequal):
+  
+    cmpfunc_never
+    cmpfunc_less
+    cmpfunc_equal
+    cmpfunc_lessequal
+    cmpfunc_greater
+    cmpfunc_notequal
+    cmpfunc_greaterequal
+    cmpfunc_always
+  
+   
+  Синтаксис:
+  gpu_set_zfunc(cmp_func);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        cmp_func
+        Используемый режим сравнения (см. список выше)
+      
+    
+  
+   
+  Возвращается:
+  Н/Д
+   
+  Пример:
+  gpu_set_ztestenable(true); gpu_set_zfunc(cmpfunc_always);
+     draw_sprite(spr_Background, 0, 0, 0, 0); gpu_set_ztestenable(false);
+  
+  Приведенный выше код включает тестирование z-буфера и устанавливает режим сравнения перед отрисовкой фонового спрайта, а затем снова выключает его для продолжения отрисовки.
+   
+   
+   
+  
+    
+      
+        Назад: Управление графическим процессором
+        Далее: gpu_set_zwriteenable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

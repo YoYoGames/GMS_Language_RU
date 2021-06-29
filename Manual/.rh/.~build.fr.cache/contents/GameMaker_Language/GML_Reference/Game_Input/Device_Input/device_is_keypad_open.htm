@@ -1,0 +1,37 @@
+
+  
+  device_is_keypad_open
+  Эта функция проверяет устройство на наличие клавиатуры и, если таковая имеется, возвращает true, в противном случае - false. Обратите внимание, что эта функция предназначена в основном для устройств Android.
+  Для пользователей Sony Xperia Play в GameMaker Studio 2 есть настройка карты кнопок/клавиш, поэтому вы можете использовать клавиатурные константы vk_up, vk_down, vk_left,
+   vk_right для клавиш джойпада, треугольник - ord("T"), квадрат- ord("S "), круг - vk_alt + vk_backspace, а кнопка назад - просто vk_backspace,
+   Cross - vk_space, Select - vk_return, Start - vk_rshift, L Trigger - ord("L"), R Trigger - ord("R ").
+   
+  Синтаксис:
+  device_is_keypad_open
+   
+  Возвращается:
+  Булево
+   
+  Пример:
+  if device_is_keypad_open() {
+     global.Setting = 2; }
+     else
+     {
+     global.Setting = 1; }
+  
+  Приведенный выше код проверяет наличие клавиатуры, затем изменяет глобальную переменную в зависимости от возвращаемого значения.
+   
+   
+   
+  
+    
+      
+        Назад: Ввод устройства
+        Далее: device_get_tilt_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

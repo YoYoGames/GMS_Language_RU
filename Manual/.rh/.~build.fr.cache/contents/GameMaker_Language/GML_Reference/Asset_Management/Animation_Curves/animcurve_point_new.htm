@@ -1,0 +1,53 @@
+
+  
+  animcurve_point_new
+  Эта функция может быть использована для создания новой структуры точек, которая будет добавлена в канал кривой анимации. При создании структура точек пуста, и для создания точки необходимо задать следующие переменные
+    данные:
+   
+  
+    
+      
+        Имя переменной
+        Тип данных
+        Описание
+      
+      
+        posx
+        настоящий
+        Положение во времени (нормированное от 0 до 1) точки.
+      
+      
+        значение
+        настоящий
+        Значение точки.
+      
+    
+  
+   
+  Каждый созданный вами point struct должен быть добавлен в массив, и именно этот массив добавляется в переменную "channels" структуры канала кривой анимации (как показано в примере ниже).
+   
+  Синтаксис:
+  animcurve_point_new();
+   
+  Возвращается:
+  Ссылка на структуру
+   
+  Пример:
+  my_curve = animcurve_create(); my_curve.name = "My_Curve"; var _channels = array_create(1); _channels[0] = animcurve_channel_new(); _channels[0].name = "alpha"; _channels[0].type = animcurvetype_catmullrom; _channels[0].iterations = 8; var _points = array_create(3); _points[0] = animcurve_point_new(); _points[0].posx = 0; _points[0].value = 0; _points[1] = animcurve_point_new(); _points[1].posx = 0.5; _points[1].value
+    = 1; _points[2] = animcurve_point_new(); _points[2].posx = 1; _points[2].value = 0; _channels[0].points = _points; my_curve.channels = _channels;
+  Приведенный выше код создает новую структуру анимационной кривой и сохраняет ее в переменной "my_curve". Затем эта структура заполняется именем и массивом каналов. Массив каналов содержит один канал с тремя точками.
+   
+   
+   
+  
+    
+      
+        Назад: Анимационные кривые
+        Далее: animcurve_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

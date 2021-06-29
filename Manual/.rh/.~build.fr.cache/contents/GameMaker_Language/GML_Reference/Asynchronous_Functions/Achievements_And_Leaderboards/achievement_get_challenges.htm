@@ -1,0 +1,75 @@
+
+  
+  достижение_получить_задачи
+  Эта функция отправит запрос на сервер для получения информации обо всех текущих вызовах и вызовет обратный вызов Social Asynchronous Event, содержащий в себе значение
+    async_load карту, заполненную соответствующими парами ключ/значение. Ключ id этой DS Map используется для идентификации правильного обратного вызова (может быть
+    может быть более одной триггерной функции для любого данного асинхронного события), и будет сопряжен с константой achievement_challenge_list_received, а также рядом других пар ключ/значение для каждой задачи. Точное содержимое
+    карты показано ниже:
+  ПРИМЕЧАНИЕ: Эта функция предназначена iOS только.
+  
+    " id" - Для данной функции это должно быть achievement_challenge_list_received
+    " numchallenges" - Количество вызовов (локальных и удаленных), доступных в настоящее время.
+    " ChallengeNplayerid" - идентификатор игрока для задачи, где "N" - целое число, EG: "Challenge5playerid" - идентификатор игрока для пятой задачи в списке.
+    " ChallengeNissuerid" - идентификатор лица, выдавшего вызов, где "N" - целое число, EG: "Challenge2issuerid" - идентификатор эмитента для второго вызова в списке.
+    " ChallengeNstate" - Состояние вызова "N", которое будет иметь значение 0 - 3 (в виде строки) для недействительного, ожидающего, завершенного или отклоненного . 
+    " ChallengeNmessage" - Текстовое сообщение для вызова "N".
+    " ChallengeNissueddate" - Дата выдачи вызова "N".
+    " ChallengeNcompleteddate" - Дата завершения задачи "N".
+    " ChallengeNtype" - Тип брошенного вызова. Может быть одной из двух констант:
+  
+  
+    
+      
+        Постоянная
+        Описание
+      
+      
+        фильтр_достижений_только_для_друзей 
+        Получайте только оценки игроков-друзей.
+      
+      
+        фильтр_достижений_всех_игроков 
+        Получите все результаты для всех игроков.
+      
+    
+  
+   
+  
+    " ChallengeNidentifier" - Идентифицирующая строка для вызова.
+    " ChallengeNscore" - Оценка, связанная с задачей.
+  
+   
+  Синтаксис:
+  achievement_get_challenges()
+   
+  Возвращается:
+  Н/Д
+   
+  Расширенный пример:
+  Следующий код, вероятно, будет вызван после того, как игрок войдет в свой игровой аккаунт, используя achievement_login():
+  achievement_get_challenges();
+  Это отправит запрос на получение информации о текущем вызове и сгенерирует асинхронный обратный вызов со специальным async_load ds_map, содержащим следующие данные:
+  var ident = ds_map_find_value(async_load, "id"); if ident == achievement_challenge_list_received {
+     var numentries = ds_map_find_value(async_load, "numchallenges"); for(var i = 0; i < numentries; i++;) {
+     player_id[i] = ds_map_find_value(async_load, "Challenge" + string(i)+"playerid"); issuer_id[i] = ds_map_find_value(async_load, "Challenge" + string(i)+"issuerid"); state[i]
+    = ds_map_find_value(async_load, "Challenge" + string(i)+"state"); message[i] = ds_map_find_value(async_load, "Challenge" + string(i)+"message"); date_completed[i] = ds_map_find_value(async_load,
+    "Challenge" + string(i)+"completeddate"); date_issued[i] = ds_map_find_value(async_load, "Challenge" + string(i)+"issueddate"); ach_type[i] = ds_map_find_value(async_load, "Challenge"
+    + string(i)+"type"); ach_ident[i] = ds_map_find_value(async_load, "Challenge" + string(i)+"identifier"); ach_score[i] = ds_map_find_value(async_load, "Challenge" + string(i)+"score"); }
+  
+  Приведенный выше код проверяет возвращаемую DS Map в Social Asynchronous Event и, если ее "id" совпадает с проверяемой константой, он затем проходит по карте, сохраняя все различные значения в нескольких массивах. Эта информация
+    может быть использована, например, для создания собственных, персонализированных страниц вызовов в игре.
+   
+   
+   
+  
+    
+      
+        Назад: Достижения и таблицы лидеров
+        Далее: achievement_get_pic
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

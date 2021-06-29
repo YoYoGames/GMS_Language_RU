@@ -1,0 +1,48 @@
+
+  
+  physics_particle_group_add_point
+  Эта функция задает точку в комнате для определения формы многоугольника, который будет использоваться для создания группы частиц мягкого тела. Вы должны предварительно сообщить GameMaker Studio 2, что собираетесь определить форму многоугольника с помощью функции
+   physics_particle_group_polygon(), а затем использовать эту функцию для определения отдельных точек многоугольника. При определении формы многоугольника необходимо указать не менее трех точек, но можно указать до восьми,
+    и функция позволит определить вогнутые многоугольники. Однако, если вы создадите многоугольник с какими-либо полостями, точки внутри него будут проигнорированы, и для группы частиц будет создана выпуклая форма.
+   
+  Синтаксис:
+  physics_particle_group_add_point(x, y)
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        x
+        Положение x в комнате для точки.
+      
+      
+        y
+        Положение y в комнате для точки.
+      
+    
+  
+   
+  Возвращается:
+  Н/Д
+   
+  Пример:
+  var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile; var groupflags = phy_particle_group_flag_solid; physics_particle_group_begin(flags, groupflags, mouse_x, mouse_y, 0, 0, 0, 0, 0, c_white, 1, 1, 2); physics_particle_group_polygon();
+     physics_particle_group_add_point(200, 200); physics_particle_group_add_point(300, 300); physics_particle_group_add_point(100, 300); mLastGroup = physics_particle_group_end();
+  Приведенный выше код сохраняет флаги для типа частицы и свойства группы частиц в переменных, а затем использует их для создания группы частиц полигона с тремя сторонами в позиции мыши.
+   
+   
+   
+  
+    
+      
+        Назад: Частицы мягкого тела
+        Далее: physics_particle_group_end
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

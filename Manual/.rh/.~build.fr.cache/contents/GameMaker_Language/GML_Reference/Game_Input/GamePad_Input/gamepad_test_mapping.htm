@@ -1,0 +1,159 @@
+
+
+
+
+  
+  gamepad_test_mapping
+  Эта функция может быть использована для установки отображения геймпада на тех целях, которые это позволяют. Вы передаете индекс "slot" для геймпада, который нужно установить, а затем строку map, которая должна быть создана с использованием формата SDL со следующими полями:
+  <guid>, <description>, platform:<platform-name>, <bindings>
+  В каждом из этих полей должны быть указаны следующие данные:
+  
+    guid - строка цифр и букв, которая однозначно идентифицирует тип устройства (его можно получить с помощью функции gamepad_get_guid() функция)
+    description - описание устройства в формате Ascii (его можно получить с помощью функции gamepad_get_description() функция)
+    platform-name - будет либо "platform:android", "platform:windows", "linux", либо "mac" (обратите внимание, что это будет автоматически добавлено к строке при вызове этой функции, и поэтому вам не нужно вводить его при построении собственных строк отображения).
+      не нужно указывать его при создании собственных строк отображения)
+    привязки - набор записей, разделенных знаком ',' для привязки фактического ввода к определенным константам GML
+  
+  Список записей, разделенных запятыми, соответствует определенному формату для каждой записи:
+  <abstract-gp-name>:<value-binding>
+  Здесь <значение-связка> (т.е. прямой ввод геймпада) может быть любым из следующих:
+  
+    a<N> - Представляет ось геймпада, где <N> - одна из осей от 0 до gamepad_axis_count() -1
+    b<N> - Представляет кнопку геймпада, где <N> - одна из кнопок от 0 до gamepad_button_count() -1
+    h<N>.<маска> - Представляет шапку геймпада, где <N> представляет шапку от 0 до gamepad_hat_count() -1, а <маска> будет либо 1, либо 2, либо 4, либо 8.
+  
+  Каждое входное значение должно быть связано с именем SDL, которое выражается как <>abstract-gp-name> , которое, в свою очередь, связано с константой GML. В таблице ниже показана эквивалентность между именем SDL и константой GameMaker Studio 2:
+   
+  
+    
+      
+        Название SDL
+        ИмяGML 
+      
+      
+        a
+        gp_face1
+      
+      
+        b
+        gp_face2
+      
+      
+        x
+        gp_face3
+      
+      
+        y
+        gp_face4
+      
+      
+        левое плечо
+        gp_shoulderl
+      
+      
+        левый триггер
+        gp_shoulderlb
+      
+      
+        правое плечо
+        gp_shoulderr
+      
+      
+        righttrigger
+        gp_shoulderrb
+      
+      
+        руководство
+        gp_select
+      
+      
+        запустить
+        gp_start
+      
+      
+        левый стик
+        gp_stickl
+      
+      
+        правый стик
+        gp_stickr
+      
+      
+        dpup
+        gp_padu
+      
+      
+        dpdown
+        gp_padl
+      
+      
+        dpleft
+        gp_padr
+      
+      
+        dpright
+        gp_padd
+      
+      
+        leftx
+        gp_axislh
+      
+      
+        левша
+        gp_axislv
+      
+      
+        rightx
+        gp_axisrh
+      
+      
+        правый
+        gp_axisrv
+      
+    
+  
+   Когда вы построили строку сопоставления, она должна выглядеть примерно так:
+  "050000005e040000fd020000ffff3f00,Xbox Wireless Controller,a:b0,b:b1,start:b4,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b6,leftshoulder:b9,leftstick:b7,lefttrigger:a4,leftx:a0,lefty:a1,rightshoulder:b10,rightstick:b8,righttrigger:a5,rightx:a2,righty:a3,x:b2,y:b3,platform:android"
+   
+  Синтаксис:
+  gamepad_test_mapping(index, mapping_string);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        индекс
+        Какой индекс геймпада "слот" установить.
+      
+      
+        цвет
+        Используемая строка карты (см. описание для получения дополнительной информации).
+      
+    
+  
+   
+  Возвращается:
+  Н/Д
+   
+  Пример:
+  var mapping = gamepad_get_guid(global.padIndex) + "," + gamepad_get_description(global.padIndex); var len = array_length(global.PadInstances); for( i = 0; i < len; i += 2) {
+     var left = global.PadInstances[i]; var right = global.PadInstances[i+1]; mapping += "," + left.sdlLabel + ":" + right.binding; }
+     gamepad_test_mapping(global.padIndex, mapping);
+  Приведенный выше код будет проходить через ряд экземпляров и использовать значения различных переменных, которые они содержат, для создания строки отображения, которая затем устанавливается для использования на геймпаде в заданном индексе слота.
+   
+   
+   
+  
+    
+      
+        Назад: Вход геймпада
+        Далее: gamepad_remove_mapping
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

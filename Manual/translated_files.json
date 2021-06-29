@@ -10606,5 +10606,9 @@
   "toc\\Default.toc": {
     "fileHash": "7D4C476877208E9E5DF559875137B3B9",
     "fileSize": 432220
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Data_Structures\\DS_Stacks\\ds_stack_destroy.htm": {
+    "fileHash": "5179CF281553BA10581BD2E698EB1D18",
+    "fileSize": 3024
   }
 }

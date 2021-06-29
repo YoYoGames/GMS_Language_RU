@@ -1,0 +1,47 @@
+
+  
+  steam_ugc_query_set_return_total_only
+  Эта функция может быть использована для дополнительной фильтрации любого заданного UGC-запроса, в частности, для запроса только количества результатов без какой-либо другой информации (это означает, что карта DS, созданная функцией отправки, будет содержать ключ "num_results" без
+    без каких-либо дополнительных данных карты). Хендл запроса - это значение, возвращенное при создании запроса (например, с помощью, steam_ugc_create_query_user()), а второй аргумент - это либо true, либо
+   false. Функция вернет true, если фильтр запроса был установлен правильно, и false в противном случае.
+   
+  Синтаксис:
+  steam_ugc_query_set_return_total_only(ugc_query_handle , total_only);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        ugc_query_handle
+        Ручка запроса, которую следует использовать.
+      
+      
+        total_only
+        Должен ли запрос возвращать только общее количество просмотров или нет.
+      
+    
+  
+   
+  Возвращается:
+  Булево
+   
+  Пример:
+  var query_handle = steam_ugc_create_query_all(ugc_query_RankedByVote, ugc_match_Items, 1); steam_ugc_query_set_return_total_only(query_handle, true); steam_ugc_query_set_allow_cached_response(query_handle, true); query_ID = steam_ugc_send_query(query_handle);
+  Приведенный выше код создает запрос запроса и сохраняет его хэндл в локальной переменной для дальнейшего использования в остальных функциях, которые определяют запрос перед отправкой запроса.
+   
+   
+   
+  
+    
+      
+        Назад: UGC
+        Далее: steam_ugc_query_set_allow_cached_response
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

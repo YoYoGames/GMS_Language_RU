@@ -1,0 +1,31 @@
+
+  
+  physics_particle_get_density
+  С помощью этой функции вы можете узнать плотность тока для частиц в физическом моделировании (вы можете установить это значение с помощью функции physics_particle_set_density()).
+   
+  Синтаксис:
+  physics_particle_get_damping()
+   
+  Возвращается:
+  Реально
+   
+  Пример:
+  if (physics_particle_get_density() < 1) {
+     physics_particle_set_density(physics_particle_get_density() + 0.01); }
+  
+  Приведенный выше код проверит текущее значение плотности для всех частиц в системе и, если оно меньше 1, то добавит к нему 0,01.
+   
+   
+   
+  
+    
+      
+        Назад: Частицы мягкого тела
+        Далее: physics_particle_get_damping
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

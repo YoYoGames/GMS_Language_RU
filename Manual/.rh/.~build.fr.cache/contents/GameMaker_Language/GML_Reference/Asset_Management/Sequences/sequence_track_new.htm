@@ -1,0 +1,133 @@
+
+  
+  sequence_track_new
+  С помощью этой функции вы можете создать новый трек последовательности struct, указав тип трека, который вы хотите создать, который будет одной из следующих констант:
+  
+    
+      
+        Постоянная
+        Описание
+        Значение
+      
+      
+        seqtracktype_graphic
+        Это дорожка графических (спрайтовых) активов.
+        1
+      
+      
+        seqtracktype_audio
+        Это дорожка аудиоактивов.
+        2
+      
+      
+        seqtracktype_instance
+        Это трек актива экземпляра.
+        14
+      
+      
+        seqtracktype_sequence
+        Это трек актива последовательности.
+        7
+      
+      
+        seqtracktype_clipmask
+        Это дорожка активов группы масок клипов.
+        8
+      
+      
+        seqtracktype_clipmask_mask
+        Это дорожка актива спрайта маски клипа, используемая для генерации маски клипа.
+        9
+      
+      
+        seqtracktype_clipmask_subject
+        Это дорожка актива спрайта маски клипа, который маскируется.
+        10
+      
+      
+        seqtracktype_group
+        Эта групповая папка отслеживает активы.
+        11
+      
+      
+        seqtracktype_colour
+        Это дорожка параметров цветовых данных.
+        4
+      
+      
+        seqtracktype_real
+        Это трек параметра значения реального числа.
+        3
+      
+      
+        seqtracktype_message
+        Это дорожка широковещательных сообщений.
+        15
+      
+      
+        seqtracktype_moment
+        Это трек события/момента.
+        16
+      
+      
+        seqtracktype_bool
+        В настоящее время не используется.
+        5
+      
+      
+        seqtracktype_string
+        В настоящее время не используется.
+        6
+      
+      
+        seqtracktype_spriteframes
+        В настоящее время не используется.
+        13
+      
+      
+        seqtracktype_empty
+        В настоящее время не используется.
+        12
+      
+    
+  
+  Функция возвращает структуру трека последовательности, в которую могут быть добавлены данные, прежде чем она будет присвоена объекту последовательности.
+   
+  Синтаксис:
+  sequence_track_new(type);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        тип
+        Тип дорожки для создания, константа, перечисленная выше.
+      
+    
+  
+   
+  Возвращается:
+  Структура
+   
+  Пример:
+  myseq = sequence_create(); var mytracks = array_create(1); mytracks[0] = sequence_track_new(seqtracktype_graphic); var graphickeys = array_create(1); graphickeys[0] = sequence_keyframe_new(seqtracktype_graphic); graphickeys[0].frame
+    = 0; graphickeys[0].length = 1; graphickeys[0].stretch = true; graphickeys[0].disabled = false; var graphickeydata = array_create(1); graphickeydata[0] = sequence_keyframedata_new(seqtracktype_graphic); graphickeydata[0].spriteIndex
+    = spr_Platform; graphickeydata[0].channel = 0; graphickeys[0].channels = graphickeydata; mytracks[0].name = "TestGraphicTrack"; mytracks[0]. keyframes= graphickeys; myseq.tracks = mytracks;
+  Приведенный выше код создает новую последовательность, затем создает дорожку графического актива и устанавливает на ней данные ключевых кадров. Затем эта дорожка назначается экземпляру.
+   
+   
+   
+  
+    
+      
+        Назад: Последовательности
+        Далее: sequence_keyframe_new
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

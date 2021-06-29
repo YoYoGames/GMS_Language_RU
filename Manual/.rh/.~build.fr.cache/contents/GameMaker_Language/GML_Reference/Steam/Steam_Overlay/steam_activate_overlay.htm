@@ -1,0 +1,80 @@
+
+  
+  steam_activate_overlay
+  Оверлей Steam - это часть пользовательского интерфейса Steam, которую можно активировать поверх почти любой игры, запущенной через Steam. Она позволяет пользователю получить доступ к списку друзей, веб-браузеру, чату и внутриигровой покупке DLC. По умолчанию пользователь
+    для доступа к оверлею во время игры - SHIFT+TAB, но с помощью этой функции можно вызвать любую страницу оверлея. Она принимает одну из шести констант, которые перечислены ниже:
+  
+     
+    
+      
+        
+          Постоянная
+          Описание
+        
+        
+          ov_friends
+          Страница друзей для текущего пользователя
+        
+        
+          ov_community
+          Страница сообщества для вашей игры
+        
+        
+          ov_players
+          Страница, показывающая других людей, которые играют в ту же игру или с которыми вы недавно играли
+        
+        
+          ov_settings
+          Настройки наложения клиента Steam 
+        
+        
+          ov_gamegroup
+          Открывает в веб-браузере Steam Community официальную игровую группу для этой игры
+        
+        
+          ov_achievements
+          Страница достижений для вашей игры
+        
+      
+    
+  
+   
+  Синтаксис:
+  steam_activate_overlay(overlayindex);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        overlayindex
+        Индекс страницы пользовательского интерфейса Steam API для отображения (см. константы, перечисленные ниже).
+      
+    
+  
+   
+  Возвращается:
+  Н/Д
+   
+  Пример:
+  var key = keyboard_lastkey; switch (key) {
+     case vk_f1: steam_activate_overlay(ov_friends); break; case vk_f2: steam_activate_overlay(ov_community); break; case vk_f3: steam_activate_overlay(ov_players); break; case vk_f4: steam_activate_overlay(ov_settings);
+    break; case vk_f5: steam_activate_overlay(ov_gamegroup); break; case vk_f6: steam_activate_overlay(ov_achievements); break; }
+  
+  Приведенный выше код опрашивает последнюю нажатую клавишу клавиатуры, и если это любая из функциональных клавиш от 1 до 6, то открывается соответствующая страница оверлея Steam.
+   
+   
+   
+  
+    
+      
+        Назад: Накладка напар
+        Далее: steam_activate_overlay_browser
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

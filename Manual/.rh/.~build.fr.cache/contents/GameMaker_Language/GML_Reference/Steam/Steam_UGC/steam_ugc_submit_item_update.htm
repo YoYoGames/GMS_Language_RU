@@ -1,0 +1,56 @@
+
+  
+  steam_ugc_submit_item_update
+  Эта функция отправляет UGC-элемент, индексируемый заданным хэндлом, на серверы Steam Workshop, добавляя заметки об изменениях, которые будут использоваться для данного элемента. Заметки об изменениях должны быть строкой, а хэндл обновления - значением, возвращенным при вызове функции
+    функцию steam_ugc_start_item_update(). При использовании этой функции она возвращает асинхронное значение ID, которое затем может быть разобрано при срабатывании асинхронного события Steam для сообщения о создании предмета. Событие будет содержать следующие значения ключа/карты в async_load DS map:
+  
+    " id" - Идентификатор async, возвращаемый вызывающей функцией
+    "result" - Результат операции (вещественное значение). Это будет либо GML-константа ugc_result_success, либо какое-то другое вещественное число. Поэтому вы должны проверить наличие этой константы, чтобы убедиться, что вызов был успешным, и если
+      в противном случае что-то сработало неправильно. Остальные возможные возвращаемые значения отображаются как результат значения Steam "EResult", и вы должны увидеть steamclientpublic .h в заголовках SDK для всех 89 возможных значений.
+    " event_type" - Этот ключ будет содержать значение " ugc_update_item".
+    " legal_agreement_required" - Будет true или false (см. документацию Steam для более подробной информации).
+  
+   
+  Синтаксис:
+  steam_ugc_submit_item_update(ugc_update_handle, change_note);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        ugc_update_handle
+        Уникальный идентификатор для обновляемого пользовательского центра.
+      
+      
+        change_note
+        Примечания к изменениям (строка), которые будут использоваться для данного элемента.
+      
+    
+  
+   
+  Возвращается:
+  Асинхронный идентификатор
+   
+  Пример:
+  var app_id = steam_get_app_id(); var updateHandle = steam_ugc_start_item_update(app_id, global.Publish_ID); steam_ugc_set_item_title(updateHandle, "My workshop item(3)!"); steam_ugc_set_item_description( updateHandle, "testing
+    мастерской..."); steam_ugc_set_item_visibility(updateHandle, ugc_visibility_public); var tagArray; tagArray[0] = "Test"; tagArray[1] = "New"; steam_ugc_set_item_tags( updateHandle, tagArray); steam_ugc_set_item_preview (updateHandle,
+    "promo.jpg"); steam_ugc_set_item_content(updateHandle, "WorkshopContent1"); requestId = steam_ugc_submit_item_update(updateHandle, "Version 1.2");
+  Приведенный выше код получает ID игры, затем использует его вместе с ранее сохраненным ID опубликованного файла для создания хэндла обновления для элемента. Этот хэндл затем используется для обновления различных частей информации перед отправкой обновления на серверы Workshop
+    сервера.
+   
+   
+   
+  
+    
+      
+        Назад: UGC
+        Далее: steam_ugc_get_item_update_progress
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

@@ -1,0 +1,44 @@
+
+  
+  audio_emitter_get_z
+  Эта функция возвращает текущее положение z заданного звукового излучателя.
+   
+  Синтаксис:
+  audio_emitter_get_z(emitter);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        эмиттер
+        Индекс эмиттера, который необходимо использовать.
+      
+    
+  
+   
+  Возвращается:
+  Реально
+   
+  Пример:
+  if audio_emitter_get_z(emitter_player) != 0 {
+     var ex = audio_emitter_get_x(emitter_player); var ey = audio_emitter_get_y(emitter_player); audio_emitter_position(emitter_player, ex, ey, 0); }
+  
+  Приведенный выше код проверяет текущую позицию z данного эмиттера и, если она не равна 0, то она устанавливается в 0.
+   
+   
+   
+  
+    
+      
+        Назад: Аудиоизлучатели
+        Далее: audio_emitter_get_vx
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

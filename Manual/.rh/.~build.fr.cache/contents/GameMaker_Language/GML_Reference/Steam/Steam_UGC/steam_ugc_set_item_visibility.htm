@@ -1,0 +1,71 @@
+
+  
+  steam_ugc_set_item_visibility
+  Эта функция устанавливает видимость заданного элемента, заданную с помощью одной из следующих констант:
+   
+  
+    
+      
+        Постоянная
+        Описание
+      
+      
+        ugc_visibility_public
+        Установите элемент на всеобщее обозрение
+      
+      
+        ugc_visibility_friends_only
+        Установить, чтобы элемент был виден только людям из списка друзей пользователя
+      
+      
+        ugc_visibility_private
+        Установите элемент в качестве частного
+      
+    
+  
+   
+  Ручка обновления - это значение, возвращенное при вызове функции steam_ugc_start_item_update()и функция вернет true, если доступ к API был успешным, и false, если возникла проблема.
+   
+  Синтаксис:
+  steam_ugc_set_item_visibility(ugc_update_handle, visibility);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        ugc_update_handle
+        Уникальный идентификатор для обновляемого пользовательского центра.
+      
+      
+        видимость
+        Видимость (константа, указанная ниже), которая будет использоваться для элемента.
+      
+    
+  
+   
+  Возвращается:
+  Булево
+   
+  Пример:
+  var app_id = steam_get_app_id(); var updateHandle = steam_ugc_start_item_update(app_id, global.Publish_ID); steam_ugc_set_item_title(updateHandle, "My workshop item(3)!"); steam_ugc_set_item_description( updateHandle, "testing
+    мастерской..."); steam_ugc_set_item_visibility(updateHandle, ugc_visibility_public); var tagArray; tagArray[0] = "Test"; tagArray[1] = "New"; steam_ugc_set_item_tags( updateHandle, tagArray); steam_ugc_set_item_preview (updateHandle,
+    "promo.jpg"); steam_ugc_set_item_content(updateHandle, "WorkshopContent1"); requestId = steam_ugc_submit_item_update(updateHandle, "Version 1.2");
+  Приведенный выше код получает ID игры, затем использует его вместе с ранее сохраненным ID опубликованного файла для создания хэндла обновления для элемента. Этот хэндл затем используется для обновления различных частей информации перед отправкой обновления на серверы Workshop
+    сервера.
+   
+   
+   
+  
+    
+      
+        Назад: UGC
+        Далее: steam_ugc_set_item_tags
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

@@ -1,0 +1,49 @@
+
+  
+  steam_ugc_start_item_update
+  Эта функция должна быть вызвана перед добавлением или обновлением информации о пользовательском контенте. Вам необходимо предоставить уникальный идентификатор приложения для вашей игры в Steam, а также уникальный идентификатор опубликованного файла, который был возвращен для элемента, когда вы создали его с помощью функции
+    steam_ugc_create_item(). Функция вернет уникальный хэндл обновления для элемента, который затем можно использовать в функциях элемента UGC для обновления (или добавления) информации для загрузки.
+   
+  Синтаксис:
+  steam_ugc_start_item_update(consumer_app_id, published_file_id);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        идентификатор_приложения_потребителя
+        Уникальный идентификатор приложения для вашей игры в Steam.
+      
+      
+        опубликованный_файл_ид
+        Уникальное значение ID опубликованного файла для данного элемента.
+      
+    
+  
+   
+  Возвращается:
+  Ручка
+   
+  Пример:
+  var app_id = steam_get_app_id(); var updateHandle = steam_ugc_start_item_update(app_id, global.Publish_ID); steam_ugc_set_item_title(updateHandle, "My workshop item(3)!"); steam_ugc_set_item_description( updateHandle, "testing
+    мастерской..."); steam_ugc_set_item_visibility(updateHandle, ugc_visibility_public); var tagArray; tagArray[0] = "Test"; tagArray[1] = "New"; steam_ugc_set_item_tags( updateHandle, tagArray); steam_ugc_set_item_preview (updateHandle,
+    "promo.jpg"); steam_ugc_set_item_content(updateHandle, "WorkshopContent1"); requestId = steam_ugc_submit_item_update(updateHandle, "Version 1.2");
+  Приведенный выше код получает ID игры, затем использует его вместе с ранее сохраненным ID опубликованного файла для создания хэндла обновления для элемента. Этот хэндл затем используется для обновления различных элементов информации перед отправкой обновления на серверы Workshop
+    сервера.
+   
+   
+   
+  
+    
+      
+        Назад: UGC
+        Далее: steam_ugc_set_item_title
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

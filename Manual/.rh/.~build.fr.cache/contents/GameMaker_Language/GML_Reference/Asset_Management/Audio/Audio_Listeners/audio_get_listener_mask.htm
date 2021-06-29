@@ -1,0 +1,37 @@
+
+  
+  audio_get_listener_mask
+  Эта функция возвращает данные битовой маски, определяющей текущую маску по умолчанию (глобальную) для аудиослушателей.
+   
+  Синтаксис:
+  audio_get_listener_mask();
+   
+  Возвращается:
+  Реально
+   
+  Пример:
+  var g_mask = audio_get_listener_mask(); if g_mask != global.Audio_Mask {
+     var num = audio_get_listener_count(); global.Audio_Mask = 0; for(var i = 0; i < num; ++i;) {
+     var info = audio_get_listener_info(i); var m = audio_listener_get_data(info[? "mask"]); global.Audio_Mask = global.Audio_Mask | m; ds_map_destroy(info);
+     }
+     audio_set_listener_mask(mask);
+     }
+  
+  Приведенный выше код получает данные маски текущего слушателя и сравнивает их с данными, хранящимися в глобальной переменной. Если они не совпадают, код проверяет количество доступных слушателей, затем перебирает их и получает биты их масок, которые затем
+    объединяются для создания единой маски, которая применяется к аудиосистеме для определения глобальных слушателей.
+   
+   
+   
+  
+    
+      
+        Назад: Слушатели аудио
+        Далее: audio_set_listener_mask
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

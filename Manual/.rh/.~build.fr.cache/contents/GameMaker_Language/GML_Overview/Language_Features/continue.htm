@@ -1,0 +1,44 @@
+
+  
+  продолжить
+  Оператор continue имеет следующий основной синтаксис:
+  продолжать;
+  Если используется внутри оператора, который формирует цикл (для, повторить, while или do / until), он немедленно завершит текущую
+   итерацию и перейдет в начало цикла, начиная новую итерацию и опуская любой код, который идет после continue в цикле. Он также может
+    быть использован внутри с в операторе continue, где он заставит код перейти к следующему экземпляру и выполнить его снова. Обратите внимание, что если continue используется вне любого из этих контекстов, это приведет к ошибке.
+  Ниже приведен пример использования в цикле for:
+  var _val = 0; for (var i = 0; i < 10; i += 1) {
+     if (val_array[i] <= 0) { continue; }  _val += val_array[i]; }
+     draw_text(32, 32, "Всего положительных значений = " + string(_val));
+  Ниже приведен пример использования в цикле while:
+  var file = file_text_open_read("Game_Data.txt"); var _num = 0; while (!file_text_eof(file)) { var _s = file_text_readln(file); if (_s == "") { continue; }  str[num++] = _s; }  file_text_close(file);
+  
+  Ниже приведен пример использования в цикле do / until:
+  сделать {
+     var _x = random(room_width); var _y = random(room_height); if (instance_position(_x, y, obj_Enemy) {
+     continue;
+     }
+     instance_create_layer(_x, _y, "Instances", obj_Enemy); }
+     until (instance_count(obj_Enemy) >= 10);
+  Ниже приведен пример использования в цикле repeat:
+  repeat(10) {  var _x = random(room_width); var _y = random(room_height); if (instance_position(_x, y, obj_Enemy) {
+     continue;
+     }
+     instance_create_layer(_x, _y, "Instances", obj_Enemy); }
+  Наконец, пример использования в заявлении with:
+  with (obj_Enemy_Parent) { if (object_index == obj_Enemy_InDestructible) { continue; }  hp -= 100; if (hp <= 0) { instance_destroy(); }  }
+   
+   
+   
+  
+    
+      
+        Назад: Особенности языка
+        Далее: выход
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

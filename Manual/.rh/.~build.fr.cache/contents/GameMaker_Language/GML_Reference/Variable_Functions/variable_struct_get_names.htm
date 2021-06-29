@@ -1,0 +1,45 @@
+
+  
+  variable_struct_get_names
+  С помощью этой функции вы можете получить массив, заполненный именами переменных из структуры. Вы передаете ссылку на struct для проверки, и каждая запись в массиве будет строкой имен переменных, которые содержит struct
+    содержит.
+   
+  Синтаксис:
+  variable_struct_get_names(struct);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        struct
+        Ссылка на структуру для проверки.
+      
+    
+  
+   
+  Возвращается:
+  Массив (каждая запись - строка)
+   
+  Пример:
+  var str = ""; var array = variable_struct_get_names(mystruct); show_debug_message("Переменные для struct: " + string(array)); for (var i = 0; i < array_length(array); i++;)  {
+     str = array[i] + ":" + string(variable_struct_get(mystruct, array[i])); show_debug_message(str);
+     }
+  
+  Приведенный выше код получит массив имен переменных для заданной структуры и затем отобразит их вместе с их значениями в отладочном выводе.
+   
+   
+   
+  
+    
+      
+        Назад: Переменные функции
+        Далее: variable_struct_names_count
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

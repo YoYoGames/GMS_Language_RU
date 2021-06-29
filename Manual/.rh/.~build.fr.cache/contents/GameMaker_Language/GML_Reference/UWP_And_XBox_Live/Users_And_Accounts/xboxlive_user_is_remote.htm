@@ -1,0 +1,47 @@
+
+  
+  xboxlive_user_is_remote
+  Эта функция проверяет заданный идентификатор пользователя и возвращает true, если игрок является удаленным игроком, или false в противном случае.
+   
+  Синтаксис:
+  xboxlive_user_is_remote(user_id);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        идентификатор пользователя
+        Указатель ID пользователя для проверки.
+      
+    
+  
+   
+  Возвращается:
+  Булево
+   
+  Пример:
+  global.PlayerNum = 0; global.Player_ID = array_create(); for(var i = 0; i < xboxlive_get_user_count(); ++i;)  {
+     var _uid = xboxlive_get_user(i); if xboxlive_user_is_active(_uid) {
+     if !xboxlive_user_is_remote(_uid) {
+     global.Remote_Player_ID[global.PlayerNum++] = _uid; }
+     }
+     }
+  
+  Приведенный выше код перебирает все учетные записи пользователей, а затем проверяет, активны ли они. Если они активны, их идентификатор пользователя добавляется в глобальный массив, только если они не являются удаленными пользователями.
+   
+   
+   
+  
+    
+      
+        Назад: Пользователи и учетные записи
+        Далее: xboxlive_user_id_for_user
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

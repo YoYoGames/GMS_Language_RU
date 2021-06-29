@@ -1,0 +1,34 @@
+
+  
+  layer_get_target_room
+  Эта функция используется для сброса цели слоя на текущую комнату. См. функцию layer_set_target_room() для получения дополнительной информации.
+   
+  Синтаксис:
+  layer_reset_target_room()
+   
+  Возвращается:
+  Н/Д
+   
+  Пример:
+  layer_set_target_room(rm_Game); var l = layer_get_id("SpriteAssets"); repeat(50)
+     {
+     layer_sprite_create(l, random(room_get_width(rm_Game)), random(room_get_height(rm_Game)), spr_Trees); }
+     layer_reset_target_room();
+  
+  Приведенный выше код устанавливает целевую комнату на комнату "rm_Game", а затем получает идентификатор слоя под названием "SpriteAssets" в этой комнате. Этот идентификатор слоя затем используется для добавления 50 случайных спрайтовых активов в слой, прежде чем цель слоя
+    сбрасывается на текущую комнату.
+   
+   
+   
+  
+    
+      
+        Назад: Общие функции слоя
+        Далее: layer_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

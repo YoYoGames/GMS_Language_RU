@@ -1,0 +1,48 @@
+
+  
+  steam_clear_achievement
+  С помощью этой функции вы можете указать Steam API очистить (сбросить) определенное достижение. Достижение должно быть предварительно определено на странице учетных записей панели управления Steamworksдля вашей игры, а строка, передаваемая в функцию, должна
+    совпадать со строкой, используемой в качестве имени API на панели управления.
+   
+  Синтаксис:
+  steam_clear_achievement(ach_name);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        ач_имя
+        Имя достижения, которое нужно очистить (строка).
+      
+    
+  
+   
+  Возвращается:
+  Н/Д
+   
+  Пример:
+  if mouse_check_button_pressed(mb_left) {
+     steam_clear_achievement("Ach_Game_Win");
+     steam_clear_achievement("Ach_Died_10_Times");
+     steam_clear_achievement("Ach_Killed_100_Enemies");
+     steam_clear_achievement("Ach_Beat_Boss_Level_1");
+     }
+  
+  Приведенный выше код сбросит достижения игры, когда пользователь нажмет левую кнопку мыши.
+   
+   
+   
+  
+    
+      
+        Назад: Достижения и статистика
+        Далее: steam_set_stat_int
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

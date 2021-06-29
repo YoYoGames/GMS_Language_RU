@@ -1,0 +1,50 @@
+
+  
+  gpu_set_tex_max_aniso_ext
+  С помощью этой функции можно задать максимальный уровень анизотропии при использовании режима фильтра tf_anisotropic (см. gpu_get_tex_mip_filter() дополнительную информацию) в шейдерном сэмплере. Вы передаете
+    значение индекса для шейдерного сэмплера (возвращаемое функцией shader_get_sampler_index(), а затем значение в диапазоне от 1 до 16 для установки уровня.
+   
+  Синтаксис:
+  gpu_set_tex_max_aniso_ext(sampler_index, maxaniso);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        sampler_index
+        Индекс шейдерного сэмплера для получения
+      
+      
+        maxaniso
+        Максимальный уровень анизотропии, который будет использоваться (по умолчанию: 16).
+      
+    
+  
+   
+  Возвращается:
+  Н/Д
+   
+  Пример:
+  var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background"); var _spriteTex = sprite_get_texture(sprite_index, 0); shader_set (shd_Glass);
+     if gpu_get_tex_max_aniso_ext(_sampleIndex) != 8 {
+     gpu_set_tex_max_aniso_ext(_sampleIndex, 8); }
+     texture_set_stage(_sampleIndex , _spriteTex); shader_reset();
+  
+  Приведенный выше код устанавливает максимальный уровень анизотропии на 8 для данного шейдерного текстурного сэмплера, если он еще не установлен на 8.
+   
+   
+   
+  
+    
+      
+        Назад: Mipmapping
+        Далее: gpu_set_tex_mip_enable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

@@ -1,0 +1,44 @@
+
+  
+  physics_particle_get_group_flags
+  С помощью этой функции вы можете получить флаги группы для группы частиц. Значение группы - это значение, которое было возвращено при создании группы частиц с помощью функции physics_particle_group_end(),
+    и функция вернет значение, которое является комбинированным значением текущих установленных флагов.
+   
+  Синтаксис:
+  physics_particle_get_group_flags(group)
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        группа
+        Группа частиц, которую нужно получить.
+      
+    
+  
+   
+  Возвращается:
+  Реально
+   
+  Пример:
+  var flags = physics_particle_get_group_flags(group, flags); if flags != phy_particle_group_flag_solid | phy_particle_group_flag_rigid {
+     flags = phy_particle_group_flag_solid | phy_particle_group_flag_rigid; physics_particle_set_group_flags(group, flags); }
+  
+  Приведенный выше код создаст переменную для хранения значения flags, а затем использует ее для проверки флагов группы, проиндексированной в переменной "group". Если они не совпадают, то группа устанавливается с этими флагами.
+   
+   
+   
+  
+    
+      
+        Назад: Частицы мягкого тела
+        Далее: physics_particle_group_get_inertia
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

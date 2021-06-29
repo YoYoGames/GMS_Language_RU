@@ -1,0 +1,47 @@
+
+  
+  steam_ugc_query_set_allow_cached_response
+  Эта функция может использоваться для дополнительной фильтрации любого заданного пользовательского запроса, в частности, для запроса проверки локального кэша, а не онлайнового. Ручка запроса - это значение, возвращенное при создании запроса (например, с помощью, steam_ugc_create_query_user())
+    а второй аргумент - это либо true, либо false. Функция вернет true, если фильтр запроса был установлен правильно, и false в противном случае.
+   
+  Синтаксис:
+  steam_ugc_query_set_allow_cached_response(ugc_query_handle , cache);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        ugc_query_handle
+        Ручка запроса, которую следует использовать.
+      
+      
+        кэш
+        Проверять ли запросу локальный кэш или нет.
+      
+    
+  
+   
+  Возвращается:
+  Булево
+   
+  Пример:
+  var query_handle = steam_ugc_create_query_all(ugc_query_RankedByTrend, ugc_match_Items, 1); steam_ugc_query_add_required_tag(query_handle, "RPG"); steam_ugc_query_set_return_long_description(query_handle, true); steam_ugc_query_set_allow_cached_response(query_handle,
+    true); query_ID = steam_ugc_send_query(query_handle);
+  Приведенный выше код создает запрос запроса и сохраняет его хэндл в локальной переменной для дальнейшего использования в остальных функциях, которые определяют запрос перед отправкой запроса.
+   
+   
+   
+  
+    
+      
+        Назад: UGC
+        Далее: steam_ugc_send_query
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

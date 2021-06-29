@@ -1,0 +1,45 @@
+
+  
+  file_text_eoln
+  С помощью этой функции вы можете заставить GameMaker Studio 2 проверить текущий открытый файл на предмет завершения считываемой строки. Функция возвращает true, если конец строки достигнут, и false в противном случае.
+   
+  Синтаксис:
+  file_text_eoln(fileid);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        fileid
+        Идентификатор файла для проверки.
+      
+    
+  
+   
+  Возвращается:
+  Булево
+   
+  Пример:
+  var file = file_text_open_read(working_directory + "Game_Data.txt"); var num = 0; while (!file_text_eoln(file)) {
+     score_array[num] = file_text_read_real(file); num++;
+     }
+     file_text_close(file);
+  
+  Приведенный выше код открывает файл для чтения, затем считывает значения из одной строки в массив.
+   
+   
+   
+  
+    
+      
+        Назад: Текстовые файлы
+        Далее: file_text_eof
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

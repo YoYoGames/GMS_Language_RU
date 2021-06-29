@@ -1,0 +1,86 @@
+
+  
+  os_type
+  Эта переменная, доступная только для чтения, содержит одну из различных констант GameMaker Studio 2, позволяющих определить, для какой операционной системы была создана игра. Обратите внимание, что это не обязательно то же самое, что и ОС устройства, на котором запущена игра.
+    Например, ваша игра может работать на Amazon Fire OS, но быть создана для платформы Android (в этом случае os_type будет os_android).
+  Могут быть возвращены следующие константы:
+   
+  
+    
+      
+        Постоянная
+        Описание
+      
+      
+        os_windows
+        ОСWindows 
+      
+      
+        os_uwp
+        Универсальная платформаWindows 10 
+      
+      
+        os_linux
+        Linux
+      
+      
+        os_macosx
+        macOS X
+      
+      
+        os_ios
+        iOS (iPhone, iPad, iPod Touch)
+      
+      
+        os_tvos
+        Apple tvOS
+      
+      
+        os_android
+        Android
+      
+      
+        os_ps4
+        Sony PlayStation 4
+      
+      
+        os_xboxone
+        Microsoft XBox One
+      
+      
+        os_switch
+        Nintendo Switch
+      
+      
+        os_unknown
+        неизвестная ОС
+      
+    
+  
+   
+  Синтаксис:
+  os_type;
+   
+  Возвращается:
+  Постоянная
+   
+  Пример:
+  switch (os_type) {
+     case os_windows: global.Config = 0; break; case os_android: global.Config = 1; break; case os_linux: global.Config = 2; break; case os_macosx: global.Config = 3; break; case os_ios: global.Config = 4; break; case os_winphone: global.Config = 5; break; }
+  
+  Приведенный выше код проверяет ОС, на которой запущена игра, и соответствующим образом устанавливает глобальную переменную.
+   
+   
+   
+  
+    
+      
+        Назад: ОС и компилятор
+        Далее: os_version
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

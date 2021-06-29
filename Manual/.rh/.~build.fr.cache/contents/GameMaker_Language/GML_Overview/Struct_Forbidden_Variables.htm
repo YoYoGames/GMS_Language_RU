@@ -1,0 +1,148 @@
+
+  
+  Структура Запрещенные переменные
+  При создании struct можно использовать определенные встроенные переменные в качестве имен переменных-членов, например:
+  mystruct = { object_index : obj_Player, speed : 3, image_blend : c_red }
+  
+  Однако таким образом можно использовать только локальные встроенные переменные и встроенные переменные в области видимости экземпляра, которым можно присваивать значения, как обычным переменным-членам struct. Использование встроенных переменных глобальной области видимости запрещено и приведет к проблемам в вашей игре.
+    Ниже приведен полный список этих переменных, чтобы вы знали, каких из них следует избегать.
+  Следующие встроенные глобальные переменные доступны для использования в ваших проектах, но не могут быть использованы в качестве переменных-членов struct:
+  
+    аргумент[n]
+    аргумент0 ... аргумент15
+    счётчик аргументов
+    async_load
+    режим отладки
+    указатель_недействительный
+    указатель_null
+    неопределенный
+    NaN
+    бесконечность
+    правда
+    ложный
+    pi
+    номер
+    первая комната
+    номер_последний
+    ширина_комнаты
+    высота помещения
+    комната_постоянная
+    счет
+    жизни
+    здоровье
+    игровой идентификатор
+    имя_игрового_дисплея
+    имя_игрового_проекта
+    game_save_id
+    рабочий_каталог
+    каталог temp_directory
+    директория программы
+    счётчик экземпляров
+    идентификатор экземпляра
+    view_enabled
+    view_current
+    view_visible
+    view_xport
+    view_yport
+    view_wport
+    view_hport
+    view_surface_id
+    просмотр_камеры
+    мышь_x
+    мышь_y
+    кнопка_мыши
+    кнопка_мыши
+    клавиша_клавиатуры
+    клавиатура_последней клавиши
+    keyboard_lastchar
+    строка_клавиатуры
+    курсор_спрайт
+    fps
+    fps_real
+    текущее_время
+    текущий_год
+    текущий_месяц
+    текущий_день
+    текущий_недельный день
+    текущий_час
+    текущая_минута
+    текущая_секунда
+    тип события
+    номер_события
+    объект_события
+    действие_события
+    поверхность_приложения
+    размер_текстуры_страницы
+    os_type
+    os_device
+    os_version
+    os_browser
+    ширина браузера
+    высота_браузера
+  
+   
+  Помимо этих глобальных переменных, существует также ряд устаревших встроенных глобальных переменных, которые недоступны из-за возможности их включения в импортируемые старые продукты(GameMaker Studio 2 должна зарезервировать
+    эти переменные, чтобы она могла распознать их при импорте и отметить, что они должны быть обновлены/удалены):
+  
+    gamemaker_registered
+    gamemaker_progamemaker_version
+    error_occurred
+    error_last
+    secure_mode
+    show_score
+    show_lives
+    show_health
+    caption_score
+    caption_lives
+    caption_health
+    game_guid
+    argument_relative
+    room_caption
+    room_speed
+    view_xview
+    view_yview
+    view_wview
+    view_hview
+    view_angle
+    view_hborder
+    view_vborder
+    view_hspeed
+    view_vspeed
+    view_object
+    transition_kind
+    transition_steps
+    background_color
+    background_showcolor
+    background_colour
+    background_showcolour
+    background_visible
+    background_foreground
+    background_index
+    background_x
+    background_y
+    background_width
+    background_height
+    background_htiled
+    background_vtiled
+    background_xscale
+    background_yscale
+    background_hspeed
+    background_vspeed
+    background_blend
+    background_alpha
+  
+   
+   
+   
+  
+    
+      
+        Назад: Структуры
+         
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

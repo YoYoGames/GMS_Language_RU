@@ -1,0 +1,48 @@
+
+  
+  os_get_region
+  Эта функция возвращает строку с двух- или трехбуквенным региональным кодом для ОС, на которой запущена игра, как установлено стандартом ISO3166-1. Если информация недоступна,
+    будет возвращена просто пустая строка "".
+  ПРИМЕЧАНИЕ: Возвращается не региональный код местоположения, а код регионального языка ОС.
+   
+  Синтаксис:
+  os_get_region()
+   
+  Возвращается:
+  Строка
+   
+  Пример:
+  switch (os_get_language()) {
+     case "zh": var region = os_get_region(); if (region == "HK" || region == "MO" || region == "TW") {
+     ini_open("chinese_traditional.ini");
+     }
+     else
+     {
+     ini_open("chinese_simplified.ini");
+     }
+     break;
+     case "fr": ini_open("french.ini");
+     break;
+     case "it": ini_open("italian.ini");
+     break;
+     default:
+     ini_open("english.ini");
+     break;
+     }
+  
+  Приведенный выше код проверяет язык ОС и если он китайский, то проверяет регион ОС, открывая другой *.ini файл в зависимости от возвращенных значений.
+   
+   
+   
+  
+    
+      
+        Назад: ОС и компилятор
+        Далее: os_get_info
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

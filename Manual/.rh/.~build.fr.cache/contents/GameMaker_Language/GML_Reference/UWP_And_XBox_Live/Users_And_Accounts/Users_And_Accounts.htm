@@ -1,0 +1,55 @@
+
+  
+  Пользователи и учетные записи
+  Этот раздел предназначен для пользователей платформ UWP или Xbox One и описывает функции XBox Live, доступные для работы с пользователями и учетными записями пользователей.
+  Xbox One позволяет нескольким пользователям одновременно входить в консоль. Каждый пользователь имеет определенный контроллер, связанный с ним, и все данные сохраненных игр также зависят от конкретного пользователя. Чтобы максимально использовать возможности этой системы, GameMaker Studio 2 вводит ряд
+    функций, связанных с ассоциацией между контроллерами и пользователями только для XBox One, позволяющих запрашивать информацию о пользователе, а также управлять обработкой сохранений для каждого пользователя. Вы можете найти дополнительную информацию о разработчиках
+    этой системе в официальном документе на сайте разработчиков Microsoft.
+  ПРИМЕЧАНИЕ: Обратите внимание, что ID пользователя уникален для каждого человека и сохраняется на разных консолях, поэтому если один и тот же пользователь входит в систему на двух разных устройствах, его ID будет одинаковым.
+  Следующие функции можно использовать с учетными записями XBox Live как на XBox One, так и при обычном экспорте UWP (обратите внимание, что это минимальная функциональность, разрешенная для UWP в рамках программы Creators Program, как указано в этой статье службы технической поддержки):
+   
+  
+    xboxlive_user_is_signed_in
+    xboxlive_user_is_signing_in
+    xboxlive_gamertag_for_user
+    xboxlive_show_account_picker
+  
+   
+  Следующие функции действительны только при нацеливании на XBox One с помощью UWP с действующей учетной записью ID@XBox:
+   
+  
+    xboxlive_get_user_count
+    xboxlive_get_user
+    xboxlive_get_activating_user
+    xboxlive_user_is_guest
+    xboxlive_user_is_active
+    xboxlive_user_is_remote
+    xboxlive_user_id_for_user
+    xboxlive_спонсор_для_пользователя
+    xboxlive_set_rich_presence
+    xboxlive_gamedisplayname_for_user
+    xboxlive_user_for_pad
+    xboxlive_pad_for_user
+    xboxlive_pad_count_for_user
+    xboxlive_agegroup_for_user
+    xboxlive_gamerscore_for_user
+    xboxlive_show_profile_card_for_user
+    xboxlive_репутация_для_пользователя
+    xboxlive_sprite_add_from_gamerpicture
+    xboxlive_generate_player_session_id
+  
+   
+   
+   
+  
+    
+      
+        Назад: UWP и XBox Live
+        Следующее: Сохранение данных
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

@@ -1,0 +1,50 @@
+
+  
+  animcurve_get_channel_index
+  Эта функция возвращает значение индекса для любого заданного канала кривой анимации. Вы передаете ID кривой анимации или struct, где ID кривой - это имя кривой анимации, как она была определена в Asset Browser, или указатель struct, возвращаемый функцией.
+    функцией animcurve_create(). Затем задается имя канала в виде строки, и функция возвращает значение индекса, связанное с этим каналом. Обратите внимание, что если кривая или канал
+    не существует, то будет выдана ошибка.
+   
+  Синтаксис:
+  animcurve_get_channel_index(curve_struct_or_id, channel_name);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        curve_struct_or_id
+        Идентификатор или указатель структуры анимационной кривой, на которую нужно нацелиться
+      
+      
+        имя канала
+        Имя канала (строка).
+      
+    
+  
+   
+  Возвращается:
+  Структура
+   
+  Пример:
+  var _channelindex = animcurve_get_channel_index(ac_ButtonTween, "x_pos") var _channeldata = animcurve_get_channel(ac_ButtonTween, _channelindex); var _points = _channeldata.points; for (var i = 0; i < array_length(_points);
+    ++i;)  {
+     _points[i].value += 1; }
+  
+  Приведенный выше код извлекает структуру канала для канала с именем "x_pos" в активе кривой "ac_ButtonTween", затем перебирает точки на кривой канала и добавляет единицу к их значению.
+   
+   
+   
+  
+    
+      
+        Назад: Анимационные кривые
+        Далее: animcurve_channel_evaluate
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

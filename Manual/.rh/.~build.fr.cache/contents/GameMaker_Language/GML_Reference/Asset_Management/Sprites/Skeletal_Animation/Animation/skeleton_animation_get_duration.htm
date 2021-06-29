@@ -1,0 +1,46 @@
+
+  
+  skeleton_animation_get_duration
+  Эта функция возвращает время, необходимое для выполнения заданного набора анимации перед возвратом к началу. Возвращаемое значение выражается в секундах.
+   
+  Синтаксис:
+  skeleton_animation_get_duration(animname);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        animname
+        Имя (строка) используемого набора анимации.
+      
+    
+  
+   
+  Возвращается:
+  Реально
+   
+  Пример1:
+  time += delta_time / 1000000; var duration = skeleton_animation_get_duration(skeleton_animation_get()); var frame = floor((image_number * (mTime / duration)) + 0.5) % image_number; image_index = frame; draw_self();
+  
+  Приведенный выше код установит image_index в правильное значение для текущего назначенного спрайта скелетной анимации.
+  Пример2:
+  time += delta_time / 1000000; var d = skeleton_animation_get_duration("walk"); if time > d time -= d; draw_skeleton_time(sprite_index, "walk", "skin1", time, x, y, image_xscale, image_yscale, image_angle,
+    c_white);
+  Приведенный выше код нарисует заданный скелетный анимационный спрайт, используя дельта-время для установки рисуемого кадра.
+   
+   
+   
+  
+    
+      
+        Назад: Анимация
+        Далее: skeleton_animation_mix
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

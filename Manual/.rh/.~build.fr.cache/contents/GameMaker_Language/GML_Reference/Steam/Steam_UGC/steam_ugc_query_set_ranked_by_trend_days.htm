@@ -1,0 +1,48 @@
+
+  
+  steam_ugc_query_set_ranked_by_trend_days
+  Эта функция может использоваться для дальнейшей фильтрации любого UGC-запроса, сделанного с помощью константы ugc_query_RankedByTrend, в частности, для поиска за несколько дней. Ручка запроса - это значение, возвращенное при создании запроса (например, с помощью,
+    steam_ugc_create_query_user()), а второй аргумент - количество дней, в течение которых должен выполняться запрос. Функция вернет true, если фильтр запроса был установлен правильно,
+    или false в противном случае.
+   
+  Синтаксис:
+  steam_ugc_query_set_ranked_by_trend_days(ugc_query_handle , days);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        ugc_query_handle
+        Ручка запроса, которую следует использовать.
+      
+      
+        дней
+        Количество дней для запроса.
+      
+    
+  
+   
+  Возвращается:
+  Булево
+   
+  Пример:
+  var query_handle = steam_ugc_create_query_all(ugc_query_RankedByTrend, ugc_match_Items, 1); steam_ugc_query_set_ranked_by_trend_days(query_handle, 5); steam_ugc_query_set_return_long_description(query_handle, true); steam_ugc_query_set_allow_cached_response(query_handle,
+    true); query_ID = steam_ugc_send_query(query_handle);
+  Приведенный выше код создает запрос запроса и сохраняет его хэндл в локальной переменной для дальнейшего использования в остальных функциях, которые определяют запрос перед отправкой запроса.
+   
+   
+   
+  
+    
+      
+        Назад: UGC
+        Далее: steam_ugc_query_add_required_tag
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

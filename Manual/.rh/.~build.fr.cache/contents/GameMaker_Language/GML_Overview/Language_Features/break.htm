@@ -1,0 +1,69 @@
+
+  
+  перерыв
+  Оператор break используется для преждевременного завершения a для, повторить, while или делать / пока    цикла, или чтобы указать переключатель или для того, чтобы сообщить оператору, что он должен завершиться в этой точке, или для преждевременного завершения с вызов. Пожалуйста, обратитесь к отдельным страницам, посвященным этим различным функциям, чтобы получить более
+    более подробное объяснение того, как она может быть использована в каждом конкретном случае. Обратите внимание, что если break используется вне этих контекстов, это приведет к ошибке.
+  Ниже приведено несколько основных примеров использования break, синтаксис которого прост:
+  перерыв;
+  прерваться в цикле for:
+  for (var i = 0; i < 10; i += 1) {
+     if (array[i] == 234) {
+     break;
+     }
+     }
+     num = i;
+  прерваться в повторном цикле:
+  var i = 0; var temp = 0; repeat (10) {
+     temp += array[i]; if (temp > max_total) {
+     break;
+     }
+     else
+     {
+     i += 1; }
+     }
+  
+  прерваться в цикле while:
+  var i = 0; while (!place_free(x, y)) {
+     x = random(room_width); y = random(room_height); if (i > 50) {
+     break;
+     }
+     else
+     {
+     i+=1;
+     }
+     }
+  
+  break в цикле do / until:
+  var _id = noone; do
+     { _id = list[| 0]; if instance_exists(_id) { _break; }  ds_list_delete(list, 0); }  until (ds_list_empty(list)); target = _id;
+  сломать при использовании с:
+  var count = 0; with (obj_Enemy) {
+     count++;
+     if (count > 10) {
+     break;
+     }
+     hp = 100; }
+  
+  break в switch:
+  switch (keyboard_key) {
+     case vk_left: case ord("A"): x -= 4; break;
+     case vk_right: case ord("D"): x += 4; break;
+     case vk_up: case ord("W"): y -= 4; break;
+     case vk_down: case ord("S"): y += 4; break;
+     }
+  
+   
+   
+   
+  
+    
+      
+        Назад: Особенности языка
+        Далее: продолжать
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

@@ -1,0 +1,33 @@
+
+  
+  steam_is_overlay_enabled
+  При использовании API Steam эта функция может быть вызвана для проверки того, что в API клиента Steam включена функция наложения.
+   
+  Синтаксис:
+  steam_is_overlay_enabled();
+   
+  Возвращается:
+  Булево
+   
+  Пример:
+  global.steam_api= false; if steam_initialised() {
+     if steam_stats_ready() && steam_is_overlay_enabled() {
+     global.steamapi= true; }
+     }
+  
+  Приведенный выше код установит глобальную переменную в true, если API клиента Steam правильно инициализирован, вместе с функциями статистики и наложения Steam, или установит переменную в false в противном случае.
+   
+   
+   
+  
+    
+      
+        Назад: Накладка напар
+        Далее: steam_is_overlay_activated
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

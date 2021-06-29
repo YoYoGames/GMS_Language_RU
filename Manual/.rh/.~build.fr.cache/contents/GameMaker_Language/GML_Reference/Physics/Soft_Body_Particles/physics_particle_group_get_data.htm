@@ -1,0 +1,92 @@
+
+  
+  physics_particle_group_get_data
+  Эта функция возвращает различную информацию о группе частиц в физической симуляции, используя заданные флаги проверки. Индекс группы (ее ID) - это тот, который был возвращен функцией physics_particle_group_end(),
+    а используемый буфер должен быть создан ранее с помощью функции buffer_create(). Он должен быть типа "grow", с размером, приблизительно равным размеру ожидаемого возврата
+    данных. Сами флаги устанавливаются с помощью констант, приведенных ниже, и для получения нужной информации можно использовать побитовую комбина цию  или "|" для создания одного значения флага.
+   
+  
+    
+      
+        Постоянная
+        Описание
+        Тип данных
+      
+      
+        phy_particle_data_flag_typeflags
+        Значение флагов для частицы.
+        буфер_u32
+      
+      
+        phy_particle_data_flag_position
+        Позиция x и y частицы.
+        2 x буфер_f32
+      
+      
+        phy_particle_data_flag_velocity
+        Горизонтальная и вертикальная скорость.
+        2 x буфер_f32
+      
+      
+        phy_particle_data_flag_colour
+        Цвет и альфа-значение (шестнадцатеричное).
+        буфер_f32
+      
+      
+        phy_particle_data_flag_category
+        Категория частицы (определенная при создании группы, к которой она принадлежит).
+        буфер_u32
+      
+    
+  
+   
+  Синтаксис:
+  physics_particle_group_get_data(group, buffer, flags)
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        группа
+        Индекс группы (ID) группы частиц для получения данных.
+      
+      
+        буфер
+        Буфер (ранее созданный), который будет использоваться для хранения данных.
+      
+      
+        флаги
+        Флаги, которые следует использовать для извлечения данных о конкретных типах частиц.
+      
+    
+  
+   
+  Возвращается:
+  Данные буфера
+   
+  Пример:
+  var count = physics_particle_group_count(gp); var flags = phy_particle_data_flag_position | phy_particle_data_flag_colour; if (count > 0) {
+     var buffer = buffer_create(count * 12, buffer_grow, 4); physics_particle_group_get_data(gp, buffer, flags); for (var n = 0; n < count; n++;) {
+     var xx = buffer_read(buffer, buffer_f32); var yy = buffer_read(buffer, buffer_f32); var argb = buffer_read(buffer, buffer_u32); var alpha = (argb >> 24) & 255; draw_sprite_ext(sprBlob,
+    0, xx, yy, 1, 1, 0, c_green, alpha); }
+     buffer_delete(buffer);
+     }
+  
+  Приведенный выше код получает позицию и скорость каждой частицы в группе, индексируемой переменной "gp", сохраняет данные буфера в ряде переменных, а затем использует их для рисования спрайта в позиции каждой частицы в группе.
+   
+   
+   
+  
+    
+      
+        Назад: Частицы мягкого тела
+        Далее: physics_particle_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+

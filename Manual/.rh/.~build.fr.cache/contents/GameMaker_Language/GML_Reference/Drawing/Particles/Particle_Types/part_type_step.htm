@@ -1,0 +1,55 @@
+
+  
+  тип_части_шаг
+  Эта функция может быть использована для того, чтобы заставить ваш тип частицы испускать другой тип на каждом шаге до конца срока ее жизни. Вы можете задать отрицательное значение для номера шага, и частица будет испускаться через случайный интервал, основанный на этом значении, так что, например,
+    при значении -3 вероятность выброса частицы на каждом шаге будет 1:3.
+  ПРИМЕЧАНИЕ: НИКОГДА не используйте один и тот же тип частиц, так как это вызовет бесконечный цикл и может привести к краху игры в считанные секунды! Также будьте очень осторожны при использовании этого параметра, так как он может значительно увеличить количество частиц на экране за один раз и заставить вашу игру
+    заметно замедлится.
+   
+  Синтаксис:
+  part_type_step(ind, step_number, step_type);
+  
+    
+      
+        Аргумент
+        Описание
+      
+      
+        инд
+        Индекс типа частицы, который необходимо изменить.
+      
+      
+        номер шага
+        Количество новой частицы, создаваемой за шаг.
+      
+      
+        тип шага
+        Индекс типа частицы, которую необходимо создать.
+      
+    
+  
+   
+  Возвращается:
+  Н/Д
+   
+  Пример:
+  particle2 = part_type_create(); part_type_shape(particle2, pt_shape_smoke); part_type_size(particle2, 0.01, 0.01, 0.01, 0.01, 0); part_type_scale(particle2, 1, 1); part_type_colour3(particle2, 4227327, 8454143, 4227327); part_type_alpha3(particle2,1,
+    0.50, 0.80); part_type_speed(particle2, 0, 0, 0, 0); part_type_direction(particle2, 0, 359, 0, 0); part_type_gravity(particle2, 0, 270); part_type_orientation(particle2, 0, 0, -2, 0, 1);  part_type_blend(particle2, 1); part_type_life(particle2, 160, 160); particle3 = part_type_create(); part_type_shape(particle3, pt_shape_flare); part_type_size(particle3, 0.20, 0.20, 0.02, 0); part_type_scale(particle3, 1, 1); part_type_colour3(particle3,
+    16777215, 8454143, 16777215); part_type_alpha3(particle3, 0, 0.50, 0); part_type_speed(particle3, 3, 3, -0.03, 0); part_type_direction(particle3, 0, 359, 0, 0); part_type_gravity(particle3, 0, 270); part_type_orientation(particle3,
+    0, 0, 0, 0, 1); part_type_blend(particle3, 1); part_type_life(particle3, 40, 80); part_type_step(particle2, 2, particle3);
+  Приведенный выше код создает и определяет две частицы и устанавливает частицу, индексированную в переменной "particle2", для создания 2 частиц "particle3" на каждом шаге ее жизни.
+   
+   
+   
+  
+    
+      
+        Назад: Типы частиц
+        Далее: part_type_death
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Все права защищены
+  
+  
+  
+
