@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Ошибки бегунов</title>
+  <title>Ошибки движка</title>
   <meta name="generator" content="Adobe RoboHelp 2020" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
@@ -12,23 +13,20 @@
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>Ошибки бегунов</h1>
-  <p>Даже после проверки синтаксиса в редакторе кода и последующей проверки кода компилятором на наличие <a href="Compiler_Errors.htm">ошибок компилятора</a>, все равно бывают случаи, когда что-то может пойти не так. В большинстве случаев это приведет к возникновению ошибки выполнения <a class="glossterm" data-glossterm="Виртуальная машина (VM)" href="#">виртуальной машины (VM)</a> (также называемой <strong>исключением<span class="notranslate">времени выполнения</span></strong>), которая выглядит следующим образом:</p>
-  <p><img alt="Runner Error Window" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_Report.png">Ошибки бегущей строки обычно более серьезны, чем ошибки компиляции, поскольку это означает, что в коде что-то серьезно не так.
-    в вашем коде, что ни редактор кода, ни компилятор не смогли обнаружить, и поэтому вы должны обращать внимание на все такие ошибки. При возникновении такой ошибки вы можете воспользоваться кнопкой <strong>Copy</strong> на всплывающем окне, чтобы скопировать ошибку в буфер обмена
-    которую затем можно вставить в текстовый файл (или куда-либо еще) для дальнейшего использования.</p>
+  <h1>Ошибки движка</h1>
+  <p>Даже после проверки синтаксиса в редакторе кода и последующей проверки кода компилятором на наличие <a href="Compiler_Errors.htm">ошибок компилятора</a>, все равно бывают случаи, когда что-то может пойти не так. В большинстве случаев это приведет к возникновению ошибки выполнения <a class="glossterm" data-glossterm="Виртуальная машина (VM)" href="#">виртуальной машины (VM)</a> (также называемым <strong>исключением во время<span class="notranslate"> выполнения</span></strong>), которое выглядит следующим образом:</p>
+  <p><img alt="Runner Error Window" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_Report.png" />Ошибки бегущей строки обычно более серьезны, чем ошибки компиляции, поскольку это означает, что в коде что-то серьезно не так. в вашем коде, что ни редактор кода, ни компилятор не смогли обнаружить, и поэтому вы должны обращать внимание на все такие ошибки. При возникновении такой ошибки вы можете воспользоваться кнопкой <strong>Copy</strong> на всплывающем окне, чтобы скопировать ошибку в буфер обмена которую затем можно вставить в текстовый файл (или куда-либо еще) для дальнейшего использования.</p>
   <p>Структура этой ошибки выглядит следующим образом:</p>
   <ul class="colour">
-    <li><img alt="Error Object And Event" class="icon" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_Text_ObjectEvent.png"><br> Здесь показано событие, в котором произошла ошибка, а также объект (если применимо).</li>
-    <li><img alt="Error Text Information" class="icon" height="16" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_Text_Information.png" width="436"><br> Здесь показана фактическая ошибка.  Таким образом, здесь показан <em>масштаб </em>ошибки
-      и тип ошибки. Первое значение в скобках будет ID экземпляра, на котором выполнялся код - или это может быть одно из специальных значений, перечисленных в таблице ниже - а второе является внутренним значением, которое <span class="notranslate">YoYo Games</span>
-      использует для выявления ошибок и может быть проигнорировано. В случае с изображением выше, это говорит о том, что переменная <span class="inline">_image</span> не была установлена (т.е. не существует до обращения к ней) на объекте <span class="inline">obj_EA_DEMO_Control</span>.</li>
-    <li><img alt="Error Line Number Position" class="icon" height="16" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_LineNumber.png" width="354"><br> Здесь показан номер строки, на которой возникла ошибка, а также фрагмент
-      кода, показывающий позицию. Обратите внимание, что это не всегда на 100% точно из-за способа компиляции игры, но этого должно быть достаточно, чтобы помочь вам найти точное место проблемы.</li>
+    <li><img alt="Error Object And Event" class="icon" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_Text_ObjectEvent.png" /><br />
+      Здесь показано событие, в котором произошла ошибка, а также объект (если применимо).</li>
+    <li><img alt="Error Text Information" class="icon" height="16" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_Text_Information.png" width="436" /><br />
+      Здесь показана фактическая ошибка. Таким образом, здесь показан <em>масштаб </em>ошибки и тип ошибки. Первое значение в скобках будет ID экземпляра, на котором выполнялся код - или это может быть одно из специальных значений, перечисленных в таблице ниже - а второе является внутренним значением, которое <span class="notranslate">YoYo Games</span> использует для выявления ошибок и может быть проигнорировано. В случае с изображением выше, это говорит о том, что переменная <span class="inline">_image</span> не была установлена (т.е. не существует до обращения к ней) на объекте <span class="inline">obj_EA_DEMO_Control</span>.</li>
+    <li><img alt="Error Line Number Position" class="icon" height="16" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_LineNumber.png" width="354" /><br />
+      Здесь показан номер строки, на которой возникла ошибка, а также фрагмент кода, показывающий позицию. Обратите внимание, что это не всегда на 100% точно из-за способа компиляции игры, но этого должно быть достаточно, чтобы помочь вам найти точное место проблемы.</li>
   </ul>
-  <p>Как упоминалось выше, некоторые сообщения об ошибках будут идентифицироваться не по значению ID экземпляра, а по <em>отрицательному </em>значению. Эти значения могут быть использованы для точного определения природы ошибки и того, к чему она относится, с помощью следующих значений
-    возможно:</p>
-  <p> </p>
+  <p>Как упоминалось выше, некоторые сообщения об ошибках будут идентифицироваться не по значению ID экземпляра, а по <em>отрицательному </em>значению. Эти значения могут быть использованы для точного определения природы ошибки и того, к чему она относится, с помощью следующих значений возможно:</p>
+  <p> </p>
   <table>
     <tbody>
       <tr>
@@ -37,23 +35,23 @@
       </tr>
       <tr>
         <td style="text-align: center">-1</td>
-        <td>Самостоятельно</td>
+        <td>self</td>
       </tr>
       <tr>
         <td style="text-align: center">-2</td>
-        <td>Другое</td>
+        <td>other</td>
       </tr>
       <tr>
         <td style="text-align: center">-3</td>
-        <td>Все</td>
+        <td>all</td>
       </tr>
       <tr>
         <td style="text-align: center">-4</td>
-        <td>Noone</td>
+        <td>noone</td>
       </tr>
       <tr>
         <td style="text-align: center">-5</td>
-        <td>Глобальный</td>
+        <td>global</td>
       </tr>
       <tr>
         <td style="text-align: center">-6</td>
@@ -61,13 +59,13 @@
       </tr>
       <tr>
         <td style="text-align: center">-7</td>
-        <td>Местный</td>
+        <td>local</td>
       </tr>
     </tbody>
   </table>
-  <p> </p>
-  <p>Ниже перечислены возможные ошибки, возникающие при запуске VM runner:</p>
-  <p> </p>
+  <p> </p>
+  <p>Ниже перечислены возможные ошибки, возникающие при запуске VM версии движка:</p>
+  <p> </p>
   <table>
     <tbody>
       <tr>
@@ -133,8 +131,7 @@
         <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoDiv</span></td>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Деление на ноль</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Математика</td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Вы пытаетесь разделить на 0 (обратите внимание, что это произойдет только при использовании целочисленного деления, деление (ненулевого) вещественного числа на 0 даст бесконечность в качестве ответа, деление нуля на ноль даст NaN в качестве ответа). Вы можете проверить наличие этих значений с помощью
-          (<span class="inline">is_infinity</span>) и (<span class="inline">is_nan</span>)</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Вы пытаетесь разделить на 0 (обратите внимание, что это произойдет только при использовании целочисленного деления, деление (ненулевого) вещественного числа на 0 даст бесконечность в качестве ответа, деление нуля на ноль даст NaN в качестве ответа). Вы можете проверить наличие этих значений с помощью (<span class="inline">is_infinity</span>) и (<span class="inline">is_nan</span>)</td>
       </tr>
       <tr>
         <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoMod</span></td>
@@ -268,21 +265,23 @@
         <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">With</span></td>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Невозможно использовать global в операторе with</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">С</td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Вы пытались использовать &quot;<span class="inline">global</span>&quot; в качестве переменной в операторе &quot;<span class="inline">with</span>&quot;, т.е:<br>
-          <span class="inline">with (global)<br/>
-			   {<br/>
-			   //do something;<br/>
-			   }</span></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Вы пытались использовать &quot;<span class="inline">global</span>&quot; в качестве переменной в операторе &quot;<span class="inline">with</span>&quot;, т.е:<br />
+          <span class="inline">with (global)<br />
+               {<br />
+               //do something;<br />
+               }</span>
+        </td>
       </tr>
       <tr>
         <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">With</span></td>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Невозможно использовать local в операторе with</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">С</td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Вы пытались использовать &quot;<span class="inline">local</span>&quot; в качестве переменной в операторе &quot;<span class="inline">with</span>&quot;, т.е:<br>
-          <span class="inline">with (local)<br/>
-			   {<br/>
-			   //do something;<br/>
-			   }</span></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Вы пытались использовать &quot;<span class="inline">local</span>&quot; в качестве переменной в операторе &quot;<span class="inline">with</span>&quot;, т.е:<br />
+          <span class="inline">with (local)<br />
+               {<br />
+               //do something;<br />
+               }</span>
+        </td>
       </tr>
       <tr>
         <td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">
@@ -299,14 +298,13 @@
         <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Stack Overflow</span></td>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">-</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Двигатель</td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Переполнение стека происходит, когда в стеке вызовов используется слишком много памяти, и когда ваша игра пытается использовать больше места, чем доступно в стеке вызовов (то есть, когда она пытается получить доступ к памяти за пределами стека вызовов, что по сути является
-          переполнение буфера), стек, как говорят, переполняется, что приводит к аварийному завершению программы. Перезагрузите компьютер и <span class="notranslate">GameMaker</span>: Studio, и если ошибка не исчезнет, обратитесь в службу поддержки и/или опубликуйте сообщение об ошибке (как описано выше).</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Переполнение стека происходит, когда в стеке вызовов используется слишком много памяти, и когда ваша игра пытается использовать больше места, чем доступно в стеке вызовов (то есть, когда она пытается получить доступ к памяти за пределами стека вызовов, что по сути является переполнение буфера), стек, как говорят, переполняется, что приводит к аварийному завершению программы. Перезагрузите компьютер и <span class="notranslate">GameMaker</span>: Studio, и если ошибка не исчезнет, обратитесь в службу поддержки и/или опубликуйте сообщение об ошибке (как описано выше).</td>
       </tr>
     </tbody>
   </table>
-  <p> </p>
-  <p> </p>
-  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
@@ -314,7 +312,7 @@
         <div style="float:right">Следующее: <a href="Syntax_Errors.htm">Ошибки синтаксиса</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2021 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Runner Errors
@@ -322,5 +320,5 @@ Runner Errors
   <!-- TAGS
 runner_errors
 -->
-
-</body></html>
+</body>
+</html>

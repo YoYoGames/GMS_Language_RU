@@ -3,8 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Комментарии к сценариям JSDoc</title>
-  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <title>Комментарии JSDoc</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page that explains how JSDoc Script Comments work" />
@@ -13,12 +13,10 @@
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>Комментарии к сценариям JSDoc</h1>
-  <p>Если вы хотите, чтобы ваши пользовательские функции имели функцию завершения кода и отображали необходимые аргументы определенным образом в редакторе кода, то вам необходимо добавить некоторые комментарии в <a href="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html">стиле JSDoc</a>. Эти комментарии используются для того, чтобы указать функции автозаполнения, как функция должна использоваться и заполняться в <a href="../Scripts.htm">редакторе сценариев</a>.</p>
-  <p>Формат типичного заголовка функции должен содержать имя функции, описание функции, а затем список различных аргументов (параметров), которые принимает функция, обязательно начиная каждую строку с тройного обратного слеша &quot;
-    <span class="inline">///</span> &quot;, поскольку это указывает GameMaker <span class="notranslate">Studio 2 на то, что</span> комментарий должен быть оформлен в стиле JSDoc. Самим комментариям необходимо присвоить идентификатор (перед которым ставится &quot;<span class="inline">@</span>&quot;) и содержание.
-    идентификаторы следующие:</p>
-  <p> </p>
+  <h1>Комментарии JSDoc</h1>
+  <p>Если вы хотите, чтобы ваши пользовательские функции имели автозаполнение и отображали необходимые аргументы определенным образом в редакторе кода, то вам необходимо добавить некоторые комментарии в <a href="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html">стиле JSDoc</a>. Эти комментарии используются для того, чтобы указать функции автозаполнения, как функция должна использоваться и заполняться в <a href="../Scripts.htm">редакторе сценариев</a>.</p>
+  <p>Формат типичного заголовка функции должен содержать имя функции, описание функции, а затем список различных аргументов (параметров), которые принимает функция, обязательно начиная каждую строку с тройного обратного слеша &quot;<span class="inline">///</span>&quot;, поскольку это указывает GameMaker <span class="notranslate">Studio 2 на то, что</span> комментарий должен быть оформлен в стиле JSDoc. Самим комментариям необходимо присвоить идентификатор (перед которым ставится &quot;<span class="inline">@</span>&quot;) и содержание. идентификаторы следующие:</p>
+  <p> </p>
   <table>
     <tbody>
       <tr>
@@ -27,8 +25,9 @@
       </tr>
       <tr>
         <td><span class="inline">@function</span> / <span class="inline">@func</span></td>
-        <td>Полное имя функции и аргументы для нее, например:<br>
-          <span class="inline"><tt>my_func(x, y, colour)</tt></span>.</td>
+        <td>Полное имя функции и аргументы для нее, например:<br />
+          <span class="inline"><tt>my_func(x, y, colour)</tt></span>.
+        </td>
       </tr>
       <tr>
         <td><span class="inline">@description</span> / <span class="inline">@desc</span></td>
@@ -40,38 +39,59 @@
       </tr>
     </tbody>
   </table>
-  <p> </p>
+  <p> </p>
   <p>Чтобы получить представление о том, как это будет работать при написании собственных функций, давайте рассмотрим базовый пример:</p>
-  <p class="code">function is_same_object(_id, _obj)<br> {
-    <br> if (_id.object_index == _obj)<br> {<br> return true;<br> } <br> else return false;<br> }
-  </p>
+  <p class="code">function is_same_object(_id, _obj)<br />
+    {<br />
+    if (_id.object_index == _obj)<br />
+    {<br />
+    return true;<br />
+    }<br />
+    else return false;<br />
+    }</p>
   <p>Все, что делает этот сценарий, это проверяет, имеет ли экземпляр тот же <span class="inline">object_index</span>, что и данный объект, и вызывается просто как:</p>
-  <p class="code">if is_same_object(id, obj_Player)<br> {
-    <br> instance_destroy()<br> }
-  </p>
-  <p>Однако, если записать это в редактор кода, вы увидите имена переменных аргументов напрямую<tt>(_id</tt> и <tt>_obj</tt>), что в большинстве случаев не очень описательно. Вы можете использовать JSDoc для определения собственных имен и описаний аргументов, а также
-    информацию для функции:</p>
-  <p class="code">/// @function is_same_object(id, object)<br> /// @description Сравнить индекс экземпляра с индексом объекта.<br> /// @param {real} inst_id Уникальное значение ID экземпляра для проверки.<br> /// @param {real}
-    object_id Индекс объекта, по которому производится проверка.<br>
-    <br> function is_same_object(_id, _obj)<br> {
-    <br> if (_id.object_index == _obj)<br> {<br> return true;<br> } <br> else return false;<br> }
+  <p class="code">if is_same_object(id, obj_Player)<br />
+    {<br />
+    instance_destroy()<br />
+    }</p>
+  <p>Однако, если записать это в редактор кода, вы увидите имена переменных аргументов напрямую<tt>(_id</tt> и <tt>_obj</tt>), что в большинстве случаев не очень описательно. Вы можете использовать JSDoc для определения собственных имен и описаний аргументов, а также информацию для функции:</p>
+  <p class="code">/// @function is_same_object(id, object)<br />
+    /// @description Сравнить индекс экземпляра с индексом объекта.<br />
+    /// @param {real} inst_id Уникальное значение ID экземпляра для проверки.<br />
+    /// @param {real} object_id Индекс объекта, по которому производится проверка.<br />
+    <br />
+    function is_same_object(_id, _obj)<br />
+    {<br />
+    if (_id.object_index == _obj)<br />
+    {<br />
+    return true;<br />
+    }<br />
+    else return false;<br />
+    }
   </p>
   <p>Теперь при вызове этой функции в любом месте вашего проекта вы увидите новые имена аргументов, которые были введены в комментарии JSDoc:</p>
   <p><img alt="JSDoc Example" class="center" height="652" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_Example.png" width="672" /></p>
   <p>На изображении выше верхняя часть показывает функцию в автозаполнении, а нижняя - как работает помощник аргументов внизу. Обратите внимание, что как необязательная часть &quot;type&quot;, так и обязательная часть &quot;description&quot; <span class="inline">@param</span> по умолчанию не отображаются в коде IDE, и чтобы увидеть их, необходимо активировать опции в GML Preferences.</p>
-  <p>Вы можете заключить имя аргумента в скобки <tt>[]</tt>, чтобы указать, что он является необязательным. Тогда редактор кода будет ожидать любое количество аргументов между минимально необходимым и общим количеством аргументов. Например, см.
-    функция:</p>
-  <p class="code">/// @function animate_position(end_x, end_y, start_x, start_y)<br> /// @desc Анимирует объект в конечную точку, из необязательной начальной точки<br> /// @arg end_x<br> /// @arg end_y<br> /// @arg [start_x]<br> /// @arg [start_y]<br>
-    <br> function animate_position (x1, y1, x2, y2)<br> {
-    <br> // Код функции<br> }
+  <p>Вы можете заключить имя аргумента в квадратные скобки <tt>[]</tt>, чтобы указать, что он является необязательным. Тогда редактор кода будет ожидать любое количество аргументов между минимально необходимым и общим количеством аргументов. Например, см. функция:</p>
+  <p class="code">/// @function animate_position(end_x, end_y, start_x, start_y)<br />
+    /// @desc Анимирует объект в конечную точку, из необязательной начальной точки<br />
+    /// @arg end_x<br />
+    /// @arg end_y<br />
+    /// @arg [start_x]<br />
+    /// @arg [start_y]<br />
+    <br />
+    function animate_position (x1, y1, x2, y2)<br />
+    {<br />
+    // Код функции<br />
+    }
   </p>
   <p>Аргументы <tt>start_x</tt> и <tt>start_y</tt> помечены как необязательные, что означает, что редактор кода теперь будет ожидать от 2 до 4 аргументов, как видно из предупреждающего сообщения:</p>
   <p><img class="center" height="150" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_Optional.png" width="537" /></p>
-  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Вы получите такое же поведение, если будете использовать необязательные аргументы в объявлении функции. Дополнительные сведения см. в разделе <a href="../../GameMaker_Language/GML_Overview/Script_Functions.htm">Функции сценария</a>.</p>
+  <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Вы получите такое же поведение, если будете использовать необязательные аргументы в объявлении функции. Дополнительные сведения см. в разделе <a href="../../GameMaker_Language/GML_Overview/Script_Functions.htm">Функции скриптов</a>.</p>
   <p>Поскольку скрипты могут содержать несколько функций, вы можете добавить комментарии JSDoc для каждой из них перед ее объявлением:</p>
   <p><img alt="Multiple Functions With JSDoc Comments Example" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_MultipleFunctions.png" /></p>
-  <p> </p>
-  <p> </p>
+  <p> </p>
+  <p> </p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
@@ -79,7 +99,7 @@
         <div style="float:right">Следующее: <a href="Code_Snippets.htm">Сниппеты кода</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2021 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 JSDoc Script Comments

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Ошибки синтаксиса</title>
+  <title>Синтаксические ошибки</title>
   <meta name="generator" content="Adobe RoboHelp 2020" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
@@ -12,64 +13,60 @@
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>Ошибки синтаксиса</h1>
-  <p>Первый уровень сообщений об ошибках при программировании игр в <span class="notranslate">GameMaker Studio 2</span> находится в редакторе кода или <span class="notranslate">DnD™</span>, и это проверка синтаксиса. По мере того, как вы будете править код или добавлять действия.
-    - <span class="notranslate">GameMaker</span> проверит соблюдение установленного синтаксиса языка и отметит все обнаруженные проблемы, чтобы вы могли исправить их до запуска игры или компиляции исполняемого файла.</p>
-  <p><img alt="Syntax Errors Example" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/Errors_Syntax_Example.png">Эти ошибки делятся на две основные категории:</p>
+  <h1>Синтаксические ошибки</h1>
+  <p>Первый уровень сообщений об ошибках при программировании игр в <span class="notranslate">GameMaker Studio 2</span> находится в редакторе кода или <span class="notranslate">DnD™</span>, и это проверка синтаксиса. По мере того, как вы будете править код или добавлять действия. - <span class="notranslate">GameMaker</span> проверит соблюдение установленного синтаксиса языка и отметит все обнаруженные проблемы, чтобы вы могли исправить их до запуска игры или компиляции исполняемого файла.</p>
+  <p><img alt="Syntax Errors Example" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/Errors_Syntax_Example.png" />Эти ошибки делятся на две основные категории:</p>
   <ul class="colour">
-    <li><img alt="Syntax Warning Icon" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxWarning.png"> <strong>Предупреждения</strong>: Они показываются для вещей, которые могут быть ошибкой, но могут и не быть, и, вероятно, не помешают
-      компиляцию игры, но могут спровоцировать ошибки <span class="notranslate">во время выполнения</span>. Чаще всего эти предупреждения появляются, когда переменная используется в выражении, но еще нигде не определена, или когда переменная определена, но не используется.
-      но не была использована.</li>
-    <li><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"> <strong>Ошибки</strong>: Это проблемы, которые не позволят игре скомпилироваться, не говоря уже о запуске.
-      Их следует устранить, прежде чем приступать к дальнейшей работе с кодом. В таблице ниже приведены наиболее распространенные причины этих ошибок.</li>
+    <li><img alt="Syntax Warning Icon" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxWarning.png" /> <strong>Предупреждения</strong>: Они показываются для вещей, которые могут быть ошибкой, но могут и не быть, и, вероятно, не помешают компиляцию игры, но могут спровоцировать ошибки <span class="notranslate">во время выполнения</span>. Чаще всего эти предупреждения появляются, когда переменная используется в выражении, но еще нигде не определена, или когда переменная определена, но не используется. но не была использована.</li>
+    <li><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /> <strong>Ошибки</strong>: Это проблемы, которые не позволят игре скомпилироваться, не говоря уже о запуске. Их следует устранить, прежде чем приступать к дальнейшей работе с кодом. В таблице ниже приведены наиболее распространенные причины этих ошибок.</li>
   </ul>
   <p>Синтаксические ошибки будут обновляться по мере написания кода (между вводом текста и появлением ошибок в этом окне будет небольшая пауза, чтобы избежать появления сообщений об ошибках в незаконченном коде), и будут соответствовать формату:</p>
   <p class="code">[объект] - [событие] - [номер строки] - [положение в строке]: [строка ошибки].</p>
   <p>Или если ошибка находится в скрипте, она будет:</p>
   <p class="code">[сценарий] - [номер строки] - [положение в строке]: [строка ошибки].</p>
-  <p>Двойной щелчок <img alt="Icon LMB" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> на любой из ошибок, показанных в консоли вывода, приведет вас к строке в событии объекта или сценарии, в которой содержится ошибка, и вы сможете отредактировать ее.
-    чтобы вы могли ее отредактировать.</p>
+  <p>Двойной щелчок <img alt="Icon LMB" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21" /> на любой из ошибок, показанных в консоли вывода, приведет вас к строке в событии объекта или сценарии, в которой содержится ошибка, и вы сможете отредактировать ее. чтобы вы могли ее отредактировать.</p>
   <p>Следует отметить, что некоторые из этих ошибок будут показаны в определенных местах вашего кода, но фактическая ошибка может быть вызвана чем-то другим, или одна единственная проблема может вызвать несколько сообщений об ошибках:</p>
-  <p><img alt="Multiple Syntax Errors" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_MultipleSyntaxErrors.png">На приведенном выше рисунке все три ошибки <img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14"> были спровоцированы одной ошибкой - использованием двоеточия &quot;<span class="inline">;</span>&quot; вместо запятой &quot;<span class="inline">,</span>&quot; в строке 220 для функции <span class="inline">variable_instance_exists()</span>.</p>
+  <p><img alt="Multiple Syntax Errors" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/Error_MultipleSyntaxErrors.png" />На приведенном выше рисунке все три ошибки <img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /> были спровоцированы одной ошибкой - использованием двоеточия &quot;<span class="inline">;</span>&quot; вместо запятой &quot;<span class="inline">,</span>&quot; в строке 220 для функции <span class="inline">variable_instance_exists()</span>.</p>
   <p>В таблице ниже перечислены различные синтаксические ошибки и их основные причины:</p>
-  <p> </p>
+  <p> </p>
   <table>
     <tbody>
       <tr>
         <th>Ошибка</th>
-        <th> Тип </th>
+        <th>Тип</th>
         <th>Описание</th>
       </tr>
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Некорректная ссылка [val]</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /></td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это означает, что произошла внутренняя ошибка AST Validation Error (вы никогда не должны видеть эту ошибку, но если вы ее видите, пожалуйста, рассмотрите возможность подачи сообщения об ошибке из <a href="../../IDE_Navigation/Menus/The_Help_Menu.htm">меню Help</a>). </td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это означает, что произошла внутренняя ошибка AST Validation Error (вы никогда не должны видеть эту ошибку, но если вы ее видите, пожалуйста, рассмотрите возможность подачи сообщения об ошибке из <a href="../../IDE_Navigation/Menus/The_Help_Menu.htm">меню Help</a>).</td>
       </tr>
       <tr>
-        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Некорректная последовательность шестнадцатеричных символов </td>
+        <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Некорректная последовательность шестнадцатеричных символов</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /></td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это может произойти, если вы использовали шестнадцатеричное значение для управляющего символа в строке, и оно имеет неправильный формат.</td>
       </tr>
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Неожиданный узел [val]</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /></td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это означает, что произошла внутренняя ошибка AST Validation Error (вы никогда не должны видеть эту ошибку, но если вы ее видите, пожалуйста, рассмотрите возможность подачи сообщения об ошибке из <a href="../../IDE_Navigation/Menus/The_Help_Menu.htm">меню Help</a>). </td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это означает, что произошла внутренняя ошибка AST Validation Error (вы никогда не должны видеть эту ошибку, но если вы ее видите, пожалуйста, рассмотрите возможность подачи сообщения об ошибке из <a href="../../IDE_Navigation/Menus/The_Help_Menu.htm">меню Help</a>).</td>
       </tr>
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Исключение при разборе [val]</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /></td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это означает, что произошла внутренняя ошибка AST Validation Error (вы никогда не должны видеть эту ошибку, но если вы ее видите, пожалуйста, рассмотрите возможность подачи сообщения об ошибке из <a href="../../IDE_Navigation/Menus/The_Help_Menu.htm">меню Help</a>). </td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это означает, что произошла внутренняя ошибка AST Validation Error (вы никогда не должны видеть эту ошибку, но если вы ее видите, пожалуйста, рассмотрите возможность подачи сообщения об ошибке из <a href="../../IDE_Navigation/Menus/The_Help_Menu.htm">меню Help</a>).</td>
       </tr>
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Некорректная ссылка на идентификатор [val]</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /></td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"> </td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"> </td>
       </tr>
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Ненужное выражение [val] используется как утверждение</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /></td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Эта ошибка возникает, когда программа проверки синтаксиса обнаруживает выражение (показанное в [val]) там, где она ожидала оператора. Например, следующий код приведет к ошибке, поскольку он ожидает троичный оператор ?, но встречает 32:<br>
-          <span class="inline">temp_x = x &lt; (room_width / 2)  32: room_width - 32;</span></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Эта ошибка возникает, когда программа проверки синтаксиса обнаруживает выражение (показанное в [val]) там, где она ожидала оператора. Например, следующий код приведет к ошибке, поскольку он ожидает троичный оператор ?, но встречает 32:<br />
+          <span class="inline">temp_x = x &lt; (room_width / 2)  32: room_width - 32;</span>
+        </td>
       </tr>
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Некорректная ссылка на массив [val]</td>
@@ -89,7 +86,7 @@
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Одинарные кавычки больше не допускаются для строки</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /></td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Эта ошибка возникает при попытке использовать строки, заключенные в одинарные кавычки, например: 'Hello World', вместо двойных кавычек, например: &quot;Hello World&quot;.</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Эта ошибка возникает при попытке использовать строки, заключенные в одинарные кавычки, например: &#39;Hello World&#39;, вместо двойных кавычек, например: &quot;Hello World&quot;.</td>
       </tr>
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Неожиданная синтаксическая ошибка</td>
@@ -99,8 +96,9 @@
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Получено &quot;[val1]&quot;, ожидалось &quot;[val2]&quot;.</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /></td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это происходит, когда программа проверки синтаксиса ожидает какое-то значение или символ, но получает другое, где [val1] - текущий символ или значение, а [val2] - ожидаемый символ или значение. Например:<br>
-          <span class="inline">Got &quot;{&quot;, expected &quot;(&quot;</span></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это происходит, когда программа проверки синтаксиса ожидает какое-то значение или символ, но получает другое, где [val1] - текущий символ или значение, а [val2] - ожидаемый символ или значение. Например:<br />
+          <span class="inline">Got &quot;{&quot;, expected &quot;(&quot;</span>
+        </td>
       </tr>
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Получили &quot;[val1]&quot;, ожидали &quot;[val2]&quot; или &quot;[val3]&quot;.</td>
@@ -115,14 +113,16 @@
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Пустое утверждение [val]</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /></td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это происходит, когда вы завершаете оператор и оставляете его пустым. Например, следующий код выдаст ошибку (обратите внимание на завершающую точку с запятой):<br>
-          <span class="inline">if (x &lt; 0);</span></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это происходит, когда вы завершаете оператор и оставляете его пустым. Например, следующий код выдаст ошибку (обратите внимание на завершающую точку с запятой):<br />
+          <span class="inline">if (x &lt; 0);</span>
+        </td>
       </tr>
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Вызовы вложенных функций не допускаются</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /></td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это может произойти, когда вы пытаетесь вложить вызовы функций внутри оператора, например:<br>
-          <span class="inline">ds_list_find_value(list, 0)).sprite_index</span></td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это может произойти, когда вы пытаетесь вложить вызовы функций внутри оператора, например:<br />
+          <span class="inline">ds_list_find_value(list, 0)).sprite_index</span>
+        </td>
       </tr>
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Использование [val] не допускается в <span class="notranslate">GameMaker Studio 2</span> Trial</td>
@@ -142,7 +142,7 @@
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Найдена дублирующая запись перечисления</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /></td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Эта ошибка говорит о том, что вы продублировали имя записи переменной перечисления </td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Эта ошибка говорит о том, что вы продублировали имя записи переменной перечисления</td>
       </tr>
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Найдено дублирующее перечисление</td>
@@ -172,7 +172,7 @@
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Неожиданный оператор терминала [val]</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /></td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это означает, что произошла внутренняя ошибка AST Validation Error (вы никогда не должны видеть эту ошибку, но если вы ее видите, пожалуйста, рассмотрите возможность подачи сообщения об ошибке из <a href="../../IDE_Navigation/Menus/The_Help_Menu.htm">меню Help</a>). </td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это означает, что произошла внутренняя ошибка AST Validation Error (вы никогда не должны видеть эту ошибку, но если вы ее видите, пожалуйста, рассмотрите возможность подачи сообщения об ошибке из <a href="../../IDE_Navigation/Menus/The_Help_Menu.htm">меню Help</a>).</td>
       </tr>
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Неожиданный унарный оператор [val]</td>
@@ -197,13 +197,12 @@
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Некорректная ссылка на переменную, получена [val].</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /></td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это означает, что произошла внутренняя ошибка AST Validation Error (вы никогда не должны видеть эту ошибку, но если вы ее видите, пожалуйста, рассмотрите возможность подачи сообщения об ошибке из <a href="../../IDE_Navigation/Menus/The_Help_Menu.htm">меню Help</a>). </td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Это означает, что произошла внутренняя ошибка AST Validation Error (вы никогда не должны видеть эту ошибку, но если вы ее видите, пожалуйста, рассмотрите возможность подачи сообщения об ошибке из <a href="../../IDE_Navigation/Menus/The_Help_Menu.htm">меню Help</a>).</td>
       </tr>
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Присвоение в выражении с несколькими реляциями - <span class="notranslate">GML</span> не поддерживает несколько присваиваний в выражении</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /></td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Эта ошибка говорит о том, что возникла проблема с многооператорным присвоением (также называемым составным присвоением), которое не поддерживается <span class="notranslate">языком GameMaker Language</span>. Сюда относятся такие вещи, как &quot;<span class="inline">*=</span>&quot; или &quot;<span class="inline">/=</span>&quot;,
-          и т.д.</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Эта ошибка говорит о том, что возникла проблема с многооператорным присвоением (также называемым составным присвоением), которое не поддерживается <span class="notranslate">языком GameMaker Language</span>. Сюда относятся такие вещи, как &quot;<span class="inline">*=</span>&quot; или &quot;<span class="inline">/=</span>&quot;, и т.д.</td>
       </tr>
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Макрос [val] не используется</td>
@@ -228,7 +227,7 @@
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Неизвестный атрибут функции [val]</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px;text-align: center"><img alt="Syntax Error Icon" height="12" src="../../assets/Images/Scripting_Reference/Additional_Information/i_Error_SyntaxError.png" width="14" /></td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Эта ошибка означает, что вы попытались использовать недопустимый или неопознанный модификатор функции ([val]) при объявлении функции in-kine (модификатор функции - это что-то вроде ключевого слова <span class="inline">constructor</span>, которое поддерживается). </td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Эта ошибка означает, что вы попытались использовать недопустимый или неопознанный модификатор функции ([val]) при объявлении функции in-kine (модификатор функции - это что-то вроде ключевого слова <span class="inline">constructor</span>, которое поддерживается).</td>
       </tr>
       <tr>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Наследуемый аргумент \&quot;[val]\&quot; отсутствует в аргументах функции</td>
@@ -242,9 +241,9 @@
       </tr>
     </tbody>
   </table>
-  <p> </p>
-  <p> </p>
-  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
@@ -252,7 +251,7 @@
         <div style="float:right">Следующий: <a href="Compiler_Errors.htm">Ошибки компилятора</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Все права защищены</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2021 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Syntax Errors
@@ -260,5 +259,5 @@ Syntax Errors
   <!-- TAGS
 syntax_errors
 -->
-
-</body></html>
+</body>
+</html>
