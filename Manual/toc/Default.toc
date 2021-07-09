@@ -176,7 +176,7 @@
   <page href="../contents/The_Asset_Editors/Image_Editor.htm" format="html" processing-role="normal"></page>
 </book>
 <book href="../contents/Settings/Game_Settings.htm" format="html" processing-role="normal">
-  <page href="../contents/Settings/The_Room_Manager.htm" format="html" processing-role="normal"></page>
+  <page navtitle="Менеджер комнат" href="../contents/Settings/The_Room_Manager.htm" format="html" processing-role="normal"></page>
   <page href="../contents/Settings/Included_Files.htm" format="html" processing-role="normal"></page>
   <page href="../contents/Settings/Audio_Groups.htm" format="html" processing-role="normal"></page>
   <book href="../contents/Settings/Texture_Groups.htm" format="html" processing-role="normal">

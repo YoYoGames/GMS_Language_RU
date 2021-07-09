@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Параметры командной строки</title>
-  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="generator" content="Adobe RoboHelp 2020" />
   <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page that explains how to use Command Line Parameters when running your game" />
@@ -19,8 +19,9 @@
     Это позволяет создавать файлы выходных журналов и тестировать другие специальные ситуации.</p>
   <p class="note"><strong>ПРИМЕЧАНИЕ</strong>: Это доступно только на стандартном <strong><span class="notranslate">Windows</span> </strong> <strong>только</strong> на стандартном целевом модуле.</p>
   <p>Чтобы это заработало, сначала нужно создать исполняемый файл игры для <span class="notranslate">Windows</span> и установить его на тестовой машине. После этого необходимо создать <em>ярлык </em>игры на рабочем столе. Именно здесь мы будем добавлять параметры
-    для передачи на <span class="inline">*.exe</span> (чтобы создать ярлык, щелкните правой кнопкой мыши <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> на исполняемом файле игры и выберите <em>Отправить на</em> &gt;
-   <em>Рабочий стол (создать ярлык)</em>) .</p>
+    для передачи на <span class="inline">*.exe</span> (чтобы создать ярлык, щелкните правой кнопкой мыши <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21" /> на исполняемом файле игры и выберите <em>Отправить на</em> &gt;
+    <em>Рабочий стол (создать ярлык)</em>) .
+  </p>
   <p>После создания ярлыка вы можете использовать любой из следующих параметров в целевом пути:</p>
   <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-noaudio</span>: Это отключает все звуки в вашей игре.</p>
   <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-inawindow</span>: Заставляет игру запускаться в окне, даже если она запущена в полноэкранном режиме.</p>
@@ -32,34 +33,34 @@
     вам не нужно исправление, не используйте его.</p>
   <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-vanillaGFX</span>: Использование этого параметра отключает любую проверку производителя драйвера и может быть очень полезно для тестирования вашей игры &quot;как есть&quot;.</p>
   <p>Стоит отметить, что <span class="inline">&lt;<em>filename</em>&gt;</span> в <span class="inline">-output</span> и <span class="inline">-debugoutput</span> при желании может быть одним и тем же, так как файл открывается и закрывается при каждой записи.</p>
-  <p>Теперь вы должны перейти к тому месту, где вы создали ярлык исполняемого файла игры, а затем щелкнуть на нем правой кнопкой мыши и выбрать пункт "Свойства".</p>
-  <p><img alt="Command Line Shortcut" class="center" src="../assets/Images/Settings/CommandLine_Shortcut.png">Откроется окно, аналогичное приведенному выше. Здесь вы можете добавить в <strong>Target</strong> path вашу командную строку. Просто прокрутите
+  <p>Теперь вы должны перейти к тому месту, где вы создали ярлык исполняемого файла игры, а затем щелкнуть на нем правой кнопкой мыши и выбрать пункт &quot;Свойства&quot;.</p>
+  <p><img alt="Command Line Shortcut" class="center" src="../assets/Images/Settings/CommandLine_Shortcut.png" />Откроется окно, аналогичное приведенному выше. Здесь вы можете добавить в <strong>Target</strong> path вашу командную строку. Просто прокрутите
     до конца заданного пути, добавьте пробел, а затем строку параметров. Так, например, для создания вывода файла отладки вы можете сделать следующее:</p>
   <p class="code">D:\Users\Me\GameMaker\CustomLoadBar-Default-1.0.0.0\CustomLoadBar.exe -debugoutput debug.txt</p>
   <p>В результате будет создан файл под названием &quot;<span class="inline">debug.txt</span>&quot; в том же месте, что и исполняемый файл (не в месте расположения ярлыка, а там, где установлена игра) с отладочной информацией и информацией компилятора из вашей готовой игры. Нажмите
     на &quot;OK&quot; и затем используйте ярлык для запуска вашей игры, чтобы она использовала эти параметры и помогла вам с отладкой.</p>
-  <p>Более подробную информацию о том, как отладить вашу игру, вы найдете в разделе руководства " <a href="../Introduction/Debugging.htm">Отладка</a>".</p>
+  <p>Более подробную информацию о том, как отладить вашу игру, вы найдете в разделе руководства &quot; <a href="../Introduction/Debugging.htm">Отладка</a>&quot;.</p>
   <p> </p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">А/Б тестирование с помощью командной строки</a></p>
   <div class="droptext" data-targetname="drop-down">
     <p class="dropspot"> <span class="notranslate">YoYo</span> runner также получает преимущества от специального параметра командной строки:</p>
-    <p class="dropspot" style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 5em"><span class="inline">-game &lt;<em>filename</em>&gt;</span>: загружает заданный файл игры<br></p>
+    <p class="dropspot" style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 5em"><span class="inline">-game &lt;<em>filename</em>&gt;</span>: загружает заданный файл игры<br /></p>
     <p class="dropspot">Зачем вам это нужно? Обычно вы этого не делаете, но если вы хотите иметь несколько версий вашей игры, запущенных одновременно, это можно сделать с помощью этого метода, что значительно упрощает сравнительные тесты A/B. С помощью этого метода вы можете провести фокус-тест с кем-то
       или, как дизайнер, получить лучшее представление о вещах, проводя тесты бок о бок.</p>
     <p class="dropspot">Чтобы настроить его, необходимо знать несколько вещей. Для начала вам понадобится путь к самому Runner. Его можно найти в папке <strong>Program Data</strong> вашей ОС <span class="notranslate">Windows</span> (по умолчанию она может быть скрыта, так что вам
-      чтобы увидеть ее, необходимо изменить свойства просмотра), с типичным форматом:<br><br></p>
-    <p class="code">C:\ProgramData\GameMakerStudio2\Cache\runtimes\&lt; runtime_version&gt;\windows\Runner.exe<br></p>
+      чтобы увидеть ее, необходимо изменить свойства просмотра), с типичным форматом:<br /><br /></p>
+    <p class="code">C:\ProgramData\GameMakerStudio2\Cache\runtimes\&lt; runtime_version&gt;\windows\Runner.exe<br /></p>
     <p class="dropspot">Обратите внимание, что папка <span class="notranslate">runtime_version</span> будет зависеть от установленных у вас в данный момент <span class="notranslate">времен выполнения</span>. Вам также понадобится путь к файлу <span class="inline">&lt;<em>yourgame</em>&gt;.win</span>, поскольку именно на него мы будем указывать бегунку.
       Самый простой способ найти его - это зайти в папку <strong>Temp </strong>(обычно она находится по адресу <span class="inline">%localappdata%\Temp\<span class="notranslate">GameMaker</span>Studio\&lt;имя_игры&gt;\) и просто найти <span class="inline">*.win</span>, так как это покажет вам все имеющиеся файлы, и вы сможете найти их.
-      покажет все доступные папки, и вы можете просто выбрать ту, к которой вам нужен полный путь.</p>
+        покажет все доступные папки, и вы можете просто выбрать ту, к которой вам нужен полный путь.</span></p>
     <p class="dropspot">Теперь мы можем создать ярлык бегущей строки, как мы это сделали для исполняемого файла, а затем изменять параметры по мере необходимости, но это означает необходимость открывать и редактировать ее между тестами, что сводит на нет цель использования этой функциональности для параллельного тестирования.
       тестирования. Вместо этого мы создадим пару маленьких &quot;пакетных&quot; файлов, чтобы справиться с этой задачей.</p>
-    <p class="dropspot">Для этого сначала создайте новый текстовый документ на рабочем столе и откройте его в Блокноте (или любом другом текстовом редакторе). Добавьте следующее:<br><br></p>
-    <p class="code">START C:\ProgramData\GameMakerStudio2\Cache\runtimes\&lt; runtime_version&gt;\windows\Runner.exe -game &lt;LOCAL TEMP PATH&gt;\&lt;GAMENAME&gt;.win<br></p>
-    <p class="dropspot">Вам нужно установить временный путь к файлу игры <span class="inline">*.win</span>, а затем сохранить его как &quot;<span class="inline">GM_Test_1.bat</span>&quot; на рабочем столе (имейте в виду, что Блокнот автоматически сохранит файл <span class="inline">*.txt</span>, если вы не выберете &quot;все файлы&quot; в опциях диалога сохранения). Пример того, как должна выглядеть ваша конечная команда:<br></p>
-    <p class="code">START C:\ProgramData\GameMakerStudio2\Cache\runtimes\runtime-9.9.1.199\windows\Runner.exe -game D:\Users\Mark\AppData\Local\Temp\GameMakerStudio2\AlphaDog_Reboot\AlphaDog_Reboot.win<br></p>
+    <p class="dropspot">Для этого сначала создайте новый текстовый документ на рабочем столе и откройте его в Блокноте (или любом другом текстовом редакторе). Добавьте следующее:<br /><br /></p>
+    <p class="code">START C:\ProgramData\GameMakerStudio2\Cache\runtimes\&lt; runtime_version&gt;\windows\Runner.exe -game &lt;LOCAL TEMP PATH&gt;\&lt;GAMENAME&gt;.win<br /></p>
+    <p class="dropspot">Вам нужно установить временный путь к файлу игры <span class="inline">*.win</span>, а затем сохранить его как &quot;<span class="inline">GM_Test_1.bat</span>&quot; на рабочем столе (имейте в виду, что Блокнот автоматически сохранит файл <span class="inline">*.txt</span>, если вы не выберете &quot;все файлы&quot; в опциях диалога сохранения). Пример того, как должна выглядеть ваша конечная команда:<br /></p>
+    <p class="code">START C:\ProgramData\GameMakerStudio2\Cache\runtimes\runtime-9.9.1.199\windows\Runner.exe -game D:\Users\Mark\AppData\Local\Temp\GameMakerStudio2\AlphaDog_Reboot\AlphaDog_Reboot.win<br /></p>
     <p class="dropspot">Теперь создайте другой текстовый файл и добавьте ту же строку, только на этот раз укажите путь ко второй версии игры, с которой вы хотите провести тестирование бок о бок, и сохраните его как &quot;<span class="inline">GM_Test_2.bat</span>&quot;.
-      Вы можете дважды щелкнуть <img alt="LMB Icon" class="icon" height="24" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png" width="21"> на любом из них, чтобы открыть различные версии вашей игры, и
+      Вы можете дважды щелкнуть <img alt="LMB Icon" class="icon" height="24" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png" width="21" /> на любом из них, чтобы открыть различные версии вашей игры, и
       Наличие пакетных файлов означает, что вы можете легко открыть их снова, чтобы отредактировать и изменить тестируемую игру.</p>
     <p class="dropspot"><br /></p>
     <p class="dropspot"></p>
